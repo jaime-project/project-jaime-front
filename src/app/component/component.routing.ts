@@ -22,7 +22,7 @@ export const ComponentsRoutes: Routes = [
 		children: [
 			{
 				path: 'works',
-				component: NgbdpregressbarBasicComponent,
+				component: NgbdAlertBasicComponent,
 				data: {
 					title: 'Works',
 					urls: [
@@ -34,9 +34,9 @@ export const ComponentsRoutes: Routes = [
 			},
 			{
 				path: 'servers',
-				component: CardsComponent,
+				component: NgbdModalBasicComponent,
 				data: {
-					title: 'Servers',
+					title: 'servers',
 					urls: [
 						{ title: 'Dashboard', url: '/dashboard' },
 						{ title: 'ngComponent' },
@@ -45,154 +45,27 @@ export const ComponentsRoutes: Routes = [
 				}
 			},
 			{
-				path: 'pagination',
-				component: NgbdpaginationBasicComponent,
-				data: {
-					title: 'Pagination',
-					urls: [
-						{ title: 'Dashboard', url: '/dashboard' },
-						{ title: 'ngComponent' },
-						{ title: 'Pagination' }
-					]
-				}
-			},
-			{
-				path: 'accordion',
-				component: NgbdAccordionBasicComponent,
-				data: {
-					title: 'Accordion',
-					urls: [
-						{ title: 'Dashboard', url: '/dashboard' },
-						{ title: 'ngComponent' },
-						{ title: 'Accordion' }
-					]
-				}
-			},
-			{
-				path: 'alert',
-				component: NgbdAlertBasicComponent,
-				data: {
-					title: 'Alert',
-					urls: [
-						{ title: 'Dashboard', url: '/dashboard' },
-						{ title: 'ngComponent' },
-						{ title: 'Alert' }
-					]
-				}
-			},
-			{
-				path: 'carousel',
-				component: NgbdCarouselBasicComponent,
-				data: {
-					title: 'Carousel',
-					urls: [
-						{ title: 'Dashboard', url: '/dashboard' },
-						{ title: 'ngComponent' },
-						{ title: 'Carousel' }
-					]
-				}
-			},
-			{
-				path: 'datepicker',
-				component: NgbdDatepickerBasicComponent,
-				data: {
-					title: 'Datepicker',
-					urls: [
-						{ title: 'Dashboard', url: '/dashboard' },
-						{ title: 'ngComponent' },
-						{ title: 'Datepicker' }
-					]
-				}
-			},
-			{
-				path: 'dropdown',
+				path: 'agents',
 				component: NgbdDropdownBasicComponent,
 				data: {
-					title: 'Dropdown',
+					title: 'Agents',
 					urls: [
 						{ title: 'Dashboard', url: '/dashboard' },
 						{ title: 'ngComponent' },
-						{ title: 'Dropdown' }
+						{ title: 'Agents' }
 					]
 				}
 			},
 			{
-				path: 'modal',
-				component: NgbdModalBasicComponent,
-				data: {
-					title: 'Modal',
-					urls: [
-						{ title: 'Dashboard', url: '/dashboard' },
-						{ title: 'ngComponent' },
-						{ title: 'Modal' }
-					]
-				}
-			},
-			{
-				path: 'poptool',
-				component: NgbdPopTooltipComponent,
-				data: {
-					title: 'Popover & Tooltip',
-					urls: [
-						{ title: 'Dashboard', url: '/dashboard' },
-						{ title: 'ngComponent' },
-						{ title: 'Popover & Tooltip' }
-					]
-				}
-			},
-			{
-				path: 'rating',
-				component: NgbdratingBasicComponent,
-				data: {
-					title: 'Rating',
-					urls: [
-						{ title: 'Dashboard', url: '/dashboard' },
-						{ title: 'ngComponent' },
-						{ title: 'Rating' }
-					]
-				}
-			},
-			{
-				path: 'tabs',
+				path: 'configs',
 				component: NgbdtabsBasicComponent,
 				data: {
-					title: 'Tabs',
+					title: 'Configs',
 					urls: [
 						{ title: 'Dashboard', url: '/dashboard' },
 						{ title: 'ngComponent' },
-						{ title: 'Tabs' }
+						{ title: 'Configs' }
 					]
-				}
-			},
-			{
-				path: 'timepicker',
-				component: NgbdtimepickerBasicComponent,
-				data: {
-					title: 'Timepicker',
-					urls: [
-						{ title: 'Dashboard', url: '/dashboard' },
-						{ title: 'ngComponent' },
-						{ title: 'Timepicker' }
-					]
-				}
-			},
-			{
-				path: 'buttons',
-				component: ButtonsComponent,
-				data: {
-					title: 'Button',
-					urls: [
-						{ title: 'Dashboard', url: '/dashboard' },
-						{ title: 'ngComponent' },
-						{ title: 'Button' }
-					]
-				}
-			},
-			{
-				path: 'toast',
-				component: ToastComponent,
-				data: {
-					title: 'Toast',
 				}
 			}
 		]
