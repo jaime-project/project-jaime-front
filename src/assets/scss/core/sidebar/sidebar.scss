@@ -34,6 +34,7 @@ sidebar navigation
   ul {
     .sidebar-item {
       width: $sidebar-width-full;
+
       .sidebar-link {
         color: $sidebar-text;
         padding: $sidebar-link-padding;
@@ -42,6 +43,7 @@ sidebar navigation
         align-items: center;
         line-height: 25px;
         opacity: 0.6;
+
         i {
           font-style: normal;
           width: 35px;
@@ -51,35 +53,43 @@ sidebar navigation
           display: inline-block;
           text-align: center;
         }
+
         &.active,
         &:hover {
           opacity: 1;
         }
       }
-      &.active > .sidebar-link {
+
+      &.active>.sidebar-link {
         /*background: rgba(0, 0, 0, 0.04);*/
         opacity: 1;
         color: $info;
+
         i {
           color: $info;
         }
       }
+
       /*******************
            First level
            ******************/
       .first-level {
         padding: $sidebar-first-level-padding;
+
         .sidebar-item.active .sidebar-link {
           opacity: 1;
         }
+
         .sidebar-item .sidebar-link {
           padding: $sidebar-first-level-link-padding;
+
           i {
             font-size: $sidebar-first-level-icon-size;
           }
         }
       }
     }
+
     /*******************
          Small cap
          ******************/
@@ -94,16 +104,19 @@ sidebar navigation
       color: $sidebar-text;
       opacity: 0.3;
       text-transform: uppercase;
+
       i {
         line-height: 30px;
         margin: 0 5px;
       }
     }
   }
-  > #sidebarnav > .sidebar-item > .sidebar-link:hover {
+
+  >#sidebarnav>.sidebar-item>.sidebar-link:hover {
     /*background: rgba(0, 0, 0, 0.04);*/
   }
 }
+
 /*******************
  common m-p removed
 ******************/
@@ -111,19 +124,23 @@ sidebar navigation
   ul {
     margin: 0px;
     padding: 0px;
+
     li {
       list-style: none;
     }
   }
 }
+
 .collapse.in {
   display: block;
 }
+
 /*******************
 Down arrow
 ******************/
 .sidebar-nav .has-arrow {
   position: relative;
+
   &::after {
     position: absolute;
     content: "";
@@ -152,8 +169,8 @@ Down arrow
 /*.sidebar-nav .active > .has-arrow::after,*/
 
 /*.sidebar-nav li.selected > .has-arrow::after,*/
-.sidebar-nav li.active > .has-arrow::after,
-.sidebar-nav li > .has-arrow.active::after,
+.sidebar-nav li.active>.has-arrow::after,
+.sidebar-nav li>.has-arrow.active::after,
 .sidebar-nav .has-arrow[aria-expanded="true"]::after {
   -webkit-transform: rotate(-135deg) translate(0, -50%);
   -ms-transform: rotate(-135deg) translate(0, -50%);
@@ -176,6 +193,7 @@ User Profile
     text-overflow: ellipsis;
   }
 }
+
 .create-btn {
   height: 40px;
   background: $dark;

@@ -45,6 +45,18 @@ export const ComponentsRoutes: Routes = [
 				}
 			},
 			{
+				path: 'asd',
+				component: NgbdModalBasicComponent,
+				data: {
+					title: 'asd',
+					urls: [
+						{ title: 'Dashboard', url: '/dashboard' },
+						{ title: 'ngComponent' },
+						{ title: 'ads' }
+					]
+				}
+			},
+			{
 				path: 'agents',
 				component: NgbdDropdownBasicComponent,
 				data: {
