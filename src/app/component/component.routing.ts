@@ -34,7 +34,7 @@ export const ComponentsRoutes: Routes = [
 			},
 			{
 				path: 'servers',
-				component: NgbdModalBasicComponent,
+				component: NgbdtabsBasicComponent,
 				data: {
 					title: 'servers',
 					urls: [
