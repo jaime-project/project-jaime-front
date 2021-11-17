@@ -1,0 +1,21 @@
+<ngb-tabset #t="ngbTabset">
+
+  <ngb-tab id="tab-details">
+    <ng-template ngbTabTitle><b>Details</b></ng-template>
+    <ng-template ngbTabContent>
+
+      <app-detail-server></app-detail-server>
+
+    </ng-template>
+  </ngb-tab>
+
+  <ngb-tab id="tab-new">
+    <ng-template ngbTabTitle><b>New</b></ng-template>
+    <ng-template ngbTabContent>
+
+      <app-new-server></app-new-server>
+
+    </ng-template>
+  </ngb-tab>
+
+</ngb-tabset>
