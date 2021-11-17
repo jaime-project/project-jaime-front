@@ -21,6 +21,7 @@ import { NgbdModalBasicComponent } from '../component/modal/modal.component';
 import { NgbdPopTooltipComponent } from '../component/popover-tooltip/popover-tooltip.component';
 import { NgbdratingBasicComponent } from '../component/rating/rating.component';
 import { NgbdtimepickerBasicComponent } from '../component/timepicker/timepicker.component';
+import { ListServerComponent } from './servers/list/list.component';
 
 @NgModule({
   imports: [
@@ -45,7 +46,8 @@ import { NgbdtimepickerBasicComponent } from '../component/timepicker/timepicker
     NgbdtimepickerBasicComponent,
     TabsServerComponent,
     NewServerComponent,
-    DetailServerComponent
+    DetailServerComponent,
+    ListServerComponent
   ]
 })
 export class ComponentsModule { }
