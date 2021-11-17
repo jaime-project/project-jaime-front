@@ -17,71 +17,10 @@ import { CardsComponent } from './card/card.component';
 import { ToastComponent } from './toast/toast.component';
 import { TabsServerComponent } from '../components/servers/tabs/tabs.component';
 
-export const ComponentsRoutes: Routes = [
+export const ComponentRoutes: Routes = [
 	{
 		path: '',
 		children: [
-			{
-				path: 'works',
-				component: NgbdAlertBasicComponent,
-				data: {
-					title: 'Works',
-					urls: [
-						{ title: 'Dashboard', url: '/dashboard' },
-						{ title: 'ngComponent' },
-						{ title: 'Works' }
-					]
-				}
-			},
-			{
-				path: 'servers',
-				// component: NgbdtabsBasicComponent,
-				component: TabsServerComponent,
-				data: {
-					title: 'servers',
-					urls: [
-						{ title: 'Dashboard', url: '/dashboard' },
-						{ title: 'ngComponent' },
-						{ title: 'Servers' }
-					]
-				}
-			},
-			{
-				path: 'asd',
-				component: NgbdModalBasicComponent,
-				data: {
-					title: 'asd',
-					urls: [
-						{ title: 'Dashboard', url: '/dashboard' },
-						{ title: 'ngComponent' },
-						{ title: 'ads' }
-					]
-				}
-			},
-			{
-				path: 'agents',
-				component: NgbdDropdownBasicComponent,
-				data: {
-					title: 'Agents',
-					urls: [
-						{ title: 'Dashboard', url: '/dashboard' },
-						{ title: 'ngComponent' },
-						{ title: 'Agents' }
-					]
-				}
-			},
-			{
-				path: 'configs',
-				component: NgbdtabsBasicComponent,
-				data: {
-					title: 'Configs',
-					urls: [
-						{ title: 'Dashboard', url: '/dashboard' },
-						{ title: 'ngComponent' },
-						{ title: 'Configs' }
-					]
-				}
-			}
 		]
 	}
 ];

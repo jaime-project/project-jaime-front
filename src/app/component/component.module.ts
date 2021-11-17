@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { ComponentsRoutes } from './component.routing';
+import { ComponentRoutes } from './component.routing';
 import { NgbdpregressbarBasicComponent } from './progressbar/progressbar.component';
 import { NgbdpaginationBasicComponent } from './pagination/pagination.component';
 import { NgbdAccordionBasicComponent } from './accordion/accordion.component';
@@ -26,7 +26,7 @@ import { ToastsContainer } from './toast/toast-container';
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(ComponentsRoutes),
+    RouterModule.forChild(ComponentRoutes),
     FormsModule,
     ReactiveFormsModule,
     NgbModule
@@ -50,4 +50,4 @@ import { ToastsContainer } from './toast/toast-container';
     ToastsContainer
   ]
 })
-export class ComponentsModule {}
+export class ComponentModule { }
