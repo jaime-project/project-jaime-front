@@ -5,6 +5,7 @@ import { NgbdModalBasicComponent } from '../component/modal/modal.component';
 import { NgbdtabsBasicComponent } from '../component/tabs/tabs.component';
 import { TabsServerComponent } from '../components/servers/tabs/tabs.component';
 import { ListServerComponent } from './servers/list/list.component';
+import { NewServerComponent } from './servers/new/new.component';
 
 
 export const ComponentsRoutes: Routes = [
@@ -26,6 +27,18 @@ export const ComponentsRoutes: Routes = [
 			{
 				path: 'servers',
 				component: ListServerComponent,
+				data: {
+					title: 'servers',
+					urls: [
+						{ title: 'Dashboard', url: '/dashboard' },
+						{ title: 'ngComponent' },
+						{ title: 'Servers' }
+					]
+				}
+			},
+			{
+				path: 'servers/new',
+				component: NewServerComponent,
 				data: {
 					title: 'servers',
 					urls: [
