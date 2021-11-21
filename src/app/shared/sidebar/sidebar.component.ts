@@ -10,9 +10,11 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './sidebar.component.html'
 })
 export class SidebarComponent implements OnInit {
+
   showMenu = '';
   showSubMenu = '';
   public sidebarnavItems: RouteInfo[] = [];
+
   // this is for the open close
   addExpandClass(element: string) {
     if (element === this.showMenu) {

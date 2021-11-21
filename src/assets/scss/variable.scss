@@ -10,7 +10,7 @@ $themecolor-alt: #26c6da;
 $theme-light: #fff;
 $theme-dark: #212529;
 
-$skin1: #242a33;
+$skin1: #212529;
 $skin6: #fff;
 
 /*Topbar Colors*/
@@ -243,7 +243,7 @@ $progress-height: 5px !default;
 
 //Tabs
 
-$nav-tabs-link-active-bg: $black !default;
+$nav-tabs-link-active-bg: $white !default;
 
 // Grid breakpoints
 //
@@ -260,5 +260,5 @@ $grid-breakpoints: (
 
 //Navbar
 
-$navbar-dark-color: rgba(0, 0, 0, 0.05) !default;
-$navbar-dark-hover-color: rgba(0, 0, 0, 0.05) !default;
+$navbar-dark-color: rgba($white, 0.8) !default;
+$navbar-dark-hover-color: rgba($white, 1) !default;

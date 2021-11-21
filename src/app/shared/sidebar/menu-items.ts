@@ -2,7 +2,7 @@ import { RouteInfo } from "./sidebar.metadata";
 
 export const ROUTES: RouteInfo[] = [
   {
-    path: "/component/carousel",
+    path: "/servers",
     title: "Servers",
     icon: "mdi mdi-view-carousel",
     class: "",
@@ -10,7 +10,7 @@ export const ROUTES: RouteInfo[] = [
     submenu: [],
   },
   {
-    path: "/component/dropdown",
+    path: "/agents",
     title: "Agents",
     icon: "mdi mdi-arrange-bring-to-front",
     class: "",
@@ -18,7 +18,7 @@ export const ROUTES: RouteInfo[] = [
     submenu: [],
   },
   {
-    path: "/component/pagination",
+    path: "/works",
     title: "Works",
     icon: "mdi mdi-backburger",
     class: "",
@@ -26,8 +26,16 @@ export const ROUTES: RouteInfo[] = [
     submenu: [],
   },
   {
-    path: "/component/poptool",
+    path: "/configs",
     title: "Configs",
+    icon: "mdi mdi-image-filter-vintage",
+    class: "",
+    extralink: false,
+    submenu: [],
+  },
+  {
+    path: "/asd",
+    title: "asd",
     icon: "mdi mdi-image-filter-vintage",
     class: "",
     extralink: false,
