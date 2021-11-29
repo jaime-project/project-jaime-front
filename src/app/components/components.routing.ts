@@ -6,6 +6,8 @@ import { NgbdtabsBasicComponent } from '../component/tabs/tabs.component';
 import { TabsServerComponent } from '../components/servers/tabs/tabs.component';
 import { ListServerComponent } from './servers/list/list.component';
 import { NewServerComponent } from './servers/new/new.component';
+import { ListAgentComponent } from './agents/list/list.component';
+import { TabsAgentComponent } from './agents/tabs/tabs.component';
 
 
 export const ComponentsRoutes: Routes = [
@@ -61,6 +63,30 @@ export const ComponentsRoutes: Routes = [
 				}
 			},
 			{
+				path: 'agents',
+				component: ListAgentComponent,
+				data: {
+					title: 'agents',
+					urls: [
+						{ title: 'Dashboard', url: '/dashboard' },
+						{ title: 'ngComponent' },
+						{ title: 'Agents' }
+					]
+				}
+			},
+			{
+				path: 'agents/details',
+				component: TabsAgentComponent,
+				data: {
+					title: 'agents',
+					urls: [
+						{ title: 'Dashboard', url: '/dashboard' },
+						{ title: 'ngComponent' },
+						{ title: 'Agents' }
+					]
+				}
+			},
+			{
 				path: 'asd',
 				component: NgbdModalBasicComponent,
 				data: {
@@ -72,18 +98,18 @@ export const ComponentsRoutes: Routes = [
 					]
 				}
 			},
-			{
-				path: 'agents',
-				component: NgbdDropdownBasicComponent,
-				data: {
-					title: 'Agents',
-					urls: [
-						{ title: 'Dashboard', url: '/dashboard' },
-						{ title: 'ngComponent' },
-						{ title: 'Agents' }
-					]
-				}
-			},
+			// {
+			// 	path: 'agents',
+			// 	component: NgbdDropdownBasicComponent,
+			// 	data: {
+			// 		title: 'Agents',
+			// 		urls: [
+			// 			{ title: 'Dashboard', url: '/dashboard' },
+			// 			{ title: 'ngComponent' },
+			// 			{ title: 'Agents' }
+			// 		]
+			// 	}
+			// },
 			{
 				path: 'configs',
 				component: NgbdtabsBasicComponent,

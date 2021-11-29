@@ -20,6 +20,10 @@ import { DetailServerComponent } from './servers/detail/detail.component';
 import { ListServerComponent } from './servers/list/list.component';
 import { TabsServerComponent } from './servers/tabs/tabs.component';
 import { YamlServerComponent } from './servers/yaml/yaml.component';
+import { DetailAgentComponent } from './agents/detail/detail.component';
+import { ListAgentComponent } from './agents/list/list.component';
+import { TabsAgentComponent } from './agents/tabs/tabs.component';
+import { YamlAgentComponent } from './agents/yaml/yaml.component';
 
 
 
@@ -47,7 +51,11 @@ import { YamlServerComponent } from './servers/yaml/yaml.component';
     TabsServerComponent,
     YamlServerComponent,
     DetailServerComponent,
-    ListServerComponent
+    ListServerComponent,
+    DetailAgentComponent,
+    ListAgentComponent,
+    TabsAgentComponent,
+    YamlAgentComponent
   ]
 })
 export class ComponentsModule { }
