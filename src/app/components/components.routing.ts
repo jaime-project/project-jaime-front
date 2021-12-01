@@ -15,6 +15,18 @@ export const ComponentsRoutes: Routes = [
 		path: '',
 		children: [
 			{
+				path: 'modules',
+				component: NgbdAlertBasicComponent,
+				data: {
+					title: 'Modules',
+					urls: [
+						{ title: 'Dashboard', url: '/dashboard' },
+						{ title: 'ngComponent' },
+						{ title: 'Modules' }
+					]
+				}
+			},
+			{
 				path: 'works',
 				component: NgbdAlertBasicComponent,
 				data: {
