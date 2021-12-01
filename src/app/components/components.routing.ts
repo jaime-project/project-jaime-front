@@ -1,13 +1,9 @@
 import { Routes } from '@angular/router';
-import { NgbdAlertBasicComponent } from '../component/alert/alert.component';
-import { NgbdDropdownBasicComponent } from '../component/dropdown-collapse/dropdown-collapse.component';
-import { NgbdModalBasicComponent } from '../component/modal/modal.component';
-import { NgbdtabsBasicComponent } from '../component/tabs/tabs.component';
-import { TabsServerComponent } from '../components/servers/tabs/tabs.component';
 import { ListServerComponent } from './servers/list/list.component';
 import { NewServerComponent } from './servers/new/new.component';
 import { ListAgentComponent } from './agents/list/list.component';
 import { TabsAgentComponent } from './agents/tabs/tabs.component';
+import { TabsServerComponent } from './servers/tabs/tabs.component';
 
 
 export const ComponentsRoutes: Routes = [
@@ -16,7 +12,7 @@ export const ComponentsRoutes: Routes = [
 		children: [
 			{
 				path: 'modules',
-				component: NgbdAlertBasicComponent,
+				component: ListServerComponent,
 				data: {
 					title: 'Modules',
 					urls: [
@@ -28,7 +24,7 @@ export const ComponentsRoutes: Routes = [
 			},
 			{
 				path: 'works',
-				component: NgbdAlertBasicComponent,
+				component: ListServerComponent,
 				data: {
 					title: 'Works',
 					urls: [
@@ -99,32 +95,8 @@ export const ComponentsRoutes: Routes = [
 				}
 			},
 			{
-				path: 'asd',
-				component: NgbdModalBasicComponent,
-				data: {
-					title: 'asd',
-					urls: [
-						{ title: 'Dashboard', url: '/dashboard' },
-						{ title: 'ngComponent' },
-						{ title: 'ads' }
-					]
-				}
-			},
-			// {
-			// 	path: 'agents',
-			// 	component: NgbdDropdownBasicComponent,
-			// 	data: {
-			// 		title: 'Agents',
-			// 		urls: [
-			// 			{ title: 'Dashboard', url: '/dashboard' },
-			// 			{ title: 'ngComponent' },
-			// 			{ title: 'Agents' }
-			// 		]
-			// 	}
-			// },
-			{
 				path: 'configs',
-				component: NgbdtabsBasicComponent,
+				component: TabsAgentComponent,
 				data: {
 					title: 'Configs',
 					urls: [

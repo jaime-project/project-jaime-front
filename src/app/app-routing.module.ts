@@ -8,11 +8,7 @@ export const Approutes: Routes = [
     path: '',
     component: FullComponent,
     children: [
-      { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-      {
-        path: 'dashboard',
-        loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
-      },
+      { path: '', redirectTo: '/servers', pathMatch: 'full' },
       {
         path: '',
         loadChildren: () => import('./components/components.module').then(m => m.ComponentsModule)
