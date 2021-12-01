@@ -10,6 +10,10 @@ import { YamlAgentComponent } from './agents/yaml/yaml.component';
 import { ComponentsRoutes } from './components.routing';
 import { CodeModuleComponent } from './modules/code/code.component';
 import { DocsModuleComponent } from './modules/docs/docs.component';
+import { ListModuleComponent } from './modules/list/list.component';
+import { NewCodeModuleComponent } from './modules/newcode/newcode.component';
+import { NewDocsModuleComponent } from './modules/newdocs/newdocs.component';
+import { NewTabsModuleComponent } from './modules/newtabs/newtabs.component';
 import { TabsModuleComponent } from './modules/tabs/tabs.component';
 import { DetailServerComponent } from './servers/detail/detail.component';
 import { ListServerComponent } from './servers/list/list.component';
@@ -37,7 +41,11 @@ import { YamlServerComponent } from './servers/yaml/yaml.component';
     YamlAgentComponent,
     TabsModuleComponent,
     DocsModuleComponent,
-    CodeModuleComponent
+    CodeModuleComponent,
+    ListModuleComponent,
+    NewTabsModuleComponent,
+    NewCodeModuleComponent,
+    NewDocsModuleComponent
   ]
 })
 export class ComponentsModule { }

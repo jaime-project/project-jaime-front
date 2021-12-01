@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col-12 m-t-30">
+    <h4 class="m-b-0"><b>Module List</b></h4>
+    <p class="text-muted m-t-0 font-12"></p>
+  </div>
+</div>
+
+<div class="card m-t-30">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-12">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>asd12d12d</td>
+              <td>
+                <button type="button" class="btn btn-primary" style="margin-right: 2%;" routerLink="/modules/details">
+                  <i class="fas fa-eye"></i>
+                </button>
+                <button type="button" class="btn btn-danger" style="margin-right: 2%;"
+                  (click)="openVerticallyCentered(modalDelete)">
+                  <i class=" far fa-trash-alt"></i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>qwe12d12d</td>
+              <td>
+                <button type="button" class="btn btn-primary" style="margin-right: 2%;" routerLink="/modules/details">
+                  <i class="fas fa-eye"></i></button>
+                <button type="button" class="btn btn-danger" style="margin-right: 2%;"
+                  (click)="openVerticallyCentered(modalDelete)">
+                  <i class="far fa-trash-alt"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12 m-b-30">
+    <button class="btn btn-success" routerLink="/modules/new">New Module</button>
+  </div>
+</div>
+
+<ng-template #modalDelete let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title"><b>Delete</b></h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Are you shure?</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="modal.close('Close click')">Cancel</button>
+    <button type="button" class="btn btn-success" (click)="modal.close('Close click')">OK</button>
+  </div>
+</ng-template>

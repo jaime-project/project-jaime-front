@@ -1,10 +1,12 @@
 import { Routes } from '@angular/router';
-import { ListServerComponent } from './servers/list/list.component';
-import { NewServerComponent } from './servers/new/new.component';
 import { ListAgentComponent } from './agents/list/list.component';
 import { TabsAgentComponent } from './agents/tabs/tabs.component';
-import { TabsServerComponent } from './servers/tabs/tabs.component';
+import { ListModuleComponent } from './modules/list/list.component';
+import { NewTabsModuleComponent } from './modules/newtabs/newtabs.component';
 import { TabsModuleComponent } from './modules/tabs/tabs.component';
+import { ListServerComponent } from './servers/list/list.component';
+import { NewServerComponent } from './servers/new/new.component';
+import { TabsServerComponent } from './servers/tabs/tabs.component';
 
 
 export const ComponentsRoutes: Routes = [
@@ -13,7 +15,29 @@ export const ComponentsRoutes: Routes = [
 		children: [
 			{
 				path: 'modules',
+				component: ListModuleComponent,
+				data: {
+					title: 'Modules',
+					urls: [
+						{ title: 'ngComponent' },
+						{ title: 'Modules' }
+					]
+				}
+			},
+			{
+				path: 'modules/details',
 				component: TabsModuleComponent,
+				data: {
+					title: 'Modules',
+					urls: [
+						{ title: 'ngComponent' },
+						{ title: 'Modules' }
+					]
+				}
+			},
+			{
+				path: 'modules/new',
+				component: NewTabsModuleComponent,
 				data: {
 					title: 'Modules',
 					urls: [
@@ -28,7 +52,6 @@ export const ComponentsRoutes: Routes = [
 				data: {
 					title: 'Works',
 					urls: [
-						{ title: 'Dashboard', url: '/dashboard' },
 						{ title: 'ngComponent' },
 						{ title: 'Works' }
 					]
@@ -40,7 +63,6 @@ export const ComponentsRoutes: Routes = [
 				data: {
 					title: 'servers',
 					urls: [
-						{ title: 'Dashboard', url: '/dashboard' },
 						{ title: 'ngComponent' },
 						{ title: 'Servers' }
 					]
@@ -52,7 +74,6 @@ export const ComponentsRoutes: Routes = [
 				data: {
 					title: 'servers',
 					urls: [
-						{ title: 'Dashboard', url: '/dashboard' },
 						{ title: 'ngComponent' },
 						{ title: 'Servers' }
 					]
@@ -64,7 +85,6 @@ export const ComponentsRoutes: Routes = [
 				data: {
 					title: 'servers',
 					urls: [
-						{ title: 'Dashboard', url: '/dashboard' },
 						{ title: 'ngComponent' },
 						{ title: 'Servers' }
 					]
@@ -76,7 +96,6 @@ export const ComponentsRoutes: Routes = [
 				data: {
 					title: 'agents',
 					urls: [
-						{ title: 'Dashboard', url: '/dashboard' },
 						{ title: 'ngComponent' },
 						{ title: 'Agents' }
 					]
@@ -88,7 +107,6 @@ export const ComponentsRoutes: Routes = [
 				data: {
 					title: 'agents',
 					urls: [
-						{ title: 'Dashboard', url: '/dashboard' },
 						{ title: 'ngComponent' },
 						{ title: 'Agents' }
 					]
@@ -100,7 +118,6 @@ export const ComponentsRoutes: Routes = [
 				data: {
 					title: 'Configs',
 					urls: [
-						{ title: 'Dashboard', url: '/dashboard' },
 						{ title: 'ngComponent' },
 						{ title: 'Configs' }
 					]
