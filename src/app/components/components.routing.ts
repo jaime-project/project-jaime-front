@@ -4,6 +4,7 @@ import { NewServerComponent } from './servers/new/new.component';
 import { ListAgentComponent } from './agents/list/list.component';
 import { TabsAgentComponent } from './agents/tabs/tabs.component';
 import { TabsServerComponent } from './servers/tabs/tabs.component';
+import { TabsModuleComponent } from './modules/tabs/tabs.component';
 
 
 export const ComponentsRoutes: Routes = [
@@ -12,11 +13,10 @@ export const ComponentsRoutes: Routes = [
 		children: [
 			{
 				path: 'modules',
-				component: ListServerComponent,
+				component: TabsModuleComponent,
 				data: {
 					title: 'Modules',
 					urls: [
-						{ title: 'Dashboard', url: '/dashboard' },
 						{ title: 'ngComponent' },
 						{ title: 'Modules' }
 					]
