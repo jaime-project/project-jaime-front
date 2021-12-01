@@ -5,56 +5,57 @@
   </div>
 </div>
 
-<div class="card m-t-30">
-  <div class="card-body">
-    <div class="row">
-      <div class="col-12">
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Host</th>
-              <th scope="col">Port</th>
-              <th scope="col">Type</th>
-              <th scope="col">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>asd12d12d</td>
-              <td>10.5.100.1</td>
-              <td>7000</td>
-              <td>OC</td>
-              <td>
-                <button type="button" class="btn btn-primary" style="margin-right: 2%;" routerLink="/agents/details">
-                  <i class="fas fa-eye"></i>
-                </button>
-                <button type="button" class="btn btn-danger" style="margin-right: 2%;"
-                  (click)="openVerticallyCentered(modalDelete)">
-                  <i class=" far fa-trash-alt"></i>
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>qwe12d12d</td>
-              <td>10.5.100.2</td>
-              <td>7000</td>
-              <td>OC</td>
-              <td>
-                <button type="button" class="btn btn-primary" style="margin-right: 2%;" routerLink="/agents/details"><i
-                    class="fas fa-eye"></i></button>
-                <button type="button" class="btn btn-danger" style="margin-right: 2%;"
-                  (click)="openVerticallyCentered(modalDelete)">
-                  <i class="far fa-trash-alt"></i></button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+<div class="col-lg-8">
+  <div class="card m-t-30">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Host</th>
+                <th scope="col">Port</th>
+                <th scope="col">Type</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>asd12d12d</td>
+                <td>10.5.100.1</td>
+                <td>7000</td>
+                <td>OC</td>
+                <td>
+                  <button type="button" class="btn btn-primary" style="margin-right: 2%;" routerLink="/agents/details">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                  <button type="button" class="btn btn-danger" style="margin-right: 2%;"
+                    (click)="openVerticallyCentered(modalDelete)">
+                    <i class=" far fa-trash-alt"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>qwe12d12d</td>
+                <td>10.5.100.2</td>
+                <td>7000</td>
+                <td>OC</td>
+                <td>
+                  <button type="button" class="btn btn-primary" style="margin-right: 2%;"
+                    routerLink="/agents/details"><i class="fas fa-eye"></i></button>
+                  <button type="button" class="btn btn-danger" style="margin-right: 2%;"
+                    (click)="openVerticallyCentered(modalDelete)">
+                    <i class="far fa-trash-alt"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
 
 <ng-template #modalDelete let-modal>
   <div class="modal-header">
