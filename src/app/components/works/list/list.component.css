@@ -1,0 +1,11 @@
+.running {
+    color: green;
+}
+
+.ready {
+    color: coral;
+}
+
+.stoped {
+    color: red;
+}

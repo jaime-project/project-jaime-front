@@ -10,10 +10,6 @@ export const Approutes: Routes = [
       { path: '', redirectTo: '/servers', pathMatch: 'full' },
       {
         path: '',
-        loadChildren: () => import('./components/components.module').then(m => m.ComponentsModule)
-      },
-      {
-        path: '',
         loadChildren: () => import('./components/servers/servercomponents.module').then(m => m.ServerComponentsModule)
       },
       {
@@ -23,6 +19,10 @@ export const Approutes: Routes = [
       {
         path: '',
         loadChildren: () => import('./components/agents/agentcomponents.module').then(m => m.AgentComponentsModule)
+      },
+      {
+        path: '',
+        loadChildren: () => import('./components/works/workcomponents.module').then(m => m.WorkComponentsModule)
       },
     ]
   },
