@@ -1,22 +1,33 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-
+import { Routes } from '@angular/router';
 import { FullComponent } from './layouts/full/full.component';
+
 
 export const Approutes: Routes = [
   {
     path: '',
     component: FullComponent,
     children: [
-      { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+      { path: '', redirectTo: '/servers', pathMatch: 'full' },
+      // {
+      //   path: '',
+      //   loadChildren: () => import('./component/component.module').then(m => m.ComponentModule)
+      // },
       {
-        path: 'dashboard',
-        loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
+        path: '',
+        loadChildren: () => import('./components/servers/servercomponents.module').then(m => m.ServerComponentsModule)
       },
       {
         path: '',
-        loadChildren: () => import('./components/components.module').then(m => m.ComponentsModule)
-      }
+        loadChildren: () => import('./components/modules/modulecomponents.module').then(m => m.ModuleComponentsModule)
+      },
+      {
+        path: '',
+        loadChildren: () => import('./components/agents/agentcomponents.module').then(m => m.AgentComponentsModule)
+      },
+      {
+        path: '',
+        loadChildren: () => import('./components/works/workcomponents.module').then(m => m.WorkComponentsModule)
+      },
     ]
   },
   {

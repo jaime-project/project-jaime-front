@@ -16,7 +16,6 @@ import { Approutes } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FullComponent } from './layouts/full/full.component';
 import { BreadcrumbComponent } from './shared/breadcrumb/breadcrumb.component';
-// import { NavigationComponent } from './shared/header-navigation/navigation.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { SpinnerComponent } from './shared/spinner.component';
 

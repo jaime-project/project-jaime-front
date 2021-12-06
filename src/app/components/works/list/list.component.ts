@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-list-server',
+  selector: 'app-list-work',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
-export class ListServerComponent implements OnInit {
+export class ListWorkComponent implements OnInit {
 
   constructor(private modalService: NgbModal) { }
 

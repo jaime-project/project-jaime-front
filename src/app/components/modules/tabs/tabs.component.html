@@ -1,0 +1,17 @@
+<ngb-tabset #t="ngbTabset">
+
+  <ngb-tab id="tab-details">
+    <ng-template ngbTabTitle><b>Docs</b></ng-template>
+    <ng-template ngbTabContent>
+      <app-docs-module></app-docs-module>
+    </ng-template>
+  </ngb-tab>
+
+  <ngb-tab id="tab-new">
+    <ng-template ngbTabTitle><b>Code</b></ng-template>
+    <ng-template ngbTabContent>
+      <app-code-module></app-code-module>
+    </ng-template>
+  </ngb-tab>
+
+</ngb-tabset>

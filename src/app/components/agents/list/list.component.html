@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-12 m-t-30">
-    <h4 class="m-b-0"><b>Server List</b></h4>
+    <h4 class="m-b-0"><b>Agents List</b></h4>
     <p class="text-muted m-t-0 font-12"></p>
   </div>
 </div>
@@ -13,18 +13,23 @@
           <table class="table">
             <thead>
               <tr>
-                <th scope="col">Name</th>
-                <th scope="col">URL</th>
+                <th scope="col">ID</th>
+                <th scope="col">Host</th>
+                <th scope="col">Port</th>
+                <th scope="col">Type</th>
                 <th scope="col">Actions</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>lasegunda</td>
-                <td>https://console-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/</td>
+                <td>asd12d12d</td>
+                <td>10.5.100.1</td>
+                <td>7000</td>
+                <td>OC</td>
                 <td>
-                  <button type="button" class="btn btn-primary" style="margin-right: 2%;"
-                    routerLink="/servers/details"><i class="fas fa-eye"></i></button>
+                  <button type="button" class="btn btn-primary" style="margin-right: 2%;" routerLink="/agents/details">
+                    <i class="fas fa-eye"></i>
+                  </button>
                   <button type="button" class="btn btn-danger" style="margin-right: 2%;"
                     (click)="openVerticallyCentered(modalDelete)">
                     <i class=" far fa-trash-alt"></i>
@@ -32,13 +37,16 @@
                 </td>
               </tr>
               <tr>
-                <td>otro</td>
-                <td>https://asd-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/</td>
+                <td>qwe12d12d</td>
+                <td>10.5.100.2</td>
+                <td>7000</td>
+                <td>OC</td>
                 <td>
                   <button type="button" class="btn btn-primary" style="margin-right: 2%;"
-                    routerLink="/servers/details"><i class="fas fa-eye"></i></button>
-                  <button type="button" class="btn btn-danger" style="margin-right: 2%;"><i
-                      class="far fa-trash-alt"></i></button>
+                    routerLink="/agents/details"><i class="fas fa-eye"></i></button>
+                  <button type="button" class="btn btn-danger" style="margin-right: 2%;"
+                    (click)="openVerticallyCentered(modalDelete)">
+                    <i class="far fa-trash-alt"></i></button>
                 </td>
               </tr>
             </tbody>
@@ -47,15 +55,7 @@
       </div>
     </div>
   </div>
-
-  <div class="row">
-    <div class="col-12 m-b-30">
-      <button class="btn btn-success" routerLink="/servers/new">New server</button>
-    </div>
-  </div>
-
 </div>
-
 
 <ng-template #modalDelete let-modal>
   <div class="modal-header">
