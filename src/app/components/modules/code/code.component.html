@@ -5,7 +5,26 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row" style="margin-bottom: 1%;">
+  <div class="col-12">
+    <div class="custom-control custom-switch">
+      <input [(ngModel)]="codeEditSwitchActivated" type="checkbox" class="custom-control-input" id="customSwitch1">
+      <label class="custom-control-label" for="customSwitch1">Edit Code</label>
+    </div>
+  </div>
+</div>
+
+
+<div class="row" *ngIf="!codeEditSwitchActivated">
+  <div class="card col-12">
+    <div class="card-body">
+      <p class="card-text">codigo python</p>
+    </div>
+  </div>
+</div>
+
+
+<div class="row" *ngIf="codeEditSwitchActivated">
   <div class="col-12">
     <div class="mb-3">
       <textarea class="form-control" id="exampleFormControlTextarea1" rows="20"></textarea>
@@ -13,7 +32,6 @@
 
     <button type="button" class="btn btn-success">Update</button>
     <button type="button" class="btn btn-danger" style="margin-left: 1%;">Delete</button>
-    <button type="button" class="btn btn-primary" style="margin-left: 1%;">Reset</button>
 
   </div>
 

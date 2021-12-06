@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DocsModuleComponent implements OnInit {
 
+  public docsEditSwitchActivated = false
+
+
   constructor() { }
 
   ngOnInit(): void {
