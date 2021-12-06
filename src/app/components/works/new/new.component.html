@@ -6,40 +6,41 @@
 </div>
 
 
-<div class="row">
-  <div class="col-md-6">
-    <div class="card">
-      <div class="card-body">
-        <h4 class="card-title">Dropdown</h4>
-        <h6 class="card-subtitle">This is basic Dropdown</h6>
-        <div class="row">
-          <div class="col">
-            <div ngbDropdown class="d-inline-block">
-              <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
-                Toggle dropdown
-              </button>
-              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                <button class="dropdown-item">Action - 1</button>
-                <button class="dropdown-item">Another Action</button>
-                <button class="dropdown-item">Something else is here</button>
-              </div>
-            </div>
-          </div>
+<div class="card col-6">
+  <div class="card-body">
 
-          <div class="col text-right">
-            <div ngbDropdown placement="top-right" class="d-inline-block">
-              <button class="btn btn-outline-primary" id="dropdownBasic2" ngbDropdownToggle>
-                Toggle dropup
-              </button>
-              <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
-                <button class="dropdown-item">Action - 1</button>
-                <button class="dropdown-item">Another Action</button>
-                <button class="dropdown-item">Something else is here</button>
-              </div>
-            </div>
-          </div>
-        </div>
+    <form>
+      <div class="mb-3 col-12">
+        <label for="nameInput" class="form-label"><b>Name</b></label>
+        <input type="text" class="form-control" id="nameInput" aria-describedby="nameHelp" required>
+        <div id="nameHelp" class="form-text">Work name</div>
       </div>
-    </div>
+      <div class="mb-3 col-12">
+        <label for="moduleSelect" class="form-label"><b>Module</b></label>
+        <select class="form-select col-12" id="moduleSelect">
+          <option value="1">Migrate</option>
+          <option value="2">Install Jenkins</option>
+        </select>
+        <div id="moduleHelp" class="form-text">Select a installed module</div>
+      </div>
+      <div class="mb-3 col-12">
+        <label for="agentTypeSelect" class="form-label"><b>Module</b></label>
+        <select class="form-select col-12" id="agentTypeSelect">
+          <option value="1">OC</option>
+        </select>
+        <div id="moduleHelp" class="form-text">Select a installed agent type</div>
+      </div>
+      <div class="col-12">
+        <label for="paramsText" class="form-label"><b>Params Yaml</b></label>
+        <div class="mb-3">
+          <textarea class="form-control" id="paramsText" rows="20"></textarea>
+        </div>
+        <div id="paramPamlHelp" class="form-text">Parameters to module selected</div>
+      </div>
+      <div class="mb-3 col-12">
+        <button type="submit" class="btn btn-success m-t-20">Create</button>
+      </div>
+    </form>
+
   </div>
 </div>

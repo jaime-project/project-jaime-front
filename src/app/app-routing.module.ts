@@ -8,6 +8,10 @@ export const Approutes: Routes = [
     component: FullComponent,
     children: [
       { path: '', redirectTo: '/servers', pathMatch: 'full' },
+      // {
+      //   path: '',
+      //   loadChildren: () => import('./component/component.module').then(m => m.ComponentModule)
+      // },
       {
         path: '',
         loadChildren: () => import('./components/servers/servercomponents.module').then(m => m.ServerComponentsModule)
