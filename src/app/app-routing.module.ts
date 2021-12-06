@@ -28,6 +28,10 @@ export const Approutes: Routes = [
         path: '',
         loadChildren: () => import('./components/works/workcomponents.module').then(m => m.WorkComponentsModule)
       },
+      {
+        path: '',
+        loadChildren: () => import('./components/configs/configcomponents.module').then(m => m.ConfigComponentsModule)
+      },
     ]
   },
   {
