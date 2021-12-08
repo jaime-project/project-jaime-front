@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VarConfigComponent implements OnInit {
 
+  public editSwitchActivated = false
+
   public configMap = {
     "var": "asd"
   }

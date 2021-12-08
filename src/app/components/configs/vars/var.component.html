@@ -5,27 +5,43 @@
   </div>
 </div>
 
+<div class="row" style="margin-bottom: 1%;">
+  <div class="col-12">
+    <div class="custom-control custom-switch">
+      <input [(ngModel)]="editSwitchActivated" type="checkbox" class="custom-control-input" id="customSwitch1">
+      <label class="custom-control-label" for="customSwitch1">Edit</label>
+    </div>
+  </div>
+</div>
+
 <div class="row">
   <div class="col-6 m-t-30">
     <div class="card">
       <div class="card-body">
+        
         <form>
           <div class="mb-3 col-12">
             <label for="nameInput" class="form-label"><b>Any Var</b></label>
-            <input type="text" class="form-control" id="nameInput" aria-describedby="nameHelp" required
-              [textContent]="configMap['var']">
-            <div id="nameHelp" class="form-text">Value: 8</div>
+            <div id="nameHelp" class="form-text">
+              <label for="nameInput" class="form-label" *ngIf="!editSwitchActivated"> 8</label>
+              <input type="text" class="form-control" id="nameInput" aria-describedby="nameHelp"
+              [textContent]="configMap['var']" *ngIf="editSwitchActivated">
+            </div>
           </div>
           <div class="mb-3 col-12">
             <label for="nameInput" class="form-label"><b>Another Var</b></label>
-            <input type="text" class="form-control" id="nameInput" aria-describedby="nameHelp" required
-              [textContent]="configMap['var']">
-            <div id="nameHelp" class="form-text">Value: "zaraza"</div>
+            <div id="nameHelp" class="form-text">
+              <label for="nameInput" class="form-label" *ngIf="!editSwitchActivated">"asd"</label>
+              <input type="text" class="form-control" id="nameInput" aria-describedby="nameHelp"
+              [textContent]="configMap['anotherVar']" *ngIf="editSwitchActivated">
+            </div>
           </div>
+
           <div class="mb-3 col-12">
-            <button type="submit" class="btn btn-success m-t-20">Update</button>
+            <button type="submit" class="btn btn-success m-t-20" *ngIf="editSwitchActivated">Update</button>
           </div>
         </form>
+
       </div>
     </div>
   </div>
