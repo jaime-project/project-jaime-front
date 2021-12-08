@@ -8,6 +8,7 @@ import { DetailWorkComponent } from './detail/detail.component';
 import { ListWorkComponent } from './list/list.component';
 import { TabsWorkComponent } from './tabs/tabs.component';
 import { YamlWorkComponent } from './yaml/yaml.component';
+import { LogWorkComponent } from './logs/log.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { YamlWorkComponent } from './yaml/yaml.component';
     ListWorkComponent,
     TabsWorkComponent,
     YamlWorkComponent,
+    LogWorkComponent
   ]
 })
 export class WorkComponentsModule { }
