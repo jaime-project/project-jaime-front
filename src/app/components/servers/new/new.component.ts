@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ServersService } from 'src/app/services/servers/servers.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-new-server',
@@ -17,13 +19,19 @@ export class NewServerComponent implements OnInit {
     version: new FormControl(''),
   });
 
-  constructor() { }
+  constructor(private serversService: ServersService) { }
 
   ngOnInit(): void {
   }
 
   postServer() {
-    console.warn(this.serverForm.value);
+    this.serversService.postServer(this.serverForm.value)
+      .subscribe(() => {
+        Swal.fire({
+          title: 'New Server created',
+          icon: 'success',
+        })
+      })
   }
 
 }

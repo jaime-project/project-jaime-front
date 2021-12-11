@@ -30,6 +30,14 @@ export class ServersService {
       )
   }
 
+  postServer(server: Server): Observable<any> {
+    console.log(server)
+    return this.http.post<any>(this.apiUrl + '/', server)
+      .pipe(
+        catchError(this.httpError)
+      )
+  }
+
   httpError(error: HttpErrorResponse) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
