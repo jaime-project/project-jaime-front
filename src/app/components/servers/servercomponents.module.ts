@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DetailServerComponent } from './detail/detail.component';
 import { ListServerComponent } from './list/list.component';
+import { NewServerComponent } from './new/new.component';
 import { ServerComponentsRoutes } from './servercomponents.routing';
 import { TabsServerComponent } from './tabs/tabs.component';
 import { YamlServerComponent } from './yaml/yaml.component';
@@ -24,6 +25,7 @@ import { YamlServerComponent } from './yaml/yaml.component';
     YamlServerComponent,
     DetailServerComponent,
     ListServerComponent,
+    NewServerComponent
   ]
 })
 export class ServerComponentsModule { }
