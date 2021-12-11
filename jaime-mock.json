@@ -1,0 +1,109 @@
+{
+    "source": "mockoon:1.17.0",
+    "data": [
+        {
+            "type": "environment",
+            "item": {
+                "uuid": "a9345983-f7f1-4100-b6eb-aff4c53b84f1",
+                "lastMigration": 19,
+                "name": "Asd",
+                "endpointPrefix": "",
+                "latency": 0,
+                "port": 5000,
+                "hostname": "0.0.0.0",
+                "routes": [
+                    {
+                        "uuid": "2170f537-2f10-42bc-bc7b-4e115935f961",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "api/v1/servers",
+                        "responses": [
+                            {
+                                "uuid": "b103eec4-4acb-41c0-b5d5-c14a87c173ed",
+                                "body": "[\n  \"edenor3\",\n  \"edenor4\"\n]",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "Access-Control-Allow-Origin",
+                                        "value": "http://localhost:4200"
+                                    },
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false,
+                                "fallbackTo404": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false,
+                        "sequentialResponse": false
+                    },
+                    {
+                        "uuid": "8ff30175-5f44-4432-a011-6e8a933904f6",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "api/v1/servers/edenor4",
+                        "responses": [
+                            {
+                                "uuid": "9d509ac7-b7f4-4d71-9a9a-61d6c1900dc3",
+                                "body": "{\n    \"name\": \"string\",\n    \"url\": \"string\",\n    \"token\": \"string\",\n    \"user\": \"string\",\n    \"type\": \"string\",\n    \"version\": \"string\"\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "",
+                                "headers": [],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false,
+                                "fallbackTo404": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false,
+                        "sequentialResponse": false
+                    }
+                ],
+                "proxyMode": false,
+                "proxyHost": "",
+                "proxyRemovePrefix": false,
+                "tlsOptions": {
+                    "enabled": false,
+                    "type": "CERT",
+                    "pfxPath": "",
+                    "certPath": "",
+                    "keyPath": "",
+                    "caPath": "",
+                    "passphrase": ""
+                },
+                "cors": true,
+                "headers": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "proxyReqHeaders": [
+                    {
+                        "key": "",
+                        "value": ""
+                    }
+                ],
+                "proxyResHeaders": [
+                    {
+                        "key": "",
+                        "value": ""
+                    }
+                ]
+            }
+        }
+    ]
+}
