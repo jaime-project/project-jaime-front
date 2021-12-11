@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { ServerShort } from 'src/app/models/models';
+import { Server, ServerShort } from 'src/app/models/models';
 import { environment } from 'src/environments/environment';
 
 
@@ -18,6 +18,13 @@ export class ServersService {
 
   listServers(): Observable<ServerShort[]> {
     return this.http.get<ServerShort[]>(this.apiUrl + '/all/short')
+      .pipe(
+        catchError(this.httpError)
+      )
+  }
+
+  getServer(name: string | null): Observable<Server> {
+    return this.http.get<Server>(this.apiUrl + '/' + name)
       .pipe(
         catchError(this.httpError)
       )

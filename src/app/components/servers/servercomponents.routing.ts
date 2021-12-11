@@ -31,7 +31,7 @@ export const ServerComponentsRoutes: Routes = [
 				}
 			},
 			{
-				path: 'servers/details',
+				path: 'servers/details/:name',
 				component: TabsServerComponent,
 				data: {
 					title: 'servers',

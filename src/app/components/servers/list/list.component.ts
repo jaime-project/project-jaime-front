@@ -19,7 +19,6 @@ export class ListServerComponent implements OnInit {
       .subscribe((data) => {
         this.listServersShorts = data;
       })
-
   }
 
   openVerticallyCentered(content3: string) {

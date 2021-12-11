@@ -45,11 +45,46 @@
       "responses": [
         {
           "uuid": "dda3e566-8a62-4afe-bf2b-a6cfeea60829",
-          "body": "{\n    \"name\": \"edenor3\",\n    \"url\": \"string\",\n    \"token\": \"string\",\n    \"user\": \"string\",\n    \"type\": \"string\",\n    \"version\": \"string\"\n}",
+          "body": "{\n    \"name\": \"edenor3\",\n    \"url\": \"https://console-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\",\n    \"token\": \"asdasd12e12e12easd\",\n    \"user\": \"redhat\",\n    \"type\": \"OC\",\n    \"version\": \"3.11\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
-          "headers": [],
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "8b74b537-0e5b-4b06-8005-c203f0dbe6f2",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "servers/edenor4",
+      "responses": [
+        {
+          "uuid": "e075d499-5081-4269-95d6-7e97a1396df2",
+          "body": "{\n    \"name\": \"edenor4\",\n    \"url\": \"https://console-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\",\n    \"token\": \"qwrgdfdgfgds\",\n    \"user\": \"redhat\",\n    \"type\": \"OC\",\n    \"version\": \"4.7\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
           "filePath": "",
           "sendFileAsBody": false,
           "rules": [],
