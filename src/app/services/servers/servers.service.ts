@@ -2,7 +2,6 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Server } from 'src/app/models/models';
 import { environment } from 'src/environments/environment';
 
 
@@ -17,21 +16,19 @@ export class ServersService {
   constructor(private http: HttpClient) { }
 
   listServers(): Observable<String[]> {
-    console.log(this.apiUrl)
     return this.http.get<String[]>(this.apiUrl)
       .pipe(
-        catchError(this.error)
+        catchError(this.httpError)
       )
   }
 
-  error(error: HttpErrorResponse) {
+  httpError(error: HttpErrorResponse) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
       errorMessage = error.error.message;
     } else {
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
-    console.log(errorMessage);
     return throwError(errorMessage);
   }
 }
