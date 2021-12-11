@@ -6,3 +6,9 @@ export interface Server {
     type: string;
     version: string;
 }
+
+export interface ServerShort {
+    name: string;
+    url: string;
+    type: string;
+}

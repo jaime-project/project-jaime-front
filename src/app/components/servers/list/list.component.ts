@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ServerShort } from 'src/app/models/models';
 import { ServersService } from 'src/app/services/servers/servers.service';
 
 @Component({
@@ -9,15 +10,14 @@ import { ServersService } from 'src/app/services/servers/servers.service';
 })
 export class ListServerComponent implements OnInit {
 
-  private listServers: String[] = []
+  listServersShorts: ServerShort[] = []
 
   constructor(private modalService: NgbModal, private serversService: ServersService) { }
 
   ngOnInit(): void {
     this.serversService.listServers()
       .subscribe((data) => {
-        this.listServers = data;
-        console.log(this.listServers)
+        this.listServersShorts = data;
       })
 
   }

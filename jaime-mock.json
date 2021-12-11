@@ -1,32 +1,28 @@
 {
-  "uuid": "a9345983-f7f1-4100-b6eb-aff4c53b84f1",
+  "uuid": "39b16407-01f5-436d-911f-b701568537d8",
   "lastMigration": 19,
-  "name": "Jaime-mock",
-  "endpointPrefix": "",
+  "name": "Jaime mock",
+  "endpointPrefix": "api/v1",
   "latency": 0,
   "port": 5000,
   "hostname": "0.0.0.0",
   "routes": [
     {
-      "uuid": "2170f537-2f10-42bc-bc7b-4e115935f961",
+      "uuid": "a6da9fa0-d099-437f-bec3-7f55efed53d2",
       "documentation": "",
       "method": "get",
-      "endpoint": "api/v1/servers",
+      "endpoint": "servers/all/short",
       "responses": [
         {
-          "uuid": "b103eec4-4acb-41c0-b5d5-c14a87c173ed",
-          "body": "[\n  \"edenor3\",\n  \"edenor4\"\n]",
+          "uuid": "e7b9d829-6132-4a61-a4f1-d6ea500c8aaa",
+          "body": "[\n  {\n    \"name\": \"edenor3\",\n    \"type\": \"OC\",\n    \"url\": \"https://console-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n  },\n  {\n    \"name\": \"edenor4\",\n    \"type\": \"OC\",\n    \"url\": \"https://asd-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n  }\n]",
           "latency": 0,
           "statusCode": 200,
           "label": "",
           "headers": [
             {
               "key": "Access-Control-Allow-Origin",
-              "value": "http://localhost:4200"
-            },
-            {
-              "key": "",
-              "value": ""
+              "value": "*"
             }
           ],
           "filePath": "",
@@ -42,39 +38,14 @@
       "sequentialResponse": false
     },
     {
-      "uuid": "8ff30175-5f44-4432-a011-6e8a933904f6",
+      "uuid": "d3e71c13-66d9-4fa4-ada2-c53084fd1f0d",
       "documentation": "",
       "method": "get",
-      "endpoint": "api/v1/servers/edenor4",
+      "endpoint": "servers/edenor3",
       "responses": [
         {
-          "uuid": "9d509ac7-b7f4-4d71-9a9a-61d6c1900dc3",
-          "body": "{\n    \"name\": \"string\",\n    \"url\": \"string\",\n    \"token\": \"string\",\n    \"user\": \"string\",\n    \"type\": \"string\",\n    \"version\": \"string\"\n}",
-          "latency": 0,
-          "statusCode": 200,
-          "label": "",
-          "headers": [],
-          "filePath": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false
-        }
-      ],
-      "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
-    },
-    {
-      "uuid": "bb5f3b78-0e21-45f8-8984-c301d6ca4a10",
-      "documentation": "",
-      "method": "get",
-      "endpoint": "api/v1/servers/all",
-      "responses": [
-        {
-          "uuid": "f083d17f-a1f0-4fb2-8bcd-90a8fe6e1bd4",
-          "body": "[\n  {\n    \"name\": \"edenor3\",\n    \"url\": \"string\",\n    \"token\": \"string\",\n    \"user\": \"string\",\n    \"type\": \"string\",\n    \"version\": \"string\"\n  },\n  {\n    \"name\": \"edenor4\",\n    \"url\": \"string\",\n    \"token\": \"string\",\n    \"user\": \"string\",\n    \"type\": \"string\",\n    \"version\": \"string\"\n  }\n]",
+          "uuid": "dda3e566-8a62-4afe-bf2b-a6cfeea60829",
+          "body": "{\n    \"name\": \"edenor3\",\n    \"url\": \"string\",\n    \"token\": \"string\",\n    \"user\": \"string\",\n    \"type\": \"string\",\n    \"version\": \"string\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",

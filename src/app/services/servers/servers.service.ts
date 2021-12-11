@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { ServerShort } from 'src/app/models/models';
 import { environment } from 'src/environments/environment';
 
 
@@ -15,8 +16,8 @@ export class ServersService {
 
   constructor(private http: HttpClient) { }
 
-  listServers(): Observable<String[]> {
-    return this.http.get<String[]>(this.apiUrl)
+  listServers(): Observable<ServerShort[]> {
+    return this.http.get<ServerShort[]>(this.apiUrl + '/all/short')
       .pipe(
         catchError(this.httpError)
       )
