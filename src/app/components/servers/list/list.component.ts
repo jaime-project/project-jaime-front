@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ServersService } from 'src/app/services/servers/servers.service';
 
 @Component({
   selector: 'app-list-server',
@@ -8,9 +9,17 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ListServerComponent implements OnInit {
 
-  constructor(private modalService: NgbModal) { }
+  private listServers: String[] = []
+
+  constructor(private modalService: NgbModal, private serversService: ServersService) { }
 
   ngOnInit(): void {
+    this.serversService.listServers()
+      .subscribe((data) => {
+        this.listServers = data;
+        console.log(this.listServers)
+      })
+
   }
 
   openVerticallyCentered(content3: string) {
