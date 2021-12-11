@@ -30,7 +30,9 @@ export class NewServerComponent implements OnInit {
         Swal.fire({
           title: 'New Server created',
           icon: 'success',
-        })
+        }).then(() =>
+          window.location.reload()
+        )
       })
   }
 
