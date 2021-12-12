@@ -13,7 +13,6 @@ export class NewServerComponent implements OnInit {
   serverForm = new FormGroup({
     name: new FormControl(''),
     url: new FormControl(''),
-    user: new FormControl(''),
     token: new FormControl(''),
     type: new FormControl(''),
     version: new FormControl(''),

@@ -21,32 +21,19 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>asd12d12d</td>
-                <td>10.5.100.1</td>
-                <td>7000</td>
-                <td>OC</td>
-                <td>
-                  <button type="button" class="btn btn-primary" style="margin-right: 2%;" routerLink="/agents/details">
-                    <i class="fas fa-eye"></i>
-                  </button>
-                  <button type="button" class="btn btn-danger" style="margin-right: 2%;"
-                    (click)="openVerticallyCentered(modalDelete)">
-                    <i class=" far fa-trash-alt"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>qwe12d12d</td>
-                <td>10.5.100.2</td>
-                <td>7000</td>
-                <td>OC</td>
+              <tr *ngFor="let agent of agents">
+                <td>{{agent.id}}</td>
+                <td>{{agent.host}}</td>
+                <td>{{agent.port}}</td>
+                <td>{{agent.type}}</td>
                 <td>
                   <button type="button" class="btn btn-primary" style="margin-right: 2%;"
-                    routerLink="/agents/details"><i class="fas fa-eye"></i></button>
-                  <button type="button" class="btn btn-danger" style="margin-right: 2%;"
-                    (click)="openVerticallyCentered(modalDelete)">
-                    <i class="far fa-trash-alt"></i></button>
+                    routerLink="/agents/details/{{agent.id}}">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                  <button type="button" class="btn btn-danger" style="margin-right: 2%;">
+                    <i class=" far fa-trash-alt"></i>
+                  </button>
                 </td>
               </tr>
             </tbody>

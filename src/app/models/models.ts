@@ -12,3 +12,11 @@ export interface ServerShort {
     url: string;
     type: string;
 }
+
+export interface Agent {
+    id: string;
+    url: string;
+    host: string;
+    port: string;
+    type: string;
+}

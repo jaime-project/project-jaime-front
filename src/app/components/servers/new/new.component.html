@@ -24,19 +24,16 @@
         <div id="tokenHelp" class="form-text">Example: jkdndodp-d8smkw93-k3987</div>
       </div>
       <div class="mb-3 col-12">
-        <label for="userInput" class="form-label"><b>Token</b></label>
-        <input type="text" class="form-control" id="userInput" formControlName="user" required>
-        <div id="userHelp" class="form-text">Example: pepe</div>
-      </div>
-      <div class="mb-3 col-12">
         <label for="typeInput" class="form-label"><b>Type</b></label>
-        <input type="text" class="form-control" id="typeInput" formControlName="type" required>
-        <div id="typeHelp" class="form-text">Example: pepe</div>
+        <select class="form-control" id="typeInput" formControlName="type" required>
+          <option selected>OPENSHIFT</option>
+          <option selected>KUBERNETES</option>
+        </select>
       </div>
       <div class="mb-3 col-12">
-        <label for="versionInput" class="form-label"><b>version</b></label>
+        <label for="versionInput" class="form-label"><b>Version</b></label>
         <input type="text" class="form-control" id="versionInput" formControlName="version" required>
-        <div id="versionHelp" class="form-text">Example: pepe</div>
+        <div id="versionHelp" class="form-text">Example: 4.7</div>
       </div>
       <div class="mb-3 col-12">
         <button type="submit" class="btn btn-success m-t-20" [disabled]="!serverForm.valid">Create</button>
