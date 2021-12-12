@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { interval } from 'rxjs';
 import { ServerShort } from 'src/app/models/models';
 import { ServersService } from 'src/app/services/servers/servers.service';
 
@@ -15,10 +16,14 @@ export class ListServerComponent implements OnInit {
   constructor(private modalService: NgbModal, private serversService: ServersService) { }
 
   ngOnInit(): void {
-    this.serversService.listServers()
-      .subscribe((data) => {
-        this.listServersShorts = data;
-      })
+
+    interval(1000)
+      .subscribe(() => {
+        this.serversService.listServers()
+          .subscribe(data => {
+            this.listServersShorts = data;
+          })
+      });
   }
 
   openVerticallyCentered(content3: string) {
