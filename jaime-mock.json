@@ -126,6 +126,36 @@
       "enabled": true,
       "randomResponse": false,
       "sequentialResponse": false
+    },
+    {
+      "uuid": "746f0382-da81-4ee1-ba54-bdcad02e7097",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "agents",
+      "responses": [
+        {
+          "uuid": "6db2c96e-132d-4b52-b8cd-5fc964d4cc18",
+          "body": "[\n    {\n        \"host\": \"172.24.0.4\",\n        \"id\": \"6132dd3f1cfb\",\n        \"port\": \"80\",\n        \"type\": \"OC\"\n    }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
     }
   ],
   "proxyMode": false,
