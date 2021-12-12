@@ -31,6 +31,13 @@ export class AgentService {
       )
   }
 
+  deleteAgent(id: string | null): Observable<any> {
+    return this.http.delete<any>(this.apiUrl + '/' + id)
+      .pipe(
+        catchError(this.httpError)
+      )
+  }
+
   httpError(error: HttpErrorResponse) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {

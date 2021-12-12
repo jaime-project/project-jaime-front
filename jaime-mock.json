@@ -246,6 +246,36 @@
       "enabled": true,
       "randomResponse": false,
       "sequentialResponse": false
+    },
+    {
+      "uuid": "56519408-45c1-46ef-91e4-25529c542977",
+      "documentation": "",
+      "method": "delete",
+      "endpoint": "agents/6132dd3f1cfb",
+      "responses": [
+        {
+          "uuid": "459a1fc3-4ad6-4b72-a330-4a3ca67aacab",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
     }
   ],
   "proxyMode": false,
