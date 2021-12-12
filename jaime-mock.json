@@ -1,170 +1,162 @@
 {
-    "source": "mockoon:1.17.0",
-    "data": [
+  "uuid": "39b16407-01f5-436d-911f-b701568537d8",
+  "lastMigration": 19,
+  "name": "Jaime mock",
+  "endpointPrefix": "api/v1",
+  "latency": 0,
+  "port": 5000,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "a6da9fa0-d099-437f-bec3-7f55efed53d2",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "servers/all/short",
+      "responses": [
         {
-            "type": "environment",
-            "item": {
-                "uuid": "39b16407-01f5-436d-911f-b701568537d8",
-                "lastMigration": 19,
-                "name": "Jaime mock",
-                "endpointPrefix": "api/v1",
-                "latency": 0,
-                "port": 5000,
-                "hostname": "0.0.0.0",
-                "routes": [
-                    {
-                        "uuid": "a6da9fa0-d099-437f-bec3-7f55efed53d2",
-                        "documentation": "",
-                        "method": "get",
-                        "endpoint": "servers/all/short",
-                        "responses": [
-                            {
-                                "uuid": "e7b9d829-6132-4a61-a4f1-d6ea500c8aaa",
-                                "body": "[\n  {\n    \"name\": \"edenor3\",\n    \"type\": \"OC\",\n    \"url\": \"https://console-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n  },\n  {\n    \"name\": \"edenor4\",\n    \"type\": \"OC\",\n    \"url\": \"https://asd-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n  }\n]",
-                                "latency": 0,
-                                "statusCode": 200,
-                                "label": "",
-                                "headers": [
-                                    {
-                                        "key": "Access-Control-Allow-Origin",
-                                        "value": "*"
-                                    }
-                                ],
-                                "filePath": "",
-                                "sendFileAsBody": false,
-                                "rules": [],
-                                "rulesOperator": "OR",
-                                "disableTemplating": false,
-                                "fallbackTo404": false
-                            }
-                        ],
-                        "enabled": true,
-                        "randomResponse": false,
-                        "sequentialResponse": false
-                    },
-                    {
-                        "uuid": "d3e71c13-66d9-4fa4-ada2-c53084fd1f0d",
-                        "documentation": "",
-                        "method": "get",
-                        "endpoint": "servers/edenor3",
-                        "responses": [
-                            {
-                                "uuid": "dda3e566-8a62-4afe-bf2b-a6cfeea60829",
-                                "body": "{\n    \"name\": \"edenor3\",\n    \"url\": \"https://console-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\",\n    \"token\": \"asdasd12e12e12easd\",\n    \"user\": \"redhat\",\n    \"type\": \"OC\",\n    \"version\": \"3.11\"\n}",
-                                "latency": 0,
-                                "statusCode": 200,
-                                "label": "",
-                                "headers": [
-                                    {
-                                        "key": "Access-Control-Allow-Origin",
-                                        "value": "*"
-                                    }
-                                ],
-                                "filePath": "",
-                                "sendFileAsBody": false,
-                                "rules": [],
-                                "rulesOperator": "OR",
-                                "disableTemplating": false,
-                                "fallbackTo404": false
-                            }
-                        ],
-                        "enabled": true,
-                        "randomResponse": false,
-                        "sequentialResponse": false
-                    },
-                    {
-                        "uuid": "8b74b537-0e5b-4b06-8005-c203f0dbe6f2",
-                        "documentation": "",
-                        "method": "get",
-                        "endpoint": "servers/edenor4",
-                        "responses": [
-                            {
-                                "uuid": "e075d499-5081-4269-95d6-7e97a1396df2",
-                                "body": "{\n    \"name\": \"edenor4\",\n    \"url\": \"https://console-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\",\n    \"token\": \"qwrgdfdgfgds\",\n    \"user\": \"redhat\",\n    \"type\": \"OC\",\n    \"version\": \"4.7\"\n}",
-                                "latency": 0,
-                                "statusCode": 200,
-                                "label": "",
-                                "headers": [
-                                    {
-                                        "key": "Access-Control-Allow-Origin",
-                                        "value": "*"
-                                    }
-                                ],
-                                "filePath": "",
-                                "sendFileAsBody": false,
-                                "rules": [],
-                                "rulesOperator": "OR",
-                                "disableTemplating": false,
-                                "fallbackTo404": false
-                            }
-                        ],
-                        "enabled": true,
-                        "randomResponse": false,
-                        "sequentialResponse": false
-                    },
-                    {
-                        "uuid": "b6907a45-ba8a-4797-a924-279ccaf57688",
-                        "documentation": "",
-                        "method": "post",
-                        "endpoint": "servers/",
-                        "responses": [
-                            {
-                                "uuid": "f65efb47-9216-4a42-a603-bb8b16e5a373",
-                                "body": "",
-                                "latency": 0,
-                                "statusCode": 201,
-                                "label": "",
-                                "headers": [
-                                    {
-                                        "key": "Access-Control-Allow-Origin",
-                                        "value": "*"
-                                    }
-                                ],
-                                "filePath": "",
-                                "sendFileAsBody": false,
-                                "rules": [],
-                                "rulesOperator": "OR",
-                                "disableTemplating": false,
-                                "fallbackTo404": false
-                            }
-                        ],
-                        "enabled": true,
-                        "randomResponse": false,
-                        "sequentialResponse": false
-                    }
-                ],
-                "proxyMode": false,
-                "proxyHost": "",
-                "proxyRemovePrefix": false,
-                "tlsOptions": {
-                    "enabled": false,
-                    "type": "CERT",
-                    "pfxPath": "",
-                    "certPath": "",
-                    "keyPath": "",
-                    "caPath": "",
-                    "passphrase": ""
-                },
-                "cors": true,
-                "headers": [
-                    {
-                        "key": "Content-Type",
-                        "value": "application/json"
-                    }
-                ],
-                "proxyReqHeaders": [
-                    {
-                        "key": "",
-                        "value": ""
-                    }
-                ],
-                "proxyResHeaders": [
-                    {
-                        "key": "",
-                        "value": ""
-                    }
-                ]
+          "uuid": "e7b9d829-6132-4a61-a4f1-d6ea500c8aaa",
+          "body": "[\n  {\n    \"name\": \"edenor3\",\n    \"type\": \"OC\",\n    \"url\": \"https://console-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n  },\n  {\n    \"name\": \"edenor4\",\n    \"type\": \"OC\",\n    \"url\": \"https://asd-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n  }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
             }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
         }
-    ]
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "d3e71c13-66d9-4fa4-ada2-c53084fd1f0d",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "servers/edenor3",
+      "responses": [
+        {
+          "uuid": "dda3e566-8a62-4afe-bf2b-a6cfeea60829",
+          "body": "{\n    \"name\": \"edenor3\",\n    \"url\": \"https://console-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\",\n    \"token\": \"asdasd12e12e12easd\",\n    \"user\": \"redhat\",\n    \"type\": \"OC\",\n    \"version\": \"3.11\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "8b74b537-0e5b-4b06-8005-c203f0dbe6f2",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "servers/edenor4",
+      "responses": [
+        {
+          "uuid": "e075d499-5081-4269-95d6-7e97a1396df2",
+          "body": "{\n    \"name\": \"edenor4\",\n    \"url\": \"https://console-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\",\n    \"token\": \"qwrgdfdgfgds\",\n    \"user\": \"redhat\",\n    \"type\": \"OC\",\n    \"version\": \"4.7\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "b6907a45-ba8a-4797-a924-279ccaf57688",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "servers/",
+      "responses": [
+        {
+          "uuid": "f65efb47-9216-4a42-a603-bb8b16e5a373",
+          "body": "",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ]
 }
