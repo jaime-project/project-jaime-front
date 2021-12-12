@@ -19,7 +19,7 @@ export const AgentComponentsRoutes: Routes = [
 				}
 			},
 			{
-				path: 'agents/details',
+				path: 'agents/details/:id',
 				component: TabsAgentComponent,
 				data: {
 					title: 'agents',

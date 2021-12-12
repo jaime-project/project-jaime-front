@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Agent } from 'src/app/models/models';
+import { AgentService } from 'src/app/services/agents/agents.service';
 
 @Component({
   selector: 'app-detail-agent',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailAgentComponent implements OnInit {
 
-  constructor() { }
+  agent: Agent = {
+    host: "",
+    id: "",
+    port: "",
+    type: ""
+  }
+
+  constructor(private agentService: AgentService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    let id = this.route.snapshot.paramMap.get('id')
+
+    this.agentService.getAgent(id).subscribe(data => {
+      this.agent = data
+    })
   }
 
 }

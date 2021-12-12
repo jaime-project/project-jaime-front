@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Agent, Server, ServerShort } from 'src/app/models/models';
+import { Agent, AgentShort, Server, ServerShort } from 'src/app/models/models';
 import { environment } from 'src/environments/environment';
 
 
@@ -17,8 +17,15 @@ export class AgentService {
   constructor(private http: HttpClient) { }
 
 
-  getAgentsAll(): Observable<Agent[]> {
-    return this.http.get<Agent[]>(this.apiUrl + '/')
+  getAgentsAll(): Observable<AgentShort[]> {
+    return this.http.get<AgentShort[]>(this.apiUrl + '/all/short')
+      .pipe(
+        catchError(this.httpError)
+      )
+  }
+
+  getAgent(id: string | null): Observable<Agent> {
+    return this.http.get<Agent>(this.apiUrl + '/' + id)
       .pipe(
         catchError(this.httpError)
       )

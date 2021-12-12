@@ -131,11 +131,41 @@
       "uuid": "746f0382-da81-4ee1-ba54-bdcad02e7097",
       "documentation": "",
       "method": "get",
-      "endpoint": "agents",
+      "endpoint": "agents/all/short",
       "responses": [
         {
           "uuid": "6db2c96e-132d-4b52-b8cd-5fc964d4cc18",
-          "body": "[\n    {\n        \"host\": \"172.24.0.4\",\n        \"id\": \"6132dd3f1cfb\",\n        \"port\": \"80\",\n        \"type\": \"OC\"\n    }\n]",
+          "body": "[\n    {\n      \"id\": \"6132dd3f1cfb\",\n      \"host\": \"172.24.0.4\",\n      \"port\": \"80\",\n      \"type\": \"OC\"\n    }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "d3650c32-447c-4247-b728-824d0f69b2d5",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "agents/6132dd3f1cfb",
+      "responses": [
+        {
+          "uuid": "82c80ed1-091e-4be8-b2db-569bef6ee95f",
+          "body": "{\n    \"host\": \"172.24.0.4\",\n    \"id\": \"6132dd3f1cfb\",\n    \"port\": \"80\",\n    \"type\": \"OC\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",

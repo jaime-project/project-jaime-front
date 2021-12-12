@@ -23,14 +23,12 @@ export class DetailServerComponent implements OnInit {
   constructor(private serversService: ServersService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-
     let name = this.route.snapshot.paramMap.get('name')
 
     this.serversService.getServer(name)
       .subscribe((data) => {
         this.server = data;
       })
-
   }
 
 }

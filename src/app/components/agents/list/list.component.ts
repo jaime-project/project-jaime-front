@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Agent } from 'src/app/models/models';
+import { AgentShort } from 'src/app/models/models';
 import { AgentService } from 'src/app/services/agents/agents.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { AgentService } from 'src/app/services/agents/agents.service';
 })
 export class ListAgentComponent implements OnInit {
 
-  agents: Agent[] = []
+  agents: AgentShort[] = []
 
   constructor(private modalService: NgbModal, private agentService: AgentService) { }
 
@@ -19,10 +19,6 @@ export class ListAgentComponent implements OnInit {
       .subscribe(data => {
         this.agents = data
       })
-  }
-
-  openVerticallyCentered(content3: string) {
-    this.modalService.open(content3, { centered: true });
   }
 
 }

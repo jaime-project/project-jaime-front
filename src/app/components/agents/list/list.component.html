@@ -13,7 +13,6 @@
           <table class="table">
             <thead>
               <tr>
-                <th scope="col">ID</th>
                 <th scope="col">Host</th>
                 <th scope="col">Port</th>
                 <th scope="col">Type</th>
@@ -22,7 +21,6 @@
             </thead>
             <tbody>
               <tr *ngFor="let agent of agents">
-                <td>{{agent.id}}</td>
                 <td>{{agent.host}}</td>
                 <td>{{agent.port}}</td>
                 <td>{{agent.type}}</td>
