@@ -20,7 +20,7 @@ export class ListServerComponent implements OnInit {
 
     this.loadStartData()
 
-    interval(1000)
+    interval(3000)
       .subscribe(() => {
         this.loadStartData()
       });
