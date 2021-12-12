@@ -33,7 +33,7 @@ export class ListServerComponent implements OnInit {
       })
   }
 
-  deleteServer(modal: string, name: string) {
+  deleteServer(name: string) {
 
     Swal.fire({
       title: 'Delete server',
