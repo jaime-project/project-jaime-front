@@ -21,4 +21,7 @@ export class ListAgentComponent implements OnInit {
       })
   }
 
+  openVerticallyCentered(content3: string) {
+    this.modalService.open(content3, { centered: true });
+  }
 }
