@@ -31,8 +31,14 @@ export class ServersService {
   }
 
   postServer(server: Server): Observable<any> {
-    console.log(server)
     return this.http.post<any>(this.apiUrl + '/', server)
+      .pipe(
+        catchError(this.httpError)
+      )
+  }
+
+  deleteServer(name: string | null): Observable<any> {
+    return this.http.delete<any>(this.apiUrl + '/' + name)
       .pipe(
         catchError(this.httpError)
       )
