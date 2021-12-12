@@ -3,6 +3,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { interval } from 'rxjs';
 import { ServerShort } from 'src/app/models/models';
 import { ServersService } from 'src/app/services/servers/servers.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-list-server',
@@ -32,18 +33,23 @@ export class ListServerComponent implements OnInit {
       })
   }
 
-  openVerticallyCentered(content3: string) {
-    this.modalService.open(content3, { centered: true });
-  }
+  deleteServer(modal: string, name: string) {
 
-  deleteServer(name: string) {
-
-    
-
-    this.serversService.deleteServer(name)
-      .subscribe(() => {
-        this.modalService.dismissAll()
-      })
+    Swal.fire({
+      title: 'Delete server',
+      text: 'Delete server with name "' + name + '"',
+      icon: 'warning',
+      confirmButtonColor: '#05b281',
+      cancelButtonColor: '#ec312d',
+      showCancelButton: true,
+    }).then(result => {
+      if (result.isConfirmed) {
+        this.serversService.deleteServer(name)
+          .subscribe(() => {
+            window.location.reload()
+          })
+      }
+    })
   }
 
 }

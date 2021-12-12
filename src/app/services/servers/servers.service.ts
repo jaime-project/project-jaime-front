@@ -38,6 +38,7 @@ export class ServersService {
   }
 
   deleteServer(name: string | null): Observable<any> {
+    console.log("·ASDASDSAADSADASDASDASDS")
     return this.http.delete<any>(this.apiUrl + '/' + name)
       .pipe(
         catchError(this.httpError)
