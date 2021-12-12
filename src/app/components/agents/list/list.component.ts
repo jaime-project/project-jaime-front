@@ -16,13 +16,20 @@ export class ListAgentComponent implements OnInit {
   constructor(private modalService: NgbModal, private agentService: AgentService) { }
 
   ngOnInit(): void {
-    interval(1000)
+
+    this.loadStartData()
+
+    interval(3000)
       .subscribe(() => {
-        this.agentService.getAgentsAll()
-          .subscribe(data => {
-            this.agents = data
-          })
+        this.loadStartData()
       });
+  }
+
+  loadStartData() {
+    this.agentService.getAgentsAll()
+      .subscribe(data => {
+        this.agents = data
+      })
   }
 
   openVerticallyCentered(content3: string) {

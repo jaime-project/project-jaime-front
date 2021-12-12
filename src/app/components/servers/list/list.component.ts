@@ -17,17 +17,33 @@ export class ListServerComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.loadStartData()
+
     interval(1000)
       .subscribe(() => {
-        this.serversService.listServers()
-          .subscribe(data => {
-            this.listServersShorts = data;
-          })
+        this.loadStartData()
       });
+  }
+
+  loadStartData() {
+    this.serversService.listServers()
+      .subscribe(data => {
+        this.listServersShorts = data;
+      })
   }
 
   openVerticallyCentered(content3: string) {
     this.modalService.open(content3, { centered: true });
+  }
+
+  deleteServer(name: string) {
+
+    
+
+    this.serversService.deleteServer(name)
+      .subscribe(() => {
+        this.modalService.dismissAll()
+      })
   }
 
 }
