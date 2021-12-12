@@ -128,6 +128,66 @@
       "sequentialResponse": false
     },
     {
+      "uuid": "69641921-d115-40d1-9036-132f0af1c86a",
+      "documentation": "",
+      "method": "delete",
+      "endpoint": "servers/edenor3",
+      "responses": [
+        {
+          "uuid": "4a2271fd-4a4e-4477-9251-9690c15883ba",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "abd8152b-7474-4547-be52-8b438f0d49cd",
+      "documentation": "",
+      "method": "delete",
+      "endpoint": "servers/edenor4",
+      "responses": [
+        {
+          "uuid": "d21c14cc-38af-4780-87b7-2e72ce0e6502",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
       "uuid": "746f0382-da81-4ee1-ba54-bdcad02e7097",
       "documentation": "",
       "method": "get",
