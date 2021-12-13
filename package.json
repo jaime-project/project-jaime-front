@@ -24,6 +24,7 @@
     "chart.js": "^2.8.0",
     "chartjs-color": "^2.4.1",
     "core-js": "^2.6.9",
+    "js-yaml": "^4.1.0",
     "moment": "^2.27.0",
     "ng2-charts": "^2.4.2",
     "ngx-perfect-scrollbar": "6.1.0",
@@ -32,6 +33,7 @@
     "sass": "^1.29.0",
     "sweetalert2": "^11.3.0",
     "tslib": "^2.0.0",
+    "yaml": "^1.10.2",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
