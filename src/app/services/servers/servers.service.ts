@@ -44,6 +44,14 @@ export class ServersService {
       )
   }
 
+  putServer(server: Server): Observable<any> {
+    let name = server.name
+    return this.http.put<any>(this.apiUrl + '/' + name, server)
+      .pipe(
+        catchError(this.httpError)
+      )
+  }
+
   httpError(error: HttpErrorResponse) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {

@@ -68,6 +68,36 @@
       "sequentialResponse": false
     },
     {
+      "uuid": "fcf6de5f-3fac-4597-8840-95c38a475b6a",
+      "documentation": "",
+      "method": "put",
+      "endpoint": "servers/edenor3",
+      "responses": [
+        {
+          "uuid": "250858d8-3ece-4f64-a50f-441fe042d4b2",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
       "uuid": "8b74b537-0e5b-4b06-8005-c203f0dbe6f2",
       "documentation": "",
       "method": "get",

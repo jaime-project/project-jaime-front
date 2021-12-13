@@ -8,8 +8,8 @@
 <div class="row">
   <div class="col-12">
     <div class="mb-3">
-      <textarea class="form-control" rows="20">{{contentYaml}}</textarea>
+      <textarea class="form-control" rows="20" #modifyYaml>{{contentYaml}}</textarea>
     </div>
-    <button type="submit" class="btn btn-success">Update</button>
+    <button type="submit" class="btn btn-success" (click)="putServer(modifyYaml.value)">Update</button>
   </div>
 </div>
