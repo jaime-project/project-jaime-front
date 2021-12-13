@@ -338,6 +338,40 @@
       "sequentialResponse": false
     },
     {
+      "uuid": "5bc4f7a6-9488-4c24-9ba0-dec9027ec261",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "modules/test",
+      "responses": [
+        {
+          "uuid": "721c3beb-b4f9-4bd1-a479-f3f79c42dada",
+          "body": "# Python program to find H.C.F of two numbers\n\n# define a function\ndef compute_hcf(x, y):\n\n# choose the smaller number\n    if x > y:\n        smaller = y\n    else:\n        smaller = x\n    for i in range(1, smaller+1):\n        if((x % i == 0) and (y % i == 0)):\n            hcf = i \n    return hcf\n\nnum1 = 54 \nnum2 = 24\n\nprint(\"The H.C.F. is\", compute_hcf(num1, num2))",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
       "uuid": "ccf4891b-1dd3-4aeb-9dd8-f0311e2bc16b",
       "documentation": "",
       "method": "delete",

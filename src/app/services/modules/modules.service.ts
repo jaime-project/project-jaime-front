@@ -23,8 +23,10 @@ export class ModuleService {
       )
   }
 
-  getServer(name: string | null): Observable<Server> {
-    return this.http.get<Server>(this.apiUrl + '/' + name)
+  getModule(name: string | null): Observable<string> {
+    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
+
+    return this.http.get(this.apiUrl + '/' + name, { headers, responseType: 'text' })
       .pipe(
         catchError(this.httpError)
       )
