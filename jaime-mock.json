@@ -306,6 +306,66 @@
       "enabled": true,
       "randomResponse": false,
       "sequentialResponse": false
+    },
+    {
+      "uuid": "a53cac68-8d32-4c59-8416-08f0e6677901",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "modules",
+      "responses": [
+        {
+          "uuid": "32624eee-4c5e-48f1-9275-2f4bdcc99ad5",
+          "body": "[\n  \"install jenkins\",\n  \"migrate object\",\n\"test\"\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "ccf4891b-1dd3-4aeb-9dd8-f0311e2bc16b",
+      "documentation": "",
+      "method": "delete",
+      "endpoint": "modules/test",
+      "responses": [
+        {
+          "uuid": "fa1a80fe-6003-4d05-ae9a-aebec96a2bcf",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
     }
   ],
   "proxyMode": false,

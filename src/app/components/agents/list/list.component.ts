@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { interval } from 'rxjs';
 import { AgentShort } from 'src/app/models/models';
 import { AgentService } from 'src/app/services/agents/agents.service';
@@ -14,7 +13,7 @@ export class ListAgentComponent implements OnInit {
 
   agents: AgentShort[] = []
 
-  constructor(private modalService: NgbModal, private agentService: AgentService) { }
+  constructor(private agentService: AgentService) { }
 
   ngOnInit(): void {
 
@@ -51,4 +50,5 @@ export class ListAgentComponent implements OnInit {
       }
     })
   }
+  
 }
