@@ -400,6 +400,36 @@
       "enabled": true,
       "randomResponse": false,
       "sequentialResponse": false
+    },
+    {
+      "uuid": "ffc8d975-6a50-4d44-8d81-a9bd0182859f",
+      "documentation": "",
+      "method": "put",
+      "endpoint": "modules/test",
+      "responses": [
+        {
+          "uuid": "80bf3fd3-4860-431f-a218-db26b1f40e6d",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
     }
   ],
   "proxyMode": false,
