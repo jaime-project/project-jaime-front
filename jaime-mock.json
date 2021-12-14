@@ -372,6 +372,40 @@
       "sequentialResponse": false
     },
     {
+      "uuid": "dd43364f-e8d3-4c9e-aae6-40ea12c341b3",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "modules/*",
+      "responses": [
+        {
+          "uuid": "ba330414-3c8d-4172-8248-63e0bb87888c",
+          "body": "",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
       "uuid": "ccf4891b-1dd3-4aeb-9dd8-f0311e2bc16b",
       "documentation": "",
       "method": "delete",

@@ -32,6 +32,15 @@ export class ModuleService {
       )
   }
 
+  postModule(name: string | null, code: string | null): Observable<string> {
+    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
+
+    return this.http.post(this.apiUrl + '/' + name, code, { headers, responseType: 'text' })
+      .pipe(
+        catchError(this.httpError)
+      )
+  }
+
   deleteModule(name: string | null): Observable<any> {
     return this.http.delete<any>(this.apiUrl + '/' + name)
       .pipe(
