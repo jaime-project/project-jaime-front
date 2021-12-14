@@ -600,6 +600,36 @@
       "enabled": true,
       "randomResponse": false,
       "sequentialResponse": false
+    },
+    {
+      "uuid": "e134997a-f5c3-4e9f-9427-b02022cea923",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "works/all/short",
+      "responses": [
+        {
+          "uuid": "0b022d81-92fa-417c-97a6-bbde98e248ee",
+          "body": "[\n    {\n      \"name\": \"Migracion Secrets\",\n      \"status\": \"RUNNING\",\n      \"id\": \"asd12d12d\",\n      \"agent_id\": \"qwerdsg21\",\n      \"agent_type\": \"OPENSHIFT\",\n      \"module_name\": \"Migrate object\",\n      \"ready_date\": \"11/12/2021T11:15:45z\"\n    },\n    {\n        \"name\": \"Install jenkins\",\n        \"status\": \"READY\",\n        \"id\": \"asdqwefd\",\n        \"agent_id\": null,\n        \"agent_type\": \"OPENSHIFT\",\n        \"module_name\": \"Install jenkins\",\n        \"ready_date\": \"11/12/2021T11:15:45z\"\n    },\n    {\n      \"name\": \"migracion configmaps\",\n        \"status\": \"READY\",\n        \"id\": \"hgfd765\",\n        \"agent_id\": null,\n        \"agent_type\": \"OPENSHIFT\",\n        \"module_name\": \"Migrate object\",\n        \"ready_date\": \"11/12/2021T11:15:45z\"\n    }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
     }
   ],
   "proxyMode": false,

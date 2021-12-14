@@ -25,3 +25,13 @@ export interface AgentShort {
     port: string;
     type: string;
 }
+
+export interface WorkShort {
+    name: string,
+    status: string,
+    id: string,
+    agent_id: string,
+    agent_type: string,
+    module_name: string,
+    ready_date: Date | null
+}
