@@ -18,7 +18,7 @@
 <div class="row" *ngIf="!docsEditSwitchActivated">
   <div class="card col-12">
     <div class="card-body">
-      <p class="card-text">Yaml ejemplo</p>
+      <p class="card-text" style="white-space: pre-wrap;">{{moduleDocs}}</p>
     </div>
   </div>
 </div>
@@ -27,12 +27,9 @@
 <div class="row" *ngIf="docsEditSwitchActivated">
   <div class="col-12">
     <div class="mb-3">
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="20"></textarea>
+      <textarea class="form-control" rows="20" #modifyDocs>{{moduleDocs}}</textarea>
     </div>
-
-    <button type="button" class="btn btn-success">Update</button>
-    <button type="button" class="btn btn-danger" style="margin-left: 1%;">Delete</button>
-
+    <button type="button" class="btn btn-success" (click)="putDocs(modifyDocs.value)">Update</button>
   </div>
 
 </div>
