@@ -46,6 +46,13 @@ export class WorkService {
       )
   }
 
+  getWork(id: string | null): Observable<any> {
+    return this.http.get(this.apiUrl + '/' + id)
+      .pipe(
+        catchError(this.httpError)
+      )
+  }
+
   httpError(error: HttpErrorResponse) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {

@@ -35,3 +35,16 @@ export interface WorkShort {
     module_name: string,
     ready_date: Date | null
 }
+
+export interface Work {
+    id: string,
+    name: string,
+    module: string,
+    status: string,
+    start_date: Date | null,
+    running_date: Date | null,
+    terminated_date: Date | null,
+    status_date: Date | null,
+    agent: Agent,
+    params: {}
+}
