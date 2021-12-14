@@ -662,6 +662,36 @@
       "sequentialResponse": false
     },
     {
+      "uuid": "e03381bf-d9d2-4fa9-a21b-c53336be21d0",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "works",
+      "responses": [
+        {
+          "uuid": "d839251d-0f29-4137-b532-96cdc9df13b6",
+          "body": "{\n  \"id\": \"asdfds12343\"\n}",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
       "uuid": "41ee0e23-1c60-4447-9c19-6cf1d0127eb8",
       "documentation": "",
       "method": "get",

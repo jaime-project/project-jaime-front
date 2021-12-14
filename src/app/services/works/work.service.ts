@@ -38,6 +38,14 @@ export class WorkService {
       )
   }
 
+  postWork(yaml: string | null): Observable<any> {
+    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
+    return this.http.post(this.apiUrl + '/', yaml, { headers, responseType: 'json' })
+      .pipe(
+        catchError(this.httpError)
+      )
+  }
+
   httpError(error: HttpErrorResponse) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
