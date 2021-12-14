@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Agent, AgentShort, Server, ServerShort, WorkShort } from 'src/app/models/models';
+import { WorkShort } from 'src/app/models/models';
 import { environment } from 'src/environments/environment';
 
 
@@ -25,6 +25,14 @@ export class WorkService {
 
   deleteWork(id: string): Observable<any> {
     return this.http.delete<any>(this.apiUrl + '/' + id)
+      .pipe(
+        catchError(this.httpError)
+      )
+  }
+
+  getLogs(id: string | null): Observable<any> {
+    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
+    return this.http.get(this.apiUrl + '/' + id + '/logs', { headers, responseType: 'text' })
       .pipe(
         catchError(this.httpError)
       )
