@@ -45,9 +45,7 @@ export class ListWorkComponent implements OnInit {
     }).then(result => {
       if (result.isConfirmed) {
         this.workService.deleteWork(id)
-          .subscribe(() => {
-            window.location.reload()
-          })
+          .subscribe()
       }
     })
   }
