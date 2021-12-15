@@ -777,8 +777,8 @@
               "value": "application/zip"
             }
           ],
-          "filePath": "/home/brian/Downloads/asdasd123123.zip",
-          "sendFileAsBody": true,
+          "filePath": "/home/brian/workspace/propios/project-jaime-front/jaime-mock-workspace.zip",
+          "sendFileAsBody": false,
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
