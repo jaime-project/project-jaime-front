@@ -341,7 +341,7 @@
       "uuid": "5bc4f7a6-9488-4c24-9ba0-dec9027ec261",
       "documentation": "",
       "method": "get",
-      "endpoint": "modules/test",
+      "endpoint": "modules/*",
       "responses": [
         {
           "uuid": "721c3beb-b4f9-4bd1-a479-f3f79c42dada",
