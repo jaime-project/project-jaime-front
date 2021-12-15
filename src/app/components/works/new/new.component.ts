@@ -21,7 +21,7 @@ export class NewWorkComponent implements OnInit {
 
   workForm = new FormGroup({
     name: new FormControl(''),
-    moduleName: new FormControl(''),
+    module: new FormControl(''),
     agentType: new FormControl(''),
     yaml: new FormControl(),
   });
@@ -46,7 +46,7 @@ export class NewWorkComponent implements OnInit {
       .subscribe(data => {
         this.workForm = new FormGroup({
           name: new FormControl(this.workForm.value.name),
-          moduleName: new FormControl(this.workForm.value.moduleName),
+          module: new FormControl(this.workForm.value.module),
           agentType: new FormControl(this.workForm.value.agentType),
           yaml: new FormControl(data),
         })
@@ -62,7 +62,7 @@ export class NewWorkComponent implements OnInit {
       agent: {
         type: this.workForm.value.agentType
       },
-      module: this.workForm.value.moduleName,
+      module: this.workForm.value.module,
       ...yamlJson
     }
 

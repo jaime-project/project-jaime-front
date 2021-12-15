@@ -33,7 +33,7 @@ export interface WorkShort {
     agent_id: string,
     agent_type: string,
     module_name: string,
-    ready_date: Date | null
+    start_date: Date | null
 }
 
 export interface Work {
