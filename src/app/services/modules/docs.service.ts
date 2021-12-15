@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class DocsService {
 
-  apiUrl: string = environment.backendURL + '/api/v1/modules/docs';
+  apiUrl: string = environment.backendURL + '/api/v1/docs';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private http: HttpClient) { }

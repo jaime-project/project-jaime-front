@@ -15,7 +15,7 @@ export class NewCodeModuleComponent implements OnInit {
 
   postCode(nameCode: string, newCode: string) {
     this.moduleService.postModule(nameCode, newCode)
-      .subscribe()
+      .subscribe(() => window.location.reload())
   }
 
 }

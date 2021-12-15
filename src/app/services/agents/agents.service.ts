@@ -38,13 +38,6 @@ export class AgentService {
       )
   }
 
-  listAgentsTypes(): Observable<string[]> {
-    return this.http.get<string[]>(`${this.apiUrl}/types`)
-      .pipe(
-        catchError(this.httpError)
-      )
-  }
-
   httpError(error: HttpErrorResponse) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
