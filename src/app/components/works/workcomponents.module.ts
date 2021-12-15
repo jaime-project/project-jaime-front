@@ -10,6 +10,7 @@ import { TabsWorkComponent } from './tabs/tabs.component';
 import { YamlWorkComponent } from './yaml/yaml.component';
 import { LogWorkComponent } from './logs/log.component';
 import { NewWorkComponent } from './new/new.component';
+import { WorkspaceWorkComponent } from './workspace/workspace.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { NewWorkComponent } from './new/new.component';
     TabsWorkComponent,
     YamlWorkComponent,
     LogWorkComponent,
-    NewWorkComponent
+    NewWorkComponent,
+    WorkspaceWorkComponent
   ]
 })
 export class WorkComponentsModule { }

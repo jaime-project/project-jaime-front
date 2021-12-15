@@ -53,6 +53,14 @@ export class WorkService {
       )
   }
 
+  getWorkspaceWork(id: string | null): Observable<any> {
+
+    return this.http.get(`${this.apiUrl}/${id}/workspace`, { responseType: 'blob' })
+      .pipe(
+        catchError(this.httpError)
+      )
+  }
+
   httpError(error: HttpErrorResponse) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {

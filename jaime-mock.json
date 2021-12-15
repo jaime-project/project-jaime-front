@@ -15,7 +15,7 @@
       "responses": [
         {
           "uuid": "e7b9d829-6132-4a61-a4f1-d6ea500c8aaa",
-          "body": "[\n  {\n    \"name\": \"edenor3\",\n    \"type\": \"OC\",\n    \"url\": \"https://console-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n  },\n  {\n    \"name\": \"edenor4\",\n    \"type\": \"OC\",\n    \"url\": \"https://asd-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n  }\n]",
+          "body": "[\n  {\n    \"name\": \"edenor3\",\n    \"type\": \"OPENSHIFT\",\n    \"url\": \"https://console-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n  },\n  {\n    \"name\": \"edenor4\",\n    \"type\": \"OPENSHIFT\",\n    \"url\": \"https://asd-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n  }\n]",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -45,7 +45,7 @@
       "responses": [
         {
           "uuid": "dda3e566-8a62-4afe-bf2b-a6cfeea60829",
-          "body": "{\n    \"name\": \"edenor3\",\n    \"url\": \"https://console-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\",\n    \"token\": \"asdasd12e12e12easd\",\n    \"user\": \"redhat\",\n    \"type\": \"OC\",\n    \"version\": \"3.11\"\n}",
+          "body": "{\n    \"name\": \"edenor3\",\n    \"url\": \"https://console-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\",\n    \"token\": \"asdasd12e12e12easd\",\n    \"user\": \"redhat\",\n    \"type\": \"OPENSHIFT\",\n    \"version\": \"3.11\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -105,7 +105,7 @@
       "responses": [
         {
           "uuid": "e075d499-5081-4269-95d6-7e97a1396df2",
-          "body": "{\n    \"name\": \"edenor4\",\n    \"url\": \"https://console-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\",\n    \"token\": \"qwrgdfdgfgds\",\n    \"user\": \"redhat\",\n    \"type\": \"OC\",\n    \"version\": \"4.7\"\n}",
+          "body": "{\n    \"name\": \"edenor4\",\n    \"url\": \"https://console-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\",\n    \"token\": \"qwrgdfdgfgds\",\n    \"user\": \"redhat\",\n    \"type\": \"OPENSHIFT\",\n    \"version\": \"4.7\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -131,7 +131,7 @@
       "uuid": "b6907a45-ba8a-4797-a924-279ccaf57688",
       "documentation": "",
       "method": "post",
-      "endpoint": "servers/",
+      "endpoint": "servers",
       "responses": [
         {
           "uuid": "f65efb47-9216-4a42-a603-bb8b16e5a373",
@@ -225,7 +225,37 @@
       "responses": [
         {
           "uuid": "6db2c96e-132d-4b52-b8cd-5fc964d4cc18",
-          "body": "[\n    {\n      \"id\": \"6132dd3f1cfb\",\n      \"host\": \"172.24.0.4\",\n      \"port\": \"80\",\n      \"type\": \"OC\"\n    }\n]",
+          "body": "[\n    {\n      \"id\": \"6132dd3f1cfb\",\n      \"host\": \"172.24.0.4\",\n      \"port\": \"80\",\n      \"type\": \"OPENSHIFT\"\n    }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "f9773728-71dd-4ada-a76b-6a15c8a1dd77",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "agents/types",
+      "responses": [
+        {
+          "uuid": "76b5d706-e9b6-43c4-a3f7-0889459b8a0d",
+          "body": "[\n  \"OPENSHIFT\",\n  \"KUBERNETES\"\n]",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -251,11 +281,11 @@
       "uuid": "d3650c32-447c-4247-b728-824d0f69b2d5",
       "documentation": "",
       "method": "get",
-      "endpoint": "agents/6132dd3f1cfb",
+      "endpoint": "agents/*",
       "responses": [
         {
           "uuid": "82c80ed1-091e-4be8-b2db-569bef6ee95f",
-          "body": "{\n    \"host\": \"172.24.0.4\",\n    \"id\": \"6132dd3f1cfb\",\n    \"port\": \"80\",\n    \"type\": \"OC\"\n}",
+          "body": "{\n    \"host\": \"172.24.0.4\",\n    \"id\": \"6132dd3f1cfb\",\n    \"port\": \"80\",\n    \"type\": \"OPENSHIFT\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -281,7 +311,7 @@
       "uuid": "56519408-45c1-46ef-91e4-25529c542977",
       "documentation": "",
       "method": "delete",
-      "endpoint": "agents/6132dd3f1cfb",
+      "endpoint": "agents/*",
       "responses": [
         {
           "uuid": "459a1fc3-4ad6-4b72-a330-4a3ca67aacab",
@@ -315,7 +345,7 @@
       "responses": [
         {
           "uuid": "32624eee-4c5e-48f1-9275-2f4bdcc99ad5",
-          "body": "[\n  \"install jenkins\",\n  \"migrate object\",\n\"test\"\n]",
+          "body": "[\n  \"install jenkins\",\n  \"migrate object\",\n  \"test\"\n]",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -409,7 +439,7 @@
       "uuid": "ccf4891b-1dd3-4aeb-9dd8-f0311e2bc16b",
       "documentation": "",
       "method": "delete",
-      "endpoint": "modules/test",
+      "endpoint": "modules/*",
       "responses": [
         {
           "uuid": "fa1a80fe-6003-4d05-ae9a-aebec96a2bcf",
@@ -439,7 +469,7 @@
       "uuid": "ffc8d975-6a50-4d44-8d81-a9bd0182859f",
       "documentation": "",
       "method": "put",
-      "endpoint": "modules/test",
+      "endpoint": "modules/*",
       "responses": [
         {
           "uuid": "80bf3fd3-4860-431f-a218-db26b1f40e6d",
@@ -469,7 +499,7 @@
       "uuid": "51e7fe5c-63ea-4a01-aec6-86f9a008ee91",
       "documentation": "",
       "method": "get",
-      "endpoint": "modules/docs/test",
+      "endpoint": "modules/docs/*",
       "responses": [
         {
           "uuid": "606b2c41-1d2c-475c-8f32-ce8a58aa38d2",
@@ -503,7 +533,7 @@
       "uuid": "6b7c4581-6dac-42d1-8bb4-4343f76ba92c",
       "documentation": "",
       "method": "put",
-      "endpoint": "modules/docs/test",
+      "endpoint": "modules/docs/*",
       "responses": [
         {
           "uuid": "13e4e44e-3620-48d0-8065-c07c93def44c",
@@ -537,7 +567,7 @@
       "uuid": "6c8cafaf-174c-459a-9923-363919d25090",
       "documentation": "",
       "method": "delete",
-      "endpoint": "modules/docs/test",
+      "endpoint": "modules/docs/*",
       "responses": [
         {
           "uuid": "058732e9-1894-46be-81a0-f302c2d3df5a",
@@ -692,36 +722,6 @@
       "sequentialResponse": false
     },
     {
-      "uuid": "7d3dc843-0264-4dba-aa50-3dfe4913bdd8",
-      "documentation": "",
-      "method": "get",
-      "endpoint": "works/*",
-      "responses": [
-        {
-          "uuid": "ac38ac6e-086f-48d7-8c12-34eeb56fe7d0",
-          "body": "{\n    \"agent\": {\n        \"host\": \"172.20.0.4\",\n        \"id\": \"38c5bab74061\",\n        \"port\": \"80\",\n        \"type\": \"OPENSHIFT\"\n    },\n    \"module\": \"migrate object\",\n    \"name\": \"prueba de algo\",\n    \"id\": \"31a30b3315ea\",\n    \"params\": {\n        \"agent\": {\n            \"type\": \"oc\"\n        },\n        \"module\": \"test\",\n        \"servers\": {\n            \"from\": {\n                \"name\": \"lasegunda\",\n                \"namespace\": \"msdesa\",\n                \"object\": \"configmaps\"\n            }\n        }\n    },\n    \"running_date\": \"2021-12-14T20:14:49.660102\",\n    \"start_date\": \"2021-12-14T20:14:46.074324\",\n    \"status\": \"TERMINATED\",\n    \"terminated_date\": \"2021-12-14T20:14:49.882738\"\n}",
-          "latency": 0,
-          "statusCode": 201,
-          "label": "",
-          "headers": [
-            {
-              "key": "Access-Control-Allow-Origin",
-              "value": "*"
-            }
-          ],
-          "filePath": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false
-        }
-      ],
-      "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
-    },
-    {
       "uuid": "41ee0e23-1c60-4447-9c19-6cf1d0127eb8",
       "documentation": "",
       "method": "get",
@@ -741,6 +741,70 @@
             {
               "key": "Content-Type",
               "value": "text/plain"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "754b864c-c45b-4be7-b9c0-1b325922a055",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "works/*/workspace",
+      "responses": [
+        {
+          "uuid": "588273c8-093c-45f5-8ca6-8b6dc8eded4d",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/zip"
+            }
+          ],
+          "filePath": "/home/brian/Downloads/asdasd123123.zip",
+          "sendFileAsBody": true,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "7d3dc843-0264-4dba-aa50-3dfe4913bdd8",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "works/*",
+      "responses": [
+        {
+          "uuid": "ac38ac6e-086f-48d7-8c12-34eeb56fe7d0",
+          "body": "{\n    \"agent\": {\n        \"host\": \"172.20.0.4\",\n        \"id\": \"38c5bab74061\",\n        \"port\": \"80\",\n        \"type\": \"OPENSHIFT\"\n    },\n    \"module\": \"migrate object\",\n    \"name\": \"prueba de algo\",\n    \"id\": \"31a30b3315ea\",\n    \"params\": {\n        \"agent\": {\n            \"type\": \"OPENSHIFT\"\n        },\n        \"module\": \"test\",\n        \"servers\": {\n            \"from\": {\n                \"name\": \"lasegunda\",\n                \"namespace\": \"msdesa\",\n                \"object\": \"configmaps\"\n            }\n        }\n    },\n    \"running_date\": \"2021-12-14T20:14:49.660102\",\n    \"start_date\": \"2021-12-14T20:14:46.074324\",\n    \"status\": \"TERMINATED\",\n    \"terminated_date\": \"2021-12-14T20:14:49.882738\"\n}",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
             }
           ],
           "filePath": "",
