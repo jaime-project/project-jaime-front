@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { AgentService } from 'src/app/services/agents/agents.service';
+import { DocsService } from 'src/app/services/modules/docs.service';
+import { ModuleService } from 'src/app/services/modules/modules.service';
 import { WorkService } from 'src/app/services/works/work.service';
 import Swal from 'sweetalert2';
 import { Document, parse } from 'yaml';
@@ -11,17 +14,42 @@ import { Document, parse } from 'yaml';
 })
 export class NewWorkComponent implements OnInit {
 
+  modules: string[] = []
+  moduleDocs: string = "asd"
+  agentsTypes: string[] = []
+
   workForm = new FormGroup({
     name: new FormControl(''),
     moduleName: new FormControl(''),
     agentType: new FormControl(''),
-    yaml: new FormControl(''),
+    yaml: new FormControl(),
   });
 
-  constructor(private workService: WorkService) { }
+  constructor(private workService: WorkService, private moduleService: ModuleService, private agentService: AgentService, private docsService: DocsService) { }
 
   ngOnInit(): void {
 
+    this.moduleService.listModules()
+      .subscribe(data => {
+        this.modules = data
+      })
+
+    this.agentService.listAgentsTypes()
+      .subscribe(data => {
+        this.agentsTypes = data
+      })
+  }
+
+  moduleChange(moduleName: any) {
+    this.docsService.getDocs(moduleName)
+      .subscribe(data => {
+        this.workForm = new FormGroup({
+          name: new FormControl(this.workForm.value.name),
+          moduleName: new FormControl(this.workForm.value.moduleName),
+          agentType: new FormControl(this.workForm.value.agentType),
+          yaml: new FormControl(data),
+        })
+      })
   }
 
   postWork() {

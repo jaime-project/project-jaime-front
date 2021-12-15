@@ -12,28 +12,30 @@
     <form [formGroup]="workForm" (ngSubmit)="postWork()">
       <div class="mb-3 col-12">
         <label for="nameInput" class="form-label"><b>Name</b></label>
-        <input type="text" class="form-control" id="nameInput" aria-describedby="nameHelp" formControlName="name" required>
+        <input type="text" class="form-control" id="nameInput" aria-describedby="nameHelp" formControlName="name"
+          required>
         <div id="nameHelp" class="form-text">Work name</div>
       </div>
       <div class="mb-3 col-12">
         <label for="moduleSelect" class="form-label"><b>Module</b></label>
-        <select class="form-control col-12" id="moduleSelect" formControlName="moduleName">
-          <option value="1">Migrate</option>
-          <option value="2">Install Jenkins</option>
+        <select class="form-control col-12" id="moduleSelect" formControlName="moduleName"
+          (change)="moduleChange($event.target.value)">
+          <option *ngFor=" let module of modules" value="{{module}}">{{module}}</option>
         </select>
         <div id="moduleHelp" class="form-text">Select a installed module</div>
       </div>
       <div class="mb-3 col-12">
         <label for="agentTypeSelect" class="form-label"><b>Agent type</b></label>
         <select class="form-control col-12" id="agentTypeSelect" formControlName="agentType">
-          <option value="1">OC</option>
+          <option *ngFor="let agentType of agentsTypes" value="{{agentType}}">{{agentType}}</option>
         </select>
         <div id="moduleHelp" class="form-text">Select a installed agent type</div>
       </div>
       <div class="col-12">
         <label for="paramsText" class="form-label"><b>Params Yaml</b></label>
         <div class="mb-3">
-          <textarea class="form-control" id="paramsText" rows="20" style="white-space: pre-wrap;" formControlName="yaml"></textarea>
+          <textarea class="form-control" id="paramsText" rows="20" style="white-space: pre-wrap;" formControlName="yaml"
+            #moduleDocsTextArea></textarea>
         </div>
         <div id="paramPamlHelp" class="form-text">Parameters to module selected</div>
       </div>
