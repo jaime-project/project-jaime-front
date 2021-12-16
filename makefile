@@ -1,4 +1,4 @@
-IMAGE_NAME := brianwolf94/jaime-front:latest
+IMAGE_NAME := brianwolf94/jaime-front:0.1.0
 
 docker-build db:
 	docker build . -t $(IMAGE_NAME)
