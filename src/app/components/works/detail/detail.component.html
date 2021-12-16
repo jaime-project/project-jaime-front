@@ -12,23 +12,23 @@
         <form>
           <div class="mb-3 col-6">
             <label class="form-label"><b>ID</b></label>
-            <p class="card-text">asdasd123</p>
+            <p class="card-text">{{work.id}}</p>
           </div>
           <div class="mb-3 col-6">
             <label class="form-label"><b>Status</b></label>
-            <p class="card-text">Running</p>
-          </div>
-          <div class="mb-3 col-6">
-            <label class="form-label"><b>Ready Date</b></label>
-            <p class="card-text">12/12/2021 12:12:00</p>
+            <p class="card-text">{{work.status}}</p>
           </div>
           <div class="mb-3 col-6">
             <label class="form-label"><b>Start Date</b></label>
-            <p class="card-text">12/12/2021 12:12:12</p>
+            <p class="card-text">{{work.start_date}}</p>
           </div>
           <div class="mb-3 col-6">
-            <label class="form-label"><b>End Date</b></label>
-            <p class="card-text"> - </p>
+            <label class="form-label"><b>Running Date</b></label>
+            <p class="card-text">{{work.running_date}}</p>
+          </div>
+          <div class="mb-3 col-6">
+            <label class="form-label"><b>Terminated Date</b></label>
+            <p class="card-text">{{work.terminated_date}}</p>
           </div>
         </form>
       </div>
@@ -41,21 +41,32 @@
         <form>
           <div class="mb-3 col-6">
             <label class="form-label"><b>Agent</b></label>
-            <p class="card-text">asdasd123</p>
+            <p class="card-text">{{work.agent.id}}</p>
           </div>
           <div class="mb-3 col-6">
             <label class="form-label"><b>Type</b></label>
-            <p class="card-text">OC</p>
+            <p class="card-text">{{work.agent.type}}</p>
           </div>
         </form>
       </div>
     </div>
   </div>
-
 </div>
 
 
 <div class="row">
+  <div class="col-6 m-t-30">
+    <div class="card">
+      <div class="card-body">
+        <form>
+          <div class="mb-3 col-6">
+            <label class="form-label"><b>Params</b></label>
+            <p class="card-text" style="white-space: pre-wrap;">{{paramsYaml}}</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
   <div class="col-6 m-t-30">
     <div class="card">
@@ -63,7 +74,7 @@
         <form>
           <div class="mb-3 col-6">
             <label class="form-label"><b>Module</b></label>
-            <p class="card-text">Install Jenkins</p>
+            <p class="card-text">{{work.module_name}}</p>
           </div>
         </form>
       </div>

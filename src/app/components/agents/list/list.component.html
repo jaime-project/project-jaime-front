@@ -13,7 +13,6 @@
           <table class="table">
             <thead>
               <tr>
-                <th scope="col">ID</th>
                 <th scope="col">Host</th>
                 <th scope="col">Port</th>
                 <th scope="col">Type</th>
@@ -21,32 +20,19 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>asd12d12d</td>
-                <td>10.5.100.1</td>
-                <td>7000</td>
-                <td>OC</td>
+              <tr *ngFor="let agent of agents">
+                <td>{{agent.host}}</td>
+                <td>{{agent.port}}</td>
+                <td>{{agent.type}}</td>
                 <td>
-                  <button type="button" class="btn btn-primary" style="margin-right: 2%;" routerLink="/agents/details">
+                  <button type="button" class="btn btn-primary" style="margin-right: 2%;"
+                    routerLink="/agents/details/{{agent.id}}">
                     <i class="fas fa-eye"></i>
                   </button>
                   <button type="button" class="btn btn-danger" style="margin-right: 2%;"
-                    (click)="openVerticallyCentered(modalDelete)">
+                    (click)="deleteAgent(agent.id)">
                     <i class=" far fa-trash-alt"></i>
                   </button>
-                </td>
-              </tr>
-              <tr>
-                <td>qwe12d12d</td>
-                <td>10.5.100.2</td>
-                <td>7000</td>
-                <td>OC</td>
-                <td>
-                  <button type="button" class="btn btn-primary" style="margin-right: 2%;"
-                    routerLink="/agents/details"><i class="fas fa-eye"></i></button>
-                  <button type="button" class="btn btn-danger" style="margin-right: 2%;"
-                    (click)="openVerticallyCentered(modalDelete)">
-                    <i class="far fa-trash-alt"></i></button>
                 </td>
               </tr>
             </tbody>
@@ -56,19 +42,3 @@
     </div>
   </div>
 </div>
-
-<ng-template #modalDelete let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title"><b>Delete</b></h4>
-    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <p>Are you shure?</p>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-danger" (click)="modal.close('Close click')">Cancel</button>
-    <button type="button" class="btn btn-success" (click)="modal.close('Close click')">OK</button>
-  </div>
-</ng-template>

@@ -1,11 +1,11 @@
 <div class="row">
   <div class="col-12 m-t-30">
-    <h4 class="m-b-0"><b>Work List</b></h4>
+    <h4 class="m-b-0"><b>Works List</b></h4>
     <p class="text-muted m-t-0 font-12"></p>
   </div>
 </div>
 
-<div class="col-lg-8">
+<div class="col-lg-12">
   <div class="card m-t-30">
     <div class="card-body">
       <div class="row">
@@ -13,8 +13,10 @@
           <table class="table">
             <thead>
               <tr>
-                <th scope="col">ID</th>
+                <th scope="col"></th>
+                <th scope="col">Name</th>
                 <th scope="col">Status</th>
+                <th scope="col">ID</th>
                 <th scope="col">Agent ID</th>
                 <th scope="col">Agent Type</th>
                 <th scope="col">Module</th>
@@ -23,36 +25,26 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>asd12d12d</td>
-                <td><b class="running">Running</b></td>
-                <td>qwerdsg21</td>
-                <td>OC</td>
-                <td>Migrate object</td>
-                <td>11/12/2021 11:15:45</td>
+              <tr *ngFor="let workShort of worksShort">
                 <td>
-                  <button type="button" class="btn btn-primary" style="margin-right: 2%;" routerLink="/works/details">
+                  <div  *ngIf="workShort.status == 'RUNNING'" class="spinner-border text-success" role="status">
+                  </div>
+                </td>
+                <td>{{workShort.name}}</td>
+                <td><b class="{{workShort.status}}">{{workShort.status}}</b></td>
+                <td>{{workShort.id}}</td>
+                <td>{{workShort.agent_id}}</td>
+                <td>{{workShort.agent_type}}</td>
+                <td>{{workShort.module_name}}</td>
+                <td>{{workShort.start_date}}</td>
+                <td>
+                  <button type="button" class="btn btn-primary" style="margin-right: 2%;" routerLink="/works/details/{{workShort.id}}">
                     <i class="fas fa-eye"></i>
                   </button>
                   <button type="button" class="btn btn-danger" style="margin-right: 2%;"
-                    (click)="openVerticallyCentered(modalDelete)">
+                    (click)="deleteServer(workShort.id)">
                     <i class=" far fa-trash-alt"></i>
                   </button>
-                </td>
-              </tr>
-              <tr>
-                <td>ertyert2354</td>
-                <td><b class="ready">Ready</b></td>
-                <td> - </td>
-                <td>OC</td>
-                <td>Install Jenkins</td>
-                <td>11/12/2021 11:15:45</td>
-                <td>
-                  <button type="button" class="btn btn-primary" style="margin-right: 2%;"
-                    routerLink="/works/details"><i class="fas fa-eye"></i></button>
-                  <button type="button" class="btn btn-danger" style="margin-right: 2%;"
-                    (click)="openVerticallyCentered(modalDelete)">
-                    <i class="far fa-trash-alt"></i></button>
                 </td>
               </tr>
             </tbody>
@@ -69,19 +61,3 @@
   </div>
 
 </div>
-
-<ng-template #modalDelete let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title"><b>Delete</b></h4>
-    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <p>Are you shure?</p>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-danger" (click)="modal.close('Close click')">Cancel</button>
-    <button type="button" class="btn btn-success" (click)="modal.close('Close click')">OK</button>
-  </div>
-</ng-template>

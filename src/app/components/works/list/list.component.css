@@ -1,11 +1,11 @@
-.running {
+.RUNNING {
     color: green;
 }
 
-.ready {
+.READY {
     color: coral;
 }
 
-.stoped {
+.TERMINATED {
     color: red;
 }

@@ -20,7 +20,7 @@ export const ModuleComponentsRoutes: Routes = [
 				}
 			},
 			{
-				path: 'modules/details',
+				path: 'modules/details/:name',
 				component: TabsModuleComponent,
 				data: {
 					title: 'Modules',

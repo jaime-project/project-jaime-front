@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { interval } from 'rxjs';
+import { DocsService } from 'src/app/services/modules/docs.service';
+import { ModuleService } from 'src/app/services/modules/modules.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-list-module',
@@ -8,13 +11,44 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ListModuleComponent implements OnInit {
 
-  constructor(private modalService: NgbModal) { }
+  modulesName: string[] = []
+
+  constructor(private modulesService: ModuleService, private docsService: DocsService) { }
 
   ngOnInit(): void {
+
+    this.loadStartData()
+
+    interval(3000)
+      .subscribe(() => {
+        this.loadStartData()
+      });
   }
 
-  openVerticallyCentered(content3: string) {
-    this.modalService.open(content3, { centered: true });
+  loadStartData() {
+    this.modulesService.listModules()
+      .subscribe(data => {
+        this.modulesName = data
+      })
+  }
+
+  deleteModule(name: string) {
+
+    Swal.fire({
+      title: 'Delete agent',
+      text: 'Delete agent with name "' + name + '"',
+      icon: 'warning',
+      confirmButtonColor: '#05b281',
+      cancelButtonColor: '#ec312d',
+      showCancelButton: true,
+    }).then(result => {
+      if (result.isConfirmed) {
+        this.modulesService.deleteModule(name)
+          .subscribe()
+        this.docsService.deleteDocs(name)
+          .subscribe()
+      }
+    })
   }
 
 }

@@ -20,7 +20,7 @@ export const WorkComponentsRoutes: Routes = [
 				}
 			},
 			{
-				path: 'works/details',
+				path: 'works/details/:id',
 				component: TabsWorkComponent,
 				data: {
 					title: 'works',

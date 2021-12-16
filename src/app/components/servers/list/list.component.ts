@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { interval } from 'rxjs';
+import { ServerShort } from 'src/app/models/models';
+import { ServersService } from 'src/app/services/servers/servers.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-list-server',
@@ -8,13 +12,44 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ListServerComponent implements OnInit {
 
-  constructor(private modalService: NgbModal) { }
+  listServersShorts: ServerShort[] = []
+
+  constructor(private modalService: NgbModal, private serversService: ServersService) { }
 
   ngOnInit(): void {
+
+    this.loadStartData()
+
+    interval(3000)
+      .subscribe(() => {
+        this.loadStartData()
+      });
   }
 
-  openVerticallyCentered(content3: string) {
-    this.modalService.open(content3, { centered: true });
+  loadStartData() {
+    this.serversService.listServers()
+      .subscribe(data => {
+        this.listServersShorts = data;
+      })
+  }
+
+  deleteServer(name: string) {
+
+    Swal.fire({
+      title: 'Delete server',
+      text: 'Delete server with name "' + name + '"',
+      icon: 'warning',
+      confirmButtonColor: '#05b281',
+      cancelButtonColor: '#ec312d',
+      showCancelButton: true,
+    }).then(result => {
+      if (result.isConfirmed) {
+        this.serversService.deleteServer(name)
+          .subscribe(() => {
+            window.location.reload()
+          })
+      }
+    })
   }
 
 }
