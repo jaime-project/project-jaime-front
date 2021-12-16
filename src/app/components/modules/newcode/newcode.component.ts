@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModuleService } from 'src/app/services/modules/modules.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-newcode-module',
@@ -15,7 +16,16 @@ export class NewCodeModuleComponent implements OnInit {
 
   postCode(nameCode: string, newCode: string) {
     this.moduleService.postModule(nameCode, newCode)
-      .subscribe(() => window.location.reload())
+      .subscribe(() => {
+        Swal.fire({
+          title: 'Success creation',
+          text: 'Generated code: "' + nameCode + '"',
+          icon: 'success',
+          confirmButtonColor: '#05b281',
+        }).then(() =>
+          window.location.reload()
+        )
+      })
   }
 
 }

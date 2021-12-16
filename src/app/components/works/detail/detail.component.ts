@@ -21,7 +21,7 @@ export class DetailWorkComponent implements OnInit {
       type: ""
     },
     id: "",
-    module: "",
+    module_name: "",
     name: "",
     params: {},
     running_date: null,

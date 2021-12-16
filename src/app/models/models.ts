@@ -39,7 +39,7 @@ export interface WorkShort {
 export interface Work {
     id: string,
     name: string,
-    module: string,
+    module_name: string,
     status: string,
     start_date: Date | null,
     running_date: Date | null,
