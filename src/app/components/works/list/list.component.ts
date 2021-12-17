@@ -45,22 +45,10 @@ export class ListWorkComponent implements OnInit {
     }).then(result => {
       if (result.isConfirmed) {
         this.workService.deleteWork(id)
-          .subscribe()
+          .subscribe(() => {
+            window.location.reload()
+          })
       }
     })
   }
-
-
-
-  // = {
-  //   agent_id: "",
-  //   agent_type: "",
-  //   id: "",
-  //   module_name: "",
-  //   name: "",
-  //   ready_date: null,
-  //   status: ""
-  // }
-
-
 }
