@@ -1,10 +1,10 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
+import 'rxjs/add/observable/of';
 import { catchError } from 'rxjs/operators';
 import { Server, ServerShort } from 'src/app/models/models';
 import { environment } from 'src/environments/environment';
-
 
 @Injectable({
   providedIn: 'root'
@@ -54,6 +54,13 @@ export class ServersService {
 
   listServerTypes(): Observable<string[]> {
     return this.http.get<string[]>(`${this.apiUrl}/types`)
+      .pipe(
+        catchError(this.httpError)
+      )
+  }
+
+  testServer(name: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${name}/test`)
       .pipe(
         catchError(this.httpError)
       )

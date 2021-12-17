@@ -188,14 +188,14 @@
       "sequentialResponse": false
     },
     {
-      "uuid": "69641921-d115-40d1-9036-132f0af1c86a",
+      "uuid": "c5b7b71c-72f2-452d-b8d1-e4bdc8bed130",
       "documentation": "",
-      "method": "delete",
-      "endpoint": "servers/edenor3",
+      "method": "get",
+      "endpoint": "servers/*/test",
       "responses": [
         {
-          "uuid": "4a2271fd-4a4e-4477-9251-9690c15883ba",
-          "body": "",
+          "uuid": "c016f335-d586-47e6-abb0-a9f1f6ff5dac",
+          "body": "{\n  \"success\": false,\n  \"text\": \"se te vencio el token\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -203,6 +203,10 @@
             {
               "key": "Access-Control-Allow-Origin",
               "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
             }
           ],
           "filePath": "",
@@ -218,13 +222,13 @@
       "sequentialResponse": false
     },
     {
-      "uuid": "abd8152b-7474-4547-be52-8b438f0d49cd",
+      "uuid": "69641921-d115-40d1-9036-132f0af1c86a",
       "documentation": "",
       "method": "delete",
-      "endpoint": "servers/edenor4",
+      "endpoint": "servers/*",
       "responses": [
         {
-          "uuid": "d21c14cc-38af-4780-87b7-2e72ce0e6502",
+          "uuid": "4a2271fd-4a4e-4477-9251-9690c15883ba",
           "body": "",
           "latency": 0,
           "statusCode": 200,
