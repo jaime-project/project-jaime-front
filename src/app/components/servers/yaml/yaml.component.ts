@@ -18,7 +18,6 @@ export class YamlServerComponent implements OnInit {
     type: "",
     token: "",
     url: "",
-    user: "",
     version: ""
   }
 

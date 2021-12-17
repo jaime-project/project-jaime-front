@@ -16,7 +16,6 @@ export class DetailServerComponent implements OnInit {
     type: "",
     token: "",
     url: "",
-    user: "",
     version: ""
   }
 

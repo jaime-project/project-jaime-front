@@ -33,6 +33,27 @@ export class ListServerComponent implements OnInit {
       })
   }
 
+  testServer(name: string) {
+    this.serversService.testServer(name)
+      .subscribe(data => {
+        if (data.success) {
+          Swal.fire({
+            title: 'Login success',
+            icon: 'success',
+            confirmButtonColor: '#05b281',
+          })
+        }
+        else {
+          Swal.fire({
+            title: 'Login failure',
+            text: data.text,
+            icon: 'warning',
+            confirmButtonColor: '#05b281',
+          })
+        }
+      })
+  }
+
   deleteServer(name: string) {
 
     Swal.fire({
