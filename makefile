@@ -1,8 +1,8 @@
-IMAGE_NAME := brianwolf94/jaime-front:0.1.0
+IMAGE_NAME := brianwolf94/jaime-front:0.2.0
 
-docker-build db:
+docker-build b:
 	docker build . -t $(IMAGE_NAME)
 
-docker-run dr:
+docker-run r:
 	docker run -it -p 80:80 $(IMAGE_NAME)
 

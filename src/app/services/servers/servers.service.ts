@@ -1,7 +1,6 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
-import 'rxjs/add/observable/of';
 import { catchError } from 'rxjs/operators';
 import { Server, ServerShort } from 'src/app/models/models';
 import { environment } from 'src/environments/environment';
