@@ -17,6 +17,7 @@ export interface Agent {
     host: string;
     port: string;
     type: string;
+    status: string;
 }
 
 export interface AgentShort {
