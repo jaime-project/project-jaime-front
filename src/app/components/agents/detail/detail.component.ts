@@ -14,7 +14,8 @@ export class DetailAgentComponent implements OnInit {
     host: "",
     id: "",
     port: "",
-    type: ""
+    type: "",
+    status: ""
   }
 
   constructor(private agentService: AgentService, private route: ActivatedRoute) { }

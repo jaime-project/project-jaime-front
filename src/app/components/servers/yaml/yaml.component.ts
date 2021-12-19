@@ -40,7 +40,7 @@ export class YamlServerComponent implements OnInit {
 
     Swal.fire({
       title: 'Update server',
-      text: 'Update server with name "' + name + '"',
+      text: 'Update server with name "' + this.server.name + '"',
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',
