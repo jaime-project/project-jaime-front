@@ -3,11 +3,11 @@ import { ModuleService } from 'src/app/services/modules/modules.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-newcode-module',
-  templateUrl: './newcode.component.html',
-  styleUrls: ['./newcode.component.css']
+  selector: 'app-new-module',
+  templateUrl: './new.component.html',
+  styleUrls: ['./new.component.css']
 })
-export class NewCodeModuleComponent implements OnInit {
+export class NewModuleComponent implements OnInit {
 
   constructor(private moduleService: ModuleService) { }
 

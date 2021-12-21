@@ -5,10 +5,10 @@ import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-code-module',
-  templateUrl: './code.component.html',
-  styleUrls: ['./code.component.css']
+  templateUrl: './detail.component.html',
+  styleUrls: ['./detail.component.css']
 })
-export class CodeModuleComponent implements OnInit {
+export class DetailModuleComponent implements OnInit {
 
   moduleCode: string = ""
   moduleName: string | null = ""
@@ -37,7 +37,14 @@ export class CodeModuleComponent implements OnInit {
     }).then(result => {
       if (result.isConfirmed) {
         this.moduleService.putModule(this.moduleName, modifyCode)
-          .subscribe()
+          .subscribe(() => {
+            Swal.fire({
+              title: 'Module code updated',
+              icon: 'success',
+            }).then(() =>
+              window.location.reload()
+            )
+          })
       }
     })
 

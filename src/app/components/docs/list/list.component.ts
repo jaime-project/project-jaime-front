@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { interval } from 'rxjs';
-import { ModuleService } from 'src/app/services/modules/modules.service';
+import { DocsService } from 'src/app/services/modules/docs.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-list-module',
+  selector: 'app-list-docs',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
-export class ListModuleComponent implements OnInit {
+export class ListDocsComponent implements OnInit {
 
-  modulesName: string[] = []
+  docsName: string[] = []
 
-  constructor(private modulesService: ModuleService) { }
+  constructor(private docsService: DocsService) { }
 
   ngOnInit(): void {
 
@@ -25,13 +25,13 @@ export class ListModuleComponent implements OnInit {
   }
 
   loadStartData() {
-    this.modulesService.listModules()
+    this.docsService.listDocs()
       .subscribe(data => {
-        this.modulesName = data
+        this.docsName = data
       })
   }
 
-  deleteModule(name: string) {
+  deleteDocs(name: string) {
 
     Swal.fire({
       title: 'Delete agent',
@@ -42,10 +42,10 @@ export class ListModuleComponent implements OnInit {
       showCancelButton: true,
     }).then(result => {
       if (result.isConfirmed) {
-        this.modulesService.deleteModule(name)
+        this.docsService.deleteDocs(name)
           .subscribe(() => {
             Swal.fire({
-              title: 'Module code deleted',
+              title: 'Doc deleted',
               icon: 'success',
             }).then(() =>
               window.location.reload()

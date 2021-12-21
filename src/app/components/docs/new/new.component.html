@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-12 m-t-30">
+    <h4 class="m-b-0"><b>Module New Docs</b></h4>
+    <p class="text-muted m-t-0 font-12"></p>
+  </div>
+</div>
+
+<div class="mb-3 col-6">
+  <label for="nameInput" class="form-label"><b>Name</b></label>
+  <input type="text" class="form-control" id="nameInput" required #nameDocs>
+  <div id="nameHelp" class="form-text">Example: ocp-47-noprod</div>
+</div>
+<div class="mb-3 col-12">
+  <label for="docsInput" class="form-label"><b>Docs</b></label>
+  <textarea class="form-control" rows="20" id="docsInput" #newDocs required></textarea>
+  <div id="urlHelp" class="form-text"></div>
+</div>
+<div class="mb-3 col-12">
+  <button type="button" class="btn btn-success" (click)="postDocs(nameDocs.value, newDocs.value)">Create</button>
+</div>

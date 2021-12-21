@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { ListModuleComponent } from './list/list.component';
-import { NewTabsModuleComponent } from './newtabs/newtabs.component';
+import { NewModuleComponent } from './new/new.component';
 import { TabsModuleComponent } from './tabs/tabs.component';
 
 
@@ -32,7 +32,7 @@ export const ModuleComponentsRoutes: Routes = [
 			},
 			{
 				path: 'modules/new',
-				component: NewTabsModuleComponent,
+				component: NewModuleComponent,
 				data: {
 					title: 'Modules',
 					urls: [

@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
   templateUrl: './docs.component.html',
   styleUrls: ['./docs.component.css']
 })
-export class DocsModuleComponent implements OnInit {
+export class DetailDocsComponent implements OnInit {
 
   public docsEditSwitchActivated = false
 
@@ -38,7 +38,14 @@ export class DocsModuleComponent implements OnInit {
     }).then(result => {
       if (result.isConfirmed) {
         this.docsService.putDocs(this.moduleName, modifyDocs)
-          .subscribe()
+          .subscribe(() => {
+            Swal.fire({
+              title: 'Module doc updated',
+              icon: 'success',
+            }).then(() =>
+              window.location.reload()
+            )
+          })
       }
     })
 
