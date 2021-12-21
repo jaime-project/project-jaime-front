@@ -3,11 +3,11 @@ import { DocsService } from 'src/app/services/modules/docs.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-newdocs-module',
-  templateUrl: './newdocs.component.html',
-  styleUrls: ['./newdocs.component.css']
+  selector: 'app-new-docs',
+  templateUrl: './new.component.html',
+  styleUrls: ['./new.component.css']
 })
-export class NewDocsModuleComponent implements OnInit {
+export class NewDocsComponent implements OnInit {
 
   constructor(private docsService: DocsService) { }
 

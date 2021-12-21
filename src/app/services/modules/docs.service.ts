@@ -15,6 +15,13 @@ export class DocsService {
 
   constructor(private http: HttpClient) { }
 
+  listDocs(): Observable<string[]> {
+    return this.http.get<string[]>(this.apiUrl)
+      .pipe(
+        catchError(this.httpError)
+      )
+  }
+
   postDocs(name: string | null, docs: string | null): Observable<string> {
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
     return this.http.post(this.apiUrl + '/' + name, docs, { headers, responseType: 'text' })

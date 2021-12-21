@@ -18,7 +18,8 @@ export class DetailWorkComponent implements OnInit {
       host: "",
       id: "",
       port: "",
-      type: ""
+      type: "",
+      status: ""
     },
     id: "",
     module_name: "",

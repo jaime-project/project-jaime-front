@@ -312,6 +312,36 @@
       "sequentialResponse": false
     },
     {
+      "uuid": "1a7175df-10ae-408a-8ee5-c4871d795c2c",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "docs",
+      "responses": [
+        {
+          "uuid": "728d94ea-be5d-4710-90e4-5580ef2f6abf",
+          "body": "[\n  \"install jenkins\",\n  \"migrate object\",\n  \"test\"\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
       "uuid": "51e7fe5c-63ea-4a01-aec6-86f9a008ee91",
       "documentation": "",
       "method": "get",
