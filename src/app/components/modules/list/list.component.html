@@ -6,40 +6,37 @@
 </div>
 
 
-<div class="col-lg-8">
+<div class="col-lg-10">
+  <button class="btn btn-success" routerLink="/modules/new">New Module</button>
+</div>
+
+
+<div class="col-lg-10">
   <div class="card m-t-30">
     <div class="card-body ">
       <div class="row">
-        <div class="col-12 m-b-30">
-          <button class="btn btn-success" routerLink="/modules/new">New Module</button>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let moduleName of modulesName">
-                <td>{{moduleName}}</td>
-                <td>
+        <div class="container">
+          <div class="row text-center text-lg-start">
+            <div class="col-lg-3" *ngFor="let moduleName of modulesName">
+              <a class="d-block mb-4 h-100">
+                <div>
+                  <h4><b>{{moduleName}}</b></h4>
+                </div>
+                <div>
+                  <i class="far mdi mdi-puzzle fa-5x"></i>
+                </div>
+                <div>
                   <button type="button" class="btn btn-primary" style="margin-right: 2%;"
                     routerLink="/modules/details/{{moduleName}}">
                     <i class="fas fa-eye"></i></button>
                   <button type="button" class="btn btn-danger" style="margin-right: 2%;"
                     (click)="deleteModule(moduleName)">
                     <i class="far fa-trash-alt"></i></button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
-</div>
