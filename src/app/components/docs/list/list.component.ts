@@ -44,12 +44,7 @@ export class ListDocsComponent implements OnInit {
       if (result.isConfirmed) {
         this.docsService.deleteDocs(name)
           .subscribe(() => {
-            Swal.fire({
-              title: 'Doc deleted',
-              icon: 'success',
-            }).then(() =>
-              window.location.reload()
-            )
+            window.location.reload()
           })
       }
     })

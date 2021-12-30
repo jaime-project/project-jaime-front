@@ -9,6 +9,11 @@
   <div class="card m-t-30">
     <div class="card-body ">
       <div class="row">
+        <div class="col-12 m-b-30">
+          <button class="btn btn-success" routerLink="/docs/new">New Doc</button>
+        </div>
+      </div>
+      <div class="row">
         <div class="col-12">
           <table class="table">
             <thead>
@@ -24,8 +29,7 @@
                   <button type="button" class="btn btn-primary" style="margin-right: 2%;"
                     routerLink="/docs/details/{{docName}}">
                     <i class="fas fa-eye"></i></button>
-                  <button type="button" class="btn btn-danger" style="margin-right: 2%;"
-                    (click)="deleteDocs(docName)">
+                  <button type="button" class="btn btn-danger" style="margin-right: 2%;" (click)="deleteDocs(docName)">
                     <i class="far fa-trash-alt"></i></button>
                 </td>
               </tr>
@@ -33,12 +37,6 @@
           </table>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-12 m-b-30">
-      <button class="btn btn-success" routerLink="/docs/new">New Doc</button>
     </div>
   </div>
 

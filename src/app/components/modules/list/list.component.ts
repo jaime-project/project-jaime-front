@@ -44,12 +44,7 @@ export class ListModuleComponent implements OnInit {
       if (result.isConfirmed) {
         this.modulesService.deleteModule(name)
           .subscribe(() => {
-            Swal.fire({
-              title: 'Module code deleted',
-              icon: 'success',
-            }).then(() =>
-              window.location.reload()
-            )
+            window.location.reload()
           })
       }
     })
