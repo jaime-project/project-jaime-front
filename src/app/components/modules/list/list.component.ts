@@ -27,7 +27,7 @@ export class ListModuleComponent implements OnInit {
   loadStartData() {
     this.modulesService.listModules()
       .subscribe(data => {
-        this.modulesName = data
+        this.modulesName = data.sort()
       })
   }
 

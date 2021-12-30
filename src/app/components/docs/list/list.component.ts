@@ -27,7 +27,7 @@ export class ListDocsComponent implements OnInit {
   loadStartData() {
     this.docsService.listDocs()
       .subscribe(data => {
-        this.docsName = data
+        this.docsName = data.sort()
       })
   }
 
