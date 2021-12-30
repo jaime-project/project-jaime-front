@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ServersService } from 'src/app/services/servers/servers.service';
 import Swal from 'sweetalert2';
 
@@ -18,7 +19,7 @@ export class NewServerComponent implements OnInit {
     version: new FormControl(''),
   });
 
-  constructor(private serversService: ServersService) { }
+  constructor(private route: Router, private serversService: ServersService) { }
 
   ngOnInit(): void {
   }
@@ -30,7 +31,7 @@ export class NewServerComponent implements OnInit {
           title: 'New Server created',
           icon: 'success',
         }).then(() =>
-          window.location.reload()
+          this.route.navigate(['servers'])
         )
       })
   }

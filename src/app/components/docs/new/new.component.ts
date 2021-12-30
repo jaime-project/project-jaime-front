@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DocsService } from 'src/app/services/modules/docs.service';
 import Swal from 'sweetalert2';
 
@@ -9,7 +10,7 @@ import Swal from 'sweetalert2';
 })
 export class NewDocsComponent implements OnInit {
 
-  constructor(private docsService: DocsService) { }
+  constructor(private route: Router, private docsService: DocsService) { }
 
   ngOnInit(): void {
   }
@@ -23,7 +24,7 @@ export class NewDocsComponent implements OnInit {
           icon: 'success',
           confirmButtonColor: '#05b281',
         }).then(() =>
-          window.location.reload()
+        this.route.navigate(['docs'])
         )
       })
   }

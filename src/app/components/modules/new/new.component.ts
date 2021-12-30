@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ModuleService } from 'src/app/services/modules/modules.service';
 import Swal from 'sweetalert2';
 
@@ -9,7 +10,7 @@ import Swal from 'sweetalert2';
 })
 export class NewModuleComponent implements OnInit {
 
-  constructor(private moduleService: ModuleService) { }
+  constructor(private route: Router, private moduleService: ModuleService) { }
 
   ngOnInit(): void {
   }
@@ -23,7 +24,7 @@ export class NewModuleComponent implements OnInit {
           icon: 'success',
           confirmButtonColor: '#05b281',
         }).then(() =>
-          window.location.reload()
+        this.route.navigate(['modules'])
         )
       })
   }

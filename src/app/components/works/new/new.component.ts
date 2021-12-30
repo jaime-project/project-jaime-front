@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { AgentService } from 'src/app/services/agents/agents.service';
+import { Router } from '@angular/router';
 import { DocsService } from 'src/app/services/modules/docs.service';
 import { ModuleService } from 'src/app/services/modules/modules.service';
 import { ServersService } from 'src/app/services/servers/servers.service';
@@ -26,7 +26,7 @@ export class NewWorkComponent implements OnInit {
     yaml: new FormControl(),
   });
 
-  constructor(private workService: WorkService, private moduleService: ModuleService, private serverService: ServersService, private docsService: DocsService) { }
+  constructor(private route: Router, private workService: WorkService, private moduleService: ModuleService, private serverService: ServersService, private docsService: DocsService) { }
 
   ngOnInit(): void {
 
@@ -78,7 +78,7 @@ export class NewWorkComponent implements OnInit {
           icon: 'success',
           confirmButtonColor: '#05b281',
         }).then(() =>
-          window.location.reload()
+          this.route.navigate(['works'])
         )
       })
   }

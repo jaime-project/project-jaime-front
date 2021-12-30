@@ -259,7 +259,7 @@
       "responses": [
         {
           "uuid": "82c80ed1-091e-4be8-b2db-569bef6ee95f",
-          "body": "{\n    \"host\": \"172.24.0.4\",\n    \"id\": \"6132dd3f1cfb\",\n    \"port\": \"80\",\n    \"type\": \"OPENSHIFT\"\n}",
+          "body": "{\n    \"host\": \"172.24.0.4\",\n    \"id\": \"6132dd3f1cfb\",\n    \"port\": \"80\",\n    \"type\": \"OPENSHIFT\",\n  \"status\": \"READY\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
