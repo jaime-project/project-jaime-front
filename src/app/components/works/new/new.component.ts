@@ -32,7 +32,7 @@ export class NewWorkComponent implements OnInit {
 
     this.moduleService.listModules()
       .subscribe(data => {
-        this.modules = data
+        this.modules = data.sort()
       })
 
     this.serverService.listServerTypes()
