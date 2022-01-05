@@ -4,6 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Agent, AgentShort, Server, ServerShort } from 'src/app/models/models';
 import { environment } from 'src/environments/environment';
+import Swal from 'sweetalert2';
 
 
 @Injectable({
@@ -39,6 +40,13 @@ export class AgentService {
   }
 
   httpError(error: HttpErrorResponse) {
+    Swal.fire({
+      title: 'Service ERROR',
+      text: error.error.message,
+      icon: 'error',
+      confirmButtonColor: '#05b281'
+    })
+
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
       errorMessage = error.error.message;
