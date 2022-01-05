@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DocsService } from 'src/app/services/modules/docs.service';
 import Swal from 'sweetalert2';
 
@@ -15,10 +15,10 @@ export class DetailDocsComponent implements OnInit {
   moduleName: string | null = ""
   moduleDocs: string | null = ""
 
-  constructor(private docsService: DocsService, private route: ActivatedRoute) { }
+  constructor(private docsService: DocsService, private activatedRoute: ActivatedRoute, private route: Router) { }
 
   ngOnInit(): void {
-    this.moduleName = this.route.snapshot.paramMap.get('name')
+    this.moduleName = this.activatedRoute.snapshot.paramMap.get('name')
 
     this.docsService.getDocs(this.moduleName)
       .subscribe(data => {
@@ -39,12 +39,7 @@ export class DetailDocsComponent implements OnInit {
       if (result.isConfirmed) {
         this.docsService.putDocs(this.moduleName, modifyDocs)
           .subscribe(() => {
-            Swal.fire({
-              title: 'Module doc updated',
-              icon: 'success',
-            }).then(() =>
-              window.location.reload()
-            )
+            this.route.navigate(['docs'])
           })
       }
     })
