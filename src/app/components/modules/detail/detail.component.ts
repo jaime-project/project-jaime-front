@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ModuleService } from 'src/app/services/modules/modules.service';
 import Swal from 'sweetalert2';
 
@@ -14,10 +14,10 @@ export class DetailModuleComponent implements OnInit {
   moduleName: string | null = ""
   public codeEditSwitchActivated = false
 
-  constructor(private moduleService: ModuleService, private route: ActivatedRoute) { }
+  constructor(private moduleService: ModuleService, private activatedRoute: ActivatedRoute, private route: Router) { }
 
   ngOnInit(): void {
-    this.moduleName = this.route.snapshot.paramMap.get('name')
+    this.moduleName = this.activatedRoute.snapshot.paramMap.get('name')
 
     this.moduleService.getModule(this.moduleName)
       .subscribe(data => {
@@ -38,12 +38,7 @@ export class DetailModuleComponent implements OnInit {
       if (result.isConfirmed) {
         this.moduleService.putModule(this.moduleName, modifyCode)
           .subscribe(() => {
-            Swal.fire({
-              title: 'Module code updated',
-              icon: 'success',
-            }).then(() =>
-              window.location.reload()
-            )
+            this.route.navigate(['modules'])
           })
       }
     })
