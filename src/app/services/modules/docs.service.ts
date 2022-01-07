@@ -40,6 +40,11 @@ export class DocsService {
       )
   }
 
+  getDocsWithoutError(name: string | null): Observable<string> {
+    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
+    return this.http.get(this.apiUrl + '/' + name, { headers, responseType: 'text' })
+  }
+
   deleteDocs(name: string | null): Observable<any> {
     return this.http.delete<any>(this.apiUrl + '/' + name)
       .pipe(
