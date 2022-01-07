@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MonacoEditorModule } from 'ngx-monaco-editor';
 import { AgentComponentsRoutes } from './agentcomponents.routing';
 import { DetailAgentComponent } from './detail/detail.component';
 import { ListAgentComponent } from './list/list.component';
@@ -16,7 +17,8 @@ import { YamlAgentComponent } from './yaml/yaml.component';
     RouterModule.forChild(AgentComponentsRoutes),
     FormsModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    MonacoEditorModule,
   ],
   declarations: [
     DetailAgentComponent,

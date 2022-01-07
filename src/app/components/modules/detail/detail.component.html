@@ -18,7 +18,8 @@
 <div class="row" *ngIf="!codeEditSwitchActivated">
   <div class="card col-12">
     <div class="card-body">
-      <p class="card-text" style="white-space: pre-wrap;">{{moduleCode}}</p>
+      <ngx-monaco-editor style="width: 100%; height: 800px;" [options]="{ theme: 'vs-dark', language: 'python'}"
+        [(ngModel)]="moduleCode"></ngx-monaco-editor>
     </div>
   </div>
 </div>
@@ -27,9 +28,12 @@
 <div class="row" *ngIf="codeEditSwitchActivated">
   <div class="col-12">
     <div class="mb-3">
-      <textarea class="form-control" rows="20" #modifyCode>{{moduleCode}}</textarea>
+    <button type="button" class="btn btn-success" (click)="putModule(moduleCode)">Update</button>
+  </div>
+    <div class="mb-3">
+      <ngx-monaco-editor style="width: 100%; height: 800px;" [options]="{ theme: 'vs-dark', language: 'python'}"
+        [(ngModel)]="moduleCode"></ngx-monaco-editor>
     </div>
-    <button type="button" class="btn btn-success" (click)="putModule(modifyCode.value)">Update</button>
   </div>
 
 </div>
