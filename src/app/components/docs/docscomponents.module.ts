@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MonacoEditorModule } from 'ngx-monaco-editor';
 import { DetailDocsComponent } from './detail/docs.component';
 import { DocsComponentsRoutes } from './docscomponents.routing';
 import { ListDocsComponent } from './list/list.component';
@@ -16,7 +17,8 @@ import { TabsDocsComponent } from './tabs/tabs.component';
     RouterModule.forChild(DocsComponentsRoutes),
     FormsModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    MonacoEditorModule,
   ],
   declarations: [
     ListDocsComponent,

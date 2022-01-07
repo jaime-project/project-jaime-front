@@ -18,7 +18,8 @@
 <div class="row" *ngIf="!docsEditSwitchActivated">
   <div class="card col-12">
     <div class="card-body">
-      <p class="card-text" style="white-space: pre-wrap;">{{moduleDocs}}</p>
+      <ngx-monaco-editor style="width: 100%; height: 800px;" [options]="{ theme: 'vs-dark', language: 'yaml'}"
+      [(ngModel)]="moduleDocs"></ngx-monaco-editor>
     </div>
   </div>
 </div>
@@ -27,9 +28,12 @@
 <div class="row" *ngIf="docsEditSwitchActivated">
   <div class="col-12">
     <div class="mb-3">
-      <textarea class="form-control" rows="20" #modifyDocs>{{moduleDocs}}</textarea>
+      <button type="button" class="btn btn-success" (click)="putDocs(moduleDocs)">Update</button>
     </div>
-    <button type="button" class="btn btn-success" (click)="putDocs(modifyDocs.value)">Update</button>
+    <div class="mb-3">
+      <ngx-monaco-editor style="width: 100%; height: 800px;" [options]="{ theme: 'vs-dark', language: 'yaml'}"
+      [(ngModel)]="moduleDocs"></ngx-monaco-editor>
+    </div>
   </div>
 
 </div>
