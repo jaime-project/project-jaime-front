@@ -5,6 +5,9 @@
   </div>
 </div>
 
+<div class="mb-3 col-12">
+  <button type="button" class="btn btn-success" (click)="postCode(nameCode.value, newCode)">Create</button>
+</div>
 <div class="mb-3 col-6">
   <label for="nameInput" class="form-label"><b>Name</b></label>
   <input type="text" class="form-control" id="nameInput" required #nameCode>
@@ -12,9 +15,7 @@
 </div>
 <div class="mb-3 col-12">
   <label for="codeInput" class="form-label"><b>Code</b></label>
-  <textarea class="form-control" rows="20" id="codeInput" #newCode required></textarea>
+  <ngx-monaco-editor style="width: 100%; height: 800px;" [options]="{ theme: 'vs-dark', language: 'python'}"
+    [(ngModel)]="newCode"></ngx-monaco-editor>
   <div id="urlHelp" class="form-text"></div>
-</div>
-<div class="mb-3 col-12">
-  <button type="button" class="btn btn-success" (click)="postCode(nameCode.value, newCode.value)">Create</button>
 </div>
