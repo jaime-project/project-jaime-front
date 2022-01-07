@@ -10,6 +10,8 @@ import Swal from 'sweetalert2';
 })
 export class NewDocsComponent implements OnInit {
 
+  newDocs: string = ""
+
   constructor(private route: Router, private docsService: DocsService) { }
 
   ngOnInit(): void {

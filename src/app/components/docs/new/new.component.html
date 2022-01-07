@@ -5,6 +5,9 @@
   </div>
 </div>
 
+<div class="mb-3 col-12">
+  <button type="button" class="btn btn-success" (click)="postDocs(nameDocs.value, newDocs)">Create</button>
+</div>
 <div class="mb-3 col-6">
   <label for="nameInput" class="form-label"><b>Name</b></label>
   <input type="text" class="form-control" id="nameInput" required #nameDocs>
@@ -12,9 +15,7 @@
 </div>
 <div class="mb-3 col-12">
   <label for="docsInput" class="form-label"><b>Docs</b></label>
-  <textarea class="form-control" rows="20" id="docsInput" #newDocs required></textarea>
+  <ngx-monaco-editor style="width: 100%; height: 800px;" [options]="{ theme: 'vs-dark', language: 'yaml'}"
+  [(ngModel)]="newDocs"></ngx-monaco-editor>
   <div id="urlHelp" class="form-text"></div>
-</div>
-<div class="mb-3 col-12">
-  <button type="button" class="btn btn-success" (click)="postDocs(nameDocs.value, newDocs.value)">Create</button>
 </div>
