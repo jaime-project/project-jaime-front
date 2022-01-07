@@ -12,6 +12,9 @@ import Swal from 'sweetalert2';
 })
 export class ListWorkComponent implements OnInit {
 
+  editorOptions = { theme: 'vs-dark', language: 'javascript' };
+  code: string = 'function x() {\nconsole.log("Hello world!");\n}';
+
   worksShort: WorkShort[] = []
 
   constructor(private modalService: NgbModal, private workService: WorkService) { }
