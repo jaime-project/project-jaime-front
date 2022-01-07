@@ -42,7 +42,7 @@ export class NewWorkComponent implements OnInit {
   }
 
   moduleChange(moduleName: any) {
-    this.docsService.getDocs(moduleName)
+    this.docsService.getDocsWithoutError(moduleName)
       .subscribe(data => {
         this.workForm = new FormGroup({
           name: new FormControl(this.workForm.value.name),
@@ -55,7 +55,7 @@ export class NewWorkComponent implements OnInit {
 
   postWork() {
 
-    let yamlJson = parse(this.workForm.value.yaml)
+    let yamlJson = this.workForm.value.yaml != null ? parse(this.workForm.value.yaml) : {}
 
     let finalJson = {
       name: this.workForm.value.name,
