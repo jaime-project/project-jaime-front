@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { interval } from 'rxjs';
 import { ServerShort } from 'src/app/models/models';
 import { ServersService } from 'src/app/services/servers/servers.service';
@@ -13,8 +12,9 @@ import Swal from 'sweetalert2';
 export class ListServerComponent implements OnInit {
 
   listServersShorts: ServerShort[] = []
+  testServerLoad: boolean = false
 
-  constructor(private modalService: NgbModal, private serversService: ServersService) { }
+  constructor(private serversService: ServersService) { }
 
   ngOnInit(): void {
 
@@ -34,8 +34,11 @@ export class ListServerComponent implements OnInit {
   }
 
   testServer(name: string) {
+
+    this.testServerLoad = true
     this.serversService.testServer(name)
       .subscribe(data => {
+        this.testServerLoad = false
         if (data.success) {
           Swal.fire({
             title: 'Login success',
