@@ -106,7 +106,7 @@
         {
           "uuid": "c016f335-d586-47e6-abb0-a9f1f6ff5dac",
           "body": "{\n  \"success\": false,\n  \"text\": \"se te vencio el token\"\n}",
-          "latency": 0,
+          "latency": 3000,
           "statusCode": 200,
           "label": "",
           "headers": [
