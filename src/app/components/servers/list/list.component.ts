@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { interval } from 'rxjs';
 import { ServerShort } from 'src/app/models/models';
 import { ServersService } from 'src/app/services/servers/servers.service';
@@ -14,7 +15,7 @@ export class ListServerComponent implements OnInit {
   listServersShorts: ServerShort[] = []
   testServerLoad: boolean = false
 
-  constructor(private serversService: ServersService) { }
+  constructor(private serversService: ServersService, private route: Router) { }
 
   ngOnInit(): void {
 
@@ -29,7 +30,7 @@ export class ListServerComponent implements OnInit {
   loadStartData() {
     this.serversService.listServers()
       .subscribe(data => {
-        this.listServersShorts = data;
+        this.listServersShorts = data.sort().reverse();
       })
   }
 
@@ -70,7 +71,7 @@ export class ListServerComponent implements OnInit {
       if (result.isConfirmed) {
         this.serversService.deleteServer(name)
           .subscribe(() => {
-            window.location.reload()
+            this.route.navigate(['servers'])
           })
       }
     })

@@ -15,7 +15,7 @@
       "responses": [
         {
           "uuid": "e7b9d829-6132-4a61-a4f1-d6ea500c8aaa",
-          "body": "[\n  {\n    \"name\": \"edenor3\",\n    \"type\": \"OPENSHIFT\",\n    \"url\": \"https://console-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n  },\n  {\n    \"name\": \"edenor4\",\n    \"type\": \"OPENSHIFT\",\n    \"url\": \"https://asd-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n  }\n]",
+          "body": "[\n  {\n    \"name\": \"edenor3\",\n    \"type\": \"OPENSHIFT\",\n    \"url\": \"https://console-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n  },\n  {\n    \"name\": \"edenor4\",\n    \"type\": \"OPENSHIFT\",\n    \"url\": \"https://asd-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n  },\n  {\n    \"name\": \"asd1\",\n    \"type\": \"OPENSHIFT\",\n    \"url\": \"https://asd-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n}\n]",
           "latency": 0,
           "statusCode": 200,
           "label": "",
