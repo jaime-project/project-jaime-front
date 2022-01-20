@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Server } from 'src/app/models/models';
 import { ServersService } from 'src/app/services/servers/servers.service';
 import Swal from 'sweetalert2';
-import { Document, parse, parseDocument } from 'yaml';
+import { Document, parse } from 'yaml';
 
 @Component({
   selector: 'app-yaml-server',
@@ -21,10 +21,10 @@ export class YamlServerComponent implements OnInit {
     version: ""
   }
 
-  constructor(private serversService: ServersService, private route: ActivatedRoute) { }
+  constructor(private serversService: ServersService, private activatedRoute: ActivatedRoute, private route: Router) { }
 
   ngOnInit(): void {
-    let name = this.route.snapshot.paramMap.get('name')
+    let name = this.activatedRoute.snapshot.paramMap.get('name')
 
     this.serversService.getServer(name)
       .subscribe((data) => {
@@ -49,7 +49,7 @@ export class YamlServerComponent implements OnInit {
       if (result.isConfirmed) {
         this.serversService.putServer(parse(modifyYaml))
           .subscribe(() =>
-            window.location.reload()
+            this.route.navigate(['servers'])
           )
       }
     })

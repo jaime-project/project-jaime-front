@@ -10,11 +10,12 @@
     <div class="mb-3">
       <button type="submit" class="btn btn-success" (click)="putServer(contentYaml)">Update</button>
     </div>
-    <div class="mb-3">
-      <!-- <textarea class="form-control" rows="20" #modifyYaml>{{contentYaml}}</textarea> -->
-      <ngx-monaco-editor style="width: 100%; height: 500px;" [options]="{ theme: 'vs-dark', language: 'yaml'}"
-        [(ngModel)]="contentYaml">
-      </ngx-monaco-editor>
+    <div class="card mb-3">
+      <div class="card-body">
+        <ngx-monaco-editor style="width: 100%; height: 500px;" [options]="{ theme: 'vs-dark', language: 'yaml'}"
+          [(ngModel)]="contentYaml">
+        </ngx-monaco-editor>
+      </div>
     </div>
   </div>
 </div>
