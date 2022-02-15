@@ -222,6 +222,36 @@
       "sequentialResponse": false
     },
     {
+      "uuid": "e3c534b3-d6b6-49ba-9b2e-88d9e72b56a9",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "repos",
+      "responses": [
+        {
+          "uuid": "8450ccfe-250b-4256-b962-aa484289c099",
+          "body": "[\n  \"ocp_migrate\",\n  \"3scale\",\n  \"rhsso\"\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
       "uuid": "746f0382-da81-4ee1-ba54-bdcad02e7097",
       "documentation": "",
       "method": "get",

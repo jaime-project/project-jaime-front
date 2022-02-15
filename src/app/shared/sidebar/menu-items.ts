@@ -34,6 +34,14 @@ export const ROUTES: RouteInfo[] = [
     submenu: [],
   },
   {
+    path: "/repos",
+    title: "Repositories",
+    icon: "mdi mdi-book",
+    class: "",
+    extralink: false,
+    submenu: [],
+  },
+  {
     path: "/works",
     title: "Works",
     icon: "mdi mdi-backburger",
