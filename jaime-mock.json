@@ -11,7 +11,7 @@
       "uuid": "a6da9fa0-d099-437f-bec3-7f55efed53d2",
       "documentation": "",
       "method": "get",
-      "endpoint": "servers/all/short",
+      "endpoint": "clusters/all/short",
       "responses": [
         {
           "uuid": "e7b9d829-6132-4a61-a4f1-d6ea500c8aaa",
@@ -41,7 +41,7 @@
       "uuid": "f9773728-71dd-4ada-a76b-6a15c8a1dd77",
       "documentation": "",
       "method": "get",
-      "endpoint": "servers/types",
+      "endpoint": "clusters/types",
       "responses": [
         {
           "uuid": "76b5d706-e9b6-43c4-a3f7-0889459b8a0d",
@@ -71,7 +71,7 @@
       "uuid": "b6907a45-ba8a-4797-a924-279ccaf57688",
       "documentation": "",
       "method": "post",
-      "endpoint": "servers",
+      "endpoint": "clusters",
       "responses": [
         {
           "uuid": "f65efb47-9216-4a42-a603-bb8b16e5a373",
@@ -101,7 +101,7 @@
       "uuid": "c5b7b71c-72f2-452d-b8d1-e4bdc8bed130",
       "documentation": "",
       "method": "get",
-      "endpoint": "servers/*/test",
+      "endpoint": "clusters/*/test",
       "responses": [
         {
           "uuid": "c016f335-d586-47e6-abb0-a9f1f6ff5dac",
@@ -135,7 +135,7 @@
       "uuid": "d3e71c13-66d9-4fa4-ada2-c53084fd1f0d",
       "documentation": "",
       "method": "get",
-      "endpoint": "servers/*",
+      "endpoint": "clusters/*",
       "responses": [
         {
           "uuid": "dda3e566-8a62-4afe-bf2b-a6cfeea60829",
@@ -165,7 +165,7 @@
       "uuid": "fcf6de5f-3fac-4597-8840-95c38a475b6a",
       "documentation": "",
       "method": "put",
-      "endpoint": "servers/*",
+      "endpoint": "clusters/*",
       "responses": [
         {
           "uuid": "250858d8-3ece-4f64-a50f-441fe042d4b2",
@@ -195,7 +195,7 @@
       "uuid": "69641921-d115-40d1-9036-132f0af1c86a",
       "documentation": "",
       "method": "delete",
-      "endpoint": "servers/*",
+      "endpoint": "clusters/*",
       "responses": [
         {
           "uuid": "4a2271fd-4a4e-4477-9251-9690c15883ba",

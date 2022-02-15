@@ -7,7 +7,7 @@
 
 <div class="card col-6">
   <div class="card-body">
-    <form [formGroup]="serverForm" (ngSubmit)="postServer()">
+    <form [formGroup]="clusterForm" (ngSubmit)="postServer()">
       <div class="mb-3 col-12">
         <label for="nameInput" class="form-label"><b>Name</b></label>
         <input type="text" class="form-control" id="nameInput" formControlName="name" required>
@@ -16,7 +16,7 @@
       <div class="mb-3 col-12">
         <label for="urlInput" class="form-label"><b>Url</b></label>
         <input type="text" class="form-control" id="urlInput" formControlName="url" required>
-        <div id="urlHelp" class="form-text">Example: https://server.app.cluster.com</div>
+        <div id="urlHelp" class="form-text">Example: https://cluster.app.cluster.com</div>
       </div>
       <div class="mb-3 col-12">
         <label for="tokenInput" class="form-label"><b>Token</b></label>
@@ -36,7 +36,7 @@
         <div id="versionHelp" class="form-text">Example: 4.7</div>
       </div>
       <div class="mb-3 col-12">
-        <button type="submit" class="btn btn-success m-t-20" [disabled]="!serverForm.valid">Create</button>
+        <button type="submit" class="btn btn-success m-t-20" [disabled]="!clusterForm.valid">Create</button>
       </div>
     </form>
   </div>

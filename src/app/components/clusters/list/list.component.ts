@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { interval } from 'rxjs';
 import { ServerShort } from 'src/app/models/models';
-import { ServersService } from 'src/app/services/servers/servers.service';
+import { ClustersService } from 'src/app/services/clusters/clusters.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-list-server',
+  selector: 'app-list-cluster',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
@@ -15,7 +15,7 @@ export class ListServerComponent implements OnInit {
   listServersShorts: ServerShort[] = []
   testServerLoad: boolean = false
 
-  constructor(private serversService: ServersService, private route: Router) { }
+  constructor(private clustersService: ClustersService, private route: Router) { }
 
   ngOnInit(): void {
 
@@ -28,7 +28,7 @@ export class ListServerComponent implements OnInit {
   }
 
   loadStartData() {
-    this.serversService.listServers()
+    this.clustersService.listServers()
       .subscribe(data => {
         this.listServersShorts = data.sort().reverse();
       })
@@ -37,7 +37,7 @@ export class ListServerComponent implements OnInit {
   testServer(name: string) {
 
     this.testServerLoad = true
-    this.serversService.testServer(name)
+    this.clustersService.testServer(name)
       .subscribe(data => {
         this.testServerLoad = false
         if (data.success) {
@@ -61,17 +61,17 @@ export class ListServerComponent implements OnInit {
   deleteServer(name: string) {
 
     Swal.fire({
-      title: 'Delete server',
-      text: 'Delete server with name "' + name + '"',
+      title: 'Delete cluster',
+      text: 'Delete cluster with name "' + name + '"',
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',
       showCancelButton: true,
     }).then(result => {
       if (result.isConfirmed) {
-        this.serversService.deleteServer(name)
+        this.clustersService.deleteServer(name)
           .subscribe(() => {
-            this.route.navigate(['servers'])
+            this.route.navigate(['clusters'])
           })
       }
     })

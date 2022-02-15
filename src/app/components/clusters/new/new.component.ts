@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ServersService } from 'src/app/services/servers/servers.service';
+import { ClustersService } from 'src/app/services/clusters/clusters.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-new-server',
+  selector: 'app-new-cluster',
   templateUrl: './new.component.html',
   styleUrls: ['./new.component.css']
 })
 export class NewServerComponent implements OnInit {
 
-  serverForm = new FormGroup({
+  clusterForm = new FormGroup({
     name: new FormControl(''),
     url: new FormControl(''),
     token: new FormControl(''),
@@ -19,19 +19,19 @@ export class NewServerComponent implements OnInit {
     version: new FormControl(''),
   });
 
-  constructor(private route: Router, private serversService: ServersService) { }
+  constructor(private route: Router, private clustersService: ClustersService) { }
 
   ngOnInit(): void {
   }
 
   postServer() {
-    this.serversService.postServer(this.serverForm.value)
+    this.clustersService.postServer(this.clusterForm.value)
       .subscribe(() => {
         Swal.fire({
           title: 'New Server created',
           icon: 'success',
         }).then(() =>
-          this.route.navigate(['servers'])
+          this.route.navigate(['clusters'])
         )
       })
   }

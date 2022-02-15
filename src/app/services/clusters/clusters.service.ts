@@ -9,9 +9,9 @@ import Swal from 'sweetalert2';
 @Injectable({
   providedIn: 'root'
 })
-export class ServersService {
+export class ClustersService {
 
-  apiUrl: string = environment.backendURL + '/api/v1/servers';
+  apiUrl: string = environment.backendURL + '/api/v1/clusters';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private http: HttpClient) { }
@@ -30,8 +30,8 @@ export class ServersService {
       )
   }
 
-  postServer(server: Server): Observable<any> {
-    return this.http.post<any>(this.apiUrl + '/', server)
+  postServer(cluster: Server): Observable<any> {
+    return this.http.post<any>(this.apiUrl + '/', cluster)
       .pipe(
         catchError(this.httpError)
       )
@@ -44,9 +44,9 @@ export class ServersService {
       )
   }
 
-  putServer(server: Server): Observable<any> {
-    let name = server.name
-    return this.http.put<any>(this.apiUrl + '/' + name, server)
+  putServer(cluster: Server): Observable<any> {
+    let name = cluster.name
+    return this.http.put<any>(this.apiUrl + '/' + name, cluster)
       .pipe(
         catchError(this.httpError)
       )

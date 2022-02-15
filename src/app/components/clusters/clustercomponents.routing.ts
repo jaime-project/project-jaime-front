@@ -9,35 +9,35 @@ export const ServerComponentsRoutes: Routes = [
 		path: '',
 		children: [
 			{
-				path: 'servers',
+				path: 'clusters',
 				component: ListServerComponent,
 				data: {
-					title: 'servers',
+					title: 'clusters',
 					urls: [
 						{ title: 'ngComponent' },
-						{ title: 'Servers' }
+						{ title: 'clusters' }
 					]
 				}
 			},
 			{
-				path: 'servers/new',
+				path: 'clusters/new',
 				component: NewServerComponent,
 				data: {
-					title: 'servers',
+					title: 'clusters',
 					urls: [
 						{ title: 'ngComponent' },
-						{ title: 'Servers' }
+						{ title: 'clusters' }
 					]
 				}
 			},
 			{
-				path: 'servers/details/:name',
+				path: 'clusters/details/:name',
 				component: TabsServerComponent,
 				data: {
-					title: 'servers',
+					title: 'clusters',
 					urls: [
 						{ title: 'ngComponent' },
-						{ title: 'Servers' }
+						{ title: 'clusters' }
 					]
 				}
 			},

@@ -2,8 +2,8 @@ import { RouteInfo } from "./sidebar.metadata";
 
 export const ROUTES: RouteInfo[] = [
   {
-    path: "/servers",
-    title: "Servers",
+    path: "/clusters",
+    title: "Clusters",
     icon: "mdi mdi-view-carousel",
     class: "",
     extralink: false,

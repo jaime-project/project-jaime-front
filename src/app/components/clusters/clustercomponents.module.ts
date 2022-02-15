@@ -7,7 +7,7 @@ import { MonacoEditorModule } from 'ngx-monaco-editor';
 import { DetailServerComponent } from './detail/detail.component';
 import { ListServerComponent } from './list/list.component';
 import { NewServerComponent } from './new/new.component';
-import { ServerComponentsRoutes } from './servercomponents.routing';
+import { ServerComponentsRoutes } from './clustercomponents.routing';
 import { TabsServerComponent } from './tabs/tabs.component';
 import { YamlServerComponent } from './yaml/yaml.component';
 
@@ -29,4 +29,4 @@ import { YamlServerComponent } from './yaml/yaml.component';
     NewServerComponent
   ]
 })
-export class ServerComponentsModule { }
+export class ClusterComponentsModule { }

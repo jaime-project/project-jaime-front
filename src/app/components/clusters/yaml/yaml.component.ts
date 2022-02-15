@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Server } from 'src/app/models/models';
-import { ServersService } from 'src/app/services/servers/servers.service';
+import { ClustersService } from 'src/app/services/clusters/clusters.service';
 import Swal from 'sweetalert2';
 import { Document, parse } from 'yaml';
 
 @Component({
-  selector: 'app-yaml-server',
+  selector: 'app-yaml-cluster',
   templateUrl: './yaml.component.html',
   styleUrls: ['./yaml.component.css']
 })
 export class YamlServerComponent implements OnInit {
 
   contentYaml: string = ""
-  server: Server = {
+  cluster: Server = {
     name: "",
     type: "",
     token: "",
@@ -21,14 +21,14 @@ export class YamlServerComponent implements OnInit {
     version: ""
   }
 
-  constructor(private serversService: ServersService, private activatedRoute: ActivatedRoute, private route: Router) { }
+  constructor(private clustersService: ClustersService, private activatedRoute: ActivatedRoute, private route: Router) { }
 
   ngOnInit(): void {
     let name = this.activatedRoute.snapshot.paramMap.get('name')
 
-    this.serversService.getServer(name)
+    this.clustersService.getServer(name)
       .subscribe((data) => {
-        this.server = data;
+        this.cluster = data;
 
         let doc = new Document()
         doc.contents = data
@@ -39,17 +39,17 @@ export class YamlServerComponent implements OnInit {
   putServer(modifyYaml: string) {
 
     Swal.fire({
-      title: 'Update server',
-      text: 'Update server with name "' + this.server.name + '"',
+      title: 'Update cluster',
+      text: 'Update cluster with name "' + this.cluster.name + '"',
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',
       showCancelButton: true,
     }).then(result => {
       if (result.isConfirmed) {
-        this.serversService.putServer(parse(modifyYaml))
+        this.clustersService.putServer(parse(modifyYaml))
           .subscribe(() =>
-            this.route.navigate(['servers'])
+            this.route.navigate(['clusters'])
           )
       }
     })

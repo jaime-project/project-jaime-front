@@ -3,7 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DocsService } from 'src/app/services/modules/docs.service';
 import { ModuleService } from 'src/app/services/modules/modules.service';
-import { ServersService } from 'src/app/services/servers/servers.service';
+import { ClustersService } from 'src/app/services/clusters/clusters.service';
 import { WorkService } from 'src/app/services/works/work.service';
 import Swal from 'sweetalert2';
 import { Document, parse } from 'yaml';
@@ -26,7 +26,7 @@ export class NewWorkComponent implements OnInit {
     yaml: new FormControl(),
   });
 
-  constructor(private route: Router, private workService: WorkService, private moduleService: ModuleService, private serverService: ServersService, private docsService: DocsService) { }
+  constructor(private route: Router, private workService: WorkService, private moduleService: ModuleService, private clusterService: ClustersService, private docsService: DocsService) { }
 
   ngOnInit(): void {
 
@@ -35,7 +35,7 @@ export class NewWorkComponent implements OnInit {
         this.modules = data.sort()
       })
 
-    this.serverService.listServerTypes()
+    this.clusterService.listServerTypes()
       .subscribe(data => {
         this.agentsTypes = data
       })
