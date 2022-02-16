@@ -21,13 +21,17 @@
 <div class="col-lg-12">
   <div class="row text-center text-lg-start">
     <div class="col-lg-2" *ngFor="let repoName of modulesName">
-      <div class="card m-t-30" routerLink="/repos/{{repoName}}/modules">
-        <a class="d-block h-100">
+      <div class="card m-t-30">
+        <a class="d-block mb-2 h-100" routerLink="/repos/{{repoName}}/modules">
           <div>
             <i class="far mdi mdi-folder fa-5x"></i>
           </div>
           <div>
             <h4><b>{{repoName}}</b></h4>
+          </div>
+          <div>
+            <button type="button" class="btn btn-danger" style="margin-right: 0%;" (click)="deleteModule(moduleName)">
+              <i class="far fa-trash-alt"></i></button>
           </div>
         </a>
       </div>
