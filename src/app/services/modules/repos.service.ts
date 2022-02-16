@@ -23,6 +23,13 @@ export class ReposService {
       )
   }
 
+  listReposByType(typeRepo: string): Observable<string[]> {
+    return this.http.get<string[]>(`${this.apiUrl}/${typeRepo}`)
+      .pipe(
+        catchError(this.httpError)
+      )
+  }
+
   listReposTypes(): Observable<string[]> {
     return this.http.get<string[]>(`${this.apiUrl}/types`)
       .pipe(
@@ -37,20 +44,6 @@ export class ReposService {
       )
   }
 
-  getRepos(name: string | null): Observable<string> {
-    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
-
-    return this.http.get(this.apiUrl + '/' + name, { headers, responseType: 'text' })
-      .pipe(
-        catchError(this.httpError)
-      )
-  }
-
-  getReposWithoutError(name: string | null): Observable<string> {
-    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
-    return this.http.get(this.apiUrl + '/' + name, { headers, responseType: 'text' })
-  }
-
   deleteRepos(name: string): Observable<any> {
     return this.http.delete<any>(this.apiUrl + '/' + name)
       .pipe(
@@ -58,9 +51,9 @@ export class ReposService {
       )
   }
 
-  putRepos(name: string | null, content: string): Observable<any> {
-    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
-    return this.http.put(this.apiUrl + '/' + name, content, { headers })
+  reloadRepos(name: string): Observable<any> {
+    const url = `${this.apiUrl}/${name}/reload`
+    return this.http.post<any>(url, {})
       .pipe(
         catchError(this.httpError)
       )

@@ -222,36 +222,6 @@
       "sequentialResponse": false
     },
     {
-      "uuid": "e3c534b3-d6b6-49ba-9b2e-88d9e72b56a9",
-      "documentation": "",
-      "method": "get",
-      "endpoint": "repos",
-      "responses": [
-        {
-          "uuid": "8450ccfe-250b-4256-b962-aa484289c099",
-          "body": "[\n  \"ocp_migrate\",\n  \"3scale\",\n  \"rhsso\"\n]",
-          "latency": 0,
-          "statusCode": 200,
-          "label": "",
-          "headers": [
-            {
-              "key": "Access-Control-Allow-Origin",
-              "value": "*"
-            }
-          ],
-          "filePath": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false
-        }
-      ],
-      "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
-    },
-    {
       "uuid": "746f0382-da81-4ee1-ba54-bdcad02e7097",
       "documentation": "",
       "method": "get",
@@ -342,6 +312,36 @@
       "sequentialResponse": false
     },
     {
+      "uuid": "e3c534b3-d6b6-49ba-9b2e-88d9e72b56a9",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "repos",
+      "responses": [
+        {
+          "uuid": "8450ccfe-250b-4256-b962-aa484289c099",
+          "body": "[\n  \"ocp-migration\",\n  \"3scale\",\n  \"rh-sso\",\n  \"local\".\n\"pruebas\"\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
       "uuid": "c5afdefc-2ee1-4511-8af6-945ef3414341",
       "documentation": "",
       "method": "post",
@@ -372,6 +372,66 @@
       "sequentialResponse": false
     },
     {
+      "uuid": "73fae45e-817f-4971-92ee-e6d0e46e9ab5",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "repos/LOCAL",
+      "responses": [
+        {
+          "uuid": "1d25e6b8-bf69-41f9-9fc9-cca402ef2c8c",
+          "body": "[\n  \"local\",\n  \"pruebas\"\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "a46875c4-f038-43ed-9ed9-884b290feaaa",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "repos/GIT",
+      "responses": [
+        {
+          "uuid": "a3bb14c5-4394-4a6a-ae9a-fd4d4e54934f",
+          "body": "[\n  \"ocp-migration\",\n  \"3scale\",\n  \"rh-sso\"\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
       "uuid": "b05e0386-5933-48bd-9ac6-565c68559453",
       "documentation": "",
       "method": "get",
@@ -380,6 +440,36 @@
         {
           "uuid": "da3865a4-f59a-49ee-ba07-b5e1b763ed58",
           "body": "[\n  \"LOCAL\",\n  \"GIT\"\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "4a4eb735-6fc7-4f71-9a7b-efa4d414ece7",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "repos/*/reload",
+      "responses": [
+        {
+          "uuid": "1e899205-6e91-4b19-a331-bc549dc4a324",
+          "body": "",
           "latency": 0,
           "statusCode": 200,
           "label": "",

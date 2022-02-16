@@ -11,7 +11,8 @@ import Swal from 'sweetalert2';
 })
 export class ListModuleComponent implements OnInit {
 
-  modulesName: string[] = []
+  reposLocal: string[] = []
+  reposGit: string[] = []
 
   constructor(private reposService: ReposService, private route: Router) { }
 
@@ -26,9 +27,13 @@ export class ListModuleComponent implements OnInit {
   }
 
   loadStartData() {
-    this.reposService.listRepos()
+    this.reposService.listReposByType('LOCAL')
       .subscribe(data => {
-        this.modulesName = data.sort()
+        this.reposLocal = data.sort()
+      })
+    this.reposService.listReposByType('GIT')
+      .subscribe(data => {
+        this.reposGit = data.sort()
       })
   }
 
@@ -44,6 +49,25 @@ export class ListModuleComponent implements OnInit {
     }).then(result => {
       if (result.isConfirmed) {
         this.reposService.deleteRepos(name)
+          .subscribe(() => {
+            this.route.navigate(['repos'])
+          })
+      }
+    })
+  }
+
+  reloadRepo(name: string) {
+
+    Swal.fire({
+      title: 'Reload repository',
+      text: 'Reload repository with name "' + name + '"',
+      icon: 'warning',
+      confirmButtonColor: '#05b281',
+      cancelButtonColor: '#ec312d',
+      showCancelButton: true,
+    }).then(result => {
+      if (result.isConfirmed) {
+        this.reposService.reloadRepos(name)
           .subscribe(() => {
             this.route.navigate(['repos'])
           })
