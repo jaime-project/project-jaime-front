@@ -5,14 +5,14 @@
     <ng-template ngbTabTitle><b>New</b></ng-template>
     <ng-template ngbTabContent>
       <div class="col-12 m-t-30">
-        <h4 class="m-b-0"><b>Module New</b></h4>
+        <h4 class="m-b-0"><b>Module File Name</b></h4>
 
         <div class="col-lg-6">
           <div class="card m-t-30">
             <div class="card-body">
               <div class="mb-3 col-12">
                 <label for="nameInput" class="form-label"><b>Name</b></label>
-                <input type="text" class="form-control" id="nameInput" required>
+                <input type="text" class="form-control" id="nameInput" [(ngModel)]="name">
               </div>
             </div>
           </div>
@@ -28,7 +28,7 @@
     <ng-template ngbTabContent>
 
       <div class="col-12 m-t-30">
-        <h4 class="m-b-0"><b>Module New Docs</b></h4>
+        <h4 class="m-b-0"><b>Module Docs</b></h4>
         <p class="text-muted m-t-0 font-12"></p>
       </div>
 
@@ -37,11 +37,12 @@
           <div class="card-body">
             <div class="mb-3 col-12">
               <label for="titleInput" class="form-label"><b>Title</b></label>
-              <input type="text" class="form-control" id="nameInput" required>
+              <input type="text" class="form-control" id="nameInput" [(ngModel)]="title">
             </div>
             <div class="mb-3 col-12">
               <label for="descriptionInput" class="form-label"><b>Description</b></label>
-              <textarea id="descriptionInput" class="form-control" cols="30" rows="10"></textarea>
+              <textarea id="descriptionInput" class="form-control" cols="30" rows="10"
+                [(ngModel)]="description"></textarea>
             </div>
           </div>
         </div>
@@ -53,7 +54,7 @@
             <div class="mb-3 col-12">
               <label for="docsInput" class="form-label"><b>Yaml</b></label>
               <ngx-monaco-editor style="width: 100%; height: 500px;" [options]="{ theme: 'vs-dark', language: 'yaml'}"
-                [(ngModel)]="newDocs"></ngx-monaco-editor>
+                [(ngModel)]="docs"></ngx-monaco-editor>
             </div>
           </div>
         </div>
@@ -68,7 +69,7 @@
     <ng-template ngbTabContent>
 
       <div class="col-12 m-t-30">
-        <h4 class="m-b-0"><b>Module New Code</b></h4>
+        <h4 class="m-b-0"><b>Module Code</b></h4>
         <p class="text-muted m-t-0 font-12"></p>
       </div>
 
@@ -78,7 +79,7 @@
             <div class="mb-3 col-12">
               <label for="codeInput" class="form-label"><b>Code</b></label>
               <ngx-monaco-editor style="width: 100%; height: 800px;" [options]="{ theme: 'vs-dark', language: 'python'}"
-                [(ngModel)]="newCode"></ngx-monaco-editor>
+                [(ngModel)]="code"></ngx-monaco-editor>
               <div id="urlHelp" class="form-text"></div>
             </div>
           </div>
@@ -102,12 +103,7 @@
       <div class="col-lg-6">
         <div class="card m-t-30">
           <div class="card-body">
-            <form [formGroup]="repoLocalForm">
-              <div class="col-12">
-                <button type="button" class="btn btn-success"
-                  (click)="postDocs(nameDocs.value, newDocs)">Create</button>
-              </div>
-            </form>
+            <button type="button" class="btn btn-success" (click)="postModule()">Create</button>
           </div>
         </div>
       </div>

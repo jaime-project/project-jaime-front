@@ -342,172 +342,6 @@
       "sequentialResponse": false
     },
     {
-      "uuid": "1a7175df-10ae-408a-8ee5-c4871d795c2c",
-      "documentation": "",
-      "method": "get",
-      "endpoint": "docs",
-      "responses": [
-        {
-          "uuid": "728d94ea-be5d-4710-90e4-5580ef2f6abf",
-          "body": "[\n  \"install jenkins\",\n  \"migrate object\",\n  \"test\",\n    \"install jenkins\",\n  \"migrate object\",\n  \"test\",\n    \"install jenkins\",\n  \"migrate object\",\n  \"test\",\n    \"install jenkins\",\n  \"migrate object\"\n]",
-          "latency": 0,
-          "statusCode": 200,
-          "label": "",
-          "headers": [
-            {
-              "key": "Access-Control-Allow-Origin",
-              "value": "*"
-            }
-          ],
-          "filePath": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false
-        }
-      ],
-      "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
-    },
-    {
-      "uuid": "51e7fe5c-63ea-4a01-aec6-86f9a008ee91",
-      "documentation": "",
-      "method": "get",
-      "endpoint": "docs/*",
-      "responses": [
-        {
-          "uuid": "606b2c41-1d2c-475c-8f32-ce8a58aa38d2",
-          "body": "apiVersion: v1\nkind: PersistentVolume\nmetadata:\n  name: nfs-pv \nspec:\n  capacity:\n    storage: 1Gi \n  accessModes:\n    - ReadWriteMany \n  persistentVolumeReclaimPolicy: Retain \n  nfs: \n    path: /opt/nfs \n    server: nfs.f22 \n    readOnly: false\n  \nThe name of the PV, which is referenced in pod definitions or displayed in various oc volume commands.\nThe amount of storage allocated to this volume.\naccessModes are used as labels to match a PV and a PVC. They currently do not define any form of access control.\nThe volume reclaim policy Retain indicates that the volume will be preserved after the pods accessing it terminates.\nThis defines the volume type being used, in this case the NFS plug-in.\nThis is the NFS mount path.\nThis is the NFS server. This can also be specified by IP address.",
-          "latency": 0,
-          "statusCode": 200,
-          "label": "",
-          "headers": [
-            {
-              "key": "Access-Control-Allow-Origin",
-              "value": "*"
-            },
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "filePath": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false
-        }
-      ],
-      "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
-    },
-    {
-      "uuid": "6c8cafaf-174c-459a-9923-363919d25090",
-      "documentation": "",
-      "method": "delete",
-      "endpoint": "docs/*",
-      "responses": [
-        {
-          "uuid": "058732e9-1894-46be-81a0-f302c2d3df5a",
-          "body": "",
-          "latency": 0,
-          "statusCode": 200,
-          "label": "",
-          "headers": [
-            {
-              "key": "Access-Control-Allow-Origin",
-              "value": "*"
-            },
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "filePath": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false
-        }
-      ],
-      "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
-    },
-    {
-      "uuid": "6b7c4581-6dac-42d1-8bb4-4343f76ba92c",
-      "documentation": "",
-      "method": "put",
-      "endpoint": "docs/*",
-      "responses": [
-        {
-          "uuid": "13e4e44e-3620-48d0-8065-c07c93def44c",
-          "body": "",
-          "latency": 0,
-          "statusCode": 200,
-          "label": "",
-          "headers": [
-            {
-              "key": "Access-Control-Allow-Origin",
-              "value": "*"
-            },
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "filePath": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false
-        }
-      ],
-      "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
-    },
-    {
-      "uuid": "2d3c8ba8-82dc-4f06-a57c-19101e6d5b4f",
-      "documentation": "",
-      "method": "post",
-      "endpoint": "docs/*",
-      "responses": [
-        {
-          "uuid": "8d6d269f-232f-4b9e-aacd-9ee7f2163f69",
-          "body": "",
-          "latency": 0,
-          "statusCode": 201,
-          "label": "",
-          "headers": [
-            {
-              "key": "Access-Control-Allow-Origin",
-              "value": "*"
-            },
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "filePath": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false
-        }
-      ],
-      "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
-    },
-    {
       "uuid": "c5afdefc-2ee1-4511-8af6-945ef3414341",
       "documentation": "",
       "method": "post",
@@ -553,6 +387,172 @@
             {
               "key": "Access-Control-Allow-Origin",
               "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "1a7175df-10ae-408a-8ee5-c4871d795c2c",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "repos/*/docs",
+      "responses": [
+        {
+          "uuid": "728d94ea-be5d-4710-90e4-5580ef2f6abf",
+          "body": "[\n  \"install jenkins\",\n  \"migrate object\",\n  \"test\",\n    \"install jenkins\",\n  \"migrate object\",\n  \"test\",\n    \"install jenkins\",\n  \"migrate object\",\n  \"test\",\n    \"install jenkins\",\n  \"migrate object\"\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "51e7fe5c-63ea-4a01-aec6-86f9a008ee91",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "repos/*/docs/*",
+      "responses": [
+        {
+          "uuid": "606b2c41-1d2c-475c-8f32-ce8a58aa38d2",
+          "body": "apiVersion: v1\nkind: PersistentVolume\nmetadata:\n  name: nfs-pv \nspec:\n  capacity:\n    storage: 1Gi \n  accessModes:\n    - ReadWriteMany \n  persistentVolumeReclaimPolicy: Retain \n  nfs: \n    path: /opt/nfs \n    server: nfs.f22 \n    readOnly: false\n  \nThe name of the PV, which is referenced in pod definitions or displayed in various oc volume commands.\nThe amount of storage allocated to this volume.\naccessModes are used as labels to match a PV and a PVC. They currently do not define any form of access control.\nThe volume reclaim policy Retain indicates that the volume will be preserved after the pods accessing it terminates.\nThis defines the volume type being used, in this case the NFS plug-in.\nThis is the NFS mount path.\nThis is the NFS server. This can also be specified by IP address.",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "6c8cafaf-174c-459a-9923-363919d25090",
+      "documentation": "",
+      "method": "delete",
+      "endpoint": "repos/*/docs/*",
+      "responses": [
+        {
+          "uuid": "058732e9-1894-46be-81a0-f302c2d3df5a",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "6b7c4581-6dac-42d1-8bb4-4343f76ba92c",
+      "documentation": "",
+      "method": "put",
+      "endpoint": "repos/*/docs/*",
+      "responses": [
+        {
+          "uuid": "13e4e44e-3620-48d0-8065-c07c93def44c",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "2d3c8ba8-82dc-4f06-a57c-19101e6d5b4f",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "repos/*/docs/*",
+      "responses": [
+        {
+          "uuid": "8d6d269f-232f-4b9e-aacd-9ee7f2163f69",
+          "body": "",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
             }
           ],
           "filePath": "",

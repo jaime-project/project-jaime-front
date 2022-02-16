@@ -16,13 +16,15 @@ import { Document, parse } from 'yaml';
 })
 export class NewWorkComponent implements OnInit {
 
+  repo: string = ""
   repos: string[] = []
   modules: string[] = []
-  moduleDocs: string = "asd"
+  moduleDocs: string = ""
   agentsTypes: string[] = []
 
   workForm = new FormGroup({
     name: new FormControl(''),
+    repo: new FormControl(''),
     module: new FormControl(''),
     agentType: new FormControl(''),
     yaml: new FormControl(),
@@ -44,6 +46,7 @@ export class NewWorkComponent implements OnInit {
   }
 
   repoChange(repoName: any) {
+    this.repo = repoName
     this.moduleService.listModules(repoName)
       .subscribe(data => {
         this.modules = data.sort()
@@ -51,7 +54,7 @@ export class NewWorkComponent implements OnInit {
   }
 
   moduleChange(moduleName: any) {
-    this.docsService.getDocsWithoutError(moduleName)
+    this.docsService.getDocsWithoutError(moduleName, this.repo)
       .subscribe(data => {
         this.workForm = new FormGroup({
           name: new FormControl(this.workForm.value.name),

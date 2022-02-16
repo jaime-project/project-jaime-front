@@ -12,14 +12,13 @@ import Swal from 'sweetalert2';
 export class ListModuleComponent implements OnInit {
 
   modulesName: string[] = []
-  repoName: string | null = ""
+  repo: string = ""
 
   constructor(private modulesService: ModuleService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
 
-    this.repoName = this.activatedRoute.snapshot.paramMap.get('repo')
-    console.log(this.repoName)
+    this.repo = this.activatedRoute.snapshot.paramMap.get('repo')!
 
     this.loadStartData()
 
@@ -30,7 +29,7 @@ export class ListModuleComponent implements OnInit {
   }
 
   loadStartData() {
-    this.modulesService.listModules(this.repoName!)
+    this.modulesService.listModules(this.repo!)
       .subscribe(data => {
         this.modulesName = data.sort()
       })
@@ -47,7 +46,7 @@ export class ListModuleComponent implements OnInit {
       showCancelButton: true,
     }).then(result => {
       if (result.isConfirmed) {
-        this.modulesService.deleteModule(name)
+        this.modulesService.deleteModule(name, this.repo)
           .subscribe(() => {
             window.location.reload()
           })

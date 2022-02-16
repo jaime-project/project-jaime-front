@@ -10,16 +10,19 @@ import Swal from 'sweetalert2';
 })
 export class CodeModuleComponent implements OnInit {
 
+  repo: string = ""
   moduleCode: string = ""
-  moduleName: string | null = ""
+  moduleName: string = ""
   public codeEditSwitchActivated = false
 
   constructor(private moduleService: ModuleService, private activatedRoute: ActivatedRoute, private route: Router) { }
 
   ngOnInit(): void {
-    this.moduleName = this.activatedRoute.snapshot.paramMap.get('name')
 
-    this.moduleService.getModule(this.moduleName)
+    this.repo = this.activatedRoute.snapshot.paramMap.get('repo')!
+    this.moduleName = this.activatedRoute.snapshot.paramMap.get('name')!
+
+    this.moduleService.getModule(this.moduleName, this.repo)
       .subscribe(data => {
         this.moduleCode = data;
       })
@@ -36,7 +39,7 @@ export class CodeModuleComponent implements OnInit {
       showCancelButton: true,
     }).then(result => {
       if (result.isConfirmed) {
-        this.moduleService.putModule(this.moduleName, modifyCode)
+        this.moduleService.putModule(this.moduleName, modifyCode, this.repo)
           .subscribe(() => {
             this.route.navigate(['modules'])
           })

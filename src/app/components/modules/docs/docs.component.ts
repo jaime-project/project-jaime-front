@@ -12,15 +12,17 @@ export class DetailDocsComponent implements OnInit {
 
   public docsEditSwitchActivated = false
 
-  moduleName: string | null = ""
-  moduleDocs: string | null = ""
+  repo: string = ""
+  moduleName: string = ""
+  moduleDocs: string = ""
 
   constructor(private docsService: DocsService, private activatedRoute: ActivatedRoute, private route: Router) { }
 
   ngOnInit(): void {
-    this.moduleName = this.activatedRoute.snapshot.paramMap.get('name')
+    this.repo = this.activatedRoute.snapshot.paramMap.get('repo')!
+    this.moduleName = this.activatedRoute.snapshot.paramMap.get('name')!
 
-    this.docsService.getDocs(this.moduleName)
+    this.docsService.getDocs(this.moduleName, this.repo)
       .subscribe(data => {
         this.moduleDocs = data;
       })
@@ -37,7 +39,7 @@ export class DetailDocsComponent implements OnInit {
       showCancelButton: true,
     }).then(result => {
       if (result.isConfirmed) {
-        this.docsService.putDocs(this.moduleName, modifyDocs)
+        this.docsService.putDocs(this.moduleName, modifyDocs, this.repo)
           .subscribe(() => {
             this.route.navigate(['docs'])
           })

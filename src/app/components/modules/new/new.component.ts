@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { DocsService } from 'src/app/services/modules/docs.service';
 import { ModuleService } from 'src/app/services/modules/modules.service';
 import Swal from 'sweetalert2';
+import { Document } from 'yaml';
 
 @Component({
   selector: 'app-new-module',
@@ -10,19 +12,38 @@ import Swal from 'sweetalert2';
 })
 export class NewModuleComponent implements OnInit {
 
-  newCode: string = ""
+  repo: string = ""
+  name: string = ""
+  title: string = ""
+  description: string = ""
+  yaml: string = ""
+  code: string = ""
 
-  constructor(private route: Router, private moduleService: ModuleService) { }
+  constructor(private route: Router, private moduleService: ModuleService, private docsService: DocsService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.repo = this.activatedRoute.snapshot.paramMap.get('repo')!
   }
 
-  postCode(nameCode: string, newCode: string) {
-    this.moduleService.postModule(nameCode, newCode)
+  postModule() {
+
+    let yaml_dict = {
+      title: this.title,
+      description: this.description,
+      yaml: this.yaml
+    }
+
+    let doc = new Document()
+    doc.contents = yaml_dict
+    let finalYaml = doc.toString()
+
+    this.docsService.postDocs(this.name, finalYaml, this.repo)
+
+    this.moduleService.postModule(this.name, finalYaml, this.repo)
       .subscribe(() => {
         Swal.fire({
           title: 'Success creation',
-          text: 'Generated code: "' + nameCode + '"',
+          text: 'Generated module: "' + this.name + '"',
           icon: 'success',
           confirmButtonColor: '#05b281',
         }).then(() =>

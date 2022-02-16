@@ -11,46 +11,55 @@ import Swal from 'sweetalert2';
 })
 export class ModuleService {
 
-  apiUrl: string = environment.backendURL + '/api/v1/repos/:repo/modules';
+  apiUrl: string = environment.backendURL + '/api/v1/repos';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private http: HttpClient) { }
 
   listModules(repo: string): Observable<string[]> {
-    return this.http.get<string[]>(this.apiUrl.replace(':repo', repo))
+    return this.http.get<string[]>(`${this.apiUrl}/${repo}/modules`)
       .pipe(
         catchError(this.httpError)
       )
   }
 
-  getModule(name: string | null): Observable<string> {
+  getModule(name: string, repo: string): Observable<string> {
+
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
+    const url = `${this.apiUrl}/${repo}/modules/${name}`
 
-    return this.http.get(this.apiUrl + '/' + name, { headers, responseType: 'text' })
+    return this.http.get(url, { headers, responseType: 'text' })
       .pipe(
         catchError(this.httpError)
       )
   }
 
-  postModule(name: string | null, code: string | null): Observable<string> {
+  postModule(name: string, code: string, repo: string): Observable<string> {
+
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
+    const url = `${this.apiUrl}/${repo}/modules/${name}`
 
-    return this.http.post(this.apiUrl + '/' + name, code, { headers, responseType: 'text' })
+    return this.http.post(url, code, { headers, responseType: 'text' })
       .pipe(
         catchError(this.httpError)
       )
   }
 
-  deleteModule(name: string | null): Observable<any> {
-    return this.http.delete<any>(this.apiUrl + '/' + name)
+  deleteModule(name: string, repo: string): Observable<any> {
+    const url = `${this.apiUrl}/${repo}/modules/${name}`
+
+    return this.http.delete<any>(url)
       .pipe(
         catchError(this.httpError)
       )
   }
 
-  putModule(name: string | null, content: string): Observable<any> {
+  putModule(name: string, code: string, repo: string): Observable<any> {
+
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
-    return this.http.put(this.apiUrl + '/' + name, content, { headers })
+    const url = `${this.apiUrl}/${repo}/modules/${name}`
+
+    return this.http.put(url, code, { headers })
       .pipe(
         catchError(this.httpError)
       )
