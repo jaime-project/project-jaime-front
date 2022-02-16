@@ -5,10 +5,10 @@ import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-code-module',
-  templateUrl: './detail.component.html',
-  styleUrls: ['./detail.component.css']
+  templateUrl: './code.component.html',
+  styleUrls: ['./code.component.css']
 })
-export class DetailModuleComponent implements OnInit {
+export class CodeModuleComponent implements OnInit {
 
   moduleCode: string = ""
   moduleName: string | null = ""
