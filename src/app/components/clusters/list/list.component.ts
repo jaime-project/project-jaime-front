@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { interval } from 'rxjs';
-import { ServerShort } from 'src/app/models/models';
+import { ClusterShort } from 'src/app/models/models';
 import { ClustersService } from 'src/app/services/clusters/clusters.service';
 import Swal from 'sweetalert2';
 
@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class ListServerComponent implements OnInit {
 
-  listServersShorts: ServerShort[] = []
+  listServersShorts: ClusterShort[] = []
   testServerLoad: boolean = false
 
   constructor(private clustersService: ClustersService, private route: Router) { }

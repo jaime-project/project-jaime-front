@@ -6,7 +6,7 @@ export interface Server {
     version: string;
 }
 
-export interface ServerShort {
+export interface ClusterShort {
     name: string;
     url: string;
     type: string;
@@ -47,4 +47,19 @@ export interface Work {
     status_date: Date | null,
     agent: Agent,
     params: {}
+}
+
+export interface RepoGit {
+    name: string,
+    type: string,
+    url: string,
+    path: string,
+    branch: string,
+    user: string,
+    pass: string,
+}
+
+export interface RepoLocal {
+    name: string,
+    type: string,
 }

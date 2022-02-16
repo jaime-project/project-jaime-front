@@ -45,7 +45,7 @@
       "responses": [
         {
           "uuid": "76b5d706-e9b6-43c4-a3f7-0889459b8a0d",
-          "body": "[\n  \"OPENSHIFT\",\n  \"KUBERNETES\"\n]",
+          "body": "[\n\"OPENSHIFT\",\n  \"KUBERNETES\"\n]",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -493,6 +493,66 @@
             {
               "key": "Content-Type",
               "value": "text/plain"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "c5afdefc-2ee1-4511-8af6-945ef3414341",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "repos",
+      "responses": [
+        {
+          "uuid": "fd30de10-7a6d-4c1d-bc5a-14d481310ec0",
+          "body": "",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "b05e0386-5933-48bd-9ac6-565c68559453",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "repos/types",
+      "responses": [
+        {
+          "uuid": "da3865a4-f59a-49ee-ba07-b5e1b763ed58",
+          "body": "[\n  \"LOCAL\",\n  \"GIT\"\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
             }
           ],
           "filePath": "",

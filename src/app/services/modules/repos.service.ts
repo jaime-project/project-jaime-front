@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { RepoGit, RepoLocal } from 'src/app/models/models';
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 
@@ -23,9 +24,15 @@ export class ReposService {
       )
   }
 
-  postRepos(name: string | null, docs: string | null): Observable<string> {
-    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
-    return this.http.post(this.apiUrl + '/' + name, docs, { headers, responseType: 'text' })
+  listReposTypes(): Observable<string[]> {
+    return this.http.get<string[]>(`${this.apiUrl}/types`)
+      .pipe(
+        catchError(this.httpError)
+      )
+  }
+
+  postRepos(repo: any | null): Observable<string> {
+    return this.http.post<any>(this.apiUrl, repo)
       .pipe(
         catchError(this.httpError)
       )
