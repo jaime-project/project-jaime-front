@@ -21,19 +21,19 @@
 <div class="col-lg-12">
   <div class="row text-center text-lg-start">
     <div class="col-lg-2" *ngFor="let moduleName of modulesName">
-      <div class="card m-t-30">
-        <a class="d-block mb-4 h-100">
-          <div>
-            <h4><b>{{moduleName}}</b></h4>
-          </div>
+      <div class="card m-t-30" routerLink="/modules/details/{{moduleName}}">
+        <a class="d-block mb-2 h-100">
           <div>
             <i class="far mdi mdi-puzzle fa-5x"></i>
           </div>
           <div>
-            <button type="button" class="btn btn-primary" style="margin-right: 2%;"
+            <h4><b>{{moduleName}}</b></h4>
+          </div>
+          <div>
+            <!-- <button type="button" class="btn btn-primary" style="margin-right: 2%;"
               routerLink="/modules/details/{{moduleName}}">
-              <i class="fas fa-eye"></i></button>
-            <button type="button" class="btn btn-danger" style="margin-right: 2%;" (click)="deleteModule(moduleName)">
+              <i class="fas fa-eye"></i></button> -->
+            <button type="button" class="btn btn-danger" style="margin-right: 0%;" (click)="deleteModule(moduleName)">
               <i class="far fa-trash-alt"></i></button>
           </div>
         </a>

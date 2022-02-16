@@ -20,7 +20,7 @@ export const ROUTES: RouteInfo[] = [
   {
     path: "/repos",
     title: "Repositories",
-    icon: "mdi mdi-book",
+    icon: "mdi mdi-folder",
     class: "",
     extralink: false,
     submenu: [],
