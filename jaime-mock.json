@@ -511,7 +511,7 @@
       "uuid": "a53cac68-8d32-4c59-8416-08f0e6677901",
       "documentation": "",
       "method": "get",
-      "endpoint": "modules",
+      "endpoint": "repos/*/modules",
       "responses": [
         {
           "uuid": "32624eee-4c5e-48f1-9275-2f4bdcc99ad5",
@@ -541,7 +541,7 @@
       "uuid": "5bc4f7a6-9488-4c24-9ba0-dec9027ec261",
       "documentation": "",
       "method": "get",
-      "endpoint": "modules/*",
+      "endpoint": "repos/*/modules/*",
       "responses": [
         {
           "uuid": "721c3beb-b4f9-4bd1-a479-f3f79c42dada",
@@ -575,7 +575,7 @@
       "uuid": "dd43364f-e8d3-4c9e-aae6-40ea12c341b3",
       "documentation": "",
       "method": "post",
-      "endpoint": "modules/*",
+      "endpoint": "repos/*/modules/*",
       "responses": [
         {
           "uuid": "ba330414-3c8d-4172-8248-63e0bb87888c",
@@ -609,7 +609,7 @@
       "uuid": "ccf4891b-1dd3-4aeb-9dd8-f0311e2bc16b",
       "documentation": "",
       "method": "delete",
-      "endpoint": "modules/*",
+      "endpoint": "repos/*/modules/*",
       "responses": [
         {
           "uuid": "fa1a80fe-6003-4d05-ae9a-aebec96a2bcf",
@@ -639,7 +639,7 @@
       "uuid": "ffc8d975-6a50-4d44-8d81-a9bd0182859f",
       "documentation": "",
       "method": "put",
-      "endpoint": "modules/*",
+      "endpoint": "repos/*/modules/*",
       "responses": [
         {
           "uuid": "80bf3fd3-4860-431f-a218-db26b1f40e6d",

@@ -24,6 +24,14 @@
         <div id="moduleHelp" class="form-text">Select a installed agent type</div>
       </div>
       <div class="mb-3 col-12">
+        <label for="repoSelect" class="form-label"><b>Repository</b></label>
+        <select class="form-control col-12" id="moduleSelect" formControlName="repo"
+          (change)="repoChange($event.target.value)">
+          <option *ngFor=" let repo of repos" value="{{repo}}">{{repo}}</option>
+        </select>
+        <div id="moduleHelp" class="form-text">Select a installed module</div>
+      </div>
+      <div class="mb-3 col-12">
         <label for="moduleSelect" class="form-label"><b>Module</b></label>
         <select class="form-control col-12" id="moduleSelect" formControlName="module"
           (change)="moduleChange($event.target.value)">

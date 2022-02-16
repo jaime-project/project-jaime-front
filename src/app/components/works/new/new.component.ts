@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ClustersService } from 'src/app/services/clusters/clusters.service';
 import { DocsService } from 'src/app/services/modules/docs.service';
 import { ModuleService } from 'src/app/services/modules/modules.service';
-import { ClustersService } from 'src/app/services/clusters/clusters.service';
+import { ReposService } from 'src/app/services/modules/repos.service';
 import { WorkService } from 'src/app/services/works/work.service';
 import Swal from 'sweetalert2';
 import { Document, parse } from 'yaml';
@@ -15,6 +16,7 @@ import { Document, parse } from 'yaml';
 })
 export class NewWorkComponent implements OnInit {
 
+  repos: string[] = []
   modules: string[] = []
   moduleDocs: string = "asd"
   agentsTypes: string[] = []
@@ -26,18 +28,25 @@ export class NewWorkComponent implements OnInit {
     yaml: new FormControl(),
   });
 
-  constructor(private route: Router, private workService: WorkService, private moduleService: ModuleService, private clusterService: ClustersService, private docsService: DocsService) { }
+  constructor(private route: Router, private workService: WorkService, private moduleService: ModuleService, private reposService: ReposService, private clusterService: ClustersService, private docsService: DocsService) { }
 
   ngOnInit(): void {
 
-    this.moduleService.listModules()
+    this.reposService.listRepos()
       .subscribe(data => {
-        this.modules = data.sort()
+        this.repos = data.sort()
       })
 
     this.clusterService.listServerTypes()
       .subscribe(data => {
         this.agentsTypes = data
+      })
+  }
+
+  repoChange(repoName: any) {
+    this.moduleService.listModules(repoName)
+      .subscribe(data => {
+        this.modules = data.sort()
       })
   }
 

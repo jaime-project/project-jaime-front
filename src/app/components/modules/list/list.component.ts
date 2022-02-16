@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { interval } from 'rxjs';
 import { ModuleService } from 'src/app/services/modules/modules.service';
 import Swal from 'sweetalert2';
@@ -11,10 +12,14 @@ import Swal from 'sweetalert2';
 export class ListModuleComponent implements OnInit {
 
   modulesName: string[] = []
+  repoName: string | null = ""
 
-  constructor(private modulesService: ModuleService) { }
+  constructor(private modulesService: ModuleService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+
+    this.repoName = this.activatedRoute.snapshot.paramMap.get('repo')
+    console.log(this.repoName)
 
     this.loadStartData()
 
@@ -25,7 +30,7 @@ export class ListModuleComponent implements OnInit {
   }
 
   loadStartData() {
-    this.modulesService.listModules()
+    this.modulesService.listModules(this.repoName!)
       .subscribe(data => {
         this.modulesName = data.sort()
       })

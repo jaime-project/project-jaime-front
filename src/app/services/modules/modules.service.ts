@@ -2,7 +2,6 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Server, ServerShort } from 'src/app/models/models';
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 
@@ -12,13 +11,13 @@ import Swal from 'sweetalert2';
 })
 export class ModuleService {
 
-  apiUrl: string = environment.backendURL + '/api/v1/modules';
+  apiUrl: string = environment.backendURL + '/api/v1/repos/:repo/modules';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private http: HttpClient) { }
 
-  listModules(): Observable<string[]> {
-    return this.http.get<string[]>(this.apiUrl)
+  listModules(repo: string): Observable<string[]> {
+    return this.http.get<string[]>(this.apiUrl.replace(':repo', repo))
       .pipe(
         catchError(this.httpError)
       )
