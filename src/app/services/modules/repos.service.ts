@@ -2,7 +2,6 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { RepoGit, RepoLocal } from 'src/app/models/models';
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 
@@ -52,7 +51,7 @@ export class ReposService {
     return this.http.get(this.apiUrl + '/' + name, { headers, responseType: 'text' })
   }
 
-  deleteRepos(name: string | null): Observable<any> {
+  deleteRepos(name: string): Observable<any> {
     return this.http.delete<any>(this.apiUrl + '/' + name)
       .pipe(
         catchError(this.httpError)

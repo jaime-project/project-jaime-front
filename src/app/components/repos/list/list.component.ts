@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { interval } from 'rxjs';
 import { ReposService } from 'src/app/services/modules/repos.service';
 import Swal from 'sweetalert2';
@@ -12,7 +13,7 @@ export class ListModuleComponent implements OnInit {
 
   modulesName: string[] = []
 
-  constructor(private reposService: ReposService) { }
+  constructor(private reposService: ReposService, private route: Router) { }
 
   ngOnInit(): void {
 
@@ -31,11 +32,11 @@ export class ListModuleComponent implements OnInit {
       })
   }
 
-  deleteModule(name: string) {
+  deleteRepo(name: string) {
 
     Swal.fire({
-      title: 'Delete agent',
-      text: 'Delete agent with name "' + name + '"',
+      title: 'Delete repository',
+      text: 'Delete repository with name "' + name + '"',
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',
@@ -44,7 +45,7 @@ export class ListModuleComponent implements OnInit {
       if (result.isConfirmed) {
         this.reposService.deleteRepos(name)
           .subscribe(() => {
-            window.location.reload()
+            this.route.navigate(['repos'])
           })
       }
     })

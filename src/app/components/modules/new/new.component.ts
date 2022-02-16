@@ -47,7 +47,7 @@ export class NewModuleComponent implements OnInit {
           icon: 'success',
           confirmButtonColor: '#05b281',
         }).then(() =>
-          this.route.navigate(['modules'])
+          this.route.navigate([`repos/${this.repo}/modules`])
         )
       })
   }

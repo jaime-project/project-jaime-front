@@ -402,6 +402,36 @@
       "sequentialResponse": false
     },
     {
+      "uuid": "ebe1ce02-87a3-44d6-99b0-8623be082ee3",
+      "documentation": "",
+      "method": "delete",
+      "endpoint": "repos/*",
+      "responses": [
+        {
+          "uuid": "661201d5-1751-492f-a72e-b20770340274",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
       "uuid": "1a7175df-10ae-408a-8ee5-c4871d795c2c",
       "documentation": "",
       "method": "get",

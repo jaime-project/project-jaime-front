@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { interval } from 'rxjs';
 import { ModuleService } from 'src/app/services/modules/modules.service';
 import Swal from 'sweetalert2';
@@ -14,7 +14,7 @@ export class ListModuleComponent implements OnInit {
   modulesName: string[] = []
   repo: string = ""
 
-  constructor(private modulesService: ModuleService, private activatedRoute: ActivatedRoute) { }
+  constructor(private modulesService: ModuleService, private activatedRoute: ActivatedRoute, private route: Router) { }
 
   ngOnInit(): void {
 
@@ -48,7 +48,7 @@ export class ListModuleComponent implements OnInit {
       if (result.isConfirmed) {
         this.modulesService.deleteModule(name, this.repo)
           .subscribe(() => {
-            window.location.reload()
+            this.route.navigate([`repos/${this.repo}/modules`])
           })
       }
     })
