@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { interval } from 'rxjs';
+import { interval, Subscription } from 'rxjs';
 import { WorkService } from 'src/app/services/works/work.service';
 
 @Component({
@@ -15,15 +15,21 @@ export class LogWorkComponent implements OnInit {
 
   constructor(private workService: WorkService, private route: ActivatedRoute) { }
 
+  thread: Subscription | null = null
+
   ngOnInit(): void {
     this.workId = this.route.snapshot.paramMap.get('id')
 
     this.loadStartData()
 
-    interval(3000)
+    this.thread = interval(3000)
       .subscribe(() => {
         this.loadStartData()
       });
+  }
+
+  ngOnDestroy(): void {
+    this.thread?.unsubscribe()
   }
 
   loadStartData() {
