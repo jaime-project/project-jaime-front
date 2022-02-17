@@ -24,7 +24,6 @@ export class NewWorkComponent implements OnInit {
 
   workForm = new FormGroup({
     name: new FormControl(''),
-    repo: new FormControl(''),
     module: new FormControl(''),
     agentType: new FormControl(''),
     yaml: new FormControl(),

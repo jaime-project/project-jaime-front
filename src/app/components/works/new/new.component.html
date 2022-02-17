@@ -25,9 +25,10 @@
       </div>
       <div class="mb-3 col-12">
         <label for="repoSelect" class="form-label"><b>Repository</b></label>
-        <select class="form-control col-12" id="moduleSelect" formControlName="repo"
+        <select class="form-control col-12" id="moduleSelect"
           (change)="repoChange($event.target.value)">
-          <option *ngFor=" let repo of repos" value="{{repo}}">{{repo}}</option>
+          <option></option>
+          <option *ngFor=" let r of repos" value="{{r}}">{{r}}</option>
         </select>
         <div id="moduleHelp" class="form-text">Select a installed repository</div>
       </div>
@@ -35,6 +36,7 @@
         <label for="moduleSelect" class="form-label"><b>Module</b></label>
         <select class="form-control col-12" id="moduleSelect" formControlName="module"
           (change)="moduleChange($event.target.value)">
+          <option></option>
           <option *ngFor=" let module of modules" value="{{module}}">{{module}}</option>
         </select>
         <div id="moduleHelp" class="form-text">Select a installed module</div>

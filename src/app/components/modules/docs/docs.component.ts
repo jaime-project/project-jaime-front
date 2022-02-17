@@ -14,9 +14,8 @@ export class DetailDocsComponent implements OnInit {
   public docsEditSwitchActivated = false
 
   repo: string = ""
+  docs: string = ""
   moduleName: string = ""
-  docsDict: any = ""
-  docsYaml: string = ""
 
   constructor(private docsService: DocsService, private activatedRoute: ActivatedRoute, private route: Router) { }
 
@@ -26,13 +25,11 @@ export class DetailDocsComponent implements OnInit {
 
     this.docsService.getDocs(this.moduleName, this.repo)
       .subscribe(data => {
-        this.docsDict = parse(data);
-        this.docsYaml = this.docsDict
-        console.log(this.docsYaml)
+        this.docs = data;
       })
   }
 
-  putDocs(modifyDocs: string) {
+  putDocs() {
 
     Swal.fire({
       title: 'Update docs',
@@ -43,9 +40,9 @@ export class DetailDocsComponent implements OnInit {
       showCancelButton: true,
     }).then(result => {
       if (result.isConfirmed) {
-        this.docsService.putDocs(this.moduleName, modifyDocs, this.repo)
+        this.docsService.putDocs(this.moduleName, this.docs, this.repo)
           .subscribe(() => {
-            this.route.navigate(['docs'])
+            this.route.navigate([`repos/${this.repo}/modules`])
           })
       }
     })

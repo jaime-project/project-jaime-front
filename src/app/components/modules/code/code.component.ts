@@ -28,7 +28,7 @@ export class CodeModuleComponent implements OnInit {
       })
   }
 
-  putModule(modifyCode: string) {
+  putModule() {
 
     Swal.fire({
       title: 'Update module',
@@ -39,9 +39,9 @@ export class CodeModuleComponent implements OnInit {
       showCancelButton: true,
     }).then(result => {
       if (result.isConfirmed) {
-        this.moduleService.putModule(this.moduleName, modifyCode, this.repo)
+        this.moduleService.putModule(this.moduleName, this.moduleCode, this.repo)
           .subscribe(() => {
-            this.route.navigate(['modules'])
+            this.route.navigate([`repos/${this.repo}/modules`])
           })
       }
     })
