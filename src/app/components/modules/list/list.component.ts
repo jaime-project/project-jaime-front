@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { interval } from 'rxjs';
+import { DocsService } from 'src/app/services/modules/docs.service';
 import { ModuleService } from 'src/app/services/modules/modules.service';
 import Swal from 'sweetalert2';
 
@@ -14,7 +15,7 @@ export class ListModuleComponent implements OnInit {
   modulesName: string[] = []
   repo: string = ""
 
-  constructor(private modulesService: ModuleService, private activatedRoute: ActivatedRoute, private route: Router) { }
+  constructor(private modulesService: ModuleService, private activatedRoute: ActivatedRoute, private route: Router, private docsService: DocsService) { }
 
   ngOnInit(): void {
 
@@ -46,6 +47,7 @@ export class ListModuleComponent implements OnInit {
       showCancelButton: true,
     }).then(result => {
       if (result.isConfirmed) {
+        this.docsService.deleteDocs(name, this.repo)
         this.modulesService.deleteModule(name, this.repo)
           .subscribe(() => {
             this.route.navigate([`repos/${this.repo}/modules`])

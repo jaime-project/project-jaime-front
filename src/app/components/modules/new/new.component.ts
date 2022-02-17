@@ -38,8 +38,9 @@ export class NewModuleComponent implements OnInit {
     let finalYaml = doc.toString()
 
     this.docsService.postDocs(this.name, finalYaml, this.repo)
+      .subscribe()
 
-    this.moduleService.postModule(this.name, finalYaml, this.repo)
+    this.moduleService.postModule(this.name, this.code, this.repo)
       .subscribe(() => {
         Swal.fire({
           title: 'Success creation',

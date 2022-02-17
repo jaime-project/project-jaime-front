@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DocsService } from 'src/app/services/modules/docs.service';
 import Swal from 'sweetalert2';
+import { Document, parse } from 'yaml';
 
 @Component({
   selector: 'app-docs-module',
@@ -14,7 +15,8 @@ export class DetailDocsComponent implements OnInit {
 
   repo: string = ""
   moduleName: string = ""
-  moduleDocs: string = ""
+  docsDict: any = ""
+  docsYaml: string = ""
 
   constructor(private docsService: DocsService, private activatedRoute: ActivatedRoute, private route: Router) { }
 
@@ -24,7 +26,9 @@ export class DetailDocsComponent implements OnInit {
 
     this.docsService.getDocs(this.moduleName, this.repo)
       .subscribe(data => {
-        this.moduleDocs = data;
+        this.docsDict = parse(data);
+        this.docsYaml = this.docsDict
+        console.log(this.docsYaml)
       })
   }
 
