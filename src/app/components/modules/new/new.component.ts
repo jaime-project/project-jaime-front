@@ -3,7 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DocsService } from 'src/app/services/modules/docs.service';
 import { ModuleService } from 'src/app/services/modules/modules.service';
 import Swal from 'sweetalert2';
-import { Document } from 'yaml';
 
 @Component({
   selector: 'app-new-module',
@@ -14,8 +13,6 @@ export class NewModuleComponent implements OnInit {
 
   repo: string = ""
   name: string = ""
-  title: string = ""
-  description: string = ""
   yaml: string = ""
   code: string = ""
 
@@ -27,17 +24,7 @@ export class NewModuleComponent implements OnInit {
 
   postModule() {
 
-    let yaml_dict = {
-      title: this.title,
-      description: this.description,
-      yaml: this.yaml
-    }
-
-    let doc = new Document()
-    doc.contents = yaml_dict
-    let finalYaml = doc.toString()
-
-    this.docsService.postDocs(this.name, finalYaml, this.repo)
+    this.docsService.postDocs(this.name, this.yaml, this.repo)
       .subscribe()
 
     this.moduleService.postModule(this.name, this.code, this.repo)

@@ -52,8 +52,6 @@ export class NewRepoComponent implements OnInit {
       }
     }
 
-    console.log(repo)
-
     if (this.selectedRepoType == 'GIT') {
       repo = {
         type: 'GIT',

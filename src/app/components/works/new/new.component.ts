@@ -73,7 +73,10 @@ export class NewWorkComponent implements OnInit {
       agent: {
         type: this.workForm.value.agentType
       },
-      module: this.workForm.value.module,
+      module: {
+        name: this.workForm.value.module,
+        repo: this.repo,
+      },
       ...yamlJson
     }
 
