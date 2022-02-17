@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { interval } from 'rxjs';
+import { interval, Observable, Subscription } from 'rxjs';
 import { ReposService } from 'src/app/services/modules/repos.service';
 import Swal from 'sweetalert2';
 
@@ -16,14 +16,20 @@ export class ListModuleComponent implements OnInit {
 
   constructor(private reposService: ReposService, private route: Router) { }
 
+  thread: Subscription | null = null
+
   ngOnInit(): void {
 
     this.loadStartData()
-
-    interval(3000)
+    
+    this.thread = interval(3000)
       .subscribe(() => {
         this.loadStartData()
       });
+  }
+
+  ngOnDestroy(): void {
+    this.thread?.unsubscribe()
   }
 
   loadStartData() {

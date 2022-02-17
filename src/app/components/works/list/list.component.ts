@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { interval } from 'rxjs';
+import { interval, Subscription } from 'rxjs';
 import { WorkShort } from 'src/app/models/models';
 import { WorkService } from 'src/app/services/works/work.service';
 import Swal from 'sweetalert2';
@@ -12,6 +12,8 @@ import Swal from 'sweetalert2';
 })
 export class ListWorkComponent implements OnInit {
 
+  thread: Subscription | null = null
+
   worksShort: WorkShort[] = []
 
   constructor(private modalService: NgbModal, private workService: WorkService) { }
@@ -20,10 +22,14 @@ export class ListWorkComponent implements OnInit {
 
     this.loadStartData()
 
-    interval(3000)
+    this.thread = interval(3000)
       .subscribe(() => {
         this.loadStartData()
       });
+  }
+
+  ngOnDestroy(): void {
+    this.thread?.unsubscribe()
   }
 
   loadStartData() {

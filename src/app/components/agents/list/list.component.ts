@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { interval } from 'rxjs';
+import { interval, Subscription } from 'rxjs';
 import { AgentShort } from 'src/app/models/models';
 import { AgentService } from 'src/app/services/agents/agents.service';
 import Swal from 'sweetalert2';
@@ -11,6 +11,8 @@ import Swal from 'sweetalert2';
 })
 export class ListAgentComponent implements OnInit {
 
+  thread: Subscription | null = null
+
   agents: AgentShort[] = []
 
   constructor(private agentService: AgentService) { }
@@ -19,10 +21,14 @@ export class ListAgentComponent implements OnInit {
 
     this.loadStartData()
 
-    interval(3000)
+    this.thread = interval(3000)
       .subscribe(() => {
         this.loadStartData()
       });
+  }
+
+  ngOnDestroy(): void {
+    this.thread?.unsubscribe()
   }
 
   loadStartData() {
@@ -50,5 +56,5 @@ export class ListAgentComponent implements OnInit {
       }
     })
   }
-  
+
 }
