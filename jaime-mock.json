@@ -319,7 +319,67 @@
       "responses": [
         {
           "uuid": "8450ccfe-250b-4256-b962-aa484289c099",
-          "body": "[\n  \"ocp-migration\",\n  \"3scale\",\n  \"rh-sso\",\n  \"local\".\n\"pruebas\"\n]",
+          "body": "[\n  \"ocp-migration\",\n  \"3scale\",\n  \"rh-sso\",\n  \"local\",\n  \"pruebas\"\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "3c59c5d7-e073-4a88-909e-8d3822141902",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "repos/ocp-migration",
+      "responses": [
+        {
+          "uuid": "29933910-5a8d-4050-9803-cf792c556b72",
+          "body": "{\n  \"name\": \"ocp_migrate\",\n  \"type\": \"GIT\",\n  \"git_branch\": \"master\",\n  \"git_url\": \"asd\",\n  \"git_path\": \"/repos\",\n  \"git_user\": \"master\",\n  \"git_pass\": \"asdasdawqe12312\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "aabddc68-9f2f-49f3-abd8-46dee83db7d6",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "repos/local",
+      "responses": [
+        {
+          "uuid": "81ddc4ff-b641-4fde-a9cf-39ac066dc967",
+          "body": "{\n  \"name\": \"local\",\n  \"type\": \"LOCAL\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -352,66 +412,6 @@
           "body": "",
           "latency": 0,
           "statusCode": 201,
-          "label": "",
-          "headers": [
-            {
-              "key": "Access-Control-Allow-Origin",
-              "value": "*"
-            }
-          ],
-          "filePath": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false
-        }
-      ],
-      "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
-    },
-    {
-      "uuid": "73fae45e-817f-4971-92ee-e6d0e46e9ab5",
-      "documentation": "",
-      "method": "get",
-      "endpoint": "repos/LOCAL",
-      "responses": [
-        {
-          "uuid": "1d25e6b8-bf69-41f9-9fc9-cca402ef2c8c",
-          "body": "[\n  \"local\",\n  \"pruebas\"\n]",
-          "latency": 0,
-          "statusCode": 200,
-          "label": "",
-          "headers": [
-            {
-              "key": "Access-Control-Allow-Origin",
-              "value": "*"
-            }
-          ],
-          "filePath": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false
-        }
-      ],
-      "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
-    },
-    {
-      "uuid": "a46875c4-f038-43ed-9ed9-884b290feaaa",
-      "documentation": "",
-      "method": "get",
-      "endpoint": "repos/GIT",
-      "responses": [
-        {
-          "uuid": "a3bb14c5-4394-4a6a-ae9a-fd4d4e54934f",
-          "body": "[\n  \"ocp-migration\",\n  \"3scale\",\n  \"rh-sso\"\n]",
-          "latency": 0,
-          "statusCode": 200,
           "label": "",
           "headers": [
             {

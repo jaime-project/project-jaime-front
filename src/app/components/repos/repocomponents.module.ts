@@ -4,9 +4,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MonacoEditorModule } from 'ngx-monaco-editor';
+import { DetailRepoComponent } from './detail/detail.component';
 import { ListModuleComponent } from './list/list.component';
 import { NewRepoComponent } from './new/new.component';
 import { RepoComponentsRoutes } from './repocomponents.routing';
+import { TabsRepoComponent } from './tabs/tabs.component';
+import { YamlRepoComponent } from './yaml/yaml.component';
 
 
 @NgModule({
@@ -20,7 +23,10 @@ import { RepoComponentsRoutes } from './repocomponents.routing';
   ],
   declarations: [
     ListModuleComponent,
-    NewRepoComponent
+    NewRepoComponent,
+    TabsRepoComponent,
+    YamlRepoComponent,
+    DetailRepoComponent
   ]
 })
 export class RepoComponentsModule { }

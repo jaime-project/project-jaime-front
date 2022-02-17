@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { ListModuleComponent } from './list/list.component';
 import { NewRepoComponent } from './new/new.component';
+import { TabsRepoComponent } from './tabs/tabs.component';
 
 
 export const RepoComponentsRoutes: Routes = [
@@ -21,6 +22,17 @@ export const RepoComponentsRoutes: Routes = [
 			{
 				path: 'repos/new',
 				component: NewRepoComponent,
+				data: {
+					title: 'Repositories',
+					urls: [
+						{ title: 'ngComponent' },
+						{ title: 'Repos' }
+					]
+				}
+			},
+			{
+				path: 'repos/:repo/details',
+				component: TabsRepoComponent,
 				data: {
 					title: 'Repositories',
 					urls: [
