@@ -2,7 +2,6 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { WorkShort } from 'src/app/models/models';
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 
@@ -10,60 +9,58 @@ import Swal from 'sweetalert2';
 @Injectable({
   providedIn: 'root'
 })
-export class WorkService {
+export class ReposService {
 
-  apiUrl: string = environment.backendURL + '/api/v1/works';
+  apiUrl: string = environment.backendURL + '/api/v1/repos';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private http: HttpClient) { }
 
-  getWorksAllShort(): Observable<WorkShort[]> {
-    return this.http.get<WorkShort[]>(this.apiUrl + '/all/short')
+  listRepos(): Observable<string[]> {
+    return this.http.get<string[]>(this.apiUrl)
       .pipe(
         catchError(this.httpError)
       )
   }
 
-  deleteWork(id: string): Observable<any> {
-    return this.http.delete<any>(this.apiUrl + '/' + id)
+  getRepo(name: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${name}`)
       .pipe(
         catchError(this.httpError)
       )
   }
 
-  deleteWorksByStatus(status: string): Observable<any> {
-    return this.http.delete<any>(this.apiUrl + '/?status=' + status)
+  listReposByType(typeRepo: string): Observable<string[]> {
+    return this.http.get<string[]>(`${this.apiUrl}?type=${typeRepo}`)
       .pipe(
         catchError(this.httpError)
       )
   }
 
-  getLogs(id: string | null): Observable<any> {
-    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
-    return this.http.get(this.apiUrl + '/' + id + '/logs', { headers, responseType: 'text' })
+  listReposTypes(): Observable<string[]> {
+    return this.http.get<string[]>(`${this.apiUrl}/types`)
       .pipe(
         catchError(this.httpError)
       )
   }
 
-  postWork(yaml: string | null): Observable<any> {
-    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
-    return this.http.post(this.apiUrl + '/', yaml, { headers, responseType: 'json' })
+  postRepos(repo: any): Observable<string> {
+    return this.http.post<any>(this.apiUrl + '/', repo)
       .pipe(
         catchError(this.httpError)
       )
   }
 
-  getWork(id: string | null): Observable<any> {
-    return this.http.get(this.apiUrl + '/' + id)
+  deleteRepos(name: string): Observable<any> {
+    return this.http.delete<any>(this.apiUrl + '/' + name)
       .pipe(
         catchError(this.httpError)
       )
   }
 
-  getWorkspaceWork(id: string | null): Observable<any> {
-
-    return this.http.get(`${this.apiUrl}/${id}/workspace`, { responseType: 'blob' })
+  reloadRepos(name: string): Observable<any> {
+    const url = `${this.apiUrl}/${name}/reload`
+    return this.http.post<any>(url, {})
       .pipe(
         catchError(this.httpError)
       )

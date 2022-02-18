@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Server, ServerShort } from 'src/app/models/models';
+import { Server as Cluster, ClusterShort } from 'src/app/models/models';
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 
@@ -16,21 +16,21 @@ export class ClustersService {
 
   constructor(private http: HttpClient) { }
 
-  listServers(): Observable<ServerShort[]> {
-    return this.http.get<ServerShort[]>(this.apiUrl + '/all/short')
+  listServers(): Observable<ClusterShort[]> {
+    return this.http.get<ClusterShort[]>(this.apiUrl + '/all/short')
       .pipe(
         catchError(this.httpError)
       )
   }
 
-  getServer(name: string | null): Observable<Server> {
-    return this.http.get<Server>(this.apiUrl + '/' + name)
+  getServer(name: string | null): Observable<Cluster> {
+    return this.http.get<Cluster>(this.apiUrl + '/' + name)
       .pipe(
         catchError(this.httpError)
       )
   }
 
-  postServer(cluster: Server): Observable<any> {
+  postServer(cluster: Cluster): Observable<any> {
     return this.http.post<any>(this.apiUrl + '/', cluster)
       .pipe(
         catchError(this.httpError)
@@ -44,7 +44,7 @@ export class ClustersService {
       )
   }
 
-  putServer(cluster: Server): Observable<any> {
+  putServer(cluster: Cluster): Observable<any> {
     let name = cluster.name
     return this.http.put<any>(this.apiUrl + '/' + name, cluster)
       .pipe(

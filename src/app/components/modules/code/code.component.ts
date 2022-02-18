@@ -5,27 +5,30 @@ import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-code-module',
-  templateUrl: './detail.component.html',
-  styleUrls: ['./detail.component.css']
+  templateUrl: './code.component.html',
+  styleUrls: ['./code.component.css']
 })
-export class DetailModuleComponent implements OnInit {
+export class CodeModuleComponent implements OnInit {
 
+  repo: string = ""
   moduleCode: string = ""
-  moduleName: string | null = ""
+  moduleName: string = ""
   public codeEditSwitchActivated = false
 
   constructor(private moduleService: ModuleService, private activatedRoute: ActivatedRoute, private route: Router) { }
 
   ngOnInit(): void {
-    this.moduleName = this.activatedRoute.snapshot.paramMap.get('name')
 
-    this.moduleService.getModule(this.moduleName)
+    this.repo = this.activatedRoute.snapshot.paramMap.get('repo')!
+    this.moduleName = this.activatedRoute.snapshot.paramMap.get('name')!
+
+    this.moduleService.getModule(this.moduleName, this.repo)
       .subscribe(data => {
         this.moduleCode = data;
       })
   }
 
-  putModule(modifyCode: string) {
+  putModule() {
 
     Swal.fire({
       title: 'Update module',
@@ -36,9 +39,9 @@ export class DetailModuleComponent implements OnInit {
       showCancelButton: true,
     }).then(result => {
       if (result.isConfirmed) {
-        this.moduleService.putModule(this.moduleName, modifyCode)
+        this.moduleService.putModule(this.moduleName, this.moduleCode, this.repo)
           .subscribe(() => {
-            this.route.navigate(['modules'])
+            this.route.navigate([`repos/${this.repo}/modules`])
           })
       }
     })

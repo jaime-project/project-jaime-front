@@ -9,7 +9,7 @@ export const ModuleComponentsRoutes: Routes = [
 		path: '',
 		children: [
 			{
-				path: 'modules',
+				path: 'repos/:repo/modules',
 				component: ListModuleComponent,
 				data: {
 					title: 'Modules',
@@ -20,7 +20,7 @@ export const ModuleComponentsRoutes: Routes = [
 				}
 			},
 			{
-				path: 'modules/details/:name',
+				path: 'repos/:repo/modules/details/:name',
 				component: TabsModuleComponent,
 				data: {
 					title: 'Modules',
@@ -31,7 +31,7 @@ export const ModuleComponentsRoutes: Routes = [
 				}
 			},
 			{
-				path: 'modules/new',
+				path: 'repos/:repo/modules/new',
 				component: NewModuleComponent,
 				data: {
 					title: 'Modules',

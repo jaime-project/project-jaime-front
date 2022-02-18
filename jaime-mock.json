@@ -45,7 +45,7 @@
       "responses": [
         {
           "uuid": "76b5d706-e9b6-43c4-a3f7-0889459b8a0d",
-          "body": "[\n  \"OPENSHIFT\",\n  \"KUBERNETES\"\n]",
+          "body": "[\n\"OPENSHIFT\",\n  \"KUBERNETES\"\n]",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -312,10 +312,220 @@
       "sequentialResponse": false
     },
     {
+      "uuid": "e3c534b3-d6b6-49ba-9b2e-88d9e72b56a9",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "repos",
+      "responses": [
+        {
+          "uuid": "8450ccfe-250b-4256-b962-aa484289c099",
+          "body": "[\n  \"ocp-migration\",\n  \"3scale\",\n  \"rh-sso\",\n  \"local\",\n  \"pruebas\"\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "3c59c5d7-e073-4a88-909e-8d3822141902",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "repos/ocp-migration",
+      "responses": [
+        {
+          "uuid": "29933910-5a8d-4050-9803-cf792c556b72",
+          "body": "{\n  \"name\": \"ocp_migrate\",\n  \"type\": \"GIT\",\n  \"git_branch\": \"master\",\n  \"git_url\": \"asd\",\n  \"git_path\": \"/repos\",\n  \"git_user\": \"master\",\n  \"git_pass\": \"asdasdawqe12312\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "aabddc68-9f2f-49f3-abd8-46dee83db7d6",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "repos/local",
+      "responses": [
+        {
+          "uuid": "81ddc4ff-b641-4fde-a9cf-39ac066dc967",
+          "body": "{\n  \"name\": \"local\",\n  \"type\": \"LOCAL\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "c5afdefc-2ee1-4511-8af6-945ef3414341",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "repos",
+      "responses": [
+        {
+          "uuid": "fd30de10-7a6d-4c1d-bc5a-14d481310ec0",
+          "body": "",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "b05e0386-5933-48bd-9ac6-565c68559453",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "repos/types",
+      "responses": [
+        {
+          "uuid": "da3865a4-f59a-49ee-ba07-b5e1b763ed58",
+          "body": "[\n  \"LOCAL\",\n  \"GIT\"\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "4a4eb735-6fc7-4f71-9a7b-efa4d414ece7",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "repos/*/reload",
+      "responses": [
+        {
+          "uuid": "1e899205-6e91-4b19-a331-bc549dc4a324",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "ebe1ce02-87a3-44d6-99b0-8623be082ee3",
+      "documentation": "",
+      "method": "delete",
+      "endpoint": "repos/*",
+      "responses": [
+        {
+          "uuid": "661201d5-1751-492f-a72e-b20770340274",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
       "uuid": "1a7175df-10ae-408a-8ee5-c4871d795c2c",
       "documentation": "",
       "method": "get",
-      "endpoint": "docs",
+      "endpoint": "repos/*/docs",
       "responses": [
         {
           "uuid": "728d94ea-be5d-4710-90e4-5580ef2f6abf",
@@ -345,7 +555,7 @@
       "uuid": "51e7fe5c-63ea-4a01-aec6-86f9a008ee91",
       "documentation": "",
       "method": "get",
-      "endpoint": "docs/*",
+      "endpoint": "repos/*/docs/*",
       "responses": [
         {
           "uuid": "606b2c41-1d2c-475c-8f32-ce8a58aa38d2",
@@ -379,7 +589,7 @@
       "uuid": "6c8cafaf-174c-459a-9923-363919d25090",
       "documentation": "",
       "method": "delete",
-      "endpoint": "docs/*",
+      "endpoint": "repos/*/docs/*",
       "responses": [
         {
           "uuid": "058732e9-1894-46be-81a0-f302c2d3df5a",
@@ -413,7 +623,7 @@
       "uuid": "6b7c4581-6dac-42d1-8bb4-4343f76ba92c",
       "documentation": "",
       "method": "put",
-      "endpoint": "docs/*",
+      "endpoint": "repos/*/docs/*",
       "responses": [
         {
           "uuid": "13e4e44e-3620-48d0-8065-c07c93def44c",
@@ -447,7 +657,7 @@
       "uuid": "2d3c8ba8-82dc-4f06-a57c-19101e6d5b4f",
       "documentation": "",
       "method": "post",
-      "endpoint": "docs/*",
+      "endpoint": "repos/*/docs/*",
       "responses": [
         {
           "uuid": "8d6d269f-232f-4b9e-aacd-9ee7f2163f69",
@@ -481,7 +691,7 @@
       "uuid": "a53cac68-8d32-4c59-8416-08f0e6677901",
       "documentation": "",
       "method": "get",
-      "endpoint": "modules",
+      "endpoint": "repos/*/modules",
       "responses": [
         {
           "uuid": "32624eee-4c5e-48f1-9275-2f4bdcc99ad5",
@@ -511,7 +721,7 @@
       "uuid": "5bc4f7a6-9488-4c24-9ba0-dec9027ec261",
       "documentation": "",
       "method": "get",
-      "endpoint": "modules/*",
+      "endpoint": "repos/*/modules/*",
       "responses": [
         {
           "uuid": "721c3beb-b4f9-4bd1-a479-f3f79c42dada",
@@ -545,7 +755,7 @@
       "uuid": "dd43364f-e8d3-4c9e-aae6-40ea12c341b3",
       "documentation": "",
       "method": "post",
-      "endpoint": "modules/*",
+      "endpoint": "repos/*/modules/*",
       "responses": [
         {
           "uuid": "ba330414-3c8d-4172-8248-63e0bb87888c",
@@ -579,7 +789,7 @@
       "uuid": "ccf4891b-1dd3-4aeb-9dd8-f0311e2bc16b",
       "documentation": "",
       "method": "delete",
-      "endpoint": "modules/*",
+      "endpoint": "repos/*/modules/*",
       "responses": [
         {
           "uuid": "fa1a80fe-6003-4d05-ae9a-aebec96a2bcf",
@@ -609,7 +819,7 @@
       "uuid": "ffc8d975-6a50-4d44-8d81-a9bd0182859f",
       "documentation": "",
       "method": "put",
-      "endpoint": "modules/*",
+      "endpoint": "repos/*/modules/*",
       "responses": [
         {
           "uuid": "80bf3fd3-4860-431f-a218-db26b1f40e6d",
@@ -673,6 +883,36 @@
       "responses": [
         {
           "uuid": "187497cb-82fd-4f48-a36b-96025b06b0d9",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "81a5317a-f619-4fd8-a3a2-be94d8101699",
+      "documentation": "",
+      "method": "delete",
+      "endpoint": "works",
+      "responses": [
+        {
+          "uuid": "6b27beb0-256e-4971-8af6-c62b4c350c0e",
           "body": "",
           "latency": 0,
           "statusCode": 200,

@@ -5,39 +5,41 @@
   </div>
 </div>
 
-<div class="card col-6">
-  <div class="card-body">
-    <form [formGroup]="clusterForm" (ngSubmit)="postServer()">
-      <div class="mb-3 col-12">
-        <label for="nameInput" class="form-label"><b>Name</b></label>
-        <input type="text" class="form-control" id="nameInput" formControlName="name" required>
-        <div id="nameHelp" class="form-text">Example: ocp-47-noprod</div>
-      </div>
-      <div class="mb-3 col-12">
-        <label for="urlInput" class="form-label"><b>Url</b></label>
-        <input type="text" class="form-control" id="urlInput" formControlName="url" required>
-        <div id="urlHelp" class="form-text">Example: https://cluster.app.cluster.com</div>
-      </div>
-      <div class="mb-3 col-12">
-        <label for="tokenInput" class="form-label"><b>Token</b></label>
-        <input type="text" class="form-control" id="tokenInput" formControlName="token" required>
-        <div id="tokenHelp" class="form-text">Example: jkdndodp-d8smkw93-k3987</div>
-      </div>
-      <div class="mb-3 col-12">
-        <label for="typeInput" class="form-label"><b>Type</b></label>
-        <select class="form-control" id="typeInput" formControlName="type" required>
-          <option selected>OPENSHIFT</option>
-          <option selected>KUBERNETES</option>
-        </select>
-      </div>
-      <div class="mb-3 col-12">
-        <label for="versionInput" class="form-label"><b>Version</b></label>
-        <input type="text" class="form-control" id="versionInput" formControlName="version" required>
-        <div id="versionHelp" class="form-text">Example: 4.7</div>
-      </div>
-      <div class="mb-3 col-12">
-        <button type="submit" class="btn btn-success m-t-20" [disabled]="!clusterForm.valid">Create</button>
-      </div>
-    </form>
+<div class="col-lg-6">
+  <div class="card m-t-30">
+    <div class="card-body">
+      <form [formGroup]="clusterForm" (ngSubmit)="postServer()">
+        <div class="mb-3 col-12">
+          <label for="nameInput" class="form-label"><b>Name</b></label>
+          <input type="text" class="form-control" id="nameInput" formControlName="name" required>
+          <div id="nameHelp" class="form-text">Example: ocp-47-noprod</div>
+        </div>
+        <div class="mb-3 col-12">
+          <label for="urlInput" class="form-label"><b>Url</b></label>
+          <input type="text" class="form-control" id="urlInput" formControlName="url" required>
+          <div id="urlHelp" class="form-text">Example: https://cluster.app.cluster.com</div>
+        </div>
+        <div class="mb-3 col-12">
+          <label for="tokenInput" class="form-label"><b>Token</b></label>
+          <input type="text" class="form-control" id="tokenInput" formControlName="token" required>
+          <div id="tokenHelp" class="form-text">Example: jkdndodp-d8smkw93-k3987</div>
+        </div>
+        <div class="mb-3 col-12">
+          <label for="typeInput" class="form-label"><b>Type</b></label>
+          <select class="form-control" id="typeInput" formControlName="type" required>
+            <option selected>OPENSHIFT</option>
+            <option selected>KUBERNETES</option>
+          </select>
+        </div>
+        <div class="mb-3 col-12">
+          <label for="versionInput" class="form-label"><b>Version</b></label>
+          <input type="text" class="form-control" id="versionInput" formControlName="version" required>
+          <div id="versionHelp" class="form-text">Example: 4.7</div>
+        </div>
+        <div class="mb-3 col-12">
+          <button type="submit" class="btn btn-success m-t-20" [disabled]="!clusterForm.valid">Create</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>

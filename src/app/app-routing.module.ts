@@ -30,7 +30,7 @@ export const Approutes: Routes = [
       },
       {
         path: '',
-        loadChildren: () => import('./components/docs/docscomponents.module').then(m => m.DocsComponentsModule)
+        loadChildren: () => import('./components/repos/repocomponents.module').then(m => m.RepoComponentsModule)
       },
     ]
   },
