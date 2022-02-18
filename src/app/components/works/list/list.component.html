@@ -10,7 +10,17 @@
     <div class="card-body">
       <div class="row">
         <div class="col-12 m-b-30">
-          <button class="btn btn-success" routerLink="/works/new">New Work</button>
+          <button class="btn btn-success" routerLink="/works/new" style="margin-right: 2%;">New Work</button>
+
+          <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-danger" id="dropdownBasic1" ngbDropdownToggle style="margin-right: 2%;">Delete by
+              Status</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem (click)="deleteByStatus('READY')">READY</button>
+              <button ngbDropdownItem (click)="deleteByStatus('TERMINATED')">TERMINATED</button>
+            </div>
+          </div>
+
         </div>
       </div>
       <div class="row">
@@ -48,7 +58,7 @@
                     <i class="fas fa-eye"></i>
                   </button>
                   <button type="button" class="btn btn-danger" style="margin-right: 2%;"
-                    (click)="deleteServer(workShort.id)">
+                    (click)="deleteWork(workShort.id)">
                     <i class=" far fa-trash-alt"></i>
                   </button>
                 </td>
@@ -60,4 +70,3 @@
     </div>
   </div>
 </div>
-

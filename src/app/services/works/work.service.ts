@@ -31,6 +31,13 @@ export class WorkService {
       )
   }
 
+  deleteWorksByStatus(status: string): Observable<any> {
+    return this.http.delete<any>(this.apiUrl + '?status=' + status)
+      .pipe(
+        catchError(this.httpError)
+      )
+  }
+
   getLogs(id: string | null): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
     return this.http.get(this.apiUrl + '/' + id + '/logs', { headers, responseType: 'text' })

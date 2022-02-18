@@ -906,6 +906,36 @@
       "sequentialResponse": false
     },
     {
+      "uuid": "81a5317a-f619-4fd8-a3a2-be94d8101699",
+      "documentation": "",
+      "method": "delete",
+      "endpoint": "works",
+      "responses": [
+        {
+          "uuid": "6b27beb0-256e-4971-8af6-c62b4c350c0e",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
       "uuid": "e03381bf-d9d2-4fa9-a21b-c53336be21d0",
       "documentation": "",
       "method": "post",

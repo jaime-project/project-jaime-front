@@ -39,7 +39,7 @@ export class ListWorkComponent implements OnInit {
       })
   }
 
-  deleteServer(id: string) {
+  deleteWork(id: string) {
 
     Swal.fire({
       title: 'Delete work',
@@ -51,9 +51,23 @@ export class ListWorkComponent implements OnInit {
     }).then(result => {
       if (result.isConfirmed) {
         this.workService.deleteWork(id)
-          .subscribe(() => {
-            window.location.reload()
-          })
+          .subscribe()
+      }
+    })
+  }
+
+  deleteByStatus(status: string) {
+    Swal.fire({
+      title: 'Delete works',
+      text: 'Delete works with status "' + status + '"',
+      icon: 'warning',
+      confirmButtonColor: '#05b281',
+      cancelButtonColor: '#ec312d',
+      showCancelButton: true,
+    }).then(result => {
+      if (result.isConfirmed) {
+        this.workService.deleteWorksByStatus(status)
+          .subscribe()
       }
     })
   }
