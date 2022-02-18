@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { interval } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
+import { interval, Subscription } from 'rxjs';
+import { DocsService } from 'src/app/services/modules/docs.service';
 import { ModuleService } from 'src/app/services/modules/modules.service';
 import Swal from 'sweetalert2';
 
@@ -11,21 +13,30 @@ import Swal from 'sweetalert2';
 export class ListModuleComponent implements OnInit {
 
   modulesName: string[] = []
+  repo: string = ""
 
-  constructor(private modulesService: ModuleService) { }
+  constructor(private modulesService: ModuleService, private activatedRoute: ActivatedRoute, private route: Router, private docsService: DocsService) { }
+
+  thread: Subscription | null = null
 
   ngOnInit(): void {
 
+    this.repo = this.activatedRoute.snapshot.paramMap.get('repo')!
+
     this.loadStartData()
 
-    interval(3000)
+    this.thread = interval(3000)
       .subscribe(() => {
         this.loadStartData()
       });
   }
 
+  ngOnDestroy(): void {
+    this.thread?.unsubscribe()
+  }
+
   loadStartData() {
-    this.modulesService.listModules()
+    this.modulesService.listModules(this.repo!)
       .subscribe(data => {
         this.modulesName = data.sort()
       })
@@ -42,9 +53,10 @@ export class ListModuleComponent implements OnInit {
       showCancelButton: true,
     }).then(result => {
       if (result.isConfirmed) {
-        this.modulesService.deleteModule(name)
+        this.docsService.deleteDocs(name, this.repo)
+        this.modulesService.deleteModule(name, this.repo)
           .subscribe(() => {
-            window.location.reload()
+            this.route.navigate([`repos/${this.repo}/modules`])
           })
       }
     })

@@ -33,5 +33,5 @@ export class BreadcrumbComponent implements OnInit {
         this.pageInfo = event;
       });
   }
-  ngOnInit() {}
+  ngOnInit() { }
 }

@@ -1,4 +1,4 @@
-.RUNNING {
+.SUCCESS {
     color: green;
 }
 
@@ -6,6 +6,10 @@
     color: coral;
 }
 
-.TERMINATED {
+.ERROR {
     color: red;
+}
+
+.RUNNING {
+    color: violet;
 }

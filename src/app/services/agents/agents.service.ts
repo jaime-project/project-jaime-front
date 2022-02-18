@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Agent, AgentShort, Server, ServerShort } from 'src/app/models/models';
+import { Agent, AgentShort, Server, ClusterShort } from 'src/app/models/models';
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 

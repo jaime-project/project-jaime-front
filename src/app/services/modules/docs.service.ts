@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class DocsService {
 
-  apiUrl: string = environment.backendURL + '/api/v1/docs';
+  apiUrl: string = environment.backendURL + '/api/v1/repos';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private http: HttpClient) { }
@@ -23,38 +23,52 @@ export class DocsService {
       )
   }
 
-  postDocs(name: string | null, docs: string | null): Observable<string> {
+  postDocs(name: string, docs: string, repo: string): Observable<string> {
+
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
-    return this.http.post(this.apiUrl + '/' + name, docs, { headers, responseType: 'text' })
+    const url = `${this.apiUrl}/${repo}/docs/${name}`
+
+    return this.http.post(url, docs, { headers, responseType: 'text' })
       .pipe(
         catchError(this.httpError)
       )
   }
 
-  getDocs(name: string | null): Observable<string> {
-    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
+  getDocs(name: string, repo: string): Observable<string> {
 
-    return this.http.get(this.apiUrl + '/' + name, { headers, responseType: 'text' })
+    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
+    const url = `${this.apiUrl}/${repo}/docs/${name}`
+
+    return this.http.get(url, { headers, responseType: 'text' })
       .pipe(
         catchError(this.httpError)
       )
   }
 
-  getDocsWithoutError(name: string | null): Observable<string> {
-    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
-    return this.http.get(this.apiUrl + '/' + name, { headers, responseType: 'text' })
-  }
+  deleteDocs(name: string, repo: string): Observable<string> {
 
-  deleteDocs(name: string | null): Observable<any> {
-    return this.http.delete<any>(this.apiUrl + '/' + name)
+    const url = `${this.apiUrl}/${repo}/docs/${name}`
+
+    return this.http.delete<any>(url)
       .pipe(
         catchError(this.httpError)
       )
   }
 
-  putDocs(name: string | null, content: string): Observable<any> {
+  getDocsWithoutError(name: string, repo: string): Observable<string> {
+
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
-    return this.http.put(this.apiUrl + '/' + name, content, { headers })
+    const url = `${this.apiUrl}/${repo}/docs/${name}`
+
+    return this.http.get(url, { headers, responseType: 'text' })
+  }
+
+  putDocs(name: string, content: string, repo: string): Observable<any> {
+
+    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
+    const url = `${this.apiUrl}/${repo}/docs/${name}`
+
+    return this.http.put(url, content, { headers })
       .pipe(
         catchError(this.httpError)
       )

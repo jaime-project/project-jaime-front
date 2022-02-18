@@ -7,10 +7,10 @@ export const Approutes: Routes = [
     path: '',
     component: FullComponent,
     children: [
-      { path: '', redirectTo: '/servers', pathMatch: 'full' },
+      { path: '', redirectTo: '/clusters', pathMatch: 'full' },
       {
         path: '',
-        loadChildren: () => import('./components/servers/servercomponents.module').then(m => m.ServerComponentsModule)
+        loadChildren: () => import('./components/clusters/clustercomponents.module').then(m => m.ClusterComponentsModule)
       },
       {
         path: '',
@@ -30,12 +30,12 @@ export const Approutes: Routes = [
       },
       {
         path: '',
-        loadChildren: () => import('./components/docs/docscomponents.module').then(m => m.DocsComponentsModule)
+        loadChildren: () => import('./components/repos/repocomponents.module').then(m => m.RepoComponentsModule)
       },
     ]
   },
   {
     path: '**',
-    redirectTo: '/servers'
+    redirectTo: '/clusters'
   }
 ];
