@@ -32,7 +32,7 @@ export class WorkService {
   }
 
   deleteWorksByStatus(status: string): Observable<any> {
-    return this.http.delete<any>(this.apiUrl + '?status=' + status)
+    return this.http.delete<any>(this.apiUrl + '/?status=' + status)
       .pipe(
         catchError(this.httpError)
       )
