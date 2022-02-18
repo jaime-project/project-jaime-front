@@ -58,6 +58,10 @@
                     routerLink="/works/details/{{workShort.id}}">
                     <i class="fas fa-eye"></i>
                   </button>
+                  <button type="button" class="btn btn-success" style="margin-right: 2%;"
+                    (click)="resetStatus(workShort.id)">
+                    <i class="fas fa-arrow-up"></i>
+                  </button>
                   <button type="button" class="btn btn-danger" style="margin-right: 2%;"
                     (click)="deleteWork(workShort.id)">
                     <i class=" far fa-trash-alt"></i>

@@ -1000,6 +1000,40 @@
       "sequentialResponse": false
     },
     {
+      "uuid": "70229288-52c1-4d2b-85a5-518be27e1949",
+      "documentation": "",
+      "method": "put",
+      "endpoint": "works/*/status/*",
+      "responses": [
+        {
+          "uuid": "83170125-eddf-453a-add4-3aeaa3033aee",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
       "uuid": "754b864c-c45b-4be7-b9c0-1b325922a055",
       "documentation": "",
       "method": "get",
