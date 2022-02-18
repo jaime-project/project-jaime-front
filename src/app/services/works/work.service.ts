@@ -69,6 +69,14 @@ export class WorkService {
       )
   }
 
+  resetStatus(id: string): Observable<any> {
+
+    return this.http.patch(`${this.apiUrl}/${id}/status/READY`, {}, { responseType: 'blob' })
+      .pipe(
+        catchError(this.httpError)
+      )
+  }
+
   httpError(error: HttpErrorResponse) {
     Swal.fire({
       title: 'Service ERROR',

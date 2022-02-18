@@ -40,7 +40,6 @@ export class ListWorkComponent implements OnInit {
   }
 
   deleteWork(id: string) {
-
     Swal.fire({
       title: 'Delete work',
       text: 'Delete work with id "' + id + '"',
@@ -71,4 +70,23 @@ export class ListWorkComponent implements OnInit {
       }
     })
   }
+
+  resetStatus(id: string) {
+    Swal.fire({
+      title: 'Reset status',
+      text: 'Reset work status with status READY?',
+      icon: 'warning',
+      confirmButtonColor: '#05b281',
+      cancelButtonColor: '#ec312d',
+      showCancelButton: true,
+    }).then(result => {
+      if (result.isConfirmed) {
+        this.workService.resetStatus(id)
+          .subscribe()
+      }
+    })
+  }
+
+
+
 }
