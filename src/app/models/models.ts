@@ -40,6 +40,7 @@ export interface Work {
     id: string,
     name: string,
     module_name: string,
+    module_repo: string,
     status: string,
     start_date: Date | null,
     running_date: Date | null,

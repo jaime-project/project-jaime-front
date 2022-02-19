@@ -27,8 +27,7 @@
         <div class="mb-3 col-12">
           <label for="typeInput" class="form-label"><b>Type</b></label>
           <select class="form-control" id="typeInput" formControlName="type" required>
-            <option selected>OPENSHIFT</option>
-            <option selected>KUBERNETES</option>
+            <option *ngFor="let t of clusterTypes">{{t}}</option>
           </select>
         </div>
         <div class="mb-3 col-12">

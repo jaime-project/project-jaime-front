@@ -23,6 +23,7 @@ export class DetailWorkComponent implements OnInit {
     },
     id: "",
     module_name: "",
+    module_repo: "",
     name: "",
     params: {},
     running_date: null,

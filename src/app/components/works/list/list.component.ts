@@ -16,6 +16,8 @@ export class ListWorkComponent implements OnInit {
 
   worksShort: WorkShort[] = []
 
+  worksStatus: string[] = []
+
   constructor(private modalService: NgbModal, private workService: WorkService) { }
 
   ngOnInit(): void {
@@ -26,6 +28,11 @@ export class ListWorkComponent implements OnInit {
       .subscribe(() => {
         this.loadStartData()
       });
+
+    this.workService.getWorkStatus()
+      .subscribe(data => {
+        this.worksStatus = data.sort();
+      })
   }
 
   ngOnDestroy(): void {
