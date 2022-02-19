@@ -77,6 +77,16 @@ export class WorkService {
       )
   }
 
+  getWorkStatus(): Observable<any> {
+
+    return this.http.get<string[]>(`${this.apiUrl}/status`)
+      .pipe(
+        catchError(this.httpError)
+      )
+  }
+
+
+
   httpError(error: HttpErrorResponse) {
     Swal.fire({
       title: 'Service ERROR',

@@ -20,15 +20,15 @@
           </div>
           <div class="mb-3 col-6">
             <label class="form-label"><b>Start Date</b></label>
-            <p class="card-text">{{work.start_date}}</p>
+            <p class="card-text">{{work.start_date  | date :'short'}}</p>
           </div>
           <div class="mb-3 col-6">
             <label class="form-label"><b>Running Date</b></label>
-            <p class="card-text">{{work.running_date}}</p>
+            <p class="card-text">{{work.running_date  | date :'short'}}</p>
           </div>
           <div class="mb-3 col-6">
             <label class="form-label"><b>Terminated Date</b></label>
-            <p class="card-text">{{work.terminated_date}}</p>
+            <p class="card-text">{{work.terminated_date  | date :'short'}}</p>
           </div>
         </form>
       </div>
@@ -75,6 +75,10 @@
           <div class="mb-3 col-6">
             <label class="form-label"><b>Module</b></label>
             <p class="card-text">{{work.module_name}}</p>
+          </div>
+          <div class="mb-3 col-6">
+            <label class="form-label"><b>Repository</b></label>
+            <p class="card-text">{{work.module_repo}}</p>
           </div>
         </form>
       </div>

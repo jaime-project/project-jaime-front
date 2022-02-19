@@ -21,7 +21,14 @@ export class NewServerComponent implements OnInit {
 
   constructor(private route: Router, private clustersService: ClustersService) { }
 
+  clusterTypes: string[] = []
+
   ngOnInit(): void {
+
+    this.clustersService.listServerTypes()
+      .subscribe(data => {
+        this.clusterTypes = data.sort()
+      })
   }
 
   postServer() {

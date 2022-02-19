@@ -16,9 +16,7 @@
             <button class="btn btn-danger" id="dropdownBasic1" ngbDropdownToggle style="margin-right: 2%;">Delete by
               Status</button>
             <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-              <button ngbDropdownItem (click)="deleteByStatus('READY')">READY</button>
-              <button ngbDropdownItem (click)="deleteByStatus('SUCCESS')">SUCCESS</button>
-              <button ngbDropdownItem (click)="deleteByStatus('ERROR')">ERROR</button>
+              <button ngbDropdownItem (click)="deleteByStatus(s)" *ngFor="let s of worksStatus">{{s}}</button>
             </div>
           </div>
 
@@ -52,7 +50,7 @@
                 <td>{{workShort.agent_id}}</td>
                 <td>{{workShort.agent_type}}</td>
                 <td>{{workShort.module_name}}</td>
-                <td>{{workShort.start_date}}</td>
+                <td>{{workShort.start_date | date: 'short'}}</td>
                 <td>
                   <button type="button" class="btn btn-primary" style="margin-right: 2%;"
                     routerLink="/works/details/{{workShort.id}}">
