@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { interval, Subscription } from 'rxjs';
 import { WorkShort } from 'src/app/models/models';
 import { WorkService } from 'src/app/services/works/work.service';
@@ -18,7 +17,7 @@ export class ListWorkComponent implements OnInit {
 
   worksStatus: string[] = []
 
-  constructor(private modalService: NgbModal, private workService: WorkService) { }
+  constructor(private workService: WorkService) { }
 
   ngOnInit(): void {
 
@@ -78,17 +77,17 @@ export class ListWorkComponent implements OnInit {
     })
   }
 
-  resetStatus(id: string) {
+  changeStatus(id: string, status: string) {
     Swal.fire({
-      title: 'Reset status',
-      text: 'Reset work status with status READY?',
+      title: 'Change status',
+      text: `Change work status with status ${status}?`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',
       showCancelButton: true,
     }).then(result => {
       if (result.isConfirmed) {
-        this.workService.resetStatus(id)
+        this.workService.changeStatus(id, status)
           .subscribe()
       }
     })
