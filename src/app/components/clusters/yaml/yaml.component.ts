@@ -12,6 +12,8 @@ import { Document, parse } from 'yaml';
 })
 export class YamlServerComponent implements OnInit {
 
+  public editSwitchActivated = false
+
   contentYaml: string = ""
   cluster: Server = {
     name: "",

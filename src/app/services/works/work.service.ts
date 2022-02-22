@@ -69,9 +69,9 @@ export class WorkService {
       )
   }
 
-  resetStatus(id: string): Observable<any> {
+  changeStatus(id: string, status: string): Observable<any> {
 
-    return this.http.patch(`${this.apiUrl}/${id}/status/READY`, {}, { responseType: 'blob' })
+    return this.http.patch(`${this.apiUrl}/${id}/status/${status}`, {}, { responseType: 'blob' })
       .pipe(
         catchError(this.httpError)
       )
