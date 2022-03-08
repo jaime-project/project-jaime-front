@@ -4,7 +4,6 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
-import { AppConfigService } from '../AppConfigService';
 
 
 @Injectable({
@@ -12,12 +11,10 @@ import { AppConfigService } from '../AppConfigService';
 })
 export class ConfigService {
 
-  apiUrl: string = "";
+  apiUrl: string = environment.backendURL + '/api/v1/configs';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-  constructor(private environment: AppConfigService, private http: HttpClient) {
-    this.apiUrl = environment.config.backendURL + '/api/v1/configs';
-  }
+  constructor(private http: HttpClient) { }
 
 
   getConfigsAll(): Observable<any[]> {

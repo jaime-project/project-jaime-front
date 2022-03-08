@@ -5,7 +5,7 @@ import {
   PathLocationStrategy
 } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { APP_INITIALIZER, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,7 +16,6 @@ import { PerfectScrollbarConfigInterface, PerfectScrollbarModule, PERFECT_SCROLL
 import { Approutes } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FullComponent } from './layouts/full/full.component';
-import { AppConfigService } from './services/AppConfigService';
 import { BreadcrumbComponent } from './shared/breadcrumb/breadcrumb.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { SpinnerComponent } from './shared/spinner.component';
@@ -27,12 +26,6 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   wheelSpeed: 1,
   wheelPropagation: true,
   minScrollbarLength: 20
-};
-
-const appInitializerFn = (appConfig: AppConfigService) => {
-  return () => {
-      return appConfig.loadAppConfig();
-  }
 };
 
 @NgModule({
@@ -62,13 +55,6 @@ const appInitializerFn = (appConfig: AppConfigService) => {
     {
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
-    },
-    AppConfigService,
-    {
-      provide: APP_INITIALIZER,
-      useFactory: appInitializerFn,
-      multi: true,
-      deps: [AppConfigService]
     }
   ],
   bootstrap: [AppComponent]

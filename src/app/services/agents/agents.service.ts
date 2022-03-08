@@ -2,9 +2,9 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Agent, AgentShort } from 'src/app/models/models';
+import { Agent, AgentShort, Server, ClusterShort } from 'src/app/models/models';
+import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
-import { AppConfigService } from '../AppConfigService';
 
 
 @Injectable({
@@ -12,12 +12,11 @@ import { AppConfigService } from '../AppConfigService';
 })
 export class AgentService {
 
-  apiUrl: string = "";
+  apiUrl: string = environment.backendURL + '/api/v1/agents';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-  constructor(private environment: AppConfigService, private http: HttpClient) {
-    this.apiUrl = environment.config.backendURL + '/api/v1/agents';
-  }
+  constructor(private http: HttpClient) { }
+
 
   getAgentsAll(): Observable<AgentShort[]> {
     return this.http.get<AgentShort[]>(this.apiUrl + '/all/short')

@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { WorkShort } from 'src/app/models/models';
+import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
-import { AppConfigService } from '../AppConfigService';
 
 
 @Injectable({
@@ -12,13 +12,10 @@ import { AppConfigService } from '../AppConfigService';
 })
 export class WorkService {
 
-  apiUrl: string = "";
+  apiUrl: string = environment.backendURL + '/api/v1/works';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-  constructor(private environment: AppConfigService, private http: HttpClient) {
-    this.apiUrl = environment.config.backendURL + '/api/v1/works';
-  }
-
+  constructor(private http: HttpClient) { }
 
   getWorksAllShort(): Observable<WorkShort[]> {
     return this.http.get<WorkShort[]>(this.apiUrl + '/all/short')

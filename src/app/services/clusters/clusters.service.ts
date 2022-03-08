@@ -2,22 +2,20 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { ClusterShort, Server as Cluster } from 'src/app/models/models';
+import { Server as Cluster, ClusterShort } from 'src/app/models/models';
+import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
-import { AppConfigService } from '../AppConfigService';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClustersService {
 
-  apiUrl: string = "";
+  apiUrl: string = environment.backendURL + '/api/v1/clusters';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-  constructor(private environment: AppConfigService, private http: HttpClient) {
-    this.apiUrl = environment.config.backendURL + '/api/v1/clusters';
-  }
-  
+  constructor(private http: HttpClient) { }
+
   listServers(): Observable<ClusterShort[]> {
     return this.http.get<ClusterShort[]>(this.apiUrl + '/all/short')
       .pipe(
