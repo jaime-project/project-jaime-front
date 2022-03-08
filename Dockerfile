@@ -12,7 +12,6 @@ RUN npm install
 
 RUN npm run-script build
 
-
 # APP
 # ---------------------------------------
 
@@ -29,8 +28,11 @@ ENV TZ America/Argentina/Buenos_Aires
 ENV PORT 80
 ENV JAIME_HOST jaime
 ENV JAIME_PORT 5000
+ENV JAIME_URL http://localhost:5000
 
 COPY --from=builder /app/dist/project-jaime-front .
 COPY nginx.conf /tmp
+
+RUN echo """{"backendURL":"${JAIME_URL}}"}""" > assets/appconfig.json
 
 CMD ["/bin/sh", "-c", "service nginx stop && envsubst < /tmp/nginx.conf > /etc/nginx/conf.d/default.conf && nginx-debug -g 'daemon off;'"]
