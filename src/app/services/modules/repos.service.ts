@@ -34,7 +34,7 @@ export class ReposService {
   }
 
   listReposByType(typeRepo: string): Observable<string[]> {
-    return this.http.get<string[]>(`${this.apiUrl}?type=${typeRepo}`)
+    return this.http.get<string[]>(`${this.apiUrl}/?type=${typeRepo}`)
       .pipe(
         catchError(this.httpError)
       )
