@@ -19,7 +19,7 @@ export class ModuleService {
   }
 
   listModules(repo: string): Observable<string[]> {
-    return this.http.get<string[]>(`${this.apiUrl}/${repo}/modules`)
+    return this.http.get<string[]>(`${this.apiUrl}/${repo}/modules/`)
       .pipe(
         catchError(this.httpError)
       )
@@ -28,7 +28,7 @@ export class ModuleService {
   getModule(name: string, repo: string): Observable<string> {
 
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
-    const url = `${this.apiUrl}/${repo}/modules/${name}`
+    const url = `${this.apiUrl}/${repo}/modules/${name}/`
 
     return this.http.get(url, { headers, responseType: 'text' })
       .pipe(
@@ -48,7 +48,7 @@ export class ModuleService {
   }
 
   deleteModule(name: string, repo: string): Observable<any> {
-    const url = `${this.apiUrl}/${repo}/modules/${name}`
+    const url = `${this.apiUrl}/${repo}/modules/${name}/`
 
     return this.http.delete<any>(url)
       .pipe(
@@ -59,7 +59,7 @@ export class ModuleService {
   putModule(name: string, code: string, repo: string): Observable<any> {
 
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
-    const url = `${this.apiUrl}/${repo}/modules/${name}`
+    const url = `${this.apiUrl}/${repo}/modules/${name}/`
 
     return this.http.put(url, code, { headers })
       .pipe(

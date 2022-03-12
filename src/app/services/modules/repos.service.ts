@@ -41,28 +41,28 @@ export class ReposService {
   }
 
   listReposTypes(): Observable<string[]> {
-    return this.http.get<string[]>(`${this.apiUrl}/types`)
+    return this.http.get<string[]>(`${this.apiUrl}/types/`)
       .pipe(
         catchError(this.httpError)
       )
   }
 
   postRepos(repo: any): Observable<string> {
-    return this.http.post<any>(this.apiUrl + '/', repo)
+    return this.http.post<any>(this.apiUrl + '/', repo + '/')
       .pipe(
         catchError(this.httpError)
       )
   }
 
   deleteRepos(name: string): Observable<any> {
-    return this.http.delete<any>(this.apiUrl + '/' + name)
+    return this.http.delete<any>(this.apiUrl + '/' + name + '/')
       .pipe(
         catchError(this.httpError)
       )
   }
 
   reloadRepos(name: string): Observable<any> {
-    const url = `${this.apiUrl}/${name}/reload`
+    const url = `${this.apiUrl}/${name}/reload/`
     return this.http.post<any>(url, {})
       .pipe(
         catchError(this.httpError)

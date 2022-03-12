@@ -29,7 +29,7 @@ export class DocsService {
   postDocs(name: string, docs: string, repo: string): Observable<string> {
 
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
-    const url = `${this.apiUrl}/${repo}/docs/${name}`
+    const url = `${this.apiUrl}/${repo}/docs/${name}/`
 
     return this.http.post(url, docs, { headers, responseType: 'text' })
       .pipe(
@@ -40,7 +40,7 @@ export class DocsService {
   getDocs(name: string, repo: string): Observable<string> {
 
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
-    const url = `${this.apiUrl}/${repo}/docs/${name}`
+    const url = `${this.apiUrl}/${repo}/docs/${name}/`
 
     return this.http.get(url, { headers, responseType: 'text' })
       .pipe(
@@ -50,7 +50,7 @@ export class DocsService {
 
   deleteDocs(name: string, repo: string): Observable<string> {
 
-    const url = `${this.apiUrl}/${repo}/docs/${name}`
+    const url = `${this.apiUrl}/${repo}/docs/${name}/`
 
     return this.http.delete<any>(url)
       .pipe(
@@ -61,7 +61,7 @@ export class DocsService {
   getDocsWithoutError(name: string, repo: string): Observable<string> {
 
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
-    const url = `${this.apiUrl}/${repo}/docs/${name}`
+    const url = `${this.apiUrl}/${repo}/docs/${name}/`
 
     return this.http.get(url, { headers, responseType: 'text' })
   }
