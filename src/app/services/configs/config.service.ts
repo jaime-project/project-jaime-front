@@ -2,8 +2,8 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
+import { AppConfigService } from '../AppConfigService';
 
 
 @Injectable({
@@ -11,10 +11,12 @@ import Swal from 'sweetalert2';
 })
 export class ConfigService {
 
-  apiUrl: string = environment.backendURL + '/api/v1/configs';
+  apiUrl: string = "";
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-  constructor(private http: HttpClient) { }
+  constructor(private environment: AppConfigService, private http: HttpClient) {
+    this.apiUrl = environment.config.backendURL + '/api/v1/configs';
+  }
 
 
   getConfigsAll(): Observable<any[]> {
