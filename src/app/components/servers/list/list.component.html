@@ -25,22 +25,22 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let clusterShort of listServersShorts">
-                <td>{{clusterShort.name}}</td>
-                <td>{{clusterShort.type}}</td>
-                <td>{{clusterShort.url}}</td>
+              <tr *ngFor="let serverShort of listServersShorts">
+                <td>{{serverShort.name}}</td>
+                <td>{{serverShort.host}}</td>
+                <td>{{serverShort.port}}</td>
                 <td>
                   <button type="button" class="btn btn-primary" style="margin-right: 2%;"
-                    routerLink="/clusters/details/{{clusterShort.name}}"><i class="fas fa-eye"></i></button>
+                    routerLink="/servers/details/{{serverShort.name}}"><i class="fas fa-eye"></i></button>
                   <button type="button" class="btn btn-danger" style="margin-right: 2%;"
-                    (click)="deleteServer(clusterShort.name)">
+                    (click)="deleteServer(serverShort.name)">
                     <i class=" far fa-trash-alt"></i>
                   </button>
 
                   <div class="spinner-border text-success" *ngIf="testServerLoad"></div>
 
                   <button type="button" class="btn btn-success" style="margin-right: 2%;" *ngIf="!testServerLoad"
-                    (click)="testServer(clusterShort.name)">
+                    (click)="testServer(serverShort.name)">
                     <i class="fas fa-play"></i>
                   </button>
                 </td>

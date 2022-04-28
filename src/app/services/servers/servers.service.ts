@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class ServerService {
 
-  apiUrl: string = environment.backendURL + '/api/v1/clusters';
+  apiUrl: string = environment.backendURL + '/api/v1/servers';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private http: HttpClient) { }

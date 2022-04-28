@@ -13,10 +13,10 @@ export class NewServerComponent implements OnInit {
 
   serverForm = new FormGroup({
     name: new FormControl(''),
-    url: new FormControl(''),
-    token: new FormControl(''),
-    type: new FormControl(''),
-    version: new FormControl(''),
+    host: new FormControl(''),
+    port: new FormControl(''),
+    user: new FormControl(''),
+    password: new FormControl(''),
   });
 
   constructor(private route: Router, private serversService: ServerService) { }
