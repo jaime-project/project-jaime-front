@@ -1,36 +1,36 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Cluster } from 'src/app/models/models';
-import { ClustersService } from 'src/app/services/clusters/clusters.service';
+import { Server } from 'src/app/models/models';
+import { ServerService } from 'src/app/services/servers/servers.service';
 import Swal from 'sweetalert2';
 import { Document, parse } from 'yaml';
 
 @Component({
-  selector: 'app-yaml-cluster',
+  selector: 'app-yaml-server',
   templateUrl: './yaml.component.html',
   styleUrls: ['./yaml.component.css']
 })
-export class YamlClusterComponent implements OnInit {
+export class YamlServerComponent implements OnInit {
 
   public editSwitchActivated = false
 
   contentYaml: string = ""
-  cluster: Cluster = {
+  server: Server = {
     name: "",
-    type: "",
-    token: "",
-    url: "",
-    version: ""
+    host: "",
+    port: "",
+    user: "",
+    password: ""
   }
 
-  constructor(private clustersService: ClustersService, private activatedRoute: ActivatedRoute, private route: Router) { }
+  constructor(private serversService: ServerService, private activatedRoute: ActivatedRoute, private route: Router) { }
 
   ngOnInit(): void {
     let name = this.activatedRoute.snapshot.paramMap.get('name')
 
-    this.clustersService.getCluster(name)
+    this.serversService.getServer(name)
       .subscribe((data) => {
-        this.cluster = data;
+        this.server = data;
 
         let doc = new Document()
         doc.contents = data
@@ -41,17 +41,17 @@ export class YamlClusterComponent implements OnInit {
   putServer(modifyYaml: string) {
 
     Swal.fire({
-      title: 'Update cluster',
-      text: 'Update cluster with name "' + this.cluster.name + '"',
+      title: 'Update server',
+      text: 'Update server with name "' + this.server.name + '"',
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',
       showCancelButton: true,
     }).then(result => {
       if (result.isConfirmed) {
-        this.clustersService.putCluster(parse(modifyYaml))
+        this.serversService.putServer(parse(modifyYaml))
           .subscribe(() =>
-            this.route.navigate(['clusters'])
+            this.route.navigate(['servers'])
           )
       }
     })

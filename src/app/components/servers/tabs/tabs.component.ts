@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-tabs-cluster',
+  selector: 'app-tabs-server',
   templateUrl: './tabs.component.html',
   styleUrls: ['./tabs.component.css']
 })
-export class TabsClusterComponent implements OnInit {
+export class TabsServerComponent implements OnInit {
 
   constructor() { }
 

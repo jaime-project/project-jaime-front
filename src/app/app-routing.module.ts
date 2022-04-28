@@ -32,6 +32,10 @@ export const Approutes: Routes = [
         path: '',
         loadChildren: () => import('./components/repos/repocomponents.module').then(m => m.RepoComponentsModule)
       },
+      {
+        path: '',
+        loadChildren: () => import('./components/servers/servercomponents.module').then(m => m.ServerComponentsModule)
+      },
     ]
   },
   {

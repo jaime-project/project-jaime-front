@@ -1,16 +1,16 @@
 import { Routes } from '@angular/router';
-import { ListServerComponent } from './list/list.component';
-import { NewServerComponent } from './new/new.component';
-import { TabsServerComponent } from './tabs/tabs.component';
+import { ListClusterComponent } from './list/list.component';
+import { NewClusterComponent } from './new/new.component';
+import { TabsClusterComponent } from './tabs/tabs.component';
 
 
-export const ServerComponentsRoutes: Routes = [
+export const ClusterComponentsRoutes: Routes = [
 	{
 		path: '',
 		children: [
 			{
 				path: 'clusters',
-				component: ListServerComponent,
+				component: ListClusterComponent,
 				data: {
 					title: 'clusters',
 					urls: [
@@ -21,7 +21,7 @@ export const ServerComponentsRoutes: Routes = [
 			},
 			{
 				path: 'clusters/new',
-				component: NewServerComponent,
+				component: NewClusterComponent,
 				data: {
 					title: 'clusters',
 					urls: [
@@ -32,7 +32,7 @@ export const ServerComponentsRoutes: Routes = [
 			},
 			{
 				path: 'clusters/details/:name',
-				component: TabsServerComponent,
+				component: TabsClusterComponent,
 				data: {
 					title: 'clusters',
 					urls: [

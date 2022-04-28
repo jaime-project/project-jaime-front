@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-12 m-t-30">
-    <h4 class="m-b-0"><b>New Cluster</b></h4>
+    <h4 class="m-b-0"><b>New Server</b></h4>
     <p class="text-muted m-t-0 font-12"></p>
   </div>
 </div>
@@ -8,7 +8,7 @@
 <div class="col-lg-6">
   <div class="card m-t-30">
     <div class="card-body">
-      <form [formGroup]="clusterForm" (ngSubmit)="postCluster()">
+      <form [formGroup]="serverForm" (ngSubmit)="postServer()">
         <div class="mb-3 col-12">
           <label for="nameInput" class="form-label"><b>Name</b></label>
           <input type="text" class="form-control" id="nameInput" formControlName="name" required>
@@ -17,7 +17,7 @@
         <div class="mb-3 col-12">
           <label for="urlInput" class="form-label"><b>Url</b></label>
           <input type="text" class="form-control" id="urlInput" formControlName="url" required>
-          <div id="urlHelp" class="form-text">Example: https://cluster.app.cluster.com</div>
+          <div id="urlHelp" class="form-text">Example: https://server.app.server.com</div>
         </div>
         <div class="mb-3 col-12">
           <label for="tokenInput" class="form-label"><b>Token</b></label>
@@ -27,7 +27,7 @@
         <div class="mb-3 col-12">
           <label for="typeInput" class="form-label"><b>Type</b></label>
           <select class="form-control" id="typeInput" formControlName="type" required>
-            <option *ngFor="let t of clusterTypes">{{t}}</option>
+            <option *ngFor="let t of serverTypes">{{t}}</option>
           </select>
         </div>
         <div class="mb-3 col-12">
@@ -36,7 +36,7 @@
           <div id="versionHelp" class="form-text">Example: 4.7</div>
         </div>
         <div class="mb-3 col-12">
-          <button type="submit" class="btn btn-success m-t-20" [disabled]="!clusterForm.valid">Create</button>
+          <button type="submit" class="btn btn-success m-t-20" [disabled]="!serverForm.valid">Create</button>
         </div>
       </form>
     </div>
