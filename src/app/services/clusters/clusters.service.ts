@@ -5,6 +5,7 @@ import { catchError } from 'rxjs/operators';
 import { Cluster, ClusterShort } from 'src/app/models/models';
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
+import { AppConfigService } from '../AppConfigService';
 
 @Injectable({
   providedIn: 'root'
