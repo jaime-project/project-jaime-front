@@ -12,10 +12,12 @@ import { AppConfigService } from '../AppConfigService';
 })
 export class ClustersService {
 
-  apiUrl: string = environment.backendURL + '/api/v1/clusters';
+  apiUrl: string = "";
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-  constructor(private http: HttpClient) { }
+  constructor(private environment: AppConfigService, private http: HttpClient) {
+    this.apiUrl = environment.config.backendURL + '/api/v1/clusters';
+  }
 
   listCluster(): Observable<ClusterShort[]> {
     return this.http.get<ClusterShort[]>(this.apiUrl + '/all/short')
