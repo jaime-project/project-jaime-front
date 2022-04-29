@@ -1,8 +1,7 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Title } from "@angular/platform-browser";
-import { Router, NavigationEnd, ActivatedRoute, Data } from "@angular/router";
+import { ActivatedRoute, Data, NavigationEnd, Router } from "@angular/router";
 import { filter, map, mergeMap } from "rxjs/operators";
-import { Observer } from "rxjs";
 
 @Component({
   selector: "app-breadcrumb",

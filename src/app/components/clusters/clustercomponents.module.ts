@@ -4,29 +4,29 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MonacoEditorModule } from 'ngx-monaco-editor';
-import { DetailServerComponent } from './detail/detail.component';
-import { ListServerComponent } from './list/list.component';
-import { NewServerComponent } from './new/new.component';
-import { ServerComponentsRoutes } from './clustercomponents.routing';
-import { TabsServerComponent } from './tabs/tabs.component';
-import { YamlServerComponent } from './yaml/yaml.component';
+import { DetailClusterComponent } from './detail/detail.component';
+import { ListClusterComponent } from './list/list.component';
+import { NewClusterComponent } from './new/new.component';
+import { ClusterComponentsRoutes } from './clustercomponents.routing';
+import { TabsClusterComponent } from './tabs/tabs.component';
+import { YamlClusterComponent } from './yaml/yaml.component';
 
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(ServerComponentsRoutes),
+    RouterModule.forChild(ClusterComponentsRoutes),
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
     MonacoEditorModule,
   ],
   declarations: [
-    TabsServerComponent,
-    YamlServerComponent,
-    DetailServerComponent,
-    ListServerComponent,
-    NewServerComponent
+    TabsClusterComponent,
+    YamlClusterComponent,
+    DetailClusterComponent,
+    ListClusterComponent,
+    NewClusterComponent
   ]
 })
 export class ClusterComponentsModule { }

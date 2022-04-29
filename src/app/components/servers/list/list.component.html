@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-12 m-t-30">
-    <h4 class="m-b-0"><b>Cluster List</b></h4>
+    <h4 class="m-b-0"><b>Server List</b></h4>
     <p class="text-muted m-t-0 font-12"></p>
   </div>
 </div>
@@ -10,7 +10,7 @@
     <div class="card-body">
       <div class="row">
         <div class="col-12 m-b-30">
-          <button class="btn btn-success" routerLink="/clusters/new">New cluster</button>
+          <button class="btn btn-success" routerLink="/servers/new">New server</button>
         </div>
       </div>
       <div class="row">
@@ -19,28 +19,28 @@
             <thead>
               <tr>
                 <th scope="col">Name</th>
-                <th scope="col">Type</th>
-                <th scope="col">URL</th>
+                <th scope="col">Host</th>
+                <th scope="col">Port</th>
                 <th scope="col">Actions</th>
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let clusterShort of listClustersShorts">
-                <td>{{clusterShort.name}}</td>
-                <td>{{clusterShort.type}}</td>
-                <td>{{clusterShort.url}}</td>
+              <tr *ngFor="let serverShort of listServersShorts">
+                <td>{{serverShort.name}}</td>
+                <td>{{serverShort.host}}</td>
+                <td>{{serverShort.port}}</td>
                 <td>
                   <button type="button" class="btn btn-primary" style="margin-right: 2%;"
-                    routerLink="/clusters/details/{{clusterShort.name}}"><i class="fas fa-eye"></i></button>
+                    routerLink="/servers/details/{{serverShort.name}}"><i class="fas fa-eye"></i></button>
                   <button type="button" class="btn btn-danger" style="margin-right: 2%;"
-                    (click)="deleteServer(clusterShort.name)">
+                    (click)="deleteServer(serverShort.name)">
                     <i class=" far fa-trash-alt"></i>
                   </button>
 
                   <div class="spinner-border text-success" *ngIf="testServerLoad"></div>
 
                   <button type="button" class="btn btn-success" style="margin-right: 2%;" *ngIf="!testServerLoad"
-                    (click)="testServer(clusterShort.name)">
+                    (click)="testServer(serverShort.name)">
                     <i class="fas fa-play"></i>
                   </button>
                 </td>

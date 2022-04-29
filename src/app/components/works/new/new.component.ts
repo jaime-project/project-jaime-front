@@ -38,7 +38,7 @@ export class NewWorkComponent implements OnInit {
         this.repos = data.sort()
       })
 
-    this.clusterService.listServerTypes()
+    this.clusterService.listClusterTypes()
       .subscribe(data => {
         this.agentsTypes = data
       })

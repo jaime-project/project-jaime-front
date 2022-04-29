@@ -1,7 +1,6 @@
-import { HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Server } from 'src/app/models/models';
+import { Cluster } from 'src/app/models/models';
 import { ClustersService } from 'src/app/services/clusters/clusters.service';
 
 @Component({
@@ -9,9 +8,9 @@ import { ClustersService } from 'src/app/services/clusters/clusters.service';
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.css']
 })
-export class DetailServerComponent implements OnInit {
+export class DetailClusterComponent implements OnInit {
 
-  cluster: Server = {
+  cluster: Cluster = {
     name: "",
     type: "",
     token: "",
@@ -24,7 +23,7 @@ export class DetailServerComponent implements OnInit {
   ngOnInit(): void {
     let name = this.route.snapshot.paramMap.get('name')
 
-    this.clustersService.getServer(name)
+    this.clustersService.getCluster(name)
       .subscribe((data) => {
         this.cluster = data;
       })

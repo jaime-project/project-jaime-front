@@ -4,7 +4,15 @@ export const ROUTES: RouteInfo[] = [
   {
     path: "/clusters",
     title: "Clusters",
-    icon: "mdi mdi-view-carousel",
+    icon: "mdi mdi-server",
+    class: "",
+    extralink: false,
+    submenu: [],
+  },
+  {
+    path: "/servers",
+    title: "Servers",
+    icon: "mdi mdi-server-minus",
     class: "",
     extralink: false,
     submenu: [],

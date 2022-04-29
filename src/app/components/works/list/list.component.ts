@@ -23,7 +23,7 @@ export class ListWorkComponent implements OnInit {
 
     this.loadStartData()
 
-    this.thread = interval(3000)
+    this.thread = interval(1500)
       .subscribe(() => {
         this.loadStartData()
       });
