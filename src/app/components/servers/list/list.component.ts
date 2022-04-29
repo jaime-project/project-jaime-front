@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { interval, Subscription } from 'rxjs';
-import { ClusterShort } from 'src/app/models/models';
-import { ClustersService } from 'src/app/services/clusters/clusters.service';
+import { ServerShort } from 'src/app/models/models';
+import { ServerService } from 'src/app/services/servers/servers.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-list-cluster',
+  selector: 'app-list-server',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
-export class ListClusterComponent implements OnInit {
+export class ListServerComponent implements OnInit {
 
-  listClustersShorts: ClusterShort[] = []
+  listServersShorts: ServerShort[] = []
   testServerLoad: boolean = false
 
-  constructor(private clustersService: ClustersService, private route: Router) { }
+  constructor(private serversService: ServerService, private route: Router) { }
 
   thread: Subscription | null = null
 
@@ -34,16 +34,16 @@ export class ListClusterComponent implements OnInit {
   }
 
   loadStartData() {
-    this.clustersService.listCluster()
+    this.serversService.listServer()
       .subscribe(data => {
-        this.listClustersShorts = data.sort().reverse();
+        this.listServersShorts = data.sort().reverse();
       })
   }
 
   testServer(name: string) {
 
     this.testServerLoad = true
-    this.clustersService.testCluster(name)
+    this.serversService.testServer(name)
       .subscribe(data => {
         this.testServerLoad = false
         if (data.success) {
@@ -67,17 +67,17 @@ export class ListClusterComponent implements OnInit {
   deleteServer(name: string) {
 
     Swal.fire({
-      title: 'Delete cluster',
-      text: 'Delete cluster with name "' + name + '"',
+      title: 'Delete server',
+      text: 'Delete server with name "' + name + '"',
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',
       showCancelButton: true,
     }).then(result => {
       if (result.isConfirmed) {
-        this.clustersService.deleteCluster(name)
+        this.serversService.deleteServer(name)
           .subscribe(() => {
-            this.route.navigate(['clusters'])
+            this.route.navigate(['servers'])
           })
       }
     })

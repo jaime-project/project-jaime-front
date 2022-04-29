@@ -8,13 +8,201 @@
   "hostname": "0.0.0.0",
   "routes": [
     {
+      "uuid": "df9bd82a-8b59-4e6c-8f9d-c3775b5b9ea0",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "servers/*",
+      "responses": [
+        {
+          "uuid": "d1a311bb-7e8b-4981-b9c9-d50bb6ee58bd",
+          "body": "",
+          "latency": 3000,
+          "statusCode": 201,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "dbd7175a-e1b9-493e-a631-572d1a278874",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "servers/*/test",
+      "responses": [
+        {
+          "uuid": "eb253ad9-5027-454e-ab9e-445a9df4c663",
+          "body": "{\n  \"success\": false,\n  \"text\": \"se rompio todo\"\n}",
+          "latency": 3000,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
       "uuid": "a6da9fa0-d099-437f-bec3-7f55efed53d2",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "servers/all/short",
+      "responses": [
+        {
+          "uuid": "e7b9d829-6132-4a61-a4f1-d6ea500c8aaa",
+          "body": "[\n  {\n    \"name\": \"asd\",\n    \"host\": \"host.com\",\n    \"port\": \"22\"\n  },\n  {\n    \"name\": \"qwe\",\n    \"host\": \"host2.com\",\n    \"port\": \"22\"\n  }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "5191b8e5-20bf-4f9b-a5bf-cd1fa3c4d47a",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "servers/*",
+      "responses": [
+        {
+          "uuid": "35741176-ae55-4dd0-8eab-158a4457d473",
+          "body": "{\n    \"name\": \"asd\",\n    \"host\": \"ocplasegunda.com.ar\",\n    \"port\": \"22\",\n    \"user\": \"redhat\",\n    \"password\": \"OPENSHIFT\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "535d5c71-505c-4512-b489-846c61368939",
+      "documentation": "",
+      "method": "delete",
+      "endpoint": "servers/*",
+      "responses": [
+        {
+          "uuid": "e0c7b0f9-1464-4617-9116-277f11789ab5",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "b7333b71-2ddf-4e03-b239-42da3348f3b9",
+      "documentation": "",
+      "method": "put",
+      "endpoint": "servers/*",
+      "responses": [
+        {
+          "uuid": "62ddfa66-8f92-4fe5-b55b-fbafc478adf1",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "f8aab51f-f474-41a2-a36f-85f566de2a68",
       "documentation": "",
       "method": "get",
       "endpoint": "clusters/all/short",
       "responses": [
         {
-          "uuid": "e7b9d829-6132-4a61-a4f1-d6ea500c8aaa",
+          "uuid": "0857d68d-b3ff-40bc-8aa5-e71de1ac4ee6",
           "body": "[\n  {\n    \"name\": \"edenor3\",\n    \"type\": \"OPENSHIFT\",\n    \"url\": \"https://console-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n  },\n  {\n    \"name\": \"edenor4\",\n    \"type\": \"OPENSHIFT\",\n    \"url\": \"https://asd-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n  },\n  {\n    \"name\": \"asd1\",\n    \"type\": \"OPENSHIFT\",\n    \"url\": \"https://asd-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n}\n]",
           "latency": 0,
           "statusCode": 200,

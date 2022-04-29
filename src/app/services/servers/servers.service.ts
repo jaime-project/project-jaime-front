@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Cluster, ClusterShort } from 'src/app/models/models';
+import { Server as Server, ServerShort } from 'src/app/models/models';
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 import { AppConfigService } from '../AppConfigService';
@@ -10,44 +10,43 @@ import { AppConfigService } from '../AppConfigService';
 @Injectable({
   providedIn: 'root'
 })
-export class ClustersService {
+export class ServerService {
 
   apiUrl: string = "";
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private environment: AppConfigService, private http: HttpClient) {
-    this.apiUrl = environment.config.backendURL + '/api/v1/clusters';
+    this.apiUrl = environment.config.backendURL + '/api/v1/servers';
   }
-
-  listCluster(): Observable<ClusterShort[]> {
-    return this.http.get<ClusterShort[]>(this.apiUrl + '/all/short')
+  listServer(): Observable<ServerShort[]> {
+    return this.http.get<ServerShort[]>(this.apiUrl + '/all/short')
       .pipe(
         catchError(this.httpError)
       )
   }
 
-  getCluster(name: string | null): Observable<Cluster> {
-    return this.http.get<Cluster>(this.apiUrl + '/' + name)
+  getServer(name: string | null): Observable<Server> {
+    return this.http.get<Server>(this.apiUrl + '/' + name)
       .pipe(
         catchError(this.httpError)
       )
   }
 
-  postCluster(cluster: Cluster): Observable<any> {
+  postServer(cluster: Server): Observable<any> {
     return this.http.post<any>(this.apiUrl + '/', cluster)
       .pipe(
         catchError(this.httpError)
       )
   }
 
-  deleteCluster(name: string | null): Observable<any> {
+  deleteServer(name: string | null): Observable<any> {
     return this.http.delete<any>(this.apiUrl + '/' + name)
       .pipe(
         catchError(this.httpError)
       )
   }
 
-  putCluster(cluster: Cluster): Observable<any> {
+  putServer(cluster: Server): Observable<any> {
     let name = cluster.name
     return this.http.put<any>(this.apiUrl + '/' + name, cluster)
       .pipe(
@@ -55,14 +54,14 @@ export class ClustersService {
       )
   }
 
-  listClusterTypes(): Observable<string[]> {
+  listServerTypes(): Observable<string[]> {
     return this.http.get<string[]>(`${this.apiUrl}/types`)
       .pipe(
         catchError(this.httpError)
       )
   }
 
-  testCluster(name: string): Observable<any> {
+  testServer(name: string): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/${name}/test`)
       .pipe(
         catchError(this.httpError)

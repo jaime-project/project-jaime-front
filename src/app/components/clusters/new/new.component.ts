@@ -9,7 +9,7 @@ import Swal from 'sweetalert2';
   templateUrl: './new.component.html',
   styleUrls: ['./new.component.css']
 })
-export class NewServerComponent implements OnInit {
+export class NewClusterComponent implements OnInit {
 
   clusterForm = new FormGroup({
     name: new FormControl(''),
@@ -25,14 +25,14 @@ export class NewServerComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.clustersService.listServerTypes()
+    this.clustersService.listClusterTypes()
       .subscribe(data => {
         this.clusterTypes = data.sort()
       })
   }
 
-  postServer() {
-    this.clustersService.postServer(this.clusterForm.value)
+  postCluster() {
+    this.clustersService.postCluster(this.clusterForm.value)
       .subscribe(() => {
         Swal.fire({
           title: 'New Server created',
