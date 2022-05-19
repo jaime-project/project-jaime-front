@@ -1,4 +1,4 @@
-VERSION := 1.0.0
+VERSION := 1.1.1
 
 docker-build b:
 	docker build . -t brianwolf94/jaime-front:$(VERSION)
