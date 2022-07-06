@@ -26,6 +26,25 @@ export class ConfigService {
       )
   }
 
+  getRequirements(): Observable<any> {
+    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
+    return this.http.get(`${this.apiUrl}/requirements`, { headers, responseType: 'text' })
+      .pipe(
+        catchError(this.httpError)
+      )
+  }
+
+  postRequirements(code: string): Observable<string> {
+
+    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
+    const url = `${this.apiUrl}/requirements`
+
+    return this.http.post(url, code, { headers, responseType: 'text' })
+      .pipe(
+        catchError(this.httpError)
+      )
+  }
+
   httpError(error: HttpErrorResponse) {
     Swal.fire({
       title: 'Service ERROR',
