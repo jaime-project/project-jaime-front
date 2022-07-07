@@ -11,6 +11,8 @@ import Swal from 'sweetalert2';
 export class RequirementsComponent implements OnInit {
 
   requirementsText: string = ""
+  butonClicked: boolean = false
+
 
   constructor(private configService: ConfigService, private route: Router) { }
 
@@ -32,7 +34,7 @@ export class RequirementsComponent implements OnInit {
           title: 'Requirements sended to install in Agents',
           icon: 'success',
         }).then(() =>
-          this.route.navigate(['configs'])
+          this.butonClicked = false
         )
       })
   }
