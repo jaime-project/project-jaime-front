@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-12 m-t-30">
+    <h4 class="m-b-0"><b>Pip requeriments installed</b></h4>
+    <p class="text-muted m-t-0 font-12"></p>
+  </div>
+</div>
+
+<div class="card col-12">
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12 m-b-30">
+          <button class="btn btn-success" [disabled]="butonClicked"
+            (click)="postRequeriments(); butonClicked = true">Pip install</button>
+        </div>
+      </div>
+      <ngx-monaco-editor style="width: 100%; height: 600px;"
+        [options]="{ theme: 'vs-dark', language: 'c', readOnly: false}" [(ngModel)]="requirementsText">
+      </ngx-monaco-editor>
+    </div>
+  </div>
+</div>

@@ -41,4 +41,12 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: [],
   },
+  {
+    path: "/configs",
+    title: "Config",
+    icon: "fa fa-cog",
+    class: "",
+    extralink: false,
+    submenu: [],
+  },
 ];
