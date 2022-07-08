@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AgentService } from 'src/app/services/agents/agents.service';
 import { ClustersService } from 'src/app/services/clusters/clusters.service';
 import Swal from 'sweetalert2';
 
@@ -19,13 +20,13 @@ export class NewClusterComponent implements OnInit {
     version: new FormControl(''),
   });
 
-  constructor(private route: Router, private clustersService: ClustersService) { }
+  constructor(private route: Router, private agentService: AgentService, private clustersService: ClustersService) { }
 
   clusterTypes: string[] = []
 
   ngOnInit(): void {
 
-    this.clustersService.listClusterTypes()
+    this.agentService.listAgentsTypes()
       .subscribe(data => {
         this.clusterTypes = data.sort()
       })

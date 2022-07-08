@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ClustersService } from 'src/app/services/clusters/clusters.service';
+import { AgentService } from 'src/app/services/agents/agents.service';
 import { DocsService } from 'src/app/services/modules/docs.service';
 import { ModuleService } from 'src/app/services/modules/modules.service';
 import { ReposService } from 'src/app/services/modules/repos.service';
@@ -29,7 +29,7 @@ export class NewWorkComponent implements OnInit {
     yaml: new FormControl(),
   });
 
-  constructor(private route: Router, private workService: WorkService, private moduleService: ModuleService, private reposService: ReposService, private clusterService: ClustersService, private docsService: DocsService) { }
+  constructor(private route: Router, private workService: WorkService, private moduleService: ModuleService, private reposService: ReposService, private agent_service: AgentService, private docsService: DocsService) { }
 
   ngOnInit(): void {
 
@@ -38,7 +38,7 @@ export class NewWorkComponent implements OnInit {
         this.repos = data.sort()
       })
 
-    this.clusterService.listClusterTypes()
+    this.agent_service.listAgentsTypes()
       .subscribe(data => {
         this.agentsTypes = data
       })
