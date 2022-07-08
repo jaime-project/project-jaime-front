@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Cluster, ClusterShort } from 'src/app/models/models';
-import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 import { AppConfigService } from '../AppConfigService';
 
@@ -50,13 +49,6 @@ export class ClustersService {
   putCluster(cluster: Cluster): Observable<any> {
     let name = cluster.name
     return this.http.put<any>(this.apiUrl + '/' + name, cluster)
-      .pipe(
-        catchError(this.httpError)
-      )
-  }
-
-  listClusterTypes(): Observable<string[]> {
-    return this.http.get<string[]>(`${this.apiUrl}/types`)
       .pipe(
         catchError(this.httpError)
       )
