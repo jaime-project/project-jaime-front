@@ -45,6 +45,17 @@ export class ConfigService {
       )
   }
 
+  postObjects(code: string, replace: boolean): Observable<string> {
+
+    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
+    const url = `${this.apiUrl}/objects?replace=${replace}`
+
+    return this.http.post(url, code, { headers, responseType: 'text' })
+      .pipe(
+        catchError(this.httpError)
+      )
+  }
+
   httpError(error: HttpErrorResponse) {
     Swal.fire({
       title: 'Service ERROR',
