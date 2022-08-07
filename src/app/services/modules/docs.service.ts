@@ -80,14 +80,14 @@ export class DocsService {
   httpError(error: HttpErrorResponse) {
     Swal.fire({
       title: 'Service ERROR',
-      text: error.error.message,
+      text: error.message,
       icon: 'error',
       confirmButtonColor: '#05b281'
     })
 
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
-      errorMessage = error.error.message;
+      errorMessage = error.message;
     } else {
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
