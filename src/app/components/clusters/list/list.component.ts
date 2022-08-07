@@ -23,7 +23,7 @@ export class ListClusterComponent implements OnInit {
 
     this.loadStartData()
 
-    this.thread = interval(1500)
+    this.thread = interval(1000)
       .subscribe(() => {
         this.loadStartData()
       });
