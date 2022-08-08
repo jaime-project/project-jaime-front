@@ -5,6 +5,8 @@ import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MonacoEditorModule } from 'ngx-monaco-editor';
 import { ConfigComponentsRoutes } from './configcomponents.routing';
+import { ObjectsComponent } from './objects/objects.component';
+import { ObjectsGetComponent } from './objectsGet/objectsGet.component';
 import { RequirementsComponent } from './requirements/requirements.component';
 import { TabsConfigComponent } from './tabs/tabs.component';
 import { VarConfigComponent } from './vars/var.component';
@@ -22,7 +24,9 @@ import { VarConfigComponent } from './vars/var.component';
   declarations: [
     TabsConfigComponent,
     VarConfigComponent,
-    RequirementsComponent
+    RequirementsComponent,
+    ObjectsComponent,
+    ObjectsGetComponent
   ]
 })
 export class ConfigComponentsModule { }

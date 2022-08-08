@@ -45,17 +45,38 @@ export class ConfigService {
       )
   }
 
+  postObjects(code: string, replace: boolean): Observable<string> {
+
+    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
+    const url = `${this.apiUrl}/objects?replace=${replace}`
+
+    return this.http.post(url, code, { headers, responseType: 'text' })
+      .pipe(
+        catchError(this.httpError)
+      )
+  }
+
+  getObjectsFile(): Observable<Blob> {
+
+    const url = `${this.apiUrl}/objects/file`
+
+    return this.http.get(url, { responseType: "blob" })
+      .pipe(
+        catchError(this.httpError)
+      )
+  }
+
   httpError(error: HttpErrorResponse) {
     Swal.fire({
       title: 'Service ERROR',
-      text: error.error.message,
+      text: error.message,
       icon: 'error',
       confirmButtonColor: '#05b281'
     })
 
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
-      errorMessage = error.error.message;
+      errorMessage = error.message;
     } else {
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }

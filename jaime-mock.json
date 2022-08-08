@@ -1404,6 +1404,66 @@
       "enabled": true,
       "randomResponse": false,
       "sequentialResponse": false
+    },
+    {
+      "uuid": "63f72e2f-290c-4d09-8e17-7e5a8b668c9f",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "configs/objects",
+      "responses": [
+        {
+          "uuid": "f09720a4-50a0-4ec3-a0c2-acd76ac3ca1b",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "efaa86f9-6584-4905-a228-7e77313a8cbe",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "configs/objects/file",
+      "responses": [
+        {
+          "uuid": "8a8fb071-4450-45fa-a5cc-07df3e8cf48b",
+          "body": "servers:\n  - name: asd\n    host: str\n    port: str\n    user: str\n    password: str\n\n\nclusters:\n  - name: asd\n    url: asd\n    token: asd\n    type: asd\n    version: asd\n  \n\nrepos:\n  - name: repo1\n  - name: git\n    git_path: asd\n    git_user: asd\n    git_pass: asd\n    git_url: asd\n    git_branch: asd\n\n\nmodules:\n  - name: module1\n    repo: repo1\n    content: |\n      @blue_print.route('/requirements', methods=['GET'])\n      def get():\n          return config_service.get_requirements(), 200\n\n\n      @blue_print.route('/requirements', methods=['POST'])\n      def post():\n          config_service.update_requirements(request.data.decode())\n          return '', 200\n\n\n      @blue_print.route('/objects', methods=['POST'])\n      def post_objects():\n\n          dict_yaml = yaml.load(request.data, Loader=yaml.FullLoader)\n          config_service.update_objects(dict_yaml)\n\n          return '', 200\n  - name: module2\n    repo: repo1\n    content: |\n      @blue_print.route('/requirements', methods=['GET'])\n      def get():\n          return config_service.get_requirements(), 200\n\n  \ndocs:\n  - name: module1\n    repo: repo1\n    content: |\n      hola mundo redondo\n      muy feliz :)\n\n  \n",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
     }
   ],
   "proxyMode": false,
