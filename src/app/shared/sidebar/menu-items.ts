@@ -35,7 +35,7 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: "/works",
-    title: "Works",
+    title: "Jobs",
     icon: "mdi mdi-backburger",
     class: "",
     extralink: false,
