@@ -66,6 +66,26 @@ export class ConfigService {
       )
   }
 
+  getJaimeLogs(): Observable<any> {
+
+    const url = `${this.apiUrl}/logs/jaime`
+
+    return this.http.get(url, { responseType: 'text' })
+      .pipe(
+        catchError(this.httpError)
+      )
+  }
+
+  getAgentLogs(id: String): Observable<any> {
+
+    const url = `${this.apiUrl}/logs/agents/${id}`
+
+    return this.http.get(url, { responseType: 'text' })
+      .pipe(
+        catchError(this.httpError)
+      )
+  }
+
   httpError(error: HttpErrorResponse) {
     Swal.fire({
       title: 'Service ERROR',
