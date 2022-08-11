@@ -7,6 +7,7 @@ import { MonacoEditorModule } from 'ngx-monaco-editor';
 import { AgentComponentsRoutes } from './agentcomponents.routing';
 import { DetailAgentComponent } from './detail/detail.component';
 import { ListAgentComponent } from './list/list.component';
+import { LogsAgentComponent } from './logs/logs.component';
 import { TabsAgentComponent } from './tabs/tabs.component';
 import { YamlAgentComponent } from './yaml/yaml.component';
 
@@ -25,6 +26,7 @@ import { YamlAgentComponent } from './yaml/yaml.component';
     ListAgentComponent,
     TabsAgentComponent,
     YamlAgentComponent,
+    LogsAgentComponent
   ]
 })
 export class AgentComponentsModule { }
