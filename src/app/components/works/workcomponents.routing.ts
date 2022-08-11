@@ -12,10 +12,10 @@ export const WorkComponentsRoutes: Routes = [
 				path: 'works',
 				component: ListWorkComponent,
 				data: {
-					title: 'works',
+					title: 'jobs',
 					urls: [
 						{ title: 'ngComponent' },
-						{ title: 'Works' }
+						{ title: 'Jobs' }
 					]
 				}
 			},
@@ -23,10 +23,10 @@ export const WorkComponentsRoutes: Routes = [
 				path: 'works/details/:id',
 				component: TabsWorkComponent,
 				data: {
-					title: 'works',
+					title: 'jobs',
 					urls: [
 						{ title: 'ngComponent' },
-						{ title: 'Works' }
+						{ title: 'Jobs' }
 					]
 				}
 			},
@@ -34,10 +34,10 @@ export const WorkComponentsRoutes: Routes = [
 				path: 'works/new',
 				component: NewWorkComponent,
 				data: {
-					title: 'works',
+					title: 'jobs',
 					urls: [
 						{ title: 'ngComponent' },
-						{ title: 'Works' }
+						{ title: 'Jobs' }
 					]
 				}
 			},
