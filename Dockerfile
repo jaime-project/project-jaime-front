@@ -28,5 +28,5 @@ ENV TZ America/Argentina/Buenos_Aires
 ENV JAIME_URL http://localhost:5000
 
 COPY --from=builder /app/dist/project-jaime-front .
-
+COPY nginx.conf /etc/nginx/nginx.conf
 CMD ["/bin/bash", "-c", "service nginx stop && envsubst < assets/appconfig.env.json > assets/appconfig.json && nginx-debug -g 'daemon off;'"]
