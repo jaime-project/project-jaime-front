@@ -10,8 +10,9 @@
     <div class="card-body">
       <div class="row">
         <div class="col-12 m-b-30">
-          <button class="btn btn-success" [disabled]="butonClicked"
-            (click)="postRequeriments(); butonClicked = true">Pip install</button>
+          <button class="btn btn-success" [disabled]="butonClicked" (click)="postRequeriments(); butonClicked = true"
+            *ngIf="!butonClicked">Pip install</button>
+          <div class="spinner-border text-success" *ngIf="butonClicked"></div>
         </div>
       </div>
       <ngx-monaco-editor style="width: 100%; height: 600px;"
