@@ -1384,7 +1384,7 @@
         {
           "uuid": "5afb0686-6b8d-4f70-bdb5-8cbc4b85eada",
           "body": "",
-          "latency": 0,
+          "latency": 3000,
           "statusCode": 200,
           "label": "",
           "headers": [
