@@ -88,6 +88,13 @@ export class WorkService {
       )
   }
 
+  putWork(yaml: string | null): Observable<any> {
+    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
+    return this.http.put(this.apiUrl + '/', yaml, { headers, responseType: 'json' })
+      .pipe(
+        catchError(this.httpError)
+      )
+  }
 
 
   httpError(error: HttpErrorResponse) {
