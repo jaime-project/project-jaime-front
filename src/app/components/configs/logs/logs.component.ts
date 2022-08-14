@@ -32,7 +32,6 @@ export class LogsComponent implements OnInit {
   loadStartData() {
     this.configService.getJaimeLogs()
       .subscribe(data => {
-        console.log(data)
         this.logsContent = data;
       })
   }

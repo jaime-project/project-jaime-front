@@ -440,6 +440,36 @@
       "sequentialResponse": false
     },
     {
+      "uuid": "302d8427-a71c-47fe-9670-fcf552de66fe",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "agents/types",
+      "responses": [
+        {
+          "uuid": "0daaa11d-8883-4e36-b098-cb7fc8bd7bfd",
+          "body": "[\n  \"OPENSSHIFT\",\n  \"KUBERNETES\",\n  \"BASE\"\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
       "uuid": "d3650c32-447c-4247-b728-824d0f69b2d5",
       "documentation": "",
       "method": "get",
@@ -1414,6 +1444,36 @@
         {
           "uuid": "912f6eea-b39b-454d-8092-80ed8b6d623e",
           "body": "{\n    \"name\": \"prueba de algo\",\n    \"id\": \"31a30b3315ea\",\n    \"cron_expression\": \"*/2 * * * *\",\n    \"work_params\": {\n        \"servers\": {\n            \"from\": {\n                \"name\": \"lasegunda\",\n                \"namespace\": \"msdesa\",\n                \"object\": \"configmaps\"\n            }\n        }\n    },\n    \"status\": \"ACTIVE\",\n    \"creation_date\": \"2021-12-14T20:14:49.660102\",\n    \"work_module_repo\": \"repo\",\n    \"work_module_name\": \"module\",\n    \"work_agent_type\": \"module\"\n}",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "26549f7d-0409-44b2-9cc4-d3d40d90fcbe",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "crons",
+      "responses": [
+        {
+          "uuid": "a0efe60f-23ce-4827-9f11-2ce0e0f31077",
+          "body": "{\n  \"id\": \"asdfds12343\"\n}",
           "latency": 0,
           "statusCode": 201,
           "label": "",

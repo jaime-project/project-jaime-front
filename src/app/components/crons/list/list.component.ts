@@ -30,7 +30,6 @@ export class ListCronComponent implements OnInit {
 
     this.cronService.getCronStatus()
       .subscribe(data => {
-        console.log(data)
         this.cronsStatus = data.sort();
       })
   }
