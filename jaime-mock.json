@@ -1316,6 +1316,220 @@
       "sequentialResponse": false
     },
     {
+      "uuid": "6e769e3a-2f1e-4b00-a4ac-77bc46e810b7",
+      "documentation": "",
+      "method": "put",
+      "endpoint": "works/*",
+      "responses": [
+        {
+          "uuid": "8a898003-6fcd-42d5-9369-fc1133036e06",
+          "body": "{\n    \"agent\": {\n        \"host\": \"172.20.0.4\",\n        \"id\": \"38c5bab74061\",\n        \"port\": \"80\",\n        \"type\": \"OPENSHIFT\"\n    },\n    \"module\": \"migrate object\",\n    \"name\": \"prueba de algo\",\n    \"id\": \"31a30b3315ea\",\n    \"params\": {\n        \"agent\": {\n            \"type\": \"OPENSHIFT\"\n        },\n        \"module\": \"test\",\n        \"servers\": {\n            \"from\": {\n                \"name\": \"lasegunda\",\n                \"namespace\": \"msdesa\",\n                \"object\": \"configmaps\"\n            }\n        }\n    },\n    \"running_date\": \"2021-12-14T20:14:49.660102\",\n    \"start_date\": \"2021-12-14T20:14:46.074324\",\n    \"status\": \"TERMINATED\",\n    \"terminated_date\": \"2021-12-14T20:14:49.882738\"\n}",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "af78bd5f-0e23-457e-9917-722b6b5ef4ad",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "crons/all/short",
+      "responses": [
+        {
+          "uuid": "c1119b0e-b2ba-4962-a1ea-16309aec2fd7",
+          "body": "[\n    {\n        \"id\": \"31a30b3315ea\",\n        \"name\": \"Migracion Secrets\",\n        \"cron_expression\": \"* * * * *\",\n        \"status\": \"ACTIVE\",\n        \"creation_date\": \"2021-11-12T11:15:45\"\n    },\n    {\n        \"id\": \"31a30b3315ea\",\n        \"name\": \"Algo copado\",\n        \"cron_expression\": \"*/2 * * * *\",\n        \"status\": \"DESACTIVE\",\n        \"creation_date\": \"2021-11-12T11:15:45\"\n    }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "9230f5c9-ee52-423a-9807-9dc8a115b5d2",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "crons/status",
+      "responses": [
+        {
+          "uuid": "cc4609a1-57c1-4f44-8d58-fb35e1b71ca1",
+          "body": "[\n  \"ACTIVE\",\n  \"DESACTIVE\"\n]",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "c9a648a0-fb7d-4b35-a447-070b5e7f742c",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "crons/*",
+      "responses": [
+        {
+          "uuid": "912f6eea-b39b-454d-8092-80ed8b6d623e",
+          "body": "{\n    \"name\": \"prueba de algo\",\n    \"id\": \"31a30b3315ea\",\n    \"cron_expression\": \"*/2 * * * *\",\n    \"work_params\": {\n        \"servers\": {\n            \"from\": {\n                \"name\": \"lasegunda\",\n                \"namespace\": \"msdesa\",\n                \"object\": \"configmaps\"\n            }\n        }\n    },\n    \"status\": \"ACTIVE\",\n    \"creation_date\": \"2021-12-14T20:14:49.660102\",\n    \"work_module_repo\": \"repo\",\n    \"work_module_name\": \"module\",\n    \"work_agent_type\": \"module\"\n}",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "e6e844c2-0183-4c06-8d9f-266e7d0775a7",
+      "documentation": "",
+      "method": "put",
+      "endpoint": "crons/*",
+      "responses": [
+        {
+          "uuid": "a394ff16-b9a1-4e24-a63c-9cc4495ef9dc",
+          "body": "{\n    \"agent\": {\n        \"host\": \"172.20.0.4\",\n        \"id\": \"38c5bab74061\",\n        \"port\": \"80\",\n        \"type\": \"OPENSHIFT\"\n    },\n    \"module\": \"migrate object\",\n    \"name\": \"prueba de algo\",\n    \"id\": \"31a30b3315ea\",\n    \"params\": {\n        \"agent\": {\n            \"type\": \"OPENSHIFT\"\n        },\n        \"module\": \"test\",\n        \"servers\": {\n            \"from\": {\n                \"name\": \"lasegunda\",\n                \"namespace\": \"msdesa\",\n                \"object\": \"configmaps\"\n            }\n        }\n    },\n    \"running_date\": \"2021-12-14T20:14:49.660102\",\n    \"start_date\": \"2021-12-14T20:14:46.074324\",\n    \"status\": \"TERMINATED\",\n    \"terminated_date\": \"2021-12-14T20:14:49.882738\"\n}",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "d6d84317-b762-4c0d-8eed-1887df703ef4",
+      "documentation": "",
+      "method": "delete",
+      "endpoint": "crons/*",
+      "responses": [
+        {
+          "uuid": "91e9b920-fe33-4939-8309-e95942f9f1e1",
+          "body": "{\n    \"agent\": {\n        \"host\": \"172.20.0.4\",\n        \"id\": \"38c5bab74061\",\n        \"port\": \"80\",\n        \"type\": \"OPENSHIFT\"\n    },\n    \"module\": \"migrate object\",\n    \"name\": \"prueba de algo\",\n    \"id\": \"31a30b3315ea\",\n    \"params\": {\n        \"agent\": {\n            \"type\": \"OPENSHIFT\"\n        },\n        \"module\": \"test\",\n        \"servers\": {\n            \"from\": {\n                \"name\": \"lasegunda\",\n                \"namespace\": \"msdesa\",\n                \"object\": \"configmaps\"\n            }\n        }\n    },\n    \"running_date\": \"2021-12-14T20:14:49.660102\",\n    \"start_date\": \"2021-12-14T20:14:46.074324\",\n    \"status\": \"TERMINATED\",\n    \"terminated_date\": \"2021-12-14T20:14:49.882738\"\n}",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "085248dd-5fce-4426-9a64-eed7e7b7a460",
+      "documentation": "",
+      "method": "patch",
+      "endpoint": "crons/*/status/*",
+      "responses": [
+        {
+          "uuid": "71d1d3bb-2c14-47e8-8565-8336f673d0cb",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
       "uuid": "59b3d3c0-8362-4609-9c55-2821682bceae",
       "documentation": "",
       "method": "get",

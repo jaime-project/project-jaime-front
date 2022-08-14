@@ -41,6 +41,26 @@ export interface AgentShort {
     type: string;
 }
 
+export interface CronShort {
+    id: string,
+    name: string,
+    cron_expression: string,
+    status: string,
+    creation_date: string,
+}
+
+export interface CronWork {
+    name: string
+    cron_expression: string
+    work_module_repo: string
+    work_module_name: string
+    work_agent_type: string
+    id: string
+    creation_date: Date
+    status: string
+    work_params: {}
+}
+
 export interface WorkShort {
     name: string,
     status: string,
