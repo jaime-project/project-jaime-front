@@ -81,7 +81,7 @@ export class NewCronComponent implements OnInit {
       work_module_repo: this.cronForm.value.work_module_repo,
       work_module_name: this.cronForm.value.work_module_name,
       work_agent_type: this.cronForm.value.work_agent_type,
-      ...yamlJson
+      work_params: yamlJson
     }
 
     let doc = new Document()

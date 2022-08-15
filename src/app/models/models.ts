@@ -58,7 +58,7 @@ export interface CronWork {
     id: string
     creation_date: Date
     status: string
-    work_params: {}
+    work_params: any
 }
 
 export interface WorkShort {
