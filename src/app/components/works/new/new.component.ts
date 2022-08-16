@@ -16,7 +16,6 @@ import { Document, parse } from 'yaml';
 })
 export class NewWorkComponent implements OnInit {
 
-  repo: string = ""
   repos: string[] = []
   modules: string[] = []
   moduleDocs: string = ""
@@ -24,9 +23,10 @@ export class NewWorkComponent implements OnInit {
 
   workForm = new FormGroup({
     name: new FormControl(''),
-    module: new FormControl(''),
+    moduleRepo: new FormControl(''),
+    moduleName: new FormControl(''),
     agentType: new FormControl(''),
-    yaml: new FormControl(),
+    params: new FormControl(),
   });
 
   constructor(private route: Router, private workService: WorkService, private moduleService: ModuleService, private reposService: ReposService, private agent_service: AgentService, private docsService: DocsService) { }
@@ -45,7 +45,6 @@ export class NewWorkComponent implements OnInit {
   }
 
   repoChange(repoName: any) {
-    this.repo = repoName
     this.moduleService.listModules(repoName)
       .subscribe(data => {
         this.modules = data.sort()
@@ -53,31 +52,28 @@ export class NewWorkComponent implements OnInit {
   }
 
   moduleChange(moduleName: any) {
-    this.docsService.getDocsWithoutError(moduleName, this.repo)
+    this.docsService.getDocsWithoutError(moduleName, this.workForm.value.moduleRepo)
       .subscribe(data => {
         this.workForm = new FormGroup({
           name: new FormControl(this.workForm.value.name),
-          module: new FormControl(this.workForm.value.module),
+          moduleRepo: new FormControl(this.workForm.value.moduleRepo),
+          moduleName: new FormControl(this.workForm.value.moduleName),
           agentType: new FormControl(this.workForm.value.agentType),
-          yaml: new FormControl(data),
+          params: new FormControl(data)
         })
       })
   }
 
   postWork() {
 
-    let yamlJson = this.workForm.value.yaml != null ? parse(this.workForm.value.yaml) : {}
+    let yamlJson = this.workForm.value.params != null ? parse(this.workForm.value.params) : {}
 
     let finalJson = {
       name: this.workForm.value.name,
-      agent: {
-        type: this.workForm.value.agentType
-      },
-      module: {
-        name: this.workForm.value.module,
-        repo: this.repo,
-      },
-      ...yamlJson
+      agent_type: this.workForm.value.agentType,
+      module_name: this.workForm.value.moduleName,
+      module_repo: this.workForm.value.moduleRepo,
+      params: yamlJson
     }
 
     let doc = new Document()

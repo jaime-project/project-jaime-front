@@ -10,12 +10,14 @@
   <div class="card-body">
 
     <form [formGroup]="workForm" (ngSubmit)="postWork()">
+
       <div class="mb-3 col-12">
         <label for="nameInput" class="form-label"><b>Name</b></label>
         <input type="text" class="form-control" id="nameInput" aria-describedby="nameHelp" formControlName="name"
           required>
         <div id="nameHelp" class="form-text">Job name</div>
       </div>
+
       <div class="mb-3 col-12">
         <label for="agentTypeSelect" class="form-label"><b>Agent type</b></label>
         <select class="form-control col-12" id="agentTypeSelect" formControlName="agentType">
@@ -23,36 +25,41 @@
         </select>
         <div id="moduleHelp" class="form-text">Select a installed agent type</div>
       </div>
+
       <div class="mb-3 col-12">
         <label for="repoSelect" class="form-label"><b>Repository</b></label>
-        <select class="form-control col-12" id="moduleSelect"
-          (change)="repoChange($event.target.value)">
+        <select class="form-control col-12" id="moduleSelect" (change)="repoChange($event.target.value)"
+          formControlName="moduleRepo">
           <option></option>
           <option *ngFor=" let r of repos" value="{{r}}">{{r}}</option>
         </select>
         <div id="moduleHelp" class="form-text">Select a installed repository</div>
       </div>
+
       <div class="mb-3 col-12">
         <label for="moduleSelect" class="form-label"><b>Module</b></label>
-        <select class="form-control col-12" id="moduleSelect" formControlName="module"
+        <select class="form-control col-12" id="moduleSelect" formControlName="moduleName"
           (change)="moduleChange($event.target.value)">
           <option></option>
           <option *ngFor=" let module of modules" value="{{module}}">{{module}}</option>
         </select>
         <div id="moduleHelp" class="form-text">Select a installed module</div>
       </div>
+
       <div class="col-12">
         <label for="paramsText" class="form-label"><b>Params Yaml</b></label>
         <div class="mb-3">
           <ngx-monaco-editor style="width: 100%; height: 500px;" [options]="{ theme: 'vs-dark', language: 'yaml'}"
-            formControlName="yaml">
+            formControlName="params">
           </ngx-monaco-editor>
         </div>
         <div id="paramPamlHelp" class="form-text">Parameters to module selected</div>
       </div>
+
       <div class="mb-3 col-12">
         <button type="submit" class="btn btn-success m-t-20">Create</button>
       </div>
+
     </form>
 
   </div>

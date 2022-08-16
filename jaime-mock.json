@@ -1353,9 +1353,9 @@
       "responses": [
         {
           "uuid": "8a898003-6fcd-42d5-9369-fc1133036e06",
-          "body": "{\n    \"agent\": {\n        \"host\": \"172.20.0.4\",\n        \"id\": \"38c5bab74061\",\n        \"port\": \"80\",\n        \"type\": \"OPENSHIFT\"\n    },\n    \"module\": \"migrate object\",\n    \"name\": \"prueba de algo\",\n    \"id\": \"31a30b3315ea\",\n    \"params\": {\n        \"agent\": {\n            \"type\": \"OPENSHIFT\"\n        },\n        \"module\": \"test\",\n        \"servers\": {\n            \"from\": {\n                \"name\": \"lasegunda\",\n                \"namespace\": \"msdesa\",\n                \"object\": \"configmaps\"\n            }\n        }\n    },\n    \"running_date\": \"2021-12-14T20:14:49.660102\",\n    \"start_date\": \"2021-12-14T20:14:46.074324\",\n    \"status\": \"TERMINATED\",\n    \"terminated_date\": \"2021-12-14T20:14:49.882738\"\n}",
+          "body": "",
           "latency": 0,
-          "statusCode": 201,
+          "statusCode": 200,
           "label": "",
           "headers": [
             {
