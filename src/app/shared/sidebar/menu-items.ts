@@ -34,6 +34,14 @@ export const ROUTES: RouteInfo[] = [
     submenu: [],
   },
   {
+    path: "/crons",
+    title: "Crons",
+    icon: "fa fa-clock",
+    class: "",
+    extralink: false,
+    submenu: [],
+  },
+  {
     path: "/works",
     title: "Jobs",
     icon: "mdi mdi-backburger",
