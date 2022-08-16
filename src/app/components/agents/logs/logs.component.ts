@@ -35,7 +35,6 @@ export class LogsAgentComponent implements OnInit {
   loadStartData() {
     this.configService.getAgentLogs(this.id!)
       .subscribe(data => {
-        console.log(data)
         this.logsContent = data;
       })
   }

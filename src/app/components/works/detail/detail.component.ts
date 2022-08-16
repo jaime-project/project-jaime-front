@@ -29,7 +29,7 @@ export class DetailWorkComponent implements OnInit {
     running_date: null,
     start_date: null,
     status: "",
-    status_date: null,
+    // status_date: null,
     terminated_date: null
   }
 

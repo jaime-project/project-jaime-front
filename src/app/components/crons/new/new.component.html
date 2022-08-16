@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-12 m-t-30">
-    <h4 class="m-b-0"><b>New Job</b></h4>
+    <h4 class="m-b-0"><b>New Cron</b></h4>
     <p class="text-muted m-t-0 font-12"></p>
   </div>
 </div>
@@ -9,27 +9,33 @@
 <div class="card col-8">
   <div class="card-body">
 
-    <form [formGroup]="workForm" (ngSubmit)="postWork()">
+    <form [formGroup]="cronForm" (ngSubmit)="postCron()">
 
       <div class="mb-3 col-12">
         <label for="nameInput" class="form-label"><b>Name</b></label>
         <input type="text" class="form-control" id="nameInput" aria-describedby="nameHelp" formControlName="name"
           required>
-        <div id="nameHelp" class="form-text">Job name</div>
+        <div id="nameHelp" class="form-text">Cron name</div>
+      </div>
+
+      <div class="mb-3 col-12">
+        <label for="nameInput" class="form-label"><b>Cron Expression</b></label>
+        <input type="text" class="form-control" id="cronExpressionInput" aria-describedby="cronExpressionHelp"
+          formControlName="cron_expression" required>
+        <div id="nameHelp" class="form-text">Ejemplo: * */2 * * *</div>
       </div>
 
       <div class="mb-3 col-12">
         <label for="agentTypeSelect" class="form-label"><b>Agent type</b></label>
-        <select class="form-control col-12" id="agentTypeSelect" formControlName="agentType">
+        <select class="form-control col-12" id="agentTypeSelect" formControlName="work_agent_type">
           <option *ngFor="let agentType of agentsTypes" value="{{agentType}}">{{agentType}}</option>
         </select>
-        <div id="moduleHelp" class="form-text">Select a installed agent type</div>
+        <div id="agentTypeHelp" class="form-text">Select a installed agent type</div>
       </div>
 
       <div class="mb-3 col-12">
         <label for="repoSelect" class="form-label"><b>Repository</b></label>
-        <select class="form-control col-12" id="moduleSelect" (change)="repoChange($event.target.value)"
-          formControlName="moduleRepo">
+        <select class="form-control col-12" id="moduleSelect" (change)="repoChange($event.target.value)" formControlName="work_module_repo">
           <option></option>
           <option *ngFor=" let r of repos" value="{{r}}">{{r}}</option>
         </select>
@@ -38,8 +44,7 @@
 
       <div class="mb-3 col-12">
         <label for="moduleSelect" class="form-label"><b>Module</b></label>
-        <select class="form-control col-12" id="moduleSelect" formControlName="moduleName"
-          (change)="moduleChange($event.target.value)">
+        <select class="form-control col-12" id="moduleSelect" (change)="moduleChange($event.target.value)" formControlName="work_module_name">
           <option></option>
           <option *ngFor=" let module of modules" value="{{module}}">{{module}}</option>
         </select>
@@ -50,7 +55,7 @@
         <label for="paramsText" class="form-label"><b>Params Yaml</b></label>
         <div class="mb-3">
           <ngx-monaco-editor style="width: 100%; height: 500px;" [options]="{ theme: 'vs-dark', language: 'yaml'}"
-            formControlName="params">
+            formControlName="work_params">
           </ngx-monaco-editor>
         </div>
         <div id="paramPamlHelp" class="form-text">Parameters to module selected</div>
@@ -59,7 +64,6 @@
       <div class="mb-3 col-12">
         <button type="submit" class="btn btn-success m-t-20">Create</button>
       </div>
-
     </form>
 
   </div>
