@@ -1,8 +1,8 @@
-VERSION := 1.6.2
+VERSION := 1.6.30
 
 docker-build b:
-	podman build . -t brianwolf94/jaime-front:$(VERSION)
+	podman build . -t ghcr.io/jaime-project/jaime-front:$(VERSION)
 
 docker-run r:
-	podman run -it -p 80:80 brianwolf94/jaime-front:$(VERSION)
+	podman run -it -p 8080:8080 ghcr.io/jaime-project/jaime-front:$(VERSION)
 
