@@ -1,8 +1,8 @@
-VERSION := 1.6.0
+VERSION := 1.6.2
 
 docker-build b:
-	docker build . -t brianwolf94/jaime-front:$(VERSION)
+	podman build . -t brianwolf94/jaime-front:$(VERSION)
 
 docker-run r:
-	docker run -it -p 80:80 brianwolf94/jaime-front:$(VERSION)
+	podman run -it -p 80:80 brianwolf94/jaime-front:$(VERSION)
 
