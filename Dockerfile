@@ -15,11 +15,9 @@ RUN npm run-script build
 # APP
 # ---------------------------------------
 
-FROM nginx:latest
+FROM nginxinc/nginx-unprivileged:latest
 
 WORKDIR /usr/share/nginx/html
-
-RUN rm -rf ./*
 
 ARG ARG_VERSION=local
 
@@ -27,6 +25,7 @@ ENV VERSION ${ARG_VERSION}
 ENV TZ America/Argentina/Buenos_Aires
 ENV JAIME_URL http://localhost:5000
 
-COPY --from=builder /app/dist/project-jaime-front .
+COPY --from=builder --chown=nginx /app/dist/project-jaime-front .
 COPY nginx.conf /etc/nginx/nginx.conf
+
 CMD ["/bin/bash", "-c", "service nginx stop && envsubst < assets/appconfig.env.json > assets/appconfig.json && nginx-debug -g 'daemon off;'"]
