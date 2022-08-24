@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-12 m-t-30">
-    <h4 class="m-b-0"><b>Module Code</b></h4>
+    <h4 class="m-b-0"><b i18n>Module Code</b></h4>
     <p class="text-muted m-t-0 font-12"></p>
   </div>
 </div>
@@ -9,7 +9,7 @@
 <div class="col-12" style="margin-bottom: 2%;">
   <div class="custom-control custom-switch">
     <input [(ngModel)]="codeEditSwitchActivated" type="checkbox" class="custom-control-input" id="customSwitch1">
-    <label class="custom-control-label" for="customSwitch1">Edit Code</label>
+    <label class="custom-control-label" for="customSwitch1" i18n>Edit Code</label>
   </div>
 </div>
 
@@ -17,7 +17,7 @@
   <div class="card">
     <div class="card-body">
       <div class="mb-3">
-        <button type="button" class="btn btn-success" (click)="putModule()">Update</button>
+        <button type="button" class="btn btn-success" (click)="putModule()" i18n>Update</button>
       </div>
     </div>
   </div>

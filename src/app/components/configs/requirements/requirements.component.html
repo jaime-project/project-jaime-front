@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-12 m-t-30">
-    <h4 class="m-b-0"><b>requeriments.txt</b></h4>
+    <h4 class="m-b-0"><b i18n>requeriments.txt</b></h4>
     <p class="text-muted m-t-0 font-12"></p>
   </div>
 </div>
@@ -11,7 +11,7 @@
       <div class="row">
         <div class="col-12 m-b-30">
           <button class="btn btn-success" [disabled]="butonClicked" (click)="postRequeriments(); butonClicked = true"
-            *ngIf="!butonClicked">Pip install</button>
+            *ngIf="!butonClicked" i18n>Pip install</button>
           <div class="spinner-border text-success" *ngIf="butonClicked"></div>
         </div>
       </div>

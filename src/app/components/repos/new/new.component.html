@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-12 m-t-30">
-    <h4 class="m-b-0"><b>New Repo</b></h4>
+    <h4 class="m-b-0"><b i18n>New Repo</b></h4>
     <p class="text-muted m-t-0 font-12"></p>
   </div>
 </div>
@@ -10,7 +10,7 @@
   <div class="card m-t-30">
     <div class="card-body">
       <div class="mb-3 col-12">
-        <label for="typeInput" class="form-label"><b>Type</b></label>
+        <label for="typeInput" class="form-label"><b i18n>Type</b></label>
         <select class="form-control col-12" id="repoTypeSelect" (change)="repoTypeChange($event.target.value)">
           <option></option>
           <option *ngFor=" let type of repoTypes" value="{{type}}">{{type}}</option>
@@ -27,9 +27,9 @@
     <div class="card-body">
       <form [formGroup]="repoLocalForm" (ngSubmit)="postRepo()">
         <div class="mb-3 col-12">
-          <label for="nameLocalInput" class="form-label"><b>Name</b></label>
+          <label for="nameLocalInput" class="form-label"><b i18n>Name</b></label>
           <input type="text" class="form-control" id="nameLocalInput" formControlName="name" required>
-          <div id="nameHelp" class="form-text">Example: ocp-migrations</div>
+          <div id="nameHelp" class="form-text" i18n>Example: ocp-migrations</div>
         </div>
         <div class="mb-3 col-12">
           <button type="submit" class="btn btn-success m-t-20" [disabled]="!repoLocalForm.valid">Create Repo
@@ -46,37 +46,37 @@
     <div class="card-body">
       <form [formGroup]="repoGitForm" (ngSubmit)="postRepo()">
         <div class="mb-3 col-12">
-          <label for="nameInput" class="form-label"><b>Name</b></label>
+          <label for="nameInput" class="form-label"><b i18n>Name</b></label>
           <input type="text" class="form-control" id="nameInput" formControlName="name" required>
           <div id="nameHelp" class="form-text">Example: ocp-migrations</div>
         </div>
         <div class="mb-3 col-12">
-          <label for="urlInput" class="form-label"><b>URL</b></label>
+          <label for="urlInput" class="form-label"><b i18n>URL</b></label>
           <input type="text" class="form-control" id="urlInput" formControlName="url" required>
-          <div id="urlHelp" class="form-text">Example: https://github.com/brianwolf/repo-jaime-modules.git</div>
+          <div id="urlHelp" class="form-text" i18n>Example: https://github.com/brianwolf/repo-jaime-modules.git</div>
         </div>
         <div class="mb-3 col-12">
-          <label for="branchInput" class="form-label"><b>Branch</b></label>
+          <label for="branchInput" class="form-label"><b i18n>Branch</b></label>
           <input type="text" class="form-control" id="branchInput" formControlName="branch" required>
-          <div id="branchHelp" class="form-text">Example: master</div>
+          <div id="branchHelp" class="form-text" i18n>Example: master</div>
         </div>
         <div class="mb-3 col-12">
-          <label for="pathInput" class="form-label"><b>Path</b></label>
+          <label for="pathInput" class="form-label"><b i18n>Path</b></label>
           <input type="text" class="form-control" id="pathInput" formControlName="path" required>
-          <div id="pathHelp" class="form-text">Example: /ocp-migrations</div>
+          <div id="pathHelp" class="form-text" i18n>Example: /ocp-migrations</div>
         </div>
         <div class="mb-3 col-12">
-          <label for="userInput" class="form-label"><b>User</b></label>
+          <label for="userInput" class="form-label"><b i18n>User</b></label>
           <input type="text" class="form-control" id="userInput" formControlName="user">
-          <div id="userHelp" class="form-text">Example: usuario</div>
+          <div id="userHelp" class="form-text" i18n>Example: usuario</div>
         </div>
         <div class="mb-3 col-12">
-          <label for="passInput" class="form-label"><b>Pass</b></label>
+          <label for="passInput" class="form-label"><b i18n>Pass</b></label>
           <input type="password" class="form-control" id="passInput" formControlName="pass">
-          <div id="passHelp" class="form-text">Example: *******</div>
+          <div id="passHelp" class="form-text" i18n>Example: *******</div>
         </div>
         <div class="mb-3 col-12">
-          <button type="submit" class="btn btn-success m-t-20" [disabled]="!repoGitForm.valid">Create Repo Git</button>
+          <button type="submit" class="btn btn-success m-t-20" [disabled]="!repoGitForm.valid" i18n>Create Repo Git</button>
         </div>
       </form>
     </div>
