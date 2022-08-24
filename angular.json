@@ -4,6 +4,14 @@
   "newProjectRoot": "projects",
   "projects": {
     "project-jaime-front": {
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "es-MX": {
+            "translation": "src/locale/messages.es.xlf"
+          }
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,6 +21,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "localize": [
+              "es-MX"
+            ],
             "allowedCommonJsDependencies": [
               "ng2-charts",
               "chart.js"
