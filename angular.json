@@ -9,6 +9,9 @@
         "locales": {
           "es-MX": {
             "translation": "src/locale/messages.es.xlf"
+          },
+          "pt-PT": {
+            "translation": "src/locale/messages.pt.xlf"
           }
         }
       },
@@ -22,7 +25,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "localize": [
-              "es-MX"
+              "pt-PT"
             ],
             "allowedCommonJsDependencies": [
               "ng2-charts",
