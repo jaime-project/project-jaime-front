@@ -65,7 +65,7 @@ export class ClustersService {
 
     Swal.fire({
       title: 'Service ERROR',
-      text: error.message,
+      text: error.error.response,
       icon: 'error',
       confirmButtonColor: '#05b281'
     })
