@@ -12,7 +12,6 @@ import Swal from 'sweetalert2';
 export class NewRepoComponent implements OnInit {
 
   repoTypes: string[] = []
-
   selectedRepoType: string = ""
 
   repoLocalForm = new FormGroup({

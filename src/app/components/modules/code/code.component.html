@@ -38,10 +38,8 @@
 <div class="col-12" *ngIf="codeEditSwitchActivated">
   <div class="card">
     <div class="card-body">
-      <div class="card mb-3">
-        <ngx-monaco-editor style="width: 100%; height: 700px;" [options]="{ theme: 'vs-dark', language: 'python'}"
-          [(ngModel)]="moduleCode"></ngx-monaco-editor>
-      </div>
+      <ngx-monaco-editor style="width: 100%; height: 700px;" [options]="{ theme: 'vs-dark', language: 'python'}"
+        [(ngModel)]="moduleCode"></ngx-monaco-editor>
     </div>
   </div>
 </div>
