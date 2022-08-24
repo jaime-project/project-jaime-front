@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-12 m-t-30">
-    <h4 class="m-b-0"><b>Work Detail</b></h4>
+    <h4 class="m-b-0"><b i18n>Work Detail</b></h4>
     <p class="text-muted m-t-0 font-12"></p>
   </div>
 </div>
@@ -11,23 +11,23 @@
       <div class="card-body">
         <form>
           <div class="mb-3 col-6">
-            <label class="form-label"><b>ID</b></label>
+            <label class="form-label"><b i18n>ID</b></label>
             <p class="card-text">{{work.id}}</p>
           </div>
           <div class="mb-3 col-6">
-            <label class="form-label"><b>Status</b></label>
+            <label class="form-label"><b i18n>Status</b></label>
             <p class="card-text">{{work.status}}</p>
           </div>
           <div class="mb-3 col-6">
-            <label class="form-label"><b>Start Date</b></label>
+            <label class="form-label"><b i18n>Start Date</b></label>
             <p class="card-text">{{work.start_date  | date :'short'}}</p>
           </div>
           <div class="mb-3 col-6">
-            <label class="form-label"><b>Running Date</b></label>
+            <label class="form-label"><b i18n>Running Date</b></label>
             <p class="card-text">{{work.running_date  | date :'short'}}</p>
           </div>
           <div class="mb-3 col-6">
-            <label class="form-label"><b>Terminated Date</b></label>
+            <label class="form-label"><b i18n>Terminated Date</b></label>
             <p class="card-text">{{work.terminated_date  | date :'short'}}</p>
           </div>
         </form>
@@ -40,11 +40,11 @@
       <div class="card-body">
         <form>
           <div class="mb-3 col-6">
-            <label class="form-label"><b>Agent</b></label>
+            <label class="form-label"><b i18n>Agent</b></label>
             <p class="card-text">{{work.agent.id}}</p>
           </div>
           <div class="mb-3 col-6">
-            <label class="form-label"><b>Type</b></label>
+            <label class="form-label"><b i18n>Type</b></label>
             <p class="card-text">{{work.agent.type}}</p>
           </div>
         </form>
@@ -60,7 +60,7 @@
       <div class="card-body">
         <form>
           <div class="mb-3 col-6">
-            <label class="form-label"><b>Params</b></label>
+            <label class="form-label"><b i18n>Params</b></label>
             <p class="card-text" style="white-space: pre-wrap;">{{paramsYaml}}</p>
           </div>
         </form>
@@ -73,11 +73,11 @@
       <div class="card-body">
         <form>
           <div class="mb-3 col-6">
-            <label class="form-label"><b>Module</b></label>
+            <label class="form-label"><b i18n>Module</b></label>
             <p class="card-text">{{work.module_name}}</p>
           </div>
           <div class="mb-3 col-6">
-            <label class="form-label"><b>Repository</b></label>
+            <label class="form-label"><b i18n>Repository</b></label>
             <p class="card-text">{{work.module_repo}}</p>
           </div>
         </form>

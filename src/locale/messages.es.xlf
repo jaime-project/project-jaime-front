@@ -1,415 +1,1635 @@
-<?xml version="1.0" encoding="utf-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="es-MX" original="project-jaime-front">
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" target-language="es-MX" datatype="plaintext" original="ng2.template">
     <body>
-      <group id="body">
-        <trans-unit id="ngb.alert.close" datatype="html">
-          <source>Close</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/alert/alert.ts</context>
-            <context context-type="linenumber">67,68</context>
-          </context-group>
-          <target>Close</target>
-        </trans-unit>
-        <trans-unit id="ngb.carousel.previous" datatype="html">
-          <source>Previous</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/carousel/carousel.ts</context>
-            <context context-type="linenumber">160,164</context>
-          </context-group>
-          <target>Previous</target>
-        </trans-unit>
-        <trans-unit id="ngb.carousel.next" datatype="html">
-          <source>Next</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/carousel/carousel.ts</context>
-            <context context-type="linenumber">175,182</context>
-          </context-group>
-          <target>Next</target>
-        </trans-unit>
-        <trans-unit id="ngb.datepicker.select-month" datatype="html">
-          <source>Select month</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-day-view.ts</context>
-            <context context-type="linenumber">31</context>
-          </context-group>
-          <context-group purpose="location">
-            <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-day-view.ts</context>
-            <context context-type="linenumber">31</context>
-          </context-group>
-          <target>Select month</target>
-        </trans-unit>
-        <trans-unit id="ngb.datepicker.select-year" datatype="html">
-          <source>Select year</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-day-view.ts</context>
-            <context context-type="linenumber">31</context>
-          </context-group>
-          <context-group purpose="location">
-            <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-day-view.ts</context>
-            <context context-type="linenumber">31</context>
-          </context-group>
-          <target>Select year</target>
-        </trans-unit>
-        <trans-unit id="ngb.datepicker.previous-month" datatype="html">
-          <source>Previous month</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-month.ts</context>
-            <context context-type="linenumber">46,51</context>
-          </context-group>
-          <context-group purpose="location">
-            <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-month.ts</context>
-            <context context-type="linenumber">62,67</context>
-          </context-group>
-          <target>Previous month</target>
-        </trans-unit>
-        <trans-unit id="ngb.datepicker.next-month" datatype="html">
-          <source>Next month</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-month.ts</context>
-            <context context-type="linenumber">72</context>
-          </context-group>
-          <context-group purpose="location">
-            <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-month.ts</context>
-            <context context-type="linenumber">72</context>
-          </context-group>
-          <target>Next month</target>
-        </trans-unit>
-        <trans-unit id="ngb.pagination.first" datatype="html">
-          <source>««</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/pagination/pagination.ts</context>
-            <context context-type="linenumber">147,149</context>
-          </context-group>
-          <target>««</target>
-        </trans-unit>
-        <trans-unit id="ngb.pagination.previous" datatype="html">
-          <source>«</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/pagination/pagination.ts</context>
-            <context context-type="linenumber">153,155</context>
-          </context-group>
-          <target>«</target>
-        </trans-unit>
-        <trans-unit id="ngb.pagination.next" datatype="html">
-          <source>»</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/pagination/pagination.ts</context>
-            <context context-type="linenumber">159,161</context>
-          </context-group>
-          <target>»</target>
-        </trans-unit>
-        <trans-unit id="ngb.pagination.last" datatype="html">
-          <source>»»</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/pagination/pagination.ts</context>
-            <context context-type="linenumber">166,168</context>
-          </context-group>
-          <target>»»</target>
-        </trans-unit>
-        <trans-unit id="ngb.pagination.first-aria" datatype="html">
-          <source>First</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/pagination/pagination.ts</context>
-            <context context-type="linenumber">174,176</context>
-          </context-group>
-          <target>First</target>
-        </trans-unit>
-        <trans-unit id="ngb.pagination.previous-aria" datatype="html">
-          <source>Previous</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/pagination/pagination.ts</context>
-            <context context-type="linenumber">187,189</context>
-          </context-group>
-          <target>Previous</target>
-        </trans-unit>
-        <trans-unit id="ngb.pagination.next-aria" datatype="html">
-          <source>Next</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/pagination/pagination.ts</context>
-            <context context-type="linenumber">197,205</context>
-          </context-group>
-          <target>Next</target>
-        </trans-unit>
-        <trans-unit id="ngb.pagination.last-aria" datatype="html">
-          <source>Last</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/pagination/pagination.ts</context>
-            <context context-type="linenumber">217,224</context>
-          </context-group>
-          <target>Last</target>
-        </trans-unit>
-        <trans-unit id="ngb.progressbar.value" datatype="html">
-          <source>
-            <x id="INTERPOLATION" equiv-text="Supports types"></x>
-          </source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/progressbar/progressbar.ts</context>
-            <context context-type="linenumber">59,68</context>
-          </context-group>
-          <target>null</target>
-        </trans-unit>
-        <trans-unit id="ngb.timepicker.HH" datatype="html">
-          <source>HH</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
-            <context context-type="linenumber">164,171</context>
-          </context-group>
-          <target>HH</target>
-        </trans-unit>
-        <trans-unit id="ngb.timepicker.hours" datatype="html">
-          <source>Hours</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
-            <context context-type="linenumber">184,186</context>
-          </context-group>
-          <target>Hours</target>
-        </trans-unit>
-        <trans-unit id="ngb.timepicker.MM" datatype="html">
-          <source>MM</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
-            <context context-type="linenumber">194,202</context>
-          </context-group>
-          <target>MM</target>
-        </trans-unit>
-        <trans-unit id="ngb.timepicker.minutes" datatype="html">
-          <source>Minutes</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
-            <context context-type="linenumber">209,216</context>
-          </context-group>
-          <target>Minutes</target>
-        </trans-unit>
-        <trans-unit id="ngb.timepicker.increment-hours" datatype="html">
-          <source>Increment hours</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
-            <context context-type="linenumber">232,236</context>
-          </context-group>
-          <target>Increment hours</target>
-        </trans-unit>
-        <trans-unit id="ngb.timepicker.decrement-hours" datatype="html">
-          <source>Decrement hours</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
-            <context context-type="linenumber">252,260</context>
-          </context-group>
-          <target>Decrement hours</target>
-        </trans-unit>
-        <trans-unit id="ngb.timepicker.increment-minutes" datatype="html">
-          <source>Increment minutes</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
-            <context context-type="linenumber">273,278</context>
-          </context-group>
-          <target>Increment minutes</target>
-        </trans-unit>
-        <trans-unit id="ngb.timepicker.decrement-minutes" datatype="html">
-          <source>Decrement minutes</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
-            <context context-type="linenumber">290,296</context>
-          </context-group>
-          <target>Decrement minutes</target>
-        </trans-unit>
-        <trans-unit id="ngb.timepicker.SS" datatype="html">
-          <source>SS</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
-            <context context-type="linenumber">296</context>
-          </context-group>
-          <target>SS</target>
-        </trans-unit>
-        <trans-unit id="ngb.timepicker.seconds" datatype="html">
-          <source>Seconds</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
-            <context context-type="linenumber">296</context>
-          </context-group>
-          <target>Seconds</target>
-        </trans-unit>
-        <trans-unit id="ngb.timepicker.increment-seconds" datatype="html">
-          <source>Increment seconds</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
-            <context context-type="linenumber">296</context>
-          </context-group>
-          <target>Increment seconds</target>
-        </trans-unit>
-        <trans-unit id="ngb.timepicker.decrement-seconds" datatype="html">
-          <source>Decrement seconds</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
-            <context context-type="linenumber">296</context>
-          </context-group>
-          <target>Decrement seconds</target>
-        </trans-unit>
-        <trans-unit id="ngb.timepicker.PM" datatype="html">
-          <source>
-            <x id="INTERPOLATION"></x>
-          </source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
-            <context context-type="linenumber">296</context>
-          </context-group>
-          <target>null</target>
-        </trans-unit>
-        <trans-unit id="ngb.timepicker.AM" datatype="html">
-          <source>
-            <x id="INTERPOLATION"></x>
-          </source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
-            <context context-type="linenumber">296</context>
-          </context-group>
-          <target>null</target>
-        </trans-unit>
-        <trans-unit id="ngb.toast.close-aria" datatype="html">
-          <source>Close</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/toast/toast.ts</context>
-            <context context-type="linenumber">107,115</context>
-          </context-group>
-          <target>Close</target>
-        </trans-unit>
-        <trans-unit id="7a88c8744689d43a4c557ecc35564533890d5728" datatype="html">
-          <source>Agent Detail</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">src/app/components/agents/detail/detail.component.ts</context>
-            <context context-type="linenumber">32</context>
-          </context-group>
-          <target>Detalle del agente</target>
-        </trans-unit>
-        <trans-unit id="f61c6867295f3b53d23557021f2f4e0aa1d0b8fc" datatype="html">
-          <source>Type</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">src/app/components/agents/detail/detail.component.ts</context>
-            <context context-type="linenumber">32</context>
-          </context-group>
-          <context-group purpose="location">
-            <context context-type="sourcefile">src/app/components/agents/list/list.component.ts</context>
-            <context context-type="linenumber">61</context>
-          </context-group>
-          <target>Tipo</target>
-        </trans-unit>
-        <trans-unit id="81b97b8ea996ad1e4f9fca8415021850214884b1" datatype="html">
-          <source>Status</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">src/app/components/agents/detail/detail.component.ts</context>
-            <context context-type="linenumber">32</context>
-          </context-group>
-          <target>Estado</target>
-        </trans-unit>
-        <trans-unit id="2cbac2269eab7084e0c7865ba140148145addddb" datatype="html">
-          <source>Agents List</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">src/app/components/agents/list/list.component.ts</context>
-            <context context-type="linenumber">37,48</context>
-          </context-group>
-          <target>Lista Agentes</target>
-        </trans-unit>
-        <trans-unit id="fe22ca53e651df951dac25b67c17894b0980f767" datatype="html">
-          <source>Host</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">src/app/components/agents/list/list.component.ts</context>
-            <context context-type="linenumber">61</context>
-          </context-group>
-          <context-group purpose="location">
-            <context context-type="sourcefile">src/app/components/servers/list/list.component.ts</context>
-            <context context-type="linenumber">87</context>
-          </context-group>
-          <target>Dominio</target>
-        </trans-unit>
-        <trans-unit id="cb2741a46e3560f6bc6dfd99d385e86b08b26d72" datatype="html">
-          <source>Port</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">src/app/components/agents/list/list.component.ts</context>
-            <context context-type="linenumber">61</context>
-          </context-group>
-          <context-group purpose="location">
-            <context context-type="sourcefile">src/app/components/servers/list/list.component.ts</context>
-            <context context-type="linenumber">87</context>
-          </context-group>
-          <target>Puerto</target>
-        </trans-unit>
-        <trans-unit id="030b4423b92167200e39519599f9b863b4f7c62c" datatype="html">
-          <source>Actions</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">src/app/components/agents/list/list.component.ts</context>
-            <context context-type="linenumber">61</context>
-          </context-group>
-          <context-group purpose="location">
-            <context context-type="sourcefile">src/app/components/servers/list/list.component.ts</context>
-            <context context-type="linenumber">87</context>
-          </context-group>
-          <target>Acciones</target>
-        </trans-unit>
-        <trans-unit id="4af34edb985a7fd734d302fea68716ef3970c045" datatype="html">
-          <source>Jaime Logs</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">src/app/components/agents/logs/logs.component.ts</context>
-            <context context-type="linenumber">32,42</context>
-          </context-group>
-          <target>Logs de Jaime</target>
-        </trans-unit>
-        <trans-unit id="4f8b2bb476981727ab34ed40fde1218361f92c45" datatype="html">
-          <source>Details</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">src/app/components/agents/tabs/tabs.component.ts</context>
-            <context context-type="linenumber">16</context>
-          </context-group>
-          <target>Detalle</target>
-        </trans-unit>
-        <trans-unit id="864425e205e71f3e72a1eda8f02d4540681b3cfd" datatype="html">
-          <source>Yaml</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">src/app/components/agents/tabs/tabs.component.ts</context>
-            <context context-type="linenumber">16</context>
-          </context-group>
-          <target>Yaml</target>
-        </trans-unit>
-        <trans-unit id="eb3d5aefff38a814b76da74371cbf02c0789a1ef" datatype="html">
-          <source>Logs</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">src/app/components/agents/tabs/tabs.component.ts</context>
-            <context context-type="linenumber">16</context>
-          </context-group>
-          <target>Logs</target>
-        </trans-unit>
-        <trans-unit id="8ec54c6ec160cd114c27c32699ed37424c9bd63d" datatype="html">
-          <source>Agent Yaml</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">src/app/components/agents/yaml/yaml.component.ts</context>
-            <context context-type="linenumber">33,38</context>
-          </context-group>
-          <target>Yaml del agente</target>
-        </trans-unit>
-        <trans-unit id="94371cf8356843a89a1e57990a7823a14f39be36" datatype="html">
-          <source>Server List</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">src/app/components/servers/list/list.component.ts</context>
-            <context context-type="linenumber">37,47</context>
-          </context-group>
-          <target>Lista de servidores</target>
-        </trans-unit>
-        <trans-unit id="34d6c806725d3b3425084945d92b8e05964346ec" datatype="html">
-          <source>New server</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">src/app/components/servers/list/list.component.ts</context>
-            <context context-type="linenumber">61,73</context>
-          </context-group>
-          <target>Nuevo server</target>
-        </trans-unit>
-        <trans-unit id="cff1428d10d59d14e45edec3c735a27b5482db59" datatype="html">
-          <source>Name</source>
-          <context-group purpose="location">
-            <context context-type="sourcefile">src/app/components/servers/list/list.component.ts</context>
-            <context context-type="linenumber">87</context>
-          </context-group>
-          <target>Nombre</target>
-        </trans-unit>
-      </group>
+      <trans-unit id="ngb.alert.close" datatype="html">
+        <source>Close</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/alert/alert.ts</context>
+          <context context-type="linenumber">67,68</context>
+        </context-group>
+        <target>Cerrar</target>
+      </trans-unit>
+      <trans-unit id="ngb.carousel.previous" datatype="html">
+        <source>Previous</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/carousel/carousel.ts</context>
+          <context context-type="linenumber">160,164</context>
+        </context-group>
+        <target>Anterior</target>
+      </trans-unit>
+      <trans-unit id="ngb.carousel.next" datatype="html">
+        <source>Next</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/carousel/carousel.ts</context>
+          <context context-type="linenumber">175,182</context>
+        </context-group>
+        <target>Siguiente</target>
+      </trans-unit>
+      <trans-unit id="ngb.datepicker.select-month" datatype="html">
+        <source>Select month</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-day-view.ts</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-day-view.ts</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <target>Select month</target>
+      </trans-unit>
+      <trans-unit id="ngb.datepicker.select-year" datatype="html">
+        <source>Select year</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-day-view.ts</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-day-view.ts</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <target>Select year</target>
+      </trans-unit>
+      <trans-unit id="ngb.datepicker.previous-month" datatype="html">
+        <source>Previous month</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-month.ts</context>
+          <context context-type="linenumber">46,51</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-month.ts</context>
+          <context context-type="linenumber">62,67</context>
+        </context-group>
+        <target>Previous month</target>
+      </trans-unit>
+      <trans-unit id="ngb.datepicker.next-month" datatype="html">
+        <source>Next month</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-month.ts</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-month.ts</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+        <target>Next month</target>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.first" datatype="html">
+        <source>««</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/pagination/pagination.ts</context>
+          <context context-type="linenumber">147,149</context>
+        </context-group>
+        <target>««</target>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.previous" datatype="html">
+        <source>«</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/pagination/pagination.ts</context>
+          <context context-type="linenumber">153,155</context>
+        </context-group>
+        <target>«</target>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.next" datatype="html">
+        <source>»</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/pagination/pagination.ts</context>
+          <context context-type="linenumber">159,161</context>
+        </context-group>
+        <target>»</target>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.last" datatype="html">
+        <source>»»</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/pagination/pagination.ts</context>
+          <context context-type="linenumber">166,168</context>
+        </context-group>
+        <target>»»</target>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.first-aria" datatype="html">
+        <source>First</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/pagination/pagination.ts</context>
+          <context context-type="linenumber">174,176</context>
+        </context-group>
+        <target>First</target>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.previous-aria" datatype="html">
+        <source>Previous</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/pagination/pagination.ts</context>
+          <context context-type="linenumber">187,189</context>
+        </context-group>
+        <target>Previous</target>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.next-aria" datatype="html">
+        <source>Next</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/pagination/pagination.ts</context>
+          <context context-type="linenumber">197,205</context>
+        </context-group>
+        <target>Next</target>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.last-aria" datatype="html">
+        <source>Last</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/pagination/pagination.ts</context>
+          <context context-type="linenumber">217,224</context>
+        </context-group>
+        <target>Last</target>
+      </trans-unit>
+      <trans-unit id="ngb.progressbar.value" datatype="html">
+        <source>
+          <x id="INTERPOLATION" equiv-text="Supports types"></x>
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/progressbar/progressbar.ts</context>
+          <context context-type="linenumber">59,68</context>
+        </context-group>
+        <target>null</target>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.HH" datatype="html">
+        <source>HH</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
+          <context context-type="linenumber">164,171</context>
+        </context-group>
+        <target>HH</target>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.hours" datatype="html">
+        <source>Hours</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
+          <context context-type="linenumber">184,186</context>
+        </context-group>
+        <target>Hours</target>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.MM" datatype="html">
+        <source>MM</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
+          <context context-type="linenumber">194,202</context>
+        </context-group>
+        <target>MM</target>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.minutes" datatype="html">
+        <source>Minutes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
+          <context context-type="linenumber">209,216</context>
+        </context-group>
+        <target>Minutes</target>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.increment-hours" datatype="html">
+        <source>Increment hours</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
+          <context context-type="linenumber">232,236</context>
+        </context-group>
+        <target>Increment hours</target>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.decrement-hours" datatype="html">
+        <source>Decrement hours</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
+          <context context-type="linenumber">252,260</context>
+        </context-group>
+        <target>Decrement hours</target>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.increment-minutes" datatype="html">
+        <source>Increment minutes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
+          <context context-type="linenumber">273,278</context>
+        </context-group>
+        <target>Increment minutes</target>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.decrement-minutes" datatype="html">
+        <source>Decrement minutes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
+          <context context-type="linenumber">290,296</context>
+        </context-group>
+        <target>Decrement minutes</target>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.SS" datatype="html">
+        <source>SS</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
+          <context context-type="linenumber">296</context>
+        </context-group>
+        <target>SS</target>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.seconds" datatype="html">
+        <source>Seconds</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
+          <context context-type="linenumber">296</context>
+        </context-group>
+        <target>Seconds</target>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.increment-seconds" datatype="html">
+        <source>Increment seconds</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
+          <context context-type="linenumber">296</context>
+        </context-group>
+        <target>Increment seconds</target>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.decrement-seconds" datatype="html">
+        <source>Decrement seconds</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
+          <context context-type="linenumber">296</context>
+        </context-group>
+        <target>Decrement seconds</target>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.PM" datatype="html">
+        <source>
+          <x id="INTERPOLATION"></x>
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
+          <context context-type="linenumber">296</context>
+        </context-group>
+        <target>null</target>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.AM" datatype="html">
+        <source>
+          <x id="INTERPOLATION"></x>
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
+          <context context-type="linenumber">296</context>
+        </context-group>
+        <target>null</target>
+      </trans-unit>
+      <trans-unit id="ngb.toast.close-aria" datatype="html">
+        <source>Close</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/toast/toast.ts</context>
+          <context context-type="linenumber">107,115</context>
+        </context-group>
+        <target>Close</target>
+      </trans-unit>
+      <trans-unit id="1737753151350322492" datatype="html">
+        <source>
+          <x id="PH" equiv-text="this.title"></x>
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <target>null</target>
+      </trans-unit>
+      <trans-unit id="7a88c8744689d43a4c557ecc35564533890d5728" datatype="html">
+        <source>Agent Detail</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/agents/detail/detail.component.ts</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <target>Detalle del agente</target>
+      </trans-unit>
+      <trans-unit id="f61c6867295f3b53d23557021f2f4e0aa1d0b8fc" datatype="html">
+        <source>Type</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/agents/detail/detail.component.ts</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/agents/list/list.component.ts</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/clusters/detail/detail.component.ts</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/clusters/list/list.component.ts</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/clusters/new/new.component.ts</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/detail/detail.component.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
+          <context context-type="linenumber">64,73</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/detail/detail.component.ts</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+        <target>Tipo</target>
+      </trans-unit>
+      <trans-unit id="81b97b8ea996ad1e4f9fca8415021850214884b1" datatype="html">
+        <source>Status</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/agents/detail/detail.component.ts</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/detail/detail.component.ts</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/list/list.component.ts</context>
+          <context context-type="linenumber">99</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/detail/detail.component.ts</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/list/list.component.ts</context>
+          <context context-type="linenumber">99</context>
+        </context-group>
+        <target>Estado</target>
+      </trans-unit>
+      <trans-unit id="2cbac2269eab7084e0c7865ba140148145addddb" datatype="html">
+        <source>Agents List</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/agents/list/list.component.ts</context>
+          <context context-type="linenumber">37,48</context>
+        </context-group>
+        <target>Lista agentes</target>
+      </trans-unit>
+      <trans-unit id="fe22ca53e651df951dac25b67c17894b0980f767" datatype="html">
+        <source>Host</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/agents/list/list.component.ts</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/servers/detail/detail.component.ts</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/servers/list/list.component.ts</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/servers/new/new.component.ts</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <target>Dominio</target>
+      </trans-unit>
+      <trans-unit id="cb2741a46e3560f6bc6dfd99d385e86b08b26d72" datatype="html">
+        <source>Port</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/agents/list/list.component.ts</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/servers/detail/detail.component.ts</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/servers/list/list.component.ts</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/servers/new/new.component.ts</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <target>Puerto</target>
+      </trans-unit>
+      <trans-unit id="030b4423b92167200e39519599f9b863b4f7c62c" datatype="html">
+        <source>Actions</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/agents/list/list.component.ts</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/clusters/list/list.component.ts</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/list/list.component.ts</context>
+          <context context-type="linenumber">99</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/servers/list/list.component.ts</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/list/list.component.ts</context>
+          <context context-type="linenumber">99</context>
+        </context-group>
+        <target>Acciones</target>
+      </trans-unit>
+      <trans-unit id="4af34edb985a7fd734d302fea68716ef3970c045" datatype="html">
+        <source>Jaime Logs</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/agents/logs/logs.component.ts</context>
+          <context context-type="linenumber">32,42</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/configs/logs/logs.component.ts</context>
+          <context context-type="linenumber">34,39</context>
+        </context-group>
+        <target>Logs de Jaime</target>
+      </trans-unit>
+      <trans-unit id="4f8b2bb476981727ab34ed40fde1218361f92c45" datatype="html">
+        <source>Details</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/agents/tabs/tabs.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/clusters/tabs/tabs.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/tabs/tabs.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/tabs/tabs.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/servers/tabs/tabs.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/tabs/tabs.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <target>Detalle</target>
+      </trans-unit>
+      <trans-unit id="864425e205e71f3e72a1eda8f02d4540681b3cfd" datatype="html">
+        <source>Yaml</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/agents/tabs/tabs.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/clusters/tabs/tabs.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/tabs/tabs.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/modules/new/new.component.ts</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/tabs/tabs.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/servers/tabs/tabs.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/tabs/tabs.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <target>Yaml</target>
+      </trans-unit>
+      <trans-unit id="eb3d5aefff38a814b76da74371cbf02c0789a1ef" datatype="html">
+        <source>Logs</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/agents/tabs/tabs.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/configs/tabs/tabs.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/tabs/tabs.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <target>Logs</target>
+      </trans-unit>
+      <trans-unit id="8ec54c6ec160cd114c27c32699ed37424c9bd63d" datatype="html">
+        <source>Agent Yaml</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/agents/yaml/yaml.component.ts</context>
+          <context context-type="linenumber">33,38</context>
+        </context-group>
+        <target>Yaml del agente</target>
+      </trans-unit>
+      <trans-unit id="16727cf471fa48d646f4507b244cd928ce5263a8" datatype="html">
+        <source>Cluster Detail</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/clusters/detail/detail.component.ts</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <target>Detalle del clúster</target>
+      </trans-unit>
+      <trans-unit id="cff1428d10d59d14e45edec3c735a27b5482db59" datatype="html">
+        <source>Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/clusters/detail/detail.component.ts</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/clusters/list/list.component.ts</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/clusters/new/new.component.ts</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/detail/detail.component.ts</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/list/list.component.ts</context>
+          <context context-type="linenumber">88,99</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/new/new.component.ts</context>
+          <context context-type="linenumber">33,37</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/modules/new/new.component.ts</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/detail/detail.component.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/servers/detail/detail.component.ts</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/servers/list/list.component.ts</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/servers/new/new.component.ts</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/list/list.component.ts</context>
+          <context context-type="linenumber">99</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/new/new.component.ts</context>
+          <context context-type="linenumber">55,60</context>
+        </context-group>
+        <target>Nombre</target>
+      </trans-unit>
+      <trans-unit id="484d369ab6d7e37d808403e2141c38c01f6f9911" datatype="html">
+        <source>Url</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/clusters/detail/detail.component.ts</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/clusters/new/new.component.ts</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+        <target>Url</target>
+      </trans-unit>
+      <trans-unit id="1edc1fc6cfbbb22353050ad6788508b3ed584f53" datatype="html">
+        <source>Token</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/clusters/detail/detail.component.ts</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/clusters/new/new.component.ts</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+        <target>Token</target>
+      </trans-unit>
+      <trans-unit id="8fe73a4787b8068b2ba61f54ab7e0f9af2ea1fc9" datatype="html">
+        <source>Version</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/clusters/detail/detail.component.ts</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/clusters/new/new.component.ts</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+        <target>Versión</target>
+      </trans-unit>
+      <trans-unit id="6954a56f48af6108e498f1b20766082e4d6a87bc" datatype="html">
+        <source>Cluster List</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/clusters/list/list.component.ts</context>
+          <context context-type="linenumber">37,47</context>
+        </context-group>
+        <target>Lista de clúster</target>
+      </trans-unit>
+      <trans-unit id="2dd4fa24fa2816f2ce75bf382eaaee0cce5e3e6c" datatype="html">
+        <source>New cluster</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/clusters/list/list.component.ts</context>
+          <context context-type="linenumber">61,73</context>
+        </context-group>
+        <target>Nuevo clúster</target>
+      </trans-unit>
+      <trans-unit id="801b98c6f02fe3b32f6afa3ee854c99ed83474e6" datatype="html">
+        <source>URL</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/clusters/list/list.component.ts</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/detail/detail.component.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+        <target>Url</target>
+      </trans-unit>
+      <trans-unit id="b5b9688af12105a0acafc902138dc223dfb90ce0" datatype="html">
+        <source>New Cluster</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/clusters/new/new.component.ts</context>
+          <context context-type="linenumber">30,40</context>
+        </context-group>
+        <target>Nuevo clúster</target>
+      </trans-unit>
+      <trans-unit id="1708386150823244af585e2e4f917d30aa71cb55" datatype="html">
+        <source>Example: https://cluster.app.cluster.com</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/clusters/new/new.component.ts</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+        <target>Ejemplo: https://cluster.app.cluster.com</target>
+      </trans-unit>
+      <trans-unit id="7bbde614fa6e18ce4796b4acc6c250ab8fb54c6f" datatype="html">
+        <source>Example: jkdndodp-d8smkw93-k3987</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/clusters/new/new.component.ts</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+        <target>Ejemplo: jkdndodp-d8smkw93-k3987</target>
+      </trans-unit>
+      <trans-unit id="616e785142d1f79303fafe9784b571d01d31fbc5" datatype="html">
+        <source>Example: 4.7</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/clusters/new/new.component.ts</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+        <target>Ejemplo: 4.7</target>
+      </trans-unit>
+      <trans-unit id="0d2cbdd84dcc66cbb20e7573aeb464219c51cda4" datatype="html">
+        <source>Server Yaml</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/clusters/yaml/yaml.component.ts</context>
+          <context context-type="linenumber">32,44</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/servers/yaml/yaml.component.ts</context>
+          <context context-type="linenumber">32,45</context>
+        </context-group>
+        <target>Servidor yaml</target>
+      </trans-unit>
+      <trans-unit id="e5452139bd45f5e4bbb0a4b16f7f5b84a3eba6ee" datatype="html">
+        <source>Edit cluster</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/clusters/yaml/yaml.component.ts</context>
+          <context context-type="linenumber">55,62</context>
+        </context-group>
+        <target>Editar clúster</target>
+      </trans-unit>
+      <trans-unit id="047f50bc5b5d17b5bec0196355953e1a5c590ddb" datatype="html">
+        <source>Update</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/clusters/yaml/yaml.component.ts</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/yaml/yaml.component.ts</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/modules/code/code.component.ts</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/modules/docs/docs.component.ts</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/servers/yaml/yaml.component.ts</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/yaml/yaml.component.ts</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+        <target>Actualizar</target>
+      </trans-unit>
+      <trans-unit id="afdb601c16162f2c798b16a2920955f1cc6a20aa" datatype="html">
+        <source>Objects</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/configs/objects/objects.component.ts</context>
+          <context context-type="linenumber">30,35</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/configs/tabs/tabs.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <target>Objetos</target>
+      </trans-unit>
+      <trans-unit id="667912906dde62d38433838ca41dad4557430184" datatype="html">
+        <source>Update objects</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/configs/objects/objects.component.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <target>Actualizar objetos</target>
+      </trans-unit>
+      <trans-unit id="0107e5e2f3b56eb32c8d9f796afb7beee60fa214" datatype="html">
+        <source>Backup</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/configs/objectsGet/objectsGet.component.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/configs/tabs/tabs.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <target>Respaldo</target>
+      </trans-unit>
+      <trans-unit id="66792876dfce5c5adec4284a5e7096792434de8b" datatype="html">
+        <source> Download backup yaml file to restore in this or another Jaime </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/configs/objectsGet/objectsGet.component.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <target>Descargue el archivo Yaml de copia de seguridad para restaurar en este u otro Jaime</target>
+      </trans-unit>
+      <trans-unit id="a2c7c63a5295f224e0c84f1a5e4c8ccd50c996ca" datatype="html">
+        <source>Download file</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/configs/objectsGet/objectsGet.component.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <target>Descargar archivo</target>
+      </trans-unit>
+      <trans-unit id="4f9c7e652eee34091b46df894558d91c05d3e1c1" datatype="html">
+        <source>requeriments.txt</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/configs/requirements/requirements.component.ts</context>
+          <context context-type="linenumber">34,42</context>
+        </context-group>
+        <target>requisitos.txt</target>
+      </trans-unit>
+      <trans-unit id="67b7ffa78bca499c8ed66be7fad673aa33bcc19b" datatype="html">
+        <source>Pip install</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/configs/requirements/requirements.component.ts</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+        <target>Instalación de PIP</target>
+      </trans-unit>
+      <trans-unit id="74f563e1cafbbbaeb15e20840c26a194a42f38ba" datatype="html">
+        <source>Requirements</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/configs/tabs/tabs.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <target>Requisitos</target>
+      </trans-unit>
+      <trans-unit id="a570f7ed2231ee6dc8850063908839a22ec406e9" datatype="html">
+        <source>Config Vars</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/configs/vars/var.component.ts</context>
+          <context context-type="linenumber">29,33</context>
+        </context-group>
+        <target>Configuración vars</target>
+      </trans-unit>
+      <trans-unit id="28f86ffd419b869711aa13f5e5ff54be6d70731c" datatype="html">
+        <source>Edit</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/configs/vars/var.component.ts</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <target>Editar</target>
+      </trans-unit>
+      <trans-unit id="33cfed9b8f2149a1c119f2c145397ac8e197fb83" datatype="html">
+        <source>Cron Detail</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/detail/detail.component.ts</context>
+          <context context-type="linenumber">33,43</context>
+        </context-group>
+        <target>Detalle cron</target>
+      </trans-unit>
+      <trans-unit id="52f879009a1fbbd8161ff279fd5df9325213f7bf" datatype="html">
+        <source>Cron Expression</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/detail/detail.component.ts</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/new/new.component.ts</context>
+          <context context-type="linenumber">68,79</context>
+        </context-group>
+        <target>Expresión cron</target>
+      </trans-unit>
+      <trans-unit id="d09d4a356271975eff8bdf094530c2b8deb51570" datatype="html">
+        <source>Work Repo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/detail/detail.component.ts</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+        <target>Repo de trabajo</target>
+      </trans-unit>
+      <trans-unit id="0b37550346f3859feb620c060c5932ae2764781f" datatype="html">
+        <source>Work Module</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/detail/detail.component.ts</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+        <target>Módulo de trabajo</target>
+      </trans-unit>
+      <trans-unit id="a433f071c35d952cf662f79a6b02dc0972ad7603" datatype="html">
+        <source>Agent Type</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/detail/detail.component.ts</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/list/list.component.ts</context>
+          <context context-type="linenumber">99</context>
+        </context-group>
+        <target>Tipo de agente</target>
+      </trans-unit>
+      <trans-unit id="78b9ec7078cb3cd81c558bd1d7c2eda23af1fb61" datatype="html">
+        <source>Creation Date</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/detail/detail.component.ts</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/list/list.component.ts</context>
+          <context context-type="linenumber">99</context>
+        </context-group>
+        <target>Fecha de creación</target>
+      </trans-unit>
+      <trans-unit id="46b9600956ce808c418bc6a2f520904d1861b98f" datatype="html">
+        <source>Cron List</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/list/list.component.ts</context>
+          <context context-type="linenumber">37,50</context>
+        </context-group>
+        <target>Lista de cron</target>
+      </trans-unit>
+      <trans-unit id="3ce89d3e01b55833a9f73f708eb079e7db15056f" datatype="html">
+        <source>Delete by Status</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/list/list.component.ts</context>
+          <context context-type="linenumber">66,73</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/list/list.component.ts</context>
+          <context context-type="linenumber">87,99</context>
+        </context-group>
+        <target>Eliminar por estado</target>
+      </trans-unit>
+      <trans-unit id="8da9cc65d5966c420fda61d21220b3c1cd1a6867" datatype="html">
+        <source>Cron expression</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/list/list.component.ts</context>
+          <context context-type="linenumber">99</context>
+        </context-group>
+        <target>Expresión cron</target>
+      </trans-unit>
+      <trans-unit id="9b14ed24d3a800fd47f204045d91cec896214fa5" datatype="html">
+        <source>Cron name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/new/new.component.ts</context>
+          <context context-type="linenumber">55,63</context>
+        </context-group>
+        <target>Nombre cron</target>
+      </trans-unit>
+      <trans-unit id="b60219f1a3fba3daa5a96d58c439d4d176a96aab" datatype="html">
+        <source>Ejemplo: * */2 * * *</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/new/new.component.ts</context>
+          <context context-type="linenumber">91,99</context>
+        </context-group>
+        <target>EJemplo: * */2 * * *</target>
+      </trans-unit>
+      <trans-unit id="084b654b5afbd67378cd45703bf10ffc2311e5a7" datatype="html">
+        <source>Agent type</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/new/new.component.ts</context>
+          <context context-type="linenumber">105</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/new/new.component.ts</context>
+          <context context-type="linenumber">97</context>
+        </context-group>
+        <target>Tipo de agente</target>
+      </trans-unit>
+      <trans-unit id="3eaf6e95c53375c797cfb631925dca1b5900eca2" datatype="html">
+        <source>Select a installed agent type</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/new/new.component.ts</context>
+          <context context-type="linenumber">105</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/new/new.component.ts</context>
+          <context context-type="linenumber">97</context>
+        </context-group>
+        <target>Seleccione un tipo de agente instalado</target>
+      </trans-unit>
+      <trans-unit id="b45d01f61abb874a71b314051193f4b72c3d4cf2" datatype="html">
+        <source>Repository</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/new/new.component.ts</context>
+          <context context-type="linenumber">105</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/detail/detail.component.ts</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/new/new.component.ts</context>
+          <context context-type="linenumber">97</context>
+        </context-group>
+        <target>Repositorio</target>
+      </trans-unit>
+      <trans-unit id="a011df074b302ba1435a916c4441bff5658fe13e" datatype="html">
+        <source>Select a installed repository</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/new/new.component.ts</context>
+          <context context-type="linenumber">105</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/new/new.component.ts</context>
+          <context context-type="linenumber">97</context>
+        </context-group>
+        <target>Seleccione un repositorio instalado</target>
+      </trans-unit>
+      <trans-unit id="c10deee5463bd5458eca86cc2e4a2b87daf41bf1" datatype="html">
+        <source>Module</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/new/new.component.ts</context>
+          <context context-type="linenumber">105</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/detail/detail.component.ts</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/list/list.component.ts</context>
+          <context context-type="linenumber">99</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/new/new.component.ts</context>
+          <context context-type="linenumber">97</context>
+        </context-group>
+        <target>Módulo</target>
+      </trans-unit>
+      <trans-unit id="2ade6f29ddfa75bb6b2b57b128a5826efd622fd0" datatype="html">
+        <source>Select a installed module</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/new/new.component.ts</context>
+          <context context-type="linenumber">105</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/new/new.component.ts</context>
+          <context context-type="linenumber">97</context>
+        </context-group>
+        <target>Seleccione un módulo instalado</target>
+      </trans-unit>
+      <trans-unit id="a5d60720c3338dee875df1551a271764324213a3" datatype="html">
+        <source>Params Yaml</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/new/new.component.ts</context>
+          <context context-type="linenumber">105</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/new/new.component.ts</context>
+          <context context-type="linenumber">97</context>
+        </context-group>
+        <target>Params yaml</target>
+      </trans-unit>
+      <trans-unit id="93c1a97d66ebe767f3da7f50e4bafe952e2206ac" datatype="html">
+        <source>Parameters to module selected</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/new/new.component.ts</context>
+          <context context-type="linenumber">105</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/new/new.component.ts</context>
+          <context context-type="linenumber">97</context>
+        </context-group>
+        <target>Parámetros al módulo seleccionado</target>
+      </trans-unit>
+      <trans-unit id="70a67e04629f6d412db0a12d51820b480788d795" datatype="html">
+        <source>Create</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/new/new.component.ts</context>
+          <context context-type="linenumber">105</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/modules/new/new.component.ts</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/servers/new/new.component.ts</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/new/new.component.ts</context>
+          <context context-type="linenumber">97</context>
+        </context-group>
+        <target>Crear</target>
+      </trans-unit>
+      <trans-unit id="bd518db8768c873ad341e701737df8f00dd3f94c" datatype="html">
+        <source>Cron Yaml</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/yaml/yaml.component.ts</context>
+          <context context-type="linenumber">30,42</context>
+        </context-group>
+        <target>Cron yaml</target>
+      </trans-unit>
+      <trans-unit id="7f9ac938ff04896248943ccbb8d97da71514969a" datatype="html">
+        <source>Edit Cron</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/yaml/yaml.component.ts</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+        <target>Editar cron</target>
+      </trans-unit>
+      <trans-unit id="51cba4e2be43e51e8e0d05ab49e019305b89663d" datatype="html">
+        <source>Module Code</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/modules/code/code.component.ts</context>
+          <context context-type="linenumber">25,36</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/modules/new/new.component.ts</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+        <target>Código de módulo</target>
+      </trans-unit>
+      <trans-unit id="130f77919314bb957974d5d1e420029b39e01781" datatype="html">
+        <source>Edit Code</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/modules/code/code.component.ts</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+        <target>Código de edición</target>
+      </trans-unit>
+      <trans-unit id="93a04d1bb2f5a7f75fc8bdbef50f33f282fb3eef" datatype="html">
+        <source>Module Docs</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/modules/docs/docs.component.ts</context>
+          <context context-type="linenumber">26,38</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/modules/new/new.component.ts</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+        <target>Documentos de módulos</target>
+      </trans-unit>
+      <trans-unit id="77ff7b8375a8c14a5d675fe04cc01b71156e9c7f" datatype="html">
+        <source>Edit Docs</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/modules/docs/docs.component.ts</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+        <target>Editar documentos</target>
+      </trans-unit>
+      <trans-unit id="d6444eff6432d536c4d50ba42a33099ce5f7088b" datatype="html">
+        <source>Module List</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/modules/list/list.component.ts</context>
+          <context context-type="linenumber">30,45</context>
+        </context-group>
+        <target>Lista de módulos</target>
+      </trans-unit>
+      <trans-unit id="0fa7ffa44bda6fc5da500a857df8d20237fe0689" datatype="html">
+        <source>New Module</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/modules/list/list.component.ts</context>
+          <context context-type="linenumber">57,66</context>
+        </context-group>
+        <target>Nuevo módulo</target>
+      </trans-unit>
+      <trans-unit id="d81f00c85d3b507f3e3d78bfc617a2c66e028391" datatype="html">
+        <source>New</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/modules/new/new.component.ts</context>
+          <context context-type="linenumber">28,35</context>
+        </context-group>
+        <target>Nueva</target>
+      </trans-unit>
+      <trans-unit id="d45c11866c67e78d71e491690f1b013a7af1b92e" datatype="html">
+        <source>Module File Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/modules/new/new.component.ts</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+        <target>Nombre del archivo del módulo</target>
+      </trans-unit>
+      <trans-unit id="a7ecfd7757d04b019beaa2d7208c728387bfc7e8" datatype="html">
+        <source>Docs</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/modules/new/new.component.ts</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/modules/tabs/tabs.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <target>Documentos</target>
+      </trans-unit>
+      <trans-unit id="68572de01b84c678be4bf8a27b990ecac2f41ce9" datatype="html">
+        <source>Code</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/modules/new/new.component.ts</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/modules/new/new.component.ts</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/modules/tabs/tabs.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <target>Código</target>
+      </trans-unit>
+      <trans-unit id="03fa9a21a6c3e733b2d756e3d26db7472c7cf683" datatype="html">
+        <source>Create new module</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/modules/new/new.component.ts</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+        <target>Crear un nuevo módulo</target>
+      </trans-unit>
+      <trans-unit id="9ec523f67f67c325f83416199d925c2434391f14" datatype="html">
+        <source>Repo Detail</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/detail/detail.component.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <target>Detalle de repositorio</target>
+      </trans-unit>
+      <trans-unit id="3c8d7c1ae417833f3382afe4a62fbb622ec1dd4c" datatype="html">
+        <source>Branch</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/detail/detail.component.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+        <target>Rama</target>
+      </trans-unit>
+      <trans-unit id="766c66ad5cc981c531aaf3fe3a2a7a346ddc8d83" datatype="html">
+        <source>Path</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/detail/detail.component.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+        <target>Sendero</target>
+      </trans-unit>
+      <trans-unit id="e08a77594f3d89311cdf6da5090044270909c194" datatype="html">
+        <source>User</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/detail/detail.component.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/servers/detail/detail.component.ts</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/servers/new/new.component.ts</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <target>Usuaria</target>
+      </trans-unit>
+      <trans-unit id="8272de798dd803f04d5e5fcbe1013bc6267aa010" datatype="html">
+        <source>Pass</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/detail/detail.component.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+        <target>Pasar</target>
+      </trans-unit>
+      <trans-unit id="b6c5c637778eb83fee44dbcc3ba75b87d02ffafb" datatype="html">
+        <source>Repositories List</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/list/list.component.ts</context>
+          <context context-type="linenumber">36,48</context>
+        </context-group>
+        <target>Lista de repositorios</target>
+      </trans-unit>
+      <trans-unit id="7c606c8c0767c05c893e91b16bdfe81528844c41" datatype="html">
+        <source>New Repository</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/list/list.component.ts</context>
+          <context context-type="linenumber">59,72</context>
+        </context-group>
+        <target>Nuevo repositorio</target>
+      </trans-unit>
+      <trans-unit id="3d0e762468c5336ac9e7a60b1b76174a2106bae3" datatype="html">
+        <source>New Repo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
+          <context context-type="linenumber">30,43</context>
+        </context-group>
+        <target>Nuevo repositorio</target>
+      </trans-unit>
+      <trans-unit id="f7e9e140e614b0b5e42d4f5b023b1c6add1d405a" datatype="html">
+        <source>Example: ocp-migrations</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+        <target>Ejemplo: migraciones OCP</target>
+      </trans-unit>
+      <trans-unit id="2b33f6601cce9b0211a965c7499b08d0a5145b01" datatype="html">
+        <source>Example: https://github.com/brianwolf/repo-jaime-modules.git</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+        <target>Ejemplo: https://github.com/brianwolf/repo-jaime-modules.git</target>
+      </trans-unit>
+      <trans-unit id="6c8bbf9809a4d837f2cc053496ba3bcbf2e82f50" datatype="html">
+        <source>Example: master</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+        <target>Ejemplo: maestro</target>
+      </trans-unit>
+      <trans-unit id="421cb0df25ed8a797151feab6012a1c882354f30" datatype="html">
+        <source>Example: /ocp-migrations</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+        <target>Ejemplo: /OCP-Migraciones</target>
+      </trans-unit>
+      <trans-unit id="ab3d980b28ee9638a744509bc3badb1316fdbb41" datatype="html">
+        <source>Example: usuario</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+        <target>Ejemplo: Usuario</target>
+      </trans-unit>
+      <trans-unit id="2749ef841566ade58002da8a632cf86b9e08ea63" datatype="html">
+        <source>Example: *******</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+        <target>Ejemplo: *******</target>
+      </trans-unit>
+      <trans-unit id="acd72e6ea815c817313caa98eba21cc1a38ae52a" datatype="html">
+        <source>Create Repo Git</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+        <target>Crear repose git</target>
+      </trans-unit>
+      <trans-unit id="92d230a32879ebc8b34bc1e3be9ee2fac8f7c2a7" datatype="html">
+        <source>Repo Yaml</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/yaml/yaml.component.ts</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <target>Repo Yaml</target>
+      </trans-unit>
+      <trans-unit id="2da6d37caa5d2479c36f2b6b720ac6606784c21b" datatype="html">
+        <source>Server Detail</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/servers/detail/detail.component.ts</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <target>Detalle del servidor</target>
+      </trans-unit>
+      <trans-unit id="c32ef07f8803a223a83ed17024b38e8d82292407" datatype="html">
+        <source>Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/servers/detail/detail.component.ts</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/servers/new/new.component.ts</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <target>Clave</target>
+      </trans-unit>
+      <trans-unit id="94371cf8356843a89a1e57990a7823a14f39be36" datatype="html">
+        <source>Server List</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/servers/list/list.component.ts</context>
+          <context context-type="linenumber">37,47</context>
+        </context-group>
+        <target>Lista de servidores</target>
+      </trans-unit>
+      <trans-unit id="34d6c806725d3b3425084945d92b8e05964346ec" datatype="html">
+        <source>New server</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/servers/list/list.component.ts</context>
+          <context context-type="linenumber">61,73</context>
+        </context-group>
+        <target>Nuevo servidor</target>
+      </trans-unit>
+      <trans-unit id="2d6d4b7eef4983f5b695d322ea18dcb8ef541957" datatype="html">
+        <source>New Server</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/servers/new/new.component.ts</context>
+          <context context-type="linenumber">30,41</context>
+        </context-group>
+        <target>Nuevo servidor</target>
+      </trans-unit>
+      <trans-unit id="bfc9cf4c238ddd3bc93af9d429c5ced77b1c93c0" datatype="html">
+        <source>Example: ocp-47-noprod</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/servers/new/new.component.ts</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <target>Ejemplo: OCP-47-NOPROD</target>
+      </trans-unit>
+      <trans-unit id="b33c81682a9dc8ee013b9deca781980d52f2da1f" datatype="html">
+        <source>Example: server.app.server.com</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/servers/new/new.component.ts</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <target>Ejemplo: server.app.server.com</target>
+      </trans-unit>
+      <trans-unit id="6143ef9053b4d879852ec797bcb4d599a042dc22" datatype="html">
+        <source>Example: 22</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/servers/new/new.component.ts</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <target>Ejemplo: 22</target>
+      </trans-unit>
+      <trans-unit id="4a06dda7f8717457be24878f8d48d0f025fadde9" datatype="html">
+        <source>Example: admin</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/servers/new/new.component.ts</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <target>Ejemplo: administrador</target>
+      </trans-unit>
+      <trans-unit id="7f8514247dd44638fde6f62877f0dd84a3981d0c" datatype="html">
+        <source>Example: pa$$word</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/servers/new/new.component.ts</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <target>Ejemplo: PA $ Word</target>
+      </trans-unit>
+      <trans-unit id="fbb7c8f33590748d079903da7849aa3c978d83af" datatype="html">
+        <source>Edit server</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/servers/yaml/yaml.component.ts</context>
+          <context context-type="linenumber">56,62</context>
+        </context-group>
+        <target>Editar servidor</target>
+      </trans-unit>
+      <trans-unit id="1205753efe53a711e50a2a389b3a45f5b4593a96" datatype="html">
+        <source>Work Detail</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/detail/detail.component.ts</context>
+          <context context-type="linenumber">38,46</context>
+        </context-group>
+        <target>Detalle de trabajo</target>
+      </trans-unit>
+      <trans-unit id="45cc8ca94b5a50842a9a8ef804a5ab089a38ae5c" datatype="html">
+        <source>ID</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/detail/detail.component.ts</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/list/list.component.ts</context>
+          <context context-type="linenumber">99</context>
+        </context-group>
+        <target>IDENTIFICACIÓN</target>
+      </trans-unit>
+      <trans-unit id="3e6acd589d8b82cafd8546409da0a36469d297a0" datatype="html">
+        <source>Start Date</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/detail/detail.component.ts</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/list/list.component.ts</context>
+          <context context-type="linenumber">99</context>
+        </context-group>
+        <target>Fecha de inicio</target>
+      </trans-unit>
+      <trans-unit id="b21dfba3556fbfca3dc3d507609fe486ccab79eb" datatype="html">
+        <source>Running Date</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/detail/detail.component.ts</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+        <target>Fecha de ejecución</target>
+      </trans-unit>
+      <trans-unit id="a96b9b54210cc1000acee2f58109202929f9f966" datatype="html">
+        <source>Terminated Date</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/detail/detail.component.ts</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+        <target>Fecha finalizada</target>
+      </trans-unit>
+      <trans-unit id="694054a3d02cd989c5dca6e04aa23461ddc63b96" datatype="html">
+        <source>Agent</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/detail/detail.component.ts</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+        <target>Agente</target>
+      </trans-unit>
+      <trans-unit id="33b36efad3f4c102ab5b5290e97190dcccca08d8" datatype="html">
+        <source>Params</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/detail/detail.component.ts</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+        <target>Parámetros</target>
+      </trans-unit>
+      <trans-unit id="847acb9977d9ee0c7dc971c26743d7220945186c" datatype="html">
+        <source>Jobs List</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/list/list.component.ts</context>
+          <context context-type="linenumber">37,50</context>
+        </context-group>
+        <target>Lista de trabajos</target>
+      </trans-unit>
+      <trans-unit id="37856ec84beda5588871c5d232e34e4fdd6fdf88" datatype="html">
+        <source>New Job</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/list/list.component.ts</context>
+          <context context-type="linenumber">65,72</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/new/new.component.ts</context>
+          <context context-type="linenumber">32,38</context>
+        </context-group>
+        <target>Nuevo trabajo</target>
+      </trans-unit>
+      <trans-unit id="edc80b70b8c79013802aec4a0d65e9342d482ca6" datatype="html">
+        <source>Agent ID</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/list/list.component.ts</context>
+          <context context-type="linenumber">99</context>
+        </context-group>
+        <target>ID de agente</target>
+      </trans-unit>
+      <trans-unit id="e9316e8563d9d5d3e7836cc6a3669e32ad3a84de" datatype="html">
+        <source>Work Logs</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/logs/log.component.ts</context>
+          <context context-type="linenumber">32,42</context>
+        </context-group>
+        <target>Registros de trabajo</target>
+      </trans-unit>
+      <trans-unit id="94133d96456475d05fcfd1f680c6dbfd66448a83" datatype="html">
+        <source>Job name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/new/new.component.ts</context>
+          <context context-type="linenumber">73,81</context>
+        </context-group>
+        <target>Nombre del trabajo</target>
+      </trans-unit>
+      <trans-unit id="b737777085cdc8e253efe8c6642cd174b09f4fbe" datatype="html">
+        <source>Workspace</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/tabs/tabs.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <target>Espacio de trabajo</target>
+      </trans-unit>
+      <trans-unit id="af6dbbdca3f0348a24213c4fce16c2fbe65c1eec" datatype="html">
+        <source>Work Workspace</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/workspace/workspace.component.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <target>Espacio de trabajo</target>
+      </trans-unit>
+      <trans-unit id="d40a94260595c7aedc66df6aba60da8402868c20" datatype="html">
+        <source>Download workspace Zip</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/workspace/workspace.component.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <target>Descargar Workspace Zip</target>
+      </trans-unit>
+      <trans-unit id="dc75033a5238fdc4f462212c847a45ba8018a3fd" datatype="html">
+        <source>Download</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/workspace/workspace.component.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <target>Descargar</target>
+      </trans-unit>
+      <trans-unit id="7f50373be4c43f3cabb93093f9639644f42db322" datatype="html">
+        <source>Work Yaml</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/yaml/yaml.component.ts</context>
+          <context context-type="linenumber">29,40</context>
+        </context-group>
+        <target>Trabajar yaml</target>
+      </trans-unit>
+      <trans-unit id="ac5ba7144f39f267d6f75dd77d516e6e78429764" datatype="html">
+        <source>Edit Job</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/yaml/yaml.component.ts</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+        <target>Editar trabajo</target>
+      </trans-unit>
+      <trans-unit id="6192828540618585338" datatype="html">
+        <source>Servers</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/sidebar/menu-items.ts</context>
+          <context context-type="linenumber">14,15</context>
+        </context-group>
+        <target>Servidores</target>
+      </trans-unit>
+      <trans-unit id="6729916752786542046" datatype="html">
+        <source>Agents</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/sidebar/menu-items.ts</context>
+          <context context-type="linenumber">22,23</context>
+        </context-group>
+        <target>Agentes</target>
+      </trans-unit>
+      <trans-unit id="3305829793924000785" datatype="html">
+        <source>Repositories</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/sidebar/menu-items.ts</context>
+          <context context-type="linenumber">30,31</context>
+        </context-group>
+        <target>Repositorios</target>
+      </trans-unit>
+      <trans-unit id="7931459398844196641" datatype="html">
+        <source>Crons</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/sidebar/menu-items.ts</context>
+          <context context-type="linenumber">38,39</context>
+        </context-group>
+        <target>Crons</target>
+      </trans-unit>
+      <trans-unit id="3229595422546554334" datatype="html">
+        <source>Jobs</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/sidebar/menu-items.ts</context>
+          <context context-type="linenumber">46,47</context>
+        </context-group>
+        <target>Trabajos</target>
+      </trans-unit>
+      <trans-unit id="1448192053579975106" datatype="html">
+        <source>Configs</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/sidebar/menu-items.ts</context>
+          <context context-type="linenumber">54,55</context>
+        </context-group>
+        <target>Configuraciones</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

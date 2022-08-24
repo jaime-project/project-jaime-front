@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-12 m-t-30">
-    <h4 class="m-b-0"><b>Jobs List</b></h4>
+    <h4 class="m-b-0"><b i18n>Jobs List</b></h4>
     <p class="text-muted m-t-0 font-12"></p>
   </div>
 </div>
@@ -10,10 +10,10 @@
     <div class="card-body">
       <div class="row">
         <div class="col-12 m-b-30">
-          <button class="btn btn-success" routerLink="/works/new" style="margin-right: 2%;">New Job</button>
+          <button class="btn btn-success" routerLink="/works/new" style="margin-right: 2%;" i18n>New Job</button>
 
           <div ngbDropdown class="d-inline-block">
-            <button class="btn btn-danger" id="dropdownBasic1" ngbDropdownToggle style="margin-right: 2%;">Delete by
+            <button class="btn btn-danger" id="dropdownBasic1" ngbDropdownToggle style="margin-right: 2%;" i18n>Delete by
               Status</button>
             <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
               <button ngbDropdownItem (click)="deleteByStatus(s)" *ngFor="let s of worksStatus">{{s}}</button>
@@ -28,14 +28,14 @@
             <thead>
               <tr>
                 <th scope="col"></th>
-                <th scope="col">Name</th>
-                <th scope="col">Status</th>
-                <th scope="col">ID</th>
-                <th scope="col">Agent ID</th>
-                <th scope="col">Agent Type</th>
-                <th scope="col">Module</th>
-                <th scope="col">Start Date</th>
-                <th scope="col">Actions</th>
+                <th scope="col" i18n>Name</th>
+                <th scope="col" i18n>Status</th>
+                <th scope="col" i18n>ID</th>
+                <th scope="col" i18n>Agent ID</th>
+                <th scope="col" i18n>Agent Type</th>
+                <th scope="col" i18n>Module</th>
+                <th scope="col" i18n>Start Date</th>
+                <th scope="col" i18n>Actions</th>
               </tr>
             </thead>
             <tbody>
