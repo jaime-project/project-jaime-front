@@ -17,9 +17,7 @@ import { Approutes } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FullComponent } from './layouts/full/full.component';
 import { AppConfigService } from './services/AppConfigService';
-import { BreadcrumbComponent } from './shared/breadcrumb/breadcrumb.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
-import { SpinnerComponent } from './shared/spinner.component';
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -31,17 +29,15 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 
 const appInitializerFn = (appConfig: AppConfigService) => {
   return () => {
-      return appConfig.loadAppConfig();
+    return appConfig.loadAppConfig();
   }
 };
 
 @NgModule({
   declarations: [
     AppComponent,
-    SpinnerComponent,
     FullComponent,
-    SidebarComponent,
-    BreadcrumbComponent
+    SidebarComponent
   ],
   imports: [
     CommonModule,

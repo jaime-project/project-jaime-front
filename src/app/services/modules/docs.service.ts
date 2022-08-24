@@ -2,7 +2,6 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 import { AppConfigService } from '../AppConfigService';
 
@@ -78,9 +77,10 @@ export class DocsService {
   }
 
   httpError(error: HttpErrorResponse) {
+
     Swal.fire({
       title: 'Service ERROR',
-      text: error.message,
+      text: error.error.response,
       icon: 'error',
       confirmButtonColor: '#05b281'
     })
