@@ -235,13 +235,6 @@
           <context context-type="linenumber">107,115</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="1737753151350322492" datatype="html">
-        <source><x id="PH" equiv-text="this.title"/></source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/app.component.ts</context>
-          <context context-type="linenumber">15</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="7a88c8744689d43a4c557ecc35564533890d5728" datatype="html">
         <source>Agent Detail</source>
         <context-group purpose="location">
@@ -277,7 +270,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
-          <context context-type="linenumber">64,73</context>
+          <context context-type="linenumber">64,72</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/works/detail/detail.component.ts</context>
@@ -509,11 +502,11 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
-          <context context-type="linenumber">73</context>
+          <context context-type="linenumber">77</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
-          <context context-type="linenumber">73</context>
+          <context context-type="linenumber">77</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/servers/detail/detail.component.ts</context>
@@ -595,7 +588,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
-          <context context-type="linenumber">73</context>
+          <context context-type="linenumber">77</context>
         </context-group>
       </trans-unit>
       <trans-unit id="b5b9688af12105a0acafc902138dc223dfb90ce0" datatype="html">
@@ -1087,7 +1080,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
-          <context context-type="linenumber">73</context>
+          <context context-type="linenumber">77</context>
         </context-group>
       </trans-unit>
       <trans-unit id="766c66ad5cc981c531aaf3fe3a2a7a346ddc8d83" datatype="html">
@@ -1098,7 +1091,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
-          <context context-type="linenumber">73</context>
+          <context context-type="linenumber">77</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e08a77594f3d89311cdf6da5090044270909c194" datatype="html">
@@ -1109,7 +1102,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
-          <context context-type="linenumber">73</context>
+          <context context-type="linenumber">77</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/servers/detail/detail.component.ts</context>
@@ -1128,7 +1121,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
-          <context context-type="linenumber">73</context>
+          <context context-type="linenumber">77</context>
         </context-group>
       </trans-unit>
       <trans-unit id="b6c5c637778eb83fee44dbcc3ba75b87d02ffafb" datatype="html">
@@ -1149,56 +1142,67 @@
         <source>New Repo</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
-          <context context-type="linenumber">30,43</context>
+          <context context-type="linenumber">31,41</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f7e9e140e614b0b5e42d4f5b023b1c6add1d405a" datatype="html">
         <source>Example: ocp-migrations</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
-          <context context-type="linenumber">73</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a62768d0d4edab4f66d51b748edebf45eddc74f3" datatype="html">
+        <source>Create Repo Local</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
+          <context context-type="linenumber">77</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2b33f6601cce9b0211a965c7499b08d0a5145b01" datatype="html">
         <source>Example: https://github.com/brianwolf/repo-jaime-modules.git</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
-          <context context-type="linenumber">73</context>
+          <context context-type="linenumber">77</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6c8bbf9809a4d837f2cc053496ba3bcbf2e82f50" datatype="html">
         <source>Example: master</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
-          <context context-type="linenumber">73</context>
+          <context context-type="linenumber">77</context>
         </context-group>
       </trans-unit>
       <trans-unit id="421cb0df25ed8a797151feab6012a1c882354f30" datatype="html">
         <source>Example: /ocp-migrations</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
-          <context context-type="linenumber">73</context>
+          <context context-type="linenumber">77</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ab3d980b28ee9638a744509bc3badb1316fdbb41" datatype="html">
         <source>Example: usuario</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
-          <context context-type="linenumber">73</context>
+          <context context-type="linenumber">77</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2749ef841566ade58002da8a632cf86b9e08ea63" datatype="html">
         <source>Example: *******</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
-          <context context-type="linenumber">73</context>
+          <context context-type="linenumber">77</context>
         </context-group>
       </trans-unit>
       <trans-unit id="acd72e6ea815c817313caa98eba21cc1a38ae52a" datatype="html">
         <source>Create Repo Git</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
-          <context context-type="linenumber">73</context>
+          <context context-type="linenumber">77</context>
         </context-group>
       </trans-unit>
       <trans-unit id="92d230a32879ebc8b34bc1e3be9ee2fac8f7c2a7" datatype="html">
