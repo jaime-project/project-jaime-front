@@ -36,7 +36,7 @@
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-day-view.ts</context>
           <context context-type="linenumber">31</context>
         </context-group>
-        <target>Select month</target>
+        <target>Selecione Mes</target>
       </trans-unit>
       <trans-unit id="ngb.datepicker.select-year" datatype="html">
         <source>Select year</source>
@@ -48,7 +48,7 @@
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-day-view.ts</context>
           <context context-type="linenumber">31</context>
         </context-group>
-        <target>Select year</target>
+        <target>Selecione año</target>
       </trans-unit>
       <trans-unit id="ngb.datepicker.previous-month" datatype="html">
         <source>Previous month</source>
@@ -60,7 +60,7 @@
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-month.ts</context>
           <context context-type="linenumber">62,67</context>
         </context-group>
-        <target>Previous month</target>
+        <target>Mes anterior</target>
       </trans-unit>
       <trans-unit id="ngb.datepicker.next-month" datatype="html">
         <source>Next month</source>
@@ -72,7 +72,7 @@
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-month.ts</context>
           <context context-type="linenumber">72</context>
         </context-group>
-        <target>Next month</target>
+        <target>Mes siguiente</target>
       </trans-unit>
       <trans-unit id="ngb.pagination.first" datatype="html">
         <source>««</source>
@@ -112,7 +112,7 @@
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/pagination/pagination.ts</context>
           <context context-type="linenumber">174,176</context>
         </context-group>
-        <target>First</target>
+        <target>Primero</target>
       </trans-unit>
       <trans-unit id="ngb.pagination.previous-aria" datatype="html">
         <source>Previous</source>
@@ -120,7 +120,7 @@
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/pagination/pagination.ts</context>
           <context context-type="linenumber">187,189</context>
         </context-group>
-        <target>Previous</target>
+        <target>Anterior</target>
       </trans-unit>
       <trans-unit id="ngb.pagination.next-aria" datatype="html">
         <source>Next</source>
@@ -128,7 +128,7 @@
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/pagination/pagination.ts</context>
           <context context-type="linenumber">197,205</context>
         </context-group>
-        <target>Next</target>
+        <target>Siguiente</target>
       </trans-unit>
       <trans-unit id="ngb.pagination.last-aria" datatype="html">
         <source>Last</source>
@@ -136,7 +136,7 @@
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/pagination/pagination.ts</context>
           <context context-type="linenumber">217,224</context>
         </context-group>
-        <target>Last</target>
+        <target>Ultimo</target>
       </trans-unit>
       <trans-unit id="ngb.progressbar.value" datatype="html">
         <source>
@@ -162,7 +162,7 @@
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
           <context context-type="linenumber">184,186</context>
         </context-group>
-        <target>Hours</target>
+        <target>Horas</target>
       </trans-unit>
       <trans-unit id="ngb.timepicker.MM" datatype="html">
         <source>MM</source>
@@ -178,7 +178,7 @@
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
           <context context-type="linenumber">209,216</context>
         </context-group>
-        <target>Minutes</target>
+        <target>Minutos</target>
       </trans-unit>
       <trans-unit id="ngb.timepicker.increment-hours" datatype="html">
         <source>Increment hours</source>
@@ -186,7 +186,7 @@
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
           <context context-type="linenumber">232,236</context>
         </context-group>
-        <target>Increment hours</target>
+        <target>Incremento de Horas</target>
       </trans-unit>
       <trans-unit id="ngb.timepicker.decrement-hours" datatype="html">
         <source>Decrement hours</source>
@@ -194,7 +194,7 @@
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
           <context context-type="linenumber">252,260</context>
         </context-group>
-        <target>Decrement hours</target>
+        <target>Restar Horas</target>
       </trans-unit>
       <trans-unit id="ngb.timepicker.increment-minutes" datatype="html">
         <source>Increment minutes</source>
