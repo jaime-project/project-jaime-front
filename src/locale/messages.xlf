@@ -270,7 +270,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
-          <context context-type="linenumber">64,72</context>
+          <context context-type="linenumber">64,71</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/works/detail/detail.component.ts</context>
@@ -305,6 +305,24 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/agents/list/list.component.ts</context>
           <context context-type="linenumber">37,48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8606840803414865137" datatype="html">
+        <source>Delete agent</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/agents/list/list.component.ts</context>
+          <context context-type="linenumber">44,45</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/modules/list/list.component.ts</context>
+          <context context-type="linenumber">48,49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3464234677397423155" datatype="html">
+        <source>Delete agent with id <x id="PH" equiv-text="id"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/agents/list/list.component.ts</context>
+          <context context-type="linenumber">45</context>
         </context-group>
       </trans-unit>
       <trans-unit id="fe22ca53e651df951dac25b67c17894b0980f767" datatype="html">
@@ -486,7 +504,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/crons/list/list.component.ts</context>
-          <context context-type="linenumber">88,99</context>
+          <context context-type="linenumber">86,99</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/crons/new/new.component.ts</context>
@@ -569,11 +587,36 @@
           <context context-type="linenumber">37,47</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="6515813282872727426" datatype="html">
+        <source>Login success</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/clusters/list/list.component.ts</context>
+          <context context-type="linenumber">51,52</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/servers/list/list.component.ts</context>
+          <context context-type="linenumber">51,52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2436993148638997799" datatype="html">
+        <source>Login failure</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/clusters/list/list.component.ts</context>
+          <context context-type="linenumber">58,59</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="2dd4fa24fa2816f2ce75bf382eaaee0cce5e3e6c" datatype="html">
         <source>New cluster</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/clusters/list/list.component.ts</context>
           <context context-type="linenumber">61,73</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4698088121507632206" datatype="html">
+        <source>Delete cluster with name <x id="PH" equiv-text="name"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/clusters/list/list.component.ts</context>
+          <context context-type="linenumber">71</context>
         </context-group>
       </trans-unit>
       <trans-unit id="801b98c6f02fe3b32f6afa3ee854c99ed83474e6" datatype="html">
@@ -596,6 +639,17 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/clusters/new/new.component.ts</context>
           <context context-type="linenumber">30,40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4332684624724875051" datatype="html">
+        <source>New Server created</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/clusters/new/new.component.ts</context>
+          <context context-type="linenumber">39,40</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/servers/new/new.component.ts</context>
+          <context context-type="linenumber">38,39</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1708386150823244af585e2e4f917d30aa71cb55" datatype="html">
@@ -627,14 +681,28 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/servers/yaml/yaml.component.ts</context>
-          <context context-type="linenumber">32,45</context>
+          <context context-type="linenumber">32,44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6007101460422699854" datatype="html">
+        <source>Update cluster</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/clusters/yaml/yaml.component.ts</context>
+          <context context-type="linenumber">44,45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="976372066134513356" datatype="html">
+        <source>Update cluster with name <x id="PH" equiv-text="this.cluster.name"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/clusters/yaml/yaml.component.ts</context>
+          <context context-type="linenumber">45</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e5452139bd45f5e4bbb0a4b16f7f5b84a3eba6ee" datatype="html">
         <source>Edit cluster</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/clusters/yaml/yaml.component.ts</context>
-          <context context-type="linenumber">55,62</context>
+          <context context-type="linenumber">54,62</context>
         </context-group>
       </trans-unit>
       <trans-unit id="047f50bc5b5d17b5bec0196355953e1a5c590ddb" datatype="html">
@@ -664,6 +732,13 @@
           <context context-type="linenumber">56</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="401976234963424828" datatype="html">
+        <source>Objects updating in Jaime</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/configs/objects/objects.component.ts</context>
+          <context context-type="linenumber">27,28</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="afdb601c16162f2c798b16a2920955f1cc6a20aa" datatype="html">
         <source>Objects</source>
         <context-group purpose="location">
@@ -677,6 +752,13 @@
       </trans-unit>
       <trans-unit id="667912906dde62d38433838ca41dad4557430184" datatype="html">
         <source>Update objects</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/configs/objects/objects.component.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="adf75cf747f9db41d169980ea90e69607f80c617" datatype="html">
+        <source> Override objects if exist </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/configs/objects/objects.component.ts</context>
           <context context-type="linenumber">35</context>
@@ -712,6 +794,13 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/configs/requirements/requirements.component.ts</context>
           <context context-type="linenumber">34,42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2426560784862009863" datatype="html">
+        <source>Requirements sended to install in Agents</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/configs/requirements/requirements.component.ts</context>
+          <context context-type="linenumber">34,35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="67b7ffa78bca499c8ed66be7fad673aa33bcc19b" datatype="html">
@@ -803,15 +892,61 @@
           <context context-type="linenumber">37,50</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="5710379916472124458" datatype="html">
+        <source>Delete cron</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/list/list.component.ts</context>
+          <context context-type="linenumber">50,51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3587017637905390484" datatype="html">
+        <source>Delete cron with id <x id="PH" equiv-text="id"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/list/list.component.ts</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="3ce89d3e01b55833a9f73f708eb079e7db15056f" datatype="html">
         <source>Delete by Status</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/crons/list/list.component.ts</context>
-          <context context-type="linenumber">66,73</context>
+          <context context-type="linenumber">65,73</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/works/list/list.component.ts</context>
-          <context context-type="linenumber">87,99</context>
+          <context context-type="linenumber">86,99</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3208548326026371817" datatype="html">
+        <source>Delete crons</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/list/list.component.ts</context>
+          <context context-type="linenumber">66,67</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6256426657889008312" datatype="html">
+        <source>Delete crons with status <x id="PH" equiv-text="status"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/list/list.component.ts</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7893242329213539447" datatype="html">
+        <source>Change status</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/list/list.component.ts</context>
+          <context context-type="linenumber">82,83</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/list/list.component.ts</context>
+          <context context-type="linenumber">82,83</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="621541724931708681" datatype="html">
+        <source>Change cron status with status <x id="PH" equiv-text="status"/>?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/list/list.component.ts</context>
+          <context context-type="linenumber">83</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8da9cc65d5966c420fda61d21220b3c1cd1a6867" datatype="html">
@@ -832,7 +967,33 @@
         <source>Ejemplo: * */2 * * *</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/crons/new/new.component.ts</context>
-          <context context-type="linenumber">91,99</context>
+          <context context-type="linenumber">91,98</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="825632698427482465" datatype="html">
+        <source>Success creation</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/new/new.component.ts</context>
+          <context context-type="linenumber">94,95</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/modules/new/new.component.ts</context>
+          <context context-type="linenumber">33,34</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/new/new.component.ts</context>
+          <context context-type="linenumber">86,87</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6359367572844690977" datatype="html">
+        <source>Generated id <x id="PH" equiv-text="result.id"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/new/new.component.ts</context>
+          <context context-type="linenumber">95</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/new/new.component.ts</context>
+          <context context-type="linenumber">87</context>
         </context-group>
       </trans-unit>
       <trans-unit id="084b654b5afbd67378cd45703bf10ffc2311e5a7" datatype="html">
@@ -958,7 +1119,21 @@
         <source>Cron Yaml</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/crons/yaml/yaml.component.ts</context>
-          <context context-type="linenumber">30,42</context>
+          <context context-type="linenumber">30,41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2936498069914608995" datatype="html">
+        <source>Update Cron</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/yaml/yaml.component.ts</context>
+          <context context-type="linenumber">38,39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3803213270954282847" datatype="html">
+        <source>Update cron with id <x id="PH" equiv-text="this.cronId"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/crons/yaml/yaml.component.ts</context>
+          <context context-type="linenumber">39</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7f9ac938ff04896248943ccbb8d97da71514969a" datatype="html">
@@ -979,11 +1154,25 @@
           <context context-type="linenumber">44</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="4465279882518142381" datatype="html">
+        <source>Update module</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/modules/code/code.component.ts</context>
+          <context context-type="linenumber">34,35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8564537392192040350" datatype="html">
+        <source>Update module with name <x id="PH" equiv-text="this.moduleName"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/modules/code/code.component.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="130f77919314bb957974d5d1e420029b39e01781" datatype="html">
         <source>Edit Code</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/modules/code/code.component.ts</context>
-          <context context-type="linenumber">52</context>
+          <context context-type="linenumber">51,52</context>
         </context-group>
       </trans-unit>
       <trans-unit id="93a04d1bb2f5a7f75fc8bdbef50f33f282fb3eef" datatype="html">
@@ -995,6 +1184,20 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/modules/new/new.component.ts</context>
           <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9121941612576385612" datatype="html">
+        <source>Update docs</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/modules/docs/docs.component.ts</context>
+          <context context-type="linenumber">35,36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2335147186191247289" datatype="html">
+        <source>Update docs with name <x id="PH" equiv-text="this.moduleName"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/modules/docs/docs.component.ts</context>
+          <context context-type="linenumber">36</context>
         </context-group>
       </trans-unit>
       <trans-unit id="77ff7b8375a8c14a5d675fe04cc01b71156e9c7f" datatype="html">
@@ -1011,6 +1214,13 @@
           <context context-type="linenumber">30,45</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="1111823820632956415" datatype="html">
+        <source>Delete agent with name <x id="PH" equiv-text="name"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/modules/list/list.component.ts</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="0fa7ffa44bda6fc5da500a857df8d20237fe0689" datatype="html">
         <source>New Module</source>
         <context-group purpose="location">
@@ -1023,6 +1233,13 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/modules/new/new.component.ts</context>
           <context context-type="linenumber">28,35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9048165826627444674" datatype="html">
+        <source>Generated module <x id="PH" equiv-text="this.name"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/modules/new/new.component.ts</context>
+          <context context-type="linenumber">34</context>
         </context-group>
       </trans-unit>
       <trans-unit id="d45c11866c67e78d71e491690f1b013a7af1b92e" datatype="html">
@@ -1131,11 +1348,53 @@
           <context context-type="linenumber">36,48</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="1748199119040751396" datatype="html">
+        <source>Delete repository</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/list/list.component.ts</context>
+          <context context-type="linenumber">49,50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1413171654608077896" datatype="html">
+        <source>Delete repository with name <x id="PH" equiv-text="name"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/list/list.component.ts</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="7c606c8c0767c05c893e91b16bdfe81528844c41" datatype="html">
         <source>New Repository</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/repos/list/list.component.ts</context>
-          <context context-type="linenumber">59,72</context>
+          <context context-type="linenumber">59,71</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4858534510221275739" datatype="html">
+        <source>Reload repository</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/list/list.component.ts</context>
+          <context context-type="linenumber">68,69</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9125880729288217450" datatype="html">
+        <source>Reload repository with name <x id="PH" equiv-text="name"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/list/list.component.ts</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="eadc17c3df80143992e2d9028dead3199ae6d79d" datatype="html">
+        <source>Local</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/list/list.component.ts</context>
+          <context context-type="linenumber">85</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e819bf7cf148fe817b24ecc922cb47b0b49f6e28" datatype="html">
+        <source>GIT</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/list/list.component.ts</context>
+          <context context-type="linenumber">85</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3d0e762468c5336ac9e7a60b1b76174a2106bae3" datatype="html">
@@ -1143,6 +1402,13 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
           <context context-type="linenumber">31,41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2358704537912578016" datatype="html">
+        <source>New repo created</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
+          <context context-type="linenumber">67,68</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f7e9e140e614b0b5e42d4f5b023b1c6add1d405a" datatype="html">
@@ -1244,11 +1510,25 @@
           <context context-type="linenumber">61,73</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="2094569723821630650" datatype="html">
+        <source>Delete server</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/servers/list/list.component.ts</context>
+          <context context-type="linenumber">70,71</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7824732014139616503" datatype="html">
+        <source>Delete server with name <x id="PH" equiv-text="name"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/servers/list/list.component.ts</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="2d6d4b7eef4983f5b695d322ea18dcb8ef541957" datatype="html">
         <source>New Server</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/servers/new/new.component.ts</context>
-          <context context-type="linenumber">30,41</context>
+          <context context-type="linenumber">30,40</context>
         </context-group>
       </trans-unit>
       <trans-unit id="bfc9cf4c238ddd3bc93af9d429c5ced77b1c93c0" datatype="html">
@@ -1286,11 +1566,25 @@
           <context context-type="linenumber">47</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="1310889641503072358" datatype="html">
+        <source>Update server</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/servers/yaml/yaml.component.ts</context>
+          <context context-type="linenumber">44,45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="216869073359175946" datatype="html">
+        <source>Update server with name <x id="PH" equiv-text="this.server.name"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/servers/yaml/yaml.component.ts</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="fbb7c8f33590748d079903da7849aa3c978d83af" datatype="html">
         <source>Edit server</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/servers/yaml/yaml.component.ts</context>
-          <context context-type="linenumber">56,62</context>
+          <context context-type="linenumber">55,62</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1205753efe53a711e50a2a389b3a45f5b4593a96" datatype="html">
@@ -1357,15 +1651,50 @@
           <context context-type="linenumber">37,50</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="1574802860024237408" datatype="html">
+        <source>Delete work</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/list/list.component.ts</context>
+          <context context-type="linenumber">50,51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4380654922843757247" datatype="html">
+        <source>Delete work with id <x id="PH" equiv-text="id"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/list/list.component.ts</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="37856ec84beda5588871c5d232e34e4fdd6fdf88" datatype="html">
         <source>New Job</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/works/list/list.component.ts</context>
-          <context context-type="linenumber">65,72</context>
+          <context context-type="linenumber">65,71</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/works/new/new.component.ts</context>
           <context context-type="linenumber">32,38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4819919592293350158" datatype="html">
+        <source>Delete works</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/list/list.component.ts</context>
+          <context context-type="linenumber">66,67</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7959137746908144657" datatype="html">
+        <source>Delete works with status <x id="PH" equiv-text="status"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/list/list.component.ts</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4298010509128719793" datatype="html">
+        <source>Change work status with status <x id="PH" equiv-text="status"/>?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/list/list.component.ts</context>
+          <context context-type="linenumber">83</context>
         </context-group>
       </trans-unit>
       <trans-unit id="edc80b70b8c79013802aec4a0d65e9342d482ca6" datatype="html">
@@ -1422,6 +1751,20 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/works/yaml/yaml.component.ts</context>
           <context context-type="linenumber">29,40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8091386433254543216" datatype="html">
+        <source>Update Job</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/yaml/yaml.component.ts</context>
+          <context context-type="linenumber">37,38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1230111941359979048" datatype="html">
+        <source>Update job with id <x id="PH" equiv-text="this.work_id"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/works/yaml/yaml.component.ts</context>
+          <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ac5ba7144f39f267d6f75dd77d516e6e78429764" datatype="html">
