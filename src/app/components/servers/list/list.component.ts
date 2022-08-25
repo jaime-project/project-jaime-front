@@ -48,7 +48,7 @@ export class ListServerComponent implements OnInit {
         this.testServerLoad = false
         if (data.success) {
           Swal.fire({
-            title: 'Login success',
+            title: $localize`Login success`,
             icon: 'success',
             confirmButtonColor: '#05b281',
           })
@@ -67,8 +67,8 @@ export class ListServerComponent implements OnInit {
   deleteServer(name: string) {
 
     Swal.fire({
-      title: 'Delete server',
-      text: 'Delete server with name "' + name + '"',
+      title: $localize`Delete server`,
+      text: $localize`Delete server with name ${name}`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',

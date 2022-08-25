@@ -41,8 +41,8 @@ export class ListAgentComponent implements OnInit {
   deleteAgent(id: string) {
 
     Swal.fire({
-      title: 'Delete agent',
-      text: 'Delete agent with name "' + id + '"',
+      title: $localize`Delete agent`,
+      text: $localize`Delete agent with id ${id}`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',

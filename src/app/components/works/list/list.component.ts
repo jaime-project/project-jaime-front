@@ -47,8 +47,8 @@ export class ListWorkComponent implements OnInit {
 
   deleteWork(id: string) {
     Swal.fire({
-      title: 'Delete work',
-      text: 'Delete work with id "' + id + '"',
+      title: $localize`Delete work`,
+      text: $localize`Delete work with id ${id}`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',
@@ -63,8 +63,8 @@ export class ListWorkComponent implements OnInit {
 
   deleteByStatus(status: string) {
     Swal.fire({
-      title: 'Delete works',
-      text: 'Delete works with status "' + status + '"',
+      title: $localize`Delete works`,
+      text: $localize`Delete works with status ${status}`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',
@@ -79,8 +79,8 @@ export class ListWorkComponent implements OnInit {
 
   changeStatus(id: string, status: string) {
     Swal.fire({
-      title: 'Change status',
-      text: `Change work status with status ${status}?`,
+      title: $localize`Change status`,
+      text: $localize`Change work status with status ${status}?`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',

@@ -41,8 +41,8 @@ export class YamlServerComponent implements OnInit {
   putServer(modifyYaml: string) {
 
     Swal.fire({
-      title: 'Update server',
-      text: 'Update server with name "' + this.server.name + '"',
+      title: $localize`Update server`,
+      text: $localize`Update server with name ${this.server.name}`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',

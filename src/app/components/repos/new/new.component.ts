@@ -13,6 +13,7 @@ export class NewRepoComponent implements OnInit {
 
   repoTypes: string[] = []
   selectedRepoType: string = ""
+  butonClicked: boolean = false
 
   repoLocalForm = new FormGroup({
     name: new FormControl(''),
@@ -58,14 +59,17 @@ export class NewRepoComponent implements OnInit {
       }
     }
 
+    this.butonClicked = true
+
     this.reposService.postRepos(repo)
       .subscribe(() => {
         Swal.fire({
-          title: 'New repo created',
+          title: $localize`New repo created`,
           icon: 'success',
-        }).then(() =>
+        }).then(() => {
+          this.butonClicked = false
           this.route.navigate(['repos'])
-        )
+        })
       })
   }
 

@@ -12,7 +12,7 @@ export class AppComponent implements AfterViewInit {
   isLoading = true;
 
   constructor(private tittleService: Title) {
-    this.tittleService.setTitle($localize`${this.title}`)
+    this.tittleService.setTitle(this.title)
   }
 
   ngAfterViewInit() {

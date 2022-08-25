@@ -628,7 +628,7 @@
         {
           "uuid": "fd30de10-7a6d-4c1d-bc5a-14d481310ec0",
           "body": "",
-          "latency": 0,
+          "latency": 3000,
           "statusCode": 201,
           "label": "",
           "headers": [

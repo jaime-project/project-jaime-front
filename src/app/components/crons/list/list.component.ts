@@ -47,8 +47,8 @@ export class ListCronComponent implements OnInit {
 
   deleteCron(id: string) {
     Swal.fire({
-      title: 'Delete cron',
-      text: 'Delete cron with id "' + id + '"',
+      title: $localize`Delete cron`,
+      text: $localize`Delete cron with id ${id}`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',
@@ -63,8 +63,8 @@ export class ListCronComponent implements OnInit {
 
   deleteByStatus(status: string) {
     Swal.fire({
-      title: 'Delete crons',
-      text: 'Delete crons with status "' + status + '"',
+      title: $localize`Delete crons`,
+      text: $localize`Delete crons with status ${status}`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',
@@ -79,8 +79,8 @@ export class ListCronComponent implements OnInit {
 
   changeStatus(id: string, status: string) {
     Swal.fire({
-      title: 'Change status',
-      text: `Change cron status with status ${status}?`,
+      title: $localize`Change status`,
+      text: $localize`Change cron status with status ${status}?`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',

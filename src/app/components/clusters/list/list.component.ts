@@ -48,14 +48,14 @@ export class ListClusterComponent implements OnInit {
         this.testServerLoad = false
         if (data.success) {
           Swal.fire({
-            title: 'Login success',
+            title: $localize`Login success`,
             icon: 'success',
             confirmButtonColor: '#05b281',
           })
         }
         else {
           Swal.fire({
-            title: 'Login failure',
+            title: $localize`Login failure`,
             text: data.text,
             icon: 'warning',
             confirmButtonColor: '#05b281',
@@ -67,8 +67,8 @@ export class ListClusterComponent implements OnInit {
   deleteServer(name: string) {
 
     Swal.fire({
-      title: 'Delete cluster',
-      text: 'Delete cluster with name "' + name + '"',
+      title: `Delete cluster`,
+      text: $localize`Delete cluster with name ${name}`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',

@@ -32,8 +32,8 @@ export class DetailDocsComponent implements OnInit {
   putDocs() {
 
     Swal.fire({
-      title: 'Update docs',
-      text: 'Update docs with name "' + this.moduleName + '"',
+      title: $localize`Update docs`,
+      text: $localize`Update docs with name ${this.moduleName}`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',

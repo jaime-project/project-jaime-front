@@ -83,8 +83,8 @@ export class NewWorkComponent implements OnInit {
     this.workService.postWork(finalYaml)
       .subscribe(result => {
         Swal.fire({
-          title: 'Success creation',
-          text: 'Generated id: "' + result.id + '"',
+          title: $localize`Success creation`,
+          text: $localize`Generated id ${result.id}`,
           icon: 'success',
           confirmButtonColor: '#05b281',
         }).then(() =>
