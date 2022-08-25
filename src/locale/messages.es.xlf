@@ -1136,7 +1136,7 @@
           <context context-type="sourcefile">src/app/components/modules/new/new.component.ts</context>
           <context context-type="linenumber">28,35</context>
         </context-group>
-        <target>Nueva</target>
+        <target>Nuevo</target>
       </trans-unit>
       <trans-unit id="d45c11866c67e78d71e491690f1b013a7af1b92e" datatype="html">
         <source>Module File Name</source>
@@ -1212,7 +1212,7 @@
           <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
           <context context-type="linenumber">73</context>
         </context-group>
-        <target>Sendero</target>
+        <target>Directorio</target>
       </trans-unit>
       <trans-unit id="e08a77594f3d89311cdf6da5090044270909c194" datatype="html">
         <source>User</source>
@@ -1232,7 +1232,7 @@
           <context context-type="sourcefile">src/app/components/servers/new/new.component.ts</context>
           <context context-type="linenumber">47</context>
         </context-group>
-        <target>Usuaria</target>
+        <target>Usuario</target>
       </trans-unit>
       <trans-unit id="8272de798dd803f04d5e5fcbe1013bc6267aa010" datatype="html">
         <source>Pass</source>
@@ -1300,7 +1300,7 @@
           <context context-type="sourcefile">src/app/components/repos/new/new.component.ts</context>
           <context context-type="linenumber">73</context>
         </context-group>
-        <target>Ejemplo: /OCP-Migraciones</target>
+        <target>Ejemplo: /ocp-migrations</target>
       </trans-unit>
       <trans-unit id="ab3d980b28ee9638a744509bc3badb1316fdbb41" datatype="html">
         <source>Example: usuario</source>
@@ -1408,7 +1408,7 @@
           <context context-type="sourcefile">src/app/components/servers/new/new.component.ts</context>
           <context context-type="linenumber">47</context>
         </context-group>
-        <target>Ejemplo: administrador</target>
+        <target>Ejemplo: admin</target>
       </trans-unit>
       <trans-unit id="7f8514247dd44638fde6f62877f0dd84a3981d0c" datatype="html">
         <source>Example: pa$$word</source>
@@ -1416,7 +1416,7 @@
           <context context-type="sourcefile">src/app/components/servers/new/new.component.ts</context>
           <context context-type="linenumber">47</context>
         </context-group>
-        <target>Ejemplo: PA $ Word</target>
+        <target>Ejemplo: pa$word</target>
       </trans-unit>
       <trans-unit id="fbb7c8f33590748d079903da7849aa3c978d83af" datatype="html">
         <source>Edit server</source>
@@ -1444,7 +1444,7 @@
           <context context-type="sourcefile">src/app/components/works/list/list.component.ts</context>
           <context context-type="linenumber">99</context>
         </context-group>
-        <target>IDENTIFICACIÓN</target>
+        <target>ID</target>
       </trans-unit>
       <trans-unit id="3e6acd589d8b82cafd8546409da0a36469d297a0" datatype="html">
         <source>Start Date</source>
