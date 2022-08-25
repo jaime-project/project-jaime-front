@@ -35,8 +35,8 @@ export class YamlCronComponent implements OnInit {
   putCron(modifyYaml: string) {
 
     Swal.fire({
-      title: 'Update Cron',
-      text: 'Update cron with id "' + this.cronId + '"',
+      title: $localize`Update Cron`,
+      text: $localize`Update cron with id ${this.cronId}`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',

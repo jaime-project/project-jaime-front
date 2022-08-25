@@ -24,7 +24,7 @@ export class ObjectsComponent implements OnInit {
     this.configService.postObjects(this.objectsText, this.replace)
       .subscribe(() => {
         Swal.fire({
-          title: 'Objects updating in Jaime',
+          title: $localize`Objects updating in Jaime`,
           icon: 'success',
         }).then(() =>
           this.butonClicked = false

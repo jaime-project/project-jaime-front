@@ -64,7 +64,7 @@ export class NewRepoComponent implements OnInit {
     this.reposService.postRepos(repo)
       .subscribe(() => {
         Swal.fire({
-          title: 'New repo created',
+          title: $localize`New repo created`,
           icon: 'success',
         }).then(() => {
           this.butonClicked = false

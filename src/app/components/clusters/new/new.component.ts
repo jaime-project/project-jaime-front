@@ -36,7 +36,7 @@ export class NewClusterComponent implements OnInit {
     this.clustersService.postCluster(this.clusterForm.value)
       .subscribe(() => {
         Swal.fire({
-          title: 'New Server created',
+          title: $localize`New Server created`,
           icon: 'success',
         }).then(() =>
           this.route.navigate(['clusters'])

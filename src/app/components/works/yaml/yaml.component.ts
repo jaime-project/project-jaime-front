@@ -34,8 +34,8 @@ export class YamlWorkComponent implements OnInit {
   putWork(modifyYaml: string) {
 
     Swal.fire({
-      title: 'Update Job',
-      text: 'Update job with id "' + this.work_id + '"',
+      title: $localize`Update Job`,
+      text: $localize`Update job with id ${this.work_id}`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',

@@ -21,7 +21,7 @@ export class ListModuleComponent implements OnInit {
   ngOnInit(): void {
 
     this.loadStartData()
-    
+
     this.thread = interval(1000)
       .subscribe(() => {
         this.loadStartData()
@@ -46,8 +46,8 @@ export class ListModuleComponent implements OnInit {
   deleteRepo(name: string) {
 
     Swal.fire({
-      title: 'Delete repository',
-      text: 'Delete repository with name "' + name + '"',
+      title: $localize`Delete repository`,
+      text: $localize`Delete repository with name ${name}`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',
@@ -65,8 +65,8 @@ export class ListModuleComponent implements OnInit {
   reloadRepo(name: string) {
 
     Swal.fire({
-      title: 'Reload repository',
-      text: 'Reload repository with name "' + name + '"',
+      title: $localize`Reload repository`,
+      text: $localize`Reload repository with name ${name}`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',

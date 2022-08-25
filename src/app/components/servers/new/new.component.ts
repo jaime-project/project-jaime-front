@@ -35,7 +35,7 @@ export class NewServerComponent implements OnInit {
     this.serversService.postServer(this.serverForm.value)
       .subscribe(() => {
         Swal.fire({
-          title: 'New Server created',
+          title: $localize`New Server created`,
           icon: 'success',
         }).then(() =>
           this.route.navigate(['servers'])
