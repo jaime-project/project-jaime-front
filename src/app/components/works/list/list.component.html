@@ -13,7 +13,8 @@
           <button class="btn btn-success" routerLink="/works/new" style="margin-right: 2%;" i18n>New Job</button>
 
           <div ngbDropdown class="d-inline-block">
-            <button class="btn btn-danger" id="dropdownBasic1" ngbDropdownToggle style="margin-right: 2%;" i18n>Delete by
+            <button class="btn btn-danger" id="dropdownBasic1" ngbDropdownToggle style="margin-right: 2%;" i18n>Delete
+              by
               Status</button>
             <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
               <button ngbDropdownItem (click)="deleteByStatus(s)" *ngFor="let s of worksStatus">{{s}}</button>
@@ -28,14 +29,17 @@
             <thead>
               <tr>
                 <th scope="col"></th>
-                <th scope="col" i18n>Name</th>
-                <th scope="col" i18n>Status</th>
-                <th scope="col" i18n>ID</th>
-                <th scope="col" i18n>Agent ID</th>
-                <th scope="col" i18n>Agent Type</th>
-                <th scope="col" i18n>Module</th>
-                <th scope="col" i18n>Start Date</th>
-                <th scope="col" i18n>Actions</th>
+                <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('name')">Name</button></th>
+                <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('status')">Status</button></th>
+                <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('id')">ID</button></th>
+                <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('agentid')">Agent ID</button>
+                </th>
+                <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('agenttype')">Agent
+                    Type</button></th>
+                <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('module')">Module</button></th>
+                <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('start')">Start Date</button>
+                </th>
+                <th scope="col" i18n></th>
               </tr>
             </thead>
             <tbody>

@@ -12,31 +12,61 @@ import Swal from 'sweetalert2';
 })
 export class ListServerComponent implements OnInit {
 
+  subscription: Subscription | null = null
+
   listServersShorts: ServerShort[] = []
   testServerLoad: boolean = false
 
   constructor(private serversService: ServerService, private route: Router) { }
 
-  thread: Subscription | null = null
+  orderBy: string = 'host'
+  reverse: boolean = false
+
+  orderFunction(): ServerShort[] {
+
+    let list: ServerShort[] = this.listServersShorts
+
+    switch (this.orderBy.toLowerCase()) {
+      case 'host':
+        list = this.listServersShorts.sort((a, b) => a.host.localeCompare(b.host))
+      case 'port':
+        list = this.listServersShorts.sort((a, b) => a.port.localeCompare(b.port))
+      case 'name':
+        list = this.listServersShorts.sort((a, b) => a.name.localeCompare(b.name))
+    }
+
+    if (this.reverse) {
+      list = list.reverse()
+    }
+
+    return list
+  }
+
+  changeOrder(order: string) {
+    this.reverse = !this.reverse
+    this.orderBy = order.toLowerCase()
+  }
+
 
   ngOnInit(): void {
 
     this.loadStartData()
 
-    this.thread = interval(1000)
+    this.subscription = interval(1000)
       .subscribe(() => {
         this.loadStartData()
       });
   }
 
   ngOnDestroy(): void {
-    this.thread?.unsubscribe()
+    this.subscription?.unsubscribe()
   }
 
   loadStartData() {
     this.serversService.listServer()
       .subscribe(data => {
-        this.listServersShorts = data.sort().reverse();
+        this.listServersShorts = data
+        this.listServersShorts = this.orderFunction()
       })
   }
 

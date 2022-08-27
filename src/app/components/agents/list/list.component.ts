@@ -17,6 +17,34 @@ export class ListAgentComponent implements OnInit {
 
   constructor(private agentService: AgentService) { }
 
+  orderBy: string = 'host'
+  reverse: boolean = false
+
+  orderFunction(): AgentShort[] {
+
+    let list: AgentShort[] = []
+
+    switch (this.orderBy.toLowerCase()) {
+      case 'host':
+        list = this.agents.sort((a, b) => a.host.localeCompare(b.host))
+      case 'port':
+        list = this.agents.sort((a, b) => a.port.localeCompare(b.port))
+      case 'type':
+        list = this.agents.sort((a, b) => a.type.localeCompare(b.type))
+    }
+
+    if (this.reverse) {
+      list = list.reverse()
+    }
+
+    return list
+  }
+
+  changeOrder(order: string) {
+    this.reverse = !this.reverse
+    this.orderBy = order.toLowerCase()
+  }
+
   ngOnInit(): void {
 
     this.loadStartData()
@@ -35,6 +63,7 @@ export class ListAgentComponent implements OnInit {
     this.agentService.getAgentsAll()
       .subscribe(data => {
         this.agents = data
+        this.agents = this.orderFunction();
       })
   }
 

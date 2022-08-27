@@ -19,6 +19,36 @@ export class ListCronComponent implements OnInit {
 
   constructor(private cronService: CronService) { }
 
+  orderBy: string = 'name'
+  reverse: boolean = false
+
+  orderFunction(): CronShort[] {
+
+    let list: CronShort[] = this.cronsShort
+
+    switch (this.orderBy.toLowerCase()) {
+      case 'name':
+        list = this.cronsShort.sort((a, b) => a.name.localeCompare(b.name))
+      case 'cron':
+        list = this.cronsShort.sort((a, b) => a.cron_expression.localeCompare(b.cron_expression))
+      case 'status':
+        list = this.cronsShort.sort((a, b) => a.status.localeCompare(b.status))
+      case 'creationdate':
+        list = this.cronsShort.sort((a, b) => a.creation_date.localeCompare(b.creation_date))
+    }
+
+    if (this.reverse) {
+      list = list.reverse()
+    }
+
+    return list
+  }
+
+  changeOrder(order: string) {
+    this.reverse = !this.reverse
+    this.orderBy = order.toLowerCase()
+  }
+
   ngOnInit(): void {
 
     this.loadStartData()
@@ -42,6 +72,7 @@ export class ListCronComponent implements OnInit {
     this.cronService.getCronsAllShort()
       .subscribe(data => {
         this.cronsShort = data;
+        this.cronsShort = this.orderFunction();
       })
   }
 

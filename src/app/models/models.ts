@@ -6,7 +6,6 @@ export interface Cluster {
     version: string;
 }
 
-
 export interface ClusterShort {
     name: string;
     url: string;

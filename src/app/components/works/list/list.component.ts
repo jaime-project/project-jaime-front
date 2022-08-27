@@ -19,6 +19,52 @@ export class ListWorkComponent implements OnInit {
 
   constructor(private workService: WorkService) { }
 
+  orderBy: string = 'name'
+  reverse: boolean = false
+
+  orderFunction(): WorkShort[] {
+
+    let list: WorkShort[] = this.worksShort
+
+    switch (this.orderBy.toLowerCase()) {
+      case 'name':
+        list = this.worksShort.sort((a, b) => a.name.localeCompare(b.name))
+      case 'status':
+        list = this.worksShort.sort((a, b) => a.status.localeCompare(b.status))
+      case 'id':
+        list = this.worksShort.sort((a, b) => a.id.localeCompare(b.id))
+      case 'agentid':
+        list = this.worksShort.sort((a, b) => {
+          if (a.agent_id) {
+            return a.agent_id.localeCompare(b.agent_id)
+          }
+          return 0
+        })
+      case 'agenttype':
+        list = this.worksShort.sort((a, b) => a.agent_type.localeCompare(b.agent_type))
+      case 'module':
+        list = this.worksShort.sort((a, b) => a.module_name.localeCompare(b.module_name))
+      case 'startdate':
+        list = this.worksShort.sort((a, b) => {
+          if (a.start_date && b.start_date) {
+            return a.start_date.toISOString().localeCompare(b.start_date.toISOString())
+          }
+          return 0
+        })
+    }
+
+    if (this.reverse) {
+      list = list.reverse()
+    }
+
+    return list
+  }
+
+  changeOrder(order: string) {
+    this.reverse = !this.reverse
+    this.orderBy = order.toLowerCase()
+  }
+
   ngOnInit(): void {
 
     this.loadStartData()
@@ -30,7 +76,7 @@ export class ListWorkComponent implements OnInit {
 
     this.workService.getWorkStatus()
       .subscribe(data => {
-        this.worksStatus = data.sort();
+        this.worksStatus = data;
       })
   }
 
@@ -42,6 +88,7 @@ export class ListWorkComponent implements OnInit {
     this.workService.getWorksAllShort()
       .subscribe(data => {
         this.worksShort = data;
+        this.worksShort = this.orderFunction();
       })
   }
 
@@ -80,7 +127,7 @@ export class ListWorkComponent implements OnInit {
   changeStatus(id: string, status: string) {
     Swal.fire({
       title: $localize`Change status`,
-      text: $localize`Change work status with status ${status}?`,
+      text: $localize`Change work with status ${status}?`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',
