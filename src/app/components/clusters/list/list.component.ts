@@ -12,31 +12,60 @@ import Swal from 'sweetalert2';
 })
 export class ListClusterComponent implements OnInit {
 
+  subscription: Subscription | null = null
+
   listClustersShorts: ClusterShort[] = []
   testServerLoad: boolean = false
 
   constructor(private clustersService: ClustersService, private route: Router) { }
 
-  thread: Subscription | null = null
+  orderBy: string = 'name'
+  reverse: boolean = false
+
+  orderFunction(): ClusterShort[] {
+
+    let list: ClusterShort[] = []
+
+    switch (this.orderBy.toLowerCase()) {
+      case 'name':
+        list = this.listClustersShorts.sort((a, b) => a.name.localeCompare(b.name))
+      case 'type':
+        list = this.listClustersShorts.sort((a, b) => a.type.localeCompare(b.type))
+      case 'url':
+        list = this.listClustersShorts.sort((a, b) => a.url.localeCompare(b.url))
+    }
+
+    if (this.reverse) {
+      list = list.reverse()
+    }
+
+    return list
+  }
+
+  changeOrder(order: string) {
+    this.reverse = !this.reverse
+    this.orderBy = order.toLowerCase()
+  }
 
   ngOnInit(): void {
 
     this.loadStartData()
 
-    this.thread = interval(1000)
+    this.subscription = interval(1000)
       .subscribe(() => {
         this.loadStartData()
       });
   }
 
   ngOnDestroy(): void {
-    this.thread?.unsubscribe()
+    this.subscription?.unsubscribe()
   }
 
   loadStartData() {
     this.clustersService.listCluster()
       .subscribe(data => {
-        this.listClustersShorts = data.sort().reverse();
+        this.listClustersShorts = data;
+        this.listClustersShorts = this.orderFunction();
       })
   }
 
@@ -82,5 +111,6 @@ export class ListClusterComponent implements OnInit {
       }
     })
   }
+
 
 }

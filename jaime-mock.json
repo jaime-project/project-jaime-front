@@ -203,7 +203,7 @@
       "responses": [
         {
           "uuid": "0857d68d-b3ff-40bc-8aa5-e71de1ac4ee6",
-          "body": "[\n  {\n    \"name\": \"edenor3\",\n    \"type\": \"OPENSHIFT\",\n    \"url\": \"https://console-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n  },\n  {\n    \"name\": \"edenor4\",\n    \"type\": \"OPENSHIFT\",\n    \"url\": \"https://asd-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n  },\n  {\n    \"name\": \"asd1\",\n    \"type\": \"OPENSHIFT\",\n    \"url\": \"https://asd-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n}\n]",
+          "body": "[\n  {\n  \"name\": \"zzz\",\n    \"type\": \"KUBERNETES\",\n    \"url\": \"https://konsole-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n  },\n  {\n    \"name\": \"qwe\",\n    \"type\": \"OPENSHIFT\",\n    \"url\": \"https://asd-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n  },\n  {\n    \"name\": \"asd1\",\n    \"type\": \"OPENSHIFT\",\n    \"url\": \"https://asd-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n}\n]",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -417,7 +417,7 @@
       "responses": [
         {
           "uuid": "6db2c96e-132d-4b52-b8cd-5fc964d4cc18",
-          "body": "[\n  {\n    \"id\": \"6132dd3f1cfb\",\n    \"host\": \"172.24.0.4\",\n    \"port\": \"80\",\n    \"type\": \"OPENSHIFT\"\n  }\n]",
+          "body": "[\n  {\n    \"id\": \"6132dd3f1cfb\",\n    \"host\": \"172.24.0.4\",\n    \"port\": \"80\",\n    \"type\": \"OPENSHIFT\"\n  },\n    {\n    \"id\": \"dd3f1cfb\",\n    \"host\": \"10.24.0.4\",\n    \"port\": \"8080\",\n    \"type\": \"KUBERNETES\"\n  },\n    {\n    \"id\": \"32dd3f1cfb\",\n    \"host\": \"30.24.0.4\",\n    \"port\": \"80\",\n    \"type\": \"OPENSHIFT\"\n  }\n]",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -477,7 +477,7 @@
       "responses": [
         {
           "uuid": "82c80ed1-091e-4be8-b2db-569bef6ee95f",
-          "body": "{\n    \"host\": \"172.24.0.4\",\n    \"id\": \"6132dd3f1cfb\",\n    \"port\": \"80\",\n    \"type\": \"OPENSHIFT\",\n  \"status\": \"READY\"\n}",
+          "body": "{\n    \"host\": \"172.24.0.4\",\n    \"id\": \"6132dd3f1cfb\",\n    \"port\": \"80\",\n    \"type\": \"OPENSHIFT\",\n    \"status\": \"READY\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
