@@ -11,14 +11,14 @@ import Swal from 'sweetalert2';
 })
 export class ListAgentComponent implements OnInit {
 
-  thread: Subscription | null = null
-
+  subscription: Subscription | null = null
   agents: AgentShort[] = []
 
   constructor(private agentService: AgentService) { }
 
   orderBy: string = 'host'
   reverse: boolean = false
+  filterBy: string = ''
 
   orderFunction(): AgentShort[] {
 
@@ -45,18 +45,31 @@ export class ListAgentComponent implements OnInit {
     this.orderBy = order.toLowerCase()
   }
 
+  filterFunction() {
+    if (!this.filterBy) {
+      return this.agents
+    }
+
+    return this.agents
+      .filter(a => {
+        return a.host.toLowerCase().includes(this.filterBy.toLowerCase())
+          || a.port.toLowerCase().includes(this.filterBy.toLowerCase())
+          || a.type.toLowerCase().includes(this.filterBy.toLowerCase())
+      })
+  }
+
   ngOnInit(): void {
 
     this.loadStartData()
 
-    this.thread = interval(1000)
+    this.subscription = interval(1000)
       .subscribe(() => {
         this.loadStartData()
       });
   }
 
   ngOnDestroy(): void {
-    this.thread?.unsubscribe()
+    this.subscription?.unsubscribe()
   }
 
   loadStartData() {
@@ -64,6 +77,7 @@ export class ListAgentComponent implements OnInit {
       .subscribe(data => {
         this.agents = data
         this.agents = this.orderFunction();
+        this.agents = this.filterFunction();
       })
   }
 

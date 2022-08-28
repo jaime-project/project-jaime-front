@@ -21,6 +21,7 @@ export class ListClusterComponent implements OnInit {
 
   orderBy: string = 'name'
   reverse: boolean = false
+  filterBy: string = ''
 
   orderFunction(): ClusterShort[] {
 
@@ -47,6 +48,19 @@ export class ListClusterComponent implements OnInit {
     this.orderBy = order.toLowerCase()
   }
 
+  filterFunction() {
+    if (!this.filterBy) {
+      return this.listClustersShorts
+    }
+
+    return this.listClustersShorts
+      .filter(a => {
+        return a.name.toLowerCase().includes(this.filterBy.toLowerCase())
+          || a.type.toLowerCase().includes(this.filterBy.toLowerCase())
+          || a.url.toLowerCase().includes(this.filterBy.toLowerCase())
+      })
+  }
+
   ngOnInit(): void {
 
     this.loadStartData()
@@ -66,6 +80,7 @@ export class ListClusterComponent implements OnInit {
       .subscribe(data => {
         this.listClustersShorts = data;
         this.listClustersShorts = this.orderFunction();
+        this.listClustersShorts = this.filterFunction();
       })
   }
 

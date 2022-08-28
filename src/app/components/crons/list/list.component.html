@@ -32,16 +32,19 @@
                 <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('cron')">Cron
                     expression</button></th>
                 <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('status')">Status</button></th>
-                <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('creationdate')">Creation Date</button>
+                <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('creationdate')">Creation
+                    Date</button>
                 </th>
-                <th scope="col" i18n></th>
+                <th scope="col"> <label i18n>Filter:</label> <input type="text" class="form-control"
+                    [(ngModel)]="filterBy">
+                </th>
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let cronShort of cronsShort">
                 <td>{{cronShort.name}}</td>
                 <td>
-                  <font size="+1.5">{{cronShort.cron_expression}}</font>
+                  {{cronShort.cron_expression}}
                 </td>
                 <td><b class="{{cronShort.status}}">{{cronShort.status}}</b></td>
                 <td>{{cronShort.creation_date | date: 'short'}}</td>
