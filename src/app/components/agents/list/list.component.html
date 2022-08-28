@@ -16,7 +16,9 @@
                 <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('host')">Host</button></th>
                 <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('port')">Port</button></th>
                 <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('type')">Type</button></th>
-                <th scope="col" i18n></th>
+                <th scope="col"> <label i18n>Filter:</label> <input type="text" class="form-control"
+                    [(ngModel)]="filterBy">
+                </th>
               </tr>
             </thead>
             <tbody>

@@ -5,7 +5,7 @@
   </div>
 </div>
 
-<div class="col-lg-8">
+<div class="col-lg-12">
   <div class="card m-t-30">
     <div class="card-body">
       <div class="row">
@@ -21,7 +21,8 @@
                 <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('name')">Name</button></th>
                 <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('type')">Type</button></th>
                 <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('url')">URL</button></th>
-                <th scope="col"></th>
+                <th scope="col"> <label i18n>Filter:</label> <input type="text" class="form-control"
+                    [(ngModel)]="filterBy">
               </tr>
             </thead>
             <tbody>

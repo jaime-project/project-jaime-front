@@ -21,6 +21,7 @@ export class ListWorkComponent implements OnInit {
 
   orderBy: string = 'name'
   reverse: boolean = false
+  filterBy: string = ''
 
   orderFunction(): WorkShort[] {
 
@@ -65,6 +66,22 @@ export class ListWorkComponent implements OnInit {
     this.orderBy = order.toLowerCase()
   }
 
+  filterFunction() {
+    if (!this.filterBy) {
+      return this.worksShort
+    }
+
+    return this.worksShort
+      .filter(a => {
+        return a.name.toLowerCase().includes(this.filterBy.toLowerCase())
+          || a.id.toLowerCase().includes(this.filterBy.toLowerCase())
+          || a.status.toLowerCase().includes(this.filterBy.toLowerCase())
+          || a.module_name.toLowerCase().includes(this.filterBy.toLowerCase())
+          || a.agent_id?.toLowerCase().includes(this.filterBy.toLowerCase())
+          || a.agent_type.toLowerCase().includes(this.filterBy.toLowerCase())
+      })
+  }
+
   ngOnInit(): void {
 
     this.loadStartData()
@@ -89,6 +106,7 @@ export class ListWorkComponent implements OnInit {
       .subscribe(data => {
         this.worksShort = data;
         this.worksShort = this.orderFunction();
+        this.worksShort = this.filterFunction();
       })
   }
 
