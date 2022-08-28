@@ -11,16 +11,15 @@ import Swal from 'sweetalert2';
 })
 export class ListCronComponent implements OnInit {
 
-  thread: Subscription | null = null
-
+  subscription: Subscription | null = null
   cronsShort: CronShort[] = []
-
   cronsStatus: string[] = []
 
   constructor(private cronService: CronService) { }
 
   orderBy: string = 'name'
   reverse: boolean = false
+  filterBy: string = ''
 
   orderFunction(): CronShort[] {
 
@@ -49,11 +48,29 @@ export class ListCronComponent implements OnInit {
     this.orderBy = order.toLowerCase()
   }
 
+  changeFilter(filter: string) {
+    this.filterBy = filter
+  }
+
+  filterFunction() {
+    if (!this.filterBy) {
+      return this.cronsShort
+    }
+
+    return this.cronsShort
+      .filter(a => {
+        return a.name.toLowerCase().includes(this.filterBy.toLowerCase())
+          || a.cron_expression.toLowerCase().includes(this.filterBy.toLowerCase())
+          || a.status.toLowerCase().includes(this.filterBy.toLowerCase())
+          || a.creation_date.toLowerCase().includes(this.filterBy.toLowerCase())
+      })
+  }
+
   ngOnInit(): void {
 
     this.loadStartData()
 
-    this.thread = interval(1000)
+    this.subscription = interval(1000)
       .subscribe(() => {
         this.loadStartData()
       });
@@ -65,7 +82,7 @@ export class ListCronComponent implements OnInit {
   }
 
   ngOnDestroy(): void {
-    this.thread?.unsubscribe()
+    this.subscription?.unsubscribe()
   }
 
   loadStartData() {
@@ -73,6 +90,7 @@ export class ListCronComponent implements OnInit {
       .subscribe(data => {
         this.cronsShort = data;
         this.cronsShort = this.orderFunction();
+        this.cronsShort = this.filterFunction();
       })
   }
 
