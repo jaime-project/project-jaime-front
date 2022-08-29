@@ -20,7 +20,6 @@ FROM nginxinc/nginx-unprivileged:latest
 WORKDIR /usr/share/nginx/html
 
 USER root
-# RUN mkdir assets/
 
 COPY --from=builder /app/dist/project-jaime-front .
 COPY nginx.conf /etc/nginx/nginx.conf
@@ -34,7 +33,5 @@ ARG ARG_VERSION=local
 ENV VERSION ${ARG_VERSION}
 ENV TZ America/Argentina/Buenos_Aires
 ENV JAIME_URL http://localhost:5000
-
-# COPY src/assets/appconfig.env.json assets/
 
 CMD ["/bin/bash", "-c", "service nginx stop && envsubst < assets/appconfig.env.json > assets/appconfig.json && nginx-debug -g 'daemon off;'"]
