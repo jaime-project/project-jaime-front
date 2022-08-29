@@ -19,6 +19,69 @@ export class ListWorkComponent implements OnInit {
 
   constructor(private workService: WorkService) { }
 
+  orderBy: string = 'name'
+  reverse: boolean = false
+  filterBy: string = ''
+
+  orderFunction(): WorkShort[] {
+
+    let list: WorkShort[] = this.worksShort
+
+    switch (this.orderBy.toLowerCase()) {
+      case 'name':
+        list = this.worksShort.sort((a, b) => a.name.localeCompare(b.name))
+      case 'status':
+        list = this.worksShort.sort((a, b) => a.status.localeCompare(b.status))
+      case 'id':
+        list = this.worksShort.sort((a, b) => a.id.localeCompare(b.id))
+      case 'agentid':
+        list = this.worksShort.sort((a, b) => {
+          if (a.agent_id) {
+            return a.agent_id.localeCompare(b.agent_id)
+          }
+          return 0
+        })
+      case 'agenttype':
+        list = this.worksShort.sort((a, b) => a.agent_type.localeCompare(b.agent_type))
+      case 'module':
+        list = this.worksShort.sort((a, b) => a.module_name.localeCompare(b.module_name))
+      case 'startdate':
+        list = this.worksShort.sort((a, b) => {
+          if (a.start_date && b.start_date) {
+            return a.start_date.toISOString().localeCompare(b.start_date.toISOString())
+          }
+          return 0
+        })
+    }
+
+    if (this.reverse) {
+      list = list.reverse()
+    }
+
+    return list
+  }
+
+  changeOrder(order: string) {
+    this.reverse = !this.reverse
+    this.orderBy = order.toLowerCase()
+  }
+
+  filterFunction() {
+    if (!this.filterBy) {
+      return this.worksShort
+    }
+
+    return this.worksShort
+      .filter(a => {
+        return a.name.toLowerCase().includes(this.filterBy.toLowerCase())
+          || a.id.toLowerCase().includes(this.filterBy.toLowerCase())
+          || a.status.toLowerCase().includes(this.filterBy.toLowerCase())
+          || a.module_name.toLowerCase().includes(this.filterBy.toLowerCase())
+          || a.agent_id?.toLowerCase().includes(this.filterBy.toLowerCase())
+          || a.agent_type.toLowerCase().includes(this.filterBy.toLowerCase())
+      })
+  }
+
   ngOnInit(): void {
 
     this.loadStartData()
@@ -30,7 +93,7 @@ export class ListWorkComponent implements OnInit {
 
     this.workService.getWorkStatus()
       .subscribe(data => {
-        this.worksStatus = data.sort();
+        this.worksStatus = data;
       })
   }
 
@@ -42,13 +105,15 @@ export class ListWorkComponent implements OnInit {
     this.workService.getWorksAllShort()
       .subscribe(data => {
         this.worksShort = data;
+        this.worksShort = this.orderFunction();
+        this.worksShort = this.filterFunction();
       })
   }
 
   deleteWork(id: string) {
     Swal.fire({
-      title: 'Delete work',
-      text: 'Delete work with id "' + id + '"',
+      title: $localize`Delete work`,
+      text: $localize`Delete work with id ${id}`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',
@@ -63,8 +128,8 @@ export class ListWorkComponent implements OnInit {
 
   deleteByStatus(status: string) {
     Swal.fire({
-      title: 'Delete works',
-      text: 'Delete works with status "' + status + '"',
+      title: $localize`Delete works`,
+      text: $localize`Delete works with status ${status}`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',
@@ -79,8 +144,8 @@ export class ListWorkComponent implements OnInit {
 
   changeStatus(id: string, status: string) {
     Swal.fire({
-      title: 'Change status',
-      text: `Change work status with status ${status}?`,
+      title: $localize`Change status`,
+      text: $localize`Change work with status ${status}?`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',

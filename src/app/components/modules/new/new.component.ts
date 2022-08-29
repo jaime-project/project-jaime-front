@@ -30,8 +30,8 @@ export class NewModuleComponent implements OnInit {
     this.moduleService.postModule(this.name, this.code, this.repo)
       .subscribe(() => {
         Swal.fire({
-          title: 'Success creation',
-          text: 'Generated module: "' + this.name + '"',
+          title: $localize`Success creation`,
+          text: $localize`Generated module ${this.name}`,
           icon: 'success',
           confirmButtonColor: '#05b281',
         }).then(() =>

@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-12 m-t-30">
-    <h4 class="m-b-0"><b>Cron List</b></h4>
+    <h4 class="m-b-0"><b i18n>Cron List</b></h4>
     <p class="text-muted m-t-0 font-12"></p>
   </div>
 </div>
@@ -13,7 +13,8 @@
           <button class="btn btn-success" routerLink="/crons/new" style="margin-right: 2%;">New Cron</button>
 
           <div ngbDropdown class="d-inline-block">
-            <button class="btn btn-danger" id="dropdownBasic1" ngbDropdownToggle style="margin-right: 2%;">Delete by
+            <button class="btn btn-danger" id="dropdownBasic1" ngbDropdownToggle style="margin-right: 2%;" i18n>Delete
+              by
               Status</button>
             <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
               <button ngbDropdownItem (click)="deleteByStatus(s)" *ngFor="let s of cronsStatus">{{s}}</button>
@@ -27,18 +28,23 @@
           <table class="table">
             <thead>
               <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Cron expression</th>
-                <th scope="col">Status</th>
-                <th scope="col">Creation Date</th>
-                <th scope="col">Actions</th>
+                <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('name')">Name</button></th>
+                <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('cron')">Cron
+                    expression</button></th>
+                <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('status')">Status</button></th>
+                <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('creationdate')">Creation
+                    Date</button>
+                </th>
+                <th scope="col"> <label i18n>Filter:</label> <input type="text" class="form-control"
+                    [(ngModel)]="filterBy">
+                </th>
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let cronShort of cronsShort">
                 <td>{{cronShort.name}}</td>
                 <td>
-                  <font size="+1.5">{{cronShort.cron_expression}}</font>
+                  {{cronShort.cron_expression}}
                 </td>
                 <td><b class="{{cronShort.status}}">{{cronShort.status}}</b></td>
                 <td>{{cronShort.creation_date | date: 'short'}}</td>

@@ -1,16 +1,16 @@
 <div class="row">
   <div class="col-12 m-t-30">
-    <h4 class="m-b-0"><b>Cluster List</b></h4>
+    <h4 class="m-b-0"><b i18n>Cluster List</b></h4>
     <p class="text-muted m-t-0 font-12"></p>
   </div>
 </div>
 
-<div class="col-lg-8">
+<div class="col-lg-12">
   <div class="card m-t-30">
     <div class="card-body">
       <div class="row">
         <div class="col-12 m-b-30">
-          <button class="btn btn-success" routerLink="/clusters/new">New cluster</button>
+          <button class="btn btn-success" routerLink="/clusters/new" i18n>New cluster</button>
         </div>
       </div>
       <div class="row">
@@ -18,10 +18,11 @@
           <table class="table">
             <thead>
               <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Type</th>
-                <th scope="col">URL</th>
-                <th scope="col">Actions</th>
+                <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('name')">Name</button></th>
+                <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('type')">Type</button></th>
+                <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('url')">URL</button></th>
+                <th scope="col"> <label i18n>Filter:</label> <input type="text" class="form-control"
+                    [(ngModel)]="filterBy">
               </tr>
             </thead>
             <tbody>

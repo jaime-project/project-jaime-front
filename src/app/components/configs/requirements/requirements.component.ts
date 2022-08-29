@@ -31,7 +31,7 @@ export class RequirementsComponent implements OnInit {
     this.configService.postRequirements(this.requirementsText)
       .subscribe(() => {
         Swal.fire({
-          title: 'Requirements sended to install in Agents',
+          title: $localize`Requirements sended to install in Agents`,
           icon: 'success',
         }).then(() =>
           this.butonClicked = false

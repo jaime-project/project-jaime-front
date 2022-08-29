@@ -31,8 +31,8 @@ export class CodeModuleComponent implements OnInit {
   putModule() {
 
     Swal.fire({
-      title: 'Update module',
-      text: 'Update module with name "' + this.moduleName + '"',
+      title: $localize`Update module`,
+      text: $localize`Update module with name ${this.moduleName}`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',

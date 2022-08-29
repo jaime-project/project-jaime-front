@@ -1,44 +1,43 @@
 export interface Cluster {
-    name: string;
-    url: string;
-    token: string;
-    type: string;
-    version: string;
+    name: string,
+    url: string,
+    token: string,
+    type: string,
+    version: string,
 }
 
-
 export interface ClusterShort {
-    name: string;
-    url: string;
-    type: string;
+    name: string,
+    url: string,
+    type: string,
 }
 
 export interface Server {
-    name: string;
-    host: string;
-    port: string;
-    user: string;
-    password: string;
+    name: string
+    host: string
+    port: string
+    user: string
+    password: string
 }
 
 export interface ServerShort {
-    name: string;
-    host: string;
-    port: string;
+    name: string,
+    host: string,
+    port: string,
 }
 
 export interface Agent {
-    id: string;
-    host: string;
-    port: string;
-    type: string;
-    status: string;
+    id: string,
+    host: string,
+    port: string,
+    type: string,
+    status: string,
 }
 
 export interface AgentShort {
-    host: string;
-    port: string;
-    type: string;
+    host: string,
+    port: string,
+    type: string,
 }
 
 export interface CronShort {

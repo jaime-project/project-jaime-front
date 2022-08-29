@@ -12,31 +12,75 @@ import Swal from 'sweetalert2';
 })
 export class ListClusterComponent implements OnInit {
 
+  subscription: Subscription | null = null
+
   listClustersShorts: ClusterShort[] = []
   testServerLoad: boolean = false
 
   constructor(private clustersService: ClustersService, private route: Router) { }
 
-  thread: Subscription | null = null
+  orderBy: string = 'name'
+  reverse: boolean = false
+  filterBy: string = ''
+
+  orderFunction(): ClusterShort[] {
+
+    let list: ClusterShort[] = []
+
+    switch (this.orderBy.toLowerCase()) {
+      case 'name':
+        list = this.listClustersShorts.sort((a, b) => a.name.localeCompare(b.name))
+      case 'type':
+        list = this.listClustersShorts.sort((a, b) => a.type.localeCompare(b.type))
+      case 'url':
+        list = this.listClustersShorts.sort((a, b) => a.url.localeCompare(b.url))
+    }
+
+    if (this.reverse) {
+      list = list.reverse()
+    }
+
+    return list
+  }
+
+  changeOrder(order: string) {
+    this.reverse = !this.reverse
+    this.orderBy = order.toLowerCase()
+  }
+
+  filterFunction() {
+    if (!this.filterBy) {
+      return this.listClustersShorts
+    }
+
+    return this.listClustersShorts
+      .filter(a => {
+        return a.name.toLowerCase().includes(this.filterBy.toLowerCase())
+          || a.type.toLowerCase().includes(this.filterBy.toLowerCase())
+          || a.url.toLowerCase().includes(this.filterBy.toLowerCase())
+      })
+  }
 
   ngOnInit(): void {
 
     this.loadStartData()
 
-    this.thread = interval(1000)
+    this.subscription = interval(1000)
       .subscribe(() => {
         this.loadStartData()
       });
   }
 
   ngOnDestroy(): void {
-    this.thread?.unsubscribe()
+    this.subscription?.unsubscribe()
   }
 
   loadStartData() {
     this.clustersService.listCluster()
       .subscribe(data => {
-        this.listClustersShorts = data.sort().reverse();
+        this.listClustersShorts = data;
+        this.listClustersShorts = this.orderFunction();
+        this.listClustersShorts = this.filterFunction();
       })
   }
 
@@ -48,14 +92,14 @@ export class ListClusterComponent implements OnInit {
         this.testServerLoad = false
         if (data.success) {
           Swal.fire({
-            title: 'Login success',
+            title: $localize`Login success`,
             icon: 'success',
             confirmButtonColor: '#05b281',
           })
         }
         else {
           Swal.fire({
-            title: 'Login failure',
+            title: $localize`Login failure`,
             text: data.text,
             icon: 'warning',
             confirmButtonColor: '#05b281',
@@ -67,8 +111,8 @@ export class ListClusterComponent implements OnInit {
   deleteServer(name: string) {
 
     Swal.fire({
-      title: 'Delete cluster',
-      text: 'Delete cluster with name "' + name + '"',
+      title: `Delete cluster`,
+      text: $localize`Delete cluster with name ${name}`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',
@@ -82,5 +126,6 @@ export class ListClusterComponent implements OnInit {
       }
     })
   }
+
 
 }

@@ -45,8 +45,8 @@ export class ListModuleComponent implements OnInit {
   deleteModule(name: string) {
 
     Swal.fire({
-      title: 'Delete agent',
-      text: 'Delete agent with name "' + name + '"',
+      title: $localize`Delete agent`,
+      text: $localize`Delete agent with name ${name}`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',

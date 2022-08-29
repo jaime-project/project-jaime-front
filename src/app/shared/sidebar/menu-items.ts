@@ -11,7 +11,7 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: "/servers",
-    title: "Servers",
+    title: $localize`Servers`,
     icon: "mdi mdi-server-minus",
     class: "",
     extralink: false,
@@ -19,7 +19,7 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: "/agents",
-    title: "Agents",
+    title: $localize`Agents`,
     icon: "mdi mdi-arrange-bring-to-front",
     class: "",
     extralink: false,
@@ -27,7 +27,7 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: "/repos",
-    title: "Repositories",
+    title: $localize`Repositories`,
     icon: "mdi mdi-folder",
     class: "",
     extralink: false,
@@ -35,7 +35,7 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: "/crons",
-    title: "Crons",
+    title: $localize`Crons`,
     icon: "fa fa-clock",
     class: "",
     extralink: false,
@@ -43,7 +43,7 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: "/works",
-    title: "Jobs",
+    title: $localize`Jobs`,
     icon: "mdi mdi-backburger",
     class: "",
     extralink: false,
@@ -51,7 +51,7 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: "/configs",
-    title: "Config",
+    title: $localize`Configs`,
     icon: "fa fa-cog",
     class: "",
     extralink: false,

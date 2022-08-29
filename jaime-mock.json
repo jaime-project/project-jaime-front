@@ -1,6 +1,6 @@
 {
   "uuid": "39b16407-01f5-436d-911f-b701568537d8",
-  "lastMigration": 19,
+  "lastMigration": 22,
   "name": "Jaime mock",
   "endpointPrefix": "api/v1",
   "latency": 0,
@@ -34,12 +34,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "dbd7175a-e1b9-493e-a631-572d1a278874",
@@ -68,12 +68,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "a6da9fa0-d099-437f-bec3-7f55efed53d2",
@@ -98,12 +98,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "5191b8e5-20bf-4f9b-a5bf-cd1fa3c4d47a",
@@ -128,12 +128,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "535d5c71-505c-4512-b489-846c61368939",
@@ -158,12 +158,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "b7333b71-2ddf-4e03-b239-42da3348f3b9",
@@ -188,12 +188,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "f8aab51f-f474-41a2-a36f-85f566de2a68",
@@ -203,7 +203,7 @@
       "responses": [
         {
           "uuid": "0857d68d-b3ff-40bc-8aa5-e71de1ac4ee6",
-          "body": "[\n  {\n    \"name\": \"edenor3\",\n    \"type\": \"OPENSHIFT\",\n    \"url\": \"https://console-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n  },\n  {\n    \"name\": \"edenor4\",\n    \"type\": \"OPENSHIFT\",\n    \"url\": \"https://asd-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n  },\n  {\n    \"name\": \"asd1\",\n    \"type\": \"OPENSHIFT\",\n    \"url\": \"https://asd-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n}\n]",
+          "body": "[\n  {\n  \"name\": \"zzz\",\n    \"type\": \"KUBERNETES\",\n    \"url\": \"https://konsole-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n  },\n  {\n    \"name\": \"qwe\",\n    \"type\": \"OPENSHIFT\",\n    \"url\": \"https://asd-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n  },\n  {\n    \"name\": \"asd1\",\n    \"type\": \"OPENSHIFT\",\n    \"url\": \"https://asd-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n}\n]",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -218,12 +218,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "f9773728-71dd-4ada-a76b-6a15c8a1dd77",
@@ -248,12 +248,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "b6907a45-ba8a-4797-a924-279ccaf57688",
@@ -278,12 +278,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "c5b7b71c-72f2-452d-b8d1-e4bdc8bed130",
@@ -312,12 +312,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "d3e71c13-66d9-4fa4-ada2-c53084fd1f0d",
@@ -342,12 +342,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "fcf6de5f-3fac-4597-8840-95c38a475b6a",
@@ -372,12 +372,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "69641921-d115-40d1-9036-132f0af1c86a",
@@ -402,12 +402,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "746f0382-da81-4ee1-ba54-bdcad02e7097",
@@ -417,7 +417,7 @@
       "responses": [
         {
           "uuid": "6db2c96e-132d-4b52-b8cd-5fc964d4cc18",
-          "body": "[\n  {\n    \"id\": \"6132dd3f1cfb\",\n    \"host\": \"172.24.0.4\",\n    \"port\": \"80\",\n    \"type\": \"OPENSHIFT\"\n  }\n]",
+          "body": "[\n  {\n    \"id\": \"6132dd3f1cfb\",\n    \"host\": \"172.24.0.4\",\n    \"port\": \"80\",\n    \"type\": \"OPENSHIFT\"\n  },\n    {\n    \"id\": \"dd3f1cfb\",\n    \"host\": \"10.24.0.4\",\n    \"port\": \"8080\",\n    \"type\": \"KUBERNETES\"\n  },\n    {\n    \"id\": \"32dd3f1cfb\",\n    \"host\": \"30.24.0.4\",\n    \"port\": \"80\",\n    \"type\": \"OPENSHIFT\"\n  }\n]",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -432,12 +432,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "302d8427-a71c-47fe-9670-fcf552de66fe",
@@ -462,12 +462,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "d3650c32-447c-4247-b728-824d0f69b2d5",
@@ -477,7 +477,7 @@
       "responses": [
         {
           "uuid": "82c80ed1-091e-4be8-b2db-569bef6ee95f",
-          "body": "{\n    \"host\": \"172.24.0.4\",\n    \"id\": \"6132dd3f1cfb\",\n    \"port\": \"80\",\n    \"type\": \"OPENSHIFT\",\n  \"status\": \"READY\"\n}",
+          "body": "{\n    \"host\": \"172.24.0.4\",\n    \"id\": \"6132dd3f1cfb\",\n    \"port\": \"80\",\n    \"type\": \"OPENSHIFT\",\n    \"status\": \"READY\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -492,12 +492,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "56519408-45c1-46ef-91e4-25529c542977",
@@ -522,12 +522,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "e3c534b3-d6b6-49ba-9b2e-88d9e72b56a9",
@@ -552,12 +552,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "3c59c5d7-e073-4a88-909e-8d3822141902",
@@ -582,12 +582,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "aabddc68-9f2f-49f3-abd8-46dee83db7d6",
@@ -612,12 +612,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "c5afdefc-2ee1-4511-8af6-945ef3414341",
@@ -628,7 +628,7 @@
         {
           "uuid": "fd30de10-7a6d-4c1d-bc5a-14d481310ec0",
           "body": "",
-          "latency": 0,
+          "latency": 3000,
           "statusCode": 201,
           "label": "",
           "headers": [
@@ -642,12 +642,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "b05e0386-5933-48bd-9ac6-565c68559453",
@@ -672,12 +672,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "4a4eb735-6fc7-4f71-9a7b-efa4d414ece7",
@@ -702,12 +702,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "ebe1ce02-87a3-44d6-99b0-8623be082ee3",
@@ -732,12 +732,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "1a7175df-10ae-408a-8ee5-c4871d795c2c",
@@ -762,12 +762,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "51e7fe5c-63ea-4a01-aec6-86f9a008ee91",
@@ -796,12 +796,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "6c8cafaf-174c-459a-9923-363919d25090",
@@ -830,12 +830,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "6b7c4581-6dac-42d1-8bb4-4343f76ba92c",
@@ -864,12 +864,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "2d3c8ba8-82dc-4f06-a57c-19101e6d5b4f",
@@ -898,12 +898,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "a53cac68-8d32-4c59-8416-08f0e6677901",
@@ -928,12 +928,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "5bc4f7a6-9488-4c24-9ba0-dec9027ec261",
@@ -962,12 +962,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "dd43364f-e8d3-4c9e-aae6-40ea12c341b3",
@@ -996,12 +996,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "ccf4891b-1dd3-4aeb-9dd8-f0311e2bc16b",
@@ -1026,12 +1026,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "ffc8d975-6a50-4d44-8d81-a9bd0182859f",
@@ -1056,12 +1056,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "e134997a-f5c3-4e9f-9427-b02022cea923",
@@ -1086,12 +1086,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "d2effd56-9f4e-42f3-b494-fa7b55484407",
@@ -1116,12 +1116,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "81a5317a-f619-4fd8-a3a2-be94d8101699",
@@ -1146,12 +1146,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "e03381bf-d9d2-4fa9-a21b-c53336be21d0",
@@ -1176,12 +1176,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "fbbc1fb9-de82-4db5-b7e4-f648ec17b6f1",
@@ -1206,12 +1206,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "70229288-52c1-4d2b-85a5-518be27e1949",
@@ -1240,12 +1240,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "41ee0e23-1c60-4447-9c19-6cf1d0127eb8",
@@ -1274,12 +1274,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "754b864c-c45b-4be7-b9c0-1b325922a055",
@@ -1308,12 +1308,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "7d3dc843-0264-4dba-aa50-3dfe4913bdd8",
@@ -1338,12 +1338,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "6e769e3a-2f1e-4b00-a4ac-77bc46e810b7",
@@ -1368,12 +1368,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "af78bd5f-0e23-457e-9917-722b6b5ef4ad",
@@ -1398,12 +1398,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "9230f5c9-ee52-423a-9807-9dc8a115b5d2",
@@ -1428,12 +1428,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "c9a648a0-fb7d-4b35-a447-070b5e7f742c",
@@ -1458,12 +1458,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "26549f7d-0409-44b2-9cc4-d3d40d90fcbe",
@@ -1488,12 +1488,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "e6e844c2-0183-4c06-8d9f-266e7d0775a7",
@@ -1518,12 +1518,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "d6d84317-b762-4c0d-8eed-1887df703ef4",
@@ -1548,12 +1548,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "085248dd-5fce-4426-9a64-eed7e7b7a460",
@@ -1582,12 +1582,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "59b3d3c0-8362-4609-9c55-2821682bceae",
@@ -1612,12 +1612,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "d5d559db-1add-4f06-ab98-ba0f239c110c",
@@ -1642,12 +1642,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "2e0de7e2-c76e-4835-8798-ce1cc7c2793f",
@@ -1672,12 +1672,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "63f72e2f-290c-4d09-8e17-7e5a8b668c9f",
@@ -1702,12 +1702,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "efaa86f9-6584-4905-a228-7e77313a8cbe",
@@ -1732,12 +1732,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "f0107ed4-f56f-4f58-93ee-1ae2e86ce6e5",
@@ -1762,12 +1762,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
       "uuid": "67de43a0-d5f4-4ec0-9099-ebc2b04f72e7",
@@ -1792,12 +1792,12 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     }
   ],
   "proxyMode": false,

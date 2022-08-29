@@ -41,8 +41,8 @@ export class YamlClusterComponent implements OnInit {
   putServer(modifyYaml: string) {
 
     Swal.fire({
-      title: 'Update cluster',
-      text: 'Update cluster with name "' + this.cluster.name + '"',
+      title: $localize`Update cluster`,
+      text: $localize`Update cluster with name ${this.cluster.name}`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',
