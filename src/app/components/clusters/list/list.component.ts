@@ -30,10 +30,13 @@ export class ListClusterComponent implements OnInit {
     switch (this.orderBy.toLowerCase()) {
       case 'name':
         list = this.listClustersShorts.sort((a, b) => a.name.localeCompare(b.name))
+        break
       case 'type':
         list = this.listClustersShorts.sort((a, b) => a.type.localeCompare(b.type))
+        break
       case 'url':
         list = this.listClustersShorts.sort((a, b) => a.url.localeCompare(b.url))
+        break
     }
 
     if (this.reverse) {
