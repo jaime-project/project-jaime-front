@@ -48,7 +48,7 @@ export class ListWorkComponent implements OnInit {
       case 'startdate':
         list = this.worksShort.sort((a, b) => {
           if (a.start_date && b.start_date) {
-            return a.start_date.toISOString().localeCompare(b.start_date.toISOString())
+            return a.start_date.localeCompare(b.start_date)
           }
           return 0
         })
@@ -105,8 +105,8 @@ export class ListWorkComponent implements OnInit {
     this.workService.getWorksAllShort()
       .subscribe(data => {
         this.worksShort = data;
-        this.worksShort = this.orderFunction();
         this.worksShort = this.filterFunction();
+        this.worksShort = this.orderFunction();
       })
   }
 
