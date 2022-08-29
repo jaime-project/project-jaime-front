@@ -53,7 +53,7 @@ export class ListAgentComponent implements OnInit {
     return this.agents
       .filter(a => {
         return a.host.toLowerCase().includes(this.filterBy.toLowerCase())
-          || a.port.toLowerCase().includes(this.filterBy.toLowerCase())
+          || String(a.port).toLowerCase().includes(this.filterBy.toLowerCase())
           || a.type.toLowerCase().includes(this.filterBy.toLowerCase())
       })
   }
