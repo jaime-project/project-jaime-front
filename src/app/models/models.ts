@@ -67,7 +67,7 @@ export interface WorkShort {
     agent_id: string,
     agent_type: string,
     module_name: string,
-    start_date: Date | null
+    start_date: string | null
 }
 
 export interface Work {
@@ -79,7 +79,6 @@ export interface Work {
     start_date: Date | null,
     running_date: Date | null,
     terminated_date: Date | null,
-    // status_date: Date | null,
     agent: Agent,
     params: {}
 }

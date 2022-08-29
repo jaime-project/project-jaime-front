@@ -28,12 +28,16 @@ export class ListCronComponent implements OnInit {
     switch (this.orderBy.toLowerCase()) {
       case 'name':
         list = this.cronsShort.sort((a, b) => a.name.localeCompare(b.name))
+        break
       case 'cron':
         list = this.cronsShort.sort((a, b) => a.cron_expression.localeCompare(b.cron_expression))
+        break
       case 'status':
         list = this.cronsShort.sort((a, b) => a.status.localeCompare(b.status))
+        break
       case 'creationdate':
         list = this.cronsShort.sort((a, b) => a.creation_date.localeCompare(b.creation_date))
+        break
     }
 
     if (this.reverse) {

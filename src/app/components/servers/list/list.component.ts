@@ -30,10 +30,13 @@ export class ListServerComponent implements OnInit {
     switch (this.orderBy.toLowerCase()) {
       case 'host':
         list = this.listServersShorts.sort((a, b) => a.host.localeCompare(b.host))
+        break
       case 'port':
         list = this.listServersShorts.sort((a, b) => a.port.localeCompare(b.port))
+        break
       case 'name':
         list = this.listServersShorts.sort((a, b) => a.name.localeCompare(b.name))
+        break
     }
 
     if (this.reverse) {
