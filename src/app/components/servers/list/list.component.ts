@@ -21,6 +21,7 @@ export class ListServerComponent implements OnInit {
 
   orderBy: string = 'host'
   reverse: boolean = false
+  filterBy: string = ''
 
   orderFunction(): ServerShort[] {
 
@@ -47,6 +48,18 @@ export class ListServerComponent implements OnInit {
     this.orderBy = order.toLowerCase()
   }
 
+  filterFunction() {
+    if (!this.filterBy) {
+      return this.listServersShorts
+    }
+
+    return this.listServersShorts
+      .filter(a => {
+        return a.name.toLowerCase().includes(this.filterBy.toLowerCase())
+          || a.host.toLowerCase().includes(this.filterBy.toLowerCase())
+          || a.port.toLowerCase().includes(this.filterBy.toLowerCase())
+      })
+  }
 
   ngOnInit(): void {
 
@@ -66,6 +79,7 @@ export class ListServerComponent implements OnInit {
     this.serversService.listServer()
       .subscribe(data => {
         this.listServersShorts = data
+        this.listServersShorts = this.filterFunction();
         this.listServersShorts = this.orderFunction()
       })
   }
