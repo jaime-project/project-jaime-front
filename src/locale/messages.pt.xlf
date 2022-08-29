@@ -9,7 +9,7 @@
             <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/alert/alert.ts</context>
             <context context-type="linenumber">67,68</context>
           </context-group>
-          <target>Perto</target>
+          <target>Fechar</target>
         </trans-unit>
         <trans-unit id="ngb.carousel.previous" datatype="html">
           <source>Previous</source>
@@ -147,7 +147,7 @@
             <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/progressbar/progressbar.ts</context>
             <context context-type="linenumber">59,68</context>
           </context-group>
-          <target>nula</target>
+          <target></target>
         </trans-unit>
         <trans-unit id="ngb.timepicker.HH" datatype="html">
           <source>HH</source>
@@ -155,7 +155,7 @@
             <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
             <context context-type="linenumber">164,171</context>
           </context-group>
-          <target>Hh</target>
+          <target>HH</target>
         </trans-unit>
         <trans-unit id="ngb.timepicker.hours" datatype="html">
           <source>Hours</source>
@@ -171,7 +171,7 @@
             <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
             <context context-type="linenumber">194,202</context>
           </context-group>
-          <target>MILÍMETROS</target>
+          <target>MM</target>
         </trans-unit>
         <trans-unit id="ngb.timepicker.minutes" datatype="html">
           <source>Minutes</source>
@@ -219,7 +219,7 @@
             <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
             <context context-type="linenumber">296</context>
           </context-group>
-          <target>Ss</target>
+          <target>SS</target>
         </trans-unit>
         <trans-unit id="ngb.timepicker.seconds" datatype="html">
           <source>Seconds</source>
@@ -253,7 +253,7 @@
             <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
             <context context-type="linenumber">296</context>
           </context-group>
-          <target>nula</target>
+          <target></target>
         </trans-unit>
         <trans-unit id="ngb.timepicker.AM" datatype="html">
           <source>
@@ -263,7 +263,7 @@
             <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.ts</context>
             <context context-type="linenumber">296</context>
           </context-group>
-          <target>nula</target>
+          <target></target>
         </trans-unit>
         <trans-unit id="ngb.toast.close-aria" datatype="html">
           <source>Close</source>
@@ -271,7 +271,7 @@
             <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/@ng-bootstrap/ng-bootstrap/toast/toast.ts</context>
             <context context-type="linenumber">107,115</context>
           </context-group>
-          <target>Perto</target>
+          <target>Fechar</target>
         </trans-unit>
         <trans-unit id="1737753151350322492" datatype="html">
           <source>
@@ -281,7 +281,7 @@
             <context context-type="sourcefile">src/app/app.component.ts</context>
             <context context-type="linenumber">15</context>
           </context-group>
-          <target>nula</target>
+          <target></target>
         </trans-unit>
         <trans-unit id="7a88c8744689d43a4c557ecc35564533890d5728" datatype="html">
           <source>Agent Detail</source>
