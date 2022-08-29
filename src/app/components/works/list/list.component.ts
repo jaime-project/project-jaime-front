@@ -27,13 +27,17 @@ export class ListWorkComponent implements OnInit {
 
     let list: WorkShort[] = this.worksShort
 
+    console.log(this.orderBy.toLowerCase())
     switch (this.orderBy.toLowerCase()) {
       case 'name':
         list = this.worksShort.sort((a, b) => a.name.localeCompare(b.name))
+        break
       case 'status':
         list = this.worksShort.sort((a, b) => a.status.localeCompare(b.status))
+        break
       case 'id':
         list = this.worksShort.sort((a, b) => a.id.localeCompare(b.id))
+        break
       case 'agentid':
         list = this.worksShort.sort((a, b) => {
           if (a.agent_id) {
@@ -41,10 +45,13 @@ export class ListWorkComponent implements OnInit {
           }
           return 0
         })
+        break
       case 'agenttype':
         list = this.worksShort.sort((a, b) => a.agent_type.localeCompare(b.agent_type))
+        break
       case 'module':
         list = this.worksShort.sort((a, b) => a.module_name.localeCompare(b.module_name))
+        break
       case 'startdate':
         list = this.worksShort.sort((a, b) => {
           if (a.start_date && b.start_date) {
@@ -52,6 +59,7 @@ export class ListWorkComponent implements OnInit {
           }
           return 0
         })
+        break 
     }
 
     if (this.reverse) {

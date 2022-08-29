@@ -27,10 +27,13 @@ export class ListAgentComponent implements OnInit {
     switch (this.orderBy.toLowerCase()) {
       case 'host':
         list = this.agents.sort((a, b) => a.host.localeCompare(b.host))
+        break
       case 'port':
         list = this.agents.sort((a, b) => a.port.localeCompare(b.port))
+        break
       case 'type':
         list = this.agents.sort((a, b) => a.type.localeCompare(b.type))
+        break
     }
 
     if (this.reverse) {
