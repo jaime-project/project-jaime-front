@@ -13,6 +13,8 @@ export class ListModuleComponent implements OnInit {
 
   reposLocal: string[] = []
   reposGit: string[] = []
+  repoReloading: boolean = false
+  filterBy: string = ''
 
   constructor(private reposService: ReposService, private route: Router) { }
 
@@ -35,11 +37,11 @@ export class ListModuleComponent implements OnInit {
   loadStartData() {
     this.reposService.listReposByType('LOCAL')
       .subscribe(data => {
-        this.reposLocal = data.sort()
+        this.reposLocal = this.filterFunction(data.sort())
       })
     this.reposService.listReposByType('GIT')
       .subscribe(data => {
-        this.reposGit = data.sort()
+        this.reposGit = this.filterFunction(data.sort())
       })
   }
 
@@ -64,6 +66,7 @@ export class ListModuleComponent implements OnInit {
 
   reloadRepo(name: string) {
 
+
     Swal.fire({
       title: $localize`Reload repository`,
       text: $localize`Reload repository with name ${name}`,
@@ -73,12 +76,31 @@ export class ListModuleComponent implements OnInit {
       showCancelButton: true,
     }).then(result => {
       if (result.isConfirmed) {
+
+        this.repoReloading = true
+
         this.reposService.reloadRepos(name)
           .subscribe(() => {
-            this.route.navigate(['repos'])
+            this.repoReloading = false
+            Swal.fire({
+              title: $localize`Reload success`,
+              icon: 'success',
+              confirmButtonColor: '#05b281',
+            })
           })
       }
     })
+  }
+
+  filterFunction(list: string[]) {
+    if (!this.filterBy) {
+      return list
+    }
+
+    return list
+      .filter(r => {
+        return r.toLowerCase().includes(this.filterBy.toLowerCase())
+      })
   }
 
 }
