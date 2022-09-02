@@ -14,6 +14,7 @@ export class ListModuleComponent implements OnInit {
 
   modulesName: string[] = []
   repo: string = ""
+  filterBy: string = ''
 
   constructor(private modulesService: ModuleService, private activatedRoute: ActivatedRoute, private route: Router, private docsService: DocsService) { }
 
@@ -38,7 +39,7 @@ export class ListModuleComponent implements OnInit {
   loadStartData() {
     this.modulesService.listModules(this.repo!)
       .subscribe(data => {
-        this.modulesName = data.sort()
+        this.modulesName = this.filterFunction(data.sort())
       })
   }
 
@@ -60,6 +61,17 @@ export class ListModuleComponent implements OnInit {
           })
       }
     })
+  }
+
+  filterFunction(list: string[]) {
+    if (!this.filterBy) {
+      return list
+    }
+
+    return list
+      .filter(r => {
+        return r.toLowerCase().includes(this.filterBy.toLowerCase())
+      })
   }
 
 }
