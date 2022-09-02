@@ -13,6 +13,7 @@ export class ListModuleComponent implements OnInit {
 
   reposLocal: string[] = []
   reposGit: string[] = []
+  repoReloading: boolean = false
 
   constructor(private reposService: ReposService, private route: Router) { }
 
@@ -64,6 +65,7 @@ export class ListModuleComponent implements OnInit {
 
   reloadRepo(name: string) {
 
+    
     Swal.fire({
       title: $localize`Reload repository`,
       text: $localize`Reload repository with name ${name}`,
@@ -73,9 +75,17 @@ export class ListModuleComponent implements OnInit {
       showCancelButton: true,
     }).then(result => {
       if (result.isConfirmed) {
+        
+        this.repoReloading = true
+
         this.reposService.reloadRepos(name)
           .subscribe(() => {
-            this.route.navigate(['repos'])
+            this.repoReloading = false
+            Swal.fire({
+              title: $localize`Reload success`,
+              icon: 'success',
+              confirmButtonColor: '#05b281',
+            })
           })
       }
     })
