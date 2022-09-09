@@ -13,7 +13,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^12.0.2",
+    "@angular/animations": "^12.2.16",
     "@angular/common": "^12.0.2",
     "@angular/compiler": "^12.0.2",
     "@angular/core": "^12.0.2",
@@ -34,10 +34,11 @@
     "ng2-charts": "^2.4.2",
     "ngx-monaco-editor": "^12.0.0",
     "ngx-perfect-scrollbar": "6.1.0",
+    "ngx-toastr": "^12.0.1",
     "rxjs": "^6.5.4",
     "rxjs-compat": "^6.5.2",
     "sass": "^1.29.0",
-    "sweetalert2": "^11.3.0",
+    "sweetalert2": "^11.4.32",
     "tslib": "^2.0.0",
     "yaml": "^1.10.2",
     "zone.js": "~0.11.4"

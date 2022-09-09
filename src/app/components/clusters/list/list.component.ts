@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { interval, Subscription } from 'rxjs';
 import { ClusterShort } from 'src/app/models/models';
 import { ClustersService } from 'src/app/services/clusters/clusters.service';
@@ -17,7 +18,7 @@ export class ListClusterComponent implements OnInit {
   listClustersShorts: ClusterShort[] = []
   testServerLoad: boolean = false
 
-  constructor(private clustersService: ClustersService, private route: Router) { }
+  constructor(private clustersService: ClustersService, private route: Router, private toastr: ToastrService) { }
 
   orderBy: string = 'name'
   reverse: boolean = false
@@ -94,25 +95,15 @@ export class ListClusterComponent implements OnInit {
       .subscribe(data => {
         this.testServerLoad = false
         if (data.success) {
-          Swal.fire({
-            title: $localize`Login success`,
-            icon: 'success',
-            confirmButtonColor: '#05b281',
-          })
+          this.toastr.success($localize`Login success`)
         }
         else {
-          Swal.fire({
-            title: $localize`Login failure`,
-            text: data.text,
-            icon: 'warning',
-            confirmButtonColor: '#05b281',
-          })
+          this.toastr.success($localize`Login failure`)
         }
       })
   }
 
   deleteServer(name: string) {
-
     Swal.fire({
       title: `Delete cluster`,
       text: $localize`Delete cluster with name ${name}`,
@@ -124,6 +115,7 @@ export class ListClusterComponent implements OnInit {
       if (result.isConfirmed) {
         this.clustersService.deleteCluster(name)
           .subscribe(() => {
+            this.toastr.success($localize`Delete cluster success`)
             this.route.navigate(['clusters'])
           })
       }

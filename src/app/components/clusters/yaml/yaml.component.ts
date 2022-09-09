@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Cluster } from 'src/app/models/models';
 import { ClustersService } from 'src/app/services/clusters/clusters.service';
 import Swal from 'sweetalert2';
@@ -23,7 +24,7 @@ export class YamlClusterComponent implements OnInit {
     version: ""
   }
 
-  constructor(private clustersService: ClustersService, private activatedRoute: ActivatedRoute, private route: Router) { }
+  constructor(private clustersService: ClustersService, private activatedRoute: ActivatedRoute, private route: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     let name = this.activatedRoute.snapshot.paramMap.get('name')
@@ -50,9 +51,10 @@ export class YamlClusterComponent implements OnInit {
     }).then(result => {
       if (result.isConfirmed) {
         this.clustersService.putCluster(parse(modifyYaml))
-          .subscribe(() =>
+          .subscribe(() =>{
+            this.toastr.success($localize`Cluster updated`)
             this.route.navigate(['clusters'])
-          )
+          })
       }
     })
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { interval, Subscription } from 'rxjs';
 import { CronShort } from 'src/app/models/models';
 import { CronService } from 'src/app/services/crons/cron.service';
@@ -15,7 +16,7 @@ export class ListCronComponent implements OnInit {
   cronsShort: CronShort[] = []
   cronsStatus: string[] = []
 
-  constructor(private cronService: CronService) { }
+  constructor(private cronService: CronService, private toastr: ToastrService) { }
 
   orderBy: string = 'name'
   reverse: boolean = false
@@ -109,7 +110,9 @@ export class ListCronComponent implements OnInit {
     }).then(result => {
       if (result.isConfirmed) {
         this.cronService.deleteCron(id)
-          .subscribe()
+          .subscribe(() => {
+            this.toastr.success($localize`Cron deleted`)
+          })
       }
     })
   }
@@ -125,7 +128,9 @@ export class ListCronComponent implements OnInit {
     }).then(result => {
       if (result.isConfirmed) {
         this.cronService.deleteCronsByStatus(status)
-          .subscribe()
+          .subscribe(() => {
+            this.toastr.success($localize`Crons deleted`)
+          })
       }
     })
   }
@@ -141,7 +146,9 @@ export class ListCronComponent implements OnInit {
     }).then(result => {
       if (result.isConfirmed) {
         this.cronService.changeStatus(id, status)
-          .subscribe()
+        .subscribe(() => {
+          this.toastr.success($localize`Cron changed`)
+        })
       }
     })
   }

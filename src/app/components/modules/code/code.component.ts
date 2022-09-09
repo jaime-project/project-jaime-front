@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { ModuleService } from 'src/app/services/modules/modules.service';
 import Swal from 'sweetalert2';
 
@@ -15,7 +16,7 @@ export class CodeModuleComponent implements OnInit {
   moduleName: string = ""
   public codeEditSwitchActivated = false
 
-  constructor(private moduleService: ModuleService, private activatedRoute: ActivatedRoute, private route: Router) { }
+  constructor(private moduleService: ModuleService, private activatedRoute: ActivatedRoute, private route: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
 
@@ -41,6 +42,7 @@ export class CodeModuleComponent implements OnInit {
       if (result.isConfirmed) {
         this.moduleService.putModule(this.moduleName, this.moduleCode, this.repo)
           .subscribe(() => {
+            this.toastr.success($localize`Module updated`)
             this.route.navigate([`repos/${this.repo}/modules`])
           })
       }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { interval, Observable, Subscription } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
+import { interval, Subscription } from 'rxjs';
 import { ReposService } from 'src/app/services/modules/repos.service';
 import Swal from 'sweetalert2';
 
@@ -16,7 +17,7 @@ export class ListModuleComponent implements OnInit {
   repoReloading: boolean = false
   filterBy: string = ''
 
-  constructor(private reposService: ReposService, private route: Router) { }
+  constructor(private reposService: ReposService, private route: Router, private toastr: ToastrService) { }
 
   thread: Subscription | null = null
 
@@ -58,6 +59,7 @@ export class ListModuleComponent implements OnInit {
       if (result.isConfirmed) {
         this.reposService.deleteRepos(name)
           .subscribe(() => {
+            this.toastr.success($localize`Repository deleted`)
             this.route.navigate(['repos'])
           })
       }
@@ -82,11 +84,7 @@ export class ListModuleComponent implements OnInit {
         this.reposService.reloadRepos(name)
           .subscribe(() => {
             this.repoReloading = false
-            Swal.fire({
-              title: $localize`Reload success`,
-              icon: 'success',
-              confirmButtonColor: '#05b281',
-            })
+            this.toastr.success($localize`Repository reloaded`)
           })
       }
     })

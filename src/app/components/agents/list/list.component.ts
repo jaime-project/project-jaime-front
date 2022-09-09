@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { interval, Subscription } from 'rxjs';
 import { AgentShort } from 'src/app/models/models';
 import { AgentService } from 'src/app/services/agents/agents.service';
@@ -14,7 +15,7 @@ export class ListAgentComponent implements OnInit {
   subscription: Subscription | null = null
   agents: AgentShort[] = []
 
-  constructor(private agentService: AgentService) { }
+  constructor(private agentService: AgentService, private toastr: ToastrService) { }
 
   orderBy: string = 'host'
   reverse: boolean = false
@@ -97,6 +98,7 @@ export class ListAgentComponent implements OnInit {
       if (result.isConfirmed) {
         this.agentService.deleteAgent(id)
           .subscribe(() => {
+            this.toastr.success($localize`Agent deleted`)
             window.location.reload()
           })
       }

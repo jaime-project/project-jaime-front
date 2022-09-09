@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { interval, Subscription } from 'rxjs';
 import { WorkShort } from 'src/app/models/models';
 import { WorkService } from 'src/app/services/works/work.service';
@@ -17,7 +18,7 @@ export class ListWorkComponent implements OnInit {
 
   worksStatus: string[] = []
 
-  constructor(private workService: WorkService) { }
+  constructor(private workService: WorkService, private toastr: ToastrService) { }
 
   orderBy: string = 'name'
   reverse: boolean = false
@@ -59,7 +60,7 @@ export class ListWorkComponent implements OnInit {
           }
           return 0
         })
-        break 
+        break
     }
 
     if (this.reverse) {
@@ -120,8 +121,8 @@ export class ListWorkComponent implements OnInit {
 
   deleteWork(id: string) {
     Swal.fire({
-      title: $localize`Delete work`,
-      text: $localize`Delete work with id ${id}`,
+      title: $localize`Delete job`,
+      text: $localize`Delete job with id ${id}`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',
@@ -129,15 +130,17 @@ export class ListWorkComponent implements OnInit {
     }).then(result => {
       if (result.isConfirmed) {
         this.workService.deleteWork(id)
-          .subscribe()
+          .subscribe(() => {
+            this.toastr.success($localize`Job deleted`)
+          })
       }
     })
   }
 
   deleteByStatus(status: string) {
     Swal.fire({
-      title: $localize`Delete works`,
-      text: $localize`Delete works with status ${status}`,
+      title: $localize`Delete jobs`,
+      text: $localize`Delete jobs with status ${status}`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',
@@ -145,7 +148,9 @@ export class ListWorkComponent implements OnInit {
     }).then(result => {
       if (result.isConfirmed) {
         this.workService.deleteWorksByStatus(status)
-          .subscribe()
+          .subscribe(() => {
+            this.toastr.success($localize`Jobs deleted`)
+          })
       }
     })
   }
@@ -161,7 +166,9 @@ export class ListWorkComponent implements OnInit {
     }).then(result => {
       if (result.isConfirmed) {
         this.workService.changeStatus(id, status)
-          .subscribe()
+          .subscribe(() => {
+            this.toastr.success($localize`Job status changed`)
+          })
       }
     })
   }

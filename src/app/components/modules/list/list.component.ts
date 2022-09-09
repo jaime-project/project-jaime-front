@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { interval, Subscription } from 'rxjs';
 import { DocsService } from 'src/app/services/modules/docs.service';
 import { ModuleService } from 'src/app/services/modules/modules.service';
@@ -16,7 +17,7 @@ export class ListModuleComponent implements OnInit {
   repo: string = ""
   filterBy: string = ''
 
-  constructor(private modulesService: ModuleService, private activatedRoute: ActivatedRoute, private route: Router, private docsService: DocsService) { }
+  constructor(private modulesService: ModuleService, private activatedRoute: ActivatedRoute, private route: Router, private docsService: DocsService, private toastr: ToastrService) { }
 
   thread: Subscription | null = null
 
@@ -57,6 +58,7 @@ export class ListModuleComponent implements OnInit {
         this.docsService.deleteDocs(name, this.repo)
         this.modulesService.deleteModule(name, this.repo)
           .subscribe(() => {
+            this.toastr.success($localize`Agent deleted`)
             this.route.navigate([`repos/${this.repo}/modules`])
           })
       }

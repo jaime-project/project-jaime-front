@@ -1,9 +1,9 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { CronShort } from 'src/app/models/models';
-import Swal from 'sweetalert2';
 import { AppConfigService } from '../AppConfigService';
 
 
@@ -15,7 +15,7 @@ export class CronService {
   apiUrl: string = "";
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-  constructor(private environment: AppConfigService, private http: HttpClient) {
+  constructor(private environment: AppConfigService, private http: HttpClient, private toastr: ToastrService) {
     this.apiUrl = environment.config.backendURL + '/api/v1/crons';
   }
 
@@ -82,12 +82,8 @@ export class CronService {
 
 
   httpError(error: HttpErrorResponse) {
-    Swal.fire({
-      title: 'Service ERROR',
-      text: error.error.response,
-      icon: 'error',
-      confirmButtonColor: '#05b281'
-    })
+
+    this.toastr.error(error.message, $localize`Service ERROR`)
 
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {

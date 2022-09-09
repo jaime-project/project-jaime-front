@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { ConfigService } from 'src/app/services/configs/config.service';
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-requirements-config',
@@ -14,7 +14,7 @@ export class RequirementsComponent implements OnInit {
   butonClicked: boolean = false
 
 
-  constructor(private configService: ConfigService, private route: Router) { }
+  constructor(private configService: ConfigService, private route: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.loadStartData()
@@ -30,12 +30,8 @@ export class RequirementsComponent implements OnInit {
   postRequeriments() {
     this.configService.postRequirements(this.requirementsText)
       .subscribe(() => {
-        Swal.fire({
-          title: $localize`Requirements sended to install in Agents`,
-          icon: 'success',
-        }).then(() =>
-          this.butonClicked = false
-        )
+        this.toastr.success($localize`Requirements sended to install in Agents`)
+        this.butonClicked = false
       })
   }
 }
