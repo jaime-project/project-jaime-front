@@ -16,7 +16,7 @@
         {
           "uuid": "d1a311bb-7e8b-4981-b9c9-d50bb6ee58bd",
           "body": "",
-          "latency": 3000,
+          "latency": 0,
           "statusCode": 201,
           "label": "",
           "headers": [
@@ -590,6 +590,36 @@
       "responseMode": null
     },
     {
+      "uuid": "b05e0386-5933-48bd-9ac6-565c68559453",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "repos/types",
+      "responses": [
+        {
+          "uuid": "da3865a4-f59a-49ee-ba07-b5e1b763ed58",
+          "body": "[\n  \"LOCAL\",\n  \"GIT\"\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
       "uuid": "57de2220-7366-4118-8cf7-8482d75e31a6",
       "documentation": "",
       "method": "get",
@@ -688,36 +718,6 @@
         {
           "uuid": "81ddc4ff-b641-4fde-a9cf-39ac066dc967",
           "body": "{\n  \"name\": \"local\",\n  \"type\": \"LOCAL\"\n}",
-          "latency": 0,
-          "statusCode": 200,
-          "label": "",
-          "headers": [
-            {
-              "key": "Access-Control-Allow-Origin",
-              "value": "*"
-            }
-          ],
-          "filePath": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": true
-        }
-      ],
-      "enabled": true,
-      "responseMode": null
-    },
-    {
-      "uuid": "b05e0386-5933-48bd-9ac6-565c68559453",
-      "documentation": "",
-      "method": "get",
-      "endpoint": "repos/types",
-      "responses": [
-        {
-          "uuid": "da3865a4-f59a-49ee-ba07-b5e1b763ed58",
-          "body": "[\n  \"LOCAL\",\n  \"GIT\"\n]",
           "latency": 0,
           "statusCode": 200,
           "label": "",

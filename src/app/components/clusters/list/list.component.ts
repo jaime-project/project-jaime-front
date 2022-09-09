@@ -98,7 +98,7 @@ export class ListClusterComponent implements OnInit {
           this.toastr.success($localize`Login success`)
         }
         else {
-          this.toastr.success($localize`Login failure`)
+          this.toastr.error($localize`Login failure`)
         }
       })
   }
