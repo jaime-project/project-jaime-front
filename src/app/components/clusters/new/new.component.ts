@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { AgentService } from 'src/app/services/agents/agents.service';
 import { ClustersService } from 'src/app/services/clusters/clusters.service';
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-new-cluster',
@@ -20,7 +20,7 @@ export class NewClusterComponent implements OnInit {
     version: new FormControl(''),
   });
 
-  constructor(private route: Router, private agentService: AgentService, private clustersService: ClustersService) { }
+  constructor(private route: Router, private agentService: AgentService, private clustersService: ClustersService, private toastr: ToastrService) { }
 
   clusterTypes: string[] = []
 
@@ -33,14 +33,11 @@ export class NewClusterComponent implements OnInit {
   }
 
   postCluster() {
+
     this.clustersService.postCluster(this.clusterForm.value)
       .subscribe(() => {
-        Swal.fire({
-          title: $localize`New Server created`,
-          icon: 'success',
-        }).then(() =>
-          this.route.navigate(['clusters'])
-        )
+        this.toastr.success($localize`New Server created`)
+        this.route.navigate(['clusters'])
       })
   }
 

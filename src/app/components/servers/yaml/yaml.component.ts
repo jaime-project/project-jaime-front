@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Server } from 'src/app/models/models';
 import { ServerService } from 'src/app/services/servers/servers.service';
 import Swal from 'sweetalert2';
@@ -23,7 +24,7 @@ export class YamlServerComponent implements OnInit {
     password: ""
   }
 
-  constructor(private serversService: ServerService, private activatedRoute: ActivatedRoute, private route: Router) { }
+  constructor(private serversService: ServerService, private activatedRoute: ActivatedRoute, private route: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     let name = this.activatedRoute.snapshot.paramMap.get('name')
@@ -50,9 +51,10 @@ export class YamlServerComponent implements OnInit {
     }).then(result => {
       if (result.isConfirmed) {
         this.serversService.putServer(parse(modifyYaml))
-          .subscribe(() =>
+          .subscribe(() => {
+            this.toastr.success($localize`Server updated`)
             this.route.navigate(['servers'])
-          )
+          })
       }
     })
 

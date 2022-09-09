@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { WorkService } from 'src/app/services/works/work.service';
 import Swal from 'sweetalert2';
 import { Document, parse } from 'yaml';
@@ -17,7 +18,7 @@ export class YamlWorkComponent implements OnInit {
 
   work_id: string = ""
 
-  constructor(private workService: WorkService, private activatedRoute: ActivatedRoute, private route: Router) { }
+  constructor(private workService: WorkService, private activatedRoute: ActivatedRoute, private route: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.work_id = this.activatedRoute.snapshot.paramMap.get('id')!
@@ -43,9 +44,10 @@ export class YamlWorkComponent implements OnInit {
     }).then(result => {
       if (result.isConfirmed) {
         this.workService.putWork(parse(modifyYaml))
-          .subscribe(() =>
+          .subscribe(() => {
+            this.toastr.success($localize`Job updated`)
             this.route.navigate(['works'])
-          )
+          })
       }
     })
 

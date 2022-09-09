@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { CronService } from 'src/app/services/crons/cron.service';
-import { WorkService } from 'src/app/services/works/work.service';
 import Swal from 'sweetalert2';
 import { Document, parse } from 'yaml';
 
@@ -18,7 +18,7 @@ export class YamlCronComponent implements OnInit {
 
   cronId: string = ""
 
-  constructor(private cronService: CronService, private activatedRoute: ActivatedRoute, private route: Router) { }
+  constructor(private cronService: CronService, private activatedRoute: ActivatedRoute, private route: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.cronId = this.activatedRoute.snapshot.paramMap.get('id')!
@@ -44,9 +44,10 @@ export class YamlCronComponent implements OnInit {
     }).then(result => {
       if (result.isConfirmed) {
         this.cronService.putCron(parse(modifyYaml))
-          .subscribe(() =>
+          .subscribe(() => {
+            this.toastr.success($localize`New Server created`)
             this.route.navigate(['crons'])
-          )
+          })
       }
     })
 

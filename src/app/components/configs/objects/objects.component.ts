@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { ConfigService } from 'src/app/services/configs/config.service';
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-objects-config',
@@ -15,7 +15,7 @@ export class ObjectsComponent implements OnInit {
   butonClicked: boolean = false
 
 
-  constructor(private configService: ConfigService, private route: Router) { }
+  constructor(private configService: ConfigService, private route: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
   }
@@ -23,12 +23,8 @@ export class ObjectsComponent implements OnInit {
   postRequeriments() {
     this.configService.postObjects(this.objectsText, this.replace)
       .subscribe(() => {
-        Swal.fire({
-          title: $localize`Objects updating in Jaime`,
-          icon: 'success',
-        }).then(() =>
-          this.butonClicked = false
-        )
+        this.toastr.success($localize`Objects updating in Jaime`)
+        this.butonClicked = false
       })
   }
 }

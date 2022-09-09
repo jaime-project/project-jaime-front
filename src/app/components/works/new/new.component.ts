@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { AgentService } from 'src/app/services/agents/agents.service';
 import { DocsService } from 'src/app/services/modules/docs.service';
 import { ModuleService } from 'src/app/services/modules/modules.service';
@@ -29,7 +30,7 @@ export class NewWorkComponent implements OnInit {
     params: new FormControl(),
   });
 
-  constructor(private route: Router, private workService: WorkService, private moduleService: ModuleService, private reposService: ReposService, private agent_service: AgentService, private docsService: DocsService) { }
+  constructor(private route: Router, private workService: WorkService, private moduleService: ModuleService, private reposService: ReposService, private agent_service: AgentService, private docsService: DocsService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
 
@@ -82,14 +83,8 @@ export class NewWorkComponent implements OnInit {
 
     this.workService.postWork(finalYaml)
       .subscribe(result => {
-        Swal.fire({
-          title: $localize`Success creation`,
-          text: $localize`Generated id ${result.id}`,
-          icon: 'success',
-          confirmButtonColor: '#05b281',
-        }).then(() =>
-          this.route.navigate(['works'])
-        )
+        this.toastr.success($localize`Generated id ${result.id}`, $localize`Success creation`)
+        this.route.navigate(['works'])
       })
   }
 
