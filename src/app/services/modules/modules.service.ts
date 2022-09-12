@@ -21,7 +21,9 @@ export class ModuleService {
   listModules(repo: string): Observable<string[]> {
     return this.http.get<string[]>(`${this.apiUrl}/${repo}/modules`)
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
@@ -32,7 +34,9 @@ export class ModuleService {
 
     return this.http.get(url, { headers, responseType: 'text' })
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
@@ -43,7 +47,9 @@ export class ModuleService {
 
     return this.http.post(url, code, { headers, responseType: 'text' })
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
@@ -52,7 +58,9 @@ export class ModuleService {
 
     return this.http.delete<any>(url)
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
@@ -63,7 +71,9 @@ export class ModuleService {
 
     return this.http.put(url, code, { headers })
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 

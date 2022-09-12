@@ -7,7 +7,9 @@ import { WorkShort } from 'src/app/models/models';
 import { AppConfigService } from '../AppConfigService';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class WorkService {
 
   apiUrl: string = "";
@@ -17,25 +19,30 @@ export class WorkService {
     this.apiUrl = environment.config.backendURL + '/api/v1/works';
   }
 
-
   getWorksAllShort(): Observable<WorkShort[]> {
     return this.http.get<WorkShort[]>(this.apiUrl + '/all/short')
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
   deleteWork(id: string): Observable<any> {
     return this.http.delete<any>(this.apiUrl + '/' + id)
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
   deleteWorksByStatus(status: string): Observable<any> {
     return this.http.delete<any>(this.apiUrl + '/?status=' + status)
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
@@ -43,7 +50,9 @@ export class WorkService {
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
     return this.http.get(this.apiUrl + '/' + id + '/logs', { headers, responseType: 'text' })
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
@@ -51,14 +60,18 @@ export class WorkService {
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
     return this.http.post(this.apiUrl + '/', yaml, { headers, responseType: 'json' })
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
   getWork(id: string | null): Observable<any> {
     return this.http.get(this.apiUrl + '/' + id)
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
@@ -66,7 +79,9 @@ export class WorkService {
 
     return this.http.get(`${this.apiUrl}/${id}/workspace`, { responseType: 'blob' })
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
@@ -74,7 +89,9 @@ export class WorkService {
 
     return this.http.patch(`${this.apiUrl}/${id}/status/${status}`, {}, { responseType: 'blob' })
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
@@ -82,7 +99,9 @@ export class WorkService {
 
     return this.http.get<string[]>(`${this.apiUrl}/status`)
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
@@ -90,7 +109,9 @@ export class WorkService {
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
     return this.http.put(this.apiUrl + '/', yaml, { headers, responseType: 'json' })
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 

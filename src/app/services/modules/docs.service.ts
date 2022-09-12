@@ -21,7 +21,9 @@ export class DocsService {
   listDocs(): Observable<string[]> {
     return this.http.get<string[]>(this.apiUrl)
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
@@ -32,7 +34,9 @@ export class DocsService {
 
     return this.http.post(url, docs, { headers, responseType: 'text' })
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
@@ -43,7 +47,9 @@ export class DocsService {
 
     return this.http.get(url, { headers, responseType: 'text' })
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
@@ -53,7 +59,9 @@ export class DocsService {
 
     return this.http.delete<any>(url)
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
@@ -72,7 +80,9 @@ export class DocsService {
 
     return this.http.put(url, content, { headers })
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 

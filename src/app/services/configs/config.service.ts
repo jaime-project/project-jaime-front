@@ -22,7 +22,9 @@ export class ConfigService {
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
     return this.http.get(`${this.apiUrl}/requirements`, { headers, responseType: 'text' })
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
@@ -33,7 +35,9 @@ export class ConfigService {
 
     return this.http.post(url, code, { headers, responseType: 'text' })
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
@@ -44,7 +48,9 @@ export class ConfigService {
 
     return this.http.post(url, code, { headers, responseType: 'text' })
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
@@ -54,7 +60,9 @@ export class ConfigService {
 
     return this.http.get(url, { responseType: "blob" })
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
@@ -64,7 +72,9 @@ export class ConfigService {
 
     return this.http.get(url, { responseType: 'text' })
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
@@ -74,14 +84,18 @@ export class ConfigService {
 
     return this.http.get(url, { responseType: 'text' })
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
   getConfigsVars(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/vars`)
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
@@ -89,7 +103,9 @@ export class ConfigService {
     const url = `${this.apiUrl}/vars`
     return this.http.put(url, vars)
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 

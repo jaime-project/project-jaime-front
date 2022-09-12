@@ -20,28 +20,36 @@ export class ServerService {
   listServer(): Observable<ServerShort[]> {
     return this.http.get<ServerShort[]>(this.apiUrl + '/all/short')
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
   getServer(name: string | null): Observable<Server> {
     return this.http.get<Server>(this.apiUrl + '/' + name)
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
   postServer(cluster: Server): Observable<any> {
     return this.http.post<any>(this.apiUrl + '/', cluster)
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
   deleteServer(name: string | null): Observable<any> {
     return this.http.delete<any>(this.apiUrl + '/' + name)
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
@@ -49,21 +57,27 @@ export class ServerService {
     let name = cluster.name
     return this.http.put<any>(this.apiUrl + '/' + name, cluster)
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
   listServerTypes(): Observable<string[]> {
     return this.http.get<string[]>(`${this.apiUrl}/types`)
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
   testServer(name: string): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/${name}/test`)
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 

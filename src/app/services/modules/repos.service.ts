@@ -22,42 +22,54 @@ export class ReposService {
   listRepos(): Observable<string[]> {
     return this.http.get<string[]>(this.apiUrl)
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
   getRepo(name: string): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/${name}`)
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
   listReposByType(typeRepo: string): Observable<string[]> {
     return this.http.get<string[]>(`${this.apiUrl}/?type=${typeRepo}`)
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
   listReposTypes(): Observable<string[]> {
     return this.http.get<string[]>(`${this.apiUrl}/types`)
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
   postRepos(repo: any): Observable<string> {
     return this.http.post<any>(this.apiUrl + '/', repo)
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
   deleteRepos(name: string): Observable<any> {
     return this.http.delete<any>(this.apiUrl + '/' + name)
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
@@ -65,7 +77,9 @@ export class ReposService {
     const url = `${this.apiUrl}/${name}/reload`
     return this.http.post<any>(url, {})
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
