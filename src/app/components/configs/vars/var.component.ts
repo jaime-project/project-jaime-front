@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { ConfigService } from 'src/app/services/configs/config.service';
 
 @Component({
-  selector: 'app-var-config',
+  selector: 'app-configs-vars',
   templateUrl: './var.component.html',
   styleUrls: ['./var.component.css']
 })
@@ -10,22 +13,30 @@ export class VarConfigComponent implements OnInit {
 
   editSwitchActivated = false
 
-  configs: any = {}
-  itemsConfigs: any[] = []
+  itemsConfigs: { [key: string]: any } = {}
 
-  constructor(private configService: ConfigService) { }
+  constructor(private configService: ConfigService, private route: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
-    this.configService.getConfigsAll()
-      .subscribe(data => {
-        this.configs = data
 
-        for (let key of Object.keys(this.configs)) {
-          this.itemsConfigs.push({
-            "key": key,
-            "value": this.configs[key]
-          })
-        }
+    this.configService.getConfigsVars()
+      .subscribe(data => {
+        this.itemsConfigs = data
+      })
+  }
+
+  postVars(): void {
+
+    let newDict = { ...this.itemsConfigs }
+
+    for (let item in this.itemsConfigs) {
+      newDict[item] = (<HTMLInputElement>document.getElementById(item)).value
+    }
+
+    this.configService.postConfigsVars(newDict)
+      .subscribe(() => {
+        this.toastr.success($localize`New Server created`)
+        this.route.navigate(['configs'])
       })
   }
 
