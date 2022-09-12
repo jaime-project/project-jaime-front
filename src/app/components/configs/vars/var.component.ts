@@ -35,8 +35,8 @@ export class VarConfigComponent implements OnInit {
 
     this.configService.postConfigsVars(newDict)
       .subscribe(() => {
-        this.toastr.success($localize`New Server created`)
-        this.route.navigate(['configs'])
+        this.toastr.success($localize`New config updated`)
+        this.editSwitchActivated = false
       })
   }
 

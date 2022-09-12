@@ -1807,7 +1807,67 @@
       "responses": [
         {
           "uuid": "9c4702c8-a1e3-4018-b48e-584f637720f5",
-          "body": "2022-08-11 14:09:51,079 - app (49422) - INFO - Agent ID -> 478d09392d2d\n2022-08-11 14:09:51,079 - app (49422) - INFO - \n\n                      ,^(]$%&&&&%$](+,`                                                                                                               \n                  ,)$#@@@@@@@@@@@@@@@@#$(\"                                                                                                            \n               '(&@@@@#####@@@@@@#####@@@@&('                                                                                                         \n             ,]#@@###@@@@@%]\\+++/]#@@@@###@@#$,                                             .!?(]>                                                    \n           `]#@@##@@@@@@%!,,,,,,,,,?#@@@@@##@@#]`                                       ,)$@##@%(`                                                    \n          :&@@##@@@@@@@$,,,,,,,,,,,,:#@@@@@@##@@#:                                   `)&$):.]]`                                                       \n         ?#@@#@@@@@@@@$,,,,,,,,,,,,,,:#@@@@@@@#@@#?                                `]$>`  :#$                                                         \n        ?#@@#@@@@@@@@@$,,,,,,,,,,,,,,~&@@@@@@@@#@@#\\                              ^$~    ;@#`                                                         \n       :#@@#@@@@@@@@@@@\\,,,,,,,,,,,,,]@@@@@@@@@@#@@#!                            ]?     '@@*                                                          \n      `%@@#@@@@@@@@@@%,,,,,,,,,,,,,,,!]@@@@@@@@@@#@@&`                          ]:      $@#                       `                                   \n      ?@@##@@@@@@@@@@#:,,,,,,,,,,,,,,,]@@@@@@@@@@##@@/                         !*      ,@@\\                     :],                                   \n      %@@#@@@@@@@@@@@@#^,,,,,:?:,,,,,]@@@@@@@@@@@@#@@%                         ]       $@#                    `$]                                     \n     .#@@#@@@@@@@@@@@@@@:,,:+\\+\\^\",,\\@@@@@@@@@@@@@#@@#'                        $      :@@^                    `/                                      \n     \"#@@#@@@@@@@@@@@@@@&:,,,,,,,,,+@@@@@@@@@@@@@@#@@#:                        ]`     &@$       `\"!!' ':      '`   `::   `:!`   `:!'       `:!,       \n     ~#@@#@@@@@@@@@@@@@@@%,,,,,,,,,#@@@@@@@@@@@@@@#@@#:                        .]`   ?@#`     ?\\!,'+#@@!   ,(##` `*)@@:\")/%@# ,(/$@@,    ,(/)#@&      \n     '#@@#@@@@@@@@@@@@@@@%,,,,,,,,,%@@@@@@@@@@@@@@#@@#'              ,!,         >+;;@@(,   >#!    '@@:   :^@#.  , /@#/!  ]@%+!  /@#    )%   ]@#`     \n      %@@#@@@@@@@@@@@@@#]],,,,,,,,,]]&@@@@@@@@@@@@#@@&          `^+;:.              &@^    ]@)    '#@)    `#@!     #@#.   #@%'  `@@:   )@]>?(]:       \n      \\@@##@@@@@@&$]);\",/@]\",,,,,:$@(,,!\\]$%#@@@@#@@@(        +]^                  $@*    ^@@`   :#@#     ]@$     (@#.   (@@'   $@]   '@@'            \n      `&@@#@#$]^,,,,,,,,#@@#]/\\($@@@#,,,,,,,,:/$##@@#.      >&^                   ]@^     ]@@`  )=#@]  ` .@@; `` .@@:   '@@!   '@@` ` \\@@'    :       \n       !#@@%:,,,,,,,,,,+@@@??%@$;]@@@*,,,,,,,,,!%@@#>      $@'                   $#\"      !@@%]]' #@&)?  ;@@]\\^  $@]    %@]    ;@@\\?! ~@@#(\\]('       \n        \\#@@%;,,,,,,,,,]@@@!:]$)\"]@@@$,,,,,,,,?&@@@]      $@(                  .%$`        :)>`   '(=`    ?(!    );    `(^      ?)!    '?(/!`         \n         ?#@@#]:,,,,,,,]@@@#@@@@@@@@@],,,,,,:]#@@@]      '@@^                 \\%:                                                                     \n          !#@@#%(:,,,,,,%@@@@@@@@@@@%,,,,,:(&@@@@]       ,@@]               >$^                                                                       \n           `]#@@##]^\",,,~$@@@@@@@@@$~,,:/]&#@@@#/         %@@)           !(]:                                                                         \n             ,$#@@@#&$]\\:,(#@@@@@#(!/]$##@@@@@&:          `]#@@$]\\?\\)]]](:                                                                            \n               ,]#@@@@####&%##########@@@@@@#]`              .:^>>^:,`                                                                                \n                  :]%#@@@@@@@@@@@@@@@@@@@@#$,                                                                                                         \n                     `:]#@@@@@@@@@@@@@@@@$:                                                                                                           \n                        :#@@@@@@@@@@@@#$:                                                                                                             \n                         $@@@@@@@@@@#],                                                                                                               \n                         $@@@@@@@#%?`                                                                                                                 \n                         $@@@@@&(,                                                                                                                    \n                         $@#%(,                                                                                                                       \n                         \\*'                                                                                                                          \n                                                                                                                                                                        \n",
+          "body": "2022-08-11 14:09:51,079 - app (49422) - INFO - Agent ID -> 478d09392d2d\n2022-08-11 14:09:51,079 - app (49422) - INFO - \n\n                        ^Y?:    7J!.                                                                                                                                                \n                        7##BPJ!^P#BGY!:                                                                                                                                             \n                    .^!7YBBB###BBBB##BGPYJ?!^:                                                                ..:::^:.                                                              \n                 :75GB###BBBBBBBBBBBBB#####BBG5?^                                                        .:^^^^^~^^:.                                                               \n               ^YB###BBBBBBBBBBBBBBBBBBBBBBBBBBBG5!                                                   .:^^:...:^.                                                                   \n              ?B#BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBGGB5:                                               :^:.    :~~.                                                                    \n             Y#BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBGGGP:                                            .^:      :~~.                                                                     \n            7#BBBBBBBBGGGGBBBBBBBBBBBBBBBGGGBBBBBBGGB5                                           ::       :~~:                                                                      \n            5#BBBBBBBBGGGGGGGGGGGGGGGGGGGGGGBBBBBBGGGG:                                         ^.       .~~^                           ..                                          \n            P#BBBBBBBBBGGGGGGGGGGGGGGGGGGGGGBBBBBBGGGG^                                        :.        ^~~.                         .^:                                           \n            P#BBBBBBBBBGGGGGGGGGGGGGGGGGGGGGBBBBBBGGGG^                                        ^        :~~^                         ^^                                             \n            P#BBBBBBBG5J????YGGGGGGGGGGGGGGGGGPGGBGGGG^                                       .^       .~~^                          .                                              \n            P#BBBBGGG?!J555Y!75GGGGGGGGGPGGGGP55PBGGGG^                                        ::      ^~~.       ...::::.:^.      .:.   ..:^:  .::^^.   .::^^.       .::^^:.       \n            P#BBBBGGY~?B5~JBY~?GGGGGGGGP~?GGGP55GBGGGG^                                         ::.   :~~:     .::.     ^~~:    .:~~^   ...~~^.:...~~^ ::. :~~^     :^.. :~~^       \n            PBBGGBBGP7!J55PY7!5GGGGGGGGGPGGGGP55BBGGGG^                        .......            ...^~~:.    :~^      :~~.     .^~^      :~~^:   .~~^:.   ^~^     ^~.  .:^^.       \n           ^PPPPPGBGGG5?777?YPGGGGGGGGGGGGGGGP5GBPPPPP7                    ..::..                   :~^.     ^~^     .^~~:      ^~^      .~~^.    ^~~:    :~~.    ^~^.....          \n           JPPPPPPBBBGGG57JGBBBBBBBBBBGGGGGGGGB#GPPPPPP:                 .^:.                      :~^      :~~^    :^~~^      ^~~.      ^~^.    :~~:    .~~.    :~~:               \n           :YPPPPPG#BBBG57YBBBBBBBBBBBBBGGGGBB#BPPPPP5!                .^^.                       ^~:       :~~^..::..~~^ .:  .~~^ .:.  ^~~.    :~~:     ^~~. :. :~~^.  ..:.        \n             :^^!J7?B#BB57Y#BBGGGGGGBBBBBBBB##5~^^^^:.                :~^                       :~^.         :^^^:.   ^^^:.    ^^^:.   .^^.    .^^:      :^^^:.   :^^^^::.          \n                :?~ ~P##P7Y#BBBBBBBBBBBBBB##G?                       :~~:                     .^^.                                                                                  \n                .77^  !5J?G#BBBBBBBBBBB##BP7.                        ^~~:                   .::.                                                                                    \n                 .~!7!!!~^?GBBBBBBBBBBBY7:                           :~~~:              ..:::                                                                                       \n                       .:^:JPGGGGGGGGPP~^^.                           :^~~^:.........::::.                                                                                          \n                   .:~!J?!!!7?JYYY5YJ?7!!7Y7^:.                         ..::^::::::...                                                                                              \n                 :!?JJYY7^~~~^~!!!!!~^~~~~YYJ7!~:                                                                                                                                   \n               .!JJJYYYYY!~~~~!!!!!!~~~~~JYYYY7!!~.                                                                                                                                 \n               7J?JYYYYY?~~~~^~!!!!!~^~~~!YYYYY?!!!:                                                                                                                                \n              ~J?JYYYYYY7~~~!?YP55P5J7~~~!YYYYYY?!!~                                                                                                                                \n              !J?JJJJYYYYYJJG&&&5J#@&#YJJYYYYYJJ7!!!.                                                                                                                               \n              !J???JYYYYYYYYG&&&#B&&&#5YYYYYYYJ?7!!!.                                                                                                                               \n              !J???JYYYYYYYYG&&&5J#&&#YYYYYYYYJJ7!!!.                                                                                                                               \n              !J?????JJYYYYYG&&&BB&&&#YYYYYJJ??J7!!!.                                                                                                                               \n              !J????????JYYYB&&&&&&&&#5YYJJ???JJ7!!!.                                                                                                               \n                                                             ",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "7b80d616-ca2c-4063-b140-84594ccb4f99",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "configs/vars",
+      "responses": [
+        {
+          "uuid": "451b1de9-62d0-484c-9b5f-5d9369a1381e",
+          "body": "{\n  \"GARBAGE_COLLECTOR_RUN_MINUTES\": 2500\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "db762648-b116-4a7a-8ebc-ffb3fdddfb8f",
+      "documentation": "",
+      "method": "put",
+      "endpoint": "configs/vars",
+      "responses": [
+        {
+          "uuid": "43ab2c97-4db0-4375-acd9-f3a6bf344a71",
+          "body": "",
           "latency": 0,
           "statusCode": 200,
           "label": "",
