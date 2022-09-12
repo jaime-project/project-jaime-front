@@ -7,9 +7,7 @@ import { WorkShort } from 'src/app/models/models';
 import { AppConfigService } from '../AppConfigService';
 
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class WorkService {
 
   apiUrl: string = "";
