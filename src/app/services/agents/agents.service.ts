@@ -22,28 +22,36 @@ export class AgentService {
   getAgentsAll(): Observable<AgentShort[]> {
     return this.http.get<AgentShort[]>(this.apiUrl + '/all/short')
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
   getAgent(id: string | null): Observable<Agent> {
     return this.http.get<Agent>(this.apiUrl + '/' + id)
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
   deleteAgent(id: string | null): Observable<any> {
     return this.http.delete<any>(this.apiUrl + '/' + id)
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
   listAgentsTypes(): Observable<string[]> {
     return this.http.get<string[]>(`${this.apiUrl}/types`)
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 

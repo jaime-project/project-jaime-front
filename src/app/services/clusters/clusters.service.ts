@@ -21,28 +21,36 @@ export class ClustersService {
   listCluster(): Observable<ClusterShort[]> {
     return this.http.get<ClusterShort[]>(this.apiUrl + '/all/short')
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
   getCluster(name: string | null): Observable<Cluster> {
     return this.http.get<Cluster>(this.apiUrl + '/' + name)
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
   postCluster(cluster: Cluster): Observable<any> {
     return this.http.post<any>(this.apiUrl + '/', cluster)
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
   deleteCluster(name: string | null): Observable<any> {
     return this.http.delete<any>(this.apiUrl + '/' + name)
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
@@ -50,14 +58,18 @@ export class ClustersService {
     let name = cluster.name
     return this.http.put<any>(this.apiUrl + '/' + name, cluster)
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
   testCluster(name: string): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/${name}/test`)
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.httpError(error);
+        })
       )
   }
 
