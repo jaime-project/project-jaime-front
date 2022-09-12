@@ -19,15 +19,18 @@
     <div class="card">
       <div class="card-body">
 
-        <form>
-          <div class="mb-3 col-12" *ngFor="let conf of itemsConfigs">
-            <label for="nameInput" class="form-label"><b>{{conf.key}}</b></label>
-            <div id="nameHelp" class="form-text">
-              <label for="nameInput" class="form-label" *ngIf="!editSwitchActivated">{{conf.value}}</label>
-              <input type="text" class="form-control" id="nameInput" aria-describedby="nameHelp" *ngIf="editSwitchActivated">
-            </div>
-          </div>
+        <form (ngSubmit)="postVars()">
 
+          <div class=" mb-3 col-12" *ngFor="let conf of itemsConfigs | keyvalue">
+
+            <label class="form-label"><b>{{conf.key}}</b></label>
+            <div id="nameHelp" class="form-text">
+              <label class="form-label" *ngIf="!editSwitchActivated">{{conf.value}}</label>
+              <input type="text" class="form-control" *ngIf="editSwitchActivated" value="{{conf.value}}"
+                id="{{conf.key}}">
+            </div>
+
+          </div>
           <div class="mb-3 col-12">
             <button type="submit" class="btn btn-success m-t-20" *ngIf="editSwitchActivated">Update</button>
           </div>

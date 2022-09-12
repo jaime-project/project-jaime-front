@@ -18,14 +18,6 @@ export class ConfigService {
     this.apiUrl = environment.config.backendURL + '/api/v1/configs';
   }
 
-
-  getConfigsAll(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl)
-      .pipe(
-        catchError(this.httpError)
-      )
-  }
-
   getRequirements(): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
     return this.http.get(`${this.apiUrl}/requirements`, { headers, responseType: 'text' })
@@ -81,6 +73,21 @@ export class ConfigService {
     const url = `${this.apiUrl}/logs/agents/${id}`
 
     return this.http.get(url, { responseType: 'text' })
+      .pipe(
+        catchError(this.httpError)
+      )
+  }
+
+  getConfigsVars(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/vars`)
+      .pipe(
+        catchError(this.httpError)
+      )
+  }
+
+  postConfigsVars(vars: { [key: string]: any }): Observable<any> {
+    const url = `${this.apiUrl}/vars`
+    return this.http.put(url, vars)
       .pipe(
         catchError(this.httpError)
       )
