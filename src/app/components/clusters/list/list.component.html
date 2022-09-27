@@ -38,9 +38,7 @@
                     <i class=" far fa-trash-alt"></i>
                   </button>
 
-                  <div class="spinner-border text-success" *ngIf="testServerLoad"></div>
-
-                  <button type="button" class="btn btn-success" style="margin-right: 2%;" *ngIf="!testServerLoad"
+                  <button type="button" class="btn btn-success" style="margin-right: 2%;"
                     (click)="testServer(clusterShort.name)">
                     <i class="fas fa-play"></i>
                   </button>
@@ -52,5 +50,6 @@
       </div>
     </div>
   </div>
-
 </div>
+
+<app-spinner *ngIf="pageLoading"></app-spinner>

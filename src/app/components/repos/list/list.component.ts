@@ -14,8 +14,8 @@ export class ListModuleComponent implements OnInit {
 
   reposLocal: string[] = []
   reposGit: string[] = []
-  repoReloading: boolean = false
   filterBy: string = ''
+  pageLoading: boolean = false
 
   constructor(private reposService: ReposService, private route: Router, private toastr: ToastrService) { }
 
@@ -68,7 +68,6 @@ export class ListModuleComponent implements OnInit {
 
   reloadRepo(name: string) {
 
-
     Swal.fire({
       title: $localize`Reload repository`,
       text: $localize`Reload repository with name ${name}`,
@@ -79,12 +78,12 @@ export class ListModuleComponent implements OnInit {
     }).then(result => {
       if (result.isConfirmed) {
 
-        this.repoReloading = true
+        this.pageLoading = true
 
         this.reposService.reloadRepos(name)
           .subscribe(() => {
-            this.repoReloading = false
-            this.toastr.success($localize`Repository reloaded`)
+            this.pageLoading = false
+            this.toastr.success($localize`Repository ${name} reloaded`)
           })
       }
     })

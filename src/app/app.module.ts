@@ -1,4 +1,3 @@
-// import * as $ from 'jquery';
 import {
   CommonModule,
   LocationStrategy,
@@ -19,6 +18,7 @@ import { AppComponent } from './app.component';
 import { FullComponent } from './layouts/full/full.component';
 import { AppConfigService } from './services/AppConfigService';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { SpinnerComponent } from './shared/spinner/spinner.component';
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -38,7 +38,7 @@ const appInitializerFn = (appConfig: AppConfigService) => {
   declarations: [
     AppComponent,
     FullComponent,
-    SidebarComponent
+    SidebarComponent,
   ],
   imports: [
     CommonModule,
