@@ -620,44 +620,14 @@
       "responseMode": null
     },
     {
-      "uuid": "57de2220-7366-4118-8cf7-8482d75e31a6",
+      "uuid": "aabddc68-9f2f-49f3-abd8-46dee83db7d6",
       "documentation": "",
       "method": "get",
-      "endpoint": "repos/*",
+      "endpoint": "repos/local",
       "responses": [
         {
-          "uuid": "6c5d727b-334c-4397-ad48-d471336e3ed4",
-          "body": "{\n  \"name\": \"nombre\",\n  \"type\": \"local\"\n}",
-          "latency": 0,
-          "statusCode": 201,
-          "label": "",
-          "headers": [
-            {
-              "key": "Access-Control-Allow-Origin",
-              "value": "*"
-            }
-          ],
-          "filePath": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": true
-        }
-      ],
-      "enabled": true,
-      "responseMode": null
-    },
-    {
-      "uuid": "ebe1ce02-87a3-44d6-99b0-8623be082ee3",
-      "documentation": "",
-      "method": "delete",
-      "endpoint": "repos/*",
-      "responses": [
-        {
-          "uuid": "661201d5-1751-492f-a72e-b20770340274",
-          "body": "",
+          "uuid": "81ddc4ff-b641-4fde-a9cf-39ac066dc967",
+          "body": "{\n  \"name\": \"local\",\n  \"type\": \"LOCAL\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -710,14 +680,14 @@
       "responseMode": null
     },
     {
-      "uuid": "aabddc68-9f2f-49f3-abd8-46dee83db7d6",
+      "uuid": "ebe1ce02-87a3-44d6-99b0-8623be082ee3",
       "documentation": "",
-      "method": "get",
-      "endpoint": "repos/local",
+      "method": "delete",
+      "endpoint": "repos/*",
       "responses": [
         {
-          "uuid": "81ddc4ff-b641-4fde-a9cf-39ac066dc967",
-          "body": "{\n  \"name\": \"local\",\n  \"type\": \"LOCAL\"\n}",
+          "uuid": "661201d5-1751-492f-a72e-b20770340274",
+          "body": "",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -1104,6 +1074,36 @@
           "body": "[\n    {\n        \"name\": \"Migracion Secrets\",\n        \"status\": \"RUNNING\",\n        \"id\": \"asd12d12d\",\n        \"agent_id\": \"qwerdsg21\",\n        \"agent_type\": \"OPENSHIFT\",\n        \"module_name\": \"Migrate object\",\n        \"ready_date\": \"2021-11-12T11:15:45\",\n        \"start_date\": \"2021-11-12T11:15:45\"\n    },\n    {\n        \"name\": \"Install jenkins\",\n        \"status\": \"READY\",\n        \"id\": \"asdqwefd\",\n        \"agent_id\": null,\n        \"agent_type\": \"OPENSHIFT\",\n        \"module_name\": \"Install jenkins\",\n        \"ready_date\": \"2021-11-12T11:15:45\"\n    },\n    {\n        \"name\": \"migracion configmaps\",\n        \"status\": \"ERROR\",\n        \"id\": \"hgfd765\",\n        \"agent_id\": null,\n        \"agent_type\": \"OPENSHIFT\",\n        \"module_name\": \"Migrate object\",\n        \"ready_date\": \"2021-11-12T11:15:45\"\n    },\n    {\n        \"name\": \"migracion configmaps\",\n        \"status\": \"SUCCESS\",\n        \"id\": \"hgfd765\",\n        \"agent_id\": null,\n        \"agent_type\": \"OPENSHIFT\",\n        \"module_name\": \"Migrate object\",\n        \"ready_date\": \"2021-11-12T11:15:45\"\n    },\n    {\n        \"name\": \"migracion configmaps\",\n        \"status\": \"CANCEL\",\n        \"id\": \"hgfd765\",\n        \"agent_id\": null,\n        \"agent_type\": \"OPENSHIFT\",\n        \"module_name\": \"Migrate object\",\n        \"ready_date\": \"2021-11-12T11:15:45\"\n    }\n]",
           "latency": 1000,
           "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "57de2220-7366-4118-8cf7-8482d75e31a6",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "repos/*",
+      "responses": [
+        {
+          "uuid": "6c5d727b-334c-4397-ad48-d471336e3ed4",
+          "body": "{\n  \"name\": \"nombre\",\n  \"type\": \"local\"\n}",
+          "latency": 0,
+          "statusCode": 201,
           "label": "",
           "headers": [
             {
