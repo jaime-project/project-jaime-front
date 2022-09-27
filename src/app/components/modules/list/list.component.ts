@@ -47,8 +47,8 @@ export class ListModuleComponent implements OnInit {
   deleteModule(name: string) {
 
     Swal.fire({
-      title: $localize`Delete agent`,
-      text: $localize`Delete agent with name ${name}`,
+      title: $localize`Delete module`,
+      text: $localize`Delete module with name ${name}`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',
@@ -58,7 +58,7 @@ export class ListModuleComponent implements OnInit {
         this.docsService.deleteDocs(name, this.repo)
         this.modulesService.deleteModule(name, this.repo)
           .subscribe(() => {
-            this.toastr.success($localize`Agent deleted`)
+            this.toastr.success($localize`Module ${name} deleted`)
             this.route.navigate([`repos/${this.repo}/modules`])
           })
       }
