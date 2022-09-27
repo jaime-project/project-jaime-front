@@ -13,10 +13,9 @@ import Swal from 'sweetalert2';
 })
 export class ListClusterComponent implements OnInit {
 
+  pageLoading: boolean = false
   subscription: Subscription | null = null
-
   listClustersShorts: ClusterShort[] = []
-  testServerLoad: boolean = false
 
   constructor(private clustersService: ClustersService, private route: Router, private toastr: ToastrService) { }
 
@@ -90,10 +89,10 @@ export class ListClusterComponent implements OnInit {
 
   testServer(name: string) {
 
-    this.testServerLoad = true
+    this.pageLoading = true
     this.clustersService.testCluster(name)
       .subscribe(data => {
-        this.testServerLoad = false
+        this.pageLoading = false
         if (data.success) {
           this.toastr.success($localize`Login success`)
         }

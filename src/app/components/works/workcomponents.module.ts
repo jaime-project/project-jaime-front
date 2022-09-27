@@ -4,6 +4,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MonacoEditorModule } from 'ngx-monaco-editor';
+import { AppModule } from 'src/app/app.module';
+import { SharedComponentsModule } from 'src/app/shared/shared.module';
+import { SpinnerComponent } from 'src/app/shared/spinner/spinner.component';
 import { DetailWorkComponent } from './detail/detail.component';
 import { ListWorkComponent } from './list/list.component';
 import { LogWorkComponent } from './logs/log.component';
@@ -22,6 +25,7 @@ import { YamlWorkComponent } from './yaml/yaml.component';
     ReactiveFormsModule,
     NgbModule,
     MonacoEditorModule,
+    SharedComponentsModule
   ],
   declarations: [
     DetailWorkComponent,
@@ -30,7 +34,7 @@ import { YamlWorkComponent } from './yaml/yaml.component';
     YamlWorkComponent,
     LogWorkComponent,
     NewWorkComponent,
-    WorkspaceWorkComponent
+    WorkspaceWorkComponent,
   ]
 })
 export class WorkComponentsModule { }

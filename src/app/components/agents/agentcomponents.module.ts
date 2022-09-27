@@ -26,7 +26,7 @@ import { YamlAgentComponent } from './yaml/yaml.component';
     ListAgentComponent,
     TabsAgentComponent,
     YamlAgentComponent,
-    LogsAgentComponent
+    LogsAgentComponent,
   ]
 })
 export class AgentComponentsModule { }

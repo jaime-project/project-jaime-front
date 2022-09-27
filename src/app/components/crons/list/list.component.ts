@@ -147,7 +147,7 @@ export class ListCronComponent implements OnInit {
       if (result.isConfirmed) {
         this.cronService.changeStatus(id, status)
         .subscribe(() => {
-          this.toastr.success($localize`Cron changed`)
+          this.toastr.success($localize`Cron changed status to ${status}`)
         })
       }
     })

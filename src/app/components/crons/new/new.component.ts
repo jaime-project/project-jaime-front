@@ -89,7 +89,7 @@ export class NewCronComponent implements OnInit {
 
     this.cronService.postCron(finalYaml)
       .subscribe(result => {
-        this.toastr.success($localize`Generated id ${result.id}`, $localize`Success creation`)
+        this.toastr.success($localize`Generated id ${result.id}`, $localize`Success cron creation`)
         this.route.navigate(['crons'])
       })
   }

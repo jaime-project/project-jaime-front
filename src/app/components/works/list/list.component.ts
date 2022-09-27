@@ -12,6 +12,8 @@ import Swal from 'sweetalert2';
 })
 export class ListWorkComponent implements OnInit {
 
+  pageLoading: boolean = true
+
   thread: Subscription | null = null
 
   worksShort: WorkShort[] = []
@@ -28,7 +30,6 @@ export class ListWorkComponent implements OnInit {
 
     let list: WorkShort[] = this.worksShort
 
-    console.log(this.orderBy.toLowerCase())
     switch (this.orderBy.toLowerCase()) {
       case 'name':
         list = this.worksShort.sort((a, b) => a.name.localeCompare(b.name))
@@ -95,14 +96,14 @@ export class ListWorkComponent implements OnInit {
 
     this.loadStartData()
 
-    this.thread = interval(1000)
+    this.thread = interval(2000)
       .subscribe(() => {
         this.loadStartData()
       });
 
     this.workService.getWorkStatus()
       .subscribe(data => {
-        this.worksStatus = data;
+        this.worksStatus = data.sort();
       })
   }
 
@@ -116,6 +117,8 @@ export class ListWorkComponent implements OnInit {
         this.worksShort = data;
         this.worksShort = this.filterFunction();
         this.worksShort = this.orderFunction();
+        
+        this.pageLoading = false
       })
   }
 

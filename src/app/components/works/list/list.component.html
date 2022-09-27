@@ -13,9 +13,7 @@
           <button class="btn btn-success" routerLink="/works/new" style="margin-right: 2%;" i18n>New Job</button>
 
           <div ngbDropdown class="d-inline-block">
-            <button class="btn btn-danger" id="dropdownBasic1" ngbDropdownToggle style="margin-right: 2%;" i18n>Delete
-              by
-              Status</button>
+            <button class="btn btn-danger" ngbDropdownToggle style="margin-right: 2%;" i18n>Delete by Status</button>
             <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
               <button ngbDropdownItem (click)="deleteByStatus(s)" *ngFor="let s of worksStatus">{{s}}</button>
             </div>
@@ -37,7 +35,8 @@
                 <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('agenttype')">Agent
                     Type</button></th>
                 <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('module')">Module</button></th>
-                <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('startdate')">Start Date</button>
+                <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('startdate')">Start
+                    Date</button>
                 </th>
                 <th scope="col"> <label i18n>Filter:</label> <input type="text" class="form-control"
                     [(ngModel)]="filterBy">
@@ -82,3 +81,5 @@
     </div>
   </div>
 </div>
+
+<app-spinner *ngIf="pageLoading"></app-spinner>
