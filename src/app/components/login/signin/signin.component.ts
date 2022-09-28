@@ -12,7 +12,6 @@ export class SigninComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    let id = this.route.snapshot.paramMap.get('id')
   }
 
 }
