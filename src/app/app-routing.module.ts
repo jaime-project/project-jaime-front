@@ -44,6 +44,10 @@ export const Approutes: Routes = [
         path: '',
         loadChildren: () => import('./components/crons/croncomponents.module').then(m => m.CronComponentsModule)
       },
+      {
+        path: '',
+        loadChildren: () => import('./components/login/logincomponents.module').then(m => m.LoginComponentsModule)
+      },
     ]
   },
   {
