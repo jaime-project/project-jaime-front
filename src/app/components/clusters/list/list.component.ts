@@ -94,10 +94,10 @@ export class ListClusterComponent implements OnInit {
       .subscribe(data => {
         this.pageLoading = false
         if (data.success) {
-          this.toastr.success($localize`Login success`)
+          this.toastr.success($localize`Connection success`)
         }
         else {
-          this.toastr.error($localize`Login failure`)
+          this.toastr.error($localize`Connection failure`)
         }
       })
   }

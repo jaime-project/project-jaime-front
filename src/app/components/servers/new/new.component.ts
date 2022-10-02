@@ -3,7 +3,6 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ServerService } from 'src/app/services/servers/servers.service';
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-new-server',
@@ -25,11 +24,6 @@ export class NewServerComponent implements OnInit {
   serverTypes: string[] = []
 
   ngOnInit(): void {
-
-    this.serversService.listServerTypes()
-      .subscribe(data => {
-        this.serverTypes = data.sort()
-      })
   }
 
   postServer() {

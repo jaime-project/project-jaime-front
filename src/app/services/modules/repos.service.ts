@@ -20,7 +20,7 @@ export class ReposService {
 
 
   listRepos(): Observable<string[]> {
-    return this.http.get<string[]>(this.apiUrl)
+    return this.http.get<string[]>(`${this.apiUrl}/`)
       .pipe(
         catchError((error: HttpErrorResponse) => {
           return this.httpError(error);

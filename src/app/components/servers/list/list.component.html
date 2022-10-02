@@ -22,7 +22,7 @@
                 <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('host')">Host</button></th>
                 <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('port')">Port</button></th>
                 <th scope="col"> <label i18n>Filter:</label> <input type="text" class="form-control"
-                  [(ngModel)]="filterBy">
+                    [(ngModel)]="filterBy">
               </tr>
             </thead>
             <tbody>
@@ -37,10 +37,7 @@
                     (click)="deleteServer(serverShort.name)">
                     <i class=" far fa-trash-alt"></i>
                   </button>
-
-                  <div class="spinner-border text-success" *ngIf="testServerLoad"></div>
-
-                  <button type="button" class="btn btn-success" style="margin-right: 2%;" *ngIf="!testServerLoad"
+                  <button type="button" class="btn btn-success" style="margin-right: 2%;" 
                     (click)="testServer(serverShort.name)">
                     <i class="fas fa-play"></i>
                   </button>
@@ -54,3 +51,5 @@
   </div>
 
 </div>
+
+<app-spinner *ngIf="testServerLoad"></app-spinner>

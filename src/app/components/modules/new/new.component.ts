@@ -30,15 +30,7 @@ export class NewModuleComponent implements OnInit {
 
     this.moduleService.postModule(this.name, this.code, this.repo)
       .subscribe(() => {
-        Swal.fire({
-          title: $localize`Success creation`,
-          text: $localize`Generated module ${this.name}`,
-          icon: 'success',
-          confirmButtonColor: '#05b281',
-        }).then(() => {
-          this.toastr.success($localize`Module created`)
-          this.route.navigate([`repos/${this.repo}/modules`])
-        })
+        this.route.navigate([`repos/${this.repo}/modules`])
       })
   }
 
