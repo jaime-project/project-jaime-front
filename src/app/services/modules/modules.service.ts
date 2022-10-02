@@ -19,7 +19,7 @@ export class ModuleService {
   }
 
   listModules(repo: string): Observable<string[]> {
-    return this.http.get<string[]>(`${this.apiUrl}/${repo}/modules`)
+    return this.http.get<string[]>(`${this.apiUrl}/${repo}/modules/`)
       .pipe(
         catchError((error: HttpErrorResponse) => {
           return this.httpError(error);

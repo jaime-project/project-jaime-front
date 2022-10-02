@@ -12,10 +12,10 @@ import { SigninComponent } from './signin/signin.component';
   imports: [
     CommonModule,
     RouterModule.forChild(LoginRoutes),
-    FormsModule,
-    ReactiveFormsModule,
     NgbModule,
     MonacoEditorModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   declarations: [
     SigninComponent

@@ -7,7 +7,7 @@ export const LoginRoutes: Routes = [
 		path: '',
 		children: [
 			{
-				path: 'signin',
+				path: '',
 				component: SigninComponent,
 				data: {
 					title: 'signin',

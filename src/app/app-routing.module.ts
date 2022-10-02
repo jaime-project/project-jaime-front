@@ -5,16 +5,16 @@ import { FullComponent } from './layouts/full/full.component';
 
 
 export const Approutes: Routes = [
-  // {
-  //   path: '',
-  //   component: AppModule,
-  //   children: [
-  //     {
-  //       path: '',
-  //       component: SigninComponent,
-  //     },
-  //   ]
-  // },
+  {
+    path: '',
+    component: AppModule,
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./components/login/logincomponents.module').then(m => m.LoginComponentsModule)
+      },
+    ]
+  },
   {
     path: '',
     component: FullComponent,

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/services/login/login.service';
 
 @Component({
   selector: 'app-signin',
@@ -8,10 +10,26 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SigninComponent implements OnInit {
 
+  userPassForm = new FormGroup({
+    user: new FormControl(''),
+    pass: new FormControl('')
+  });
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: Router, private loginService: LoginService) { }
 
   ngOnInit(): void {
+  }
+
+  login() {
+
+    let user = this.userPassForm.value['user']
+    let pass = this.userPassForm.value['pass']
+
+    this.loginService.login(user, pass)
+      .subscribe(token => {
+        localStorage.setItem('JAIME_TOKEN', token)
+        this.route.navigate(['clusters'])
+      })
   }
 
 }

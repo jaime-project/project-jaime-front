@@ -4,20 +4,24 @@
 			<div class="wrap">
 				<img src="assets/images/logo.png" width="80%" height="80%" style="width: 100%;">
 				<div class="login-wrap p-4 p-md-3">
+
 					<h2 class="p-md-2" style="text-align: center;"><b>Sign In</b> </h2>
-					<form>
+
+					<form [formGroup]="userPassForm" (ngSubmit)="login()">
+
 						<div class="mb-3 col-12">
-							<label for="userInput" class="form-label"><b i18n>User</b></label>
+							<label class="form-label"><b i18n>User</b></label>
 							<input type="text" class="form-control" formControlName="user" required>
 						</div>
 						<div class="mb-3 col-12">
-							<label for="passInput" class="form-label"><b i18n>Password</b></label>
+							<label class="form-label"><b i18n>Password</b></label>
 							<input type="password" class="form-control" formControlName="pass" required>
 						</div>
 						<div class="mb-3 col-12">
 							<button style="width: 100%;" type="submit" class="btn btn-success m-t-20">Login</button>
 						</div>
 					</form>
+
 				</div>
 			</div>
 		</div>
