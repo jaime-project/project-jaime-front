@@ -31,6 +31,7 @@ export class NewModuleComponent implements OnInit {
     this.moduleService.postModule(this.name, this.code, this.repo)
       .subscribe(() => {
         this.route.navigate([`repos/${this.repo}/modules`])
+        this.toastr.success($localize`New module ${this.name} created`)
       })
   }
 
