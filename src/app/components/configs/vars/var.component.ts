@@ -37,6 +37,7 @@ export class VarConfigComponent implements OnInit {
       .subscribe(() => {
         this.toastr.success($localize`New config updated`)
         this.editSwitchActivated = false
+        this.ngOnInit()
       })
   }
 

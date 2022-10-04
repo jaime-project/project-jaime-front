@@ -1,11 +1,7 @@
-import {
-  CommonModule,
-  LocationStrategy,
-  PathLocationStrategy
-} from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { CommonModule, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { APP_INITIALIZER, NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
@@ -17,8 +13,8 @@ import { Approutes } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FullComponent } from './layouts/full/full.component';
 import { AppConfigService } from './services/AppConfigService';
+import { InterceptorService } from './services/interceptos/interceptor.service';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
-import { SpinnerComponent } from './shared/spinner/spinner.component';
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -45,6 +41,7 @@ const appInitializerFn = (appConfig: AppConfigService) => {
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     PerfectScrollbarModule,
     NgbModule,
@@ -53,6 +50,13 @@ const appInitializerFn = (appConfig: AppConfigService) => {
     RouterModule.forRoot(Approutes, { useHash: false, relativeLinkResolution: 'legacy' }),
   ],
   providers: [
+    AppConfigService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: appInitializerFn,
+      multi: true,
+      deps: [AppConfigService]
+    },
     {
       provide: LocationStrategy,
       useClass: PathLocationStrategy
@@ -61,13 +65,11 @@ const appInitializerFn = (appConfig: AppConfigService) => {
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
     },
-    AppConfigService,
     {
-      provide: APP_INITIALIZER,
-      useFactory: appInitializerFn,
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
       multi: true,
-      deps: [AppConfigService]
-    }
+    },
   ],
   bootstrap: [AppComponent]
 })

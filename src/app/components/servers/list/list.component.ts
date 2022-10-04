@@ -95,10 +95,10 @@ export class ListServerComponent implements OnInit {
       .subscribe(data => {
         this.testServerLoad = false
         if (data.success) {
-          this.toastr.success($localize`Login succcess`)
+          this.toastr.success($localize`Connection succcess`)
         }
         else {
-          this.toastr.error($localize`Login failure`)
+          this.toastr.error($localize`Connection failure`)
         }
       })
   }

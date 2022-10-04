@@ -12,7 +12,6 @@ import { AppConfigService } from '../AppConfigService';
 export class ClustersService {
 
   apiUrl: string = "";
-  headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private environment: AppConfigService, private http: HttpClient, private toastr: ToastrService) {
     this.apiUrl = environment.config.backendURL + '/api/v1/clusters';

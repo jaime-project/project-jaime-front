@@ -8,6 +8,40 @@
   "hostname": "0.0.0.0",
   "routes": [
     {
+      "uuid": "e9db4c5d-f8f3-4ce4-9f6c-b54ab21ae726",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "login",
+      "responses": [
+        {
+          "uuid": "65775b18-e2d0-40a2-ad9a-b55c418db691",
+          "body": "",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
       "uuid": "df9bd82a-8b59-4e6c-8f9d-c3775b5b9ea0",
       "documentation": "",
       "method": "post",
@@ -1837,7 +1871,7 @@
       "responses": [
         {
           "uuid": "451b1de9-62d0-484c-9b5f-5d9369a1381e",
-          "body": "{\n  \"GARBAGE_COLLECTOR_RUN_MINUTES\": 2500\n}",
+          "body": "{\n  \"GARBAGE_COLLECTOR_RUN_MINUTES\": 2500,\n  \"JAIME_USER\": \"admin\",\n  \"JAIME_PASS\": \"admin\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
