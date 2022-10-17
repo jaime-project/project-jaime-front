@@ -43,7 +43,6 @@ export class DetailDocsComponent implements OnInit {
         this.docsService.putDocs(this.moduleName, this.docs, this.repo)
           .subscribe(() => {
             this.toastr.success($localize`Docs updated`)
-            this.route.navigate([`repos/${this.repo}/modules`])
           })
       }
     })
