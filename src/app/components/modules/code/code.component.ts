@@ -43,7 +43,6 @@ export class CodeModuleComponent implements OnInit {
         this.moduleService.putModule(this.moduleName, this.moduleCode, this.repo)
           .subscribe(() => {
             this.toastr.success($localize`Module updated`)
-            this.route.navigate([`repos/${this.repo}/modules`])
           })
       }
     })

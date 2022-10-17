@@ -11,11 +11,11 @@
       "uuid": "e9db4c5d-f8f3-4ce4-9f6c-b54ab21ae726",
       "documentation": "",
       "method": "post",
-      "endpoint": "login",
+      "endpoint": "login/",
       "responses": [
         {
           "uuid": "65775b18-e2d0-40a2-ad9a-b55c418db691",
-          "body": "",
+          "body": "asdasdadadsaas",
           "latency": 0,
           "statusCode": 201,
           "label": "",
