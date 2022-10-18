@@ -57,4 +57,12 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: [],
   },
+  {
+    path: "/exit",
+    title: $localize`Sign out`,
+    icon: "fa fa-power-off",
+    class: "",
+    extralink: false,
+    submenu: [],
+  },
 ];
