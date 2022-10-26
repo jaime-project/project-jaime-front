@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { AppConfigService } from '../AppConfigService';
+import { ErrorService } from '../errors/error.service';
 
 
 @Injectable({
@@ -14,7 +15,7 @@ export class ReposService {
   apiUrl: string = "";
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-  constructor(private environment: AppConfigService, private http: HttpClient, private toastr: ToastrService) {
+  constructor(private environment: AppConfigService, private http: HttpClient, private toastr: ToastrService, private errorService: ErrorService) {
     this.apiUrl = environment.config.backendURL + '/api/v1/repos';
   }
 
@@ -23,7 +24,7 @@ export class ReposService {
     return this.http.get<string[]>(`${this.apiUrl}/`)
       .pipe(
         catchError((error: HttpErrorResponse) => {
-          return this.httpError(error);
+          return this.errorService.httpError(error);
         })
       )
   }
@@ -32,7 +33,7 @@ export class ReposService {
     return this.http.get<any>(`${this.apiUrl}/${name}`)
       .pipe(
         catchError((error: HttpErrorResponse) => {
-          return this.httpError(error);
+          return this.errorService.httpError(error);
         })
       )
   }
@@ -41,7 +42,7 @@ export class ReposService {
     return this.http.get<string[]>(`${this.apiUrl}/?type=${typeRepo}`)
       .pipe(
         catchError((error: HttpErrorResponse) => {
-          return this.httpError(error);
+          return this.errorService.httpError(error);
         })
       )
   }
@@ -50,7 +51,7 @@ export class ReposService {
     return this.http.get<string[]>(`${this.apiUrl}/types`)
       .pipe(
         catchError((error: HttpErrorResponse) => {
-          return this.httpError(error);
+          return this.errorService.httpError(error);
         })
       )
   }
@@ -59,7 +60,7 @@ export class ReposService {
     return this.http.post<any>(this.apiUrl + '/', repo)
       .pipe(
         catchError((error: HttpErrorResponse) => {
-          return this.httpError(error);
+          return this.errorService.httpError(error);
         })
       )
   }
@@ -68,7 +69,7 @@ export class ReposService {
     return this.http.delete<any>(this.apiUrl + '/' + name)
       .pipe(
         catchError((error: HttpErrorResponse) => {
-          return this.httpError(error);
+          return this.errorService.httpError(error);
         })
       )
   }
@@ -78,21 +79,8 @@ export class ReposService {
     return this.http.post<any>(url, {})
       .pipe(
         catchError((error: HttpErrorResponse) => {
-          return this.httpError(error);
+          return this.errorService.httpError(error);
         })
       )
-  }
-
-  httpError(error: HttpErrorResponse) {
-
-    this.toastr.error(error.message, $localize`Service ERROR`)
-
-    let errorMessage = '';
-    if (error.error instanceof ErrorEvent) {
-      errorMessage = error.message;
-    } else {
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-    }
-    return throwError(errorMessage);
   }
 }
