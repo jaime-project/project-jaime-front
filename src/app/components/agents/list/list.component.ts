@@ -13,6 +13,7 @@ import Swal from 'sweetalert2';
 })
 export class ListAgentComponent implements OnInit {
 
+  pageLoading: boolean = true
   subscription: Subscription | null = null
   agents: AgentShort[] = []
 
@@ -83,6 +84,7 @@ export class ListAgentComponent implements OnInit {
         this.agents = data
         this.agents = this.orderFunction();
         this.agents = this.filterFunction();
+        this.pageLoading = false
       })
   }
 

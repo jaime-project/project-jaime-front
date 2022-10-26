@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class ListCronComponent implements OnInit {
 
+  pageLoading: boolean = true
   subscription: Subscription | null = null
   cronsShort: CronShort[] = []
   cronsStatus: string[] = []
@@ -96,6 +97,7 @@ export class ListCronComponent implements OnInit {
         this.cronsShort = data;
         this.cronsShort = this.orderFunction();
         this.cronsShort = this.filterFunction();
+        this.pageLoading = false
       })
   }
 

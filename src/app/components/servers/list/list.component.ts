@@ -17,6 +17,7 @@ export class ListServerComponent implements OnInit {
 
   listServersShorts: ServerShort[] = []
   testServerLoad: boolean = false
+  pageLoading: boolean = true
 
   constructor(private serversService: ServerService, private route: Router, private toastr: ToastrService) { }
 
@@ -85,6 +86,7 @@ export class ListServerComponent implements OnInit {
         this.listServersShorts = data
         this.listServersShorts = this.filterFunction();
         this.listServersShorts = this.orderFunction()
+        this.pageLoading = false
       })
   }
 
