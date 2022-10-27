@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { AppConfigService } from '../AppConfigService';
+import { ErrorService } from '../errors/error.service';
 
 
 @Injectable({
@@ -14,7 +15,7 @@ export class ModuleService {
   apiUrl: string = "";
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-  constructor(private environment: AppConfigService, private http: HttpClient, private toastr: ToastrService) {
+  constructor(private environment: AppConfigService, private http: HttpClient, private toastr: ToastrService, private errorService: ErrorService) {
     this.apiUrl = environment.config.backendURL + '/api/v1/repos';
   }
 
@@ -22,7 +23,7 @@ export class ModuleService {
     return this.http.get<string[]>(`${this.apiUrl}/${repo}/modules/`)
       .pipe(
         catchError((error: HttpErrorResponse) => {
-          return this.httpError(error);
+          return this.errorService.httpError(error);
         })
       )
   }
@@ -35,7 +36,7 @@ export class ModuleService {
     return this.http.get(url, { headers, responseType: 'text' })
       .pipe(
         catchError((error: HttpErrorResponse) => {
-          return this.httpError(error);
+          return this.errorService.httpError(error);
         })
       )
   }
@@ -48,7 +49,7 @@ export class ModuleService {
     return this.http.post(url, code, { headers, responseType: 'text' })
       .pipe(
         catchError((error: HttpErrorResponse) => {
-          return this.httpError(error);
+          return this.errorService.httpError(error);
         })
       )
   }
@@ -59,7 +60,7 @@ export class ModuleService {
     return this.http.delete<any>(url)
       .pipe(
         catchError((error: HttpErrorResponse) => {
-          return this.httpError(error);
+          return this.errorService.httpError(error);
         })
       )
   }
@@ -72,21 +73,8 @@ export class ModuleService {
     return this.http.put(url, code, { headers })
       .pipe(
         catchError((error: HttpErrorResponse) => {
-          return this.httpError(error);
+          return this.errorService.httpError(error);
         })
       )
-  }
-
-  httpError(error: HttpErrorResponse) {
-
-    this.toastr.error(error.message, $localize`Service ERROR`)
-
-    let errorMessage = '';
-    if (error.error instanceof ErrorEvent) {
-      errorMessage = error.message;
-    } else {
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-    }
-    return throwError(errorMessage);
   }
 }

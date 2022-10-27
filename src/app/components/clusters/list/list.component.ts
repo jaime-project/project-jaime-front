@@ -13,7 +13,7 @@ import Swal from 'sweetalert2';
 })
 export class ListClusterComponent implements OnInit {
 
-  pageLoading: boolean = false
+  pageLoading: boolean = true
   subscription: Subscription | null = null
   listClustersShorts: ClusterShort[] = []
 
@@ -84,6 +84,7 @@ export class ListClusterComponent implements OnInit {
         this.listClustersShorts = data;
         this.listClustersShorts = this.orderFunction();
         this.listClustersShorts = this.filterFunction();
+        this.pageLoading = false
       })
   }
 

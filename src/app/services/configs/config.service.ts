@@ -4,7 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { AppConfigService } from '../AppConfigService';
-
+import { ErrorService } from '../errors/error.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class ConfigService {
   apiUrl: string = "";
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-  constructor(private environment: AppConfigService, private http: HttpClient, private toastr: ToastrService) {
+  constructor(private environment: AppConfigService, private http: HttpClient, private toastr: ToastrService, private errorService: ErrorService) {
     this.apiUrl = environment.config.backendURL + '/api/v1/configs';
   }
 
@@ -23,7 +23,7 @@ export class ConfigService {
     return this.http.get(`${this.apiUrl}/requirements`, { headers, responseType: 'text' })
       .pipe(
         catchError((error: HttpErrorResponse) => {
-          return this.httpError(error);
+          return this.errorService.httpError(error);
         })
       )
   }
@@ -36,7 +36,7 @@ export class ConfigService {
     return this.http.post(url, code, { headers, responseType: 'text' })
       .pipe(
         catchError((error: HttpErrorResponse) => {
-          return this.httpError(error);
+          return this.errorService.httpError(error);
         })
       )
   }
@@ -49,7 +49,7 @@ export class ConfigService {
     return this.http.post(url, code, { headers, responseType: 'text' })
       .pipe(
         catchError((error: HttpErrorResponse) => {
-          return this.httpError(error);
+          return this.errorService.httpError(error);
         })
       )
   }
@@ -61,7 +61,7 @@ export class ConfigService {
     return this.http.get(url, { responseType: "blob" })
       .pipe(
         catchError((error: HttpErrorResponse) => {
-          return this.httpError(error);
+          return this.errorService.httpError(error);
         })
       )
   }
@@ -73,7 +73,7 @@ export class ConfigService {
     return this.http.get(url, { responseType: 'text' })
       .pipe(
         catchError((error: HttpErrorResponse) => {
-          return this.httpError(error);
+          return this.errorService.httpError(error);
         })
       )
   }
@@ -85,7 +85,7 @@ export class ConfigService {
     return this.http.get(url, { responseType: 'text' })
       .pipe(
         catchError((error: HttpErrorResponse) => {
-          return this.httpError(error);
+          return this.errorService.httpError(error);
         })
       )
   }
@@ -94,7 +94,7 @@ export class ConfigService {
     return this.http.get<any[]>(`${this.apiUrl}/vars`)
       .pipe(
         catchError((error: HttpErrorResponse) => {
-          return this.httpError(error);
+          return this.errorService.httpError(error);
         })
       )
   }
@@ -104,21 +104,8 @@ export class ConfigService {
     return this.http.put(url, vars)
       .pipe(
         catchError((error: HttpErrorResponse) => {
-          return this.httpError(error);
+          return this.errorService.httpError(error);
         })
       )
-  }
-
-  httpError(error: HttpErrorResponse) {
-
-    this.toastr.error(error.message, $localize`Service ERROR`)
-
-    let errorMessage = '';
-    if (error.error instanceof ErrorEvent) {
-      errorMessage = error.message;
-    } else {
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-    }
-    return throwError(errorMessage);
   }
 }

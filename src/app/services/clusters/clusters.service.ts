@@ -1,10 +1,11 @@
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { Observable, throwError } from 'rxjs';
+import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Cluster, ClusterShort } from 'src/app/models/models';
 import { AppConfigService } from '../AppConfigService';
+import { ErrorService } from '../errors/error.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class ClustersService {
 
   apiUrl: string = "";
 
-  constructor(private environment: AppConfigService, private http: HttpClient, private toastr: ToastrService) {
+  constructor(private environment: AppConfigService, private http: HttpClient, private toastr: ToastrService, private errorService: ErrorService) {
     this.apiUrl = environment.config.backendURL + '/api/v1/clusters';
   }
 
@@ -21,7 +22,7 @@ export class ClustersService {
     return this.http.get<ClusterShort[]>(this.apiUrl + '/all/short')
       .pipe(
         catchError((error: HttpErrorResponse) => {
-          return this.httpError(error);
+          return this.errorService.httpError(error);
         })
       )
   }
@@ -30,7 +31,7 @@ export class ClustersService {
     return this.http.get<Cluster>(this.apiUrl + '/' + name)
       .pipe(
         catchError((error: HttpErrorResponse) => {
-          return this.httpError(error);
+          return this.errorService.httpError(error);
         })
       )
   }
@@ -39,7 +40,7 @@ export class ClustersService {
     return this.http.post<any>(this.apiUrl + '/', cluster)
       .pipe(
         catchError((error: HttpErrorResponse) => {
-          return this.httpError(error);
+          return this.errorService.httpError(error);
         })
       )
   }
@@ -48,7 +49,7 @@ export class ClustersService {
     return this.http.delete<any>(this.apiUrl + '/' + name)
       .pipe(
         catchError((error: HttpErrorResponse) => {
-          return this.httpError(error);
+          return this.errorService.httpError(error);
         })
       )
   }
@@ -58,7 +59,7 @@ export class ClustersService {
     return this.http.put<any>(this.apiUrl + '/' + name, cluster)
       .pipe(
         catchError((error: HttpErrorResponse) => {
-          return this.httpError(error);
+          return this.errorService.httpError(error);
         })
       )
   }
@@ -67,21 +68,9 @@ export class ClustersService {
     return this.http.get<any>(`${this.apiUrl}/${name}/test`)
       .pipe(
         catchError((error: HttpErrorResponse) => {
-          return this.httpError(error);
+          return this.errorService.httpError(error);
         })
       )
   }
 
-  httpError(error: HttpErrorResponse) {
-
-    this.toastr.error(error.message, $localize`Service ERROR`)
-
-    let errorMessage = '';
-    if (error.error instanceof ErrorEvent) {
-      errorMessage = error.message;
-    } else {
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-    }
-    return throwError(errorMessage);
-  }
 }

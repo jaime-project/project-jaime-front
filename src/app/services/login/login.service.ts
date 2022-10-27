@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { AppConfigService } from '../AppConfigService';
+import { ErrorService } from '../errors/error.service';
 
 
 @Injectable({
@@ -14,7 +15,7 @@ export class LoginService {
   apiUrl: string = "";
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-  constructor(private environment: AppConfigService, private http: HttpClient, private toastr: ToastrService) {
+  constructor(private environment: AppConfigService, private http: HttpClient, private toastr: ToastrService, private errorService: ErrorService) {
     this.apiUrl = environment.config.backendURL + '/api/v1/login/';
   }
 
@@ -22,21 +23,8 @@ export class LoginService {
     return this.http.post(this.apiUrl, { 'user': user, 'pass': password }, { responseType: 'text' })
       .pipe(
         catchError((error: HttpErrorResponse) => {
-          return this.httpError(error);
+          return this.errorService.httpError(error);
         })
       )
-  }
-
-  httpError(error: HttpErrorResponse) {
-
-    this.toastr.error('Invalid user or password', $localize`Login Error`)
-
-    let errorMessage = '';
-    if (error.error instanceof ErrorEvent) {
-      errorMessage = error.message;
-    } else {
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-    }
-    return throwError(errorMessage);
   }
 }
