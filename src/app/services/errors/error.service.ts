@@ -16,8 +16,10 @@ export class ErrorService {
 
   httpError(error: HttpErrorResponse) {
 
-    let errorTittle = error.status == 409 ? error.error.code : $localize`Service ERROR`
-    let errorBody = error.status == 409 ? error.error.msj : error.message
+    let body = JSON.parse(error.error)
+
+    let errorTittle = error.status == 409 ? body.code : $localize`Service ERROR`
+    let errorBody = error.status == 409 ? body.msj : error.message
 
     this.toastr.error(errorBody, errorTittle)
 
