@@ -774,6 +774,36 @@
       "responseMode": null
     },
     {
+      "uuid": "9bf7c07c-436d-447f-87c5-677632516f07",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "repos/*/objects",
+      "responses": [
+        {
+          "uuid": "f3cd6c17-da9a-4cff-ae42-d8655d5b4959",
+          "body": "repos:\n  - name: repo1\n  - name: git\n    git_path: asd\n    git_user: asd\n    git_pass: asd\n    git_url: asd\n    git_branch: asd\n\n\nmodules:\n  - name: module1\n    repo: repo1\n    content: |\n      @blue_print.route('/requirements', methods=['GET'])\n      def get():\n          return config_service.get_requirements(), 200\n\n\n      @blue_print.route('/requirements', methods=['POST'])\n      def post():\n          config_service.update_requirements(request.data.decode())\n          return '', 200\n\n\n      @blue_print.route('/objects', methods=['POST'])\n      def post_objects():\n\n          dict_yaml = yaml.load(request.data, Loader=yaml.FullLoader)\n          config_service.update_objects(dict_yaml)\n\n          return '', 200\n  - name: module2\n    repo: repo1\n    content: |\n      @blue_print.route('/requirements', methods=['GET'])\n      def get():\n          return config_service.get_requirements(), 200\n\n  \ndocs:\n  - name: module1\n    repo: repo1\n    content: |\n      hola mundo redondo\n      muy feliz :)\n",
+          "latency": 3000,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
       "uuid": "1a7175df-10ae-408a-8ee5-c4871d795c2c",
       "documentation": "",
       "method": "get",
