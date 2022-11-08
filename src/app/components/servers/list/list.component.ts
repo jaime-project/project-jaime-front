@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import FileSaver from 'file-saver';
 import { ToastrService } from 'ngx-toastr';
 import { interval, Subscription } from 'rxjs';
 import { ServerShort } from 'src/app/models/models';
@@ -123,6 +124,13 @@ export class ListServerComponent implements OnInit {
           })
       }
     })
+  }
+
+  exportYaml(serverName: string) {
+    this.serversService.exportYaml(serverName)
+      .subscribe(data => {
+        FileSaver.saveAs(data, `${new Date().toISOString()}.yaml`);
+      })
   }
 
 }

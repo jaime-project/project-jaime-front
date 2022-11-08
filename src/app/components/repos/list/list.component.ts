@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import FileSaver from 'file-saver';
 import { ToastrService } from 'ngx-toastr';
 import { interval, Subscription } from 'rxjs';
 import { ReposService } from 'src/app/services/modules/repos.service';
@@ -97,6 +98,13 @@ export class ListModuleComponent implements OnInit {
     return list
       .filter(r => {
         return r.toLowerCase().includes(this.filterBy.toLowerCase())
+      })
+  }
+
+  exportRepo(repoName: string) {
+    this.reposService.exportRepo(repoName)
+      .subscribe(data => {
+        FileSaver.saveAs(data, `${new Date().toISOString()}.yaml`);
       })
   }
 

@@ -1,4 +1,4 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
@@ -66,6 +66,17 @@ export class ClustersService {
 
   testCluster(name: string): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/${name}/test`)
+      .pipe(
+        catchError((error: HttpErrorResponse) => {
+          return this.errorService.httpError(error);
+        })
+      )
+  }
+
+  exportYaml(name: string): Observable<any> {
+    const url = `${this.apiUrl}/${name}/yamls`
+    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
+    return this.http.get(url, { headers, responseType: "blob" })
       .pipe(
         catchError((error: HttpErrorResponse) => {
           return this.errorService.httpError(error);

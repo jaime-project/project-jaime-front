@@ -42,25 +42,21 @@
       "responseMode": null
     },
     {
-      "uuid": "df9bd82a-8b59-4e6c-8f9d-c3775b5b9ea0",
+      "uuid": "90105437-a964-4d78-92bb-efed10ca8c66",
       "documentation": "",
-      "method": "post",
-      "endpoint": "servers/*",
+      "method": "get",
+      "endpoint": "servers/*/yamls",
       "responses": [
         {
-          "uuid": "d1a311bb-7e8b-4981-b9c9-d50bb6ee58bd",
-          "body": "",
+          "uuid": "2ec5be6b-71ea-48dc-b976-0f5135042d5b",
+          "body": "repos:\n  - name: repo1\n  - name: git\n    git_path: asd\n    git_user: asd\n    git_pass: asd\n    git_url: asd\n    git_branch: asd\n\n\nmodules:\n  - name: module1\n    repo: repo1\n    content: |\n      @blue_print.route('/requirements', methods=['GET'])\n      def get():\n          return config_service.get_requirements(), 200\n\n\n      @blue_print.route('/requirements', methods=['POST'])\n      def post():\n          config_service.update_requirements(request.data.decode())\n          return '', 200\n\n\n      @blue_print.route('/objects', methods=['POST'])\n      def post_objects():\n\n          dict_yaml = yaml.load(request.data, Loader=yaml.FullLoader)\n          config_service.update_objects(dict_yaml)\n\n          return '', 200\n  - name: module2\n    repo: repo1\n    content: |\n      @blue_print.route('/requirements', methods=['GET'])\n      def get():\n          return config_service.get_requirements(), 200\n\n  \ndocs:\n  - name: module1\n    repo: repo1\n    content: |\n      hola mundo redondo\n      muy feliz :)\n",
           "latency": 0,
-          "statusCode": 201,
+          "statusCode": 200,
           "label": "",
           "headers": [
             {
               "key": "Access-Control-Allow-Origin",
               "value": "*"
-            },
-            {
-              "key": "Content-Type",
-              "value": "application/json"
             }
           ],
           "filePath": "",
@@ -86,6 +82,40 @@
           "body": "{\n  \"success\": false,\n  \"text\": \"se rompio todo\"\n}",
           "latency": 3000,
           "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "df9bd82a-8b59-4e6c-8f9d-c3775b5b9ea0",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "servers/*",
+      "responses": [
+        {
+          "uuid": "d1a311bb-7e8b-4981-b9c9-d50bb6ee58bd",
+          "body": "",
+          "latency": 0,
+          "statusCode": 201,
           "label": "",
           "headers": [
             {
@@ -300,6 +330,36 @@
           "body": "",
           "latency": 0,
           "statusCode": 201,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "2c0a482b-e983-40b8-9aa9-6640843bb5d8",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "clusters/*/yamls",
+      "responses": [
+        {
+          "uuid": "8611d17a-2736-4324-8f08-c83d34af8fcd",
+          "body": "repos:\n  - name: repo1\n  - name: git\n    git_path: asd\n    git_user: asd\n    git_pass: asd\n    git_url: asd\n    git_branch: asd\n\n\nmodules:\n  - name: module1\n    repo: repo1\n    content: |\n      @blue_print.route('/requirements', methods=['GET'])\n      def get():\n          return config_service.get_requirements(), 200\n\n\n      @blue_print.route('/requirements', methods=['POST'])\n      def post():\n          config_service.update_requirements(request.data.decode())\n          return '', 200\n\n\n      @blue_print.route('/objects', methods=['POST'])\n      def post_objects():\n\n          dict_yaml = yaml.load(request.data, Loader=yaml.FullLoader)\n          config_service.update_objects(dict_yaml)\n\n          return '', 200\n  - name: module2\n    repo: repo1\n    content: |\n      @blue_print.route('/requirements', methods=['GET'])\n      def get():\n          return config_service.get_requirements(), 200\n\n  \ndocs:\n  - name: module1\n    repo: repo1\n    content: |\n      hola mundo redondo\n      muy feliz :)\n",
+          "latency": 0,
+          "statusCode": 200,
           "label": "",
           "headers": [
             {
@@ -752,6 +812,36 @@
         {
           "uuid": "1e899205-6e91-4b19-a331-bc549dc4a324",
           "body": "",
+          "latency": 3000,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "9bf7c07c-436d-447f-87c5-677632516f07",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "repos/*/yamls",
+      "responses": [
+        {
+          "uuid": "f3cd6c17-da9a-4cff-ae42-d8655d5b4959",
+          "body": "repos:\n  - name: repo1\n  - name: git\n    git_path: asd\n    git_user: asd\n    git_pass: asd\n    git_url: asd\n    git_branch: asd\n\n\nmodules:\n  - name: module1\n    repo: repo1\n    content: |\n      @blue_print.route('/requirements', methods=['GET'])\n      def get():\n          return config_service.get_requirements(), 200\n\n\n      @blue_print.route('/requirements', methods=['POST'])\n      def post():\n          config_service.update_requirements(request.data.decode())\n          return '', 200\n\n\n      @blue_print.route('/objects', methods=['POST'])\n      def post_objects():\n\n          dict_yaml = yaml.load(request.data, Loader=yaml.FullLoader)\n          config_service.update_objects(dict_yaml)\n\n          return '', 200\n  - name: module2\n    repo: repo1\n    content: |\n      @blue_print.route('/requirements', methods=['GET'])\n      def get():\n          return config_service.get_requirements(), 200\n\n  \ndocs:\n  - name: module1\n    repo: repo1\n    content: |\n      hola mundo redondo\n      muy feliz :)\n",
           "latency": 3000,
           "statusCode": 200,
           "label": "",
@@ -1747,12 +1837,12 @@
       "uuid": "63f72e2f-290c-4d09-8e17-7e5a8b668c9f",
       "documentation": "",
       "method": "post",
-      "endpoint": "configs/objects",
+      "endpoint": "configs/yamls",
       "responses": [
         {
           "uuid": "f09720a4-50a0-4ec3-a0c2-acd76ac3ca1b",
           "body": "",
-          "latency": 0,
+          "latency": 2000,
           "statusCode": 200,
           "label": "",
           "headers": [
@@ -1777,7 +1867,7 @@
       "uuid": "efaa86f9-6584-4905-a228-7e77313a8cbe",
       "documentation": "",
       "method": "get",
-      "endpoint": "configs/objects/file",
+      "endpoint": "configs/yamls/file",
       "responses": [
         {
           "uuid": "8a8fb071-4450-45fa-a5cc-07df3e8cf48b",
