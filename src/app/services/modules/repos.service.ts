@@ -85,7 +85,7 @@ export class ReposService {
   }
 
   exportRepo(name: string): Observable<any> {
-    const url = `${this.apiUrl}/${name}/objects`
+    const url = `${this.apiUrl}/${name}/yamls`
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
     return this.http.get(url, { headers, responseType: "blob" })
       .pipe(

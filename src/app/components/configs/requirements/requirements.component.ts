@@ -11,7 +11,7 @@ import { ConfigService } from 'src/app/services/configs/config.service';
 export class RequirementsComponent implements OnInit {
 
   requirementsText: string = ""
-  butonClicked: boolean = false
+  pageLoading: boolean = false
 
 
   constructor(private configService: ConfigService, private route: Router, private toastr: ToastrService) { }
@@ -28,10 +28,13 @@ export class RequirementsComponent implements OnInit {
   }
 
   postRequeriments() {
+    
+    this.pageLoading = true
+    
     this.configService.postRequirements(this.requirementsText)
       .subscribe(() => {
         this.toastr.success($localize`Requirements sended to install in Agents`)
-        this.butonClicked = false
+        this.pageLoading = false
       })
   }
 }

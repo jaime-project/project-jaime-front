@@ -10,7 +10,7 @@ import { ConfigService } from 'src/app/services/configs/config.service';
 })
 export class ObjectsGetComponent implements OnInit {
 
-  butonClicked: boolean = false
+  pageLoading: boolean = false
 
   constructor(private configService: ConfigService, private route: Router) { }
 
@@ -18,9 +18,12 @@ export class ObjectsGetComponent implements OnInit {
   }
 
   getObjectsFile() {
-    this.configService.getObjectsFile().subscribe((response) => {
-      this.butonClicked = false
+
+    this.pageLoading = true
+
+    this.configService.getYamlFile().subscribe((response) => {
       FileSaver.saveAs(response, `${new Date().toISOString()}.yaml`);
+      this.pageLoading = false
     })
   }
 }

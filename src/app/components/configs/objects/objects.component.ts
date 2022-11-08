@@ -12,7 +12,7 @@ export class ObjectsComponent implements OnInit {
 
   objectsText: string = ""
   replace: boolean = false
-  butonClicked: boolean = false
+  pageLoading: boolean = false
 
 
   constructor(private configService: ConfigService, private route: Router, private toastr: ToastrService) { }
@@ -21,10 +21,13 @@ export class ObjectsComponent implements OnInit {
   }
 
   postRequeriments() {
-    this.configService.postObjects(this.objectsText, this.replace)
+    
+    this.pageLoading = true
+
+    this.configService.postYamls(this.objectsText, this.replace)
       .subscribe(() => {
         this.toastr.success($localize`Objects updating in Jaime`)
-        this.butonClicked = false
+        this.pageLoading = false
       })
   }
 }

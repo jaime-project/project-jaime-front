@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import FileSaver from 'file-saver';
 import { ToastrService } from 'ngx-toastr';
 import { interval, Subscription } from 'rxjs';
 import { ClusterShort } from 'src/app/models/models';
@@ -120,6 +121,14 @@ export class ListClusterComponent implements OnInit {
           })
       }
     })
+  }
+
+
+  exportYaml(clusterName: string) {
+    this.clustersService.exportYaml(clusterName)
+      .subscribe(data => {
+        FileSaver.saveAs(data, `${new Date().toISOString()}.yaml`);
+      })
   }
 
 

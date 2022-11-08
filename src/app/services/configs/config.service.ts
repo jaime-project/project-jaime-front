@@ -41,10 +41,10 @@ export class ConfigService {
       )
   }
 
-  postObjects(code: string, replace: boolean): Observable<string> {
+  postYamls(code: string, replace: boolean): Observable<string> {
 
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
-    const url = `${this.apiUrl}/objects?replace=${replace}`
+    const url = `${this.apiUrl}/yamls?replace=${replace}`
 
     return this.http.post(url, code, { headers, responseType: 'text' })
       .pipe(
@@ -54,9 +54,9 @@ export class ConfigService {
       )
   }
 
-  getObjectsFile(): Observable<Blob> {
+  getYamlFile(): Observable<Blob> {
 
-    const url = `${this.apiUrl}/objects/file`
+    const url = `${this.apiUrl}/yamls/file`
 
     return this.http.get(url, { responseType: "blob" })
       .pipe(
