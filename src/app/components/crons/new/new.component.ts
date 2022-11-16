@@ -21,6 +21,7 @@ export class NewCronComponent implements OnInit {
   modules: string[] = []
   moduleDocs: string = ""
   agentsTypes: string[] = []
+  loading: boolean = false
 
   cronForm = new FormGroup({
     name: new FormControl(''),
@@ -72,7 +73,17 @@ export class NewCronComponent implements OnInit {
 
   postCron() {
 
-    let yamlJson = this.cronForm.value.work_params != null ? parse(this.cronForm.value.work_params) : {}
+    this.loading = true
+
+    let yamlJson = {}
+    try {
+      yamlJson = this.cronForm.value.work_params != null ? parse(this.cronForm.value.work_params) : {}
+
+    } catch (error: any) {
+      this.toastr.error(error, 'Invalid yaml')
+      this.loading = false
+      throw error
+    }
 
     let finalJson = {
       name: this.cronForm.value.name,
@@ -90,6 +101,7 @@ export class NewCronComponent implements OnInit {
     this.cronService.postCron(finalYaml)
       .subscribe(result => {
         this.toastr.success($localize`Generated id ${result.id}`, $localize`Success cron creation`)
+        this.loading = false
         this.route.navigate(['crons'])
       })
   }
