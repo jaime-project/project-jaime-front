@@ -75,6 +75,7 @@ export class NewWorkComponent implements OnInit {
 
     } catch (error: any) {
       this.toastr.error(error, 'Invalid yaml')
+      this.loading = false
       throw error
     }
 
