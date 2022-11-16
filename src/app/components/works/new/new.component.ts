@@ -7,7 +7,6 @@ import { DocsService } from 'src/app/services/modules/docs.service';
 import { ModuleService } from 'src/app/services/modules/modules.service';
 import { ReposService } from 'src/app/services/modules/repos.service';
 import { WorkService } from 'src/app/services/works/work.service';
-import Swal from 'sweetalert2';
 import { Document, parse } from 'yaml';
 
 @Component({
@@ -21,6 +20,7 @@ export class NewWorkComponent implements OnInit {
   modules: string[] = []
   moduleDocs: string = ""
   agentsTypes: string[] = []
+  loading: boolean = false
 
   workForm = new FormGroup({
     name: new FormControl(''),
@@ -67,7 +67,16 @@ export class NewWorkComponent implements OnInit {
 
   postWork() {
 
-    let yamlJson = this.workForm.value.params != null ? parse(this.workForm.value.params) : {}
+    this.loading = true
+
+    let yamlJson = {}
+    try {
+      yamlJson = this.workForm.value.params != null ? parse(this.workForm.value.params) : {}
+
+    } catch (error: any) {
+      this.toastr.error(error, 'Invalid yaml')
+      throw error
+    }
 
     let finalJson = {
       name: this.workForm.value.name,
@@ -84,6 +93,7 @@ export class NewWorkComponent implements OnInit {
     this.workService.postWork(finalYaml)
       .subscribe(result => {
         this.toastr.success($localize`Generated id ${result.id}`, $localize`Success creation`)
+        this.loading = false
         this.route.navigate(['works'])
       })
   }
