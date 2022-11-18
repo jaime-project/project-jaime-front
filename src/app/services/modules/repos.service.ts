@@ -94,4 +94,15 @@ export class ReposService {
         })
       )
   }
+
+  exportRepoZip(name: string): Observable<any> {
+    const url = `${this.apiUrl}/${name}/zips`
+    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
+    return this.http.get(url, { headers, responseType: "blob" })
+      .pipe(
+        catchError((error: HttpErrorResponse) => {
+          return this.errorService.httpError(error);
+        })
+      )
+  }
 }
