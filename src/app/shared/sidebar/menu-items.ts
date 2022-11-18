@@ -28,7 +28,7 @@ export const ROUTES: RouteInfo[] = [
   {
     path: "/repos",
     title: $localize`Repositories`,
-    icon: "mdi mdi-folder",
+    icon: "fa fa-code",
     class: "",
     extralink: false,
     submenu: [],

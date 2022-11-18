@@ -102,9 +102,24 @@ export class ListModuleComponent implements OnInit {
   }
 
   exportRepo(repoName: string) {
+
+    this.toastr.info($localize`Exporting ${repoName} to yaml`, $localize`Exporting reposotiry`)
+
     this.reposService.exportRepo(repoName)
       .subscribe(data => {
         FileSaver.saveAs(data, `${new Date().toISOString()}.yaml`);
+        this.toastr.success($localize`Export yaml successfull`)
+      })
+  }
+
+  exportRepoZip(repoName: string) {
+
+    this.toastr.info($localize`Exporting ${repoName} to Zip`, $localize`Exporting reposotiry`)
+
+    this.reposService.exportRepoZip(repoName)
+      .subscribe(data => {
+        FileSaver.saveAs(data, `${new Date().toISOString()}.tar.gz`);
+        this.toastr.success($localize`Export Zip successfull`)
       })
   }
 
