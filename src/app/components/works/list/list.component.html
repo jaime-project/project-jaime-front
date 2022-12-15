@@ -56,20 +56,20 @@
                 <td>{{workShort.module_name}}</td>
                 <td>{{workShort.start_date | date: 'short'}}</td>
                 <td>
-                  <button type="button" class="btn btn-primary" style="margin-right: 2%;"
-                    routerLink="/works/details/{{workShort.id}}">
+                  <button type="button" class="btn btn-primary" style="margin-right: 2%;" data-toggle="tooltip"
+                    title="Details" routerLink="/works/details/{{workShort.id}}">
                     <i class="fas fa-eye"></i>
                   </button>
-                  <button type="button" class="btn btn-success" style="margin-right: 2%;"
-                    (click)="changeStatus(workShort.id, 'READY')">
+                  <button type="button" class="btn btn-success" style="margin-right: 2%;" data-toggle="tooltip"
+                    title="Restart" (click)="changeStatus(workShort.id, 'READY')">
                     <i class="fas fa-refresh"></i>
                   </button>
-                  <button type="button" class="btn btn-warning" style="margin-right: 2%;"
-                    (click)="changeStatus(workShort.id, 'CANCEL')">
+                  <button type="button" class="btn btn-warning" style="margin-right: 2%;" data-toggle="tooltip"
+                    title="Cancel" (click)="changeStatus(workShort.id, 'CANCEL')">
                     <i class="fa fa-window-close"></i>
                   </button>
-                  <button type="button" class="btn btn-danger" style="margin-right: 2%;"
-                    (click)="deleteWork(workShort.id)">
+                  <button type="button" class="btn btn-danger" style="margin-right: 2%;" data-toggle="tooltip"
+                    title="Delete" (click)="deleteWork(workShort.id)">
                     <i class="far fa-trash-alt"></i>
                   </button>
                 </td>

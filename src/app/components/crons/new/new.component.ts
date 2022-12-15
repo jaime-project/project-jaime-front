@@ -99,11 +99,15 @@ export class NewCronComponent implements OnInit {
     let finalYaml = doc.toString()
 
     this.cronService.postCron(finalYaml)
-      .subscribe(result => {
-        this.toastr.success($localize`Generated id ${result.id}`, $localize`Success cron creation`)
-        this.loading = false
-        this.route.navigate(['crons'])
-      })
+      .subscribe(
+        result => {
+          this.toastr.success($localize`Generated id ${result.id}`, $localize`Success cron creation`)
+          this.route.navigate(['crons'])
+        },
+        error => {
+          this.toastr.error($localize`Error on create new Job`)
+          this.loading = false
+        })
   }
 
 }

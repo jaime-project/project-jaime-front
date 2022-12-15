@@ -92,11 +92,15 @@ export class NewWorkComponent implements OnInit {
     let finalYaml = doc.toString()
 
     this.workService.postWork(finalYaml)
-      .subscribe(result => {
-        this.toastr.success($localize`Generated id ${result.id}`, $localize`Success creation`)
-        this.loading = false
-        this.route.navigate(['works'])
-      })
+      .subscribe(
+        result => {
+          this.toastr.success($localize`Generated id ${result.id}`, $localize`Success creation`)
+          this.route.navigate(['works'])
+        },
+        error => {
+          this.toastr.error($localize`Error on create new Job`)
+          this.loading = false
+        })
   }
 
 }
