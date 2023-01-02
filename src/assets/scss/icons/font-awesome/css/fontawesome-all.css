@@ -1105,6 +1105,10 @@ readers do not read off random characters that represent icons */
   content: "\f05b";
 }
 
+.fa-cross:before {
+  content: "\f654";
+}
+
 .fa-css3:before {
   content: "\f13c";
 }
@@ -3747,6 +3751,10 @@ readers do not read off random characters that represent icons */
 
 .fa-file:before {
   content: "\f15b";
+}
+
+.fa-check-circle-o:before {
+  content: "\f05d";
 }
 
 
