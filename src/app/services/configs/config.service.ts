@@ -1,10 +1,10 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import Swal from 'sweetalert2';
 import { AppConfigService } from '../AppConfigService';
-
+import { ErrorService } from '../errors/error.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,23 +14,17 @@ export class ConfigService {
   apiUrl: string = "";
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-  constructor(private environment: AppConfigService, private http: HttpClient) {
+  constructor(private environment: AppConfigService, private http: HttpClient, private toastr: ToastrService, private errorService: ErrorService) {
     this.apiUrl = environment.config.backendURL + '/api/v1/configs';
-  }
-
-
-  getConfigsAll(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl)
-      .pipe(
-        catchError(this.httpError)
-      )
   }
 
   getRequirements(): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
     return this.http.get(`${this.apiUrl}/requirements`, { headers, responseType: 'text' })
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.errorService.httpError(error);
+        })
       )
   }
 
@@ -41,28 +35,34 @@ export class ConfigService {
 
     return this.http.post(url, code, { headers, responseType: 'text' })
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.errorService.httpError(error);
+        })
       )
   }
 
-  postObjects(code: string, replace: boolean): Observable<string> {
+  postYamls(code: string, replace: boolean): Observable<string> {
 
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
-    const url = `${this.apiUrl}/objects?replace=${replace}`
+    const url = `${this.apiUrl}/yamls?replace=${replace}`
 
     return this.http.post(url, code, { headers, responseType: 'text' })
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.errorService.httpError(error);
+        })
       )
   }
 
-  getObjectsFile(): Observable<Blob> {
+  getYamlFile(): Observable<Blob> {
 
-    const url = `${this.apiUrl}/objects/file`
+    const url = `${this.apiUrl}/yamls/file`
 
     return this.http.get(url, { responseType: "blob" })
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.errorService.httpError(error);
+        })
       )
   }
 
@@ -72,7 +72,9 @@ export class ConfigService {
 
     return this.http.get(url, { responseType: 'text' })
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.errorService.httpError(error);
+        })
       )
   }
 
@@ -82,24 +84,28 @@ export class ConfigService {
 
     return this.http.get(url, { responseType: 'text' })
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.errorService.httpError(error);
+        })
       )
   }
 
-  httpError(error: HttpErrorResponse) {
-    Swal.fire({
-      title: 'Service ERROR',
-      text: error.error.response,
-      icon: 'error',
-      confirmButtonColor: '#05b281'
-    })
+  getConfigsVars(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/vars`)
+      .pipe(
+        catchError((error: HttpErrorResponse) => {
+          return this.errorService.httpError(error);
+        })
+      )
+  }
 
-    let errorMessage = '';
-    if (error.error instanceof ErrorEvent) {
-      errorMessage = error.message;
-    } else {
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-    }
-    return throwError(errorMessage);
+  postConfigsVars(vars: { [key: string]: any }): Observable<any> {
+    const url = `${this.apiUrl}/vars`
+    return this.http.put(url, vars)
+      .pipe(
+        catchError((error: HttpErrorResponse) => {
+          return this.errorService.httpError(error);
+        })
+      )
   }
 }

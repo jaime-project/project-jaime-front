@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { DocsService } from 'src/app/services/modules/docs.service';
 import Swal from 'sweetalert2';
-import { Document, parse } from 'yaml';
 
 @Component({
   selector: 'app-docs-module',
@@ -17,7 +17,7 @@ export class DetailDocsComponent implements OnInit {
   docs: string = ""
   moduleName: string = ""
 
-  constructor(private docsService: DocsService, private activatedRoute: ActivatedRoute, private route: Router) { }
+  constructor(private docsService: DocsService, private activatedRoute: ActivatedRoute, private route: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.repo = this.activatedRoute.snapshot.paramMap.get('repo')!
@@ -42,7 +42,7 @@ export class DetailDocsComponent implements OnInit {
       if (result.isConfirmed) {
         this.docsService.putDocs(this.moduleName, this.docs, this.repo)
           .subscribe(() => {
-            this.route.navigate([`repos/${this.repo}/modules`])
+            this.toastr.success($localize`Docs updated`)
           })
       }
     })

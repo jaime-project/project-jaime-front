@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-12 m-t-30">
-    <h4 class="m-b-0"><b i18n>Work Yaml</b></h4>
+    <h4 class="m-b-0"><b i18n>Job Yaml</b></h4>
     <p class="text-muted m-t-0 font-12"></p>
   </div>
 </div>
@@ -12,20 +12,10 @@
   </div>
 </div>
 
-<div class="col-12" *ngIf="editSwitchActivated">
-  <div class="card">
-    <div class="card-body">
-      <div class="mb-3">
-        <button type="submit" class="btn btn-success" (click)="putWork(contentYaml)" i18n>Update</button>
-      </div>
-    </div>
-  </div>
-</div>
-
 <div class="col-12" *ngIf="!editSwitchActivated">
   <div class="card">
     <div class="card-body">
-      <ngx-monaco-editor style="width: 100%; height: 500px;"
+      <ngx-monaco-editor style="width: 100%; height: 600px;"
         [options]="{ theme: 'vs-dark', language: 'yaml', readOnly: true}" [(ngModel)]="contentYaml">
       </ngx-monaco-editor>
     </div>
@@ -35,8 +25,10 @@
 <div class="card col-12" *ngIf="editSwitchActivated">
   <div class="card">
     <div class="card-body">
-      <ngx-monaco-editor style="width: 100%; height: 500px;"
-        [options]="{ theme: 'vs-dark', language: 'yaml', readOnly: false}" [(ngModel)]="contentYaml"></ngx-monaco-editor>
+      <ngx-monaco-editor style="width: 100%; height: 600px;"
+        [options]="{ theme: 'vs-dark', language: 'yaml', readOnly: false}" [(ngModel)]="contentYaml">
+      </ngx-monaco-editor>
+      <button type="submit" class="btn btn-success" (click)="putWork(contentYaml)" i18n>Update</button>
     </div>
   </div>
 </div>

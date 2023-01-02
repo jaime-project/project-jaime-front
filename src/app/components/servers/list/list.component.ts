@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import FileSaver from 'file-saver';
+import { ToastrService } from 'ngx-toastr';
 import { interval, Subscription } from 'rxjs';
 import { ServerShort } from 'src/app/models/models';
 import { ServerService } from 'src/app/services/servers/servers.service';
@@ -16,8 +18,9 @@ export class ListServerComponent implements OnInit {
 
   listServersShorts: ServerShort[] = []
   testServerLoad: boolean = false
+  pageLoading: boolean = true
 
-  constructor(private serversService: ServerService, private route: Router) { }
+  constructor(private serversService: ServerService, private route: Router, private toastr: ToastrService) { }
 
   orderBy: string = 'host'
   reverse: boolean = false
@@ -84,6 +87,7 @@ export class ListServerComponent implements OnInit {
         this.listServersShorts = data
         this.listServersShorts = this.filterFunction();
         this.listServersShorts = this.orderFunction()
+        this.pageLoading = false
       })
   }
 
@@ -94,19 +98,10 @@ export class ListServerComponent implements OnInit {
       .subscribe(data => {
         this.testServerLoad = false
         if (data.success) {
-          Swal.fire({
-            title: $localize`Login success`,
-            icon: 'success',
-            confirmButtonColor: '#05b281',
-          })
+          this.toastr.success($localize`Connection succcess`)
         }
         else {
-          Swal.fire({
-            title: 'Login failure',
-            text: data.text,
-            icon: 'warning',
-            confirmButtonColor: '#05b281',
-          })
+          this.toastr.error($localize`Connection failure`)
         }
       })
   }
@@ -124,10 +119,18 @@ export class ListServerComponent implements OnInit {
       if (result.isConfirmed) {
         this.serversService.deleteServer(name)
           .subscribe(() => {
+            this.toastr.success($localize`Server deleted`)
             this.route.navigate(['servers'])
           })
       }
     })
+  }
+
+  exportYaml(serverName: string) {
+    this.serversService.exportYaml(serverName)
+      .subscribe(data => {
+        FileSaver.saveAs(data, `${new Date().toISOString()}.yaml`);
+      })
   }
 
 }

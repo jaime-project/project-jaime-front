@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { DocsService } from 'src/app/services/modules/docs.service';
 import { ModuleService } from 'src/app/services/modules/modules.service';
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-new-module',
@@ -16,7 +16,7 @@ export class NewModuleComponent implements OnInit {
   yaml: string = ""
   code: string = ""
 
-  constructor(private route: Router, private moduleService: ModuleService, private docsService: DocsService, private activatedRoute: ActivatedRoute) { }
+  constructor(private route: Router, private moduleService: ModuleService, private docsService: DocsService, private activatedRoute: ActivatedRoute, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.repo = this.activatedRoute.snapshot.paramMap.get('repo')!
@@ -29,14 +29,8 @@ export class NewModuleComponent implements OnInit {
 
     this.moduleService.postModule(this.name, this.code, this.repo)
       .subscribe(() => {
-        Swal.fire({
-          title: $localize`Success creation`,
-          text: $localize`Generated module ${this.name}`,
-          icon: 'success',
-          confirmButtonColor: '#05b281',
-        }).then(() =>
-          this.route.navigate([`repos/${this.repo}/modules`])
-        )
+        this.route.navigate([`repos/${this.repo}/modules`])
+        this.toastr.success($localize`New module ${this.name} created`)
       })
   }
 

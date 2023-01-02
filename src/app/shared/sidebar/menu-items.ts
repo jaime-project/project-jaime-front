@@ -28,7 +28,7 @@ export const ROUTES: RouteInfo[] = [
   {
     path: "/repos",
     title: $localize`Repositories`,
-    icon: "mdi mdi-folder",
+    icon: "fa fa-code",
     class: "",
     extralink: false,
     submenu: [],
@@ -53,6 +53,14 @@ export const ROUTES: RouteInfo[] = [
     path: "/configs",
     title: $localize`Configs`,
     icon: "fa fa-cog",
+    class: "",
+    extralink: false,
+    submenu: [],
+  },
+  {
+    path: "/exit",
+    title: $localize`Sign out`,
+    icon: "fa fa-power-off",
     class: "",
     extralink: false,
     submenu: [],

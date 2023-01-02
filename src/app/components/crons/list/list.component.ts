@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { interval, Subscription } from 'rxjs';
 import { CronShort } from 'src/app/models/models';
 import { CronService } from 'src/app/services/crons/cron.service';
@@ -11,11 +12,12 @@ import Swal from 'sweetalert2';
 })
 export class ListCronComponent implements OnInit {
 
+  pageLoading: boolean = true
   subscription: Subscription | null = null
   cronsShort: CronShort[] = []
   cronsStatus: string[] = []
 
-  constructor(private cronService: CronService) { }
+  constructor(private cronService: CronService, private toastr: ToastrService) { }
 
   orderBy: string = 'name'
   reverse: boolean = false
@@ -95,6 +97,7 @@ export class ListCronComponent implements OnInit {
         this.cronsShort = data;
         this.cronsShort = this.orderFunction();
         this.cronsShort = this.filterFunction();
+        this.pageLoading = false
       })
   }
 
@@ -109,7 +112,9 @@ export class ListCronComponent implements OnInit {
     }).then(result => {
       if (result.isConfirmed) {
         this.cronService.deleteCron(id)
-          .subscribe()
+          .subscribe(() => {
+            this.toastr.success($localize`Cron deleted`)
+          })
       }
     })
   }
@@ -125,7 +130,9 @@ export class ListCronComponent implements OnInit {
     }).then(result => {
       if (result.isConfirmed) {
         this.cronService.deleteCronsByStatus(status)
-          .subscribe()
+          .subscribe(() => {
+            this.toastr.success($localize`Crons deleted`)
+          })
       }
     })
   }
@@ -141,7 +148,9 @@ export class ListCronComponent implements OnInit {
     }).then(result => {
       if (result.isConfirmed) {
         this.cronService.changeStatus(id, status)
-          .subscribe()
+        .subscribe(() => {
+          this.toastr.success($localize`Cron changed status to ${status}`)
+        })
       }
     })
   }

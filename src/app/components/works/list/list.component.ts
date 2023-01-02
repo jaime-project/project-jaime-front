@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { interval, Subscription } from 'rxjs';
 import { WorkShort } from 'src/app/models/models';
 import { WorkService } from 'src/app/services/works/work.service';
@@ -11,13 +12,15 @@ import Swal from 'sweetalert2';
 })
 export class ListWorkComponent implements OnInit {
 
+  pageLoading: boolean = true
+
   thread: Subscription | null = null
 
   worksShort: WorkShort[] = []
 
   worksStatus: string[] = []
 
-  constructor(private workService: WorkService) { }
+  constructor(private workService: WorkService, private toastr: ToastrService) { }
 
   orderBy: string = 'name'
   reverse: boolean = false
@@ -27,7 +30,6 @@ export class ListWorkComponent implements OnInit {
 
     let list: WorkShort[] = this.worksShort
 
-    console.log(this.orderBy.toLowerCase())
     switch (this.orderBy.toLowerCase()) {
       case 'name':
         list = this.worksShort.sort((a, b) => a.name.localeCompare(b.name))
@@ -59,7 +61,7 @@ export class ListWorkComponent implements OnInit {
           }
           return 0
         })
-        break 
+        break
     }
 
     if (this.reverse) {
@@ -101,7 +103,7 @@ export class ListWorkComponent implements OnInit {
 
     this.workService.getWorkStatus()
       .subscribe(data => {
-        this.worksStatus = data;
+        this.worksStatus = data.sort();
       })
   }
 
@@ -115,13 +117,15 @@ export class ListWorkComponent implements OnInit {
         this.worksShort = data;
         this.worksShort = this.filterFunction();
         this.worksShort = this.orderFunction();
+        
+        this.pageLoading = false
       })
   }
 
   deleteWork(id: string) {
     Swal.fire({
-      title: $localize`Delete work`,
-      text: $localize`Delete work with id ${id}`,
+      title: $localize`Delete job`,
+      text: $localize`Delete job with id ${id}`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',
@@ -129,15 +133,17 @@ export class ListWorkComponent implements OnInit {
     }).then(result => {
       if (result.isConfirmed) {
         this.workService.deleteWork(id)
-          .subscribe()
+          .subscribe(() => {
+            this.toastr.success($localize`Job deleted`)
+          })
       }
     })
   }
 
   deleteByStatus(status: string) {
     Swal.fire({
-      title: $localize`Delete works`,
-      text: $localize`Delete works with status ${status}`,
+      title: $localize`Delete jobs`,
+      text: $localize`Delete jobs with status ${status}`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',
@@ -145,7 +151,9 @@ export class ListWorkComponent implements OnInit {
     }).then(result => {
       if (result.isConfirmed) {
         this.workService.deleteWorksByStatus(status)
-          .subscribe()
+          .subscribe(() => {
+            this.toastr.success($localize`Jobs deleted`)
+          })
       }
     })
   }
@@ -161,7 +169,9 @@ export class ListWorkComponent implements OnInit {
     }).then(result => {
       if (result.isConfirmed) {
         this.workService.changeStatus(id, status)
-          .subscribe()
+          .subscribe(() => {
+            this.toastr.success($localize`Job status changed`)
+          })
       }
     })
   }

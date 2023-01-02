@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { ReposService } from 'src/app/services/modules/repos.service';
 import Swal from 'sweetalert2';
 
@@ -28,7 +29,7 @@ export class NewRepoComponent implements OnInit {
     pass: new FormControl(''),
   });
 
-  constructor(private route: Router, private reposService: ReposService) { }
+  constructor(private route: Router, private reposService: ReposService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.reposService.listReposTypes()
@@ -63,13 +64,9 @@ export class NewRepoComponent implements OnInit {
 
     this.reposService.postRepos(repo)
       .subscribe(() => {
-        Swal.fire({
-          title: $localize`New repo created`,
-          icon: 'success',
-        }).then(() => {
-          this.butonClicked = false
-          this.route.navigate(['repos'])
-        })
+        this.toastr.success($localize`New repo created`)
+        this.butonClicked = false
+        this.route.navigate(['repos'])
       })
   }
 

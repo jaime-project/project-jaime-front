@@ -1,14 +1,5 @@
 <ngb-tabset #t="ngbTabset">
 
-  <!-- <ngb-tab id="tab-details">
-    <ng-template ngbTabTitle><b>Vars</b></ng-template>
-    <ng-template ngbTabContent>
-
-      <app-var-config></app-var-config>
-
-    </ng-template>
-  </ngb-tab> -->
-
   <ngb-tab id="tab-requirements">
     <ng-template ngbTabTitle><b i18n>Requirements</b></ng-template>
     <ng-template ngbTabContent>
@@ -17,7 +8,7 @@
   </ngb-tab>
 
   <ngb-tab id="tab-objects">
-    <ng-template ngbTabTitle><b i18n>Objects</b></ng-template>
+    <ng-template ngbTabTitle><b i18n>Yamls</b></ng-template>
     <ng-template ngbTabContent>
       <app-objects-config></app-objects-config>
     </ng-template>
@@ -34,6 +25,13 @@
     <ng-template ngbTabTitle><b i18n>Logs</b></ng-template>
     <ng-template ngbTabContent>
       <app-logs-config></app-logs-config>
+    </ng-template>
+  </ngb-tab>
+
+  <ngb-tab id="tab-details">
+    <ng-template ngbTabTitle><b i18n>Vars</b></ng-template>
+    <ng-template ngbTabContent>
+      <app-configs-vars></app-configs-vars>
     </ng-template>
   </ngb-tab>
 

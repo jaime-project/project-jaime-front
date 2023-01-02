@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import FileSaver from 'file-saver';
+import { ToastrService } from 'ngx-toastr';
 import { interval, Subscription } from 'rxjs';
 import { ClusterShort } from 'src/app/models/models';
 import { ClustersService } from 'src/app/services/clusters/clusters.service';
@@ -12,12 +14,11 @@ import Swal from 'sweetalert2';
 })
 export class ListClusterComponent implements OnInit {
 
+  pageLoading: boolean = true
   subscription: Subscription | null = null
-
   listClustersShorts: ClusterShort[] = []
-  testServerLoad: boolean = false
 
-  constructor(private clustersService: ClustersService, private route: Router) { }
+  constructor(private clustersService: ClustersService, private route: Router, private toastr: ToastrService) { }
 
   orderBy: string = 'name'
   reverse: boolean = false
@@ -84,35 +85,26 @@ export class ListClusterComponent implements OnInit {
         this.listClustersShorts = data;
         this.listClustersShorts = this.orderFunction();
         this.listClustersShorts = this.filterFunction();
+        this.pageLoading = false
       })
   }
 
   testServer(name: string) {
 
-    this.testServerLoad = true
+    this.pageLoading = true
     this.clustersService.testCluster(name)
       .subscribe(data => {
-        this.testServerLoad = false
+        this.pageLoading = false
         if (data.success) {
-          Swal.fire({
-            title: $localize`Login success`,
-            icon: 'success',
-            confirmButtonColor: '#05b281',
-          })
+          this.toastr.success($localize`Connection success`)
         }
         else {
-          Swal.fire({
-            title: $localize`Login failure`,
-            text: data.text,
-            icon: 'warning',
-            confirmButtonColor: '#05b281',
-          })
+          this.toastr.error($localize`Connection failure`)
         }
       })
   }
 
   deleteServer(name: string) {
-
     Swal.fire({
       title: `Delete cluster`,
       text: $localize`Delete cluster with name ${name}`,
@@ -124,10 +116,19 @@ export class ListClusterComponent implements OnInit {
       if (result.isConfirmed) {
         this.clustersService.deleteCluster(name)
           .subscribe(() => {
+            this.toastr.success($localize`Delete cluster success`)
             this.route.navigate(['clusters'])
           })
       }
     })
+  }
+
+
+  exportYaml(clusterName: string) {
+    this.clustersService.exportYaml(clusterName)
+      .subscribe(data => {
+        FileSaver.saveAs(data, `${new Date().toISOString()}.yaml`);
+      })
   }
 
 

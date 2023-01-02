@@ -1,13 +1,24 @@
 import { Routes } from '@angular/router';
+import { AppModule } from './app.module';
+import { SigninComponent } from './components/login/signin/signin.component';
 import { FullComponent } from './layouts/full/full.component';
 
 
 export const Approutes: Routes = [
   {
     path: '',
+    component: AppModule,
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./components/login/logincomponents.module').then(m => m.LoginComponentsModule)
+      },
+    ]
+  },
+  {
+    path: '',
     component: FullComponent,
     children: [
-      { path: '', redirectTo: '/clusters', pathMatch: 'full' },
       {
         path: '',
         loadChildren: () => import('./components/clusters/clustercomponents.module').then(m => m.ClusterComponentsModule)
@@ -48,6 +59,6 @@ export const Approutes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '/clusters'
-  }
+    redirectTo: ''
+  },
 ];

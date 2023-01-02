@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { interval, Subscription } from 'rxjs';
 import { DocsService } from 'src/app/services/modules/docs.service';
 import { ModuleService } from 'src/app/services/modules/modules.service';
@@ -14,8 +15,9 @@ export class ListModuleComponent implements OnInit {
 
   modulesName: string[] = []
   repo: string = ""
+  filterBy: string = ''
 
-  constructor(private modulesService: ModuleService, private activatedRoute: ActivatedRoute, private route: Router, private docsService: DocsService) { }
+  constructor(private modulesService: ModuleService, private activatedRoute: ActivatedRoute, private route: Router, private docsService: DocsService, private toastr: ToastrService) { }
 
   thread: Subscription | null = null
 
@@ -38,15 +40,15 @@ export class ListModuleComponent implements OnInit {
   loadStartData() {
     this.modulesService.listModules(this.repo!)
       .subscribe(data => {
-        this.modulesName = data.sort()
+        this.modulesName = this.filterFunction(data.sort())
       })
   }
 
   deleteModule(name: string) {
 
     Swal.fire({
-      title: $localize`Delete agent`,
-      text: $localize`Delete agent with name ${name}`,
+      title: $localize`Delete module`,
+      text: $localize`Delete module with name ${name}`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',
@@ -56,10 +58,22 @@ export class ListModuleComponent implements OnInit {
         this.docsService.deleteDocs(name, this.repo)
         this.modulesService.deleteModule(name, this.repo)
           .subscribe(() => {
+            this.toastr.success($localize`Module ${name} deleted`)
             this.route.navigate([`repos/${this.repo}/modules`])
           })
       }
     })
+  }
+
+  filterFunction(list: string[]) {
+    if (!this.filterBy) {
+      return list
+    }
+
+    return list
+      .filter(r => {
+        return r.toLowerCase().includes(this.filterBy.toLowerCase())
+      })
   }
 
 }

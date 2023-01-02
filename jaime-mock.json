@@ -8,15 +8,15 @@
   "hostname": "0.0.0.0",
   "routes": [
     {
-      "uuid": "df9bd82a-8b59-4e6c-8f9d-c3775b5b9ea0",
+      "uuid": "e9db4c5d-f8f3-4ce4-9f6c-b54ab21ae726",
       "documentation": "",
       "method": "post",
-      "endpoint": "servers/*",
+      "endpoint": "login/",
       "responses": [
         {
-          "uuid": "d1a311bb-7e8b-4981-b9c9-d50bb6ee58bd",
-          "body": "",
-          "latency": 3000,
+          "uuid": "65775b18-e2d0-40a2-ad9a-b55c418db691",
+          "body": "asdasdadadsaas",
+          "latency": 0,
           "statusCode": 201,
           "label": "",
           "headers": [
@@ -27,6 +27,36 @@
             {
               "key": "Content-Type",
               "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "90105437-a964-4d78-92bb-efed10ca8c66",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "servers/*/yamls",
+      "responses": [
+        {
+          "uuid": "2ec5be6b-71ea-48dc-b976-0f5135042d5b",
+          "body": "repos:\n  - name: repo1\n  - name: git\n    git_path: asd\n    git_user: asd\n    git_pass: asd\n    git_url: asd\n    git_branch: asd\n\n\nmodules:\n  - name: module1\n    repo: repo1\n    content: |\n      @blue_print.route('/requirements', methods=['GET'])\n      def get():\n          return config_service.get_requirements(), 200\n\n\n      @blue_print.route('/requirements', methods=['POST'])\n      def post():\n          config_service.update_requirements(request.data.decode())\n          return '', 200\n\n\n      @blue_print.route('/objects', methods=['POST'])\n      def post_objects():\n\n          dict_yaml = yaml.load(request.data, Loader=yaml.FullLoader)\n          config_service.update_objects(dict_yaml)\n\n          return '', 200\n  - name: module2\n    repo: repo1\n    content: |\n      @blue_print.route('/requirements', methods=['GET'])\n      def get():\n          return config_service.get_requirements(), 200\n\n  \ndocs:\n  - name: module1\n    repo: repo1\n    content: |\n      hola mundo redondo\n      muy feliz :)\n",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
             }
           ],
           "filePath": "",
@@ -76,6 +106,40 @@
       "responseMode": null
     },
     {
+      "uuid": "df9bd82a-8b59-4e6c-8f9d-c3775b5b9ea0",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "servers/*",
+      "responses": [
+        {
+          "uuid": "d1a311bb-7e8b-4981-b9c9-d50bb6ee58bd",
+          "body": "",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
       "uuid": "a6da9fa0-d099-437f-bec3-7f55efed53d2",
       "documentation": "",
       "method": "get",
@@ -84,7 +148,7 @@
         {
           "uuid": "e7b9d829-6132-4a61-a4f1-d6ea500c8aaa",
           "body": "[\n  {\n    \"name\": \"asd\",\n    \"host\": \"host.com\",\n    \"port\": \"22\"\n  },\n  {\n    \"name\": \"qwe\",\n    \"host\": \"host2.com\",\n    \"port\": \"22\"\n  }\n]",
-          "latency": 0,
+          "latency": 1000,
           "statusCode": 200,
           "label": "",
           "headers": [
@@ -204,7 +268,7 @@
         {
           "uuid": "0857d68d-b3ff-40bc-8aa5-e71de1ac4ee6",
           "body": "[\n  {\n  \"name\": \"zzz\",\n    \"type\": \"KUBERNETES\",\n    \"url\": \"https://konsole-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n  },\n  {\n    \"name\": \"qwe\",\n    \"type\": \"OPENSHIFT\",\n    \"url\": \"https://asd-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n  },\n  {\n    \"name\": \"asd1\",\n    \"type\": \"OPENSHIFT\",\n    \"url\": \"https://asd-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n}\n]",
-          "latency": 0,
+          "latency": 1000,
           "statusCode": 200,
           "label": "",
           "headers": [
@@ -266,6 +330,36 @@
           "body": "",
           "latency": 0,
           "statusCode": 201,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "2c0a482b-e983-40b8-9aa9-6640843bb5d8",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "clusters/*/yamls",
+      "responses": [
+        {
+          "uuid": "8611d17a-2736-4324-8f08-c83d34af8fcd",
+          "body": "repos:\n  - name: repo1\n  - name: git\n    git_path: asd\n    git_user: asd\n    git_pass: asd\n    git_url: asd\n    git_branch: asd\n\n\nmodules:\n  - name: module1\n    repo: repo1\n    content: |\n      @blue_print.route('/requirements', methods=['GET'])\n      def get():\n          return config_service.get_requirements(), 200\n\n\n      @blue_print.route('/requirements', methods=['POST'])\n      def post():\n          config_service.update_requirements(request.data.decode())\n          return '', 200\n\n\n      @blue_print.route('/objects', methods=['POST'])\n      def post_objects():\n\n          dict_yaml = yaml.load(request.data, Loader=yaml.FullLoader)\n          config_service.update_objects(dict_yaml)\n\n          return '', 200\n  - name: module2\n    repo: repo1\n    content: |\n      @blue_print.route('/requirements', methods=['GET'])\n      def get():\n          return config_service.get_requirements(), 200\n\n  \ndocs:\n  - name: module1\n    repo: repo1\n    content: |\n      hola mundo redondo\n      muy feliz :)\n",
+          "latency": 0,
+          "statusCode": 200,
           "label": "",
           "headers": [
             {
@@ -418,7 +512,7 @@
         {
           "uuid": "6db2c96e-132d-4b52-b8cd-5fc964d4cc18",
           "body": "[\n  {\n    \"id\": \"6132dd3f1cfb\",\n    \"host\": \"172.24.0.4\",\n    \"port\": \"80\",\n    \"type\": \"OPENSHIFT\"\n  },\n    {\n    \"id\": \"dd3f1cfb\",\n    \"host\": \"10.24.0.4\",\n    \"port\": \"8080\",\n    \"type\": \"KUBERNETES\"\n  },\n    {\n    \"id\": \"32dd3f1cfb\",\n    \"host\": \"30.24.0.4\",\n    \"port\": \"80\",\n    \"type\": \"OPENSHIFT\"\n  }\n]",
-          "latency": 0,
+          "latency": 1000,
           "statusCode": 200,
           "label": "",
           "headers": [
@@ -560,66 +654,6 @@
       "responseMode": null
     },
     {
-      "uuid": "3c59c5d7-e073-4a88-909e-8d3822141902",
-      "documentation": "",
-      "method": "get",
-      "endpoint": "repos/ocp-migration",
-      "responses": [
-        {
-          "uuid": "29933910-5a8d-4050-9803-cf792c556b72",
-          "body": "{\n  \"name\": \"ocp_migrate\",\n  \"type\": \"GIT\",\n  \"git_branch\": \"master\",\n  \"git_url\": \"asd\",\n  \"git_path\": \"/repos\",\n  \"git_user\": \"master\",\n  \"git_pass\": \"asdasdawqe12312\"\n}",
-          "latency": 0,
-          "statusCode": 200,
-          "label": "",
-          "headers": [
-            {
-              "key": "Access-Control-Allow-Origin",
-              "value": "*"
-            }
-          ],
-          "filePath": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": true
-        }
-      ],
-      "enabled": true,
-      "responseMode": null
-    },
-    {
-      "uuid": "aabddc68-9f2f-49f3-abd8-46dee83db7d6",
-      "documentation": "",
-      "method": "get",
-      "endpoint": "repos/local",
-      "responses": [
-        {
-          "uuid": "81ddc4ff-b641-4fde-a9cf-39ac066dc967",
-          "body": "{\n  \"name\": \"local\",\n  \"type\": \"LOCAL\"\n}",
-          "latency": 0,
-          "statusCode": 200,
-          "label": "",
-          "headers": [
-            {
-              "key": "Access-Control-Allow-Origin",
-              "value": "*"
-            }
-          ],
-          "filePath": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": true
-        }
-      ],
-      "enabled": true,
-      "responseMode": null
-    },
-    {
       "uuid": "c5afdefc-2ee1-4511-8af6-945ef3414341",
       "documentation": "",
       "method": "post",
@@ -680,14 +714,44 @@
       "responseMode": null
     },
     {
-      "uuid": "4a4eb735-6fc7-4f71-9a7b-efa4d414ece7",
+      "uuid": "aabddc68-9f2f-49f3-abd8-46dee83db7d6",
       "documentation": "",
-      "method": "post",
-      "endpoint": "repos/*/reload",
+      "method": "get",
+      "endpoint": "repos/local",
       "responses": [
         {
-          "uuid": "1e899205-6e91-4b19-a331-bc549dc4a324",
-          "body": "",
+          "uuid": "81ddc4ff-b641-4fde-a9cf-39ac066dc967",
+          "body": "{\n  \"name\": \"local\",\n  \"type\": \"LOCAL\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "3c59c5d7-e073-4a88-909e-8d3822141902",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "repos/ocp-migration",
+      "responses": [
+        {
+          "uuid": "29933910-5a8d-4050-9803-cf792c556b72",
+          "body": "{\n  \"name\": \"ocp_migrate\",\n  \"type\": \"GIT\",\n  \"git_branch\": \"master\",\n  \"git_url\": \"asd\",\n  \"git_path\": \"/repos\",\n  \"git_user\": \"master\",\n  \"git_pass\": \"asdasdawqe12312\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -719,6 +783,66 @@
           "uuid": "661201d5-1751-492f-a72e-b20770340274",
           "body": "",
           "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "4a4eb735-6fc7-4f71-9a7b-efa4d414ece7",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "repos/*/reload",
+      "responses": [
+        {
+          "uuid": "1e899205-6e91-4b19-a331-bc549dc4a324",
+          "body": "",
+          "latency": 3000,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "9bf7c07c-436d-447f-87c5-677632516f07",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "repos/*/yamls",
+      "responses": [
+        {
+          "uuid": "f3cd6c17-da9a-4cff-ae42-d8655d5b4959",
+          "body": "repos:\n  - name: repo1\n  - name: git\n    git_path: asd\n    git_user: asd\n    git_pass: asd\n    git_url: asd\n    git_branch: asd\n\n\nmodules:\n  - name: module1\n    repo: repo1\n    content: |\n      @blue_print.route('/requirements', methods=['GET'])\n      def get():\n          return config_service.get_requirements(), 200\n\n\n      @blue_print.route('/requirements', methods=['POST'])\n      def post():\n          config_service.update_requirements(request.data.decode())\n          return '', 200\n\n\n      @blue_print.route('/objects', methods=['POST'])\n      def post_objects():\n\n          dict_yaml = yaml.load(request.data, Loader=yaml.FullLoader)\n          config_service.update_objects(dict_yaml)\n\n          return '', 200\n  - name: module2\n    repo: repo1\n    content: |\n      @blue_print.route('/requirements', methods=['GET'])\n      def get():\n          return config_service.get_requirements(), 200\n\n  \ndocs:\n  - name: module1\n    repo: repo1\n    content: |\n      hola mundo redondo\n      muy feliz :)\n",
+          "latency": 3000,
           "statusCode": 200,
           "label": "",
           "headers": [
@@ -1072,8 +1196,38 @@
         {
           "uuid": "0b022d81-92fa-417c-97a6-bbde98e248ee",
           "body": "[\n    {\n        \"name\": \"Migracion Secrets\",\n        \"status\": \"RUNNING\",\n        \"id\": \"asd12d12d\",\n        \"agent_id\": \"qwerdsg21\",\n        \"agent_type\": \"OPENSHIFT\",\n        \"module_name\": \"Migrate object\",\n        \"ready_date\": \"2021-11-12T11:15:45\",\n        \"start_date\": \"2021-11-12T11:15:45\"\n    },\n    {\n        \"name\": \"Install jenkins\",\n        \"status\": \"READY\",\n        \"id\": \"asdqwefd\",\n        \"agent_id\": null,\n        \"agent_type\": \"OPENSHIFT\",\n        \"module_name\": \"Install jenkins\",\n        \"ready_date\": \"2021-11-12T11:15:45\"\n    },\n    {\n        \"name\": \"migracion configmaps\",\n        \"status\": \"ERROR\",\n        \"id\": \"hgfd765\",\n        \"agent_id\": null,\n        \"agent_type\": \"OPENSHIFT\",\n        \"module_name\": \"Migrate object\",\n        \"ready_date\": \"2021-11-12T11:15:45\"\n    },\n    {\n        \"name\": \"migracion configmaps\",\n        \"status\": \"SUCCESS\",\n        \"id\": \"hgfd765\",\n        \"agent_id\": null,\n        \"agent_type\": \"OPENSHIFT\",\n        \"module_name\": \"Migrate object\",\n        \"ready_date\": \"2021-11-12T11:15:45\"\n    },\n    {\n        \"name\": \"migracion configmaps\",\n        \"status\": \"CANCEL\",\n        \"id\": \"hgfd765\",\n        \"agent_id\": null,\n        \"agent_type\": \"OPENSHIFT\",\n        \"module_name\": \"Migrate object\",\n        \"ready_date\": \"2021-11-12T11:15:45\"\n    }\n]",
-          "latency": 0,
+          "latency": 1000,
           "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "57de2220-7366-4118-8cf7-8482d75e31a6",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "repos/*",
+      "responses": [
+        {
+          "uuid": "6c5d727b-334c-4397-ad48-d471336e3ed4",
+          "body": "{\n  \"name\": \"nombre\",\n  \"type\": \"local\"\n}",
+          "latency": 0,
+          "statusCode": 201,
           "label": "",
           "headers": [
             {
@@ -1162,7 +1316,7 @@
         {
           "uuid": "d839251d-0f29-4137-b532-96cdc9df13b6",
           "body": "{\n  \"id\": \"asdfds12343\"\n}",
-          "latency": 0,
+          "latency": 3000,
           "statusCode": 201,
           "label": "",
           "headers": [
@@ -1384,7 +1538,7 @@
         {
           "uuid": "c1119b0e-b2ba-4962-a1ea-16309aec2fd7",
           "body": "[\n    {\n        \"id\": \"31a30b3315ea\",\n        \"name\": \"Migracion Secrets\",\n        \"cron_expression\": \"* * * * *\",\n        \"status\": \"ACTIVE\",\n        \"creation_date\": \"2021-11-12T11:15:45\"\n    },\n    {\n        \"id\": \"31a30b3315ea\",\n        \"name\": \"Algo copado\",\n        \"cron_expression\": \"*/2 * * * *\",\n        \"status\": \"DESACTIVE\",\n        \"creation_date\": \"2021-11-12T11:15:45\"\n    }\n]",
-          "latency": 0,
+          "latency": 1000,
           "statusCode": 200,
           "label": "",
           "headers": [
@@ -1683,12 +1837,12 @@
       "uuid": "63f72e2f-290c-4d09-8e17-7e5a8b668c9f",
       "documentation": "",
       "method": "post",
-      "endpoint": "configs/objects",
+      "endpoint": "configs/yamls",
       "responses": [
         {
           "uuid": "f09720a4-50a0-4ec3-a0c2-acd76ac3ca1b",
           "body": "",
-          "latency": 0,
+          "latency": 2000,
           "statusCode": 200,
           "label": "",
           "headers": [
@@ -1713,7 +1867,7 @@
       "uuid": "efaa86f9-6584-4905-a228-7e77313a8cbe",
       "documentation": "",
       "method": "get",
-      "endpoint": "configs/objects/file",
+      "endpoint": "configs/yamls/file",
       "responses": [
         {
           "uuid": "8a8fb071-4450-45fa-a5cc-07df3e8cf48b",
@@ -1777,7 +1931,67 @@
       "responses": [
         {
           "uuid": "9c4702c8-a1e3-4018-b48e-584f637720f5",
-          "body": "2022-08-11 14:09:51,079 - app (49422) - INFO - Agent ID -> 478d09392d2d\n2022-08-11 14:09:51,079 - app (49422) - INFO - \n\n                      ,^(]$%&&&&%$](+,`                                                                                                               \n                  ,)$#@@@@@@@@@@@@@@@@#$(\"                                                                                                            \n               '(&@@@@#####@@@@@@#####@@@@&('                                                                                                         \n             ,]#@@###@@@@@%]\\+++/]#@@@@###@@#$,                                             .!?(]>                                                    \n           `]#@@##@@@@@@%!,,,,,,,,,?#@@@@@##@@#]`                                       ,)$@##@%(`                                                    \n          :&@@##@@@@@@@$,,,,,,,,,,,,:#@@@@@@##@@#:                                   `)&$):.]]`                                                       \n         ?#@@#@@@@@@@@$,,,,,,,,,,,,,,:#@@@@@@@#@@#?                                `]$>`  :#$                                                         \n        ?#@@#@@@@@@@@@$,,,,,,,,,,,,,,~&@@@@@@@@#@@#\\                              ^$~    ;@#`                                                         \n       :#@@#@@@@@@@@@@@\\,,,,,,,,,,,,,]@@@@@@@@@@#@@#!                            ]?     '@@*                                                          \n      `%@@#@@@@@@@@@@%,,,,,,,,,,,,,,,!]@@@@@@@@@@#@@&`                          ]:      $@#                       `                                   \n      ?@@##@@@@@@@@@@#:,,,,,,,,,,,,,,,]@@@@@@@@@@##@@/                         !*      ,@@\\                     :],                                   \n      %@@#@@@@@@@@@@@@#^,,,,,:?:,,,,,]@@@@@@@@@@@@#@@%                         ]       $@#                    `$]                                     \n     .#@@#@@@@@@@@@@@@@@:,,:+\\+\\^\",,\\@@@@@@@@@@@@@#@@#'                        $      :@@^                    `/                                      \n     \"#@@#@@@@@@@@@@@@@@&:,,,,,,,,,+@@@@@@@@@@@@@@#@@#:                        ]`     &@$       `\"!!' ':      '`   `::   `:!`   `:!'       `:!,       \n     ~#@@#@@@@@@@@@@@@@@@%,,,,,,,,,#@@@@@@@@@@@@@@#@@#:                        .]`   ?@#`     ?\\!,'+#@@!   ,(##` `*)@@:\")/%@# ,(/$@@,    ,(/)#@&      \n     '#@@#@@@@@@@@@@@@@@@%,,,,,,,,,%@@@@@@@@@@@@@@#@@#'              ,!,         >+;;@@(,   >#!    '@@:   :^@#.  , /@#/!  ]@%+!  /@#    )%   ]@#`     \n      %@@#@@@@@@@@@@@@@#]],,,,,,,,,]]&@@@@@@@@@@@@#@@&          `^+;:.              &@^    ]@)    '#@)    `#@!     #@#.   #@%'  `@@:   )@]>?(]:       \n      \\@@##@@@@@@&$]);\",/@]\",,,,,:$@(,,!\\]$%#@@@@#@@@(        +]^                  $@*    ^@@`   :#@#     ]@$     (@#.   (@@'   $@]   '@@'            \n      `&@@#@#$]^,,,,,,,,#@@#]/\\($@@@#,,,,,,,,:/$##@@#.      >&^                   ]@^     ]@@`  )=#@]  ` .@@; `` .@@:   '@@!   '@@` ` \\@@'    :       \n       !#@@%:,,,,,,,,,,+@@@??%@$;]@@@*,,,,,,,,,!%@@#>      $@'                   $#\"      !@@%]]' #@&)?  ;@@]\\^  $@]    %@]    ;@@\\?! ~@@#(\\]('       \n        \\#@@%;,,,,,,,,,]@@@!:]$)\"]@@@$,,,,,,,,?&@@@]      $@(                  .%$`        :)>`   '(=`    ?(!    );    `(^      ?)!    '?(/!`         \n         ?#@@#]:,,,,,,,]@@@#@@@@@@@@@],,,,,,:]#@@@]      '@@^                 \\%:                                                                     \n          !#@@#%(:,,,,,,%@@@@@@@@@@@%,,,,,:(&@@@@]       ,@@]               >$^                                                                       \n           `]#@@##]^\",,,~$@@@@@@@@@$~,,:/]&#@@@#/         %@@)           !(]:                                                                         \n             ,$#@@@#&$]\\:,(#@@@@@#(!/]$##@@@@@&:          `]#@@$]\\?\\)]]](:                                                                            \n               ,]#@@@@####&%##########@@@@@@#]`              .:^>>^:,`                                                                                \n                  :]%#@@@@@@@@@@@@@@@@@@@@#$,                                                                                                         \n                     `:]#@@@@@@@@@@@@@@@@$:                                                                                                           \n                        :#@@@@@@@@@@@@#$:                                                                                                             \n                         $@@@@@@@@@@#],                                                                                                               \n                         $@@@@@@@#%?`                                                                                                                 \n                         $@@@@@&(,                                                                                                                    \n                         $@#%(,                                                                                                                       \n                         \\*'                                                                                                                          \n                                                                                                                                                                        \n",
+          "body": "2022-08-11 14:09:51,079 - app (49422) - INFO - Agent ID -> 478d09392d2d\n2022-08-11 14:09:51,079 - app (49422) - INFO - \n\n                        ^Y?:    7J!.                                                                                                                                                \n                        7##BPJ!^P#BGY!:                                                                                                                                             \n                    .^!7YBBB###BBBB##BGPYJ?!^:                                                                ..:::^:.                                                              \n                 :75GB###BBBBBBBBBBBBB#####BBG5?^                                                        .:^^^^^~^^:.                                                               \n               ^YB###BBBBBBBBBBBBBBBBBBBBBBBBBBBG5!                                                   .:^^:...:^.                                                                   \n              ?B#BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBGGB5:                                               :^:.    :~~.                                                                    \n             Y#BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBGGGP:                                            .^:      :~~.                                                                     \n            7#BBBBBBBBGGGGBBBBBBBBBBBBBBBGGGBBBBBBGGB5                                           ::       :~~:                                                                      \n            5#BBBBBBBBGGGGGGGGGGGGGGGGGGGGGGBBBBBBGGGG:                                         ^.       .~~^                           ..                                          \n            P#BBBBBBBBBGGGGGGGGGGGGGGGGGGGGGBBBBBBGGGG^                                        :.        ^~~.                         .^:                                           \n            P#BBBBBBBBBGGGGGGGGGGGGGGGGGGGGGBBBBBBGGGG^                                        ^        :~~^                         ^^                                             \n            P#BBBBBBBG5J????YGGGGGGGGGGGGGGGGGPGGBGGGG^                                       .^       .~~^                          .                                              \n            P#BBBBGGG?!J555Y!75GGGGGGGGGPGGGGP55PBGGGG^                                        ::      ^~~.       ...::::.:^.      .:.   ..:^:  .::^^.   .::^^.       .::^^:.       \n            P#BBBBGGY~?B5~JBY~?GGGGGGGGP~?GGGP55GBGGGG^                                         ::.   :~~:     .::.     ^~~:    .:~~^   ...~~^.:...~~^ ::. :~~^     :^.. :~~^       \n            PBBGGBBGP7!J55PY7!5GGGGGGGGGPGGGGP55BBGGGG^                        .......            ...^~~:.    :~^      :~~.     .^~^      :~~^:   .~~^:.   ^~^     ^~.  .:^^.       \n           ^PPPPPGBGGG5?777?YPGGGGGGGGGGGGGGGP5GBPPPPP7                    ..::..                   :~^.     ^~^     .^~~:      ^~^      .~~^.    ^~~:    :~~.    ^~^.....          \n           JPPPPPPBBBGGG57JGBBBBBBBBBBGGGGGGGGB#GPPPPPP:                 .^:.                      :~^      :~~^    :^~~^      ^~~.      ^~^.    :~~:    .~~.    :~~:               \n           :YPPPPPG#BBBG57YBBBBBBBBBBBBBGGGGBB#BPPPPP5!                .^^.                       ^~:       :~~^..::..~~^ .:  .~~^ .:.  ^~~.    :~~:     ^~~. :. :~~^.  ..:.        \n             :^^!J7?B#BB57Y#BBGGGGGGBBBBBBBB##5~^^^^:.                :~^                       :~^.         :^^^:.   ^^^:.    ^^^:.   .^^.    .^^:      :^^^:.   :^^^^::.          \n                :?~ ~P##P7Y#BBBBBBBBBBBBBB##G?                       :~~:                     .^^.                                                                                  \n                .77^  !5J?G#BBBBBBBBBBB##BP7.                        ^~~:                   .::.                                                                                    \n                 .~!7!!!~^?GBBBBBBBBBBBY7:                           :~~~:              ..:::                                                                                       \n                       .:^:JPGGGGGGGGPP~^^.                           :^~~^:.........::::.                                                                                          \n                   .:~!J?!!!7?JYYY5YJ?7!!7Y7^:.                         ..::^::::::...                                                                                              \n                 :!?JJYY7^~~~^~!!!!!~^~~~~YYJ7!~:                                                                                                                                   \n               .!JJJYYYYY!~~~~!!!!!!~~~~~JYYYY7!!~.                                                                                                                                 \n               7J?JYYYYY?~~~~^~!!!!!~^~~~!YYYYY?!!!:                                                                                                                                \n              ~J?JYYYYYY7~~~!?YP55P5J7~~~!YYYYYY?!!~                                                                                                                                \n              !J?JJJJYYYYYJJG&&&5J#@&#YJJYYYYYJJ7!!!.                                                                                                                               \n              !J???JYYYYYYYYG&&&#B&&&#5YYYYYYYJ?7!!!.                                                                                                                               \n              !J???JYYYYYYYYG&&&5J#&&#YYYYYYYYJJ7!!!.                                                                                                                               \n              !J?????JJYYYYYG&&&BB&&&#YYYYYJJ??J7!!!.                                                                                                                               \n              !J????????JYYYB&&&&&&&&#5YYJJ???JJ7!!!.                                                                                                               \n                                                             ",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "7b80d616-ca2c-4063-b140-84594ccb4f99",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "configs/vars",
+      "responses": [
+        {
+          "uuid": "451b1de9-62d0-484c-9b5f-5d9369a1381e",
+          "body": "{\n  \"GARBAGE_COLLECTOR_RUN_MINUTES\": 2500,\n  \"JAIME_USER\": \"admin\",\n  \"JAIME_PASS\": \"admin\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "db762648-b116-4a7a-8ebc-ffb3fdddfb8f",
+      "documentation": "",
+      "method": "put",
+      "endpoint": "configs/vars",
+      "responses": [
+        {
+          "uuid": "43ab2c97-4db0-4375-acd9-f3a6bf344a71",
+          "body": "",
           "latency": 0,
           "statusCode": 200,
           "label": "",

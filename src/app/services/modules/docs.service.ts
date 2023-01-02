@@ -1,9 +1,10 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import Swal from 'sweetalert2';
 import { AppConfigService } from '../AppConfigService';
+import { ErrorService } from '../errors/error.service';
 
 
 @Injectable({
@@ -14,14 +15,16 @@ export class DocsService {
   apiUrl: string = "";
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-  constructor(private environment: AppConfigService, private http: HttpClient) {
+  constructor(private environment: AppConfigService, private http: HttpClient, private toastr: ToastrService, private errorService: ErrorService) {
     this.apiUrl = environment.config.backendURL + '/api/v1/repos';
   }
 
   listDocs(): Observable<string[]> {
     return this.http.get<string[]>(this.apiUrl)
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.errorService.httpError(error);
+        })
       )
   }
 
@@ -32,7 +35,9 @@ export class DocsService {
 
     return this.http.post(url, docs, { headers, responseType: 'text' })
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.errorService.httpError(error);
+        })
       )
   }
 
@@ -43,7 +48,9 @@ export class DocsService {
 
     return this.http.get(url, { headers, responseType: 'text' })
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.errorService.httpError(error);
+        })
       )
   }
 
@@ -53,7 +60,9 @@ export class DocsService {
 
     return this.http.delete<any>(url)
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.errorService.httpError(error);
+        })
       )
   }
 
@@ -72,25 +81,9 @@ export class DocsService {
 
     return this.http.put(url, content, { headers })
       .pipe(
-        catchError(this.httpError)
+        catchError((error: HttpErrorResponse) => {
+          return this.errorService.httpError(error);
+        })
       )
-  }
-
-  httpError(error: HttpErrorResponse) {
-
-    Swal.fire({
-      title: 'Service ERROR',
-      text: error.error.response,
-      icon: 'error',
-      confirmButtonColor: '#05b281'
-    })
-
-    let errorMessage = '';
-    if (error.error instanceof ErrorEvent) {
-      errorMessage = error.message;
-    } else {
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-    }
-    return throwError(errorMessage);
   }
 }

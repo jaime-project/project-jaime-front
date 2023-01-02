@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { AgentService } from 'src/app/services/agents/agents.service';
 import { DocsService } from 'src/app/services/modules/docs.service';
 import { ModuleService } from 'src/app/services/modules/modules.service';
 import { ReposService } from 'src/app/services/modules/repos.service';
 import { WorkService } from 'src/app/services/works/work.service';
-import Swal from 'sweetalert2';
 import { Document, parse } from 'yaml';
 
 @Component({
@@ -20,6 +20,7 @@ export class NewWorkComponent implements OnInit {
   modules: string[] = []
   moduleDocs: string = ""
   agentsTypes: string[] = []
+  loading: boolean = false
 
   workForm = new FormGroup({
     name: new FormControl(''),
@@ -29,7 +30,7 @@ export class NewWorkComponent implements OnInit {
     params: new FormControl(),
   });
 
-  constructor(private route: Router, private workService: WorkService, private moduleService: ModuleService, private reposService: ReposService, private agent_service: AgentService, private docsService: DocsService) { }
+  constructor(private route: Router, private workService: WorkService, private moduleService: ModuleService, private reposService: ReposService, private agent_service: AgentService, private docsService: DocsService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
 
@@ -66,7 +67,17 @@ export class NewWorkComponent implements OnInit {
 
   postWork() {
 
-    let yamlJson = this.workForm.value.params != null ? parse(this.workForm.value.params) : {}
+    this.loading = true
+
+    let yamlJson = {}
+    try {
+      yamlJson = this.workForm.value.params != null ? parse(this.workForm.value.params) : {}
+
+    } catch (error: any) {
+      this.toastr.error(error, 'Invalid yaml')
+      this.loading = false
+      throw error
+    }
 
     let finalJson = {
       name: this.workForm.value.name,
@@ -81,16 +92,15 @@ export class NewWorkComponent implements OnInit {
     let finalYaml = doc.toString()
 
     this.workService.postWork(finalYaml)
-      .subscribe(result => {
-        Swal.fire({
-          title: $localize`Success creation`,
-          text: $localize`Generated id ${result.id}`,
-          icon: 'success',
-          confirmButtonColor: '#05b281',
-        }).then(() =>
+      .subscribe(
+        result => {
+          this.toastr.success($localize`Generated id ${result.id}`, $localize`Success creation`)
           this.route.navigate(['works'])
-        )
-      })
+        },
+        error => {
+          this.toastr.error($localize`Error on create new Job`)
+          this.loading = false
+        })
   }
 
 }
