@@ -20,11 +20,6 @@ export class LoginService {
   }
 
   login(user: string, password: string): Observable<any> {
-    return this.http.post(this.apiUrl, { 'user': user, 'pass': password }, { responseType: 'text' })
-      .pipe(
-        catchError((error: HttpErrorResponse) => {
-          return this.errorService.httpError(error);
-        })
-      )
+    return this.http.post(this.apiUrl, { 'user': user, 'password': password }, { responseType: 'text' })
   }
 }
