@@ -28,69 +28,34 @@ export class ListJobComponent implements OnInit {
 
   orderFunction(): JobShort[] {
 
-    let list: JobShort[] = this.jobsShort
-
-    switch (this.orderBy.toLowerCase()) {
-      case 'name':
-        list = this.jobsShort.sort((a, b) => a.name.localeCompare(b.name))
-        break
-      case 'status':
-        list = this.jobsShort.sort((a, b) => a.status.localeCompare(b.status))
-        break
-      case 'id':
-        list = this.jobsShort.sort((a, b) => a.id.localeCompare(b.id))
-        break
-      case 'agentid':
-        list = this.jobsShort.sort((a, b) => {
-          if (a.agent_id) {
-            return a.agent_id.localeCompare(b.agent_id)
-          }
-          return 0
-        })
-        break
-      case 'agenttype':
-        list = this.jobsShort.sort((a, b) => a.agent_type.localeCompare(b.agent_type))
-        break
-      case 'module':
-        list = this.jobsShort.sort((a, b) => a.module_name.localeCompare(b.module_name))
-        break
-      case 'startdate':
-        list = this.jobsShort.sort((a, b) => {
-          if (a.start_date && b.start_date) {
-            return a.start_date.localeCompare(b.start_date)
-          }
-          return 0
-        })
-        break
-    }
-
     if (this.reverse) {
-      list = list.reverse()
+      this.jobsShort = this.jobsShort.reverse()
     }
 
-    return list
+    return this.jobsShort
   }
 
   changeOrder(order: string) {
     this.reverse = !this.reverse
+    console.log(this.reverse)
     this.orderBy = order.toLowerCase()
   }
 
-  filterFunction() {
-    if (!this.filterBy) {
-      return this.jobsShort
-    }
+  // filterFunction() {
+  //   if (!this.filterBy) {
+  //     return this.jobsShort
+  //   }
 
-    return this.jobsShort
-      .filter(a => {
-        return a.name.toLowerCase().includes(this.filterBy.toLowerCase())
-          || a.id.toLowerCase().includes(this.filterBy.toLowerCase())
-          || a.status.toLowerCase().includes(this.filterBy.toLowerCase())
-          || a.module_name.toLowerCase().includes(this.filterBy.toLowerCase())
-          || a.agent_id?.toLowerCase().includes(this.filterBy.toLowerCase())
-          || a.agent_type.toLowerCase().includes(this.filterBy.toLowerCase())
-      })
-  }
+  //   return this.jobsShort
+  //     .filter(a => {
+  //       return a.name.toLowerCase().includes(this.filterBy.toLowerCase())
+  //         || a.id.toLowerCase().includes(this.filterBy.toLowerCase())
+  //         || a.status.toLowerCase().includes(this.filterBy.toLowerCase())
+  //         || a.module_name.toLowerCase().includes(this.filterBy.toLowerCase())
+  //         || a.agent_id?.toLowerCase().includes(this.filterBy.toLowerCase())
+  //         || a.agent_type.toLowerCase().includes(this.filterBy.toLowerCase())
+  //     })
+  // }
 
   ngOnInit(): void {
 
@@ -112,12 +77,12 @@ export class ListJobComponent implements OnInit {
   }
 
   loadStartData() {
-    this.jobService.getJobsAllShort()
+    this.jobService.getJobsAllShort(5, 1, this.filterBy, this.orderBy)
       .subscribe(data => {
         this.jobsShort = data;
-        this.jobsShort = this.filterFunction();
+        // this.jobsShort = this.filterFunction();
         this.jobsShort = this.orderFunction();
-        
+
         this.pageLoading = false
       })
   }

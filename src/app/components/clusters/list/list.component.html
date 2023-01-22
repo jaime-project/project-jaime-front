@@ -8,49 +8,64 @@
 <div class="col-lg-12">
   <div class="card m-t-30">
     <div class="card-body">
-      <div class="row">
-        <div class="col-12 m-b-30">
-          <button class="btn btn-success" routerLink="/clusters/new" i18n>New cluster</button>
+      <button class="btn btn-success" routerLink="/clusters/new" i18n>New cluster</button>
+    </div>
+  </div>
+</div>
+
+<div class="col-lg-12">
+  <div class="card m-t-30">
+    <div class="card-body">
+      <div class="form-row">
+        <div class="col-1">
+          <label i18n><b>Page:</b></label> <input type="number" class="form-control" [(ngModel)]="page" min="1">
+        </div>
+        <div class="col-1">
+          <label i18n><b>Size:</b></label> <input type="number" class="form-control" [(ngModel)]="size" min="1">
+        </div>
+        <div class="col-3">
+          <label i18n><b>Filter:</b></label> <input type="text" class="form-control" [(ngModel)]="filterBy">
         </div>
       </div>
-      <div class="row">
-        <div class="col-12">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('name')">Name</button></th>
-                <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('type')">Type</button></th>
-                <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('url')">URL</button></th>
-                <th scope="col"> <label i18n>Filter:</label> <input type="text" class="form-control"
-                    [(ngModel)]="filterBy">
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let clusterShort of listClustersShorts">
-                <td>{{clusterShort.name}}</td>
-                <td>{{clusterShort.type}}</td>
-                <td>{{clusterShort.url}}</td>
-                <td>
-                  <button type="button" class="btn btn-primary" style="margin-right: 2%;" data-toggle="tooltip" title="Details"
-                    routerLink="/clusters/details/{{clusterShort.name}}"><i class="fas fa-eye"></i></button>
-                  <button type="button" class="btn btn-danger" style="margin-right: 2%;" data-toggle="tooltip" title="Delete"
-                    (click)="deleteServer(clusterShort.name)">
-                    <i class=" far fa-trash-alt"></i>
-                  </button>
-                  <button type="button" class="btn btn-success" style="margin-right: 2%;"  data-toggle="tooltip" title="Test login on server"
-                    (click)="testServer(clusterShort.name)">
-                    <i class="fas fa-play"></i>
-                  </button>
-                  <button type="button" class="btn btn-download" style="margin-right: 2%;"  data-toggle="tooltip" title="Download yaml"
-                    (click)="exportYaml(clusterShort.name)">
-                    <i class="fa fa-download"></i>
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-lg-12">
+  <div class="card m-t-30">
+    <div class="card-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('name')">Name</button></th>
+            <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('type')">Type</button></th>
+            <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('url')">URL</button></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let clusterShort of listClustersShorts">
+            <td>{{clusterShort.name}}</td>
+            <td>{{clusterShort.type}}</td>
+            <td>{{clusterShort.url}}</td>
+            <td>
+              <button type="button" class="btn btn-primary" style="margin-right: 2%;" data-toggle="tooltip"
+                title="Details" routerLink="/clusters/details/{{clusterShort.name}}"><i class="fas fa-eye"></i></button>
+              <button type="button" class="btn btn-danger" style="margin-right: 2%;" data-toggle="tooltip"
+                title="Delete" (click)="deleteServer(clusterShort.name)">
+                <i class=" far fa-trash-alt"></i>
+              </button>
+              <button type="button" class="btn btn-success" style="margin-right: 2%;" data-toggle="tooltip"
+                title="Test login on server" (click)="testServer(clusterShort.name)">
+                <i class="fas fa-play"></i>
+              </button>
+              <button type="button" class="btn btn-download" style="margin-right: 2%;" data-toggle="tooltip"
+                title="Download yaml" (click)="exportYaml(clusterShort.name)">
+                <i class="fa fa-download"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>

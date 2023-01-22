@@ -18,8 +18,23 @@ export class ClustersService {
     this.apiUrl = environment.config.backendURL + '/api/v1/clusters';
   }
 
-  listCluster(): Observable<ClusterShort[]> {
-    return this.http.get<ClusterShort[]>(this.apiUrl + '/all/short')
+  listCluster(size: number, page: number, filter: string, order: string): Observable<ClusterShort[]> {
+    let url = this.apiUrl + '/all/short?'
+
+    if (size && page) {
+      url += `&size=${size}&page=${page}`
+    }
+
+    if (filter) {
+      url += `&filter=${filter}`
+    }
+
+
+    if (order) {
+      url += `&order=${order}`
+    }
+
+    return this.http.get<ClusterShort[]>(url)
       .pipe(
         catchError((error: HttpErrorResponse) => {
           return this.errorService.httpError(error);

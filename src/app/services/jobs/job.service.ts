@@ -20,8 +20,24 @@ export class JobService {
     this.apiUrl = environment.config.backendURL + '/api/v1/jobs';
   }
 
-  getJobsAllShort(): Observable<JobShort[]> {
-    return this.http.get<JobShort[]>(this.apiUrl + '/all/short')
+  getJobsAllShort(size: number, page: number, filter: string, order: string): Observable<JobShort[]> {
+
+    let url = this.apiUrl + '/all/short?'
+
+    if (size && page) {
+      url += `size=${size}&page=${page}`
+    }
+
+    if (filter) {
+      url += `&filter=${filter}`
+    }
+
+
+    if (order) {
+      url += `&order=${order}`
+    }
+
+    return this.http.get<JobShort[]>(url)
       .pipe(
         catchError((error: HttpErrorResponse) => {
           return this.errorService.httpError(error);
