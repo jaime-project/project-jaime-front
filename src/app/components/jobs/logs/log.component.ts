@@ -1,24 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { interval, Subscription } from 'rxjs';
-import { WorkService } from 'src/app/services/works/work.service';
+import { JobService } from 'src/app/services/jobs/job.service';
 
 @Component({
-  selector: 'app-log-work',
+  selector: 'app-log-job',
   templateUrl: './log.component.html',
   styleUrls: ['./log.component.css']
 })
-export class LogWorkComponent implements OnInit {
+export class LogJobComponent implements OnInit {
 
-  workId: string | null = ""
-  workLogs: string | null = ""
+  jobId: string | null = ""
+  jobLogs: string | null = ""
 
-  constructor(private workService: WorkService, private route: ActivatedRoute) { }
+  constructor(private jobService: JobService, private route: ActivatedRoute) { }
 
   thread: Subscription | null = null
 
   ngOnInit(): void {
-    this.workId = this.route.snapshot.paramMap.get('id')
+    this.jobId = this.route.snapshot.paramMap.get('id')
 
     this.loadStartData()
 
@@ -33,9 +33,9 @@ export class LogWorkComponent implements OnInit {
   }
 
   loadStartData() {
-    this.workService.getLogs(this.workId)
+    this.jobService.getLogs(this.jobId)
       .subscribe(data => {
-        this.workLogs = data;
+        this.jobLogs = data;
       })
   }
 }

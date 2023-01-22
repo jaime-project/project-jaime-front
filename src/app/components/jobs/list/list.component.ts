@@ -1,47 +1,47 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { interval, Subscription } from 'rxjs';
-import { WorkShort } from 'src/app/models/models';
-import { WorkService } from 'src/app/services/works/work.service';
+import { JobShort } from 'src/app/models/models';
+import { JobService } from 'src/app/services/jobs/job.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-list-work',
+  selector: 'app-list-job',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
-export class ListWorkComponent implements OnInit {
+export class ListJobComponent implements OnInit {
 
   pageLoading: boolean = true
 
   thread: Subscription | null = null
 
-  worksShort: WorkShort[] = []
+  jobsShort: JobShort[] = []
 
-  worksStatus: string[] = []
+  jobsStatus: string[] = []
 
-  constructor(private workService: WorkService, private toastr: ToastrService) { }
+  constructor(private jobService: JobService, private toastr: ToastrService) { }
 
   orderBy: string = 'name'
   reverse: boolean = false
   filterBy: string = ''
 
-  orderFunction(): WorkShort[] {
+  orderFunction(): JobShort[] {
 
-    let list: WorkShort[] = this.worksShort
+    let list: JobShort[] = this.jobsShort
 
     switch (this.orderBy.toLowerCase()) {
       case 'name':
-        list = this.worksShort.sort((a, b) => a.name.localeCompare(b.name))
+        list = this.jobsShort.sort((a, b) => a.name.localeCompare(b.name))
         break
       case 'status':
-        list = this.worksShort.sort((a, b) => a.status.localeCompare(b.status))
+        list = this.jobsShort.sort((a, b) => a.status.localeCompare(b.status))
         break
       case 'id':
-        list = this.worksShort.sort((a, b) => a.id.localeCompare(b.id))
+        list = this.jobsShort.sort((a, b) => a.id.localeCompare(b.id))
         break
       case 'agentid':
-        list = this.worksShort.sort((a, b) => {
+        list = this.jobsShort.sort((a, b) => {
           if (a.agent_id) {
             return a.agent_id.localeCompare(b.agent_id)
           }
@@ -49,13 +49,13 @@ export class ListWorkComponent implements OnInit {
         })
         break
       case 'agenttype':
-        list = this.worksShort.sort((a, b) => a.agent_type.localeCompare(b.agent_type))
+        list = this.jobsShort.sort((a, b) => a.agent_type.localeCompare(b.agent_type))
         break
       case 'module':
-        list = this.worksShort.sort((a, b) => a.module_name.localeCompare(b.module_name))
+        list = this.jobsShort.sort((a, b) => a.module_name.localeCompare(b.module_name))
         break
       case 'startdate':
-        list = this.worksShort.sort((a, b) => {
+        list = this.jobsShort.sort((a, b) => {
           if (a.start_date && b.start_date) {
             return a.start_date.localeCompare(b.start_date)
           }
@@ -78,10 +78,10 @@ export class ListWorkComponent implements OnInit {
 
   filterFunction() {
     if (!this.filterBy) {
-      return this.worksShort
+      return this.jobsShort
     }
 
-    return this.worksShort
+    return this.jobsShort
       .filter(a => {
         return a.name.toLowerCase().includes(this.filterBy.toLowerCase())
           || a.id.toLowerCase().includes(this.filterBy.toLowerCase())
@@ -101,9 +101,9 @@ export class ListWorkComponent implements OnInit {
         this.loadStartData()
       });
 
-    this.workService.getWorkStatus()
+    this.jobService.getJobStatus()
       .subscribe(data => {
-        this.worksStatus = data.sort();
+        this.jobsStatus = data.sort();
       })
   }
 
@@ -112,17 +112,17 @@ export class ListWorkComponent implements OnInit {
   }
 
   loadStartData() {
-    this.workService.getWorksAllShort()
+    this.jobService.getJobsAllShort()
       .subscribe(data => {
-        this.worksShort = data;
-        this.worksShort = this.filterFunction();
-        this.worksShort = this.orderFunction();
+        this.jobsShort = data;
+        this.jobsShort = this.filterFunction();
+        this.jobsShort = this.orderFunction();
         
         this.pageLoading = false
       })
   }
 
-  deleteWork(id: string) {
+  deleteJob(id: string) {
     Swal.fire({
       title: $localize`Delete job`,
       text: $localize`Delete job with id ${id}`,
@@ -132,7 +132,7 @@ export class ListWorkComponent implements OnInit {
       showCancelButton: true,
     }).then(result => {
       if (result.isConfirmed) {
-        this.workService.deleteWork(id)
+        this.jobService.deleteJob(id)
           .subscribe(() => {
             this.toastr.success($localize`Job deleted`)
           })
@@ -150,7 +150,7 @@ export class ListWorkComponent implements OnInit {
       showCancelButton: true,
     }).then(result => {
       if (result.isConfirmed) {
-        this.workService.deleteWorksByStatus(status)
+        this.jobService.deleteJobsByStatus(status)
           .subscribe(() => {
             this.toastr.success($localize`Jobs deleted`)
           })
@@ -161,14 +161,14 @@ export class ListWorkComponent implements OnInit {
   changeStatus(id: string, status: string) {
     Swal.fire({
       title: $localize`Change status`,
-      text: $localize`Change work with status ${status}?`,
+      text: $localize`Change job with status ${status}?`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',
       showCancelButton: true,
     }).then(result => {
       if (result.isConfirmed) {
-        this.workService.changeStatus(id, status)
+        this.jobService.changeStatus(id, status)
           .subscribe(() => {
             this.toastr.success($localize`Job status changed`)
           })

@@ -48,19 +48,19 @@ export interface CronShort {
     creation_date: string,
 }
 
-export interface CronWork {
+export interface CronJob {
     name: string
     cron_expression: string
-    work_module_repo: string
-    work_module_name: string
-    work_agent_type: string
+    job_module_repo: string
+    job_module_name: string
+    job_agent_type: string
     id: string
     creation_date: Date
     status: string
-    work_params: any
+    job_params: any
 }
 
-export interface WorkShort {
+export interface JobShort {
     name: string,
     status: string,
     id: string,
@@ -70,7 +70,7 @@ export interface WorkShort {
     start_date: string | null
 }
 
-export interface Work {
+export interface Job {
     id: string,
     name: string,
     module_name: string,

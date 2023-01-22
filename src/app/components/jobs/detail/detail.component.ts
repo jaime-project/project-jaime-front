@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Work } from 'src/app/models/models';
-import { WorkService } from 'src/app/services/works/work.service';
+import { Job } from 'src/app/models/models';
+import { JobService } from 'src/app/services/jobs/job.service';
 import { Document } from 'yaml';
 
 @Component({
-  selector: 'app-detail-work',
+  selector: 'app-detail-job',
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.css']
 })
-export class DetailWorkComponent implements OnInit {
+export class DetailJobComponent implements OnInit {
 
   paramsYaml: string = ""
 
-  work: Work = {
+  job: Job = {
     agent: {
       host: "",
       id: "",
@@ -33,13 +33,13 @@ export class DetailWorkComponent implements OnInit {
     terminated_date: null
   }
 
-  constructor(private workService: WorkService, private route: ActivatedRoute) { }
+  constructor(private jobService: JobService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     let id = this.route.snapshot.paramMap.get('id')
 
-    this.workService.getWork(id).subscribe(data => {
-      this.work = data
+    this.jobService.getJob(id).subscribe(data => {
+      this.job = data
 
       let doc = new Document()
       doc.contents = data.params
