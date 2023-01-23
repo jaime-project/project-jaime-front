@@ -13,11 +13,8 @@ import Swal from 'sweetalert2';
 export class ListJobComponent implements OnInit {
 
   pageLoading: boolean = true
-
   thread: Subscription | null = null
-
   jobsShort: JobShort[] = []
-
   jobsStatus: string[] = []
 
   constructor(private jobService: JobService, private toastr: ToastrService) { }
@@ -25,37 +22,13 @@ export class ListJobComponent implements OnInit {
   orderBy: string = 'name'
   reverse: boolean = false
   filterBy: string = ''
-
-  orderFunction(): JobShort[] {
-
-    if (this.reverse) {
-      this.jobsShort = this.jobsShort.reverse()
-    }
-
-    return this.jobsShort
-  }
+  page: number = 1
+  size: number = 10
 
   changeOrder(order: string) {
     this.reverse = !this.reverse
-    console.log(this.reverse)
     this.orderBy = order.toLowerCase()
   }
-
-  // filterFunction() {
-  //   if (!this.filterBy) {
-  //     return this.jobsShort
-  //   }
-
-  //   return this.jobsShort
-  //     .filter(a => {
-  //       return a.name.toLowerCase().includes(this.filterBy.toLowerCase())
-  //         || a.id.toLowerCase().includes(this.filterBy.toLowerCase())
-  //         || a.status.toLowerCase().includes(this.filterBy.toLowerCase())
-  //         || a.module_name.toLowerCase().includes(this.filterBy.toLowerCase())
-  //         || a.agent_id?.toLowerCase().includes(this.filterBy.toLowerCase())
-  //         || a.agent_type.toLowerCase().includes(this.filterBy.toLowerCase())
-  //     })
-  // }
 
   ngOnInit(): void {
 
@@ -77,12 +50,12 @@ export class ListJobComponent implements OnInit {
   }
 
   loadStartData() {
-    this.jobService.getJobsAllShort(5, 1, this.filterBy, this.orderBy)
+    this.jobService.getJobsAllShort(this.size, this.page, this.filterBy, this.orderBy)
       .subscribe(data => {
         this.jobsShort = data;
-        // this.jobsShort = this.filterFunction();
-        this.jobsShort = this.orderFunction();
-
+        if (this.reverse) {
+          this.jobsShort = data.reverse()
+        }
         this.pageLoading = false
       })
   }
