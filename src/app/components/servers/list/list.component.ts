@@ -25,46 +25,12 @@ export class ListServerComponent implements OnInit {
   orderBy: string = 'host'
   reverse: boolean = false
   filterBy: string = ''
-
-  orderFunction(): ServerShort[] {
-
-    let list: ServerShort[] = this.listServersShorts
-
-    switch (this.orderBy.toLowerCase()) {
-      case 'host':
-        list = this.listServersShorts.sort((a, b) => a.host.localeCompare(b.host))
-        break
-      case 'port':
-        list = this.listServersShorts.sort((a, b) => a.port.localeCompare(b.port))
-        break
-      case 'name':
-        list = this.listServersShorts.sort((a, b) => a.name.localeCompare(b.name))
-        break
-    }
-
-    if (this.reverse) {
-      list = list.reverse()
-    }
-
-    return list
-  }
+  page: number = 1
+  size: number = 10
 
   changeOrder(order: string) {
     this.reverse = !this.reverse
     this.orderBy = order.toLowerCase()
-  }
-
-  filterFunction() {
-    if (!this.filterBy) {
-      return this.listServersShorts
-    }
-
-    return this.listServersShorts
-      .filter(a => {
-        return a.name.toLowerCase().includes(this.filterBy.toLowerCase())
-          || a.host.toLowerCase().includes(this.filterBy.toLowerCase())
-          || a.port.toLowerCase().includes(this.filterBy.toLowerCase())
-      })
   }
 
   ngOnInit(): void {
@@ -82,11 +48,12 @@ export class ListServerComponent implements OnInit {
   }
 
   loadStartData() {
-    this.serversService.listServer()
+    this.serversService.listServer(this.size, this.page, this.filterBy, this.orderBy)
       .subscribe(data => {
         this.listServersShorts = data
-        this.listServersShorts = this.filterFunction();
-        this.listServersShorts = this.orderFunction()
+        if (this.reverse) {
+          this.listServersShorts = this.listServersShorts.reverse()
+        }
         this.pageLoading = false
       })
   }

@@ -850,14 +850,14 @@
         </context-group>
       </trans-unit>
       <trans-unit id="d09d4a356271975eff8bdf094530c2b8deb51570" datatype="html">
-        <source>Work Repo</source>
+        <source>Job Repo</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/crons/detail/detail.component.ts</context>
           <context context-type="linenumber">43</context>
         </context-group>
       </trans-unit>
       <trans-unit id="0b37550346f3859feb620c060c5932ae2764781f" datatype="html">
-        <source>Work Module</source>
+        <source>Job Module</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/crons/detail/detail.component.ts</context>
           <context context-type="linenumber">43</context>
@@ -1588,7 +1588,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="1205753efe53a711e50a2a389b3a45f5b4593a96" datatype="html">
-        <source>Work Detail</source>
+        <source>Job Detail</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/works/detail/detail.component.ts</context>
           <context context-type="linenumber">38,46</context>
@@ -1652,14 +1652,14 @@
         </context-group>
       </trans-unit>
       <trans-unit id="1574802860024237408" datatype="html">
-        <source>Delete work</source>
+        <source>Delete job</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/works/list/list.component.ts</context>
           <context context-type="linenumber">50,51</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4380654922843757247" datatype="html">
-        <source>Delete work with id <x id="PH" equiv-text="id"/></source>
+        <source>Delete job with id <x id="PH" equiv-text="id"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/works/list/list.component.ts</context>
           <context context-type="linenumber">51</context>
@@ -1691,7 +1691,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="4298010509128719793" datatype="html">
-        <source>Change work status with status <x id="PH" equiv-text="status"/>?</source>
+        <source>Change job status with status <x id="PH" equiv-text="status"/>?</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/works/list/list.component.ts</context>
           <context context-type="linenumber">83</context>
@@ -1705,7 +1705,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="e9316e8563d9d5d3e7836cc6a3669e32ad3a84de" datatype="html">
-        <source>Work Logs</source>
+        <source>Job Logs</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/works/logs/log.component.ts</context>
           <context context-type="linenumber">32,42</context>
@@ -1719,14 +1719,14 @@
         </context-group>
       </trans-unit>
       <trans-unit id="b737777085cdc8e253efe8c6642cd174b09f4fbe" datatype="html">
-        <source>Workspace</source>
+        <source>Jobspace</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/works/tabs/tabs.component.ts</context>
           <context context-type="linenumber">16</context>
         </context-group>
       </trans-unit>
       <trans-unit id="af6dbbdca3f0348a24213c4fce16c2fbe65c1eec" datatype="html">
-        <source>Work Workspace</source>
+        <source>Job Jobspace</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/works/workspace/workspace.component.ts</context>
           <context context-type="linenumber">28</context>
@@ -1747,7 +1747,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="7f50373be4c43f3cabb93093f9639644f42db322" datatype="html">
-        <source>Work Yaml</source>
+        <source>Job Yaml</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/works/yaml/yaml.component.ts</context>
           <context context-type="linenumber">29,40</context>
@@ -1761,7 +1761,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="1230111941359979048" datatype="html">
-        <source>Update job with id <x id="PH" equiv-text="this.work_id"/></source>
+        <source>Update job with id <x id="PH" equiv-text="this.job_id"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/works/yaml/yaml.component.ts</context>
           <context context-type="linenumber">38</context>

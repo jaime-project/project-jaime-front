@@ -42,7 +42,7 @@ export const ROUTES: RouteInfo[] = [
     submenu: [],
   },
   {
-    path: "/works",
+    path: "/jobs",
     title: $localize`Jobs`,
     icon: "mdi mdi-backburger",
     class: "",

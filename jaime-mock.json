@@ -1597,7 +1597,7 @@
       "responses": [
         {
           "uuid": "912f6eea-b39b-454d-8092-80ed8b6d623e",
-          "body": "{\n    \"name\": \"prueba de algo\",\n    \"id\": \"31a30b3315ea\",\n    \"cron_expression\": \"*/2 * * * *\",\n    \"work_params\": {\n        \"servers\": {\n            \"from\": {\n                \"name\": \"lasegunda\",\n                \"namespace\": \"msdesa\",\n                \"object\": \"configmaps\"\n            }\n        }\n    },\n    \"status\": \"ACTIVE\",\n    \"creation_date\": \"2021-12-14T20:14:49.660102\",\n    \"work_module_repo\": \"repo\",\n    \"work_module_name\": \"module\",\n    \"work_agent_type\": \"module\"\n}",
+          "body": "{\n    \"name\": \"prueba de algo\",\n    \"id\": \"31a30b3315ea\",\n    \"cron_expression\": \"*/2 * * * *\",\n    \"job_params\": {\n        \"servers\": {\n            \"from\": {\n                \"name\": \"lasegunda\",\n                \"namespace\": \"msdesa\",\n                \"object\": \"configmaps\"\n            }\n        }\n    },\n    \"status\": \"ACTIVE\",\n    \"creation_date\": \"2021-12-14T20:14:49.660102\",\n    \"job_module_repo\": \"repo\",\n    \"job_module_name\": \"module\",\n    \"job_agent_type\": \"module\"\n}",
           "latency": 0,
           "statusCode": 201,
           "label": "",

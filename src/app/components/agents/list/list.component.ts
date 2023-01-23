@@ -22,6 +22,8 @@ export class ListAgentComponent implements OnInit {
   orderBy: string = 'host'
   reverse: boolean = false
   filterBy: string = ''
+  page: number = 1
+  size: number = 10
 
   orderFunction(): AgentShort[] {
 
@@ -51,19 +53,6 @@ export class ListAgentComponent implements OnInit {
     this.orderBy = order.toLowerCase()
   }
 
-  filterFunction() {
-    if (!this.filterBy) {
-      return this.agents
-    }
-
-    return this.agents
-      .filter(a => {
-        return a.host.toLowerCase().includes(this.filterBy.toLowerCase())
-          || String(a.port).toLowerCase().includes(this.filterBy.toLowerCase())
-          || a.type.toLowerCase().includes(this.filterBy.toLowerCase())
-      })
-  }
-
   ngOnInit(): void {
 
     this.loadStartData()
@@ -79,11 +68,12 @@ export class ListAgentComponent implements OnInit {
   }
 
   loadStartData() {
-    this.agentService.getAgentsAll()
+    this.agentService.getAgentsAll(this.size, this.page, this.filterBy, this.orderBy)
       .subscribe(data => {
         this.agents = data
-        this.agents = this.orderFunction();
-        this.agents = this.filterFunction();
+        if (this.reverse) {
+          this.agents = data.reverse()
+        }
         this.pageLoading = false
       })
   }

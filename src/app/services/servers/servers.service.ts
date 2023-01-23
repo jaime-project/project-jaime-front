@@ -18,8 +18,23 @@ export class ServerService {
   constructor(private environment: AppConfigService, private http: HttpClient, private toastr: ToastrService, private errorService: ErrorService) {
     this.apiUrl = environment.config.backendURL + '/api/v1/servers';
   }
-  listServer(): Observable<ServerShort[]> {
-    return this.http.get<ServerShort[]>(this.apiUrl + '/all/short')
+  listServer(size: number, page: number, filter: string, order: string): Observable<ServerShort[]> {
+    let url = this.apiUrl + '/all/short?'
+
+    if (size && page) {
+      url += `&size=${size}&page=${page}`
+    }
+
+    if (filter) {
+      url += `&filter=${filter}`
+    }
+
+
+    if (order) {
+      url += `&order=${order}`
+    }
+
+    return this.http.get<ServerShort[]>(url)
       .pipe(
         catchError((error: HttpErrorResponse) => {
           return this.errorService.httpError(error);

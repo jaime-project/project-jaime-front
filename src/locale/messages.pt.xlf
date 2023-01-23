@@ -848,7 +848,7 @@
           <target>Expressão de Cron</target>
         </trans-unit>
         <trans-unit id="d09d4a356271975eff8bdf094530c2b8deb51570" datatype="html">
-          <source>Work Repo</source>
+          <source>Job Repo</source>
           <context-group purpose="location">
             <context context-type="sourcefile">src/app/components/crons/detail/detail.component.ts</context>
             <context context-type="linenumber">43</context>
@@ -856,7 +856,7 @@
           <target>Repo</target>
         </trans-unit>
         <trans-unit id="0b37550346f3859feb620c060c5932ae2764781f" datatype="html">
-          <source>Work Module</source>
+          <source>Job Module</source>
           <context-group purpose="location">
             <context context-type="sourcefile">src/app/components/crons/detail/detail.component.ts</context>
             <context context-type="linenumber">43</context>
@@ -1428,7 +1428,7 @@
           <target>Editar servidor</target>
         </trans-unit>
         <trans-unit id="1205753efe53a711e50a2a389b3a45f5b4593a96" datatype="html">
-          <source>Work Detail</source>
+          <source>Job Detail</source>
           <context-group purpose="location">
             <context context-type="sourcefile">src/app/components/works/detail/detail.component.ts</context>
             <context context-type="linenumber">38,46</context>
@@ -1520,7 +1520,7 @@
           <target>ID do agente</target>
         </trans-unit>
         <trans-unit id="e9316e8563d9d5d3e7836cc6a3669e32ad3a84de" datatype="html">
-          <source>Work Logs</source>
+          <source>Job Logs</source>
           <context-group purpose="location">
             <context context-type="sourcefile">src/app/components/works/logs/log.component.ts</context>
             <context context-type="linenumber">32,42</context>
@@ -1536,7 +1536,7 @@
           <target>Nome do trabalho</target>
         </trans-unit>
         <trans-unit id="b737777085cdc8e253efe8c6642cd174b09f4fbe" datatype="html">
-          <source>Workspace</source>
+          <source>Jobspace</source>
           <context-group purpose="location">
             <context context-type="sourcefile">src/app/components/works/tabs/tabs.component.ts</context>
             <context context-type="linenumber">16</context>
@@ -1544,7 +1544,7 @@
           <target>Área de trabalho</target>
         </trans-unit>
         <trans-unit id="af6dbbdca3f0348a24213c4fce16c2fbe65c1eec" datatype="html">
-          <source>Work Workspace</source>
+          <source>Job Jobspace</source>
           <context-group purpose="location">
             <context context-type="sourcefile">src/app/components/works/workspace/workspace.component.ts</context>
             <context context-type="linenumber">28</context>
@@ -1568,7 +1568,7 @@
           <target>Download</target>
         </trans-unit>
         <trans-unit id="7f50373be4c43f3cabb93093f9639644f42db322" datatype="html">
-          <source>Work Yaml</source>
+          <source>Job Yaml</source>
           <context-group purpose="location">
             <context context-type="sourcefile">src/app/components/works/yaml/yaml.component.ts</context>
             <context context-type="linenumber">29,40</context>

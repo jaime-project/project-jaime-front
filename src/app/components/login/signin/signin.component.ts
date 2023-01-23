@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { LoginService } from 'src/app/services/login/login.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class SigninComponent implements OnInit {
     pass: new FormControl('')
   });
 
-  constructor(private route: Router, private loginService: LoginService) { }
+  constructor(private route: Router, private loginService: LoginService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
   }
@@ -26,10 +27,15 @@ export class SigninComponent implements OnInit {
     let pass = this.userPassForm.value['pass']
 
     this.loginService.login(user, pass)
-      .subscribe(token => {
-        localStorage.setItem('JAIME_TOKEN', token)
-        this.route.navigate(['clusters'])
-      })
+      .subscribe(
+        token => {
+          localStorage.setItem('JAIME_TOKEN', token)
+          this.route.navigate(['clusters'])
+        },
+        error => {
+          this.toastr.warning('Invalid user or password', 'Login error')
+        }
+      )
   }
 
 }

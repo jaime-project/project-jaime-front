@@ -1,16 +1,16 @@
 import { Routes } from '@angular/router';
-import { ListWorkComponent } from './list/list.component';
-import { NewWorkComponent } from './new/new.component';
-import { TabsWorkComponent } from './tabs/tabs.component';
+import { ListJobComponent } from './list/list.component';
+import { NewJobComponent } from './new/new.component';
+import { TabsJobComponent } from './tabs/tabs.component';
 
 
-export const WorkComponentsRoutes: Routes = [
+export const JobsComponentsRoutes: Routes = [
 	{
 		path: '',
 		children: [
 			{
-				path: 'works',
-				component: ListWorkComponent,
+				path: 'jobs',
+				component: ListJobComponent,
 				data: {
 					title: 'jobs',
 					urls: [
@@ -20,8 +20,8 @@ export const WorkComponentsRoutes: Routes = [
 				}
 			},
 			{
-				path: 'works/details/:id',
-				component: TabsWorkComponent,
+				path: 'jobs/details/:id',
+				component: TabsJobComponent,
 				data: {
 					title: 'jobs',
 					urls: [
@@ -31,8 +31,8 @@ export const WorkComponentsRoutes: Routes = [
 				}
 			},
 			{
-				path: 'works/new',
-				component: NewWorkComponent,
+				path: 'jobs/new',
+				component: NewJobComponent,
 				data: {
 					title: 'jobs',
 					urls: [

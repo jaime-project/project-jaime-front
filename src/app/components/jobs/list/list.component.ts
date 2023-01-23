@@ -1,23 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { interval, Subscription } from 'rxjs';
-import { CronShort } from 'src/app/models/models';
-import { CronService } from 'src/app/services/crons/cron.service';
+import { JobShort } from 'src/app/models/models';
+import { JobService } from 'src/app/services/jobs/job.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-list-cron',
+  selector: 'app-list-job',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
-export class ListCronComponent implements OnInit {
+export class ListJobComponent implements OnInit {
 
   pageLoading: boolean = true
-  subscription: Subscription | null = null
-  cronsShort: CronShort[] = []
-  cronsStatus: string[] = []
+  thread: Subscription | null = null
+  jobsShort: JobShort[] = []
+  jobsStatus: string[] = []
 
-  constructor(private cronService: CronService, private toastr: ToastrService) { }
+  constructor(private jobService: JobService, private toastr: ToastrService) { }
 
   orderBy: string = 'name'
   reverse: boolean = false
@@ -30,50 +30,49 @@ export class ListCronComponent implements OnInit {
     this.orderBy = order.toLowerCase()
   }
 
-
   ngOnInit(): void {
 
     this.loadStartData()
 
-    this.subscription = interval(1000)
+    this.thread = interval(1000)
       .subscribe(() => {
         this.loadStartData()
       });
 
-    this.cronService.getCronStatus()
+    this.jobService.getJobStatus()
       .subscribe(data => {
-        this.cronsStatus = data.sort();
+        this.jobsStatus = data.sort();
       })
   }
 
   ngOnDestroy(): void {
-    this.subscription?.unsubscribe()
+    this.thread?.unsubscribe()
   }
 
   loadStartData() {
-    this.cronService.getCronsAllShort(this.size, this.page, this.filterBy, this.orderBy)
+    this.jobService.getJobsAllShort(this.size, this.page, this.filterBy, this.orderBy)
       .subscribe(data => {
-        this.cronsShort = data;
+        this.jobsShort = data;
         if (this.reverse) {
-          this.cronsShort = data.reverse()
+          this.jobsShort = data.reverse()
         }
         this.pageLoading = false
       })
   }
 
-  deleteCron(id: string) {
+  deleteJob(id: string) {
     Swal.fire({
-      title: $localize`Delete cron`,
-      text: $localize`Delete cron with id ${id}`,
+      title: $localize`Delete job`,
+      text: $localize`Delete job with id ${id}`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',
       showCancelButton: true,
     }).then(result => {
       if (result.isConfirmed) {
-        this.cronService.deleteCron(id)
+        this.jobService.deleteJob(id)
           .subscribe(() => {
-            this.toastr.success($localize`Cron deleted`)
+            this.toastr.success($localize`Job deleted`)
           })
       }
     })
@@ -81,17 +80,17 @@ export class ListCronComponent implements OnInit {
 
   deleteByStatus(status: string) {
     Swal.fire({
-      title: $localize`Delete crons`,
-      text: $localize`Delete crons with status ${status}`,
+      title: $localize`Delete jobs`,
+      text: $localize`Delete jobs with status ${status}`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',
       showCancelButton: true,
     }).then(result => {
       if (result.isConfirmed) {
-        this.cronService.deleteCronsByStatus(status)
+        this.jobService.deleteJobsByStatus(status)
           .subscribe(() => {
-            this.toastr.success($localize`Crons deleted`)
+            this.toastr.success($localize`Jobs deleted`)
           })
       }
     })
@@ -100,16 +99,16 @@ export class ListCronComponent implements OnInit {
   changeStatus(id: string, status: string) {
     Swal.fire({
       title: $localize`Change status`,
-      text: $localize`Change cron status with status ${status}?`,
+      text: $localize`Change job with status ${status}?`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',
       showCancelButton: true,
     }).then(result => {
       if (result.isConfirmed) {
-        this.cronService.changeStatus(id, status)
+        this.jobService.changeStatus(id, status)
           .subscribe(() => {
-            this.toastr.success($localize`Cron changed status to ${status}`)
+            this.toastr.success($localize`Job status changed`)
           })
       }
     })

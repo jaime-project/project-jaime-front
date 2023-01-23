@@ -26,12 +26,12 @@ export class NewCronComponent implements OnInit {
   cronForm = new FormGroup({
     name: new FormControl(''),
     cron_expression: new FormControl(''),
-    work_module_repo: new FormControl(''),
-    work_module_name: new FormControl(''),
-    work_agent_type: new FormControl(''),
+    job_module_repo: new FormControl(''),
+    job_module_name: new FormControl(''),
+    job_agent_type: new FormControl(''),
     id: new FormControl(''),
     status: new FormControl(''),
-    work_params: new FormControl()
+    job_params: new FormControl()
   });
 
   constructor(private route: Router, private cronService: CronService, private moduleService: ModuleService, private reposService: ReposService, private agent_service: AgentService, private docsService: DocsService, private toastr: ToastrService) { }
@@ -63,10 +63,10 @@ export class NewCronComponent implements OnInit {
         this.cronForm = new FormGroup({
           name: new FormControl(this.cronForm.value.name),
           cron_expression: new FormControl(this.cronForm.value.cron_expression),
-          work_module_repo: new FormControl(this.cronForm.value.work_module_repo),
-          work_module_name: new FormControl(this.cronForm.value.work_module_name),
-          work_agent_type: new FormControl(this.cronForm.value.work_agent_type),
-          work_params: new FormControl(data),
+          job_module_repo: new FormControl(this.cronForm.value.job_module_repo),
+          job_module_name: new FormControl(this.cronForm.value.job_module_name),
+          job_agent_type: new FormControl(this.cronForm.value.job_agent_type),
+          job_params: new FormControl(data),
         })
       })
   }
@@ -77,7 +77,7 @@ export class NewCronComponent implements OnInit {
 
     let yamlJson = {}
     try {
-      yamlJson = this.cronForm.value.work_params != null ? parse(this.cronForm.value.work_params) : {}
+      yamlJson = this.cronForm.value.job_params != null ? parse(this.cronForm.value.job_params) : {}
 
     } catch (error: any) {
       this.toastr.error(error, 'Invalid yaml')
@@ -88,10 +88,10 @@ export class NewCronComponent implements OnInit {
     let finalJson = {
       name: this.cronForm.value.name,
       cron_expression: this.cronForm.value.cron_expression,
-      work_module_repo: this.cronForm.value.work_module_repo,
-      work_module_name: this.cronForm.value.work_module_name,
-      work_agent_type: this.cronForm.value.work_agent_type,
-      work_params: yamlJson
+      job_module_repo: this.cronForm.value.job_module_repo,
+      job_module_name: this.cronForm.value.job_module_name,
+      job_agent_type: this.cronForm.value.job_agent_type,
+      job_params: yamlJson
     }
 
     let doc = new Document()
@@ -105,7 +105,7 @@ export class NewCronComponent implements OnInit {
           this.route.navigate(['crons'])
         },
         error => {
-          this.toastr.error($localize`Error on create new Job`)
+          this.toastr.error($localize`Error on create new Cron`)
           this.loading = false
         })
   }
