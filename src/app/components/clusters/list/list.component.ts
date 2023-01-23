@@ -52,7 +52,7 @@ export class ListClusterComponent implements OnInit {
 
         this.listClustersShorts = data;
         if (this.reverse) {
-          this.listClustersShorts = this.listClustersShorts.reverse()
+          this.listClustersShorts = data.reverse()
         }
         this.pageLoading = false
       })
