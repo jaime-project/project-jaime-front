@@ -22,55 +22,14 @@ export class ListCronComponent implements OnInit {
   orderBy: string = 'name'
   reverse: boolean = false
   filterBy: string = ''
-
-  orderFunction(): CronShort[] {
-
-    let list: CronShort[] = this.cronsShort
-
-    switch (this.orderBy.toLowerCase()) {
-      case 'name':
-        list = this.cronsShort.sort((a, b) => a.name.localeCompare(b.name))
-        break
-      case 'cron':
-        list = this.cronsShort.sort((a, b) => a.cron_expression.localeCompare(b.cron_expression))
-        break
-      case 'status':
-        list = this.cronsShort.sort((a, b) => a.status.localeCompare(b.status))
-        break
-      case 'creationdate':
-        list = this.cronsShort.sort((a, b) => a.creation_date.localeCompare(b.creation_date))
-        break
-    }
-
-    if (this.reverse) {
-      list = list.reverse()
-    }
-
-    return list
-  }
+  page: number = 1
+  size: number = 10
 
   changeOrder(order: string) {
     this.reverse = !this.reverse
     this.orderBy = order.toLowerCase()
   }
 
-  changeFilter(filter: string) {
-    this.filterBy = filter
-  }
-
-  filterFunction() {
-    if (!this.filterBy) {
-      return this.cronsShort
-    }
-
-    return this.cronsShort
-      .filter(a => {
-        return a.name.toLowerCase().includes(this.filterBy.toLowerCase())
-          || a.cron_expression.toLowerCase().includes(this.filterBy.toLowerCase())
-          || a.status.toLowerCase().includes(this.filterBy.toLowerCase())
-          || a.creation_date.toLowerCase().includes(this.filterBy.toLowerCase())
-      })
-  }
 
   ngOnInit(): void {
 
@@ -92,11 +51,12 @@ export class ListCronComponent implements OnInit {
   }
 
   loadStartData() {
-    this.cronService.getCronsAllShort()
+    this.cronService.getCronsAllShort(this.size, this.page, this.filterBy, this.orderBy)
       .subscribe(data => {
         this.cronsShort = data;
-        this.cronsShort = this.orderFunction();
-        this.cronsShort = this.filterFunction();
+        if (this.reverse) {
+          this.cronsShort = data.reverse()
+        }
         this.pageLoading = false
       })
   }
@@ -148,9 +108,9 @@ export class ListCronComponent implements OnInit {
     }).then(result => {
       if (result.isConfirmed) {
         this.cronService.changeStatus(id, status)
-        .subscribe(() => {
-          this.toastr.success($localize`Cron changed status to ${status}`)
-        })
+          .subscribe(() => {
+            this.toastr.success($localize`Cron changed status to ${status}`)
+          })
       }
     })
   }

@@ -105,7 +105,7 @@ export class NewCronComponent implements OnInit {
           this.route.navigate(['crons'])
         },
         error => {
-          this.toastr.error($localize`Error on create new Job`)
+          this.toastr.error($localize`Error on create new Cron`)
           this.loading = false
         })
   }
