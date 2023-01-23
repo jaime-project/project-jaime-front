@@ -1,4 +1,4 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpEventType } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -18,11 +18,6 @@ export class ErrorService {
   httpError(error: HttpErrorResponse) {
 
     let body: any = {}
-
-    if (error.status == 403 || error.status == 401) {
-      this.route.navigate([''])
-      return throwError('Token expired');
-    }
 
     if (error.status == 409) {
       body = JSON.parse(error.error)
