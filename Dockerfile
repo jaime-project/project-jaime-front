@@ -34,4 +34,4 @@ ENV VERSION=${ARG_VERSION}
 ENV TZ=America/Argentina/Buenos_Aires
 ENV JAIME_URL=http://localhost:5000
 
-CMD ["/bin/bash", "-c", "service nginx stop && envsubst < assets/appconfig.env.json > assets/appconfig.sjon && nginx-debug -g 'daemon off;'"]
+CMD ["/bin/bash", "-c", "service nginx stop && envsubst < assets/appconfig.env.json > assets/appconfig.json && nginx-debug -g 'daemon off;'"]
