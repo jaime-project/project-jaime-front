@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Hotkey, HotkeysService } from 'angular2-hotkeys';
 import { ToastrService } from 'ngx-toastr';
 import { AgentService } from 'src/app/services/agents/agents.service';
 import { JobService } from 'src/app/services/jobs/job.service';
@@ -30,7 +31,12 @@ export class NewJobComponent implements OnInit {
     params: new FormControl(),
   });
 
-  constructor(private route: Router, private jobService: JobService, private moduleService: ModuleService, private reposService: ReposService, private agent_service: AgentService, private docsService: DocsService, private toastr: ToastrService) { }
+  constructor(private route: Router, private jobService: JobService, private moduleService: ModuleService, private reposService: ReposService, private agent_service: AgentService, private docsService: DocsService, private toastr: ToastrService, private hotkeysService: HotkeysService) {
+    this.hotkeysService.add(new Hotkey(['alt+s'], (event: KeyboardEvent): boolean => {
+      this.postJob()
+      return false;
+    }));
+  }
 
   ngOnInit(): void {
 

@@ -22,11 +22,10 @@ export class NewClusterComponent implements OnInit {
   });
 
   constructor(private route: Router, private agentService: AgentService, private clustersService: ClustersService, private toastr: ToastrService, private hotkeysService: HotkeysService) {
-    this.hotkeysService.add(new Hotkey(['meta+shift+s', 'ctrl+shift+s'], (event: KeyboardEvent): boolean => {
+    this.hotkeysService.add(new Hotkey(['alt+s'], (event: KeyboardEvent): boolean => {
       this.postCluster()
       return false;
     }));
-
   }
 
   clusterTypes: string[] = []
