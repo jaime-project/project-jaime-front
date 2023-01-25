@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Hotkey, HotkeysService } from 'angular2-hotkeys';
 import { ToastrService } from 'ngx-toastr';
 import { AgentService } from 'src/app/services/agents/agents.service';
 import { ClustersService } from 'src/app/services/clusters/clusters.service';
@@ -20,7 +21,13 @@ export class NewClusterComponent implements OnInit {
     version: new FormControl(''),
   });
 
-  constructor(private route: Router, private agentService: AgentService, private clustersService: ClustersService, private toastr: ToastrService) { }
+  constructor(private route: Router, private agentService: AgentService, private clustersService: ClustersService, private toastr: ToastrService, private hotkeysService: HotkeysService) {
+    this.hotkeysService.add(new Hotkey(['meta+shift+s', 'ctrl+shift+s'], (event: KeyboardEvent): boolean => {
+      this.postCluster()
+      return false;
+    }));
+
+  }
 
   clusterTypes: string[] = []
 
@@ -40,5 +47,7 @@ export class NewClusterComponent implements OnInit {
         this.route.navigate(['clusters'])
       })
   }
+
+
 
 }
