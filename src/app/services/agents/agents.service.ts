@@ -19,8 +19,23 @@ export class AgentService {
     this.apiUrl = environment.config.backendURL + '/api/v1/agents';
   }
 
-  getAgentsAll(): Observable<AgentShort[]> {
-    return this.http.get<AgentShort[]>(this.apiUrl + '/all/short')
+  getAgentsAll(size: number, page: number, filter: string, order: string): Observable<AgentShort[]> {
+    let url = this.apiUrl + '/all/short?'
+
+    if (size && page) {
+      url += `&size=${size}&page=${page}`
+    }
+
+    if (filter) {
+      url += `&filter=${filter}`
+    }
+
+
+    if (order) {
+      url += `&order=${order}`
+    }
+
+    return this.http.get<AgentShort[]>(url)
       .pipe(
         catchError((error: HttpErrorResponse) => {
           return this.errorService.httpError(error);

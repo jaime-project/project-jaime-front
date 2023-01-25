@@ -1,5 +1,6 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpEventType } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { throwError } from 'rxjs';
 import { AppConfigService } from '../AppConfigService';
@@ -11,12 +12,13 @@ import { AppConfigService } from '../AppConfigService';
 export class ErrorService {
 
 
-  constructor(private environment: AppConfigService, private http: HttpClient, private toastr: ToastrService) {
+  constructor(private environment: AppConfigService, private http: HttpClient, private toastr: ToastrService, private route: Router) {
   }
 
   httpError(error: HttpErrorResponse) {
 
     let body: any = {}
+
     if (error.status == 409) {
       body = JSON.parse(error.error)
     }

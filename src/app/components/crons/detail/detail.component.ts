@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CronWork } from 'src/app/models/models';
+import { CronJob } from 'src/app/models/models';
 import { CronService } from 'src/app/services/crons/cron.service';
 import { Document } from 'yaml';
 
@@ -13,16 +13,16 @@ export class DetailCronComponent implements OnInit {
 
   paramsYaml: string = ""
 
-  cron: CronWork = {
+  cron: CronJob = {
     name: "",
     cron_expression: "",
-    work_module_repo: "",
-    work_module_name: "",
-    work_agent_type: "",
+    job_module_repo: "",
+    job_module_name: "",
+    job_agent_type: "",
     id: "",
     creation_date: new Date(),
     status: "",
-    work_params: {}
+    job_params: {}
   }
 
   constructor(private cronService: CronService, private route: ActivatedRoute) { }
@@ -34,7 +34,7 @@ export class DetailCronComponent implements OnInit {
       this.cron = data
 
       let doc = new Document()
-      doc.contents = data.work_params
+      doc.contents = data.job_params
       this.paramsYaml = doc.toString()
     })
   }

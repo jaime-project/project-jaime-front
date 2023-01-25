@@ -23,46 +23,13 @@ export class ListClusterComponent implements OnInit {
   orderBy: string = 'name'
   reverse: boolean = false
   filterBy: string = ''
+  page: number = 1
+  size: number = 10
 
-  orderFunction(): ClusterShort[] {
-
-    let list: ClusterShort[] = []
-
-    switch (this.orderBy.toLowerCase()) {
-      case 'name':
-        list = this.listClustersShorts.sort((a, b) => a.name.localeCompare(b.name))
-        break
-      case 'type':
-        list = this.listClustersShorts.sort((a, b) => a.type.localeCompare(b.type))
-        break
-      case 'url':
-        list = this.listClustersShorts.sort((a, b) => a.url.localeCompare(b.url))
-        break
-    }
-
-    if (this.reverse) {
-      list = list.reverse()
-    }
-
-    return list
-  }
 
   changeOrder(order: string) {
     this.reverse = !this.reverse
     this.orderBy = order.toLowerCase()
-  }
-
-  filterFunction() {
-    if (!this.filterBy) {
-      return this.listClustersShorts
-    }
-
-    return this.listClustersShorts
-      .filter(a => {
-        return a.name.toLowerCase().includes(this.filterBy.toLowerCase())
-          || a.type.toLowerCase().includes(this.filterBy.toLowerCase())
-          || a.url.toLowerCase().includes(this.filterBy.toLowerCase())
-      })
   }
 
   ngOnInit(): void {
@@ -80,11 +47,13 @@ export class ListClusterComponent implements OnInit {
   }
 
   loadStartData() {
-    this.clustersService.listCluster()
+    this.clustersService.listCluster(this.size, this.page, this.filterBy, this.orderBy)
       .subscribe(data => {
+
         this.listClustersShorts = data;
-        this.listClustersShorts = this.orderFunction();
-        this.listClustersShorts = this.filterFunction();
+        if (this.reverse) {
+          this.listClustersShorts = data.reverse()
+        }
         this.pageLoading = false
       })
   }

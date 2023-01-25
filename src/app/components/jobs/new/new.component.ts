@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Hotkey, HotkeysService } from 'angular2-hotkeys';
 import { ToastrService } from 'ngx-toastr';
 import { AgentService } from 'src/app/services/agents/agents.service';
+import { JobService } from 'src/app/services/jobs/job.service';
 import { DocsService } from 'src/app/services/modules/docs.service';
 import { ModuleService } from 'src/app/services/modules/modules.service';
 import { ReposService } from 'src/app/services/modules/repos.service';
-import { WorkService } from 'src/app/services/works/work.service';
 import { Document, parse } from 'yaml';
 
 @Component({
-  selector: 'app-new-work',
+  selector: 'app-new-job',
   templateUrl: './new.component.html',
   styleUrls: ['./new.component.css']
 })
-export class NewWorkComponent implements OnInit {
+export class NewJobComponent implements OnInit {
 
   repos: string[] = []
   modules: string[] = []
@@ -22,7 +23,7 @@ export class NewWorkComponent implements OnInit {
   agentsTypes: string[] = []
   loading: boolean = false
 
-  workForm = new FormGroup({
+  jobForm = new FormGroup({
     name: new FormControl(''),
     moduleRepo: new FormControl(''),
     moduleName: new FormControl(''),
@@ -30,7 +31,12 @@ export class NewWorkComponent implements OnInit {
     params: new FormControl(),
   });
 
-  constructor(private route: Router, private workService: WorkService, private moduleService: ModuleService, private reposService: ReposService, private agent_service: AgentService, private docsService: DocsService, private toastr: ToastrService) { }
+  constructor(private route: Router, private jobService: JobService, private moduleService: ModuleService, private reposService: ReposService, private agent_service: AgentService, private docsService: DocsService, private toastr: ToastrService, private hotkeysService: HotkeysService) {
+    this.hotkeysService.add(new Hotkey(['alt+s'], (event: KeyboardEvent): boolean => {
+      this.postJob()
+      return false;
+    }));
+  }
 
   ngOnInit(): void {
 
@@ -53,25 +59,25 @@ export class NewWorkComponent implements OnInit {
   }
 
   moduleChange(moduleName: any) {
-    this.docsService.getDocsWithoutError(moduleName, this.workForm.value.moduleRepo)
+    this.docsService.getDocsWithoutError(moduleName, this.jobForm.value.moduleRepo)
       .subscribe(data => {
-        this.workForm = new FormGroup({
-          name: new FormControl(this.workForm.value.name),
-          moduleRepo: new FormControl(this.workForm.value.moduleRepo),
-          moduleName: new FormControl(this.workForm.value.moduleName),
-          agentType: new FormControl(this.workForm.value.agentType),
+        this.jobForm = new FormGroup({
+          name: new FormControl(this.jobForm.value.name),
+          moduleRepo: new FormControl(this.jobForm.value.moduleRepo),
+          moduleName: new FormControl(this.jobForm.value.moduleName),
+          agentType: new FormControl(this.jobForm.value.agentType),
           params: new FormControl(data)
         })
       })
   }
 
-  postWork() {
+  postJob() {
 
     this.loading = true
 
     let yamlJson = {}
     try {
-      yamlJson = this.workForm.value.params != null ? parse(this.workForm.value.params) : {}
+      yamlJson = this.jobForm.value.params != null ? parse(this.jobForm.value.params) : {}
 
     } catch (error: any) {
       this.toastr.error(error, 'Invalid yaml')
@@ -80,10 +86,10 @@ export class NewWorkComponent implements OnInit {
     }
 
     let finalJson = {
-      name: this.workForm.value.name,
-      agent_type: this.workForm.value.agentType,
-      module_name: this.workForm.value.moduleName,
-      module_repo: this.workForm.value.moduleRepo,
+      name: this.jobForm.value.name,
+      agent_type: this.jobForm.value.agentType,
+      module_name: this.jobForm.value.moduleName,
+      module_repo: this.jobForm.value.moduleRepo,
       params: yamlJson
     }
 
@@ -91,11 +97,11 @@ export class NewWorkComponent implements OnInit {
     doc.contents = finalJson
     let finalYaml = doc.toString()
 
-    this.workService.postWork(finalYaml)
+    this.jobService.postJob(finalYaml)
       .subscribe(
         result => {
           this.toastr.success($localize`Generated id ${result.id}`, $localize`Success creation`)
-          this.route.navigate(['works'])
+          this.route.navigate(['jobs'])
         },
         error => {
           this.toastr.error($localize`Error on create new Job`)

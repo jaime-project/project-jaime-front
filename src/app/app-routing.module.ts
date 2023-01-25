@@ -1,13 +1,12 @@
 import { Routes } from '@angular/router';
-import { AppModule } from './app.module';
-import { SigninComponent } from './components/login/signin/signin.component';
+import { AppComponent } from './app.component';
 import { FullComponent } from './layouts/full/full.component';
 
 
 export const Approutes: Routes = [
   {
     path: '',
-    component: AppModule,
+    component: AppComponent,
     children: [
       {
         path: '',
@@ -33,7 +32,7 @@ export const Approutes: Routes = [
       },
       {
         path: '',
-        loadChildren: () => import('./components/works/workcomponents.module').then(m => m.WorkComponentsModule)
+        loadChildren: () => import('./components/jobs/jobcomponents.module').then(m => m.JobComponentsModule)
       },
       {
         path: '',
