@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { ListJobComponent } from './list/list.component';
-import { TabsJobComponent } from './tabs/tabs.component';
+import { ListMessageComponent } from './list/list.component';
+import { TabsMessageComponent } from './tabs/tabs.component';
 
 
 export const MessageComponentsRoutes: Routes = [
@@ -9,7 +9,7 @@ export const MessageComponentsRoutes: Routes = [
 		children: [
 			{
 				path: 'messages',
-				component: ListJobComponent,
+				component: ListMessageComponent,
 				data: {
 					title: 'messages',
 					urls: [
@@ -20,7 +20,7 @@ export const MessageComponentsRoutes: Routes = [
 			},
 			{
 				path: 'messages/details/:id',
-				component: TabsJobComponent,
+				component: TabsMessageComponent,
 				data: {
 					title: 'messages',
 					urls: [

@@ -15,7 +15,7 @@ export class ListMessageComponent implements OnInit {
   pageLoading: boolean = true
   thread: Subscription | null = null
   jobsShort: JobShort[] = []
-  jobsStatus: string[] = []
+  messageStatus: string[] = []
 
   constructor(private jobService: JobService, private toastr: ToastrService) { }
 
@@ -41,7 +41,7 @@ export class ListMessageComponent implements OnInit {
 
     this.jobService.getJobStatus()
       .subscribe(data => {
-        this.jobsStatus = data.sort();
+        this.messageStatus = data.sort();
       })
   }
 

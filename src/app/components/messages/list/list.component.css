@@ -1,19 +1,8 @@
 .SUCCESS {
     color: green;
+    font-weight: bold;
 }
 
-.READY {
-    color: coral;
-}
-
-.ERROR {
-    color: red;
-}
-
-.RUNNING {
-    color: violet;
-}
-
-.CANCEL {
-    color: gray;
+.link {
+    color: blue;
 }
