@@ -1,0 +1,19 @@
+.SUCCESS {
+    color: green;
+}
+
+.READY {
+    color: coral;
+}
+
+.ERROR {
+    color: red;
+}
+
+.RUNNING {
+    color: violet;
+}
+
+.CANCEL {
+    color: gray;
+}

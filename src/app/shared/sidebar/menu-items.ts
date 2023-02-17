@@ -28,7 +28,7 @@ export const ROUTES: RouteInfo[] = [
   {
     path: "/repos",
     title: $localize`Repositories`,
-    icon: "fa fa-code",
+    icon: "mdi mdi-code-braces",
     class: "",
     extralink: false,
     submenu: [],
@@ -36,7 +36,7 @@ export const ROUTES: RouteInfo[] = [
   {
     path: "/crons",
     title: $localize`Crons`,
-    icon: "fa fa-clock",
+    icon: "mdi mdi-timelapse",
     class: "",
     extralink: false,
     submenu: [],
@@ -52,7 +52,15 @@ export const ROUTES: RouteInfo[] = [
   {
     path: "/configs",
     title: $localize`Configs`,
-    icon: "fa fa-cog",
+    icon: "mdi mdi-gear",
+    class: "",
+    extralink: false,
+    submenu: [],
+  },
+  {
+    path: "/messages",
+    title: $localize`Messages`,
+    icon: "mdi mdi-tooltip",
     class: "",
     extralink: false,
     submenu: [],
@@ -60,7 +68,7 @@ export const ROUTES: RouteInfo[] = [
   {
     path: "/exit",
     title: $localize`Sign out`,
-    icon: "fa fa-power-off",
+    icon: "mdi mdi-power",
     class: "",
     extralink: false,
     submenu: [],

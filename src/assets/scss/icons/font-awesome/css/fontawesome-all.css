@@ -3757,6 +3757,10 @@ readers do not read off random characters that represent icons */
   content: "\f05d";
 }
 
+.fa-message:before {
+  content: "\f27a";
+}
+
 
 .sr-only {
   border: 0;
