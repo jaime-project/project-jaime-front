@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Job } from 'src/app/models/models';
-import { JobService } from 'src/app/services/jobs/job.service';
-import { Document } from 'yaml';
+import { Message } from 'src/app/models/models';
+import { MessageService } from 'src/app/services/messages/message.service';
 
 @Component({
-  selector: 'app-detail-job',
+  selector: 'app-detail-message',
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.css']
 })
@@ -13,38 +12,30 @@ export class DetailMessageComponent implements OnInit {
 
   paramsYaml: string = ""
 
-  job: Job = {
-    agent: {
-      host: "",
-      id: "",
-      port: "",
-      type: "",
-      status: ""
-    },
+  message: Message = {
     id: "",
-    module_name: "",
-    module_repo: "",
-    name: "",
-    params: {},
-    running_date: null,
-    start_date: null,
     status: "",
-    // status_date: null,
-    terminated_date: null
+    title: "",
+    subject: "",
+    job: "",
+    date: null,
+    body: "",
+    files: [],
   }
 
-  constructor(private jobService: JobService, private route: ActivatedRoute) { }
+  constructor(private messageService: MessageService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     let id = this.route.snapshot.paramMap.get('id')
 
-    this.jobService.getJob(id).subscribe(data => {
-      this.job = data
-
-      let doc = new Document()
-      doc.contents = data.params
-      this.paramsYaml = doc.toString()
+    this.messageService.getMessage(id).subscribe(data => {
+      this.message = data
     })
+  }
+
+  getFileName(path: string) {
+    let paths = path.split('/')
+    return paths[paths.length - 1]
   }
 
 }

@@ -8,14 +8,12 @@
 <div class="col-lg-12">
   <div class="card m-t-30">
     <div class="card-body">
-
       <div ngbDropdown class="d-inline-block">
         <button class="btn btn-danger" ngbDropdownToggle style="margin-right: 2%;" i18n>Delete by Status</button>
         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
           <button ngbDropdownItem (click)="deleteByStatus(s)" *ngFor="let s of messageStatus">{{s}}</button>
         </div>
       </div>
-
     </div>
   </div>
 </div>
@@ -47,7 +45,7 @@
             <thead>
               <tr>
                 <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('title')">Title</button></th>
-                <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('subtitle')">Subtitle</button>
+                <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('subject')">Subject</button>
                 </th>
                 <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('job')">Job</button></th>
                 <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('date')">Date</button>
@@ -55,20 +53,20 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let jobShort of jobsShort" class="{{jobShort.status}}">
-                <td>{{jobShort.name}}</td>
-                <td>{{jobShort.name}}</td>
-                <td routerLink="/jobs/details/{{jobShort.id}}" class="link">
-                  {{jobShort.id}}
+              <tr *ngFor="let messageShort of messageShort" class="{{messageShort.status}}">
+                <td>{{messageShort.title}}</td>
+                <td>{{messageShort.subject}}</td>
+                <td routerLink="/messages/details/{{messageShort.job}}" class="link">
+                  {{messageShort.job}}
                 </td>
-                <td>{{jobShort.start_date | date: 'short'}}</td>
+                <td>{{messageShort.date | date: 'short'}}</td>
                 <td>
                   <button type="button" class="btn btn-primary" style="margin-right: 2%;" data-toggle="tooltip"
-                    title="Details" routerLink="/jobs/details/{{jobShort.id}}">
+                    title="Details" routerLink="/messages/details/{{messageShort.id}}">
                     <i class="fas fa-eye"></i>
                   </button>
                   <button type="button" class="btn btn-danger" style="margin-right: 2%;" data-toggle="tooltip"
-                    title="Delete" (click)="deleteJob(jobShort.id)">
+                    title="Delete" (click)="deleteMessage(messageShort.id)">
                     <i class="far fa-trash-alt"></i>
                   </button>
                 </td>

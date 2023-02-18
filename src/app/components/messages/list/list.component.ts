@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { interval, Subscription } from 'rxjs';
-import { JobShort } from 'src/app/models/models';
-import { JobService } from 'src/app/services/jobs/job.service';
+import { MessageShort } from 'src/app/models/models';
+import { MessageService } from 'src/app/services/messages/message.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-list-job',
+  selector: 'app-list-message',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
@@ -14,10 +14,10 @@ export class ListMessageComponent implements OnInit {
 
   pageLoading: boolean = true
   thread: Subscription | null = null
-  jobsShort: JobShort[] = []
+  messageShort: MessageShort[] = []
   messageStatus: string[] = []
 
-  constructor(private jobService: JobService, private toastr: ToastrService) { }
+  constructor(private messageService: MessageService, private toastr: ToastrService) { }
 
   orderBy: string = 'name'
   reverse: boolean = false
@@ -39,7 +39,7 @@ export class ListMessageComponent implements OnInit {
         this.loadStartData()
       });
 
-    this.jobService.getJobStatus()
+    this.messageService.listMessageStatus()
       .subscribe(data => {
         this.messageStatus = data.sort();
       })
@@ -50,29 +50,29 @@ export class ListMessageComponent implements OnInit {
   }
 
   loadStartData() {
-    this.jobService.getJobsAllShort(this.size, this.page, this.filterBy, this.orderBy)
+    this.messageService.listMessages(this.size, this.page, this.filterBy, this.orderBy)
       .subscribe(data => {
-        this.jobsShort = data;
+        this.messageShort = data;
         if (this.reverse) {
-          this.jobsShort = data.reverse()
+          this.messageShort = data.reverse()
         }
         this.pageLoading = false
       })
   }
 
-  deleteJob(id: string) {
+  deleteMessage(id: string) {
     Swal.fire({
-      title: $localize`Delete job`,
-      text: $localize`Delete job with id ${id}`,
+      title: $localize`Delete message`,
+      text: $localize`Delete message with id ${id}`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',
       showCancelButton: true,
     }).then(result => {
       if (result.isConfirmed) {
-        this.jobService.deleteJob(id)
+        this.messageService.deleteMessage(id)
           .subscribe(() => {
-            this.toastr.success($localize`Job deleted`)
+            this.toastr.success($localize`message deleted`)
           })
       }
     })
@@ -80,40 +80,19 @@ export class ListMessageComponent implements OnInit {
 
   deleteByStatus(status: string) {
     Swal.fire({
-      title: $localize`Delete jobs`,
-      text: $localize`Delete jobs with status ${status}`,
+      title: $localize`Delete messages`,
+      text: $localize`Delete messages with status ${status}`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',
       showCancelButton: true,
     }).then(result => {
       if (result.isConfirmed) {
-        this.jobService.deleteJobsByStatus(status)
+        this.messageService.deleteMessagesByStatus(status)
           .subscribe(() => {
-            this.toastr.success($localize`Jobs deleted`)
+            this.toastr.success($localize`Messages deleted`)
           })
       }
     })
   }
-
-  changeStatus(id: string, status: string) {
-    Swal.fire({
-      title: $localize`Change status`,
-      text: $localize`Change job with status ${status}?`,
-      icon: 'warning',
-      confirmButtonColor: '#05b281',
-      cancelButtonColor: '#ec312d',
-      showCancelButton: true,
-    }).then(result => {
-      if (result.isConfirmed) {
-        this.jobService.changeStatus(id, status)
-          .subscribe(() => {
-            this.toastr.success($localize`Job status changed`)
-          })
-      }
-    })
-  }
-
-
-
 }
