@@ -56,7 +56,7 @@
               <tr *ngFor="let messageShort of messageShort" class="{{messageShort.status}}">
                 <td>{{messageShort.title}}</td>
                 <td>{{messageShort.subject}}</td>
-                <td routerLink="/messages/details/{{messageShort.job}}" class="link">
+                <td routerLink="/jobs/details/{{messageShort.job}}" class="link">
                   {{messageShort.job}}
                 </td>
                 <td>{{messageShort.date | date: 'short'}}</td>
