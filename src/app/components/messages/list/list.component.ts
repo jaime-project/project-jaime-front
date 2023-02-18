@@ -19,7 +19,7 @@ export class ListMessageComponent implements OnInit {
 
   constructor(private messageService: MessageService, private toastr: ToastrService) { }
 
-  orderBy: string = 'name'
+  orderBy: string = 'id'
   reverse: boolean = false
   filterBy: string = ''
   page: number = 1

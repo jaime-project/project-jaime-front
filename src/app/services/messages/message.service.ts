@@ -1,9 +1,9 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { Observable, throwError } from 'rxjs';
+import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Message, MessageShort, Server } from 'src/app/models/models';
+import { Message, MessageShort } from 'src/app/models/models';
 import { AppConfigService } from '../AppConfigService';
 import { ErrorService } from '../errors/error.service';
 
@@ -72,6 +72,15 @@ export class MessageService {
 
   deleteMessagesByStatus(type: string): Observable<any> {
     return this.http.delete<any>(`${this.apiUrl}/status/${type}`)
+      .pipe(
+        catchError((error: HttpErrorResponse) => {
+          return this.errorService.httpError(error);
+        })
+      )
+  }
+
+  downloadFile(id: string, path: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/${id}/files/${path}`, { responseType: 'blob' })
       .pipe(
         catchError((error: HttpErrorResponse) => {
           return this.errorService.httpError(error);

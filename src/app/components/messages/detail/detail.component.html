@@ -35,7 +35,7 @@
                 <div class="row text-center text-lg-start">
                   <div class="col-lg-2" *ngFor="let file of message.files">
                     <div class="card m-t-30" style="border-bottom-width: 10px;">
-                      <a class="d-block h-100" routerLink="/messages/{{message.id}}/files/{{file}}">
+                      <a class="d-block h-100" (click)="downloadFile(file)" style="color: cornflowerblue;">
                         <div>
                           <i class="fa fa-paperclip fa-3x" style="margin-bottom: 5%;margin-top: 5%;"></i>
                         </div>

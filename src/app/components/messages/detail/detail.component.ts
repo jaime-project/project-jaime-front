@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { saveAs } from 'file-saver';
 import { Message } from 'src/app/models/models';
 import { MessageService } from 'src/app/services/messages/message.service';
 
@@ -36,6 +37,17 @@ export class DetailMessageComponent implements OnInit {
   getFileName(path: string) {
     let paths = path.split('/')
     return paths[paths.length - 1]
+  }
+
+  downloadFile(path: string) {
+
+    let paths = path.split('/')
+    let fileName = paths[paths.length - 1]
+
+    this.messageService.downloadFile(this.message.id, path)
+      .subscribe(data => {
+        saveAs(data, `${fileName}`);
+      })
   }
 
 }
