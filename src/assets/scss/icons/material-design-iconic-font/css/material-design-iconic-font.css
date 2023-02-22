@@ -5165,3 +5165,11 @@
   content: '\f1e7';
 }
 
+.zmdi-markdown:before {
+  content: '\F0F5B';
+}
+
+.zmdi-code-tags:before {
+  content: '\F0174';
+}
+

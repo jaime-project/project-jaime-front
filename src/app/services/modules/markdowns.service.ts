@@ -10,7 +10,7 @@ import { ErrorService } from '../errors/error.service';
 @Injectable({
   providedIn: 'root'
 })
-export class DocsService {
+export class MarkdownsService {
 
   apiUrl: string = "";
   headers = new HttpHeaders().set('Content-Type', 'application/json');
@@ -19,8 +19,8 @@ export class DocsService {
     this.apiUrl = environment.config.backendURL + '/api/v1/repos';
   }
 
-  listDocs(repo: string): Observable<string[]> {
-    return this.http.get<string[]>(`${this.apiUrl}/${repo}/docs`)
+  listMarkdowns(repo: string): Observable<string[]> {
+    return this.http.get<string[]>(`${this.apiUrl}/${repo}/markdowns`)
       .pipe(
         catchError((error: HttpErrorResponse) => {
           return this.errorService.httpError(error);
@@ -28,7 +28,7 @@ export class DocsService {
       )
   }
 
-  postDocs(name: string, docs: string, repo: string): Observable<string> {
+  postMarkdowns(name: string, docs: string, repo: string): Observable<string> {
 
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
     const url = `${this.apiUrl}/${repo}/docs/${name}`
@@ -41,10 +41,10 @@ export class DocsService {
       )
   }
 
-  getDocs(name: string, repo: string): Observable<string> {
+  getMarkdown(name: string, repo: string): Observable<string> {
 
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
-    const url = `${this.apiUrl}/${repo}/docs/${name}`
+    const url = `${this.apiUrl}/${repo}/markdowns/${name}`
 
     return this.http.get(url, { headers, responseType: 'text' })
       .pipe(
@@ -54,9 +54,9 @@ export class DocsService {
       )
   }
 
-  deleteDocs(name: string, repo: string): Observable<string> {
+  deleteMarkdowns(name: string, repo: string): Observable<string> {
 
-    const url = `${this.apiUrl}/${repo}/docs/${name}`
+    const url = `${this.apiUrl}/${repo}/markdowns/${name}`
 
     return this.http.delete<any>(url)
       .pipe(
@@ -66,7 +66,7 @@ export class DocsService {
       )
   }
 
-  getDocsWithoutError(name: string, repo: string): Observable<string> {
+  getMarkdownsWithoutError(name: string, repo: string): Observable<string> {
 
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
     const url = `${this.apiUrl}/${repo}/docs/${name}`
@@ -74,7 +74,7 @@ export class DocsService {
     return this.http.get(url, { headers, responseType: 'text' })
   }
 
-  putDocs(name: string, content: string, repo: string): Observable<any> {
+  putMarkdown(name: string, content: string, repo: string): Observable<any> {
 
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
     const url = `${this.apiUrl}/${repo}/docs/${name}`

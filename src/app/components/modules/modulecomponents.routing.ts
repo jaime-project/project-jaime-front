@@ -1,7 +1,9 @@
 import { Routes } from '@angular/router';
+import { CodeModuleComponent } from './code/code.component';
+import { DetailDocsComponent } from './docs/docs.component';
 import { ListModuleComponent } from './list/list.component';
+import { MarkdownModuleComponent } from './markdown/markdown.component';
 import { NewModuleComponent } from './new/new.component';
-import { TabsModuleComponent } from './tabs/tabs.component';
 
 
 export const ModuleComponentsRoutes: Routes = [
@@ -20,13 +22,35 @@ export const ModuleComponentsRoutes: Routes = [
 				}
 			},
 			{
-				path: 'repos/:repo/modules/details/:name',
-				component: TabsModuleComponent,
+				path: 'repos/:repo/modules/details/code/:name',
+				component: CodeModuleComponent,
 				data: {
 					title: 'Modules',
 					urls: [
 						{ title: 'ngComponent' },
 						{ title: 'Modules' }
+					]
+				}
+			},
+			{
+				path: 'repos/:repo/modules/details/docs/:name',
+				component: DetailDocsComponent,
+				data: {
+					title: 'Modules',
+					urls: [
+						{ title: 'ngComponent' },
+						{ title: 'Modules' }
+					]
+				}
+			},
+			{
+				path: 'repos/:repo/modules/details/markdown/:name',
+				component: MarkdownModuleComponent,
+				data: {
+					title: 'Markdown',
+					urls: [
+						{ title: 'ngComponent' },
+						{ title: 'Markdown' }
 					]
 				}
 			},

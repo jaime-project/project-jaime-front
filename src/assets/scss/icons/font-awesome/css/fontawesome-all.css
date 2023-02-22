@@ -3761,6 +3761,10 @@ readers do not read off random characters that represent icons */
   content: "\f27a";
 }
 
+.fa-markdown:before {
+  content: "\f60f";
+}
+
 
 .sr-only {
   border: 0;

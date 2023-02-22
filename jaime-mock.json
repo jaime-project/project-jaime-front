@@ -2238,6 +2238,70 @@
       ],
       "enabled": true,
       "responseMode": null
+    },
+    {
+      "uuid": "c04faa48-e459-4462-a792-551858799c9a",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "repos/*/markdowns",
+      "responses": [
+        {
+          "uuid": "7e0ac035-8e74-4651-ad54-d49e86c645e4",
+          "body": "[\n  \"Ejemplos de uso\",\n  \"Documentacion\"\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "2e8b5426-f735-4d92-bf9a-79a58e4b683a",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "repos/*/markdowns/*",
+      "responses": [
+        {
+          "uuid": "9f1c580c-62ab-4b0d-be66-4285d6aa1b4a",
+          "body": "# :card_index_dividers: project-jaime-front\n\n> Herramienta para migrar jenkins de un cluster de openshift a otro\n\n- Jaimeeehhhh...!!!\n- ¿Si, señora?\n- El OCS necesita CI/CD y no hay Jenkins\n- Por eso siempre traigo scripts\n\n## :gear: Requisitos\n\n- node 12\n- npm 6\n\n## :tada: Uso\n\n```bash\n# Levantar el ambiente\nnpm install\n\n# Ejecutar\nnpm start\n```\n\n## :books: Referencias\n\n- [Iconos](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md)",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
     }
   ],
   "proxyMode": false,
@@ -2425,6 +2489,14 @@
     {
       "type": "route",
       "uuid": "ffc8d975-6a50-4d44-8d81-a9bd0182859f"
+    },
+    {
+      "type": "route",
+      "uuid": "c04faa48-e459-4462-a792-551858799c9a"
+    },
+    {
+      "type": "route",
+      "uuid": "2e8b5426-f735-4d92-bf9a-79a58e4b683a"
     },
     {
       "type": "route",

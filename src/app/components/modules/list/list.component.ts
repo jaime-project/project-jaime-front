@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { interval, Subscription } from 'rxjs';
 import { DocsService } from 'src/app/services/modules/docs.service';
 import { ModuleService } from 'src/app/services/modules/modules.service';
+import { MarkdownsService } from 'src/app/services/modules/markdowns.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -14,10 +15,19 @@ import Swal from 'sweetalert2';
 export class ListModuleComponent implements OnInit {
 
   modulesName: string[] = []
+  docsName: string[] = []
+  markdownsName: string[] = []
   repo: string = ""
   filterBy: string = ''
 
-  constructor(private modulesService: ModuleService, private activatedRoute: ActivatedRoute, private route: Router, private docsService: DocsService, private toastr: ToastrService) { }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private route: Router,
+    private toastr: ToastrService,
+    private modulesService: ModuleService,
+    private docsService: DocsService,
+    private markdownsService: MarkdownsService,
+  ) { }
 
   thread: Subscription | null = null
 
@@ -42,7 +52,27 @@ export class ListModuleComponent implements OnInit {
       .subscribe(data => {
         this.modulesName = this.filterFunction(data.sort())
       })
+    this.docsService.listDocs(this.repo!)
+      .subscribe(data => {
+        this.docsName = this.filterFunction(data.sort())
+      })
+    this.markdownsService.listMarkdowns(this.repo!)
+      .subscribe(data => {
+        this.markdownsName = this.filterFunction(data.sort())
+      })
   }
+
+  filterFunction(list: string[]) {
+    if (!this.filterBy) {
+      return list
+    }
+
+    return list
+      .filter(r => {
+        return r.toLowerCase().includes(this.filterBy.toLowerCase())
+      })
+  }
+
 
   deleteModule(name: string) {
 
@@ -55,7 +85,6 @@ export class ListModuleComponent implements OnInit {
       showCancelButton: true,
     }).then(result => {
       if (result.isConfirmed) {
-        this.docsService.deleteDocs(name, this.repo)
         this.modulesService.deleteModule(name, this.repo)
           .subscribe(() => {
             this.toastr.success($localize`Module ${name} deleted`)
@@ -65,15 +94,44 @@ export class ListModuleComponent implements OnInit {
     })
   }
 
-  filterFunction(list: string[]) {
-    if (!this.filterBy) {
-      return list
-    }
+  deleteDoc(name: string) {
 
-    return list
-      .filter(r => {
-        return r.toLowerCase().includes(this.filterBy.toLowerCase())
-      })
+    Swal.fire({
+      title: $localize`Delete module`,
+      text: $localize`Delete module with name ${name}`,
+      icon: 'warning',
+      confirmButtonColor: '#05b281',
+      cancelButtonColor: '#ec312d',
+      showCancelButton: true,
+    }).then(result => {
+      if (result.isConfirmed) {
+        this.docsService.deleteDocs(name, this.repo)
+          .subscribe(() => {
+            this.toastr.success($localize`Module ${name} deleted`)
+            this.route.navigate([`repos/${this.repo}/modules`])
+          })
+      }
+    })
+  }
+
+  deleteMarkdown(name: string) {
+
+    Swal.fire({
+      title: $localize`Delete markdown`,
+      text: $localize`Delete markdown with name ${name}`,
+      icon: 'warning',
+      confirmButtonColor: '#05b281',
+      cancelButtonColor: '#ec312d',
+      showCancelButton: true,
+    }).then(result => {
+      if (result.isConfirmed) {
+        this.modulesService.deleteModule(name, this.repo)
+          .subscribe(() => {
+            this.toastr.success($localize`Module ${name} deleted`)
+            this.route.navigate([`repos/${this.repo}/modules`])
+          })
+      }
+    })
   }
 
 }
