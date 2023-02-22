@@ -1,6 +1,6 @@
 .NOT_SEEN {
-    color: green;
     font-weight: bold;
+    background-color: azure;
 }
 
 .link {
