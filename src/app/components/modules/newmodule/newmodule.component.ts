@@ -16,7 +16,13 @@ export class NewModuleComponent implements OnInit {
   yaml: string = ""
   code: string = ""
 
-  constructor(private route: Router, private moduleService: ModuleService, private docsService: DocsService, private activatedRoute: ActivatedRoute, private toastr: ToastrService) { }
+  constructor(
+    private route: Router,
+    private moduleService: ModuleService,
+    private docsService: DocsService,
+    private activatedRoute: ActivatedRoute,
+    private toastr: ToastrService
+  ) { }
 
   ngOnInit(): void {
     this.repo = this.activatedRoute.snapshot.paramMap.get('repo')!

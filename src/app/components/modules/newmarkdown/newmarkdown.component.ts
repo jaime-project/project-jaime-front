@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { DocsService } from 'src/app/services/modules/docs.service';
+import { MarkdownsService } from 'src/app/services/modules/markdowns.service';
 import { ModuleService } from 'src/app/services/modules/modules.service';
 
 @Component({
@@ -13,21 +14,22 @@ export class NewMarkdownComponent implements OnInit {
 
   repo: string = ""
   name: string = ""
-  yaml: string = ""
   code: string = ""
 
-  constructor(private route: Router, private moduleService: ModuleService, private docsService: DocsService, private activatedRoute: ActivatedRoute, private toastr: ToastrService) { }
+  constructor(
+    private route: Router,
+    private markdownService: MarkdownsService,
+    private activatedRoute: ActivatedRoute,
+    private toastr: ToastrService
+  ) { }
 
   ngOnInit(): void {
     this.repo = this.activatedRoute.snapshot.paramMap.get('repo')!
   }
 
-  postModule() {
+  postMarkdown() {
 
-    this.docsService.postDocs(this.name, this.yaml, this.repo)
-      .subscribe()
-
-    this.moduleService.postModule(this.name, this.code, this.repo)
+    this.markdownService.postMarkdowns(this.name, this.code, this.repo)
       .subscribe(() => {
         this.route.navigate([`repos/${this.repo}/modules`])
         this.toastr.success($localize`New module ${this.name} created`)
