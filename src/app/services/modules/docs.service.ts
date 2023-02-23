@@ -20,7 +20,7 @@ export class DocsService {
   }
 
   listDocs(repo: string): Observable<string[]> {
-    return this.http.get<string[]>(`${this.apiUrl}/${repo}/docs`)
+    return this.http.get<string[]>(`${this.apiUrl}/${repo}/docs/`)
       .pipe(
         catchError((error: HttpErrorResponse) => {
           return this.errorService.httpError(error);

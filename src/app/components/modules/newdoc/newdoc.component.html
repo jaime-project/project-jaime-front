@@ -1,0 +1,97 @@
+<ngb-tabset #t="ngbTabset">
+
+
+  <ngb-tab id="tab-name">
+    <ng-template ngbTabTitle><b i18n>New</b></ng-template>
+    <ng-template ngbTabContent>
+      <div class="col-12 m-t-30">
+        <h4 class="m-b-0"><b i18n>Module File Name</b></h4>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="card m-t-30">
+          <div class="card-body">
+            <div class="mb-3 col-12">
+              <label for="nameInput" class="form-label"><b i18n>Name</b></label>
+              <input type="text" class="form-control" id="nameInput" [(ngModel)]="name">
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </ngb-tab>
+
+
+  <ngb-tab id="tab-code">
+    <ng-template ngbTabTitle><b i18n>Docs</b></ng-template>
+    <ng-template ngbTabContent>
+
+      <div class="col-12">
+        <h4 class="m-b-0 m-t-30"><b i18n>Module Docs</b></h4>
+        <p class="text-muted m-t-0 font-12"></p>
+      </div>
+
+      <div class="col-lg-12">
+        <div class="card m-t-30">
+          <div class="card-body">
+            <div class="mb-3 col-12">
+              <label for="docsInput" class="form-label"><b i18n>Yaml</b></label>
+              <ngx-monaco-editor style="width: 100%; height: 700px;" [options]="{ theme: 'vs-dark', language: 'yaml'}"
+                [(ngModel)]="yaml"></ngx-monaco-editor>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </ng-template>
+  </ngb-tab>
+
+
+  <ngb-tab id="tab-doc">
+    <ng-template ngbTabTitle><b i18n>Code</b></ng-template>
+    <ng-template ngbTabContent>
+
+      <div class="col-12">
+        <h4 class="m-b-0 m-t-30"><b i18n>Module Code</b></h4>
+        <p class="text-muted m-t-0 font-12"></p>
+      </div>
+
+      <div class="col-lg-12">
+        <div class="card m-t-30">
+          <div class="card-body">
+            <div class="mb-3 col-12">
+              <label for="codeInput" class="form-label"><b i18n>Code</b></label>
+              <ngx-monaco-editor style="width: 100%; height: 700px;" [options]="{ theme: 'vs-dark', language: 'python'}"
+                [(ngModel)]="code"></ngx-monaco-editor>
+              <div id="urlHelp" class="form-text"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </ng-template>
+  </ngb-tab>
+
+
+
+  <ngb-tab id="tab-create">
+    <ng-template ngbTabTitle><b i18n>Create</b></ng-template>
+    <ng-template ngbTabContent>
+
+      <div class="col-12">
+        <h4 class="m-b-0 m-t-30"><b i18n>Create new module</b></h4>
+        <p class="text-muted m-t-0 font-12"></p>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="card m-t-30">
+          <div class="card-body">
+            <button type="button" class="btn btn-success" (click)="postModule()">Create</button>
+          </div>
+        </div>
+      </div>
+
+    </ng-template>
+  </ngb-tab>
+
+</ngb-tabset>

@@ -3,7 +3,9 @@ import { CodeModuleComponent } from './code/code.component';
 import { DetailDocsComponent } from './docs/docs.component';
 import { ListModuleComponent } from './list/list.component';
 import { MarkdownModuleComponent } from './markdown/markdown.component';
-import { NewModuleComponent } from './new/new.component';
+import { NewDocComponent } from './newdoc/newdoc.component';
+import { NewMarkdownComponent } from './newmarkdown/newmarkdown.component';
+import { NewModuleComponent } from './newmodule/newmodule.component';
 
 
 export const ModuleComponentsRoutes: Routes = [
@@ -62,6 +64,28 @@ export const ModuleComponentsRoutes: Routes = [
 					urls: [
 						{ title: 'ngComponent' },
 						{ title: 'Modules' }
+					]
+				}
+			},
+			{
+				path: 'repos/:repo/docs/new',
+				component: NewDocComponent,
+				data: {
+					title: 'Docs',
+					urls: [
+						{ title: 'ngComponent' },
+						{ title: 'Docs' }
+					]
+				}
+			},
+			{
+				path: 'repos/:repo/markdowns/new',
+				component: NewMarkdownComponent,
+				data: {
+					title: 'Markdowns',
+					urls: [
+						{ title: 'ngComponent' },
+						{ title: 'Markdowns' }
 					]
 				}
 			},

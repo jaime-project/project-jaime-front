@@ -20,7 +20,7 @@ export class MarkdownsService {
   }
 
   listMarkdowns(repo: string): Observable<string[]> {
-    return this.http.get<string[]>(`${this.apiUrl}/${repo}/markdowns`)
+    return this.http.get<string[]>(`${this.apiUrl}/${repo}/markdowns/`)
       .pipe(
         catchError((error: HttpErrorResponse) => {
           return this.errorService.httpError(error);
@@ -28,12 +28,12 @@ export class MarkdownsService {
       )
   }
 
-  postMarkdowns(name: string, docs: string, repo: string): Observable<string> {
+  postMarkdowns(name: string, md: string, repo: string): Observable<string> {
 
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
-    const url = `${this.apiUrl}/${repo}/docs/${name}`
+    const url = `${this.apiUrl}/${repo}/markdowns/${name}`
 
-    return this.http.post(url, docs, { headers, responseType: 'text' })
+    return this.http.post(url, md, { headers, responseType: 'text' })
       .pipe(
         catchError((error: HttpErrorResponse) => {
           return this.errorService.httpError(error);
@@ -69,7 +69,7 @@ export class MarkdownsService {
   getMarkdownsWithoutError(name: string, repo: string): Observable<string> {
 
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
-    const url = `${this.apiUrl}/${repo}/docs/${name}`
+    const url = `${this.apiUrl}/${repo}/markdowns/${name}`
 
     return this.http.get(url, { headers, responseType: 'text' })
   }
@@ -77,7 +77,7 @@ export class MarkdownsService {
   putMarkdown(name: string, content: string, repo: string): Observable<any> {
 
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
-    const url = `${this.apiUrl}/${repo}/docs/${name}`
+    const url = `${this.apiUrl}/${repo}/markdowns/${name}`
 
     return this.http.put(url, content, { headers })
       .pipe(

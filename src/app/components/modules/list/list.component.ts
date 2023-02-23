@@ -97,8 +97,8 @@ export class ListModuleComponent implements OnInit {
   deleteDoc(name: string) {
 
     Swal.fire({
-      title: $localize`Delete module`,
-      text: $localize`Delete module with name ${name}`,
+      title: $localize`Delete doc`,
+      text: $localize`Delete doc with name ${name}`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',
@@ -107,8 +107,7 @@ export class ListModuleComponent implements OnInit {
       if (result.isConfirmed) {
         this.docsService.deleteDocs(name, this.repo)
           .subscribe(() => {
-            this.toastr.success($localize`Module ${name} deleted`)
-            this.route.navigate([`repos/${this.repo}/modules`])
+            this.toastr.success($localize`Doc ${name} deleted`)
           })
       }
     })
@@ -125,10 +124,9 @@ export class ListModuleComponent implements OnInit {
       showCancelButton: true,
     }).then(result => {
       if (result.isConfirmed) {
-        this.modulesService.deleteModule(name, this.repo)
+        this.markdownsService.deleteMarkdowns(name, this.repo)
           .subscribe(() => {
             this.toastr.success($localize`Module ${name} deleted`)
-            this.route.navigate([`repos/${this.repo}/modules`])
           })
       }
     })

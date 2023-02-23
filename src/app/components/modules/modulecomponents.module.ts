@@ -10,7 +10,9 @@ import { DetailDocsComponent } from './docs/docs.component';
 import { ListModuleComponent } from './list/list.component';
 import { MarkdownModuleComponent } from './markdown/markdown.component';
 import { ModuleComponentsRoutes } from './modulecomponents.routing';
-import { NewModuleComponent } from './new/new.component';
+import { NewDocComponent } from './newdoc/newdoc.component';
+import { NewMarkdownComponent } from './newmarkdown/newmarkdown.component';
+import { NewModuleComponent } from './newmodule/newmodule.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { NewModuleComponent } from './new/new.component';
     ListModuleComponent,
     NewModuleComponent,
     DetailDocsComponent,
-    MarkdownModuleComponent
+    MarkdownModuleComponent,
+    NewDocComponent,
+    NewMarkdownComponent
   ]
 })
 export class ModuleComponentsModule { }
