@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { DocsService } from 'src/app/services/modules/docs.service';
 import { ModuleService } from 'src/app/services/modules/modules.service';
 
 @Component({
@@ -19,7 +18,6 @@ export class NewModuleComponent implements OnInit {
   constructor(
     private route: Router,
     private moduleService: ModuleService,
-    private docsService: DocsService,
     private activatedRoute: ActivatedRoute,
     private toastr: ToastrService
   ) { }
@@ -29,9 +27,6 @@ export class NewModuleComponent implements OnInit {
   }
 
   postModule() {
-
-    this.docsService.postDocs(this.name, this.yaml, this.repo)
-      .subscribe()
 
     this.moduleService.postModule(this.name, this.code, this.repo)
       .subscribe(() => {

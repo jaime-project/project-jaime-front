@@ -15,6 +15,7 @@ export class NewMarkdownComponent implements OnInit {
   repo: string = ""
   name: string = ""
   code: string = ""
+  codeEditSwitchActivated: boolean = false
 
   constructor(
     private route: Router,

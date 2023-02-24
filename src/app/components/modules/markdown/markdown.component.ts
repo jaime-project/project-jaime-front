@@ -14,7 +14,7 @@ export class MarkdownModuleComponent implements OnInit {
   repo: string = ""
   markdownCode: string = ""
   markdownName: string = ""
-  public codeEditSwitchActivated = false
+  codeEditSwitchActivated: boolean = false
 
   constructor(private markdownService: MarkdownsService, private activatedRoute: ActivatedRoute, private route: Router, private toastr: ToastrService) { }
 
