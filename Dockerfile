@@ -15,7 +15,7 @@ RUN npm run-script build
 # APP
 # ---------------------------------------
 
-FROM nginxinc/nginx-unprivileged:latest
+FROM docker.io/nginxinc/nginx-unprivileged:latest
 
 WORKDIR /usr/share/nginx/html
 
