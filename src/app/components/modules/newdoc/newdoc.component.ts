@@ -5,15 +5,14 @@ import { DocsService } from 'src/app/services/modules/docs.service';
 import { ModuleService } from 'src/app/services/modules/modules.service';
 
 @Component({
-  selector: 'app-new-module',
-  templateUrl: './new.component.html',
-  styleUrls: ['./new.component.css']
+  selector: 'app-newdoc-module',
+  templateUrl: './newdoc.component.html',
+  styleUrls: ['./newdoc.component.css']
 })
-export class NewModuleComponent implements OnInit {
+export class NewDocComponent implements OnInit {
 
   repo: string = ""
   name: string = ""
-  yaml: string = ""
   code: string = ""
 
   constructor(private route: Router, private moduleService: ModuleService, private docsService: DocsService, private activatedRoute: ActivatedRoute, private toastr: ToastrService) { }
@@ -22,12 +21,8 @@ export class NewModuleComponent implements OnInit {
     this.repo = this.activatedRoute.snapshot.paramMap.get('repo')!
   }
 
-  postModule() {
-
-    this.docsService.postDocs(this.name, this.yaml, this.repo)
-      .subscribe()
-
-    this.moduleService.postModule(this.name, this.code, this.repo)
+  postDoc() {
+    this.docsService.postDocs(this.name, this.code, this.repo)
       .subscribe(() => {
         this.route.navigate([`repos/${this.repo}/modules`])
         this.toastr.success($localize`New module ${this.name} created`)

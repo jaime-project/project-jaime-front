@@ -9,15 +9,21 @@
   <div class="card m-t-30">
     <div class="card-body">
       <div class="row">
-        <div class="col-12">
+        <div class="col-2">
           <button class="btn btn-success" routerLink="/repos/{{repo}}/modules/new" i18n>New Module</button>
+        </div>
+        <div class="col-2">
+          <button class="btn btn-info" routerLink="/repos/{{repo}}/docs/new" i18n>New Doc</button>
+        </div>
+        <div class="col-2">
+          <button class="btn btn-warning" routerLink="/repos/{{repo}}/markdowns/new" i18n>New Markdown</button>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="col-lg-10">
+<div class="col-lg-12">
   <div class="card m-t-30">
     <div class="card-body">
       <div class="row">
@@ -34,22 +40,99 @@
 
 
 <div class="col-lg-12">
-  <div class="row text-center text-lg-start">
-    <div class="col-lg-2" *ngFor="let moduleName of modulesName">
-      <div class="card m-t-30" style="border-bottom-width: 10px;">
-        <a class="d-block h-100" routerLink="/repos/{{repo}}/modules/details/{{moduleName}}">
-          <div>
-            <i class="fa fa-file fa-3x" style="margin-bottom: 5%;margin-top: 5%;"></i>
-          </div>
-          <div>
-            <h4><b>{{moduleName}}</b></h4>
-          </div>
-        </a>
-        <div>
-          <button type="button" class="btn btn-danger" style="margin-right: 0%;" (click)="deleteModule(moduleName)"  data-toggle="tooltip" title="Delete">
-            <i class="far fa-trash-alt"></i></button>
-        </div>
-      </div>
+  <div class="card m-t-30">
+    <div class="card-body">
+
+      <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+
+        <ngb-panel>
+          <ng-template ngbPanelTitle>
+            <h4 class="m-b-0" style="color: #67757c;"><b i18n>Modules</b></h4>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            <div class="col-lg-12">
+              <div class="row text-center text-lg-start">
+                <div class="col-lg-2" *ngFor="let moduleName of modulesName">
+                  <div class="card m-t-30" style="border-bottom-width: 10px;">
+                    <a class="d-block h-100" routerLink="/repos/{{repo}}/modules/details/code/{{moduleName}}">
+                      <div>
+                        <i class="mdi mdi-code-tags fa-4x" style="margin-bottom: 5%;margin-top: 5%;"></i>
+                      </div>
+                      <div>
+                        <h4><b>{{moduleName}}</b></h4>
+                      </div>
+                    </a>
+                    <div>
+                      <button type="button" class="btn btn-danger" style="margin-right: 0%;"
+                        (click)="deleteModule(moduleName)" data-toggle="tooltip" title="Delete">
+                        <i class="far fa-trash-alt"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </ngb-panel>
+
+        <ngb-panel>
+          <ng-template ngbPanelTitle>
+            <h4 class="m-b-0" style="color: #67757c;"><b i18n>Docs</b></h4>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            <div class="col-lg-12">
+              <div class="row text-center text-lg-start">
+                <div class="col-lg-2" *ngFor="let docName of docsName">
+                  <div class="card m-t-30" style="border-bottom-width: 10px;">
+                    <a class="d-block h-100" routerLink="/repos/{{repo}}/modules/details/docs/{{docName}}">
+                      <div>
+                        <i class="mdi mdi-file fa-4x" style="margin-bottom: 5%;margin-top: 5%;"></i>
+                      </div>
+                      <div>
+                        <h4><b>{{docName}}</b></h4>
+                      </div>
+                    </a>
+                    <div>
+                      <button type="button" class="btn btn-danger" style="margin-right: 0%;"
+                        (click)="deleteDoc(docName)" data-toggle="tooltip" title="Delete">
+                        <i class="far fa-trash-alt"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </ngb-panel>
+
+        <ngb-panel>
+          <ng-template ngbPanelTitle>
+            <h4 class="m-b-0" style="color: #67757c;"><b i18n>Markdowns</b></h4>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            <div class="col-lg-12">
+              <div class="row text-center text-lg-start">
+                <div class="col-lg-2" *ngFor="let markdownName of markdownsName">
+                  <div class="card m-t-30" style="border-bottom-width: 10px;">
+                    <a class="d-block h-100" routerLink="/repos/{{repo}}/modules/details/markdown/{{markdownName}}">
+                      <div>
+                        <i class="mdi mdi-markdown fa-4x" style="margin-bottom: 5%;margin-top: 5%;"></i>
+                      </div>
+                      <div>
+                        <h4><b>{{markdownName}}</b></h4>
+                      </div>
+                    </a>
+                    <div>
+                      <button type="button" class="btn btn-danger" style="margin-right: 0%;"
+                        (click)="deleteMarkdown(markdownName)" data-toggle="tooltip" title="Delete">
+                        <i class="far fa-trash-alt"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </ngb-panel>
+
+      </ngb-accordion>
     </div>
   </div>
 </div>

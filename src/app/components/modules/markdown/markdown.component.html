@@ -17,9 +17,10 @@
 <div class="card col-12" *ngIf="!codeEditSwitchActivated">
   <div class="card">
     <div class="card-body">
-      <ngx-monaco-editor style="width: 100%; height: 700px;"
-        [options]="{ theme: 'vs-dark', language: 'python', readOnly: true}" [(ngModel)]="moduleCode">
-      </ngx-monaco-editor>
+
+      <markdown ngPreserveWhitespaces emoji [data]="markdownCode">
+      </markdown>
+
     </div>
   </div>
 </div>
@@ -28,9 +29,9 @@
 <div class="col-12" *ngIf="codeEditSwitchActivated">
   <div class="card">
     <div class="card-body">
-      <ngx-monaco-editor style="width: 100%; height: 700px;" [options]="{ theme: 'vs-dark', language: 'python'}"
-        [(ngModel)]="moduleCode"></ngx-monaco-editor>
-      <button type="button" class="btn btn-success" (click)="putModule()" i18n>Update</button>
+      <ngx-monaco-editor style="width: 100%; height: 700px;" [options]="{ theme: 'vs-dark', language: 'markdown'}"
+        [(ngModel)]="markdownCode"></ngx-monaco-editor>
+      <button type="button" class="btn btn-success" (click)="putMarkdown()" i18n>Update</button>
     </div>
   </div>
 </div>

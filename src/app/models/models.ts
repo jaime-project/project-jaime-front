@@ -97,3 +97,23 @@ export interface RepoLocal {
     name: string,
     type: string,
 }
+
+export interface MessageShort {
+    id: string,
+    status: string,
+    title: string,
+    subject: string,
+    job: string,
+    date: Date,
+}
+
+export interface Message {
+    id: string,
+    status: string,
+    title: string,
+    subject: string,
+    job: string,
+    date: Date | null,
+    body: string,
+    files: string[],
+}
