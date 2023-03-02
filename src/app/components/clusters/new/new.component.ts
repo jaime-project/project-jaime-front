@@ -18,7 +18,6 @@ export class NewClusterComponent implements OnInit {
     url: new FormControl(''),
     token: new FormControl(''),
     type: new FormControl(''),
-    version: new FormControl(''),
   });
 
   constructor(private route: Router, private agentService: AgentService, private clustersService: ClustersService, private toastr: ToastrService, private hotkeysService: HotkeysService) {

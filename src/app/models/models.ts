@@ -3,7 +3,6 @@ export interface Cluster {
     url: string,
     token: string,
     type: string,
-    version: string,
 }
 
 export interface ClusterShort {
