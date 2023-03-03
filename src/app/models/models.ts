@@ -3,7 +3,6 @@ export interface Cluster {
     url: string,
     token: string,
     type: string,
-    version: string,
 }
 
 export interface ClusterShort {
@@ -116,4 +115,9 @@ export interface Message {
     date: Date | null,
     body: string,
     files: string[],
+}
+
+export interface TestClusterResult {
+    success: boolean,
+    text: string,
 }

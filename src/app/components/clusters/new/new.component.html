@@ -31,11 +31,6 @@
           </select>
         </div>
         <div class="mb-3 col-12">
-          <label for="versionInput" class="form-label"><b i18n>Version</b></label>
-          <input type="text" class="form-control" id="versionInput" formControlName="version" required>
-          <div id="versionHelp" class="form-text" i18n>Example: 4.7</div>
-        </div>
-        <div class="mb-3 col-12">
           <button type="submit" class="btn btn-success m-t-20" [disabled]="!clusterForm.valid">Create</button>
         </div>
       </form>

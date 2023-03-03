@@ -15,7 +15,6 @@ export class DetailClusterComponent implements OnInit {
     type: "",
     token: "",
     url: "",
-    version: ""
   }
 
   constructor(private clustersService: ClustersService, private route: ActivatedRoute) { }

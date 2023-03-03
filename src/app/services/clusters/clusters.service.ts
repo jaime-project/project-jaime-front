@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Cluster, ClusterShort } from 'src/app/models/models';
+import { Cluster, ClusterShort, TestClusterResult } from 'src/app/models/models';
 import { AppConfigService } from '../AppConfigService';
 import { ErrorService } from '../errors/error.service';
 
@@ -79,8 +79,8 @@ export class ClustersService {
       )
   }
 
-  testCluster(name: string): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/${name}/test`)
+  testCluster(name: string): Observable<TestClusterResult> {
+    return this.http.get<TestClusterResult>(`${this.apiUrl}/${name}/test`)
       .pipe(
         catchError((error: HttpErrorResponse) => {
           return this.errorService.httpError(error);

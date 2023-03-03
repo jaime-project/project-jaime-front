@@ -447,7 +447,7 @@
       "responses": [
         {
           "uuid": "dda3e566-8a62-4afe-bf2b-a6cfeea60829",
-          "body": "{\n    \"name\": \"edenor3\",\n    \"url\": \"https://console-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\",\n    \"token\": \"asdasd12e12e12easd\",\n    \"user\": \"redhat\",\n    \"type\": \"OPENSHIFT\",\n    \"version\": \"3.11\"\n}",
+          "body": "{\n    \"name\": \"edenor3\",\n    \"url\": \"https://console-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\",\n    \"token\": \"asdasd12e12e12easd\",\n    \"user\": \"redhat\",\n    \"type\": \"OPENSHIFT\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",

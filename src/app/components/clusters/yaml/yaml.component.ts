@@ -21,7 +21,6 @@ export class YamlClusterComponent implements OnInit {
     type: "",
     token: "",
     url: "",
-    version: ""
   }
 
   constructor(private clustersService: ClustersService, private activatedRoute: ActivatedRoute, private route: Router, private toastr: ToastrService) { }

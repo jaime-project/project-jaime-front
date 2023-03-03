@@ -68,7 +68,7 @@ export class ListClusterComponent implements OnInit {
           this.toastr.success($localize`Connection success`)
         }
         else {
-          this.toastr.error($localize`Connection failure`)
+          this.toastr.error(data.text, $localize`Connection failure`)
         }
       })
   }
