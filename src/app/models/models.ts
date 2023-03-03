@@ -116,3 +116,8 @@ export interface Message {
     body: string,
     files: string[],
 }
+
+export interface TestClusterResult {
+    success: boolean,
+    text: string,
+}

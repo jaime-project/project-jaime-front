@@ -21,6 +21,9 @@ export class ErrorService {
 
     if (error.status == 409) {
       body = error.error
+      if (typeof (body) == 'string') {
+        body = JSON.parse(error.error)
+      }
     }
 
     let errorTittle = error.status == 409 ? body.code : $localize`Service ERROR`
