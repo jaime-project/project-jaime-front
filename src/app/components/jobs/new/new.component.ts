@@ -19,14 +19,16 @@ export class NewJobComponent implements OnInit {
 
   repos: string[] = []
   modules: string[] = []
-  moduleDocs: string = ""
+  docs: string[] = []
   agentsTypes: string[] = []
+  docParams: string = ''
   loading: boolean = false
 
   jobForm = new FormGroup({
     name: new FormControl(''),
-    moduleRepo: new FormControl(''),
+    repoName: new FormControl(''),
     moduleName: new FormControl(''),
+    docName: new FormControl(''),
     agentType: new FormControl(''),
     params: new FormControl(),
   });
@@ -56,18 +58,17 @@ export class NewJobComponent implements OnInit {
       .subscribe(data => {
         this.modules = data.sort()
       })
+
+    this.docsService.listDocs(repoName)
+      .subscribe(data => {
+        this.docs = data.sort()
+      })
   }
 
-  moduleChange(moduleName: any) {
-    this.docsService.getDocsWithoutError(moduleName, this.jobForm.value.moduleRepo)
+  docChange(docName: any) {
+    this.docsService.getDocsWithoutError(docName, this.jobForm.value.repoName)
       .subscribe(data => {
-        this.jobForm = new FormGroup({
-          name: new FormControl(this.jobForm.value.name),
-          moduleRepo: new FormControl(this.jobForm.value.moduleRepo),
-          moduleName: new FormControl(this.jobForm.value.moduleName),
-          agentType: new FormControl(this.jobForm.value.agentType),
-          params: new FormControl(data)
-        })
+        this.docParams = data
       })
   }
 
@@ -89,13 +90,15 @@ export class NewJobComponent implements OnInit {
       name: this.jobForm.value.name,
       agent_type: this.jobForm.value.agentType,
       module_name: this.jobForm.value.moduleName,
-      module_repo: this.jobForm.value.moduleRepo,
+      module_repo: this.jobForm.value.repoName,
       params: yamlJson
     }
 
     let doc = new Document()
     doc.contents = finalJson
     let finalYaml = doc.toString()
+
+    console.log(finalYaml)
 
     this.jobService.postJob(finalYaml)
       .subscribe(
