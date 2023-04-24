@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MonacoEditorModule } from 'ngx-monaco-editor';
-import { SharedComponentsModule } from 'src/app/shared/shared.module';
+import { ComponentsModule } from 'src/app/components/components.module';
 import { DetailServerComponent } from './detail/detail.component';
 import { ListServerComponent } from './list/list.component';
 import { NewServerComponent } from './new/new.component';
@@ -21,7 +21,7 @@ import { YamlServerComponent } from './yaml/yaml.component';
     ReactiveFormsModule,
     NgbModule,
     MonacoEditorModule,
-    SharedComponentsModule
+    ComponentsModule
   ],
   declarations: [
     TabsServerComponent,

@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MonacoEditorModule } from 'ngx-monaco-editor';
-import { SharedComponentsModule } from 'src/app/shared/shared.module';
+import { ComponentsModule } from 'src/app/components/components.module';
 import { DetailJobComponent } from './detail/detail.component';
 import { JobsComponentsRoutes } from './jobcomponents.routing';
 import { ListJobComponent } from './list/list.component';
@@ -23,7 +23,7 @@ import { YamlJobComponent } from './yaml/yaml.component';
     ReactiveFormsModule,
     NgbModule,
     MonacoEditorModule,
-    SharedComponentsModule
+    ComponentsModule
   ],
   declarations: [
     DetailJobComponent,

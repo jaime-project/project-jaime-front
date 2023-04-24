@@ -16,7 +16,7 @@ import { AppComponent } from './app.component';
 import { FullComponent } from './layouts/full/full.component';
 import { AppConfigService } from './services/AppConfigService';
 import { InterceptorService } from './services/interceptos/interceptor.service';
-import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {

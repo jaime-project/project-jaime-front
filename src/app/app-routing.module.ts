@@ -10,7 +10,7 @@ export const Approutes: Routes = [
     children: [
       {
         path: '',
-        loadChildren: () => import('./components/login/logincomponents.module').then(m => m.LoginComponentsModule)
+        loadChildren: () => import('./layouts/login/logincomponents.module').then(m => m.LoginComponentsModule)
       },
     ]
   },
@@ -20,43 +20,43 @@ export const Approutes: Routes = [
     children: [
       {
         path: '',
-        loadChildren: () => import('./components/clusters/clustercomponents.module').then(m => m.ClusterComponentsModule)
+        loadChildren: () => import('./layouts/clusters/clustercomponents.module').then(m => m.ClusterComponentsModule)
       },
       {
         path: '',
-        loadChildren: () => import('./components/modules/modulecomponents.module').then(m => m.ModuleComponentsModule)
+        loadChildren: () => import('./layouts/modules/modulecomponents.module').then(m => m.ModuleComponentsModule)
       },
       {
         path: '',
-        loadChildren: () => import('./components/agents/agentcomponents.module').then(m => m.AgentComponentsModule)
+        loadChildren: () => import('./layouts/agents/agentcomponents.module').then(m => m.AgentComponentsModule)
       },
       {
         path: '',
-        loadChildren: () => import('./components/jobs/jobcomponents.module').then(m => m.JobComponentsModule)
+        loadChildren: () => import('./layouts/jobs/jobcomponents.module').then(m => m.JobComponentsModule)
       },
       {
         path: '',
-        loadChildren: () => import('./components/configs/configcomponents.module').then(m => m.ConfigComponentsModule)
+        loadChildren: () => import('./layouts/configs/configcomponents.module').then(m => m.ConfigComponentsModule)
       },
       {
         path: '',
-        loadChildren: () => import('./components/repos/repocomponents.module').then(m => m.RepoComponentsModule)
+        loadChildren: () => import('./layouts/repos/repocomponents.module').then(m => m.RepoComponentsModule)
       },
       {
         path: '',
-        loadChildren: () => import('./components/servers/servercomponents.module').then(m => m.ServerComponentsModule)
+        loadChildren: () => import('./layouts/servers/servercomponents.module').then(m => m.ServerComponentsModule)
       },
       {
         path: '',
-        loadChildren: () => import('./components/configs/configcomponents.module').then(m => m.ConfigComponentsModule)
+        loadChildren: () => import('./layouts/configs/configcomponents.module').then(m => m.ConfigComponentsModule)
       },
       {
         path: '',
-        loadChildren: () => import('./components/crons/croncomponents.module').then(m => m.CronComponentsModule)
+        loadChildren: () => import('./layouts/crons/croncomponents.module').then(m => m.CronComponentsModule)
       },
       {
         path: '',
-        loadChildren: () => import('./components/messages/messagecomponents.module').then(m => m.MessageComponentsModule)
+        loadChildren: () => import('./layouts/messages/messagecomponents.module').then(m => m.MessageComponentsModule)
       },
     ]
   },

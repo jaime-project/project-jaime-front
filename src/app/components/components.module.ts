@@ -19,4 +19,4 @@ import { SpinnerComponent } from './spinner/spinner.component';
     SpinnerComponent,
   ]
 })
-export class SharedComponentsModule { }
+export class ComponentsModule { }

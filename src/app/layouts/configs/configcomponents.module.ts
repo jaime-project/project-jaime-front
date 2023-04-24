@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MonacoEditorModule } from 'ngx-monaco-editor';
-import { SharedComponentsModule } from 'src/app/shared/shared.module';
+import { ComponentsModule } from 'src/app/components/components.module';
 import { ConfigComponentsRoutes } from './configcomponents.routing';
 import { LogsComponent } from './logs/logs.component';
 import { ObjectsComponent } from './objects/objects.component';
@@ -21,7 +21,7 @@ import { VarConfigComponent } from './vars/var.component';
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
-    SharedComponentsModule,
+    ComponentsModule,
     MonacoEditorModule
   ],
   declarations: [
