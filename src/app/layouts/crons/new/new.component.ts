@@ -20,7 +20,8 @@ export class NewCronComponent implements OnInit {
   repo: string = ""
   repos: string[] = []
   modules: string[] = []
-  moduleDocs: string = ""
+  docs: string[] = []
+  docParams: string = ""
   agentsTypes: string[] = []
   loading: boolean = false
 
@@ -61,19 +62,16 @@ export class NewCronComponent implements OnInit {
       .subscribe(data => {
         this.modules = data.sort()
       })
+    this.docsService.listDocs(repoName)
+      .subscribe(data => {
+        this.docs = data
+      })
   }
 
-  moduleChange(moduleName: any) {
-    this.docsService.getDocsWithoutError(moduleName, this.repo)
+  docChange(docName: any) {
+    this.docsService.getDocsWithoutError(docName, this.cronForm.value.repoName)
       .subscribe(data => {
-        this.cronForm = new FormGroup({
-          name: new FormControl(this.cronForm.value.name),
-          cron_expression: new FormControl(this.cronForm.value.cron_expression),
-          job_module_repo: new FormControl(this.cronForm.value.job_module_repo),
-          job_module_name: new FormControl(this.cronForm.value.job_module_name),
-          job_agent_type: new FormControl(this.cronForm.value.job_agent_type),
-          job_params: new FormControl(data),
-        })
+        this.docParams = data
       })
   }
 
