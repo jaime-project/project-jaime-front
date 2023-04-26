@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { SpinnerComponent } from './spinner/spinner.component';
 import { CardComponent } from './card/card.component';
+import { SpinnerComponent } from './spinner/spinner.component';
 import { TitleComponent } from './title/title.component';
 
 
@@ -17,12 +17,12 @@ import { TitleComponent } from './title/title.component';
   declarations: [
     SpinnerComponent,
     CardComponent,
-    TitleComponent
+    TitleComponent,
   ],
   exports: [
     SpinnerComponent,
     CardComponent,
-    TitleComponent
+    TitleComponent,
   ]
 })
 export class ComponentsModule { }
