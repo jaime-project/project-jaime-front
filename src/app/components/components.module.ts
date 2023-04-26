@@ -6,6 +6,7 @@ import { MonacoEditorModule } from 'ngx-monaco-editor';
 import { CardComponent } from './card/card.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { TitleComponent } from './title/title.component';
+import { CodeComponent } from './code/code.component';
 
 
 @NgModule({
@@ -20,11 +21,13 @@ import { TitleComponent } from './title/title.component';
     SpinnerComponent,
     CardComponent,
     TitleComponent,
+    CodeComponent
   ],
   exports: [
     SpinnerComponent,
     CardComponent,
     TitleComponent,
+    CodeComponent
   ]
 })
 export class ComponentsModule { }

@@ -1,8 +1,5 @@
 <app-title title="Job Logs" mt="30"></app-title>
 
-
 <app-card>
-  <ngx-monaco-editor style="width: 100%; height: 800px;" [options]="{ theme: 'vs-dark', language: 'log'}"
-    [(ngModel)]="jobLogs">
-  </ngx-monaco-editor>
+  <app-code content="{{jobLogs}}" language="javascript" readOnly="true"></app-code>
 </app-card>
