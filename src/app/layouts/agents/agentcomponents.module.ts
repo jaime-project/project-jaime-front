@@ -20,8 +20,8 @@ import { YamlAgentComponent } from './yaml/yaml.component';
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
-    MonacoEditorModule,
-    ComponentsModule
+    ComponentsModule,
+    MonacoEditorModule
   ],
   declarations: [
     DetailAgentComponent,

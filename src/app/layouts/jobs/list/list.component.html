@@ -1,104 +1,81 @@
-<div class="row">
-  <div class="col-12">
-    <h4 class="m-b-0"><b i18n>Jobs List</b></h4>
-    <p class="text-muted m-t-0 font-12"></p>
-  </div>
-</div>
+<app-title title="Job list"></app-title>
 
-<div class="col-lg-12">
-  <div class="card m-t-30">
-    <div class="card-body">
-      <button class="btn btn-success" routerLink="/jobs/new" style="margin-right: 2%;" i18n>New Job</button>
-
-      <div ngbDropdown class="d-inline-block">
-        <button class="btn btn-danger" ngbDropdownToggle style="margin-right: 2%;" i18n>Delete by Status</button>
-        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-          <button ngbDropdownItem (click)="deleteByStatus(s)" *ngFor="let s of jobsStatus">{{s}}</button>
-        </div>
-      </div>
-
+<app-card>
+  <button class="btn btn-success" routerLink="/jobs/new" style="margin-right: 2%;" i18n>New Job</button>
+  <div ngbDropdown class="d-inline-block">
+    <button class="btn btn-danger" ngbDropdownToggle style="margin-right: 2%;" i18n>Delete by Status</button>
+    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+      <button ngbDropdownItem (click)="deleteByStatus(s)" *ngFor="let s of jobsStatus">{{s}}</button>
     </div>
   </div>
-</div>
+</app-card>
 
-<div class="col-lg-12">
-  <div class="card m-t-30">
-    <div class="card-body">
-      <div class="form-row">
-        <div class="col-1">
-          <label i18n><b>Page:</b></label> <input type="number" class="form-control" [(ngModel)]="page" min="1">
-        </div>
-        <div class="col-1">
-          <label i18n><b>Size:</b></label> <input type="number" class="form-control" [(ngModel)]="size" min="1">
-        </div>
-        <div class="col-3">
-          <label i18n><b>Filter:</b></label> <input type="text" class="form-control" [(ngModel)]="filterBy">
-        </div>
-      </div>
+<app-card>
+  <div class="form-row">
+    <div class="col-1">
+      <label i18n><b>Page:</b></label> <input type="number" class="form-control" [(ngModel)]="page" min="1">
+    </div>
+    <div class="col-1">
+      <label i18n><b>Size:</b></label> <input type="number" class="form-control" [(ngModel)]="size" min="1">
+    </div>
+    <div class="col-3">
+      <label i18n><b>Filter:</b></label> <input type="text" class="form-control" [(ngModel)]="filterBy">
     </div>
   </div>
-</div>
+</app-card>
 
-<div class="col-lg-12">
-  <div class="card m-t-30">
-    <div class="card-body">
-      <div class="row">
-        <div class="col-12">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col"></th>
-                <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('name')">Name</button></th>
-                <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('status')">Status</button></th>
-                <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('id')">ID</button></th>
-                <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('agentid')">Agent ID</button>
-                </th>
-                <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('agenttype')">Agent
-                    Type</button></th>
-                <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('module')">Module</button></th>
-                <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('startdate')">Start
-                    Date</button>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let jobShort of jobsShort">
-                <td>
-                  <div *ngIf="jobShort.status == 'RUNNING'" class="spinner-border text-success" role="status">
-                  </div>
-                </td>
-                <td>{{jobShort.name}}</td>
-                <td><b class="{{jobShort.status}}">{{jobShort.status}}</b></td>
-                <td>{{jobShort.id}}</td>
-                <td>{{jobShort.agent_id}}</td>
-                <td>{{jobShort.agent_type}}</td>
-                <td>{{jobShort.module_name}}</td>
-                <td>{{jobShort.start_date | date: 'short'}}</td>
-                <td>
-                  <button type="button" class="btn btn-primary" style="margin-right: 2%;" data-toggle="tooltip"
-                    title="Details" routerLink="/jobs/details/{{jobShort.id}}">
-                    <i class="fas fa-eye"></i>
-                  </button>
-                  <button type="button" class="btn btn-success" style="margin-right: 2%;" data-toggle="tooltip"
-                    title="Restart" (click)="changeStatus(jobShort.id, 'READY')">
-                    <i class="fas fa-refresh"></i>
-                  </button>
-                  <button type="button" class="btn btn-warning" style="margin-right: 2%;" data-toggle="tooltip"
-                    title="Cancel" (click)="changeStatus(jobShort.id, 'CANCEL')">
-                    <i class="fa fa-window-close"></i>
-                  </button>
-                  <button type="button" class="btn btn-danger" style="margin-right: 2%;" data-toggle="tooltip"
-                    title="Delete" (click)="deleteJob(jobShort.id)">
-                    <i class="far fa-trash-alt"></i>
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<app-card>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('name')">Name</button></th>
+        <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('status')">Status</button></th>
+        <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('id')">ID</button></th>
+        <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('agentid')">Agent ID</button>
+        </th>
+        <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('agenttype')">Agent
+            Type</button></th>
+        <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('module')">Module</button></th>
+        <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('startdate')">Start
+            Date</button>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let jobShort of jobsShort">
+        <td>
+          <div *ngIf="jobShort.status == 'RUNNING'" class="spinner-border text-success" role="status">
+          </div>
+        </td>
+        <td>{{jobShort.name}}</td>
+        <td><b class="{{jobShort.status}}">{{jobShort.status}}</b></td>
+        <td>{{jobShort.id}}</td>
+        <td>{{jobShort.agent_id}}</td>
+        <td>{{jobShort.agent_type}}</td>
+        <td>{{jobShort.module_name}}</td>
+        <td>{{jobShort.start_date | date: 'short'}}</td>
+        <td>
+          <button type="button" class="btn btn-primary" style="margin-right: 2%;" data-toggle="tooltip" title="Details"
+            routerLink="/jobs/details/{{jobShort.id}}">
+            <i class="fas fa-eye"></i>
+          </button>
+          <button type="button" class="btn btn-success" style="margin-right: 2%;" data-toggle="tooltip" title="Restart"
+            (click)="changeStatus(jobShort.id, 'READY')">
+            <i class="fas fa-refresh"></i>
+          </button>
+          <button type="button" class="btn btn-warning" style="margin-right: 2%;" data-toggle="tooltip" title="Cancel"
+            (click)="changeStatus(jobShort.id, 'CANCEL')">
+            <i class="fa fa-window-close"></i>
+          </button>
+          <button type="button" class="btn btn-danger" style="margin-right: 2%;" data-toggle="tooltip" title="Delete"
+            (click)="deleteJob(jobShort.id)">
+            <i class="far fa-trash-alt"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</app-card>
 
 <app-spinner *ngIf="pageLoading"></app-spinner>
