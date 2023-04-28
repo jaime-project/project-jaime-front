@@ -13,6 +13,7 @@ import { ModuleComponentsRoutes } from './modulecomponents.routing';
 import { NewDocComponent } from './newdoc/newdoc.component';
 import { NewMarkdownComponent } from './newmarkdown/newmarkdown.component';
 import { NewModuleComponent } from './newmodule/newmodule.component';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { NewModuleComponent } from './newmodule/newmodule.component';
     ReactiveFormsModule,
     NgbModule,
     MonacoEditorModule,
+    ComponentsModule,
     MarkdownModule.forChild()
   ],
   declarations: [

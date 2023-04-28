@@ -1,46 +1,28 @@
-<div class="col-12 m-t-30">
-  <h4 class="m-b-0"><b i18n>New Markdown</b></h4>
-</div>
+<app-title title="New Markdown"></app-title>
 
-<div class="col-lg-6">
-  <div class="card m-t-30">
-    <div class="card-body">
-      <div class="mb-3 col-12">
-        <label for="nameInput" class="form-label"><b i18n>Name</b></label>
-        <input type="text" class="form-control" id="nameInput" [(ngModel)]="name">
-      </div>
-      <div class="col-12" style="margin-bottom: 2%;">
-        <div class="custom-control custom-switch">
-          <input [(ngModel)]="codeEditSwitchActivated" type="checkbox" class="custom-control-input" id="customSwitch1">
-          <label class="custom-control-label" for="customSwitch1" i18n>Preview Markdown</label>
-        </div>
-      </div>
+<app-card column="6">
+  <div class="mb-3 col-12">
+    <label for="nameInput" class="form-label"><b i18n>Name</b></label>
+    <input type="text" class="form-control" id="nameInput" [(ngModel)]="name">
+  </div>
+  <div class="col-12" style="margin-bottom: 2%;">
+    <div class="custom-control custom-switch">
+      <input [(ngModel)]="codeEditSwitchActivated" type="checkbox" class="custom-control-input" id="customSwitch1">
+      <label class="custom-control-label" for="customSwitch1" i18n>Preview Markdown</label>
     </div>
   </div>
-</div>
+</app-card>
 
-<div class="card col-12" *ngIf="codeEditSwitchActivated">
-  <div class="card">
-    <div class="card-body">
-      <markdown ngPreserveWhitespaces emoji [data]="code">
-      </markdown>
-    </div>
-  </div>
-</div>
+<app-card *ngIf="codeEditSwitchActivated">
+  <markdown ngPreserveWhitespaces emoji [data]="code">
+  </markdown>
+</app-card>
 
-<div class="col-12" *ngIf="!codeEditSwitchActivated">
-  <div class="card">
-    <div class="card-body">
-      <ngx-monaco-editor style="width: 100%; height: 700px;" [options]="{ theme: 'vs-dark', language: 'markdown'}"
-        [(ngModel)]="code"></ngx-monaco-editor>
-    </div>
-  </div>
-</div>
+<app-card *ngIf="!codeEditSwitchActivated">
+  <ngx-monaco-editor style="width: 100%; height: 700px;" [options]="{ theme: 'vs-dark', language: 'markdown'}"
+    [(ngModel)]="code"></ngx-monaco-editor>
+</app-card>
 
-<div class="col-lg-6">
-  <div class="card m-t-30">
-    <div class="card-body">
-      <button type="button" class="btn btn-success" (click)="postMarkdown()">Create</button>
-    </div>
-  </div>
-</div>
+<app-card column="6">
+  <button type="button" class="btn btn-success" (click)="postMarkdown()">Create</button>
+</app-card>

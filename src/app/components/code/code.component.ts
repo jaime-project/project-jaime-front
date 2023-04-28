@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
+// TODO: hacer que funcione porque se pierde el valor del content del hijo al padre
 @Component({
   selector: 'app-code',
   templateUrl: './code.component.html',
