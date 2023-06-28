@@ -1,12 +1,14 @@
-<ngb-tabset #t="ngbTabset">
+<ul ngbNav #nav="ngbNav" class="nav-tabs">
 
-  <ngb-tab id="tab-details">
+  <li [ngbNavItem]="1">
     <ng-template ngbTabTitle><b i18n>Details</b></ng-template>
     <ng-template ngbTabContent>
 
       <app-detail-message></app-detail-message>
 
     </ng-template>
-  </ngb-tab>
+  </li>
 
-</ngb-tabset>
+</ul>
+
+<div [ngbNavOutlet]="nav"></div>

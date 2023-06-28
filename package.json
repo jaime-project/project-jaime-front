@@ -42,7 +42,10 @@
     "sweetalert2": "^11.4.32",
     "tslib": "^2.0.0",
     "yaml": "^1.10.2",
-    "zone.js": "~0.13.1"
+    "zone.js": "~0.13.1",
+    "@ng-bootstrap/ng-bootstrap": "14.0.1",
+    "ngx-markdown": "7.0.0",
+    "ngx-monaco-editor": "^12.0.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.1.2",

@@ -1,38 +1,40 @@
-<ngb-tabset #t="ngbTabset">
+<ul ngbNav #nav="ngbNav" class="nav-tabs">
 
-  <ngb-tab id="tab-requirements">
+  <li [ngbNavItem]="1">
     <ng-template ngbTabTitle><b i18n>Requirements</b></ng-template>
     <ng-template ngbTabContent>
       <app-requirements-config></app-requirements-config>
     </ng-template>
-  </ngb-tab>
+  </li>
 
-  <ngb-tab id="tab-objects">
+  <li [ngbNavItem]="2">
     <ng-template ngbTabTitle><b i18n>Yamls</b></ng-template>
     <ng-template ngbTabContent>
       <app-objects-config></app-objects-config>
     </ng-template>
-  </ngb-tab>
+  </li>
 
-  <ngb-tab id="tab-objects-get">
+  <li [ngbNavItem]="3">
     <ng-template ngbTabTitle><b i18n>Backup</b></ng-template>
     <ng-template ngbTabContent>
       <app-objectsGet-config></app-objectsGet-config>
     </ng-template>
-  </ngb-tab>
+  </li>
 
-  <ngb-tab id="tab-logs-jaime">
+  <li [ngbNavItem]="4">
     <ng-template ngbTabTitle><b i18n>Logs</b></ng-template>
     <ng-template ngbTabContent>
       <app-logs-config></app-logs-config>
     </ng-template>
-  </ngb-tab>
+  </li>
 
-  <ngb-tab id="tab-details">
+  <li [ngbNavItem]="5">
     <ng-template ngbTabTitle><b i18n>Vars</b></ng-template>
     <ng-template ngbTabContent>
       <app-configs-vars></app-configs-vars>
     </ng-template>
-  </ngb-tab>
+  </li>
 
-</ngb-tabset>
+</ul>
+
+<div [ngbNavOutlet]="nav"></div>
