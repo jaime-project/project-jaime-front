@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { LoginService } from 'src/app/services/login/login.service';
@@ -11,9 +11,9 @@ import { LoginService } from 'src/app/services/login/login.service';
 })
 export class SigninComponent implements OnInit {
 
-  userPassForm = new FormGroup({
-    user: new FormControl(''),
-    pass: new FormControl('')
+  userPassForm = new UntypedFormGroup({
+    user: new UntypedFormControl(''),
+    pass: new UntypedFormControl('')
   });
 
   constructor(private route: Router, private loginService: LoginService, private toastr: ToastrService) { }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Hotkey, HotkeysService } from 'angular2-hotkeys';
 import { ToastrService } from 'ngx-toastr';
@@ -24,13 +24,13 @@ export class NewJobComponent implements OnInit {
   docParams: string = ''
   loading: boolean = false
 
-  jobForm = new FormGroup({
-    name: new FormControl(''),
-    repoName: new FormControl(''),
-    moduleName: new FormControl(''),
-    docName: new FormControl(''),
-    agentType: new FormControl(''),
-    params: new FormControl(),
+  jobForm = new UntypedFormGroup({
+    name: new UntypedFormControl(''),
+    repoName: new UntypedFormControl(''),
+    moduleName: new UntypedFormControl(''),
+    docName: new UntypedFormControl(''),
+    agentType: new UntypedFormControl(''),
+    params: new UntypedFormControl(),
   });
 
   constructor(private route: Router, private jobService: JobService, private moduleService: ModuleService, private reposService: ReposService, private agent_service: AgentService, private docsService: DocsService, private toastr: ToastrService, private hotkeysService: HotkeysService) {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Hotkey, HotkeysService } from 'angular2-hotkeys';
 import { ToastrService } from 'ngx-toastr';
@@ -25,15 +25,15 @@ export class NewCronComponent implements OnInit {
   agentsTypes: string[] = []
   loading: boolean = false
 
-  cronForm = new FormGroup({
-    name: new FormControl(''),
-    cron_expression: new FormControl(''),
-    job_module_repo: new FormControl(''),
-    job_module_name: new FormControl(''),
-    job_agent_type: new FormControl(''),
-    id: new FormControl(''),
-    status: new FormControl(''),
-    job_params: new FormControl()
+  cronForm = new UntypedFormGroup({
+    name: new UntypedFormControl(''),
+    cron_expression: new UntypedFormControl(''),
+    job_module_repo: new UntypedFormControl(''),
+    job_module_name: new UntypedFormControl(''),
+    job_agent_type: new UntypedFormControl(''),
+    id: new UntypedFormControl(''),
+    status: new UntypedFormControl(''),
+    job_params: new UntypedFormControl()
   });
 
   constructor(private route: Router, private cronService: CronService, private moduleService: ModuleService, private reposService: ReposService, private agent_service: AgentService, private docsService: DocsService, private toastr: ToastrService, private hotkeysService: HotkeysService) {

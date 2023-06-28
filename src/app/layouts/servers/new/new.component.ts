@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Hotkey, HotkeysService } from 'angular2-hotkeys';
 import { ToastrService } from 'ngx-toastr';
@@ -12,12 +12,12 @@ import { ServerService } from 'src/app/services/servers/servers.service';
 })
 export class NewServerComponent implements OnInit {
 
-  serverForm = new FormGroup({
-    name: new FormControl(''),
-    host: new FormControl(''),
-    port: new FormControl(''),
-    user: new FormControl(''),
-    password: new FormControl(''),
+  serverForm = new UntypedFormGroup({
+    name: new UntypedFormControl(''),
+    host: new UntypedFormControl(''),
+    port: new UntypedFormControl(''),
+    user: new UntypedFormControl(''),
+    password: new UntypedFormControl(''),
   });
 
   constructor(private route: Router, private serversService: ServerService, private toastr: ToastrService, private hotkeysService: HotkeysService) {

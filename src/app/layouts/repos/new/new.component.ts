@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ReposService } from 'src/app/services/modules/repos.service';
@@ -16,17 +16,17 @@ export class NewRepoComponent implements OnInit {
   selectedRepoType: string = ""
   butonClicked: boolean = false
 
-  repoLocalForm = new FormGroup({
-    name: new FormControl(''),
+  repoLocalForm = new UntypedFormGroup({
+    name: new UntypedFormControl(''),
   });
 
-  repoGitForm = new FormGroup({
-    name: new FormControl(''),
-    url: new FormControl(''),
-    branch: new FormControl(''),
-    path: new FormControl(''),
-    user: new FormControl(''),
-    pass: new FormControl(''),
+  repoGitForm = new UntypedFormGroup({
+    name: new UntypedFormControl(''),
+    url: new UntypedFormControl(''),
+    branch: new UntypedFormControl(''),
+    path: new UntypedFormControl(''),
+    user: new UntypedFormControl(''),
+    pass: new UntypedFormControl(''),
   });
 
   constructor(private route: Router, private reposService: ReposService, private toastr: ToastrService) { }

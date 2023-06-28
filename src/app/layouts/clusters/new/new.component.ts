@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Hotkey, HotkeysService } from 'angular2-hotkeys';
 import { ToastrService } from 'ngx-toastr';
@@ -13,11 +13,11 @@ import { ClustersService } from 'src/app/services/clusters/clusters.service';
 })
 export class NewClusterComponent implements OnInit {
 
-  clusterForm = new FormGroup({
-    name: new FormControl(''),
-    url: new FormControl(''),
-    token: new FormControl(''),
-    type: new FormControl(''),
+  clusterForm = new UntypedFormGroup({
+    name: new UntypedFormControl(''),
+    url: new UntypedFormControl(''),
+    token: new UntypedFormControl(''),
+    type: new UntypedFormControl(''),
   });
 
   constructor(private route: Router, private agentService: AgentService, private clustersService: ClustersService, private toastr: ToastrService, private hotkeysService: HotkeysService) {
