@@ -51,7 +51,7 @@ const appInitializerFn = (appConfig: AppConfigService) => {
     HotkeyModule.forRoot(),
     ToastrModule.forRoot(),
     MonacoEditorModule.forRoot(),
-    RouterModule.forRoot(Approutes, { useHash: false, relativeLinkResolution: 'legacy' }),
+    RouterModule.forRoot(Approutes, { useHash: false }),
   ],
   providers: [
     AppConfigService,
