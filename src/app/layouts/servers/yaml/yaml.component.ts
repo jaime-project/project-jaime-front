@@ -34,7 +34,7 @@ export class YamlServerComponent implements OnInit {
         this.server = data;
 
         let doc = new Document()
-        doc.contents = data
+        doc.contents = data as any
         this.contentYaml = doc.toString()
       })
   }

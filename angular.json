@@ -28,10 +28,11 @@
               {
                 "glob": "**/*",
                 "input": "node_modules/monaco-editor",
-                "output": "assets/monaco-editor"
+                "output": "/assets/monaco/"
               }
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.css",
               "src/assets/scss/style.scss",
               "node_modules/ngx-toastr/toastr.css"
             ],

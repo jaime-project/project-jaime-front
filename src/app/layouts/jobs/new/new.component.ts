@@ -95,7 +95,7 @@ export class NewJobComponent implements OnInit {
     }
 
     let doc = new Document()
-    doc.contents = finalJson
+    doc.contents = finalJson as any
     let finalYaml = doc.toString()
 
     console.log(finalYaml)

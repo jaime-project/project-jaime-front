@@ -33,7 +33,7 @@ export class YamlClusterComponent implements OnInit {
         this.cluster = data;
 
         let doc = new Document()
-        doc.contents = data
+        doc.contents = data as any
         this.contentYaml = doc.toString()
       })
   }
@@ -50,7 +50,7 @@ export class YamlClusterComponent implements OnInit {
     }).then(result => {
       if (result.isConfirmed) {
         this.clustersService.putCluster(parse(modifyYaml))
-          .subscribe(() =>{
+          .subscribe(() => {
             this.toastr.success($localize`Cluster updated`)
             this.route.navigate(['clusters'])
           })

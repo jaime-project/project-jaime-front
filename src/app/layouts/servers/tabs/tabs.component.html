@@ -1,8 +1,8 @@
 <ul ngbNav #nav="ngbNav" class="nav-tabs">
 
   <li [ngbNavItem]="1">
-    <ng-template ngbTabTitle><b i18n>Details</b></ng-template>
-    <ng-template ngbTabContent>
+    <a ngbNavLink><b i18n>Details</b></a>
+    <ng-template ngbNavContent>
 
       <app-detail-server></app-detail-server>
 
@@ -10,8 +10,8 @@
   </li>
 
   <li [ngbNavItem]="2">
-    <ng-template ngbTabTitle><b i18n>Yaml</b></ng-template>
-    <ng-template ngbTabContent>
+    <a ngbNavLink><b i18n>Yaml</b></a>
+    <ng-template ngbNavContent>
 
       <app-yaml-server></app-yaml-server>
 

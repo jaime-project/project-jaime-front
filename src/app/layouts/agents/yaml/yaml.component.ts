@@ -29,7 +29,7 @@ export class YamlAgentComponent implements OnInit {
       this.agent = data
 
       let doc = new Document()
-      doc.contents = data
+      doc.contents = data as any
       this.contentYaml = doc.toString()
     })
   }
