@@ -4,9 +4,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MonacoEditorModule } from 'ngx-monaco-editor-v2';
 import { CardComponent } from './card/card.component';
+import { CodeComponent } from './code/code.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { TitleComponent } from './title/title.component';
-import { CodeComponent } from './code/code.component';
 
 
 @NgModule({
@@ -21,13 +21,13 @@ import { CodeComponent } from './code/code.component';
     SpinnerComponent,
     CardComponent,
     TitleComponent,
-    CodeComponent
+    CodeComponent,
   ],
   exports: [
     SpinnerComponent,
     CardComponent,
     TitleComponent,
-    CodeComponent
+    CodeComponent,
   ]
 })
 export class ComponentsModule { }

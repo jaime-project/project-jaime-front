@@ -2,6 +2,8 @@ import { Routes } from '@angular/router';
 import { ListServerComponent } from './list/list.component';
 import { NewServerComponent } from './new/new.component';
 import { TabsServerComponent } from './tabs/tabs.component';
+import { YamlServerComponent } from './yaml/yaml.component';
+import { DetailServerComponent } from './detail/detail.component';
 
 
 export const ServerComponentsRoutes: Routes = [
@@ -41,6 +43,28 @@ export const ServerComponentsRoutes: Routes = [
 					]
 				}
 			},
+			// {
+			// 	path: 'servers/details/:name',
+			// 	component: DetailServerComponent,
+			// 	data: {
+			// 		title: 'detail',
+			// 		urls: [
+			// 			{ title: 'ngComponent' },
+			// 			{ title: 'servers' }
+			// 		]
+			// 	}
+			// },
+			// {
+			// 	path: 'servers/details/:name/yaml',
+			// 	component: YamlServerComponent,
+			// 	data: {
+			// 		title: 'yaml',
+			// 		urls: [
+			// 			{ title: 'ngComponent' },
+			// 			{ title: 'servers' }
+			// 		]
+			// 	}
+			// },
 		]
 	}
 ];

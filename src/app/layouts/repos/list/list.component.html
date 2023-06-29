@@ -28,9 +28,9 @@
 
   <ul ngbNav #nav="ngbNav" class="nav-tabs">
 
-    <li [ngbNavItem]="1">
-      <ng-template ngbTabTitle><b i18n>Local</b></ng-template>
-      <ng-template ngbTabContent>
+    <li ngbNavItem [ngbNavItem]="1">
+      <a ngbNavLink><b i18n>Local</b></a>
+      <ng-template ngbNavContent>
         <div class="col-lg-12">
           <div class="row text-center text-lg-start">
             <div class="col-lg-1" *ngFor="let repo of reposLocal">
@@ -71,9 +71,9 @@
       </ng-template>
     </li>
 
-    <li [ngbNavItem]="2">
-      <ng-template ngbTabTitle><b i18n>GIT</b></ng-template>
-      <ng-template ngbTabContent>
+    <li ngbNavItem [ngbNavItem]="2">
+      <a ngbNavLink><b i18n>Git</b></a>
+      <ng-template ngbNavContent>
         <div class="col-lg-12">
           <div class="row text-center text-lg-start">
             <div class="col-lg-1" *ngFor="let repo of reposGit">

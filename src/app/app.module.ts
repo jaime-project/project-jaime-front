@@ -6,7 +6,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HotkeyModule } from 'angular2-hotkeys';
 import { MarkdownModule } from 'ngx-markdown';
 import { MonacoEditorModule } from 'ngx-monaco-editor-v2';
 import { PERFECT_SCROLLBAR_CONFIG, PerfectScrollbarConfigInterface, PerfectScrollbarModule } from 'ngx-om-perfect-scrollbar';
@@ -48,7 +47,6 @@ const appInitializerFn = (appConfig: AppConfigService) => {
     HttpClientModule,
     PerfectScrollbarModule,
     NgbModule,
-    HotkeyModule.forRoot(),
     ToastrModule.forRoot(),
     MonacoEditorModule.forRoot(),
     RouterModule.forRoot(Approutes, { useHash: false }),

@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TabsClusterComponent implements OnInit {
 
+  selectedTabId = 1
+
   constructor() { }
 
   ngOnInit(): void {

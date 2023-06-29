@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TabsRepoComponent implements OnInit {
 
+  selectedTabId = 1
+
   constructor() { }
 
   ngOnInit(): void {

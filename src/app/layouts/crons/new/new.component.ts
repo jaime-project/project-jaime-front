@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Hotkey, HotkeysService } from 'angular2-hotkeys';
 import { ToastrService } from 'ngx-toastr';
 import { AgentService } from 'src/app/services/agents/agents.service';
 import { CronService } from 'src/app/services/crons/cron.service';
@@ -36,12 +35,7 @@ export class NewCronComponent implements OnInit {
     job_params: new UntypedFormControl()
   });
 
-  constructor(private route: Router, private cronService: CronService, private moduleService: ModuleService, private reposService: ReposService, private agent_service: AgentService, private docsService: DocsService, private toastr: ToastrService, private hotkeysService: HotkeysService) {
-    this.hotkeysService.add(new Hotkey(['alt+s'], (event: KeyboardEvent): boolean => {
-      this.postCron()
-      return false;
-    }));
-  }
+  constructor(private route: Router, private cronService: CronService, private moduleService: ModuleService, private reposService: ReposService, private agent_service: AgentService, private docsService: DocsService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
 
