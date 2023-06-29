@@ -15,7 +15,10 @@
           "options": {
             "allowedCommonJsDependencies": [
               "ng2-charts",
-              "chart.js"
+              "chart.js",
+              "mousetrap",
+              "file-saver",
+              "sweetalert2"
             ],
             "outputPath": "dist/project-jaime-front",
             "index": "src/index.html",
