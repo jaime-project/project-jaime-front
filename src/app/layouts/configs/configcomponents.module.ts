@@ -11,7 +11,6 @@ import { ObjectsComponent } from './objects/objects.component';
 import { ObjectsGetComponent } from './objectsGet/objectsGet.component';
 import { RequirementsComponent } from './requirements/requirements.component';
 import { TabsConfigComponent } from './tabs/tabs.component';
-import { VarConfigComponent } from './vars/var.component';
 
 
 @NgModule({
@@ -26,7 +25,6 @@ import { VarConfigComponent } from './vars/var.component';
   ],
   declarations: [
     TabsConfigComponent,
-    VarConfigComponent,
     RequirementsComponent,
     ObjectsComponent,
     ObjectsGetComponent,
