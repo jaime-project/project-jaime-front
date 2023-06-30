@@ -20,7 +20,7 @@
               "file-saver",
               "sweetalert2"
             ],
-            "outputPath": "dist/project-jaime-front",
+            "outputPath": "dist/project-jaime-front/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -107,6 +107,69 @@
               "src/assets"
             ]
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/project-jaime-front/server",
+            "main": "server.ts",
+            "tsConfig": "src/tsconfig.server.json",
+            "buildOptimizer": false,
+            "optimization": false,
+            "sourceMap": true,
+            "extractLicenses": false,
+            "vendorChunk": true
+          },
+          "configurations": {
+            "production": {
+              "buildOptimizer": true,
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "sourceMap": false,
+              "extractLicenses": true,
+              "vendorChunk": false
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "project-jaime-front:build:development",
+              "serverTarget": "project-jaime-front:server:development"
+            },
+            "production": {
+              "browserTarget": "project-jaime-front:build:production",
+              "serverTarget": "project-jaime-front:server:production"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "project-jaime-front:build:production",
+              "serverTarget": "project-jaime-front:server:production"
+            },
+            "development": {
+              "browserTarget": "project-jaime-front:build:development",
+              "serverTarget": "project-jaime-front:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     },

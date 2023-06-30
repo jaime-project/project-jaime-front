@@ -1,6 +1,6 @@
-import { HttpClient, HttpErrorResponse, HttpEventType } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { throwError } from 'rxjs';
 import { AppConfigService } from '../AppConfigService';
@@ -32,11 +32,11 @@ export class ErrorService {
     this.toastr.error(errorBody, errorTittle)
 
     let errorMessage = '';
-    if (error.error instanceof ErrorEvent) {
+    // if (error.error instanceof ErrorEvent) {
       errorMessage = errorBody;
-    } else {
-      errorMessage = `Error Code: ${error.status}\nMessage: ${errorBody}`;
-    }
+    // } else {
+      // errorMessage = `Error Code: ${error.status}\nMessage: ${errorBody}`;
+    // }
     return throwError(errorMessage);
   }
 }

@@ -15,6 +15,7 @@ export class LoginService {
   constructor(private environment: AppConfigService, private http: HttpClient) { }
 
   login(user: string, password: string): Observable<any> {
+    console.log(this.environment.config.backendURL + '/api/v1/login/')
     return this.http.post(this.environment.config.backendURL + '/api/v1/login/', { 'user': user, 'password': password }, { responseType: 'text' })
   }
 }
