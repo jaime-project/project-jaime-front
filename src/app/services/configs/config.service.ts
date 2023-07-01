@@ -89,23 +89,4 @@ export class ConfigService {
         })
       )
   }
-
-  getConfigsVars(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/vars`)
-      .pipe(
-        catchError((error: HttpErrorResponse) => {
-          return this.errorService.httpError(error);
-        })
-      )
-  }
-
-  postConfigsVars(vars: { [key: string]: any }): Observable<any> {
-    const url = `${this.apiUrl}/vars`
-    return this.http.put(url, vars)
-      .pipe(
-        catchError((error: HttpErrorResponse) => {
-          return this.errorService.httpError(error);
-        })
-      )
-  }
 }
