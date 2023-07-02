@@ -35,14 +35,14 @@
             <div class="col-lg-1" *ngFor="let moduleName of modulesName">
               <div class="m-t-30" style="border-bottom-width: 10px;">
                 <a class="d-block h-100" routerLink="/repos/{{repo}}/modules/details/code/{{moduleName}}">
-                  <div>
+                  <div class="d-flex justify-content-center">
                     <i class="mdi mdi-code-tags fa-4x" style="margin-bottom: 5%;margin-top: 5%;"></i>
                   </div>
-                  <div>
-                    <h5><b>{{moduleName}}</b></h5>
+                  <div class="d-flex justify-content-center text-center">
+                    <h6><b>{{moduleName}}</b></h6>
                   </div>
                 </a>
-                <div>
+                <div class="d-flex justify-content-center">
                   <button type="button" class="btn btn-danger" style="margin-right: 0%;"
                     (click)="deleteModule(moduleName)" data-toggle="tooltip" title="Delete">
                     <i class="far fa-trash-alt"></i></button>
@@ -62,14 +62,14 @@
             <div class="col-lg-1" *ngFor="let docName of docsName">
               <div class="m-t-30" style="border-bottom-width: 10px;">
                 <a class="d-block h-100" routerLink="/repos/{{repo}}/modules/details/docs/{{docName}}">
-                  <div>
+                  <div class="d-flex justify-content-center">
                     <i class="mdi mdi-file fa-3x" style="margin-bottom: 5%;margin-top: 5%;"></i>
                   </div>
-                  <div>
-                    <h5><b>{{docName}}</b></h5>
+                  <div class="d-flex justify-content-center text-center">
+                    <h6><b>{{docName}}</b></h6>
                   </div>
                 </a>
-                <div>
+                <div class="d-flex justify-content-center">
                   <button type="button" class="btn btn-danger" style="margin-right: 0%;" (click)="deleteDoc(docName)"
                     data-toggle="tooltip" title="Delete">
                     <i class="far fa-trash-alt"></i></button>
@@ -89,14 +89,14 @@
             <div class="col-lg-1" *ngFor="let markdownName of markdownsName">
               <div class="m-t-30" style="border-bottom-width: 10px;">
                 <a class="d-block h-100" routerLink="/repos/{{repo}}/modules/details/markdown/{{markdownName}}">
-                  <div>
+                  <div class="d-flex justify-content-center">
                     <i class="mdi mdi-markdown fa-4x" style="margin-bottom: 5%;margin-top: 5%;"></i>
                   </div>
-                  <div>
-                    <h5><b>{{markdownName}}</b></h5>
+                  <div class="d-flex justify-content-center text-center">
+                    <h6><b>{{markdownName}}</b></h6>
                   </div>
                 </a>
-                <div>
+                <div class="d-flex justify-content-center">
                   <button type="button" class="btn btn-danger" style="margin-right: 0%;"
                     (click)="deleteMarkdown(markdownName)" data-toggle="tooltip" title="Delete">
                     <i class="far fa-trash-alt"></i></button>

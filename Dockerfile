@@ -1,16 +1,16 @@
 # BUILDER
 # ---------------------------------------
 
-FROM node:12-alpine AS builder
+FROM node:18-alpine AS builder
 
 WORKDIR /app
 
 ENV PATH /app/node_modules/.bin:$PATH
 
-COPY . ./
+COPY . .
 RUN npm install
 
-RUN npm run-script build
+RUN npm run build
 
 # APP
 # ---------------------------------------
