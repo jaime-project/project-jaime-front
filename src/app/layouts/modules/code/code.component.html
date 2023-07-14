@@ -1,0 +1,21 @@
+<app-title title="Module Code"></app-title>
+
+<div class="col-12" style="margin-bottom: 2%;">
+  <div class="form-check form-switch custom-switch">
+    <input [(ngModel)]="codeEditSwitchActivated" class="form-check-input" type="checkbox" role="switch">
+    <label class="form-check-label">Edit code</label>
+  </div>
+</div>
+
+<app-card *ngIf="!codeEditSwitchActivated">
+  <ngx-monaco-editor style="width: 100%; height: 700px;"
+    [options]="{ theme: 'vs-dark', language: 'python', readOnly: true}" [(ngModel)]="moduleCode">
+  </ngx-monaco-editor>
+</app-card>
+
+<app-card *ngIf="codeEditSwitchActivated">
+  <ngx-monaco-editor style="width: 100%; height: 700px;"
+    [options]="{ theme: 'vs-dark', language: 'python', readOnly: false}" [(ngModel)]="moduleCode">
+  </ngx-monaco-editor>
+  <button type="button" class="btn btn-success" (click)="putModule()" i18n>Update</button>
+</app-card>

@@ -1,0 +1,38 @@
+.btn {
+    margin-right: 2%;
+    margin-left: 2%;
+}
+
+.btn-download {
+    background-color: orange;
+    color: aliceblue;
+}
+
+.btn-zip {
+    background-color: cornflowerblue;
+    color: aliceblue;
+}
+
+.btn-options {
+    background-color: darkorchid;
+    color: aliceblue;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+
+a:visited {
+    text-decoration: none;
+}
+
+
+a:hover {
+    text-decoration: none;
+}
+
+
+a:active {
+    text-decoration: none;
+}

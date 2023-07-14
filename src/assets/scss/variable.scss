@@ -1,9 +1,9 @@
 /*******************************/
 // Custom Variables
 /*******************************/
+@use "sass:math";
 
 /*Theme Colors*/
-
 $themecolor: #398bf7;
 $themecolor-dark: #028ee1;
 $themecolor-alt: #26c6da;
@@ -25,7 +25,7 @@ $topbar-navbrand-padding: 0 10px 0 10px;
 /*Sidebar Colors*/
 
 $sidebar: $theme-light;
-$sidebar-alt: #e8eff0;
+$sidebar-alt: #fff;
 $sidebar-text: #fff;
 $sidebar-icons: #fff;
 $sidebar-text-dark: #212529;
@@ -52,7 +52,7 @@ $transparent-dark-bg: rgba(0, 0, 0, 0.05);
 
 $lft: left;
 $rgt: right;
-$card-alt: #e4e9ef;
+$card-alt: #fff;
 
 %square {
   border-radius: 0px;
@@ -142,22 +142,21 @@ $light: $gray-100 !default;
 $dark: $gray-800 !default;
 $cyan: $cyan !default;
 $orange: $orange !default;
-$theme-colors: () !default;
-$theme-colors: map-merge(
-  (
-    "primary": $primary,
-    "secondary": $secondary,
-    "success": $success,
-    "info": $info,
-    "warning": $warning,
-    "danger": $danger,
-    "light": $light,
-    "dark": $dark,
-    "cyan": $cyan,
-    "orange": $orange,
-    "purple": $purple,
-  ),
-  $theme-colors
+$theme-colors: (
+  ) !default;
+$theme-colors: map-merge(("primary": $primary,
+      "secondary": $secondary,
+      "success": $success,
+      "info": $info,
+      "warning": $warning,
+      "danger": $danger,
+      "light": $light,
+      "dark": $dark,
+      "cyan": $cyan,
+      "orange": $orange,
+      "purple": $purple,
+    ),
+    $theme-colors
 );
 
 // Quickly modify global styling by enabling or disabling optional features.
@@ -198,7 +197,7 @@ $h4-font-size: 18px !default;
 $h5-font-size: 16px !default;
 $h6-font-size: 14px !default;
 
-$headings-margin-bottom: (1rem / 2) !default;
+$headings-margin-bottom: math.div(1rem, 2) !default;
 $headings-font-weight: 400 !default;
 $headings-color: inherit !default;
 
@@ -256,7 +255,7 @@ $grid-breakpoints: (
   md: 768px,
   lg: 992px,
   xl: 1600px,
-) !default;
+  ) !default;
 
 //Navbar
 

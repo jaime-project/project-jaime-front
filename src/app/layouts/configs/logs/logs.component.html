@@ -1,0 +1,7 @@
+<app-title title="Jaime Logs" mt="30"></app-title>
+
+<app-card>
+  <ngx-monaco-editor style="width: 100%; height: 700px;"
+    [options]="{ theme: 'vs-dark', language: 'c', readOnly: false}" [(ngModel)]="logsContent">
+  </ngx-monaco-editor>
+</app-card>

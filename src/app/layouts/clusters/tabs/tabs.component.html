@@ -1,0 +1,19 @@
+<ul ngbNav #nav="ngbNav" class="nav-tabs" [(activeId)]="selectedTabId">
+
+  <li ngbNavItem [ngbNavItem]="1">
+    <a ngbNavLink><b i18n>Details</b></a>
+    <ng-template ngbNavContent>
+      <app-detail-cluster></app-detail-cluster>
+    </ng-template>
+  </li>
+
+  <li ngbNavItem [ngbNavItem]="2">
+    <a ngbNavLink><b i18n>Yaml</b></a>
+  </li>
+
+</ul>
+
+<div [ngbNavOutlet]="nav" class="mt-2"></div>
+
+<!-- TODO: arreglar bug con monaco -->
+<app-yaml-cluster *ngIf="selectedTabId == 2"></app-yaml-cluster>

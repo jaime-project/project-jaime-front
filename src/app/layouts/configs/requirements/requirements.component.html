@@ -1,0 +1,13 @@
+<app-title title="requeriments.txt" mt="30"></app-title>
+
+<app-card>
+  <div class="row">
+    <div class="col-12 m-b-30">
+      <button class="btn btn-success" (click)="postRequeriments()" i18n>Pip install</button>
+    </div>
+  </div>
+  <ngx-monaco-editor style="width: 100%; height: 600px;" [options]="{ theme: 'vs-dark', language: 'c', readOnly: false}"
+    [(ngModel)]="requirementsText">
+  </ngx-monaco-editor>
+</app-card>
+<app-spinner *ngIf="pageLoading"></app-spinner>

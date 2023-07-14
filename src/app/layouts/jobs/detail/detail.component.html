@@ -1,0 +1,72 @@
+<app-title title="Job Detail" mt="30"></app-title>
+
+<div class="row">
+  <div class="col-6">
+    <app-card>
+      <div class="mb-3">
+        <label class="form-label"><b i18n>ID</b></label>
+        <p class="card-text">{{job.id}}</p>
+      </div>
+      <div class="mb-3">
+        <label class="form-label"><b i18n>Status</b></label>
+        <p class="card-text">{{job.status}}</p>
+      </div>
+      <div class="mb-3">
+        <label class="form-label"><b i18n>Start Date</b></label>
+        <p class="card-text">{{job.start_date | date :'short'}}</p>
+      </div>
+      <div class="mb-3">
+        <label class="form-label"><b i18n>Running Date</b></label>
+        <p class="card-text">{{job.running_date | date :'short'}}</p>
+      </div>
+      <div class="mb-3">
+        <label class="form-label"><b i18n>Terminated Date</b></label>
+        <p class="card-text">{{job.terminated_date | date :'short'}}</p>
+      </div>
+    </app-card>
+  </div>
+
+  <div class="col-6">
+    <app-card>
+      <form>
+        <div>
+          <label class="form-label"><b i18n>Agent</b></label>
+          <p class="card-text">{{job.agent.id}}</p>
+        </div>
+        <div class="mb-3">
+          <label class="form-label"><b i18n>Type</b></label>
+          <p class="card-text">{{job.agent.type}}</p>
+        </div>
+      </form>
+    </app-card>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-6">
+    <app-card>
+      <form>
+        <div class="mb-3">
+          <label class="form-label"><b i18n>Params</b></label>
+          <p class="card-text" style="white-space: pre-wrap;">{{paramsYaml}}</p>
+        </div>
+      </form>
+    </app-card>
+  </div>
+
+  <div class="col-6">
+    <app-card>
+      <form>
+        <div class="mb-3">
+          <label class="form-label"><b i18n>Module</b></label>
+          <p class="card-text">{{job.module_name}}</p>
+        </div>
+        <div class="mb-3">
+          <label class="form-label"><b i18n>Repository</b></label>
+          <p class="card-text">{{job.module_repo}}</p>
+        </div>
+      </form>
+    </app-card>
+  </div>
+</div>

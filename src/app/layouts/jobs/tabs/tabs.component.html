@@ -1,0 +1,31 @@
+<ul ngbNav #nav="ngbNav" class="nav-tabs" [(activeId)]="selectedTabId">
+
+  <li ngbNavItem [ngbNavItem]="1">
+    <a ngbNavLink><b i18n>Details</b></a>
+    <ng-template ngbNavContent>
+      <app-detail-job></app-detail-job>
+    </ng-template>
+  </li>
+
+  <li ngbNavItem [ngbNavItem]="2">
+    <a ngbNavLink><b i18n>Yaml</b></a>
+  </li>
+
+  <li ngbNavItem [ngbNavItem]="3">
+    <a ngbNavLink><b i18n>Logs</b></a>
+  </li>
+
+  <li [ngbNavItem]="4">
+    <a ngbNavLink><b i18n>Workspace</b></a>
+    <ng-template ngbNavContent>
+      <app-workspace-job></app-workspace-job>
+    </ng-template>
+  </li>
+
+</ul>
+
+<div [ngbNavOutlet]="nav" class="mt-2"></div>
+
+<!-- TODO: arreglar bug con monaco -->
+<app-yaml-job *ngIf="selectedTabId == 2"></app-yaml-job>
+<app-log-job *ngIf="selectedTabId == 3"></app-log-job>

@@ -1,22 +1,21 @@
 import { CommonModule, LocationStrategy, PathLocationStrategy } from '@angular/common';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HotkeyModule } from 'angular2-hotkeys';
 import { MarkdownModule } from 'ngx-markdown';
-import { MonacoEditorModule } from 'ngx-monaco-editor';
-import { PerfectScrollbarConfigInterface, PerfectScrollbarModule, PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
+import { MonacoEditorModule } from 'ngx-monaco-editor-v2';
+import { PERFECT_SCROLLBAR_CONFIG, PerfectScrollbarConfigInterface, PerfectScrollbarModule } from 'ngx-om-perfect-scrollbar';
 import { ToastrModule } from 'ngx-toastr';
 import { Approutes } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FullComponent } from './layouts/full/full.component';
 import { AppConfigService } from './services/AppConfigService';
 import { InterceptorService } from './services/interceptos/interceptor.service';
-import { SidebarComponent } from './shared/sidebar/sidebar.component';
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -48,10 +47,9 @@ const appInitializerFn = (appConfig: AppConfigService) => {
     HttpClientModule,
     PerfectScrollbarModule,
     NgbModule,
-    HotkeyModule.forRoot(),
     ToastrModule.forRoot(),
     MonacoEditorModule.forRoot(),
-    RouterModule.forRoot(Approutes, { useHash: false, relativeLinkResolution: 'legacy' }),
+    RouterModule.forRoot(Approutes, { useHash: false }),
   ],
   providers: [
     AppConfigService,

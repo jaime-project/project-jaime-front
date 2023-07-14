@@ -1,0 +1,7 @@
+<app-title title="Repo yaml" mt="30"></app-title>
+
+<app-card>
+  <ngx-monaco-editor style="width: 100%; height: 700px;"
+    [options]="{ theme: 'vs-dark', language: 'yaml', readOnly: true}" [(ngModel)]="contentYaml">
+  </ngx-monaco-editor>
+</app-card>

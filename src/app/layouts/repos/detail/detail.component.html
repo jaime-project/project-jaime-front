@@ -1,0 +1,35 @@
+<app-title title="Repo Detail" mt="30"></app-title>
+
+
+<app-card column="6">
+  <form>
+    <div class="mb-3 col-6">
+      <label class="form-label"><b i18n>Name</b></label>
+      <p class="card-text">{{repo.name}}</p>
+    </div>
+    <div class="mb-3 col-6">
+      <label class="form-label"><b i18n>Type</b></label>
+      <p class="card-text">{{repo.type}}</p>
+    </div>
+    <div class="mb-3 col-6" *ngIf="repo.type == 'GIT'">
+      <label class="form-label"><b i18n>URL</b></label>
+      <p class="card-text">{{repo.git_url}}</p>
+    </div>
+    <div class="mb-3 col-6" *ngIf="repo.type == 'GIT'">
+      <label class="form-label"><b i18n>Branch</b></label>
+      <p class="card-text">{{repo.git_branch}}</p>
+    </div>
+    <div class="mb-3 col-6" *ngIf="repo.type == 'GIT'">
+      <label class="form-label"><b i18n>Path</b></label>
+      <p class="card-text">{{repo.git_path}}</p>
+    </div>
+    <div class="mb-3 col-6" *ngIf="repo.type == 'GIT'">
+      <label class="form-label"><b i18n>User</b></label>
+      <p class="card-text">{{repo.git_user}}</p>
+    </div>
+    <div class="mb-3 col-6" *ngIf="repo.type == 'GIT'">
+      <label class="form-label"><b i18n>Pass</b></label>
+      <p class="card-text">{{repo.git_pass}}</p>
+    </div>
+  </form>
+</app-card>

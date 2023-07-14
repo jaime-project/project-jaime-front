@@ -11,8 +11,9 @@
 
 ## :gear: Requisitos
 
-- node 12
-- npm 6
+- node 18
+- npm 9
+- Angular 16
 
 ## :tada: Uso
 
@@ -27,5 +28,3 @@ npm start
 ## :books: Referencias
 
 - [Iconos](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md)
-
-

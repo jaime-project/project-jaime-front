@@ -1,0 +1,31 @@
+<nav class="sidebar-nav">
+
+  <ul id="sidebarnav">
+
+    <li class="sidebar-item" style="padding-left: 20%;padding-bottom: 5%;padding-top: 5%;">
+      <img src="assets/images/icon/icon.ico" alt="homepage" class="dark-logo" />
+      <span class="logo-text">
+        <b>Jaime</b>
+      </span>
+    </li>
+
+    <!-- <div class="nav-small-cap"></div> -->
+
+    <li class="sidebar-item" [class.active]="showMenu === sidebarnavItem.title"
+      *ngFor="let sidebarnavItem of sidebarnavItems"
+      [routerLinkActive]="sidebarnavItem.submenu.length != 0 ? '' : 'active'">
+
+      <div class="nav-small-cap" *ngIf="sidebarnavItem.extralink === true">{{sidebarnavItem.title}}</div>
+
+      <a class="sidebar-link waves-effect waves-dark"
+        [routerLink]="sidebarnavItem.class === '' ? [sidebarnavItem.path] : null" [ngClass]="[sidebarnavItem.class]"
+        *ngIf="!sidebarnavItem.extralink;" (click)="addExpandClass(sidebarnavItem.title)"
+        [routerLinkActive]="sidebarnavItem.submenu.length != 0 ? '' : 'active'">
+        <i [ngClass]="[sidebarnavItem.icon]"></i>
+        <span class="hide-menu">{{sidebarnavItem.title}}</span>
+      </a>
+    </li>
+
+  </ul>
+
+</nav>

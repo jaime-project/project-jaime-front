@@ -1,0 +1,28 @@
+<ul ngbNav #nav="ngbNav" class="nav-tabs" [(activeId)]="selectedTabId">
+
+  <li ngbNavItem [ngbNavItem]="1">
+    <a ngbNavLink><b i18n>Requirements</b></a>
+  </li>
+
+  <li ngbNavItem [ngbNavItem]="2">
+    <a ngbNavLink><b i18n>Yamls</b></a>
+  </li>
+
+  <li ngbNavItem [ngbNavItem]="3">
+    <a ngbNavLink><b i18n>Backup</b></a>
+  </li>
+
+  <li ngbNavItem [ngbNavItem]="4">
+    <a ngbNavLink><b i18n>Logs</b></a>
+  </li>
+
+</ul>
+
+<div [ngbNavOutlet]="nav" class="mt-2"></div>
+
+
+<!-- TODO: arreglar bug con monaco -->
+<app-requirements-config *ngIf="selectedTabId == 1"></app-requirements-config>
+<app-objects-config *ngIf="selectedTabId == 2"></app-objects-config>
+<app-objectsGet-config *ngIf="selectedTabId == 3"></app-objectsGet-config>
+<app-logs-config *ngIf="selectedTabId == 4"></app-logs-config>

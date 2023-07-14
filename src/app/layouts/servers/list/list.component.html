@@ -1,0 +1,66 @@
+<app-title title="Server List"></app-title>
+
+<div class="col-lg-12">
+  <div class="card m-t-30">
+    <div class="card-body">
+      <button class="btn btn-success" routerLink="/servers/new" i18n>New server</button>
+    </div>
+  </div>
+</div>
+
+<app-card>
+  <form class="row g-3">
+    <div class="col-md-1">
+      <label class="form-label"><b>Page:</b></label>
+      <input type="text" class="form-control" type="number" [(ngModel)]="page" min="1"
+        [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class=" col-md-1">
+      <label class="form-label"><b>Size:</b></label>
+      <input type="text" class="form-control" type="number" [(ngModel)]="size" min="1"
+        [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="col-md-3">
+      <label class="form-label"><b>Filter:</b></label>
+      <input type="text" class="form-control" type="text" [(ngModel)]="filterBy" [ngModelOptions]="{standalone: true}">
+    </div>
+  </form>
+</app-card>
+
+<app-card>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('name')">Name</button></th>
+        <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('host')">Host</button></th>
+        <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('port')">Port</button></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let serverShort of listServersShorts">
+        <td>{{serverShort.name}}</td>
+        <td>{{serverShort.host}}</td>
+        <td>{{serverShort.port}}</td>
+        <td>
+          <button type="button" class="btn btn-primary" style="margin-right: 2%;" data-toggle="tooltip" title="Details"
+            routerLink="/servers/details/{{serverShort.name}}"><i class="fas fa-eye"></i></button>
+          <button type="button" class="btn btn-danger" style="margin-right: 2%;" data-toggle="tooltip" title="Delete"
+            (click)="deleteServer(serverShort.name)">
+            <i class=" far fa-trash-alt"></i>
+          </button>
+          <button type="button" class="btn btn-success" style="margin-right: 2%;" data-toggle="tooltip"
+            title="Test connection" (click)="testServer(serverShort.name)">
+            <i class="fas fa-play"></i>
+          </button>
+          <button type="button" class="btn btn-download" style="margin-right: 2%;" data-toggle="tooltip"
+            title="Download yaml" (click)="exportYaml(serverShort.name)">
+            <i class="fa fa-download"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</app-card>
+
+<app-spinner *ngIf="testServerLoad"></app-spinner>
+<app-spinner *ngIf="pageLoading"></app-spinner>

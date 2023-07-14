@@ -11,7 +11,8 @@ File: scss
 @import "variable";
 
 // Import Bootstrap source files (Required file)
-@import "bootstrap/bootstrap";
+// @import "bootstrap/bootstrap";
+@import "node_modules/bootstrap/scss/bootstrap";
 
 //This is for the components (Required file)
 @import "components";
