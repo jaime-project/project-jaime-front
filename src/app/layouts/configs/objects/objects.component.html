@@ -1,19 +1,14 @@
 <app-title title="Yamls" mt="30"></app-title>
 
 <app-card>
-  <div class="row">
-    <div class="col-12 m-b-30">
-      <button class="btn btn-success" (click)="postRequeriments()" i18n>Update objects</button>
-    </div>
+  <div class="col-12 m-b-30">
+    <button class="btn btn-success" (click)="postRequeriments()" i18n>Update objects</button>
   </div>
 
-  <div class="row">
-    <div class="col-12 m-b-30">
-      <input class="form-check-input" type="checkbox" style="margin-left: 0px;" id="check-override"
-        [(ngModel)]="replace">
-      <label class="form-check-label" for="check-override" style="margin-left: 20px;" i18n>
-        Override objects if exist
-      </label>
+  <div class="col-12" style="margin-bottom: 2%;">
+    <div class="form-check form-switch custom-switch">
+      <input [(ngModel)]="replace" class="form-check-input" type="checkbox" role="switch">
+      <label class="form-check-label">Override objects if exist</label>
     </div>
   </div>
 
