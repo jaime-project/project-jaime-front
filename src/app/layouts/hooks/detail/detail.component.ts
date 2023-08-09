@@ -26,7 +26,7 @@ export class DetailHookComponent implements OnInit {
   }
 
   constructor(private hookService: HookService, private route: ActivatedRoute, private appConfigService: AppConfigService) {
-    this.jaimeHookURL = appConfigService.config.backendURL + '/api/v1/hooks'
+    this.jaimeHookURL = appConfigService.config.backendURL + '/api/v1/hooks/exec'
   }
 
   ngOnInit(): void {

@@ -30,7 +30,6 @@
       <label for="repoSelect" class="form-label"><b i18n>Repository</b></label>
       <select class="form-control col-12" id="moduleSelect" (change)="repoChange($event.target.value)"
         formControlName="job_module_repo">
-        <option></option>
         <option *ngFor=" let r of repos" value="{{r}}">{{r}}</option>
       </select>
       <div id="moduleHelp" class="form-text" i18n>Select a installed repository</div>

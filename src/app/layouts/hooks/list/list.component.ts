@@ -20,7 +20,7 @@ export class ListHookComponent implements OnInit {
   jaimeHookURL: string = ""
 
   constructor(private hookService: HookService, private toastr: ToastrService, private appConfigService: AppConfigService) {
-    this.jaimeHookURL = appConfigService.config.backendURL + '/api/v1/hooks'
+    this.jaimeHookURL = appConfigService.config.backendURL + '/api/v1/hooks/exec'
   }
 
   orderBy: string = 'name'

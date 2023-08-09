@@ -62,7 +62,7 @@ export class NewHookComponent implements OnInit {
   }
 
   docChange(docName: any) {
-    this.docsService.getDocsWithoutError(docName, this.hookForm.value.repoName)
+    this.docsService.getDocsWithoutError(docName, this.hookForm.value.job_module_repo)
       .subscribe(data => {
         this.docParams = data
       })
