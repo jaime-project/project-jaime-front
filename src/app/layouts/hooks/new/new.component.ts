@@ -31,7 +31,8 @@ export class NewHookComponent implements OnInit {
     job_agent_type: new UntypedFormControl(''),
     id: new UntypedFormControl(''),
     status: new UntypedFormControl(''),
-    job_params: new UntypedFormControl()
+    job_module_doc: new UntypedFormControl(''),
+    job_params: new UntypedFormControl(''),
   });
 
   constructor(private route: Router, private hookService: HookService, private moduleService: ModuleService, private reposService: ReposService, private agent_service: AgentService, private docsService: DocsService, private toastr: ToastrService) { }

@@ -38,7 +38,7 @@
 
     <div class="mb-3 col-12">
       <label for="docSelect" class="form-label"><b i18n>Params</b></label>
-      <select class="form-control col-12" id="docSelect" formControlName="job_params"
+      <select class="form-control col-12" id="docSelect" formControlName="job_module_doc"
         (change)="docChange($event.target.value)">
         <option *ngFor=" let doc of docs" value="{{doc}}">{{doc}}</option>
       </select>
