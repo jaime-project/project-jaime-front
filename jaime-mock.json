@@ -2302,6 +2302,102 @@
       ],
       "enabled": true,
       "responseMode": null
+    },
+    {
+      "uuid": "a88e16e4-c29f-4fdc-ba48-6633f38b79c6",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "hooks/all/short",
+      "responses": [
+        {
+          "uuid": "021595d9-f79f-411f-a77c-bcf20f77f166",
+          "body": "[\n    {\n        \"id\": \"31a30b3315ea\",\n        \"name\": \"Migracion Secrets\",\n        \"status\": \"ACTIVE\",\n        \"creation_date\": \"2021-11-12T11:15:45\"\n    },\n    {\n        \"id\": \"asd12312\",\n        \"name\": \"Algo copado\",\n        \"status\": \"DESACTIVE\",\n        \"creation_date\": \"2021-11-12T11:15:45\"\n    }\n]",
+          "latency": 1000,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "4f82d3e9-76cd-4253-a5f6-f4dfebcfcf9b",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "hooks/status",
+      "responses": [
+        {
+          "uuid": "47732e0e-da23-4bed-8b66-00759a8f9bc7",
+          "body": "[\n  \"ACTIVE\",\n  \"DESACTIVE\"\n]",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "6ab0787f-e29a-49d9-8e02-16cc1ba2acad",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "hooks/*",
+      "responses": [
+        {
+          "uuid": "19f8e648-1b40-45d3-97e1-662295c1895a",
+          "body": "{\n    \"name\": \"prueba de algo\",\n    \"id\": \"31a30b3315ea\",\n    \"job_params\": {\n        \"servers\": {\n            \"from\": {\n                \"name\": \"lasegunda\",\n                \"namespace\": \"msdesa\",\n                \"object\": \"configmaps\"\n            }\n        }\n    },\n    \"status\": \"ACTIVE\",\n    \"creation_date\": \"2021-12-14T20:14:49.660102\",\n    \"job_module_repo\": \"repo\",\n    \"job_module_name\": \"module\",\n    \"job_agent_type\": \"module\"\n}",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
     }
   ],
   "proxyMode": false,
@@ -2617,6 +2713,18 @@
     {
       "type": "route",
       "uuid": "4454c75c-3c1a-4b45-9624-46563ed3bff7"
+    },
+    {
+      "type": "route",
+      "uuid": "a88e16e4-c29f-4fdc-ba48-6633f38b79c6"
+    },
+    {
+      "type": "route",
+      "uuid": "4f82d3e9-76cd-4253-a5f6-f4dfebcfcf9b"
+    },
+    {
+      "type": "route",
+      "uuid": "6ab0787f-e29a-49d9-8e02-16cc1ba2acad"
     }
   ]
 }

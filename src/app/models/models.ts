@@ -121,3 +121,21 @@ export interface TestClusterResult {
     success: boolean,
     text: string,
 }
+
+export interface HookShort {
+    id: string,
+    name: string,
+    status: string,
+    creation_date: string,
+}
+
+export interface HookJob {
+    name: string
+    job_module_repo: string
+    job_module_name: string
+    job_agent_type: string
+    id: string
+    creation_date: Date
+    status: string
+    job_params: any
+}

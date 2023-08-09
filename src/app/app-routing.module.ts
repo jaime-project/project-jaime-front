@@ -58,6 +58,10 @@ export const Approutes: Routes = [
         path: '',
         loadChildren: () => import('./layouts/messages/messagecomponents.module').then(m => m.MessageComponentsModule)
       },
+      {
+        path: '',
+        loadChildren: () => import('./layouts/hooks/hookcomponents.module').then(m => m.HookComponentsModule)
+      },
     ]
   },
   {

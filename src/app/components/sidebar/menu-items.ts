@@ -42,6 +42,14 @@ export const ROUTES: RouteInfo[] = [
     submenu: [],
   },
   {
+    path: "/hooks",
+    title: $localize`Hooks`,
+    icon: "mdi mdi-hook",
+    class: "",
+    extralink: false,
+    submenu: [],
+  },
+  {
     path: "/jobs",
     title: $localize`Jobs`,
     icon: "mdi mdi-backburger",
