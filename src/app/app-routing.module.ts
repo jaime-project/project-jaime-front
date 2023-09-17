@@ -62,6 +62,10 @@ export const Approutes: Routes = [
         path: '',
         loadChildren: () => import('./layouts/hooks/hookcomponents.module').then(m => m.HookComponentsModule)
       },
+      {
+        path: '',
+        loadChildren: () => import('./layouts/cards/cardcomponents.module').then(m => m.CardComponentsModule)
+      },
     ]
   },
   {

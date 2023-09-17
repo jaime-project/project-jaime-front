@@ -1,0 +1,44 @@
+<app-title title="Cron Detail" mt="30"></app-title>
+
+<app-card column="6">
+  <form>
+    <div class="mb-3 col-6">
+      <label class="form-label"><b i18n>Name</b></label>
+      <p class="card-text">{{cron.name}}</p>
+    </div>
+    <div class="mb-3 col-6">
+      <label class="form-label"><b i18n>Cron Expression</b></label>
+      <p class="card-text">{{cron.cron_expression}}</p>
+    </div>
+    <div class="mb-3 col-6">
+      <label class="form-label"><b i18n>Status</b></label>
+      <p class="card-text">{{cron.status}}</p>
+    </div>
+    <div class="mb-3 col-6">
+      <label class="form-label"><b i18n>Job Repo</b></label>
+      <p class="card-text">{{cron.job_module_repo}}</p>
+    </div>
+    <div class="mb-3 col-6">
+      <label class="form-label"><b i18n>Job Module</b></label>
+      <p class="card-text">{{cron.job_module_name}}</p>
+    </div>
+    <div class="mb-3 col-6">
+      <label class="form-label"><b i18n>Agent Type</b></label>
+      <p class="card-text">{{cron.job_agent_type}}</p>
+    </div>
+    <div class="mb-3 col-6">
+      <label class="form-label"><b i18n>Creation Date</b></label>
+      <p class="card-text">{{cron.creation_date| date :'short'}}</p>
+    </div>
+  </form>
+</app-card>
+
+
+<app-card column="6">
+  <form>
+    <div class="mb-3 col-6">
+      <label class="form-label"><b>Job docs</b></label>
+      <p class="card-text" style="white-space: pre-wrap;">{{paramsYaml}}</p>
+    </div>
+  </form>
+</app-card>

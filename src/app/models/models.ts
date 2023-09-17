@@ -139,3 +139,11 @@ export interface HookJob {
     status: string
     job_params: any
 }
+
+export interface CardShort {
+    id: string,
+    title: string,
+    body: string,
+    module: string,
+    repo: string
+}

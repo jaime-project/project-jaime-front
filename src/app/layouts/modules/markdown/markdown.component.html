@@ -14,7 +14,7 @@
 
 <app-card *ngIf="codeEditSwitchActivated">
   <ngx-monaco-editor style="width: 100%; height: 700px;"
-    [options]="{ theme: 'vs-dark', language: 'markdown', readOnly: false}" [(ngModel)]="markdownCode">
+    [options]="{ automaticLayout: true, theme: 'vs-dark', language: 'markdown', readOnly: false}" [(ngModel)]="markdownCode">
   </ngx-monaco-editor>
   <button type="button" class="btn btn-success" (click)="putMarkdown()" i18n>Update</button>
 </app-card>
