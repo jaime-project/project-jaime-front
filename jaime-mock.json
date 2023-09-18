@@ -2407,7 +2407,103 @@
       "responses": [
         {
           "uuid": "fdda25c0-bd26-4f25-9734-9c060ef28102",
-          "body": "[\n  {\n    \"id\": \"31a30b3315ea\",\n    \"title\": \"Instalar jenkins\",\n    \"body\": \"Script para instalar jenkins en un ambiente\",\n    \"module\": \"install_jenkins\",\n    \"repo\": \"OCP4\"\n  },\n  {\n    \"id\": \"qwe123eras\",\n    \"title\": \"Instalar Argo\",\n    \"body\": \"Instala argo en un cluster\",\n    \"module\": \"argoInstall\",\n    \"repo\": \"Kubernetes\"\n  },\n  {\n    \"id\": \"14532534\",\n    \"title\": \"Instalar Argo\",\n    \"body\": \"Instala argo en un cluster\",\n    \"module\": \"argoInstall\",\n    \"repo\": \"Kubernetes\"\n  },\n  {\n    \"id\": \"sdf3212\",\n    \"title\": \"Instalar Argo\",\n    \"body\": \"Instala argo en un cluster\",\n    \"module\": \"argoInstall\",\n    \"repo\": \"Kubernetes\"\n  },\n  {\n    \"id\": \"f1f12f3232\",\n    \"title\": \"Instalar Argo\",\n    \"body\": \"Instala argo en un cluster\",\n    \"module\": \"argoInstall\",\n    \"repo\": \"Kubernetes\"\n  }\n]",
+          "body": "[\n  {\n    \"id\": \"asdasd12\",\n    \"name\": \"Instalar Argo\",\n    \"description\": \"Instala argo en un cluster\",\n    \"job_module_repo\": \"repo\",\n    \"job_module_name\": \"module\"\n  },\n  {\n    \"id\": \"sdfg2g3\",\n    \"name\": \"Instalar Argo\",\n    \"description\": \"Instala argo en un cluster\",\n    \"job_module_repo\": \"repo\",\n    \"job_module_name\": \"module\"\n  },\n  {\n    \"id\": \"gdsfgewf1\",\n    \"name\": \"Instalar Argo\",\n    \"description\": \"Instala argo en un cluster\",\n    \"job_module_repo\": \"repo\",\n    \"job_module_name\": \"module\"\n  },\n  {\n    \"id\": \"asd12d12\",\n    \"name\": \"Instalar Argo\",\n    \"description\": \"Instala argo en un cluster\",\n    \"job_module_repo\": \"repo\",\n    \"job_module_name\": \"module\"\n  },\n  {\n    \"id\": \"1231231wesf\",\n    \"name\": \"Instalar Argo\",\n    \"description\": \"Instala argo en un cluster\",\n    \"job_module_repo\": \"repo\",\n    \"job_module_name\": \"module\"\n  }\n]",
+          "latency": 1000,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "316b6b04-6496-4ff6-881c-d8150a559aa9",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "cards/*",
+      "responses": [
+        {
+          "uuid": "5c0f13f6-4184-47ff-b880-9b2cc40ccf2e",
+          "body": "{\n  \"id\": \"f1f12f3232\",\n  \"name\": \"Instalar Argo\",\n  \"description\": \"Instala argo en un cluster\",\n  \"creation_date\": \"2021-12-14T20:14:49.660102\",\n  \"job_module_repo\": \"repo\",\n  \"job_module_name\": \"module\",\n  \"job_agent_type\": \"KUBERNETES\",\n  \"job_default_params\": {\n    \"asd\": \n      \"qwe\": 2,\n      \"zxc\": \"ASD\"\n  }\n}",
+          "latency": 1000,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "22ba3b6d-3d01-443f-a5dc-310da685612c",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "cards/*/docs",
+      "responses": [
+        {
+          "uuid": "aeb328be-5e6c-4b60-bc15-25f40d2633ad",
+          "body": "apiVersion: v1\nkind: PersistentVolume\nmetadata:\n  name: nfs-pv \nspec:\n  capacity:\n    storage: 1Gi \n  accessModes:\n    - ReadWriteMany \n  persistentVolumeReclaimPolicy: Retain \n  nfs: \n    path: /opt/nfs \n    server: nfs.f22 \n    readOnly: false\n  \n# The name of the PV, which is referenced in pod definitions or displayed in various oc volume commands.\n# The amount of storage allocated to this volume.\n# accessModes are used as labels to match a PV and a PVC. They currently do not define any form of access control.\n# The volume reclaim policy Retain indicates that the volume will be preserved after the pods accessing it terminates.\n# This defines the volume type being used, in this case the NFS plug-in.\n# This is the NFS mount path.\n# This is the NFS server. This can also be specified by IP address.",
+          "latency": 1000,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "df837eb4-07df-4d9b-9d82-05d9f35b3322",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "cards/*/run",
+      "responses": [
+        {
+          "uuid": "8095b04a-826d-4466-9358-e6aceef0cf38",
+          "body": "{\n  \"id\": \"asdd12e12\"\n}",
           "latency": 1000,
           "statusCode": 200,
           "label": "",
@@ -2761,6 +2857,18 @@
     {
       "type": "route",
       "uuid": "d38fb764-6b73-40ba-a626-cb980a8a5918"
+    },
+    {
+      "type": "route",
+      "uuid": "df837eb4-07df-4d9b-9d82-05d9f35b3322"
+    },
+    {
+      "type": "route",
+      "uuid": "22ba3b6d-3d01-443f-a5dc-310da685612c"
+    },
+    {
+      "type": "route",
+      "uuid": "316b6b04-6496-4ff6-881c-d8150a559aa9"
     }
   ]
 }

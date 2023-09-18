@@ -15,7 +15,7 @@ export class CardService {
   apiUrl: string = "";
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-  constructor(private environment: AppConfigService, private http: HttpClient, private toastr: ToastrService, private errorService: ErrorService) {
+  constructor(private environment: AppConfigService, private http: HttpClient, private errorService: ErrorService) {
     this.apiUrl = environment.config.backendURL + '/api/v1/cards';
   }
 
@@ -44,15 +44,6 @@ export class CardService {
       )
   }
 
-  deleteCardsByStatus(status: string): Observable<any> {
-    return this.http.delete<any>(this.apiUrl + '/?status=' + status)
-      .pipe(
-        catchError((error: HttpErrorResponse) => {
-          return this.errorService.httpError(error);
-        })
-      )
-  }
-
   postCard(yaml: string | null): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
     return this.http.post(this.apiUrl + '/', yaml, { headers, responseType: 'json' })
@@ -72,26 +63,6 @@ export class CardService {
       )
   }
 
-  changeStatus(id: string, status: string): Observable<any> {
-
-    return this.http.patch(`${this.apiUrl}/${id}/status/${status}`, {}, { responseType: 'blob' })
-      .pipe(
-        catchError((error: HttpErrorResponse) => {
-          return this.errorService.httpError(error);
-        })
-      )
-  }
-
-  getCardStatus(): Observable<any> {
-
-    return this.http.get<string[]>(`${this.apiUrl}/status`)
-      .pipe(
-        catchError((error: HttpErrorResponse) => {
-          return this.errorService.httpError(error);
-        })
-      )
-  }
-
   putCard(yaml: string | null): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
     return this.http.put(this.apiUrl + '/', yaml, { headers, responseType: 'json' })
@@ -102,4 +73,23 @@ export class CardService {
       )
   }
 
+  getCardDefaultDoc(id: string | null): Observable<any> {
+    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
+    return this.http.get(`${this.apiUrl}/${id}/docs`, { headers, responseType: 'text' })
+      .pipe(
+        catchError((error: HttpErrorResponse) => {
+          return this.errorService.httpError(error);
+        })
+      )
+  }
+
+  runCard(id: string | null, yaml: string | null): Observable<any> {
+    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
+    return this.http.post(`${this.apiUrl}/${id}/run`, yaml, { headers, responseType: 'json' })
+      .pipe(
+        catchError((error: HttpErrorResponse) => {
+          return this.errorService.httpError(error);
+        })
+      )
+  }
 }

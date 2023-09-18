@@ -142,8 +142,17 @@ export interface HookJob {
 
 export interface CardShort {
     id: string,
-    title: string,
-    body: string,
+    name: string,
+    description: string,
     module: string,
     repo: string
+}
+
+export interface Card {
+    id: string,
+    name: string,
+    description: string,
+    job_module_name: string,
+    job_module_repo: string,
+    job_default_docs: string
 }
