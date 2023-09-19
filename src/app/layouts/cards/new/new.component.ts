@@ -10,11 +10,11 @@ import { ReposService } from 'src/app/services/modules/repos.service';
 import { Document, parse } from 'yaml';
 
 @Component({
-  selector: 'app-new-cron',
+  selector: 'app-new-card',
   templateUrl: './new.component.html',
   styleUrls: ['./new.component.css']
 })
-export class NewCronComponent implements OnInit {
+export class NewCardComponent implements OnInit {
 
   repo: string = ""
   repos: string[] = []

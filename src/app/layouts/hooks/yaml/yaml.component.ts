@@ -45,7 +45,7 @@ export class YamlHookComponent implements OnInit {
       if (result.isConfirmed) {
         this.hookService.putHook(parse(modifyYaml))
           .subscribe(() => {
-            this.toastr.success($localize`New Server created`)
+            this.toastr.success($localize`Hook updated`)
             this.route.navigate(['hooks'])
           })
       }

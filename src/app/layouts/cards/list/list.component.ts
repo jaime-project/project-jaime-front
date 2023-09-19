@@ -55,9 +55,12 @@ export class ListCardComponent implements OnInit {
   }
 
   deleteCard(id: string) {
+
+    const cardToDelete = this.cardsShort.find(c => c.id == id)!;
+
     Swal.fire({
       title: $localize`Delete card`,
-      text: $localize`Delete card with id ${id}`,
+      text: $localize`Delete card with name "${cardToDelete.name}"`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',

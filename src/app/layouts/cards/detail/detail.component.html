@@ -1,44 +1,40 @@
-<app-title title="Cron Detail" mt="30"></app-title>
+<app-title title="Card Detail" mt="30"></app-title>
 
 <app-card column="6">
   <form>
     <div class="mb-3 col-6">
       <label class="form-label"><b i18n>Name</b></label>
-      <p class="card-text">{{cron.name}}</p>
+      <p class="card-text">{{card.name}}</p>
     </div>
     <div class="mb-3 col-6">
-      <label class="form-label"><b i18n>Cron Expression</b></label>
-      <p class="card-text">{{cron.cron_expression}}</p>
+      <label class="form-label"><b i18n>Description</b></label>
+      <p class="card-text">{{card.description}}</p>
     </div>
     <div class="mb-3 col-6">
-      <label class="form-label"><b i18n>Status</b></label>
-      <p class="card-text">{{cron.status}}</p>
+      <label class="form-label"><b i18n>Module name</b></label>
+      <p class="card-text">{{card.job_module_name}}</p>
     </div>
     <div class="mb-3 col-6">
-      <label class="form-label"><b i18n>Job Repo</b></label>
-      <p class="card-text">{{cron.job_module_repo}}</p>
+      <label class="form-label"><b i18n>Module repo</b></label>
+      <p class="card-text">{{card.job_module_repo}}</p>
     </div>
     <div class="mb-3 col-6">
-      <label class="form-label"><b i18n>Job Module</b></label>
-      <p class="card-text">{{cron.job_module_name}}</p>
+      <label class="form-label"><b i18n>Agent type</b></label>
+      <p class="card-text">{{card.job_agent_type}}</p>
     </div>
     <div class="mb-3 col-6">
-      <label class="form-label"><b i18n>Agent Type</b></label>
-      <p class="card-text">{{cron.job_agent_type}}</p>
-    </div>
-    <div class="mb-3 col-6">
-      <label class="form-label"><b i18n>Creation Date</b></label>
-      <p class="card-text">{{cron.creation_date| date :'short'}}</p>
+      <label class="form-label"><b i18n>Creation date</b></label>
+      <p class="card-text">{{card.creation_date| date :'short'}}</p>
     </div>
   </form>
 </app-card>
 
 
 <app-card column="6">
-  <form>
-    <div class="mb-3 col-6">
-      <label class="form-label"><b>Job docs</b></label>
-      <p class="card-text" style="white-space: pre-wrap;">{{paramsYaml}}</p>
-    </div>
-  </form>
+  <div class="mb-3 col-6">
+    <label class="form-label"><b>Default docs</b></label>
+  </div>
+  <ngx-monaco-editor style="width: 100%; height: 400px;"
+    [options]="{ automaticLayout: true, theme: 'vs-dark', language: 'yaml', readOnly: true }" [(ngModel)]="defaultDocs">
+  </ngx-monaco-editor>
 </app-card>

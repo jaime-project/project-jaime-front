@@ -1,41 +1,40 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CronJob } from 'src/app/models/models';
-import { CronService } from 'src/app/services/crons/cron.service';
+import { Card } from 'src/app/models/models';
+import { CardService } from 'src/app/services/cards/card.service';
 import { Document } from 'yaml';
 
 @Component({
-  selector: 'app-detail-cron',
+  selector: 'app-detail-card',
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.css']
 })
-export class DetailCronComponent implements OnInit {
+export class DetailCardComponent implements OnInit {
 
-  paramsYaml: string = ""
+  defaultDocs: string = ""
 
-  cron: CronJob = {
-    name: "",
-    cron_expression: "",
-    job_module_repo: "",
-    job_module_name: "",
-    job_agent_type: "",
+  card: Card = {
     id: "",
-    creation_date: new Date(),
-    status: "",
-    job_params: {}
+    name: "",
+    description: "",
+    job_module_name: "",
+    job_module_repo: "",
+    job_agent_type: "",
+    job_default_docs: "",
+    creation_date: new Date()
   }
 
-  constructor(private cronService: CronService, private route: ActivatedRoute) { }
+  constructor(private cardService: CardService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     let id = this.route.snapshot.paramMap.get('id')
 
-    this.cronService.getCron(id).subscribe(data => {
-      this.cron = data
+    this.cardService.getCard(id).subscribe(data => {
+      this.card = data
+    })
 
-      let doc = new Document()
-      doc.contents = data.job_params
-      this.paramsYaml = doc.toString()
+    this.cardService.getCardDefaultDoc(id).subscribe(data => {
+      this.defaultDocs = data
     })
   }
 

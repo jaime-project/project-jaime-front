@@ -154,5 +154,7 @@ export interface Card {
     description: string,
     job_module_name: string,
     job_module_repo: string,
-    job_default_docs: string
+    job_agent_type: string,
+    job_default_docs: string,
+    creation_date: Date
 }

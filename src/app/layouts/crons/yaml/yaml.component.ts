@@ -45,7 +45,7 @@ export class YamlCronComponent implements OnInit {
       if (result.isConfirmed) {
         this.cronService.putCron(parse(modifyYaml))
           .subscribe(() => {
-            this.toastr.success($localize`New Server created`)
+            this.toastr.success($localize`Cron updated`)
             this.route.navigate(['crons'])
           })
       }

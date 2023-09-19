@@ -1,5 +1,7 @@
 import { Routes } from '@angular/router';
 import { ListCardComponent } from './list/list.component';
+import { NewCardComponent } from './new/new.component';
+import { TabsCardComponent } from './tabs/tabs.component';
 
 
 export const CardComponentsRoutes: Routes = [
@@ -17,28 +19,28 @@ export const CardComponentsRoutes: Routes = [
 					]
 				}
 			},
-			// {
-			// 	path: 'cards/details/:id',
-			// 	component: TabsCronComponent,
-			// 	data: {
-			// 		title: 'cards',
-			// 		urls: [
-			// 			{ title: 'ngComponent' },
-			// 			{ title: 'Cards' }
-			// 		]
-			// 	}
-			// },
-			// {
-			// 	path: 'cards/new',
-			// 	component: NewCronComponent,
-			// 	data: {
-			// 		title: 'cards',
-			// 		urls: [
-			// 			{ title: 'ngComponent' },
-			// 			{ title: 'Cards' }
-			// 		]
-			// 	}
-			// },
+			{
+				path: 'cards/details/:id',
+				component: TabsCardComponent,
+				data: {
+					title: 'cards',
+					urls: [
+						{ title: 'ngComponent' },
+						{ title: 'Cards' }
+					]
+				}
+			},
+			{
+				path: 'cards/new',
+				component: NewCardComponent,
+				data: {
+					title: 'cards',
+					urls: [
+						{ title: 'ngComponent' },
+						{ title: 'Cards' }
+					]
+				}
+			},
 		]
 	}
 ];

@@ -63,9 +63,19 @@ export class CardService {
       )
   }
 
-  putCard(yaml: string | null): Observable<any> {
+  putCard(id: string | null, yaml: string | null): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
-    return this.http.put(this.apiUrl + '/', yaml, { headers, responseType: 'json' })
+    return this.http.put(`${this.apiUrl}/${id}`, yaml, { headers, responseType: 'json' })
+      .pipe(
+        catchError((error: HttpErrorResponse) => {
+          return this.errorService.httpError(error);
+        })
+      )
+  }
+
+  putDefaultDoc(id: string | null, yaml: string | null): Observable<any> {
+    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
+    return this.http.put(`${this.apiUrl}/${id}/docs`, yaml, { headers, responseType: 'json' })
       .pipe(
         catchError((error: HttpErrorResponse) => {
           return this.errorService.httpError(error);
