@@ -33,7 +33,7 @@ export class DetailCardComponent implements OnInit {
       this.card = data
     })
 
-    this.cardService.getCardDefaultDoc(id).subscribe(data => {
+    this.cardService.getDefaultDoc(id).subscribe(data => {
       this.defaultDocs = data
     })
   }

@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Card } from 'src/app/models/models';
 import { AgentService } from 'src/app/services/agents/agents.service';
-import { CronService } from 'src/app/services/crons/cron.service';
+import { CardService } from 'src/app/services/cards/card.service';
 import { DocsService } from 'src/app/services/modules/docs.service';
 import { ModuleService } from 'src/app/services/modules/modules.service';
 import { ReposService } from 'src/app/services/modules/repos.service';
@@ -16,27 +17,25 @@ import { Document, parse } from 'yaml';
 })
 export class NewCardComponent implements OnInit {
 
-  repo: string = ""
   repos: string[] = []
   modules: string[] = []
   docs: string[] = []
-  docParams: string = ""
   agentsTypes: string[] = []
+  repo: string = ""
+  docParams: string = ""
   loading: boolean = false
 
-  cronForm = new UntypedFormGroup({
+  cardForm = new UntypedFormGroup({
     name: new UntypedFormControl(''),
-    cron_expression: new UntypedFormControl(''),
+    description: new UntypedFormControl(''),
+    job_agent_type: new UntypedFormControl(''),
     job_module_repo: new UntypedFormControl(''),
     job_module_name: new UntypedFormControl(''),
     job_module_doc: new UntypedFormControl(''),
-    job_agent_type: new UntypedFormControl(''),
-    id: new UntypedFormControl(''),
-    status: new UntypedFormControl(''),
-    job_params: new UntypedFormControl()
+    docParams: new UntypedFormControl(''),
   });
 
-  constructor(private route: Router, private cronService: CronService, private moduleService: ModuleService, private reposService: ReposService, private agent_service: AgentService, private docsService: DocsService, private toastr: ToastrService) { }
+  constructor(private route: Router, private cardService: CardService, private moduleService: ModuleService, private reposService: ReposService, private agent_service: AgentService, private docsService: DocsService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
 
@@ -64,19 +63,20 @@ export class NewCardComponent implements OnInit {
   }
 
   docChange(docName: any) {
-    this.docsService.getDocsWithoutError(docName, this.cronForm.value.job_module_repo)
+    this.docsService.getDocsWithoutError(docName, this.cardForm.value.job_module_repo)
       .subscribe(data => {
         this.docParams = data
       })
   }
 
-  postCron() {
+  postCard() {
 
     this.loading = true
 
-    let yamlJson = {}
     try {
-      yamlJson = this.cronForm.value.job_params != null ? parse(this.cronForm.value.job_params) : {}
+      if (this.docParams) {
+        parse(this.docParams)
+      }
 
     } catch (error: any) {
       this.toastr.error(error, 'Invalid yaml')
@@ -84,29 +84,34 @@ export class NewCardComponent implements OnInit {
       throw error
     }
 
-    let finalJson = {
-      name: this.cronForm.value.name,
-      cron_expression: this.cronForm.value.cron_expression,
-      job_module_repo: this.cronForm.value.job_module_repo,
-      job_module_name: this.cronForm.value.job_module_name,
-      job_agent_type: this.cronForm.value.job_agent_type,
-      job_params: yamlJson
-    }
+    let finalCard = {
+      name: this.cardForm.value.name,
+      description: this.cardForm.value.description,
+      job_agent_type: this.cardForm.value.job_agent_type,
+      job_module_repo: this.cardForm.value.job_module_repo,
+      job_module_name: this.cardForm.value.job_module_name,
+    } as Card
 
-    let doc = new Document()
-    doc.contents = finalJson as any
-    let finalYaml = doc.toString()
-
-    this.cronService.postCron(finalYaml)
+    this.cardService.postCard(finalCard)
       .subscribe(
-        result => {
-          this.toastr.success($localize`Generated id ${result.id}`, $localize`Success cron creation`)
-          this.route.navigate(['crons'])
+        resultPostCard => {
+
+          this.cardService.postDefaultDoc(resultPostCard.id, this.docParams)
+            .subscribe(
+              _ => {
+                this.toastr.success($localize`Generated id ${resultPostCard.id}`, $localize`Success card creation`)
+                this.route.navigate(['cards'])
+              },
+              _ => {
+                this.toastr.error($localize`Error on create new default docs to card`)
+                this.loading = false
+              })
         },
-        error => {
-          this.toastr.error($localize`Error on create new Cron`)
+        _ => {
+          this.toastr.error($localize`Error on create new Card`)
           this.loading = false
         })
+    this.loading = false
   }
 
 }

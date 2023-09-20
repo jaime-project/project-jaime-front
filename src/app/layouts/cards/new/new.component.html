@@ -1,21 +1,21 @@
-<app-title title="New Cron"></app-title>
+<app-title title="New Card"></app-title>
 
 <app-card column="8">
 
-  <form [formGroup]="cronForm" (ngSubmit)="postCron()">
+  <form [formGroup]="cardForm" (ngSubmit)="postCard()">
 
     <div class="mb-3 col-12">
       <label for="nameInput" class="form-label"><b i18n>Name</b></label>
       <input type="text" class="form-control" id="nameInput" aria-describedby="nameHelp" formControlName="name"
         required>
-      <div id="nameHelp" class="form-text" i18n>Cron name</div>
+      <div id="nameHelp" class="form-text" i18n>Card name</div>
     </div>
 
     <div class="mb-3 col-12">
-      <label for="nameInput" class="form-label"><b i18n>Cron Expression</b></label>
-      <input type="text" class="form-control" id="cronExpressionInput" aria-describedby="cronExpressionHelp"
-        formControlName="cron_expression" required>
-      <div id="nameHelp" class="form-text" i18n>Ejemplo: * */2 * * *</div>
+      <label for="nameInput" class="form-label"><b i18n>Description</b></label>
+      <textarea type="text" class="form-control" id="descriptionInput" aria-describedby="descriptionHelp"
+        formControlName="description" required></textarea>
+      <div id="descriptionHelp" class="form-text" i18n>Card description</div>
     </div>
 
     <div class="mb-3 col-12">
@@ -47,17 +47,17 @@
       <label for="docSelect" class="form-label"><b i18n>Params</b></label>
       <select class="form-control col-12" id="docSelect" formControlName="job_module_doc"
         (change)="docChange($event.target.value)">
-        <option></option>
-        <option *ngFor=" let doc of docs" value="{{doc}}">{{doc}}</option>
+        <option *ngFor="let doc of docs" value="{{doc}}">{{doc}}</option>
       </select>
       <div id="docHelp" class="form-text" i18n>Select a installed doc for params</div>
     </div>
 
     <div class="col-12">
-      <label for="paramsText" class="form-label"><b i18n>Params Yaml</b></label>
+      <label for="paramsText" class="form-label"><b i18n>Default params yaml</b></label>
       <div class="mb-3">
-        <ngx-monaco-editor style="width: 100%; height: 500px;" [options]="{ automaticLayout: true, theme: 'vs-dark', language: 'yaml'}"
-          formControlName="job_params" [(ngModel)]="docParams">
+        <ngx-monaco-editor style="width: 100%; height: 500px;"
+          [options]="{ automaticLayout: true, theme: 'vs-dark', language: 'yaml'}" formControlName="docParams"
+          [(ngModel)]="docParams">
         </ngx-monaco-editor>
       </div>
       <div id="paramPamlHelp" class="form-text" i18n>Parameters to module selected</div>

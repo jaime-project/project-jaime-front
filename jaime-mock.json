@@ -2509,7 +2509,7 @@
           "uuid": "8095b04a-826d-4466-9358-e6aceef0cf38",
           "body": "{\n  \"id\": \"asdd12e12\"\n}",
           "latency": 1000,
-          "statusCode": 200,
+          "statusCode": 201,
           "label": "",
           "headers": [
             {
@@ -2610,6 +2610,74 @@
           "body": "{\n  \"id\": \"f1f12f3232\",\n  \"name\": \"Instalar Argo\",\n  \"description\": \"Instala argo en un cluster\",\n  \"creation_date\": \"2021-12-14T20:14:49.660102\",\n  \"job_module_repo\": \"repo\",\n  \"job_module_name\": \"module\",\n  \"job_agent_type\": \"KUBERNETES\"\n}",
           "latency": 0,
           "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "22595464-1e9c-4a05-8c1b-9631ca56765d",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "cards/*/docs",
+      "responses": [
+        {
+          "uuid": "0eab3e63-58d5-444a-abd5-2e1a470194ab",
+          "body": "",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "fdf7410c-d5ae-4ab4-82fa-216cf0f67e8c",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "cards/*",
+      "responses": [
+        {
+          "uuid": "3bcc5049-19e0-419d-a235-68fd6dfd3657",
+          "body": "{\n  \"id\": \"asdd12e12\"\n}",
+          "latency": 0,
+          "statusCode": 201,
           "label": "",
           "headers": [
             {
@@ -2973,6 +3041,14 @@
     {
       "type": "route",
       "uuid": "44b22ed6-29c0-4ecf-a5cf-cdd3596c786e"
+    },
+    {
+      "type": "route",
+      "uuid": "22595464-1e9c-4a05-8c1b-9631ca56765d"
+    },
+    {
+      "type": "route",
+      "uuid": "fdf7410c-d5ae-4ab4-82fa-216cf0f67e8c"
     },
     {
       "type": "route",

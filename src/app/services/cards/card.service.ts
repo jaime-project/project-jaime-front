@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { CardShort } from 'src/app/models/models';
+import { Card, CardShort } from 'src/app/models/models';
 import { AppConfigService } from '../AppConfigService';
 import { ErrorService } from '../errors/error.service';
 
@@ -44,9 +44,8 @@ export class CardService {
       )
   }
 
-  postCard(yaml: string | null): Observable<any> {
-    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
-    return this.http.post(this.apiUrl + '/', yaml, { headers, responseType: 'json' })
+  postCard(card: Card | null): Observable<any> {
+    return this.http.post(this.apiUrl + '/', card)
       .pipe(
         catchError((error: HttpErrorResponse) => {
           return this.errorService.httpError(error);
@@ -64,8 +63,17 @@ export class CardService {
   }
 
   putCard(id: string | null, yaml: string | null): Observable<any> {
+    return this.http.put(`${this.apiUrl}/${id}`, yaml)
+      .pipe(
+        catchError((error: HttpErrorResponse) => {
+          return this.errorService.httpError(error);
+        })
+      )
+  }
+
+  postDefaultDoc(id: string | null, yaml: string | null): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
-    return this.http.put(`${this.apiUrl}/${id}`, yaml, { headers, responseType: 'json' })
+    return this.http.post(`${this.apiUrl}/${id}/docs`, yaml, { headers, responseType: 'json' })
       .pipe(
         catchError((error: HttpErrorResponse) => {
           return this.errorService.httpError(error);
@@ -83,9 +91,8 @@ export class CardService {
       )
   }
 
-  getCardDefaultDoc(id: string | null): Observable<any> {
-    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
-    return this.http.get(`${this.apiUrl}/${id}/docs`, { headers, responseType: 'text' })
+  getDefaultDoc(id: string | null): Observable<any> {
+    return this.http.get(`${this.apiUrl}/${id}/docs`, { responseType: 'text' })
       .pipe(
         catchError((error: HttpErrorResponse) => {
           return this.errorService.httpError(error);

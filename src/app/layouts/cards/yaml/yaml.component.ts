@@ -31,7 +31,7 @@ export class YamlCardComponent implements OnInit {
       this.contentYaml = doc.toString()
     })
 
-    this.cardService.getCardDefaultDoc(this.id).subscribe(data => {
+    this.cardService.getDefaultDoc(this.id).subscribe(data => {
       this.contentDefaultDoc = data
     })
   }

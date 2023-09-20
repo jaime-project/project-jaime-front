@@ -79,7 +79,7 @@ export class ListCardComponent implements OnInit {
 
     this.currentCard = this.cardsShort.find(c => c.id == id)!;
 
-    this.cardService.getCardDefaultDoc(id)
+    this.cardService.getDefaultDoc(id)
       .subscribe(data => {
         this.cardDocs = data
       })
