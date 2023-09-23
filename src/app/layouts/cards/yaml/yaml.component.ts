@@ -69,7 +69,7 @@ export class YamlCardComponent implements OnInit {
       showCancelButton: true,
     }).then(result => {
       if (result.isConfirmed) {
-        this.cardService.putDefaultDoc(this.id, parse(modifyDefaultDoc))
+        this.cardService.putDefaultDoc(this.id, modifyDefaultDoc)
           .subscribe(() => {
             this.toastr.success($localize`Card default docs updated`)
             this.route.navigate(['cards'])

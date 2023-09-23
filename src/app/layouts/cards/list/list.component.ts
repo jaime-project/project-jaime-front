@@ -88,10 +88,11 @@ export class ListCardComponent implements OnInit {
   runCard() {
 
     this.pageLoading = true
+    let params = {}
 
     try {
       if (this.cardDocs != null) {
-        parse(this.cardDocs)
+        params = parse(this.cardDocs)
       }
 
     } catch (error: any) {
@@ -100,7 +101,7 @@ export class ListCardComponent implements OnInit {
       throw error
     }
 
-    this.cardService.runCard(this.currentCard.id, this.cardDocs)
+    this.cardService.runCard(this.currentCard.id, params)
       .subscribe(
         result => {
           document.getElementById("modalRunCloseButton")!.click();

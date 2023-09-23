@@ -100,9 +100,9 @@ export class CardService {
       )
   }
 
-  runCard(id: string | null, yaml: string | null): Observable<any> {
+  runCard(id: string | null, params: any | null): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
-    return this.http.post(`${this.apiUrl}/${id}/run`, yaml, { headers, responseType: 'json' })
+    return this.http.post(`${this.apiUrl}/${id}/run`, params, { headers, responseType: 'json' })
       .pipe(
         catchError((error: HttpErrorResponse) => {
           return this.errorService.httpError(error);
