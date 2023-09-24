@@ -62,8 +62,8 @@ export class CardService {
       )
   }
 
-  putCard(id: string | null, yaml: string | null): Observable<any> {
-    return this.http.put(`${this.apiUrl}/${id}`, yaml)
+  putCard(yaml: string | null): Observable<any> {
+    return this.http.put(`${this.apiUrl}/`, yaml)
       .pipe(
         catchError((error: HttpErrorResponse) => {
           return this.errorService.httpError(error);

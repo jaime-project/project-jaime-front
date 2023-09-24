@@ -37,7 +37,7 @@ export class YamlCardComponent implements OnInit {
   }
 
 
-  putCron(modifyYaml: string) {
+  putCard(modifyYaml: string) {
 
     Swal.fire({
       title: $localize`Update Card`,
@@ -48,7 +48,7 @@ export class YamlCardComponent implements OnInit {
       showCancelButton: true,
     }).then(result => {
       if (result.isConfirmed) {
-        this.cardService.putCard(this.id, parse(modifyYaml))
+        this.cardService.putCard(modifyYaml)
           .subscribe(() => {
             this.toastr.success($localize`Card updated`)
             this.route.navigate(['cards'])
