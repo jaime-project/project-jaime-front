@@ -90,22 +90,14 @@ export class NewCardComponent implements OnInit {
       job_agent_type: this.cardForm.value.job_agent_type,
       job_module_repo: this.cardForm.value.job_module_repo,
       job_module_name: this.cardForm.value.job_module_name,
+      job_default_docs: this.docParams
     } as Card
 
+    console.log(finalCard)
     this.cardService.postCard(finalCard)
       .subscribe(
         resultPostCard => {
-
-          this.cardService.postDefaultDoc(resultPostCard.id, this.docParams)
-            .subscribe(
-              _ => {
-                this.toastr.success($localize`Generated id ${resultPostCard.id}`, $localize`Success card creation`)
-                this.route.navigate(['cards'])
-              },
-              _ => {
-                this.toastr.error($localize`Error on create new default docs to card`)
-                this.loading = false
-              })
+          this.toastr.success($localize`Generated id ${resultPostCard.id}`, $localize`Success card creation`)
         },
         _ => {
           this.toastr.error($localize`Error on create new Card`)
