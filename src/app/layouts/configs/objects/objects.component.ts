@@ -22,6 +22,10 @@ export class ObjectsComponent implements OnInit {
 
   postRequeriments() {
 
+    if (!this.objectsText) {
+      return
+    }
+
     this.pageLoading = true
 
     this.configService.postYamls(this.objectsText, this.replace)

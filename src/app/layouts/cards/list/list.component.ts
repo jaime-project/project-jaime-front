@@ -33,13 +33,7 @@ export class ListCardComponent implements OnInit {
 
 
   ngOnInit(): void {
-
     this.loadStartData()
-
-    this.subscription = interval(1000)
-      .subscribe(() => {
-        this.loadStartData()
-      });
   }
 
   ngOnDestroy(): void {

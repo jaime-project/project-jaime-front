@@ -98,6 +98,7 @@ export class NewCardComponent implements OnInit {
       .subscribe(
         resultPostCard => {
           this.toastr.success($localize`Generated id ${resultPostCard.id}`, $localize`Success card creation`)
+          this.route.navigate(['cards'])
         },
         _ => {
           this.toastr.error($localize`Error on create new Card`)
