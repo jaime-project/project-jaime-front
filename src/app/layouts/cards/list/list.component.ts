@@ -28,7 +28,8 @@ export class ListCardComponent implements OnInit {
     name: '',
     description: '',
     module: '',
-    repo: ''
+    repo: '',
+    color: ''
   }
 
 

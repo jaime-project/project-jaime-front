@@ -7,30 +7,15 @@
   </div>
 </div>
 
-<app-card column="6" *ngIf="!editSwitchActivated">
-  <ngx-monaco-editor style="width: 100%; height: 400px;"
+<app-card column="12" *ngIf="!editSwitchActivated">
+  <ngx-monaco-editor style="height: 600px;"
     [options]="{ automaticLayout: true, theme: 'vs-dark', language: 'yaml', readOnly: true}" [(ngModel)]="contentYaml">
   </ngx-monaco-editor>
 </app-card>
 
-<app-card column="6" *ngIf="!editSwitchActivated">
-  <ngx-monaco-editor style="width: 100%; height: 400px;"
-    [options]="{ automaticLayout: true, theme: 'vs-dark', language: 'yaml', readOnly: true}"
-    [(ngModel)]="contentDefaultDoc">
-  </ngx-monaco-editor>
-</app-card>
-
-<app-card column="6" *ngIf="editSwitchActivated">
-  <ngx-monaco-editor style="width: 100%; height: 400px;"
+<app-card column="12" *ngIf="editSwitchActivated">
+  <ngx-monaco-editor style="height: 600px;"
     [options]="{ automaticLayout: true, theme: 'vs-dark', language: 'yaml', readOnly: false}" [(ngModel)]="contentYaml">
   </ngx-monaco-editor>
   <button type="submit" class="btn btn-success" (click)="putCard(contentYaml)" i18n>Update</button>
-</app-card>
-
-<app-card column="6" *ngIf="editSwitchActivated">
-  <ngx-monaco-editor style="width: 100%; height: 400px;"
-    [options]="{ automaticLayout: true, theme: 'vs-dark', language: 'yaml', readOnly: false}"
-    [(ngModel)]="contentDefaultDoc">
-  </ngx-monaco-editor>
-  <button type="submit" class="btn btn-success" (click)="putDefaultDoc(contentDefaultDoc)" i18n>Update</button>
 </app-card>

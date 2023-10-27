@@ -12,16 +12,19 @@ import { Document } from 'yaml';
 export class DetailCardComponent implements OnInit {
 
   defaultDocs: string = ""
+  cardDocs: string = ""
 
   card: Card = {
     id: "",
     name: "",
     description: "",
+    color: "",
     job_module_name: "",
     job_module_repo: "",
     job_agent_type: "",
     job_default_docs: "",
-    creation_date: new Date()
+    job_card_docs: "",
+    creation_date: new Date(),
   }
 
   constructor(private cardService: CardService, private route: ActivatedRoute) { }
@@ -31,10 +34,10 @@ export class DetailCardComponent implements OnInit {
 
     this.cardService.getCard(id).subscribe(data => {
       this.card = data
-    })
 
-    this.cardService.getDefaultDoc(id).subscribe(data => {
-      this.defaultDocs = data
+      let doc = new Document()
+      doc.contents = data.job_default_docs
+      this.defaultDocs = doc.toString()
     })
   }
 

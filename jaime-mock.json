@@ -2407,7 +2407,7 @@
       "responses": [
         {
           "uuid": "fdda25c0-bd26-4f25-9734-9c060ef28102",
-          "body": "[\n  {\n    \"id\": \"asdasd12\",\n    \"name\": \"Instalar Argo\",\n    \"description\": \"Instala argo en un cluster\",\n    \"job_module_repo\": \"repo\",\n    \"job_module_name\": \"module\"\n  },\n  {\n    \"id\": \"sdfg2g3\",\n    \"name\": \"Instalar Argo\",\n    \"description\": \"Instala argo en un cluster\",\n    \"job_module_repo\": \"repo\",\n    \"job_module_name\": \"module\"\n  },\n  {\n    \"id\": \"gdsfgewf1\",\n    \"name\": \"Instalar Argo\",\n    \"description\": \"Instala argo en un cluster\",\n    \"job_module_repo\": \"repo\",\n    \"job_module_name\": \"module\"\n  },\n  {\n    \"id\": \"asd12d12\",\n    \"name\": \"Instalar Argo\",\n    \"description\": \"Instala argo en un cluster\",\n    \"job_module_repo\": \"repo\",\n    \"job_module_name\": \"module\"\n  },\n  {\n    \"id\": \"1231231wesf\",\n    \"name\": \"Instalar Argo\",\n    \"description\": \"Instala argo en un cluster\",\n    \"job_module_repo\": \"repo\",\n    \"job_module_name\": \"module\"\n  }\n]",
+          "body": "[\n  {\n    \"id\": \"asdasd12\",\n    \"name\": \"Instalar Argo\",\n    \"description\": \"Instala argo en un cluster\",\n    \"job_module_repo\": \"repo\",\n    \"job_module_name\": \"module\",\n    \"color\": \"#F6CECE\"\n  },\n  {\n    \"id\": \"sdfg2g3\",\n    \"name\": \"Instalar Argo\",\n    \"description\": \"Instala argo en un cluster\",\n    \"job_module_repo\": \"repo\",\n    \"job_module_name\": \"module\",\n    \"color\": \"#F6CECE\"\n  },\n  {\n    \"id\": \"gdsfgewf1\",\n    \"name\": \"Instalar Argo\",\n    \"description\": \"Instala argo en un cluster\",\n    \"job_module_repo\": \"repo\",\n    \"job_module_name\": \"module\",\n    \"color\": \"#A9F5F2\"\n  },\n  {\n    \"id\": \"asd12d12\",\n    \"name\": \"Instalar Argo\",\n    \"description\": \"Instala argo en un cluster\",\n    \"job_module_repo\": \"repo\",\n    \"job_module_name\": \"module\",\n    \"color\": \"#A9F5F2\"\n  },\n  {\n    \"id\": \"1231231wesf\",\n    \"name\": \"Instalar Argo\",\n    \"description\": \"Instala argo en un cluster\",\n    \"job_module_repo\": \"repo\",\n    \"job_module_name\": \"module\",\n    \"color\": \"#F781D8\"\n  }\n] ",
           "latency": 1000,
           "statusCode": 200,
           "label": "",
@@ -2439,7 +2439,7 @@
       "responses": [
         {
           "uuid": "5c0f13f6-4184-47ff-b880-9b2cc40ccf2e",
-          "body": "{\n  \"id\": \"f1f12f3232\",\n  \"name\": \"Instalar Argo\",\n  \"description\": \"Instala argo en un cluster\",\n  \"creation_date\": \"2021-12-14T20:14:49.660102\",\n  \"job_module_repo\": \"repo\",\n  \"job_module_name\": \"module\",\n  \"job_agent_type\": \"KUBERNETES\"\n}",
+          "body": "{\n  \"id\": \"f1f12f3232\",\n  \"name\": \"Instalar Argo\",\n  \"description\": \"Instala argo en un cluster\",\n  \"creation_date\": \"2021-12-14T20:14:49.660102\",\n  \"job_module_repo\": \"repo\",\n  \"job_module_name\": \"module\",\n  \"job_agent_type\": \"KUBERNETES\",\n  \"color\": \"#F781D8\",\n  \"job_default_docs\": {\n    \"variable\": {\n      \"asd\": 123\n    }\n  },\n  \"job_card_docs\": \"spec:\\n  capacity:\\n    storage: 1Gi \\n  accessModes:\\n    ReadWriteMany\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",

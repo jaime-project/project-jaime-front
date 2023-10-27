@@ -23,16 +23,19 @@ export class NewCardComponent implements OnInit {
   agentsTypes: string[] = []
   repo: string = ""
   docParams: string = ""
+  cardParams: string = ""
   loading: boolean = false
 
   cardForm = new UntypedFormGroup({
     name: new UntypedFormControl(''),
     description: new UntypedFormControl(''),
+    color: new UntypedFormControl(''),
     job_agent_type: new UntypedFormControl(''),
     job_module_repo: new UntypedFormControl(''),
     job_module_name: new UntypedFormControl(''),
     job_module_doc: new UntypedFormControl(''),
     docParams: new UntypedFormControl(''),
+    cardParams: new UntypedFormControl(''),
   });
 
   constructor(private route: Router, private cardService: CardService, private moduleService: ModuleService, private reposService: ReposService, private agent_service: AgentService, private docsService: DocsService, private toastr: ToastrService) { }
@@ -79,7 +82,18 @@ export class NewCardComponent implements OnInit {
       }
 
     } catch (error: any) {
-      this.toastr.error(error, 'Invalid yaml')
+      this.toastr.error(error, 'Invalid default params yaml')
+      this.loading = false
+      throw error
+    }
+
+    try {
+      if (this.cardParams) {
+        parse(this.cardParams)
+      }
+
+    } catch (error: any) {
+      this.toastr.error(error, 'Invalid card params yaml')
       this.loading = false
       throw error
     }
@@ -87,13 +101,14 @@ export class NewCardComponent implements OnInit {
     let finalCard = {
       name: this.cardForm.value.name,
       description: this.cardForm.value.description,
+      color: this.cardForm.value.color,
       job_agent_type: this.cardForm.value.job_agent_type,
       job_module_repo: this.cardForm.value.job_module_repo,
       job_module_name: this.cardForm.value.job_module_name,
-      job_default_docs: this.docParams
+      job_default_docs: parse(this.docParams),
+      job_card_docs: this.cardParams
     } as Card
 
-    console.log(finalCard)
     this.cardService.postCard(finalCard)
       .subscribe(
         resultPostCard => {

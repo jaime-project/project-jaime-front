@@ -145,16 +145,19 @@ export interface CardShort {
     name: string,
     description: string,
     module: string,
-    repo: string
+    repo: string,
+    color: string
 }
 
 export interface Card {
     id: string,
     name: string,
     description: string,
+    color: string
     job_module_name: string,
     job_module_repo: string,
     job_agent_type: string,
-    job_default_docs: string,
-    creation_date: Date
+    job_default_docs: {},
+    job_card_docs: string,
+    creation_date: Date,
 }

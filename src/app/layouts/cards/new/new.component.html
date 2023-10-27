@@ -8,14 +8,28 @@
       <label for="nameInput" class="form-label"><b i18n>Name</b></label>
       <input type="text" class="form-control" id="nameInput" aria-describedby="nameHelp" formControlName="name"
         required>
-      <div id="nameHelp" class="form-text" i18n>Card name</div>
     </div>
 
     <div class="mb-3 col-12">
       <label for="nameInput" class="form-label"><b i18n>Description</b></label>
       <textarea type="text" class="form-control" id="descriptionInput" aria-describedby="descriptionHelp"
         formControlName="description" required></textarea>
-      <div id="descriptionHelp" class="form-text" i18n>Card description</div>
+    </div>
+
+    <div class="mb-3 col-12">
+      <label for="colorSelect" class="form-label"><b i18n>Color</b></label>
+      <input type="color" class="form-control form-control-color" list="colors" formControlName="color" required>
+      <datalist id="colors">
+        <option value="#FFFFFF"></option>
+        <option value="#F6CECE"></option>
+        <option value="#F5D0A9"></option>
+        <option value="#F2F5A9"></option>
+        <option value="#A9F5A9"></option>
+        <option value="#A9F5F2"></option>
+        <option value="#819FF7"></option>
+        <option value="#BE81F7"></option>
+        <option value="#F781D8"></option>
+      </datalist>
     </div>
 
     <div class="mb-3 col-12">
@@ -23,7 +37,6 @@
       <select class="form-control col-12" id="agentTypeSelect" formControlName="job_agent_type">
         <option *ngFor="let agentType of agentsTypes" value="{{agentType}}">{{agentType}}</option>
       </select>
-      <div id="agentTypeHelp" class="form-text" i18n>Select a installed agent type</div>
     </div>
 
     <div class="mb-3 col-12">
@@ -32,7 +45,6 @@
         formControlName="job_module_repo">
         <option *ngFor=" let r of repos" value="{{r}}">{{r}}</option>
       </select>
-      <div id="moduleHelp" class="form-text" i18n>Select a installed repository</div>
     </div>
 
     <div class="mb-3 col-12">
@@ -40,7 +52,6 @@
       <select class="form-control col-12" id="moduleSelect" formControlName="job_module_name">
         <option *ngFor="let module of modules" value="{{module}}">{{module}}</option>
       </select>
-      <div id="moduleHelp" class="form-text" i18n>Select a installed module</div>
     </div>
 
     <div class="mb-3 col-12">
@@ -49,7 +60,6 @@
         (change)="docChange($event.target.value)">
         <option *ngFor="let doc of docs" value="{{doc}}">{{doc}}</option>
       </select>
-      <div id="docHelp" class="form-text" i18n>Select a installed doc for params</div>
     </div>
 
     <div class="col-12">
@@ -60,7 +70,16 @@
           [(ngModel)]="docParams">
         </ngx-monaco-editor>
       </div>
-      <div id="paramPamlHelp" class="form-text" i18n>Parameters to module selected</div>
+    </div>
+
+    <div class="col-12">
+      <label for="cardparamsText" class="form-label"><b i18n>Card params yaml</b></label>
+      <div class="mb-3">
+        <ngx-monaco-editor style="width: 100%; height: 500px;"
+          [options]="{ automaticLayout: true, theme: 'vs-dark', language: 'yaml'}" formControlName="cardParams"
+          [(ngModel)]="cardParams">
+        </ngx-monaco-editor>
+      </div>
     </div>
 
     <div class="mb-3 col-12">
