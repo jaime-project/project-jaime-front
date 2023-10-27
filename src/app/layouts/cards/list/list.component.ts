@@ -74,7 +74,7 @@ export class ListCardComponent implements OnInit {
 
     this.currentCard = this.cardsShort.find(c => c.id == id)!;
 
-    this.cardService.getDefaultDoc(id)
+    this.cardService.getCardDocs(id)
       .subscribe(data => {
         this.cardDocs = data
       })
@@ -99,14 +99,14 @@ export class ListCardComponent implements OnInit {
     this.cardService.runCard(this.currentCard.id, params)
       .subscribe(
         result => {
-          document.getElementById("modalRunCloseButton")!.click();
+          document.getElementById("modalRunCloseButton")!.click()
           this.toastr.success($localize`Generated id ${result.id}`, $localize`Success job creation`)
+          this.pageLoading = false
         },
-        error => {
+        _ => {
           this.toastr.error($localize`Error on create new Job`)
           this.pageLoading = false
         })
-
   }
 
 }

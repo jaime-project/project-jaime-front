@@ -2471,7 +2471,7 @@
       "responses": [
         {
           "uuid": "aeb328be-5e6c-4b60-bc15-25f40d2633ad",
-          "body": "apiVersion: v1\nkind: PersistentVolume\nmetadata:\n  name: nfs-pv \nspec:\n  capacity:\n    storage: 1Gi \n  accessModes:\n    - ReadWriteMany \n  persistentVolumeReclaimPolicy: Retain \n  nfs: \n    path: /opt/nfs \n    server: nfs.f22 \n    readOnly: false\n  \n# The name of the PV, which is referenced in pod definitions or displayed in various oc volume commands.\n# The amount of storage allocated to this volume.\n# accessModes are used as labels to match a PV and a PVC. They currently do not define any form of access control.\n# The volume reclaim policy Retain indicates that the volume will be preserved after the pods accessing it terminates.\n# This defines the volume type being used, in this case the NFS plug-in.\n# This is the NFS mount path.\n# This is the NFS server. This can also be specified by IP address.",
+          "body": "spec:\n  capacity:\n    storage: 1Gi \n  accessModes:\n    - ReadWriteMany \n",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -2564,42 +2564,6 @@
       "responseMode": null
     },
     {
-      "uuid": "44b22ed6-29c0-4ecf-a5cf-cdd3596c786e",
-      "documentation": "",
-      "method": "put",
-      "endpoint": "cards/*/docs",
-      "responses": [
-        {
-          "uuid": "5b54db26-7a2d-490c-9402-6d7f45ccc165",
-          "body": "",
-          "latency": 0,
-          "statusCode": 200,
-          "label": "",
-          "headers": [
-            {
-              "key": "Access-Control-Allow-Origin",
-              "value": "*"
-            },
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "filePath": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": true,
-          "databucketID": "",
-          "bodyType": "INLINE"
-        }
-      ],
-      "enabled": true,
-      "responseMode": null
-    },
-    {
       "uuid": "c0945ad7-0d66-45a9-8929-f650f7db01b3",
       "documentation": "",
       "method": "put",
@@ -2615,42 +2579,6 @@
             {
               "key": "Access-Control-Allow-Origin",
               "value": "*"
-            }
-          ],
-          "filePath": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": true,
-          "databucketID": "",
-          "bodyType": "INLINE"
-        }
-      ],
-      "enabled": true,
-      "responseMode": null
-    },
-    {
-      "uuid": "22595464-1e9c-4a05-8c1b-9631ca56765d",
-      "documentation": "",
-      "method": "post",
-      "endpoint": "cards/*/docs",
-      "responses": [
-        {
-          "uuid": "0eab3e63-58d5-444a-abd5-2e1a470194ab",
-          "body": "",
-          "latency": 0,
-          "statusCode": 201,
-          "label": "",
-          "headers": [
-            {
-              "key": "Access-Control-Allow-Origin",
-              "value": "*"
-            },
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
             }
           ],
           "filePath": "",
@@ -3037,14 +2965,6 @@
     {
       "type": "route",
       "uuid": "22ba3b6d-3d01-443f-a5dc-310da685612c"
-    },
-    {
-      "type": "route",
-      "uuid": "44b22ed6-29c0-4ecf-a5cf-cdd3596c786e"
-    },
-    {
-      "type": "route",
-      "uuid": "22595464-1e9c-4a05-8c1b-9631ca56765d"
     },
     {
       "type": "route",
