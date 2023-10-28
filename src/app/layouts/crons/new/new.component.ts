@@ -29,6 +29,7 @@ export class NewCronComponent implements OnInit {
     cron_expression: new UntypedFormControl(''),
     job_module_repo: new UntypedFormControl(''),
     job_module_name: new UntypedFormControl(''),
+    job_module_doc: new UntypedFormControl(''),
     job_agent_type: new UntypedFormControl(''),
     id: new UntypedFormControl(''),
     status: new UntypedFormControl(''),
@@ -63,7 +64,7 @@ export class NewCronComponent implements OnInit {
   }
 
   docChange(docName: any) {
-    this.docsService.getDocsWithoutError(docName, this.cronForm.value.repoName)
+    this.docsService.getDocsWithoutError(docName, this.cronForm.value.job_module_repo)
       .subscribe(data => {
         this.docParams = data
       })

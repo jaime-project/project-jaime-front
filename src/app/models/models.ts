@@ -121,3 +121,43 @@ export interface TestClusterResult {
     success: boolean,
     text: string,
 }
+
+export interface HookShort {
+    id: string,
+    name: string,
+    status: string,
+    creation_date: string,
+}
+
+export interface HookJob {
+    name: string
+    job_module_repo: string
+    job_module_name: string
+    job_agent_type: string
+    id: string
+    creation_date: Date
+    status: string
+    job_params: any
+}
+
+export interface CardShort {
+    id: string,
+    name: string,
+    description: string,
+    module: string,
+    repo: string,
+    color: string
+}
+
+export interface Card {
+    id: string,
+    name: string,
+    description: string,
+    color: string
+    job_module_name: string,
+    job_module_repo: string,
+    job_agent_type: string,
+    job_default_docs: {},
+    job_card_docs: string,
+    creation_date: Date,
+}

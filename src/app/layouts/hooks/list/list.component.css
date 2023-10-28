@@ -1,0 +1,11 @@
+.SUCCESS {
+    color: green;
+}
+
+.ACTIVE {
+    color: green;
+}
+
+.DESACTIVE {
+    color: orange;
+}

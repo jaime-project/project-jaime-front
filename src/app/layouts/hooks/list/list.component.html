@@ -1,0 +1,77 @@
+<app-title title="Hook List"></app-title>
+
+
+<app-card>
+  <button class="btn btn-success" routerLink="/hooks/new" style="margin-right: 2%;">New Hook</button>
+
+  <div ngbDropdown class="d-inline-block">
+    <button class="btn btn-danger" id="dropdownBasic1" ngbDropdownToggle style="margin-right: 2%;" i18n>Delete
+      by
+      Status</button>
+    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+      <button ngbDropdownItem (click)="deleteByStatus(s)" *ngFor="let s of hooksStatus">{{s}}</button>
+    </div>
+  </div>
+</app-card>
+
+<app-card>
+  <form class="row g-3">
+    <div class="col-md-1">
+      <label class="form-label"><b>Page:</b></label>
+      <input type="text" class="form-control" type="number" [(ngModel)]="page" min="1"
+        [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class=" col-md-1">
+      <label class="form-label"><b>Size:</b></label>
+      <input type="text" class="form-control" type="number" [(ngModel)]="size" min="1"
+        [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="col-md-3">
+      <label class="form-label"><b>Filter:</b></label>
+      <input type="text" class="form-control" type="text" [(ngModel)]="filterBy" [ngModelOptions]="{standalone: true}">
+    </div>
+  </form>
+</app-card>
+
+<app-card>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('name')">Name</button></th>
+        <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('status')">Status</button></th>
+        <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('id')">Link</button></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let hookShort of hooksShort">
+        <td>{{hookShort.name}}</td>
+        <td><b class="{{hookShort.status}}">{{hookShort.status}}</b></td>
+        <td>
+          <button type="button" class="btn btn-primary" (click)="goTo(hookShort.id, 'ACTIVE')">
+            {{jaimeHookURL}}/{{hookShort.id}}
+          </button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-primary" style="margin-right: 2%;"
+            routerLink="/hooks/details/{{hookShort.id}}" data-toggle="tooltip" title="Details">
+            <i class="fas fa-eye"></i>
+          </button>
+          <button type="button" class="btn btn-success" style="margin-right: 2%;" data-toggle="tooltip" title="Activate"
+            (click)="changeStatus(hookShort.id, 'ACTIVE')">
+            <i class="fas fa-check"></i>
+          </button>
+          <button type="button" class="btn btn-warning" style="margin-right: 2%;" data-toggle="tooltip"
+            title="Desactivate" (click)="changeStatus(hookShort.id, 'DESACTIVE')">
+            <i class="fa fa-window-close"></i>
+          </button>
+          <button type="button" class="btn btn-danger" style="margin-right: 2%;" data-toggle="tooltip" title="Delete"
+            (click)="deleteHook(hookShort.id)">
+            <i class="far fa-trash-alt"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</app-card>
+
+<app-spinner *ngIf="pageLoading"></app-spinner>

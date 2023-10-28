@@ -92,8 +92,6 @@ export class NewJobComponent implements OnInit {
     doc.contents = finalJson as any
     let finalYaml = doc.toString()
 
-    console.log(finalYaml)
-
     this.jobService.postJob(finalYaml)
       .subscribe(
         result => {

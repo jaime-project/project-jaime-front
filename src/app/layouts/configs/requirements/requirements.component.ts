@@ -29,6 +29,10 @@ export class RequirementsComponent implements OnInit {
 
   postRequeriments() {
 
+    if (!this.requirementsText) {
+      return
+    }
+
     this.pageLoading = true
 
     this.configService.postRequirements(this.requirementsText)

@@ -1,21 +1,21 @@
 <app-title title="Job Yaml" mt="30"></app-title>
 
 <div class="col-12" style="margin-bottom: 2%;">
-  <div class="custom-control custom-switch">
-    <input [(ngModel)]="editSwitchActivated" type="checkbox" class="custom-control-input" id="customSwitch1">
-    <label class="custom-control-label" for="customSwitch1" i18n>Edit Job</label>
+  <div class="form-check form-switch custom-switch">
+    <input [(ngModel)]="editSwitchActivated" class="form-check-input" type="checkbox" role="switch">
+    <label class="form-check-label">Edit Job</label>
   </div>
 </div>
 
 <app-card *ngIf="!editSwitchActivated">
   <ngx-monaco-editor style="width: 100%; height: 600px;"
-    [options]="{ theme: 'vs-dark', language: 'yaml', readOnly: true}" [(ngModel)]="contentYaml">
+    [options]="{ automaticLayout: true, theme: 'vs-dark', language: 'yaml', readOnly: true}" [(ngModel)]="contentYaml">
   </ngx-monaco-editor>
 </app-card>
 
 <app-card *ngIf="editSwitchActivated">
   <ngx-monaco-editor style="width: 100%; height: 600px;"
-    [options]="{ theme: 'vs-dark', language: 'yaml', readOnly: false}" [(ngModel)]="contentYaml">
+    [options]="{ automaticLayout: true, theme: 'vs-dark', language: 'yaml', readOnly: false}" [(ngModel)]="contentYaml">
   </ngx-monaco-editor>
   <button type="submit" class="btn btn-success" (click)="putJob(contentYaml)" i18n>Update</button>
 </app-card>

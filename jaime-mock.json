@@ -1571,7 +1571,7 @@
       "responses": [
         {
           "uuid": "ac38ac6e-086f-48d7-8c12-34eeb56fe7d0",
-          "body": "{\n    \"agent\": {\n        \"host\": \"172.20.0.4\",\n        \"id\": \"38c5bab74061\",\n        \"port\": \"80\",\n        \"type\": \"OPENSHIFT\"\n    },\n    \"module\": \"migrate object\",\n    \"name\": \"prueba de algo\",\n    \"id\": \"31a30b3315ea\",\n    \"params\": {\n        \"agent\": {\n            \"type\": \"OPENSHIFT\"\n        },\n        \"module\": \"test\",\n        \"servers\": {\n            \"from\": {\n                \"name\": \"lasegunda\",\n                \"namespace\": \"msdesa\",\n                \"object\": \"configmaps\"\n            }\n        }\n    },\n    \"running_date\": \"2021-12-14T20:14:49.660102\",\n    \"start_date\": \"2021-12-14T20:14:46.074324\",\n    \"status\": \"TERMINATED\",\n    \"terminated_date\": \"2021-12-14T20:14:49.882738\"\n}",
+          "body": "{\n    \"agent\": {\n        \"host\": \"172.20.0.4\",\n        \"id\": \"38c5bab74061\",\n        \"port\": \"80\",\n        \"type\": \"OPENSHIFT\"\n    },\n    \"module_name\": \"migrate object\",\n    \"module_repo\": \"ocp4\",\n    \"name\": \"prueba de algo\",\n    \"id\": \"31a30b3315ea\",\n    \"params\": {\n        \"agent\": {\n            \"type\": \"OPENSHIFT\"\n        },\n        \"module\": \"test\",\n        \"servers\": {\n            \"from\": {\n                \"name\": \"lasegunda\",\n                \"namespace\": \"msdesa\",\n                \"object\": \"configmaps\"\n            }\n        }\n    },\n    \"running_date\": \"2021-12-14T20:14:49.660102\",\n    \"start_date\": \"2021-12-14T20:14:46.074324\",\n    \"status\": \"TERMINATED\",\n    \"terminated_date\": \"2021-12-14T20:14:49.882738\"\n}",
           "latency": 0,
           "statusCode": 201,
           "label": "",
@@ -2302,6 +2302,330 @@
       ],
       "enabled": true,
       "responseMode": null
+    },
+    {
+      "uuid": "a88e16e4-c29f-4fdc-ba48-6633f38b79c6",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "hooks/all/short",
+      "responses": [
+        {
+          "uuid": "021595d9-f79f-411f-a77c-bcf20f77f166",
+          "body": "[\n    {\n        \"id\": \"31a30b3315ea\",\n        \"name\": \"Migracion Secrets\",\n        \"status\": \"ACTIVE\",\n        \"creation_date\": \"2021-11-12T11:15:45\"\n    },\n    {\n        \"id\": \"asd12312\",\n        \"name\": \"Algo copado\",\n        \"status\": \"DESACTIVE\",\n        \"creation_date\": \"2021-11-12T11:15:45\"\n    }\n]",
+          "latency": 1000,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "4f82d3e9-76cd-4253-a5f6-f4dfebcfcf9b",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "hooks/status",
+      "responses": [
+        {
+          "uuid": "47732e0e-da23-4bed-8b66-00759a8f9bc7",
+          "body": "[\n  \"ACTIVE\",\n  \"DESACTIVE\"\n]",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "6ab0787f-e29a-49d9-8e02-16cc1ba2acad",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "hooks/*",
+      "responses": [
+        {
+          "uuid": "19f8e648-1b40-45d3-97e1-662295c1895a",
+          "body": "{\n    \"name\": \"prueba de algo\",\n    \"id\": \"31a30b3315ea\",\n    \"job_params\": {\n        \"servers\": {\n            \"from\": {\n                \"name\": \"lasegunda\",\n                \"namespace\": \"msdesa\",\n                \"object\": \"configmaps\"\n            }\n        }\n    },\n    \"status\": \"ACTIVE\",\n    \"creation_date\": \"2021-12-14T20:14:49.660102\",\n    \"job_module_repo\": \"repo\",\n    \"job_module_name\": \"module\",\n    \"job_agent_type\": \"module\"\n}",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "d38fb764-6b73-40ba-a626-cb980a8a5918",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "cards/all/short",
+      "responses": [
+        {
+          "uuid": "fdda25c0-bd26-4f25-9734-9c060ef28102",
+          "body": "[\n  {\n    \"id\": \"asdasd12\",\n    \"name\": \"Instalar Argo\",\n    \"description\": \"Instala argo en un cluster\",\n    \"job_module_repo\": \"repo\",\n    \"job_module_name\": \"module\",\n    \"color\": \"#F6CECE\"\n  },\n  {\n    \"id\": \"sdfg2g3\",\n    \"name\": \"Instalar Argo\",\n    \"description\": \"Instala argo en un cluster\",\n    \"job_module_repo\": \"repo\",\n    \"job_module_name\": \"module\",\n    \"color\": \"#F6CECE\"\n  },\n  {\n    \"id\": \"gdsfgewf1\",\n    \"name\": \"Instalar Argo\",\n    \"description\": \"Instala argo en un cluster\",\n    \"job_module_repo\": \"repo\",\n    \"job_module_name\": \"module\",\n    \"color\": \"#A9F5F2\"\n  },\n  {\n    \"id\": \"asd12d12\",\n    \"name\": \"Instalar Argo\",\n    \"description\": \"Instala argo en un cluster\",\n    \"job_module_repo\": \"repo\",\n    \"job_module_name\": \"module\",\n    \"color\": \"#A9F5F2\"\n  },\n  {\n    \"id\": \"1231231wesf\",\n    \"name\": \"Instalar Argo\",\n    \"description\": \"Instala argo en un cluster\",\n    \"job_module_repo\": \"repo\",\n    \"job_module_name\": \"module\",\n    \"color\": \"#F781D8\"\n  }\n] ",
+          "latency": 1000,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "316b6b04-6496-4ff6-881c-d8150a559aa9",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "cards/*",
+      "responses": [
+        {
+          "uuid": "5c0f13f6-4184-47ff-b880-9b2cc40ccf2e",
+          "body": "{\n  \"id\": \"f1f12f3232\",\n  \"name\": \"Instalar Argo\",\n  \"description\": \"Instala argo en un cluster\",\n  \"creation_date\": \"2021-12-14T20:14:49.660102\",\n  \"job_module_repo\": \"repo\",\n  \"job_module_name\": \"module\",\n  \"job_agent_type\": \"KUBERNETES\",\n  \"color\": \"#F781D8\",\n  \"job_default_docs\": {\n    \"variable\": {\n      \"asd\": 123\n    }\n  },\n  \"job_card_docs\": \"spec:\\n  capacity:\\n    storage: 1Gi \\n  accessModes:\\n    ReadWriteMany\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "22ba3b6d-3d01-443f-a5dc-310da685612c",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "cards/*/docs",
+      "responses": [
+        {
+          "uuid": "aeb328be-5e6c-4b60-bc15-25f40d2633ad",
+          "body": "spec:\n  capacity:\n    storage: 1Gi \n  accessModes:\n    - ReadWriteMany \n",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "df837eb4-07df-4d9b-9d82-05d9f35b3322",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "cards/*/run",
+      "responses": [
+        {
+          "uuid": "8095b04a-826d-4466-9358-e6aceef0cf38",
+          "body": "{\n  \"id\": \"asdd12e12\"\n}",
+          "latency": 1000,
+          "statusCode": 201,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "0cc64c21-9f65-4d2e-bd0e-a4df2294f49c",
+      "documentation": "",
+      "method": "delete",
+      "endpoint": "cards/*",
+      "responses": [
+        {
+          "uuid": "e98c1d5c-14a8-40b5-819a-e13b89d68e1b",
+          "body": "",
+          "latency": 1000,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "c0945ad7-0d66-45a9-8929-f650f7db01b3",
+      "documentation": "",
+      "method": "put",
+      "endpoint": "cards/*",
+      "responses": [
+        {
+          "uuid": "c48fb012-945d-4509-a5bb-03ccf5e6f720",
+          "body": "{\n  \"id\": \"f1f12f3232\",\n  \"name\": \"Instalar Argo\",\n  \"description\": \"Instala argo en un cluster\",\n  \"creation_date\": \"2021-12-14T20:14:49.660102\",\n  \"job_module_repo\": \"repo\",\n  \"job_module_name\": \"module\",\n  \"job_agent_type\": \"KUBERNETES\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "fdf7410c-d5ae-4ab4-82fa-216cf0f67e8c",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "cards/*",
+      "responses": [
+        {
+          "uuid": "3bcc5049-19e0-419d-a235-68fd6dfd3657",
+          "body": "{\n  \"id\": \"asdd12e12\"\n}",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
     }
   ],
   "proxyMode": false,
@@ -2617,6 +2941,46 @@
     {
       "type": "route",
       "uuid": "4454c75c-3c1a-4b45-9624-46563ed3bff7"
+    },
+    {
+      "type": "route",
+      "uuid": "a88e16e4-c29f-4fdc-ba48-6633f38b79c6"
+    },
+    {
+      "type": "route",
+      "uuid": "4f82d3e9-76cd-4253-a5f6-f4dfebcfcf9b"
+    },
+    {
+      "type": "route",
+      "uuid": "6ab0787f-e29a-49d9-8e02-16cc1ba2acad"
+    },
+    {
+      "type": "route",
+      "uuid": "d38fb764-6b73-40ba-a626-cb980a8a5918"
+    },
+    {
+      "type": "route",
+      "uuid": "df837eb4-07df-4d9b-9d82-05d9f35b3322"
+    },
+    {
+      "type": "route",
+      "uuid": "22ba3b6d-3d01-443f-a5dc-310da685612c"
+    },
+    {
+      "type": "route",
+      "uuid": "fdf7410c-d5ae-4ab4-82fa-216cf0f67e8c"
+    },
+    {
+      "type": "route",
+      "uuid": "316b6b04-6496-4ff6-881c-d8150a559aa9"
+    },
+    {
+      "type": "route",
+      "uuid": "0cc64c21-9f65-4d2e-bd0e-a4df2294f49c"
+    },
+    {
+      "type": "route",
+      "uuid": "c0945ad7-0d66-45a9-8929-f650f7db01b3"
     }
   ]
 }
