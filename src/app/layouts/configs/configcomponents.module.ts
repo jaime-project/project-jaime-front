@@ -28,7 +28,7 @@ import { TabsConfigComponent } from './tabs/tabs.component';
     RequirementsComponent,
     ObjectsComponent,
     ObjectsGetComponent,
-    LogsComponent
+    LogsComponent,
   ]
 })
 export class ConfigComponentsModule { }

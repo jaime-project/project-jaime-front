@@ -66,6 +66,10 @@ export const Approutes: Routes = [
         path: '',
         loadChildren: () => import('./layouts/cards/cardcomponents.module').then(m => m.CardComponentsModule)
       },
+      {
+        path: '',
+        loadChildren: () => import('./layouts/libraries/librarycomponents.module').then(m => m.LibraryComponentsModule)
+      },
     ]
   },
   {

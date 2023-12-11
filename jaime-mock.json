@@ -2626,6 +2626,166 @@
       ],
       "enabled": true,
       "responseMode": null
+    },
+    {
+      "uuid": "f0000eb2-afd7-4b7d-9586-d6b088f385c8",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "libraries/all/short",
+      "responses": [
+        {
+          "uuid": "a945b386-fd9b-41a5-8fba-e843279ddc16",
+          "body": "[\n  {\n    \"name\": \"tools\",\n    \"description\": \"Tools library\",\n    \"repo\": \"https://github.com/brianwolf/tools\"\n  },\n  {\n    \"name\": \"client\",\n    \"description\": \"Client library\",\n    \"repo\": \"https://github.com/asd/client\"\n  }\n] ",
+          "latency": 1000,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "704d0bec-7714-4d5a-bc83-247de13f54c0",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "libraries/*",
+      "responses": [
+        {
+          "uuid": "dd5e039e-353f-49fc-85b8-568781b1db57",
+          "body": "{\n  \"id\": \"asdd12e12\"\n}",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "3044ccd5-940a-422f-8205-c0566d6decda",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "libraries/*",
+      "responses": [
+        {
+          "uuid": "17c48e4c-e4de-49e1-b797-85227c88363f",
+          "body": "{\n  \"name\": \"tools\",\n  \"description\": \"Tools library\",\n  \"repo\": \"2021-12-14T20:14:49.660102\",\n  \"path\": null,\n  \"branch\": \"main\",\n  \"user\": \"user\",\n  \"pass\": \"pass\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "c71899fc-f345-4575-94de-6994ef54d658",
+      "documentation": "",
+      "method": "delete",
+      "endpoint": "libraries/*",
+      "responses": [
+        {
+          "uuid": "d693b3d7-c6e7-4f4d-aa2b-358d4fc46393",
+          "body": "",
+          "latency": 1000,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "fdb54f1c-27ac-4281-8c50-8d026537fd0e",
+      "documentation": "",
+      "method": "put",
+      "endpoint": "libraries/*",
+      "responses": [
+        {
+          "uuid": "c7f6d0b2-5f79-4be9-8471-6242cf1373d8",
+          "body": "{\n  \"name\": \"tools\",\n  \"description\": \"Tools library\",\n  \"repo\": \"2021-12-14T20:14:49.660102\",\n  \"path\": null,\n  \"branch\": \"main\",\n  \"user\": \"user\",\n  \"pass\": \"pass\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
     }
   ],
   "proxyMode": false,
@@ -2981,6 +3141,26 @@
     {
       "type": "route",
       "uuid": "c0945ad7-0d66-45a9-8929-f650f7db01b3"
+    },
+    {
+      "type": "route",
+      "uuid": "f0000eb2-afd7-4b7d-9586-d6b088f385c8"
+    },
+    {
+      "type": "route",
+      "uuid": "704d0bec-7714-4d5a-bc83-247de13f54c0"
+    },
+    {
+      "type": "route",
+      "uuid": "3044ccd5-940a-422f-8205-c0566d6decda"
+    },
+    {
+      "type": "route",
+      "uuid": "c71899fc-f345-4575-94de-6994ef54d658"
+    },
+    {
+      "type": "route",
+      "uuid": "fdb54f1c-27ac-4281-8c50-8d026537fd0e"
     }
   ]
 }

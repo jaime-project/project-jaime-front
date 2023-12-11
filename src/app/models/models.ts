@@ -161,3 +161,19 @@ export interface Card {
     job_card_docs: string,
     creation_date: Date,
 }
+
+export interface Library {
+    name: string,
+    description: string,
+    repo: string,
+    path: string,
+    branch: string,
+    user: string,
+    pass: string,
+}
+
+export interface LibraryShort {
+    name: string,
+    description: string,
+    repo: string,
+}
