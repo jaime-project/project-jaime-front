@@ -18,14 +18,13 @@ export class ListClusterComponent implements OnInit {
   subscription: Subscription | null = null
   listClustersShorts: ClusterShort[] = []
 
-  constructor(private clustersService: ClustersService, private route: Router, private toastr: ToastrService) { }
-
   orderBy: string = 'name'
   reverse: boolean = false
   filterBy: string = ''
   page: number = 1
   size: number = 10
 
+  constructor(private clustersService: ClustersService, private route: Router, private toastr: ToastrService) { }
 
   changeOrder(order: string) {
     this.reverse = !this.reverse
@@ -33,13 +32,7 @@ export class ListClusterComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     this.loadStartData()
-
-    this.subscription = interval(1000)
-      .subscribe(() => {
-        this.loadStartData()
-      });
   }
 
   ngOnDestroy(): void {

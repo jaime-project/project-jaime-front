@@ -7,53 +7,34 @@
       <form>
         <div class="mb-3 col-6">
           <label class="form-label"><b i18n>Name</b></label>
-          <p class="card-text">{{card.name}}</p>
+          <p class="card-text">{{library.name}}</p>
         </div>
         <div class="mb-3 col-6">
           <label class="form-label"><b i18n>Description</b></label>
-          <p class="card-text">{{card.description}}</p>
+          <p class="card-text">{{library.description}}</p>
         </div>
         <div class="mb-3 col-6">
-          <label class="form-label"><b i18n>Color</b></label>
-          <input type="color" class="form-control form-control-color" value="{{card.color}}" disabled>
+          <label class="form-label"><b i18n>Repository</b></label>
+          <p class="card-text">{{library.repo}}</p>
         </div>
         <div class="mb-3 col-6">
-          <label class="form-label"><b i18n>Module name</b></label>
-          <p class="card-text">{{card.job_module_name}}</p>
+          <label class="form-label"><b i18n>Path</b></label>
+          <p class="card-text">{{library.path}}</p>
         </div>
         <div class="mb-3 col-6">
-          <label class="form-label"><b i18n>Module repo</b></label>
-          <p class="card-text">{{card.job_module_repo}}</p>
+          <label class="form-label"><b i18n>Branch</b></label>
+          <p class="card-text">{{library.branch}}</p>
         </div>
         <div class="mb-3 col-6">
-          <label class="form-label"><b i18n>Agent type</b></label>
-          <p class="card-text">{{card.job_agent_type}}</p>
+          <label class="form-label"><b i18n>User</b></label>
+          <p class="card-text">{{library.user}}</p>
         </div>
         <div class="mb-3 col-6">
-          <label class="form-label"><b i18n>Creation date</b></label>
-          <p class="card-text">{{card.creation_date| date :'short'}}</p>
+          <label class="form-label"><b i18n>Password</b></label>
+          <p class="card-text">{{library.password}}</p>
         </div>
       </form>
     </app-card>
   </div>
 
-  <div class="col-6">
-    <app-card column="6">
-      <form>
-        <div class="mb-3 col-6">
-          <label class="form-label"><b i18n>Card params</b></label>
-          <p class="card-text" style="white-space: pre-wrap;">{{card.job_card_docs}}</p>
-        </div>
-      </form>
-    </app-card>
-  </div>
 </div>
-
-<app-card column="6">
-  <form>
-    <div class="mb-3 col-6">
-      <label class="form-label"><b i18n>Default params</b></label>
-      <p class="card-text" style="white-space: pre-wrap;">{{defaultDocs}}</p>
-    </div>
-  </form>
-</app-card>

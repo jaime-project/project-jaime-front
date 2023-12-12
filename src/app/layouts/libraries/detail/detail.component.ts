@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Card } from 'src/app/models/models';
+import { Card, Library } from 'src/app/models/models';
 import { CardService } from 'src/app/services/cards/card.service';
+import { LibraryService } from 'src/app/services/libraries/library.service';
 import { Document } from 'yaml';
 
 @Component({
@@ -11,33 +12,23 @@ import { Document } from 'yaml';
 })
 export class DetailLibraryComponent implements OnInit {
 
-  defaultDocs: string = ""
-  cardDocs: string = ""
-
-  card: Card = {
-    id: "",
+  library: Library = {
     name: "",
     description: "",
-    color: "",
-    job_module_name: "",
-    job_module_repo: "",
-    job_agent_type: "",
-    job_default_docs: "",
-    job_card_docs: "",
-    creation_date: new Date(),
+    repo: "",
+    branch: "",
+    path: "",
+    user: "",
+    password: ""
   }
 
-  constructor(private cardService: CardService, private route: ActivatedRoute) { }
+  constructor(private libraryService: LibraryService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    let id = this.route.snapshot.paramMap.get('id')
+    let name = this.route.snapshot.paramMap.get('name')!
 
-    this.cardService.getCard(id).subscribe(data => {
-      this.card = data
-
-      let doc = new Document()
-      doc.contents = data.job_default_docs
-      this.defaultDocs = doc.toString()
+    this.libraryService.getLibrary(name).subscribe(data => {
+      this.library = data
     })
   }
 

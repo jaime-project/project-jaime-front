@@ -1,9 +1,13 @@
+.btn {
+    margin: 1%;
+}
+
 .btn-download {
     background-color: orange;
     color: aliceblue;
 }
 
-.mdi-folder {
+.mdi-git {
     font-size: 250%;
-    color: gold;
+    color: orangered;
 }

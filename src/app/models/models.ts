@@ -169,7 +169,7 @@ export interface Library {
     path: string,
     branch: string,
     user: string,
-    pass: string,
+    password: string,
 }
 
 export interface LibraryShort {

@@ -18,18 +18,16 @@ export class ListModuleComponent implements OnInit {
   filterBy: string = ''
   pageLoading: boolean = false
 
+  reposLocalFiltered: string[] = []
+  reposGitFiltered: string[] = []
+
+
   constructor(private reposService: ReposService, private route: Router, private toastr: ToastrService) { }
 
   thread: Subscription | null = null
 
   ngOnInit(): void {
-
     this.loadStartData()
-
-    this.thread = interval(1000)
-      .subscribe(() => {
-        this.loadStartData()
-      });
   }
 
   ngOnDestroy(): void {
@@ -39,11 +37,13 @@ export class ListModuleComponent implements OnInit {
   loadStartData() {
     this.reposService.listReposByType('LOCAL')
       .subscribe(data => {
-        this.reposLocal = this.filterFunction(data.sort())
+        this.reposLocal = data
+        this.reposLocalFiltered = data
       })
     this.reposService.listReposByType('GIT')
       .subscribe(data => {
-        this.reposGit = this.filterFunction(data.sort())
+        this.reposGit = data
+        this.reposGitFiltered = data
       })
   }
 
@@ -90,12 +90,14 @@ export class ListModuleComponent implements OnInit {
     })
   }
 
-  filterFunction(list: string[]) {
-    if (!this.filterBy) {
-      return list
-    }
+  filterFunction() {
 
-    return list
+    this.reposGitFiltered = this.reposGit
+      .filter(r => {
+        return r.toLowerCase().includes(this.filterBy.toLowerCase())
+      })
+
+    this.reposLocalFiltered = this.reposLocal
       .filter(r => {
         return r.toLowerCase().includes(this.filterBy.toLowerCase())
       })

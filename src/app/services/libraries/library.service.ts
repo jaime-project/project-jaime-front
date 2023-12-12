@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { AppConfigService } from '../AppConfigService';
 import { ErrorService } from '../errors/error.service';
-import { LibraryShort } from 'src/app/models/models';
+import { Library, LibraryShort } from 'src/app/models/models';
 
 
 @Injectable({
@@ -45,16 +45,7 @@ export class LibraryService {
       )
   }
 
-  listLibraries(): Observable<string[]> {
-    return this.http.get<string[]>(`${this.apiUrl}/`)
-      .pipe(
-        catchError((error: HttpErrorResponse) => {
-          return this.errorService.httpError(error);
-        })
-      )
-  }
-
-  getLibraries(name: string): Observable<any> {
+  getLibrary(name: string): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/${name}`)
       .pipe(
         catchError((error: HttpErrorResponse) => {
@@ -63,8 +54,8 @@ export class LibraryService {
       )
   }
 
-  postLibraries(repo: any): Observable<string> {
-    return this.http.post<any>(this.apiUrl + '/', repo)
+  postLibrary(library: any): Observable<string> {
+    return this.http.post<any>(this.apiUrl + '/', library)
       .pipe(
         catchError((error: HttpErrorResponse) => {
           return this.errorService.httpError(error);
@@ -81,7 +72,16 @@ export class LibraryService {
       )
   }
 
-  reloadLibraries(name: string): Observable<any> {
+  putLibrary(library: Library): Observable<any> {
+    return this.http.put<any>(this.apiUrl + '/', library)
+      .pipe(
+        catchError((error: HttpErrorResponse) => {
+          return this.errorService.httpError(error);
+        })
+      )
+  }
+
+  reloadLibrary(name: string): Observable<any> {
     const url = `${this.apiUrl}/${name}/reload`
     return this.http.post<any>(url, {})
       .pipe(

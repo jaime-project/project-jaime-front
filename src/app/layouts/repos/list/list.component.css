@@ -1,6 +1,5 @@
 .btn {
-    margin-right: 2%;
-    margin-left: 2%;
+    margin: 1%;
 }
 
 .btn-download {
@@ -18,21 +17,12 @@
     color: aliceblue;
 }
 
-a:link {
-    text-decoration: none;
+.mdi-folder {
+    font-size: 250%;
+    color: gold;
 }
 
-
-a:visited {
-    text-decoration: none;
-}
-
-
-a:hover {
-    text-decoration: none;
-}
-
-
-a:active {
-    text-decoration: none;
+.mdi-git {
+    font-size: 250%;
+    color: orangered;
 }

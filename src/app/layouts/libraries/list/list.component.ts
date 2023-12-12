@@ -4,7 +4,7 @@ import FileSaver from 'file-saver';
 import { ToastrService } from 'ngx-toastr';
 import { Subscription, interval } from 'rxjs';
 import { LibraryShort } from 'src/app/models/models';
-import { LibraryService } from 'src/app/services/configs/library.service';
+import { LibraryService } from 'src/app/services/libraries/library.service';
 import Swal from 'sweetalert2';
 
 
@@ -33,13 +33,7 @@ export class ListLibraryComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     this.loadStartData()
-
-    this.subscription = interval(1000)
-      .subscribe(() => {
-        this.loadStartData()
-      });
   }
 
   ngOnDestroy(): void {

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { CardService } from 'src/app/services/cards/card.service';
+import { LibraryService } from 'src/app/services/libraries/library.service';
 import Swal from 'sweetalert2';
-import { Document } from 'yaml';
+import { Document, parse } from 'yaml';
 
 @Component({
   selector: 'app-yaml-library',
@@ -15,38 +15,38 @@ export class YamlLibraryComponent implements OnInit {
   public editSwitchActivated = false
 
   contentYaml: string = ""
-  contentCardDoc: string = ""
 
-  id: string = ""
+  name: string = ""
 
-  constructor(private cardService: CardService, private activatedRoute: ActivatedRoute, private route: Router, private toastr: ToastrService) { }
+  constructor(private libraryService: LibraryService, private activatedRoute: ActivatedRoute, private route: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
-    this.id = this.activatedRoute.snapshot.paramMap.get('id')!
+    this.name = this.activatedRoute.snapshot.paramMap.get('name')!
 
-    this.cardService.getCard(this.id).subscribe(data => {
+    this.libraryService.getLibrary(this.name).subscribe(data => {
+      this.contentYaml = data
 
       let doc = new Document()
-      doc.contents = data
+      doc.contents = data as any
       this.contentYaml = doc.toString()
     })
   }
 
 
-  putCard(modifyYaml: string) {
+  putLibrary(modifyYaml: string) {
 
     Swal.fire({
-      title: $localize`Update Card`,
-      text: $localize`Update card with id ${this.id}`,
+      title: $localize`Update Library`,
+      text: $localize`Update library with name ${this.name}`,
       icon: 'warning',
       confirmButtonColor: '#05b281',
       cancelButtonColor: '#ec312d',
       showCancelButton: true,
     }).then(result => {
       if (result.isConfirmed) {
-        this.cardService.putCard(modifyYaml)
+        this.libraryService.putLibrary(parse(modifyYaml))
           .subscribe(() => {
-            this.toastr.success($localize`Card updated`)
+            this.toastr.success($localize`Library updated`)
             this.route.navigate(['cards'])
           })
       }

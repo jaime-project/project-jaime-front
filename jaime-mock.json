@@ -2699,7 +2699,7 @@
       "responses": [
         {
           "uuid": "17c48e4c-e4de-49e1-b797-85227c88363f",
-          "body": "{\n  \"name\": \"tools\",\n  \"description\": \"Tools library\",\n  \"repo\": \"2021-12-14T20:14:49.660102\",\n  \"path\": null,\n  \"branch\": \"main\",\n  \"user\": \"user\",\n  \"pass\": \"pass\"\n}",
+          "body": "{\n  \"name\": \"tools\",\n  \"description\": \"Tools library\",\n  \"repo\": \"https://github.com/brianwolf/tools\",\n  \"path\": \"/\",\n  \"branch\": \"main\",\n  \"user\": \"user\",\n  \"password\": \"pass\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -2763,7 +2763,7 @@
       "responses": [
         {
           "uuid": "c7f6d0b2-5f79-4be9-8471-6242cf1373d8",
-          "body": "{\n  \"name\": \"tools\",\n  \"description\": \"Tools library\",\n  \"repo\": \"2021-12-14T20:14:49.660102\",\n  \"path\": null,\n  \"branch\": \"main\",\n  \"user\": \"user\",\n  \"pass\": \"pass\"\n}",
+          "body": "{\n  \"name\": \"tools\",\n  \"description\": \"Tools library\",\n  \"repo\": \"https://github.com/brianwolf/tools\",\n  \"path\": \"/\",\n  \"branch\": \"main\",\n  \"user\": \"user\",\n  \"pass\": \"pass\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",

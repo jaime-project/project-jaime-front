@@ -1,85 +1,49 @@
-<app-title title="New Card"></app-title>
+<app-title title="New Library"></app-title>
 
 <app-card column="8">
 
-  <form [formGroup]="cardForm" (ngSubmit)="postCard()">
+  <form [formGroup]="libraryForm" (ngSubmit)="postLibrary()">
 
     <div class="mb-3 col-12">
-      <label for="nameInput" class="form-label"><b i18n>Name</b></label>
-      <input type="text" class="form-control" id="nameInput" aria-describedby="nameHelp" formControlName="name"
-        required>
-    </div>
-
-    <div class="mb-3 col-12">
-      <label for="nameInput" class="form-label"><b i18n>Description</b></label>
-      <textarea type="text" class="form-control" id="descriptionInput" aria-describedby="descriptionHelp"
-        formControlName="description" required></textarea>
+      <label class="form-label"><b i18n>Name</b></label>
+      <input type="text" class="form-control" formControlName="name" required>
+      <div class="form-text">Example: tools-ocp-4</div>
     </div>
 
     <div class="mb-3 col-12">
-      <label for="colorSelect" class="form-label"><b i18n>Color</b></label>
-      <input type="color" class="form-control form-control-color" list="colors" formControlName="color" required>
-      <datalist id="colors">
-        <option value="#FFFFFF"></option>
-        <option value="#F6CECE"></option>
-        <option value="#F5D0A9"></option>
-        <option value="#F2F5A9"></option>
-        <option value="#A9F5A9"></option>
-        <option value="#A9F5F2"></option>
-        <option value="#819FF7"></option>
-        <option value="#BE81F7"></option>
-        <option value="#F781D8"></option>
-      </datalist>
+      <label class="form-label"><b i18n>Description</b></label>
+      <textarea type="text" class="form-control" formControlName="description" required></textarea>
+      <div class="form-text">Example: Tools for openshift v4</div>
     </div>
 
     <div class="mb-3 col-12">
-      <label for="agentTypeSelect" class="form-label"><b i18n>Agent type</b></label>
-      <select class="form-control col-12" id="agentTypeSelect" formControlName="job_agent_type">
-        <option *ngFor="let agentType of agentsTypes" value="{{agentType}}">{{agentType}}</option>
-      </select>
+      <label class="form-label"><b i18n>Repository</b></label>
+      <input type="text" class="form-control" formControlName="repo" required>
+      <div class="form-text">Example: https://github.com/repo/tools</div>
     </div>
 
     <div class="mb-3 col-12">
-      <label for="repoSelect" class="form-label"><b i18n>Repository</b></label>
-      <select class="form-control col-12" id="moduleSelect" (change)="repoChange($event.target.value)"
-        formControlName="job_module_repo">
-        <option *ngFor=" let r of repos" value="{{r}}">{{r}}</option>
-      </select>
+      <label class="form-label"><b i18n>Branch</b></label>
+      <input type="text" class="form-control" formControlName="branch" required>
+      <div class="form-text">Example: main</div>
     </div>
 
     <div class="mb-3 col-12">
-      <label for="moduleSelect" class="form-label"><b i18n>Module</b></label>
-      <select class="form-control col-12" id="moduleSelect" formControlName="job_module_name">
-        <option *ngFor="let module of modules" value="{{module}}">{{module}}</option>
-      </select>
+      <label class="form-label"><b i18n>Path</b></label>
+      <input type="text" class="form-control" formControlName="path" required>
+      <div class="form-text">Example: /jaime/libraries/</div>
     </div>
 
     <div class="mb-3 col-12">
-      <label for="docSelect" class="form-label"><b i18n>Params</b></label>
-      <select class="form-control col-12" id="docSelect" formControlName="job_module_doc"
-        (change)="docChange($event.target.value)">
-        <option *ngFor="let doc of docs" value="{{doc}}">{{doc}}</option>
-      </select>
+      <label class="form-label"><b i18n>User</b></label>
+      <input type="text" class="form-control" formControlName="user">
+      <div class="form-text">Example: user</div>
     </div>
 
-    <div class="col-12">
-      <label for="paramsText" class="form-label"><b i18n>Default params yaml</b></label>
-      <div class="mb-3">
-        <ngx-monaco-editor style="width: 100%; height: 500px;"
-          [options]="{ automaticLayout: true, theme: 'vs-dark', language: 'yaml'}" formControlName="docParams"
-          [(ngModel)]="docParams">
-        </ngx-monaco-editor>
-      </div>
-    </div>
-
-    <div class="col-12">
-      <label for="cardparamsText" class="form-label"><b i18n>Card params yaml</b></label>
-      <div class="mb-3">
-        <ngx-monaco-editor style="width: 100%; height: 500px;"
-          [options]="{ automaticLayout: true, theme: 'vs-dark', language: 'yaml'}" formControlName="cardParams"
-          [(ngModel)]="cardParams">
-        </ngx-monaco-editor>
-      </div>
+    <div class="mb-3 col-12">
+      <label class="form-label"><b i18n>Password</b></label>
+      <input type="password" class="form-control" formControlName="password">
+      <div class="form-text">Example: ******</div>
     </div>
 
     <div class="mb-3 col-12">
