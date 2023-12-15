@@ -79,8 +79,8 @@ export class ClustersService {
       )
   }
 
-  testCluster(name: string): Observable<TestClusterResult> {
-    return this.http.get<TestClusterResult>(`${this.apiUrl}/${name}/test`)
+  testCluster(name: string, agentType: string): Observable<TestClusterResult> {
+    return this.http.get<TestClusterResult>(`${this.apiUrl}/${name}/test/agent/${agentType}`)
       .pipe(
         catchError((error: HttpErrorResponse) => {
           return this.errorService.httpError(error);

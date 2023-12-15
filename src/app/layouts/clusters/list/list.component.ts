@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import FileSaver from 'file-saver';
 import { ToastrService } from 'ngx-toastr';
-import { interval, Subscription } from 'rxjs';
 import { ClusterShort } from 'src/app/models/models';
+import { AgentService } from 'src/app/services/agents/agents.service';
 import { ClustersService } from 'src/app/services/clusters/clusters.service';
 import Swal from 'sweetalert2';
 
@@ -14,9 +14,15 @@ import Swal from 'sweetalert2';
 })
 export class ListClusterComponent implements OnInit {
 
+  @ViewChild('closeModalButton')
+  closeModalButton: any;
+
   pageLoading: boolean = true
-  subscription: Subscription | null = null
   listClustersShorts: ClusterShort[] = []
+
+  listAgentTypes: string[] = []
+  currentCluster: string = ""
+  currentAgentType: string = ""
 
   orderBy: string = 'name'
   reverse: boolean = false
@@ -24,7 +30,7 @@ export class ListClusterComponent implements OnInit {
   page: number = 1
   size: number = 10
 
-  constructor(private clustersService: ClustersService, private route: Router, private toastr: ToastrService) { }
+  constructor(private clustersService: ClustersService, private agentService: AgentService, private route: Router, private toastr: ToastrService) { }
 
   changeOrder(order: string) {
     this.reverse = !this.reverse
@@ -35,11 +41,9 @@ export class ListClusterComponent implements OnInit {
     this.loadStartData()
   }
 
-  ngOnDestroy(): void {
-    this.subscription?.unsubscribe()
-  }
 
   loadStartData() {
+
     this.clustersService.listCluster(this.size, this.page, this.filterBy, this.orderBy)
       .subscribe(data => {
 
@@ -49,12 +53,19 @@ export class ListClusterComponent implements OnInit {
         }
         this.pageLoading = false
       })
+
+    this.agentService.listAgentsTypes()
+      .subscribe(data => {
+        this.listAgentTypes = data;
+      })
   }
 
-  testServer(name: string) {
+  testServer() {
+
+    this.closeModalButton.nativeElement.click();
 
     this.pageLoading = true
-    this.clustersService.testCluster(name)
+    this.clustersService.testCluster(this.currentCluster, this.currentAgentType)
       .subscribe(data => {
         this.pageLoading = false
         if (data.success) {
@@ -85,6 +96,9 @@ export class ListClusterComponent implements OnInit {
     })
   }
 
+  changeCurrentClusterToTest(name: string) {
+    this.currentCluster = name
+  }
 
   exportYaml(clusterName: string) {
     this.clustersService.exportYaml(clusterName)

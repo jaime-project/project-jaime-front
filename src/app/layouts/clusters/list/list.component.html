@@ -45,8 +45,8 @@
             (click)="deleteServer(clusterShort.name)">
             <i class=" far fa-trash-alt"></i>
           </button>
-          <button type="button" class="btn btn-success" style="margin-right: 2%;" data-toggle="tooltip"
-            title="Test login on server" (click)="testServer(clusterShort.name)">
+          <button type="button" class="btn btn-success" style="margin-right: 2%;" title="Test login on server"
+            data-bs-toggle="modal" data-bs-target="#modalTest" (click)="changeCurrentClusterToTest(clusterShort.name)">
             <i class="fas fa-play"></i>
           </button>
           <button type="button" class="btn btn-download" style="margin-right: 2%;" data-toggle="tooltip"
@@ -58,5 +58,30 @@
     </tbody>
   </table>
 </app-card>
+
+<!-- Modal -->
+<div class="modal fade modal-lg" id="modalTest" aria-labelledby="modalRunLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Select Agent where test will be runned</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" #closeModalButton></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3 col-12">
+          <label class="form-label"><b i18n>Agents</b></label>
+          <select class="form-control col-12">
+            <option *ngFor=" let agentType of listAgentTypes" value="{{agentType}}" [(ngModel)]="currentAgentType">
+              {{agentType}}</option>
+          </select>
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button type="submit" class="btn btn-success" data-dismiss="modal" (click)="testServer()" i18n>
+            <i class="fas fa-play"></i> Test</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <app-spinner *ngIf="pageLoading"></app-spinner>
