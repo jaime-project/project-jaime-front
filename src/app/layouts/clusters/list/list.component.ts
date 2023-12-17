@@ -100,6 +100,10 @@ export class ListClusterComponent implements OnInit {
     this.currentCluster = name
   }
 
+  changeCurrentAgentTypeToTest(name: string) {
+    this.currentAgentType = name
+  }
+
   exportYaml(clusterName: string) {
     this.clustersService.exportYaml(clusterName)
       .subscribe(data => {

@@ -70,8 +70,10 @@
       <div class="modal-body">
         <div class="mb-3 col-12">
           <label class="form-label"><b i18n>Agents</b></label>
-          <select class="form-control col-12">
-            <option *ngFor=" let agentType of listAgentTypes" value="{{agentType}}" [(ngModel)]="currentAgentType">
+          <select class="form-control col-12" #agentTypeSelect
+            (change)="changeCurrentAgentTypeToTest(agentTypeSelect.value)">
+            <option></option>
+            <option *ngFor=" let agentType of listAgentTypes" value="{{agentType}}">
               {{agentType}}</option>
           </select>
         </div>

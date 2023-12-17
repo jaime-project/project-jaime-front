@@ -12,7 +12,6 @@ export class DetailClusterComponent implements OnInit {
 
   cluster: Cluster = {
     name: "",
-    type: "",
     token: "",
     url: "",
   }

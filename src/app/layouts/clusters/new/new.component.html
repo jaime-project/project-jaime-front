@@ -19,12 +19,6 @@
       <div id="tokenHelp" class="form-text" i18n>Example: jkdndodp-d8smkw93-k3987</div>
     </div>
     <div class="mb-3 col-12">
-      <label for="typeInput" class="form-label"><b i18n>Type</b></label>
-      <select class="form-control" id="typeInput" formControlName="type" required>
-        <option *ngFor="let t of clusterTypes" value="{{t}}">{{t}}</option>
-      </select>
-    </div>
-    <div class="mb-3 col-12">
       <button type="submit" class="btn btn-success m-t-20" [disabled]="!clusterForm.valid">Create</button>
     </div>
   </form>

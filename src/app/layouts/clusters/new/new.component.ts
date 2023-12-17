@@ -16,7 +16,6 @@ export class NewClusterComponent implements OnInit {
     name: new UntypedFormControl(''),
     url: new UntypedFormControl(''),
     token: new UntypedFormControl(''),
-    type: new UntypedFormControl(''),
   });
 
   constructor(private route: Router, private agentService: AgentService, private clustersService: ClustersService, private toastr: ToastrService) { }

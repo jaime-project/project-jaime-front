@@ -2,13 +2,11 @@ export interface Cluster {
     name: string,
     url: string,
     token: string,
-    type: string,
 }
 
 export interface ClusterShort {
     name: string,
     url: string,
-    type: string,
 }
 
 export interface Server {

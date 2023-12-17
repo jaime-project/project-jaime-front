@@ -18,7 +18,6 @@ export class YamlClusterComponent implements OnInit {
   contentYaml: string = ""
   cluster: Cluster = {
     name: "",
-    type: "",
     token: "",
     url: "",
   }
