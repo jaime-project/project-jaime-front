@@ -43,28 +43,6 @@ export const ServerComponentsRoutes: Routes = [
 					]
 				}
 			},
-			// {
-			// 	path: 'servers/details/:name',
-			// 	component: DetailServerComponent,
-			// 	data: {
-			// 		title: 'detail',
-			// 		urls: [
-			// 			{ title: 'ngComponent' },
-			// 			{ title: 'servers' }
-			// 		]
-			// 	}
-			// },
-			// {
-			// 	path: 'servers/details/:name/yaml',
-			// 	component: YamlServerComponent,
-			// 	data: {
-			// 		title: 'yaml',
-			// 		urls: [
-			// 			{ title: 'ngComponent' },
-			// 			{ title: 'servers' }
-			// 		]
-			// 	}
-			// },
 		]
 	}
 ];
