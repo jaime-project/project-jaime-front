@@ -72,10 +72,21 @@ export class ListLibraryComponent implements OnInit {
   }
 
 
-  exportLibrary(clusterName: string) {
-    this.libraryService.exportLibrary(clusterName)
+  exportLibrary(name: string) {
+    this.libraryService.exportLibrary(name)
       .subscribe(data => {
         FileSaver.saveAs(data, `${new Date().toISOString()}.yaml`);
+      })
+  }
+
+  reloadLibrary(name: string) {
+
+    this.pageLoading = true
+
+    this.libraryService.reloadLibrary(name)
+      .subscribe(_ => {
+        this.toastr.success($localize`Reload library success`)
+        this.pageLoading = false
       })
   }
 
