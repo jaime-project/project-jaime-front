@@ -12,9 +12,12 @@ export class LoginService {
   apiUrl: string = "";
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-  constructor(private environment: AppConfigService, private http: HttpClient) { }
+  constructor(private environment: AppConfigService, private http: HttpClient) {
+    this.apiUrl = environment.config.backendURL + '/api/v1/login/';
+  }
 
   login(user: string, password: string): Observable<any> {
-    return this.http.post(this.environment.config.backendURL + '/api/v1/login/', { 'user': user, 'password': password }, { responseType: 'text' })
+    console.log(this.apiUrl)
+    return this.http.post(this.apiUrl, { 'user': user, 'password': password }, { responseType: 'text' })
   }
 }

@@ -52,7 +52,6 @@ const appInitializerFn = (appConfig: AppConfigService) => {
     RouterModule.forRoot(Approutes, { useHash: false }),
   ],
   providers: [
-    AppConfigService,
     {
       provide: APP_INITIALIZER,
       useFactory: appInitializerFn,

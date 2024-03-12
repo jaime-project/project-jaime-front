@@ -11,10 +11,11 @@ export class AppConfigService {
     constructor(private http: HttpClient) { }
 
     loadAppConfig() {
-        this.http.get<any>('assets/appconfig.json')
-            .subscribe(vars => {
-                this.vars = vars
-            })
+        let request = new XMLHttpRequest()
+        request.open('GET', 'assets/appconfig.json', false)
+        request.send()
+
+        this.vars = JSON.parse(request.response)
     }
 
     get config(): any {
