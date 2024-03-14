@@ -1,30 +1,27 @@
 # BUILDER
 # ---------------------------------------
 
-FROM node:18-alpine AS builder
+FROM docker.io/library/node:18-alpine AS builder
 
 WORKDIR /app
 
-ENV PATH /app/node_modules/.bin:$PATH
-
 COPY . .
-RUN npm install
 
-RUN npm run build
+RUN npm install && \
+    npm run build
 
 # APP
 # ---------------------------------------
 
-FROM docker.io/nginxinc/nginx-unprivileged:latest
+FROM docker.io/nginxinc/nginx-unprivileged:1.24
 
 WORKDIR /usr/share/nginx/html
 
-USER root
-
-COPY --from=builder /app/dist/project-jaime-front .
+COPY --from=builder /app/dist/project-jaime-front/ .
 COPY nginx.conf /etc/nginx/nginx.conf
 
-RUN chmod 777 . -R
+USER root
+RUN chown -R nginx:0 .
 
 USER nginx
 
@@ -32,6 +29,6 @@ ARG ARG_VERSION=local
 
 ENV VERSION=${ARG_VERSION}
 ENV TZ=America/Argentina/Buenos_Aires
-ENV JAIME_URL=http://localhost:5000
+ENV JAIME_URL=http://0.0.0.0:5000
 
-CMD ["/bin/bash", "-c", "service nginx stop && envsubst < assets/appconfig.env.json > assets/appconfig.json && nginx-debug -g 'daemon off;'"]
+CMD ["/bin/bash", "-c", "envsubst < assets/appconfig.env.json > assets/appconfig.json && nginx-debug -g 'daemon off;'"]
