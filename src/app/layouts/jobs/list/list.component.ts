@@ -22,6 +22,7 @@ export class ListJobComponent implements OnInit {
   orderBy: string = 'name'
   reverse: boolean = false
   filterBy: string = ''
+  statusSelected: string = ''
   page: number = 1
   size: number = 10
 
@@ -50,7 +51,7 @@ export class ListJobComponent implements OnInit {
   }
 
   loadStartData() {
-    this.jobService.getJobsAllShort(this.size, this.page, this.filterBy, this.orderBy)
+    this.jobService.getJobsAllShort(this.size, this.page, this.filterBy, this.orderBy, this.statusSelected)
       .subscribe(data => {
         this.jobsShort = data;
         if (this.reverse) {

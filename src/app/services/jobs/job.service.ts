@@ -20,7 +20,7 @@ export class JobService {
     this.apiUrl = environment.config.backendURL + '/api/v1/jobs';
   }
 
-  getJobsAllShort(size: number, page: number, filter: string, order: string): Observable<JobShort[]> {
+  getJobsAllShort(size: number, page: number, filter: string, order: string, status: string): Observable<JobShort[]> {
 
     let url = this.apiUrl + '/all/short?'
 
@@ -35,6 +35,10 @@ export class JobService {
 
     if (order) {
       url += `&order=${order}`
+    }
+
+    if (status) {
+      url += `&status=${status}`
     }
 
     return this.http.get<JobShort[]>(url)

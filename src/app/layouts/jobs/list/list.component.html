@@ -26,6 +26,13 @@
       <label class="form-label"><b>Filter:</b></label>
       <input type="text" class="form-control" type="text" [(ngModel)]="filterBy" [ngModelOptions]="{standalone: true}">
     </div>
+    <div class="col-md-3">
+      <label class="form-label"><b>Status:</b></label>
+      <select class="form-select" [(ngModel)]="statusSelected" [ngModelOptions]="{standalone: true}">
+        <option selected></option>
+        <option *ngFor="let jobStatus of jobsStatus" value="{{jobStatus}}">{{jobStatus}}</option>
+      </select>
+    </div>
   </form>
 </app-card>
 
