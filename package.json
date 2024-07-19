@@ -44,7 +44,7 @@
     "sweetalert2": "^11.7.8",
     "tslib": "^2.6.2",
     "yaml": "^2.3.1",
-    "zone.js": "~0.13.1"
+    "zone.js": "^0.13.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.1.2",
