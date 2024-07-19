@@ -1,0 +1,47 @@
+.btn {
+    margin-top: 0%;
+    margin-bottom: 0%;
+    margin-left: 0%;
+    margin-right: 1%;
+}
+
+.mdi-folder {
+    font-size: 250%;
+    color: gold;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link {
+    text-decoration: none;
+    color: black;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+
+a:hover {
+    text-decoration: none;
+}
+
+
+a:active {
+    text-decoration: none;
+}
+
+.fa-folder {
+    color: goldenrod;
+}
+
+.fa-file {
+    color: lightpink;
+}
+
+.btn-options {
+    background-color: darkorchid;
+    color: aliceblue;
+}

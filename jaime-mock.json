@@ -2956,6 +2956,40 @@
       ],
       "responseMode": null,
       "type": "http"
+    },
+    {
+      "uuid": "4ef0112f-29db-4b54-bf76-587227c670ea",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "storage",
+      "responses": [
+        {
+          "uuid": "6e58ceaa-83a6-441d-b8d4-ca097a764537",
+          "body": "{\n  \"dirs\": [\n    \"folder1\",\n    \"folder2\",\n    \"folder3\"\n  ],\n  \"files\": [\n    \"archi1.txt\",\n    \"archi2.json\",\n    \"archi3.yaml\",\n    \"archi4.xml\"\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE",
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "type": "http"
     }
   ],
   "proxyMode": false,
@@ -3331,6 +3365,10 @@
     {
       "type": "route",
       "uuid": "fdb54f1c-27ac-4281-8c50-8d026537fd0e"
+    },
+    {
+      "type": "route",
+      "uuid": "4ef0112f-29db-4b54-bf76-587227c670ea"
     }
   ],
   "callbacks": []

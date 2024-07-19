@@ -175,3 +175,16 @@ export interface LibraryShort {
     description: string,
     repo: string,
 }
+
+export interface FileDetail {
+    name: string
+    last_modification: Date
+    creation_date: Date
+    size: string
+}
+
+export interface FileList {
+    dirs: string[]
+    files: string[]
+}
+

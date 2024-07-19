@@ -1,5 +1,6 @@
 a:link {
     text-decoration: none;
+    color: black;
 }
 
 
@@ -15,4 +16,16 @@ a:hover {
 
 a:active {
     text-decoration: none;
+}
+
+.fa-file {
+    color: lightpink;
+}
+
+.fa-file-code {
+    color: forestgreen;
+}
+
+.fa-file-word {
+    color: dodgerblue;
 }

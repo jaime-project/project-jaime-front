@@ -70,6 +70,10 @@ export const Approutes: Routes = [
         path: '',
         loadChildren: () => import('./layouts/libraries/librarycomponents.module').then(m => m.LibraryComponentsModule)
       },
+      {
+        path: '',
+        loadChildren: () => import('./layouts/storage/storagecomponents.module').then(m => m.StorageComponentsModule)
+      },
     ]
   },
   {

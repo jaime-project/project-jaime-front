@@ -90,6 +90,14 @@ export const ROUTES: RouteInfo[] = [
     submenu: [],
   },
   {
+    path: "/storage",
+    title: $localize`Storage`,
+    icon: "mdi mdi-harddisk",
+    class: "",
+    extralink: false,
+    submenu: [],
+  },
+  {
     path: "/exit",
     title: $localize`Sign out`,
     icon: "mdi mdi-power",
