@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { FileList, Server, ServerShort } from 'src/app/models/models';
+import { FileList } from 'src/app/models/models';
 import { AppConfigService } from '../AppConfigService';
 import { ErrorService } from '../errors/error.service';
 
@@ -19,8 +19,8 @@ export class StorageService {
     this.apiUrl = environment.config.backendURL + '/api/v1/storage';
   }
 
-  getFileList(path: string, filter: string | null = null): Observable<FileList> {
-    let url = `${this.apiUrl}?path=${path}`
+  getFileList(path: string = "/", filter: string | null = null): Observable<FileList> {
+    let url = `${this.apiUrl}/?path=${path}`
 
     if (filter) {
       url += `&filter=${filter}`
@@ -34,7 +34,7 @@ export class StorageService {
       )
   }
 
-  delete(name: string, path: string): Observable<any> {
+  delete(name: string, path: string = "/"): Observable<any> {
     let url = `${this.apiUrl}/${name}?path=${path}`
 
     return this.http.delete<any>(url)
@@ -44,4 +44,32 @@ export class StorageService {
         })
       )
   }
+
+  makeDir(name: string, path: string = "/"): Observable<any> {
+    let url = `${this.apiUrl}/${name}?path=${path}`
+    console.log(url)
+    return this.http.post<any>(url, null)
+      .pipe(
+        catchError((error: HttpErrorResponse) => {
+          return this.errorService.httpError(error);
+        })
+      )
+  }
+
+  uploadFile(file: File, path: string = "/"): Observable<any> {
+    let url = `${this.apiUrl}/?path=${path}`
+
+    const formData = new FormData();
+    formData.append(file.name, file);
+
+    return this.http.post<any>(url, formData)
+      .pipe(
+        catchError((error: HttpErrorResponse) => {
+          return this.errorService.httpError(error);
+        })
+      )
+  }
+
+
+
 }

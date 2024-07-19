@@ -2990,6 +2990,74 @@
       ],
       "responseMode": null,
       "type": "http"
+    },
+    {
+      "uuid": "9dca6e95-8214-423e-8621-dd696a7d52c2",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "storage/*",
+      "responses": [
+        {
+          "uuid": "01ede24a-d8b9-4f8a-bbbb-0e5cd806d38a",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE",
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "type": "http"
+    },
+    {
+      "uuid": "36c2cf23-0b74-4345-a270-77ecd3a6dec3",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "storage",
+      "responses": [
+        {
+          "uuid": "93df6d0f-2ffa-49cf-90ec-e04fd112b379",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE",
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "type": "http"
     }
   ],
   "proxyMode": false,
@@ -3369,6 +3437,14 @@
     {
       "type": "route",
       "uuid": "4ef0112f-29db-4b54-bf76-587227c670ea"
+    },
+    {
+      "type": "route",
+      "uuid": "36c2cf23-0b74-4345-a270-77ecd3a6dec3"
+    },
+    {
+      "type": "route",
+      "uuid": "9dca6e95-8214-423e-8621-dd696a7d52c2"
     }
   ],
   "callbacks": []

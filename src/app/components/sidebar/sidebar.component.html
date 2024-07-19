@@ -17,7 +17,7 @@
 
       <div class="nav-small-cap" *ngIf="sidebarnavItem.extralink === true">{{sidebarnavItem.title}}</div>
 
-      <a class="sidebar-link waves-effect waves-dark" style="left: 15%;"
+      <a class="sidebar-link waves-effect waves-dark" style="left: 10%;"
         [routerLink]="sidebarnavItem.class === '' ? [sidebarnavItem.path] : null" [ngClass]="[sidebarnavItem.class]"
         *ngIf="!sidebarnavItem.extralink;" (click)="addExpandClass(sidebarnavItem.title)"
         [routerLinkActive]="sidebarnavItem.submenu.length != 0 ? '' : 'active'">

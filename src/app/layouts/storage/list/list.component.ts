@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { FileList } from 'src/app/models/models';
@@ -13,12 +14,14 @@ import Swal from 'sweetalert2';
 export class ListStorageComponent implements OnInit {
 
   fileList: FileList = { dirs: [], files: [] } as FileList
-
-  currentPath: string = ""
-
+  currentPath: string = "/"
   pageLoading: boolean = true
-
   filterBy: string = ''
+  makeDirButonClicked: boolean = false
+
+  makeDirForm = new UntypedFormGroup({
+    name: new UntypedFormControl(''),
+  });
 
   constructor(private storageService: StorageService, private route: Router, private toastr: ToastrService) { }
 
@@ -38,22 +41,6 @@ export class ListStorageComponent implements OnInit {
       })
   }
 
-  filterFunction() {
-
-    if (!this.filterBy) {
-      return this.fileList
-    }
-
-    return {
-      dirs: this.fileList.dirs.filter(d => {
-        return d.toLowerCase().includes(this.filterBy.toLowerCase())
-      }),
-      files: this.fileList.dirs.filter(f => {
-        return f.toLowerCase().includes(this.filterBy.toLowerCase())
-      })
-    }
-  }
-
   changeCurrentPath(path: string) {
 
     if (this.isDir(path)) {
@@ -71,13 +58,23 @@ export class ListStorageComponent implements OnInit {
     this.loadStartData()
   }
 
+  goToHomePath() {
+
+    this.currentPath = ""
+
+    this.loadStartData()
+  }
+
   reloadCurrentPath() {
     this.loadStartData()
   }
 
   deleteFileOrDir(fileOrDirName: string) {
 
+    this.pageLoading = true
+
     let object = this.isDir(fileOrDirName) ? "directory" : "file"
+
     Swal
       .fire({
         title: $localize`Delete ${object}`,
@@ -90,10 +87,42 @@ export class ListStorageComponent implements OnInit {
       .then(result => {
         if (result.isConfirmed) {
           this.storageService.delete(fileOrDirName, this.currentPath)
-            .subscribe()
+            .subscribe(() => {
+              this.loadStartData()
+              this.pageLoading = false
+            })
         }
       })
   }
 
+  makeDir() {
+    this.storageService.makeDir(this.makeDirForm.value.name, this.currentPath)
+      .subscribe(() => {
+        document.getElementById("modalMakeDirCloseButton")!.click()
+        this.toastr.success($localize`New directory ${this.makeDirForm.value.name} created`)
+        this.makeDirButonClicked = false
+        this.loadStartData()
+      })
+  }
+
+  uploadFile(event: any) {
+
+    this.pageLoading = true
+
+    const file: File = event.target.files[0];
+
+    this.storageService.uploadFile(file, this.currentPath)
+      .subscribe(
+        () => {
+          this.toastr.success($localize`Upload file ${file.name} success`)
+          this.pageLoading = false
+          this.loadStartData()
+        },
+        () => {
+          this.toastr.error($localize`Error uploading file ${file.name}`)
+          this.pageLoading = false
+        }
+      )
+  }
 
 }
