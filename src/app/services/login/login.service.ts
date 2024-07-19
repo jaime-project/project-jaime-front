@@ -17,7 +17,6 @@ export class LoginService {
   }
 
   login(user: string, password: string): Observable<any> {
-    console.log(this.apiUrl)
     return this.http.post(this.apiUrl, { 'user': user, 'password': password }, { responseType: 'text' })
   }
 }

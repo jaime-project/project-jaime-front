@@ -60,10 +60,17 @@ export class NewJobComponent implements OnInit {
   }
 
   docChange(docName: any) {
-    this.docsService.getDocsWithoutError(docName, this.jobForm.value.repoName)
-      .subscribe(data => {
-        this.docParams = data
-      })
+
+    if (docName) {
+      this.docsService.getDocsWithoutError(docName, this.jobForm.value.repoName)
+        .subscribe(data => {
+          this.docParams = data
+        })
+    }
+    else {
+      this.docParams = ""
+    }
+
   }
 
   postJob() {

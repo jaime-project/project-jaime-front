@@ -47,7 +47,7 @@ export class StorageService {
 
   makeDir(name: string, path: string = "/"): Observable<any> {
     let url = `${this.apiUrl}/${name}?path=${path}`
-    console.log(url)
+    
     return this.http.post<any>(url, null)
       .pipe(
         catchError((error: HttpErrorResponse) => {
