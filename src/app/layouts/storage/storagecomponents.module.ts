@@ -5,7 +5,6 @@ import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MonacoEditorModule } from 'ngx-monaco-editor-v2';
 import { ComponentsModule } from 'src/app/components/components.module';
-import { DetailStorageComponent } from './detail/detail.component';
 import { ListStorageComponent } from './list/list.component';
 import { StorageComponentsRoutes } from './storagecomponents.routing';
 
@@ -22,7 +21,6 @@ import { StorageComponentsRoutes } from './storagecomponents.routing';
   ],
   declarations: [
     ListStorageComponent,
-    DetailStorageComponent
   ]
 })
 export class StorageComponentsModule { }

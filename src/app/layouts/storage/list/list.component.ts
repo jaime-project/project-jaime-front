@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import FileSaver from 'file-saver';
 import { ToastrService } from 'ngx-toastr';
 import { FileList } from 'src/app/models/models';
 import { StorageService } from 'src/app/services/storage/storage.service';
@@ -123,6 +124,16 @@ export class ListStorageComponent implements OnInit {
           this.pageLoading = false
         }
       )
+  }
+
+  downloadFile(fileName: string) {
+    this.pageLoading = true
+
+    this.storageService.downloadFile(fileName, this.currentPath)
+      .subscribe((response) => {
+        FileSaver.saveAs(response, fileName);
+        this.pageLoading = false
+      })
   }
 
 }

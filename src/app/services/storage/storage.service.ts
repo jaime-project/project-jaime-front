@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { FileList } from 'src/app/models/models';
+import { FileDetail, FileList } from 'src/app/models/models';
 import { AppConfigService } from '../AppConfigService';
 import { ErrorService } from '../errors/error.service';
 
@@ -47,7 +47,7 @@ export class StorageService {
 
   makeDir(name: string, path: string = "/"): Observable<any> {
     let url = `${this.apiUrl}/${name}?path=${path}`
-    
+
     return this.http.post<any>(url, null)
       .pipe(
         catchError((error: HttpErrorResponse) => {
@@ -70,6 +70,14 @@ export class StorageService {
       )
   }
 
+  downloadFile(fileName: string, path: string = "/"): Observable<any> {
+    const url = `${this.apiUrl}/${fileName}?path=${path}`
 
-
+    return this.http.get(url, { responseType: "blob" })
+      .pipe(
+        catchError((error: HttpErrorResponse) => {
+          return this.errorService.httpError(error);
+        })
+      )
+  }
 }
