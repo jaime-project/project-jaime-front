@@ -77,18 +77,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "project-jaime-front:build"
+            "buildTarget": "project-jaime-front:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "project-jaime-front:build:production"
+              "buildTarget": "project-jaime-front:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "project-jaime-front:build"
+            "buildTarget": "project-jaime-front:build"
           }
         },
         "test": {
