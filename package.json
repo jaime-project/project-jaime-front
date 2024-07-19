@@ -22,7 +22,7 @@
     "@angular/platform-browser": "^17.3.12",
     "@angular/platform-browser-dynamic": "^17.3.12",
     "@angular/router": "^17.3.12",
-    "@ng-bootstrap/ng-bootstrap": "^15.0.1",
+    "@ng-bootstrap/ng-bootstrap": "^17.0.0",
     "bootstrap": "^5.3.0",
     "chart.js": "^2.8.0",
     "chartjs-color": "^2.4.1",
