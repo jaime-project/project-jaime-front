@@ -18,14 +18,14 @@ a:active {
     text-decoration: none;
 }
 
-.fa-file {
-    color: lightpink;
+.icon-markdown {
+    color: gold;
 }
 
-.fa-file-code {
-    color: forestgreen;
-}
-
-.fa-file-word {
+.icon-docs {
     color: dodgerblue;
+}
+
+.icon-modules {
+    color: forestgreen;
 }
