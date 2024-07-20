@@ -1,4 +1,4 @@
-VERSION := 0.3.0
+VERSION := 0.4.0
 
 build b:
 	podman build . -t ghcr.io/jaime-project/jaime-front:$(VERSION)

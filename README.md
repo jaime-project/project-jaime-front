@@ -11,9 +11,9 @@
 
 ## :gear: Requisitos
 
-- node 20
-- npm 10
-- Angular 16
+- node v22.5.1
+- npm 10.8.2
+- Angular 18.1.1
 
 ## :tada: Uso
 
