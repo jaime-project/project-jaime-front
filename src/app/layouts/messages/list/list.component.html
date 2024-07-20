@@ -42,20 +42,20 @@
     </thead>
     <tbody>
       <tr *ngFor="let messageShort of messageShort" class="{{messageShort.status}}">
-        <td>{{messageShort.title}}</td>
-        <td>{{messageShort.subject}}</td>
-        <td routerLink="/jobs/details/{{messageShort.job}}" class="link">
+        <td class="{{messageShort.status}}">{{messageShort.title}}</td>
+        <td class="{{messageShort.status}}">{{messageShort.subject}}</td>
+        <td class="{{messageShort.status}}" routerLink="/jobs/details/{{messageShort.job}}" class="link">
           {{messageShort.job}}
         </td>
-        <td>{{messageShort.date | date: 'short'}}</td>
-        <td>
+        <td class="{{messageShort.status}}">{{messageShort.date | date: 'short'}}</td>
+        <td class="{{messageShort.status}}">
           <button type="button" class="btn btn-primary" style="margin-right: 2%;" data-toggle="tooltip" title="Details"
             routerLink="/messages/details/{{messageShort.id}}">
-            <i class="fas fa-eye"></i>
+            <i class="fa fa-eye"></i>
           </button>
           <button type="button" class="btn btn-danger" style="margin-right: 2%;" data-toggle="tooltip" title="Delete"
             (click)="deleteMessage(messageShort.id)">
-            <i class="far fa-trash-alt"></i>
+            <i class="fa fa-trash"></i>
           </button>
         </td>
       </tr>

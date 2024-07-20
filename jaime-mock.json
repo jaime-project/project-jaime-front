@@ -2349,7 +2349,7 @@
       "responses": [
         {
           "uuid": "c00174cc-dfb7-4300-9eba-17777779b06b",
-          "body": "{\n  \"id\": \"g45yh4\",\n  \"status\": \"SEEN\",\n  \"title\": \"Se rompio todo todillo\",\n\"subject\": \"El script hizo boom!\",\n  \"job\": \"g54uy6\",\n  \"date\": \"2023-02-18T12:53:10\",\n  \"body\": \"The Date.now() static method returns the number of milliseconds elapsed since the epoch, which is defined as the midnight at the beginning of January 1, 1970, UTC.\",\n  \"files\": [\n    \"/files/resume.csv\"]\n}",
+          "body": "{\n  \"id\": \"g45yh4\",\n  \"status\": \"SEEN\",\n  \"title\": \"Se rompio todo todillo\",\n\"subject\": \"El script hizo boom!\",\n  \"job\": \"g54uy6\",\n  \"date\": \"2023-02-18T12:53:10\",\n  \"body\": \"The Date.now() static method returns the number of milliseconds elapsed since the epoch, which is defined as the midnight at the beginning of January 1, 1970, UTC.\",\n  \"files\": [\"/files/resume.csv\", \"/files/asd.txt\"]\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",

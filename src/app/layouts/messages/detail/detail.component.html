@@ -11,29 +11,28 @@
 </app-card>
 
 <app-card>
-  <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
-    <ngb-panel>
-      <ng-template ngbPanelTitle>
-        <h4 class="m-b-0" style="color: #67757c;"><b i18n>Attachments</b></h4>
-      </ng-template>
-      <ng-template ngbPanelContent>
-        <div class="col-lg-12">
-          <div class="row text-center">
-            <div class="col-lg-2" *ngFor="let file of message.files">
-              <div class="card m-t-30" style="border-bottom-width: 10px;">
-                <a class="d-block h-100" (click)="downloadFile(file)" style="color: cornflowerblue;">
-                  <div>
-                    <i class="fa fa-paperclip fa-3x" style="margin-bottom: 5%;margin-top: 5%;"></i>
-                  </div>
-                  <div>
-                    <h4><b>{{getFileName(file)}}</b></h4>
-                  </div>
-                </a>
+  <div ngbAccordion>
+    <div ngbAccordionItem [collapsed]="true">
+      <h2 ngbAccordionHeader>
+        <button ngbAccordionButton><b i18n>Attachments</b></button>
+      </h2>
+      <div ngbAccordionCollapse>
+        <div ngbAccordionBody>
+          <ng-template>
+            <div class="col-lg-12">
+              <div class="row text-center">
+                <div class="col-lg-1" *ngFor="let file of message.files">
+                  <a class="d-block h-100" (click)="downloadFile(file)" style="color: cornflowerblue;">
+                    <i class="fa fa-paperclip fa-2x" style="margin-bottom: 2%;margin-top: 2%;"></i>
+                    <p><b>{{getFileName(file)}}</b></p>
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
+          </ng-template>
         </div>
-      </ng-template>
-    </ngb-panel>
-  </ngb-accordion>
+      </div>
+    </div>
+  </div>
+
 </app-card>

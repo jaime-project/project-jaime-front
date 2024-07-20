@@ -16,7 +16,7 @@
     <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalMakeDir" i18n><b>+ </b><i
         class="fa fa-folder"></i></button>
     <button class="btn btn-danger" (click)="fileUpload.click()" i18n><b>+ </b><i class="fa fa-file"></i></button>
-    <button class="btn btn-success" (click)="reloadCurrentPath()" i18n><i class="fas fa-refresh"></i></button>
+    <button class="btn btn-success" (click)="reloadCurrentPath()" i18n><i class="fa fa-refresh"></i></button>
     <button class="btn btn-primary" (click)="goToHomePath()" i18n><i class="fa fa-home"></i></button>
     <button class="btn btn-warning" (click)="backCurrentPath()" i18n><i class="fa fa-arrow-left"></i></button>
   </div>
@@ -46,7 +46,7 @@
         <div class="d-flex justify-content-center">
           <button type="button" class="btn btn-danger" (click)="deleteFileOrDir(dir)" data-toggle="tooltip"
             title="Delete">
-            <i class="far fa-trash-alt"></i></button>
+            <i class="fa fa-trash"></i></button>
         </div>
 
         <!-- <div ngbDropdown class="d-flex justify-content-center">
@@ -56,10 +56,10 @@
           <div ngbDropdownMenu aria-labelledby="dropdownFiles">
             <button type="button" class="btn btn-primary" routerLink="/storage/{{dir}}/details" data-toggle="tooltip"
               title="Detail">
-              <i class="fas fa-eye"></i></button>
+              <i class="fa fa-eye"></i></button>
             <button type="button" class="btn btn-danger" (click)="deleteFileOrDir(dir)" data-toggle="tooltip"
               title="Delete">
-              <i class="far fa-trash-alt"></i></button>
+              <i class="fa fa-trash"></i></button>
           </div>
         </div> -->
       </div>
@@ -81,7 +81,7 @@
           <div class="d-flex justify-content-center">
             <button type="button" class="btn btn-danger" (click)="deleteFileOrDir(file)" data-toggle="tooltip"
               title="Delete">
-              <i class="far fa-trash-alt"></i></button>
+              <i class="fa fa-trash"></i></button>
           </div>
 
           <!-- <div ngbDropdown class="d-flex justify-content-center">
@@ -91,10 +91,10 @@
             <div ngbDropdownMenu aria-labelledby="dropdownDirs">
               <button type="button" class="btn btn-primary" routerLink="/storage/{{file}}/details" data-toggle="tooltip"
                 title="Detail">
-                <i class="fas fa-eye"></i></button>
+                <i class="fa fa-eye"></i></button>
               <button type="button" class="btn btn-danger" (click)="deleteFileOrDir(file)" data-toggle="tooltip"
                 title="Delete">
-                <i class="far fa-trash-alt"></i></button>
+                <i class="fa fa-trash"></i></button>
             </div>
           </div> -->
         </div>

@@ -1,6 +1,9 @@
+.SEEN {
+    background-color: gainsboro;
+}
+
 .NOT_SEEN {
     font-weight: bold;
-    background-color: azure;
 }
 
 .link {

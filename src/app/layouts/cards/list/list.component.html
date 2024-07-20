@@ -15,11 +15,11 @@
         <p class="card-text"><b>Module:</b> {{cardShort.job_module_name}}</p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
           <button class="btn btn-success me-md-2" type="button" data-bs-toggle="modal" data-bs-target="#modalRun"
-            (click)="currentCardToRun(cardShort.id)"><i class="fas fa-play"></i></button>
+            (click)="currentCardToRun(cardShort.id)"><i class="fa fa-play"></i></button>
           <button class="btn btn-primary me-md-2" type="button" routerLink="/cards/details/{{cardShort.id}}"><i
-              class="fas fa-eye"></i></button>
+              class="fa fa-eye"></i></button>
           <button class="btn btn-danger me-md-2" type="button" (click)="deleteCard(cardShort.id)"><i
-              class="fas fa-trash-alt"></i></button>
+              class="fa fa-trash"></i></button>
         </div>
       </div>
     </div>

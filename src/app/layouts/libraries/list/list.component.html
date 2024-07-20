@@ -35,20 +35,20 @@
     </thead>
     <tbody>
       <tr *ngFor="let libraryShort of librariesShort">
-        <td style="text-align: center;"><button type="button" class="btn"><i class="mdi mdi-git"></i></button> </td>
+        <td style="text-align: center;"><button type="button" class="btn"><i class="fa fa-github fa-3x"></i></button> </td>
         <td>{{libraryShort.name}}</td>
         <td>{{libraryShort.description}}</td>
         <td>{{libraryShort.repo}}</td>
         <td>
           <button type="button" class="btn btn-primary" data-toggle="tooltip" title="Details"
-            routerLink="/libraries/details/{{libraryShort.name}}"><i class="fas fa-eye"></i></button>
+            routerLink="/libraries/details/{{libraryShort.name}}"><i class="fa fa-eye"></i></button>
           <button type="button" class="btn btn-danger" data-toggle="tooltip" title="Delete"
             (click)="deleteLibrary(libraryShort.name)">
-            <i class=" far fa-trash-alt"></i>
+            <i class=" fa fa-trash"></i>
           </button>
           <button type="button" class="btn btn-success" data-toggle="tooltip" title="Reload"
             (click)="reloadLibrary(libraryShort.name)">
-            <i class="fas fa-refresh"></i>
+            <i class="fa fa-refresh"></i>
           </button>
           <button type="button" class="btn btn-download" data-toggle="tooltip"
             title="Download yaml" (click)="exportYaml(libraryShort.name)">

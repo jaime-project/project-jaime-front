@@ -17,14 +17,14 @@
     color: aliceblue;
 }
 
-.mdi-folder {
+.fa-archive {
     font-size: 250%;
-    color: gold;
+    color: burlywood;
 }
 
-.mdi-git {
+.fa-github {
     font-size: 250%;
-    color: orangered;
+    color: black;
 }
 
 a {
