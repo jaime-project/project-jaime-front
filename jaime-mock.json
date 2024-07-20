@@ -911,7 +911,7 @@
       "uuid": "4a4eb735-6fc7-4f71-9a7b-efa4d414ece7",
       "documentation": "",
       "method": "post",
-      "endpoint": "repos/*/reload",
+      "endpoint": "repos/*/pull",
       "responses": [
         {
           "uuid": "1e899205-6e91-4b19-a331-bc549dc4a324",
