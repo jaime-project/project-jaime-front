@@ -2965,7 +2965,7 @@
       "responses": [
         {
           "uuid": "6e58ceaa-83a6-441d-b8d4-ca097a764537",
-          "body": "{\n  \"dirs\": [\n    \"folder1\",\n    \"folder2\",\n    \"folder3\"\n  ],\n  \"files\": [\n    \"archi1.txt\",\n    \"archi2.json\",\n    \"archi3.yaml\",\n    \"archi4.xml\"\n  ]\n}",
+          "body": "{\n  \"dirs\": [\n    \"folder1\",\n    \"folder2\",\n    \"folder3\",\n    \"folder4\",\n    \"folder5\",\n    \"folder6\",\n    \"folder7\"\n  ],\n  \"files\": [\n    \"archi1.txt\",\n    \"archi2.json\",\n    \"archi3.yaml\",\n    \"archi4.xml\",\n    \"asd.xml\",\n    \"qwe.xml\",\n    \"wefwef.xml\",\n    \"hola.xml\"\n  ]\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -3069,6 +3069,40 @@
           "uuid": "8251a10c-f5d0-4528-9954-bf562373256b",
           "body": "{\n  \"name\": \"asd\",\n  \"last_modification\": \"2023-12-12\",\n  \"creation_date\": \"2023-12-12\",\n  \"size\": \"12345\"\n}",
           "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "databucketID": "",
+          "bodyType": "INLINE",
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "type": "http"
+    },
+    {
+      "uuid": "35763ea5-fec9-4fb0-a47b-b8a955bd8e44",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "repos/*/commit",
+      "responses": [
+        {
+          "uuid": "55b5a507-ec3e-4361-81f8-86f2fe463ea9",
+          "body": "",
+          "latency": 3000,
           "statusCode": 200,
           "label": "",
           "headers": [
@@ -3235,6 +3269,10 @@
     {
       "type": "route",
       "uuid": "4a4eb735-6fc7-4f71-9a7b-efa4d414ece7"
+    },
+    {
+      "type": "route",
+      "uuid": "35763ea5-fec9-4fb0-a47b-b8a955bd8e44"
     },
     {
       "type": "route",
