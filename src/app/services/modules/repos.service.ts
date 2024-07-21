@@ -75,7 +75,7 @@ export class ReposService {
   }
 
   reloadRepos(name: string): Observable<any> {
-    const url = `${this.apiUrl}/${name}/reload`
+    const url = `${this.apiUrl}/${name}/pull`
     return this.http.post<any>(url, {})
       .pipe(
         catchError((error: HttpErrorResponse) => {
@@ -99,6 +99,15 @@ export class ReposService {
     const url = `${this.apiUrl}/${name}/zips`
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
     return this.http.get(url, { headers, responseType: "blob" })
+      .pipe(
+        catchError((error: HttpErrorResponse) => {
+          return this.errorService.httpError(error);
+        })
+      )
+  }
+
+  commitAndPush(repoName: string, message: string): Observable<string> {
+    return this.http.post<any>(`${this.apiUrl}/${repoName}/commit?message=${message}`, null)
       .pipe(
         catchError((error: HttpErrorResponse) => {
           return this.errorService.httpError(error);

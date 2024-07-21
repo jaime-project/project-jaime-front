@@ -49,19 +49,6 @@
             <i class="fa fa-trash"></i></button>
         </div>
 
-        <!-- <div ngbDropdown class="d-flex justify-content-center">
-          <button type="button" class="btn btn-options" id="dropdownFiles" ngbDropdownToggle>
-            <i class="fa fa-ellipsis-v"></i>
-          </button>
-          <div ngbDropdownMenu aria-labelledby="dropdownFiles">
-            <button type="button" class="btn btn-primary" routerLink="/storage/{{dir}}/details" data-toggle="tooltip"
-              title="Detail">
-              <i class="fa fa-eye"></i></button>
-            <button type="button" class="btn btn-danger" (click)="deleteFileOrDir(dir)" data-toggle="tooltip"
-              title="Delete">
-              <i class="fa fa-trash"></i></button>
-          </div>
-        </div> -->
       </div>
 
       <div class="col-lg-1" *ngFor="let file of fileList!.files">
@@ -84,19 +71,6 @@
               <i class="fa fa-trash"></i></button>
           </div>
 
-          <!-- <div ngbDropdown class="d-flex justify-content-center">
-            <button type="button" class="btn btn-options" id="dropdownDirs" ngbDropdownToggle>
-              <i class="fa fa-ellipsis-v"></i>
-            </button>
-            <div ngbDropdownMenu aria-labelledby="dropdownDirs">
-              <button type="button" class="btn btn-primary" routerLink="/storage/{{file}}/details" data-toggle="tooltip"
-                title="Detail">
-                <i class="fa fa-eye"></i></button>
-              <button type="button" class="btn btn-danger" (click)="deleteFileOrDir(file)" data-toggle="tooltip"
-                title="Delete">
-                <i class="fa fa-trash"></i></button>
-            </div>
-          </div> -->
         </div>
       </div>
 

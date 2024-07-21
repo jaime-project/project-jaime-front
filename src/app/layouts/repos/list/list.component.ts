@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import FileSaver from 'file-saver';
 import { ToastrService } from 'ngx-toastr';
-import { interval, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { ReposService } from 'src/app/services/modules/repos.service';
 import Swal from 'sweetalert2';
 
@@ -21,6 +22,11 @@ export class ListModuleComponent implements OnInit {
   reposLocalFiltered: string[] = []
   reposGitFiltered: string[] = []
 
+  coomitRepoName: string = ""
+  commitButonClicked: boolean = false
+  commitForm = new UntypedFormGroup({
+    comment: new UntypedFormControl(''),
+  });
 
   constructor(private reposService: ReposService, private route: Router, private toastr: ToastrService) { }
 
@@ -61,7 +67,7 @@ export class ListModuleComponent implements OnInit {
         this.reposService.deleteRepos(name)
           .subscribe(() => {
             this.toastr.success($localize`Repository deleted`)
-            this.route.navigate(['repos'])
+            this.loadStartData()
           })
       }
     })
@@ -123,6 +129,27 @@ export class ListModuleComponent implements OnInit {
         FileSaver.saveAs(data, `${new Date().toISOString()}.tar.gz`);
         this.toastr.success($localize`Export Zip successfull`)
       })
+  }
+
+  updateCommitRepoName(repoName: string) {
+    this.coomitRepoName = repoName
+  }
+
+  commitChanges() {
+
+    document.getElementById("modalCommitCloseButton")!.click()
+    this.pageLoading = true
+
+    this.reposService.commitAndPush(this.coomitRepoName, this.commitForm.value.comment)
+      .subscribe(
+        _ => {
+          this.toastr.success($localize`Commited and pushed changes to repository ${this.coomitRepoName}`, $localize`Success commit`)
+          this.pageLoading = false
+        },
+        _ => {
+          this.toastr.error($localize`Error on create new Job`)
+          this.pageLoading = false
+        })
   }
 
 }

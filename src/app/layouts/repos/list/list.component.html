@@ -1,19 +1,18 @@
 <app-title title="Repositories List"></app-title>
 
-
-<div class="col-lg-12">
-  <div class="card m-t-30">
-    <div class="card-body">
-      <button class="btn btn-success" routerLink="/repos/new" style="margin-left: 0%" i18n>New Repository</button>
+<app-card>
+  <div class="row">
+    <div class="col-2">
+      <button class="btn btn-success" routerLink="/repos/new" style="margin-left: 0%">New Repository</button>
     </div>
   </div>
-</div>
+</app-card>
 
 <app-card>
   <div class="row">
     <div class="col-3">
       <div>
-        <label i18n><b>Filter:</b></label>
+        <label><b>Filter:</b></label>
         <input type="text" class="form-control" [(ngModel)]="filterBy" (change)="filterFunction()">
       </div>
     </div>
@@ -24,7 +23,7 @@
   <ul ngbNav #nav="ngbNav" class="nav-tabs">
 
     <li ngbNavItem [ngbNavItem]="1">
-      <a ngbNavLink><b i18n>Local</b></a>
+      <a ngbNavLink><b>Local</b></a>
       <ng-template ngbNavContent>
 
         <div class="col-lg-12">
@@ -69,7 +68,7 @@
     </li>
 
     <li ngbNavItem [ngbNavItem]="2">
-      <a ngbNavLink><b i18n>Git</b></a>
+      <a ngbNavLink><b>Git</b></a>
       <ng-template ngbNavContent>
 
         <div class="col-lg-12">
@@ -104,6 +103,9 @@
                     <button type="button" class="btn btn-zip" (click)="exportRepoZip(repo)" data-toggle="tooltip"
                       title="Download zip">
                       <i class="fa fa-file-archive-o"></i></button>
+                    <button type="button" class="btn btn-commit" data-bs-toggle="modal" data-bs-target="#modalCommit"
+                      title="Commit changes" (click)="updateCommitRepoName(repo)">
+                      <i class="fa fa-cloud-upload"></i></button>
                   </div>
                 </div>
               </div>
@@ -121,3 +123,30 @@
 </app-card>
 
 <app-spinner *ngIf="pageLoading"></app-spinner>
+
+
+<!-- Modal -->
+<div class="modal fade modal-lg" id="modalCommit" tabindex="-1" aria-labelledby="modalRunLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Commit and push changes</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+          id="modalCommitCloseButton"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="commitForm" (ngSubmit)="commitChanges()">
+          <div class="mb-3 col-12">
+            <label for="nameLocalInput" class="form-label"><b>Comment</b></label>
+            <textarea rows="4" type="text" class="form-control" formControlName="comment" required></textarea>
+          </div>
+          <div class="mb-3 col-12">
+            <div class="spinner-border text-success" *ngIf="commitButonClicked"></div>
+            <button type="submit" lines class="btn btn-success m-t-20" *ngIf="!commitButonClicked"
+              [disabled]="!commitForm.valid">Commit and push</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
