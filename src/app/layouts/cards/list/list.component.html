@@ -9,16 +9,16 @@
   <div class="col-sm-3" *ngFor="let cardShort of cardsShort">
     <div class="card" [ngStyle]="{'background-color': cardShort.color}">
       <div class="card-body">
-        <h4 class="card-title">{{cardShort.name}}</h4>
+        <h4 class="card-title"><b>{{cardShort.name}}</b></h4>
         <p class="card-text">{{cardShort.description}}</p>
-        <p class="card-text"><b>Repo:</b> {{cardShort.job_module_name}}</p>
+        <p class="card-text"><b>Repo:</b> {{cardShort.job_module_repo}}</p>
         <p class="card-text"><b>Module:</b> {{cardShort.job_module_name}}</p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
           <button class="btn btn-success me-md-2" type="button" data-bs-toggle="modal" data-bs-target="#modalRun"
-            (click)="currentCardToRun(cardShort.id)"><i class="fa fa-play"></i></button>
-          <button class="btn btn-primary me-md-2" type="button" routerLink="/cards/details/{{cardShort.id}}"><i
-              class="fa fa-eye"></i></button>
-          <button class="btn btn-danger me-md-2" type="button" (click)="deleteCard(cardShort.id)"><i
+            (click)="currentCardToRun(cardShort.id)" title="Run"><i class="fa fa-play"></i></button>
+          <button class="btn btn-primary me-md-2" type="button" routerLink="/cards/details/{{cardShort.id}}"
+            title="Details"><i class="fa fa-eye"></i></button>
+          <button class="btn btn-danger me-md-2" type="button" (click)="deleteCard(cardShort.id)" title="Remove"><i
               class="fa fa-trash"></i></button>
         </div>
       </div>

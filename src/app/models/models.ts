@@ -142,8 +142,8 @@ export interface CardShort {
     id: string,
     name: string,
     description: string,
-    module: string,
-    repo: string,
+    job_module_repo: string,
+    job_module_name: string,
     color: string
 }
 
