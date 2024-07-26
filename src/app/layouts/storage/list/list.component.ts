@@ -90,9 +90,9 @@ export class ListStorageComponent implements OnInit {
           this.storageService.delete(fileOrDirName, this.currentPath)
             .subscribe(() => {
               this.loadStartData()
-              this.pageLoading = false
             })
         }
+        this.pageLoading = false
       })
   }
 
@@ -110,20 +110,24 @@ export class ListStorageComponent implements OnInit {
 
     this.pageLoading = true
 
-    const file: File = event.target.files[0];
+    for (let file of event.target.files) {
 
-    this.storageService.uploadFile(file, this.currentPath)
-      .subscribe(
-        () => {
-          this.toastr.success($localize`Upload file ${file.name} success`)
-          this.pageLoading = false
-          this.loadStartData()
-        },
-        () => {
-          this.toastr.error($localize`Error uploading file ${file.name}`)
-          this.pageLoading = false
-        }
-      )
+      let dir_path = `${this.currentPath}/${file.webkitRelativePath.replace(`${file.name}`, "")}`
+
+      this.storageService.uploadFile(file, dir_path)
+        .subscribe(
+          () => {
+            this.toastr.success($localize`Upload file ${file.name} success`)
+            this.pageLoading = false
+            this.loadStartData()
+          },
+          () => {
+            this.toastr.error($localize`Error uploading file ${file.name}`)
+            this.pageLoading = false
+          }
+        )
+    }
+
   }
 
   downloadFile(fileName: string) {

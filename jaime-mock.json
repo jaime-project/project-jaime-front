@@ -15,7 +15,7 @@
       "responses": [
         {
           "uuid": "65775b18-e2d0-40a2-ad9a-b55c418db691",
-          "body": "asdasdadadsaas",
+          "body": "",
           "latency": 0,
           "statusCode": 201,
           "label": "",
