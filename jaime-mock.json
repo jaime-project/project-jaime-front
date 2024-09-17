@@ -299,7 +299,7 @@
       "responses": [
         {
           "uuid": "0857d68d-b3ff-40bc-8aa5-e71de1ac4ee6",
-          "body": "[\n  {\n  \"name\": \"zzz\",\n    \"type\": \"KUBERNETES\",\n    \"url\": \"https://konsole-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n  },\n  {\n    \"name\": \"qwe\",\n    \"type\": \"OPENSHIFT\",\n    \"url\": \"https://asd-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n  },\n  {\n    \"name\": \"asd1\",\n    \"type\": \"OPENSHIFT\",\n    \"url\": \"https://asd-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\"\n}\n]",
+          "body": "[\n  {\n    \"name\": \"zzz\",\n    \"type\": \"KUBERNETES\",\n    \"url\": \"https://konsole-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\",\n    \"id\": \"6132dd3f1cfb\"\n  },\n  {\n    \"name\": \"qwe\",\n    \"type\": \"OPENSHIFT\",\n    \"url\": \"https://asd-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\",\n    \"id\": \"asdq23123\"\n  },\n  {\n    \"name\": \"asd1\",\n    \"type\": \"OPENSHIFT\",\n    \"url\": \"https://asd-openshift-console.apps.ocp01-noprod.ocplasegunda.com.ar/\",\n    \"id\": \"dfg3456h4\"\n  }\n]",
           "latency": 1000,
           "statusCode": 200,
           "label": "",

@@ -26,6 +26,7 @@
         <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('host')">Host</button></th>
         <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('port')">Port</button></th>
         <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('type')">Type</button></th>
+        <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('id')">Id</button></th>
       </tr>
     </thead>
     <tbody>
@@ -33,6 +34,7 @@
         <td>{{agent.host}}</td>
         <td>{{agent.port}}</td>
         <td>{{agent.type}}</td>
+        <td>{{agent.id}}</td>
         <td>
           <button type="button" class="btn btn-primary" style="margin-right: 2%;" data-toggle="tooltip" title="Details"
             routerLink="/agents/details/{{agent.id}}">

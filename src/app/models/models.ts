@@ -35,6 +35,7 @@ export interface AgentShort {
     host: string,
     port: string,
     type: string,
+    id: string,
 }
 
 export interface CronShort {

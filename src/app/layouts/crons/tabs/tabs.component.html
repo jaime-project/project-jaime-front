@@ -1,3 +1,5 @@
+<app-title title="{{cronName}}"></app-title>
+
 <ul ngbNav #nav="ngbNav" class="nav-tabs" [(activeId)]="selectedTabId">
 
   <li ngbNavItem [ngbNavItem]="1">
@@ -9,12 +11,11 @@
 
   <li ngbNavItem [ngbNavItem]="2">
     <a ngbNavLink><b i18n>Yaml</b></a>
+    <ng-template ngbNavContent>
+      <app-yaml-cron></app-yaml-cron>
+    </ng-template>
   </li>
 
 </ul>
 
 <div [ngbNavOutlet]="nav"></div>
-
-
-<!-- TODO: arreglar bug con monaco -->
-<app-yaml-cron *ngIf="selectedTabId == 2"></app-yaml-cron>

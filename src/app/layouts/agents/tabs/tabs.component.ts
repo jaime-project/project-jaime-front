@@ -10,7 +10,7 @@ import { AgentService } from 'src/app/services/agents/agents.service';
 export class TabsAgentComponent implements OnInit {
 
   selectedTabId = 1
-  agentHost: string = ""
+  agentId: string = ""
 
   constructor(private agentService: AgentService, private route: ActivatedRoute) { }
 
@@ -18,7 +18,7 @@ export class TabsAgentComponent implements OnInit {
     let id = this.route.snapshot.paramMap.get('id')
 
     this.agentService.getAgent(id).subscribe(data => {
-      this.agentHost = data.host
+      this.agentId = data.id
     })
   }
 
