@@ -21,9 +21,9 @@ COPY --from=builder /app/dist/project-jaime-front/ .
 COPY nginx.conf /etc/nginx/nginx.conf
 
 USER root
-RUN chown -R nginx:0 .
+RUN chown -R 1001:0 .
 
-USER nginx
+USER 1001
 
 ARG ARG_VERSION=local
 
