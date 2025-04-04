@@ -1,4 +1,4 @@
-VERSION := 0.4.0
+VERSION := 0.5.0
 
 build b:
 	docker build . -t ghcr.io/jaime-project/jaime-front:$(VERSION) --build-arg ARG_VERSION=$(VERSION)
