@@ -28,3 +28,9 @@ a:active {
     align-items: center;
     color: aqua;
 } */
+
+.sidebar-logo {
+    padding-left: 20%;
+    padding-bottom: 5%;
+    padding-top: 5%;
+}

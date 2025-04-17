@@ -35,7 +35,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let libraryShort of librariesShort">
-        <td style="text-align: center;"><button type="button" class="btn"><i class="fa fa-github fa-3x"></i></button> </td>
+        <td><button type="button" class="btn"><i class="fa fa-github fa-3x"></i></button> </td>
         <td>{{libraryShort.name}}</td>
         <td>{{libraryShort.description}}</td>
         <td>{{libraryShort.repo}}</td>
@@ -50,8 +50,8 @@
             (click)="reloadLibrary(libraryShort.name)">
             <i class="fa fa-refresh"></i>
           </button>
-          <button type="button" class="btn btn-download" data-toggle="tooltip"
-            title="Download yaml" (click)="exportYaml(libraryShort.name)">
+          <button type="button" class="btn btn-download" data-toggle="tooltip" title="Download yaml"
+            (click)="exportYaml(libraryShort.name)">
             <i class="fa fa-download"></i>
           </button>
         </td>
