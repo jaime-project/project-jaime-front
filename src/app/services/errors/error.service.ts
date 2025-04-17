@@ -19,6 +19,12 @@ export class ErrorService {
 
     let body: any = {}
 
+    if (error.status == 401 || error.status == 403) {
+      this.toastr.warning("Please login again", $localize`Session expired`)
+      this.route.navigate(['/']);
+      return throwError("Session expired")
+    }
+
     if (error.status == 409) {
       body = error.error
       if (typeof (body) == 'string') {
@@ -26,17 +32,11 @@ export class ErrorService {
       }
     }
 
-    let errorTittle = error.status == 409 ? body.code : $localize`Service ERROR`
+    let errorTittle = error.status == 409 ? body.code : $localize`Unknow error on service`
     let errorBody = error.status == 409 ? body.msj : error.message
 
     this.toastr.error(errorBody, errorTittle)
 
-    let errorMessage = '';
-    if (error.error instanceof ErrorEvent) {
-      errorMessage = errorBody;
-    } else {
-      errorMessage = `Error Code: ${error.status}\nMessage: ${errorBody}`;
-    }
-    return throwError(errorMessage);
+    return throwError(errorBody);
   }
 }

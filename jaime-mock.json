@@ -628,9 +628,33 @@
           "bodyType": "INLINE",
           "crudKey": "id",
           "callbacks": []
+        },
+        {
+          "uuid": "423b5d83-3896-49fc-9f3a-13e5d61eef1c",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 403,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
         }
       ],
-      "responseMode": null,
+      "responseMode": "RANDOM",
       "type": "http",
       "streamingMode": null,
       "streamingInterval": 0
