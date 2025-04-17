@@ -45,3 +45,17 @@ a:active {
     background-color: darkorchid;
     color: aliceblue;
 }
+
+.btn-download {
+    background-color: orange;
+    color: aliceblue;
+}
+
+table {
+    width: 80%;
+    align-items: center;
+}
+
+.td-center {
+    text-align: center;
+}
