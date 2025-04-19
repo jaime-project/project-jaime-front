@@ -20,16 +20,25 @@ a:active {
 
 .icon-markdown {
     color: gold;
+    font-size: 150%;
 }
 
 .icon-docs {
     color: dodgerblue;
+    font-size: 150%;
 }
 
 .icon-modules {
     color: forestgreen;
+    font-size: 150%;
 }
 
+
+th,
 td {
     vertical-align: middle;
+}
+
+.td-center {
+    text-align: center;
 }

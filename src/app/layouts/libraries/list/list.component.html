@@ -27,10 +27,11 @@
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th scope="col" i18n></th>
-        <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('name')">Name</button></th>
-        <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('type')">Description</button></th>
-        <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('url')">Repo</button></th>
+        <th scope="col"></th>
+        <th scope="col" (click)="changeOrder('name')">Name <i class="fa fa-solid fa-sort"></i></th>
+        <th scope="col" (click)="changeOrder('type')">Description <i class="fa fa-solid fa-sort"></i></th>
+        <th scope="col" (click)="changeOrder('url')">Repo <i class="fa fa-solid fa-sort"></i></th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>

@@ -22,10 +22,8 @@
     color: gray;
 }
 
+th,
 td {
     vertical-align: middle;
-}
-
-.td-center {
     text-align: center;
 }

@@ -10,6 +10,15 @@
     color: orange;
 }
 
+th,
 td {
     vertical-align: middle;
+}
+
+th {
+    text-align: center;
+}
+
+.td-center {
+    text-align: center;
 }

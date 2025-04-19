@@ -1,20 +1,31 @@
-.SEEN {
-    background-color: gainsboro;
-}
-
-.NOT_SEEN {
-    font-weight: bold;
-}
-
 .link {
     color: blue;
 }
 
+th,
 td {
     vertical-align: middle;
+}
+
+th {
+    text-align: center;
+}
+
+.td-center {
+    text-align: center;
 }
 
 .td-icon {
     text-align: center;
     color: darkgrey;
+}
+
+.fa-file {
+    color: darkgray;
+    font-size: 150%;
+}
+
+.fa-envelope {
+    color: bisque;
+    font-size: 150%;
 }

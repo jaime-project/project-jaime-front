@@ -1,9 +1,9 @@
 <app-title title="Job list"></app-title>
 
 <app-card>
-  <button class="btn btn-success" routerLink="/jobs/new" style="margin-right: 2%;" i18n>New Job</button>
+  <button class="btn btn-success" routerLink="/jobs/new" style="margin-right: 2%;">New Job</button>
   <div ngbDropdown class="d-inline-block">
-    <button class="btn btn-danger" ngbDropdownToggle style="margin-right: 2%;" i18n>Delete by Status</button>
+    <button class="btn btn-danger" ngbDropdownToggle style="margin-right: 2%;">Delete by Status</button>
     <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
       <button ngbDropdownItem (click)="deleteByStatus(s)" *ngFor="let s of jobsStatus">{{s}}</button>
     </div>
@@ -40,18 +40,14 @@
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th scope="col" i18n></th>
-        <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('name')">Name</button></th>
-        <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('status')">Status</button></th>
-        <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('id')">ID</button></th>
-        <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('agent')">Agent ID</button>
-        </th>
-        <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('agent_type')">Agent
-            Type</button></th>
-        <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('module_name')">Module</button></th>
-        <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('start_date')">Start
-            Date</button>
-        </th>
+        <th scope="col"></th>
+        <th scope="col" (click)="changeOrder('name')"> Name <i class="fa fa-solid fa-sort"></i></th>
+        <th scope="col" (click)="changeOrder('status')">Status <i class="fa fa-solid fa-sort"></i></th>
+        <th scope="col" (click)="changeOrder('id')">ID <i class="fa fa-solid fa-sort"></i></th>
+        <th scope="col" (click)="changeOrder('agent')">Agent ID <i class="fa fa-solid fa-sort"></i></th>
+        <th scope="col" (click)="changeOrder('agent_type')">Agent Type</th>
+        <th scope="col" (click)="changeOrder('module_name')">Module <i class="fa fa-solid fa-sort"></i></th>
+        <th scope="col" (click)="changeOrder('start_date')">Start Date <i class="fa fa-solid fa-sort"></i></th>
       </tr>
     </thead>
     <tbody>

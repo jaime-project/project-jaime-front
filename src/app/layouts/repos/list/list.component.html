@@ -26,21 +26,14 @@
       <a ngbNavLink><b>Local</b></a>
       <ng-template ngbNavContent>
 
-        <table class="table align-middle">
-          <thead>
-            <tr>
-              <th scope="col" i18n></th>
-              <th scope="col" i18n></th>
-              <th scope="col" i18n></th>
-            </tr>
-          </thead>
+        <table class="table table-bordered">
           <tbody>
             <tr *ngFor="let repo of reposLocalFiltered">
-              <td scope="col" class="col-1" routerLink="/repos/{{repo}}/modules">
-                <button type="button" class="btn"><i class="fa fa-archive fa-2x icon-modules"></i></button>
+              <td scope="col" class="col-1 td-center" routerLink="/repos/{{repo}}/modules">
+                <i class="fa fa-archive"></i>
               </td>
-              <td scope="col" class="col-3">{{repo}}</td>
-              <td scope="col" class="col-8">
+              <td scope="col">{{repo}}</td>
+              <td scope="col">
                 <button type="button" class="btn btn-primary" routerLink="/repos/{{repo}}/details" data-toggle="tooltip"
                   title="Detail">
                   <i class="fa fa-eye"></i></button>
@@ -65,21 +58,14 @@
       <a ngbNavLink><b>Git</b></a>
       <ng-template ngbNavContent>
 
-        <table class="table align-middle">
-          <thead>
-            <tr>
-              <th scope="col" i18n></th>
-              <th scope="col" i18n></th>
-              <th scope="col" i18n></th>
-            </tr>
-          </thead>
+        <table class="table table-bordered">
           <tbody>
             <tr *ngFor="let repo of reposGitFiltered">
-              <td scope="col" class="col-1" routerLink="/repos/{{repo}}/modules">
-                <button type="button" class="btn"><i class="fa fa-github fa-2x icon-modules"></i></button>
+              <td scope="col" class="col-1 td-center" routerLink="/repos/{{repo}}/modules">
+                <i class="fa fa-github"></i>
               </td>
-              <td scope="col" class="col-3">{{repo}}</td>
-              <td scope="col" class="col-8">
+              <td scope="col">{{repo}}</td>
+              <td scope="col">
                 <button type="button" class="btn btn-primary" routerLink="/repos/{{repo}}/details" data-toggle="tooltip"
                   title="Details">
                   <i class="fa fa-eye"></i></button>

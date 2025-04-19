@@ -37,9 +37,9 @@
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('name')">Name</button></th>
-        <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('status')">Status</button></th>
-        <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('id')">Link</button></th>
+        <th scope="col" (click)="changeOrder('name')">Name <i class="fa fa-solid fa-sort"></i></th>
+        <th scope="col" (click)="changeOrder('status')">Status <i class="fa fa-solid fa-sort"></i></th>
+        <th scope="col" (click)="changeOrder('id')">Link <i class="fa fa-solid fa-sort"></i></th>
       </tr>
     </thead>
     <tbody>

@@ -30,21 +30,14 @@
     <li ngbNavItem [ngbNavItem]="1">
       <a ngbNavLink><b i18n>Modules</b></a>
       <ng-template ngbNavContent>
-        <table class="table align-middle">
-          <thead>
-            <tr>
-              <th scope="col" i18n></th>
-              <th scope="col" i18n></th>
-              <th scope="col" i18n></th>
-            </tr>
-          </thead>
+        <table class="table table-bordered">
           <tbody>
             <tr *ngFor="let moduleName of modulesName">
-              <td scope="col" class="col-1" routerLink="/repos/{{repo}}/modules/details/code/{{moduleName}}">
-                <button type="button" class="btn"><i class="fa fa-file fa-2x icon-modules"></i></button>
+              <td scope="col" class="col-1 td-center" routerLink="/repos/{{repo}}/modules/details/code/{{moduleName}}">
+                <i class="fa fa-file icon-modules"></i>
               </td>
-              <td scope="col" class="col-3">{{moduleName}}</td>
-              <td scope="col" class="col-8">
+              <td scope="col" class="col-4">{{moduleName}}</td>
+              <td scope="col">
                 <button type="button" class="btn btn-danger" style="margin-right: 0%;"
                   (click)="deleteModule(moduleName)" data-toggle="tooltip" title="Delete">
                   <i class="fa fa-trash"></i></button>
@@ -58,21 +51,14 @@
     <li ngbNavItem [ngbNavItem]="2">
       <a ngbNavLink><b i18n>Docs</b></a>
       <ng-template ngbNavContent>
-        <table class="table align-middle">
-          <thead>
-            <tr>
-              <th scope="col" i18n></th>
-              <th scope="col" i18n></th>
-              <th scope="col" i18n></th>
-            </tr>
-          </thead>
+        <table class="table table-bordered">
           <tbody>
             <tr *ngFor="let docName of docsName">
-              <td scope="col" class="col-1" routerLink="/repos/{{repo}}/modules/details/docs/{{docName}}">
-                <button type="button" class="btn"><i class="fa fa-file fa-2x icon-docs"></i></button>
+              <td scope="col" class="col-1 td-center" routerLink="/repos/{{repo}}/modules/details/docs/{{docName}}">
+                <i class="fa fa-file icon-docs"></i>
               </td>
-              <td scope="col" class="col-3">{{docName}}</td>
-              <td scope="col" class="col-8">
+              <td scope="col" class="col-4">{{docName}}</td>
+              <td scope="col">
                 <button type="button" class="btn btn-danger" style="margin-right: 0%;" (click)="deleteDoc(docName)"
                   data-toggle="tooltip" title="Delete">
                   <i class="fa fa-trash"></i></button>
@@ -86,21 +72,15 @@
     <li ngbNavItem [ngbNavItem]="3">
       <a ngbNavLink><b i18n>Markdown</b></a>
       <ng-template ngbNavContent>
-        <table class="table align-middle">
-          <thead>
-            <tr>
-              <th scope="col" i18n></th>
-              <th scope="col" i18n></th>
-              <th scope="col" i18n></th>
-            </tr>
-          </thead>
+        <table class="table table-bordered">
           <tbody>
             <tr *ngFor="let markdownName of markdownsName">
-              <td scope="col" class="col-1" routerLink="/repos/{{repo}}/modules/details/markdown/{{markdownName}}">
-                <button type="button" class="btn"><i class="fa fa-file fa-2x icon-markdown"></i></button>
+              <td scope="col" class="col-1 td-center"
+                routerLink="/repos/{{repo}}/modules/details/markdown/{{markdownName}}">
+                <i class="fa fa-file icon-markdown"></i>
               </td>
-              <td scope="col" class="col-3">{{markdownName}}</td>
-              <td scope="col" class="col-8">
+              <td scope="col" class="col-4">{{markdownName}}</td>
+              <td scope="col">
                 <button type="button" class="btn btn-danger" style="margin-right: 0%;"
                   (click)="deleteMarkdown(markdownName)" data-toggle="tooltip" title="Delete">
                   <i class="fa fa-trash"></i></button>

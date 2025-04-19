@@ -23,12 +23,12 @@
 }
 
 .fa-archive {
-    font-size: 200%;
+    font-size: 150%;
     color: burlywood;
 }
 
 .fa-github {
-    font-size: 200%;
+    font-size: 180%;
     color: black;
 }
 
@@ -36,6 +36,11 @@ a {
     text-decoration: none;
 }
 
-td {
+td,
+th {
     vertical-align: middle;
+}
+
+.td-center {
+    text-align: center;
 }
