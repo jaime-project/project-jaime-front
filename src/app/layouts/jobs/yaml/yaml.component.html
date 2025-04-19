@@ -1,8 +1,6 @@
-<div class="col-12" style="margin-bottom: 2%;">
-  <div class="form-check form-switch custom-switch">
-    <input [(ngModel)]="editSwitchActivated" class="form-check-input" type="checkbox" role="switch">
-    <label class="form-check-label">Edit Job</label>
-  </div>
+<div class="form-check form-switch custom-switch">
+  <input [(ngModel)]="editSwitchActivated" class="form-check-input" type="checkbox" role="switch">
+  <label class="form-check-label">Edit Job</label>
 </div>
 
 <app-card *ngIf="!editSwitchActivated">
