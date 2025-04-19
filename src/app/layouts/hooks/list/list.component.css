@@ -9,3 +9,7 @@
 .DESACTIVE {
     color: orange;
 }
+
+td {
+    vertical-align: middle;
+}

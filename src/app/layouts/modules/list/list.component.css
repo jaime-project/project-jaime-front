@@ -29,3 +29,7 @@ a:active {
 .icon-modules {
     color: forestgreen;
 }
+
+td {
+    vertical-align: middle;
+}

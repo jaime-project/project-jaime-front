@@ -1,5 +1,5 @@
 .btn {
-    margin-right: 1%;
+    margin-right: 2px;
 }
 
 .SUCCESS {
@@ -20,4 +20,8 @@
 
 .CANCEL {
     color: gray;
+}
+
+td {
+    vertical-align: middle;
 }

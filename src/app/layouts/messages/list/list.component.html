@@ -29,9 +29,10 @@
 </app-card>
 
 <app-card>
-  <table class="table">
+  <table class="table table-bordered">
     <thead>
       <tr>
+        <th scope="col" i18n></th>
         <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('title')">Title</button></th>
         <th scope="col" i18n> <button class="btn btn-info" (click)="changeOrder('subject')">Subject</button>
         </th>
@@ -42,6 +43,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let messageShort of messageShort" class="{{messageShort.status}}">
+        <td class="{{messageShort.status}} td-icon"><i class="fa fa-envelope"></i></td>
         <td class="{{messageShort.status}}">{{messageShort.title}}</td>
         <td class="{{messageShort.status}}">{{messageShort.subject}}</td>
         <td class="{{messageShort.status}}" routerLink="/jobs/details/{{messageShort.job}}" class="link">

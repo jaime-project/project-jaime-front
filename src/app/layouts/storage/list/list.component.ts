@@ -68,6 +68,7 @@ export class ListStorageComponent implements OnInit {
 
   reloadCurrentPath() {
     this.loadStartData()
+    this.toastr.success(`Reloaded current path`)
   }
 
   deleteFileOrDir(fileOrDirName: string) {

@@ -9,3 +9,12 @@
 .link {
     color: blue;
 }
+
+td {
+    vertical-align: middle;
+}
+
+.td-icon {
+    text-align: center;
+    color: darkgrey;
+}

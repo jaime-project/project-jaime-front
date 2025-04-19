@@ -40,7 +40,7 @@
     <tbody>
       <tr *ngFor="let dir of fileList!.dirs">
         <td class="col-1 td-center" (click)="changeCurrentPath(dir)"><i class="fa fa-folder fa-2x"></i></td>
-        <td class="col-4" (click)="changeCurrentPath(dir)">{{dir}}</td>
+        <td class="col-4">{{dir}}</td>
         <td class="col-1">
           <button type="button" class="btn btn-danger" data-toggle="tooltip" title="Delete"
             (click)="deleteFileOrDir(dir)">

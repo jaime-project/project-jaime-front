@@ -1,5 +1,5 @@
 .btn {
-    margin: 1%;
+    margin: 2px;
 }
 
 .btn-download {
@@ -23,15 +23,19 @@
 }
 
 .fa-archive {
-    font-size: 250%;
+    font-size: 200%;
     color: burlywood;
 }
 
 .fa-github {
-    font-size: 250%;
+    font-size: 200%;
     color: black;
 }
 
 a {
     text-decoration: none;
+}
+
+td {
+    vertical-align: middle;
 }

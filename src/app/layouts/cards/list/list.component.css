@@ -1,11 +1,27 @@
-.SUCCESS {
-    color: green;
+.btn {
+    margin-inline: 2px;
 }
 
-.ACTIVE {
-    color: green;
+.card-title {
+    text-align: center;
 }
 
-.DESACTIVE {
-    color: orange;
+.card-text {
+    margin-block: 2px;
+}
+
+.card-botons {
+    margin-top: 20px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+td {
+    vertical-align: middle;
 }

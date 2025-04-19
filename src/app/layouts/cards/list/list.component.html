@@ -5,20 +5,30 @@
   <button class="btn btn-success" routerLink="/cards/new" style="margin-right: 2%;">New Card</button>
 </app-card>
 
+
+<app-card>
+  <form class="row g-3">
+    <div class="col-md-3">
+      <label class="form-label"><b>Filter:</b></label>
+      <input type="text" class="form-control" type="text" [(ngModel)]="filterBy" [ngModelOptions]="{standalone: true}"
+        (change)="loadStartData()">
+    </div>
+  </form>
+</app-card>
+
+
 <div class="row">
   <div class="col-sm-3" *ngFor="let cardShort of cardsShort">
     <div class="card" [ngStyle]="{'background-color': cardShort.color}">
       <div class="card-body">
-        <h4 class="card-title"><b>{{cardShort.name}}</b></h4>
-        <p class="card-text">{{cardShort.description}}</p>
-        <p class="card-text"><b>Repo:</b> {{cardShort.job_module_repo}}</p>
-        <p class="card-text"><b>Module:</b> {{cardShort.job_module_name}}</p>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-          <button class="btn btn-success me-md-2" type="button" data-bs-toggle="modal" data-bs-target="#modalRun"
+        <h3 class="card-title"><b>{{cardShort.name}}</b></h3>
+        <h4 class="card-text">{{cardShort.description}}</h4>
+        <div class="card-botons d-grid d-md-flex justify-content-md-end">
+          <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#modalRun"
             (click)="currentCardToRun(cardShort.id)" title="Run"><i class="fa fa-play"></i></button>
-          <button class="btn btn-primary me-md-2" type="button" routerLink="/cards/details/{{cardShort.id}}"
-            title="Details"><i class="fa fa-eye"></i></button>
-          <button class="btn btn-danger me-md-2" type="button" (click)="deleteCard(cardShort.id)" title="Remove"><i
+          <button class="btn btn-primary" type="button" routerLink="/cards/details/{{cardShort.id}}" title="Details"><i
+              class="fa fa-eye"></i></button>
+          <button class="btn btn-danger" type="button" (click)="deleteCard(cardShort.id)" title="Remove"><i
               class="fa fa-trash"></i></button>
         </div>
       </div>
@@ -27,11 +37,11 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade modal-lg" id="modalRun" tabindex="-1" aria-labelledby="modalRunLabel" aria-hidden="true">
+<div class="modal fade modal-xl" id="modalRun" tabindex="-1" aria-labelledby="modalRunLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Params</h5>
+        <h4 class="modal-title"><b>Params</b></h4>
         <button type="button" id="modalRunCloseButton" class="btn-close" data-bs-dismiss="modal"
           aria-label="Close"></button>
       </div>
@@ -40,7 +50,7 @@
           [options]="{ automaticLayout: true, theme: 'vs-dark', language: 'yaml', readOnly: false }"
           [(ngModel)]="cardDocs">
         </ngx-monaco-editor>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <div class="d-grid">
           <button type="submit" class="btn btn-success" (click)="runCard()" i18n>Run</button>
         </div>
       </div>
