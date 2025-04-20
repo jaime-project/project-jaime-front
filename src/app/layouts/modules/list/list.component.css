@@ -37,6 +37,7 @@ a:active {
 th,
 td {
     vertical-align: middle;
+    text-align: center;
 }
 
 .td-center {

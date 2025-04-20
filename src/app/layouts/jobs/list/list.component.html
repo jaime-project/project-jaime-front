@@ -39,7 +39,7 @@
 <app-card>
   <table class="table table-bordered">
     <thead>
-      <tr>
+      <tr class="center">
         <th scope="col"></th>
         <th scope="col" (click)="changeOrder('name')"> Name <i class="fa fa-solid fa-sort"></i></th>
         <th scope="col" (click)="changeOrder('status')">Status <i class="fa fa-solid fa-sort"></i></th>
@@ -52,7 +52,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let jobShort of jobsShort">
-        <td class="td-center">
+        <td class="center">
           <div *ngIf="jobShort.status == 'RUNNING'" class="spinner-border text-success" role="status">
           </div>
         </td>
