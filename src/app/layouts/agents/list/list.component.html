@@ -1,22 +1,18 @@
 <app-title title="Agents List"></app-title>
 
 <app-card>
-  <form class="row g-3">
-    <div class="col-md-1">
-      <label class="form-label"><b>Page:</b></label>
-      <input type="text" class="form-control" type="number" [(ngModel)]="page" min="1"
-        [ngModelOptions]="{standalone: true}">
+  <nav class="navbar">
+    <div class="container-fluid justify-content-start">
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="number" placeholder="Page" aria-label="Page" [(ngModel)]="page" min="1"
+          [ngModelOptions]="{standalone: true}" data-toggle="tooltip" title="Page">
+        <input class="form-control me-2" type="number" placeholder="Size" aria-label="Size" [(ngModel)]="size" min="1"
+          [ngModelOptions]="{standalone: true}" data-toggle="tooltip" title="Size">
+        <input class="form-control me-2" type="search" placeholder="Filter" aria-label="Filter" [(ngModel)]="filterBy"
+          [ngModelOptions]="{standalone: true}" data-toggle="tooltip" title="Filter">
+      </form>
     </div>
-    <div class=" col-md-1">
-      <label class="form-label"><b>Size:</b></label>
-      <input type="text" class="form-control" type="number" [(ngModel)]="size" min="1"
-        [ngModelOptions]="{standalone: true}">
-    </div>
-    <div class="col-md-3">
-      <label class="form-label"><b>Filter:</b></label>
-      <input type="text" class="form-control" type="text" [(ngModel)]="filterBy" [ngModelOptions]="{standalone: true}">
-    </div>
-  </form>
+  </nav>
 </app-card>
 
 <app-card>

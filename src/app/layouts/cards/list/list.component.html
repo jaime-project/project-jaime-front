@@ -1,28 +1,29 @@
 <app-title title="Cards List"></app-title>
 
-
 <app-card>
-  <button class="btn btn-success" routerLink="/cards/new" style="margin-right: 2%;">New Card</button>
-</app-card>
+  <nav class="navbar">
+    <div class="container-fluid justify-content-start">
+      <form class="d-flex" role="search">
 
-
-<app-card>
-  <form class="row g-3">
-    <div class="col-md-3">
-      <label class="form-label"><b>Filter:</b></label>
-      <input type="text" class="form-control" type="text" [(ngModel)]="filterBy" [ngModelOptions]="{standalone: true}"
-        (change)="loadStartData()">
+        <div ngbDropdown class="d-inline-block me-2">
+          <button class="btn btn-success" ngbDropdownToggle><i class="fa fa-solid fa-plus"></i></button>
+          <div ngbDropdownMenu>
+            <button ngbDropdownItem routerLink="/cards/new">Card</button>
+          </div>
+        </div>
+        <input class="form-control me-2" type="search" placeholder="Filter" aria-label="Filter" [(ngModel)]="filterBy"
+          [ngModelOptions]="{standalone: true}" data-toggle="tooltip" title="Filter" (change)="loadStartData()">
+      </form>
     </div>
-  </form>
+  </nav>
 </app-card>
-
 
 <div class="row">
   <div class="col-sm-3" *ngFor="let cardShort of cardsShort">
     <div class="card" [ngStyle]="{'background-color': cardShort.color}">
       <div class="card-body">
         <h3 class="card-title"><b>{{cardShort.name}}</b></h3>
-        <h4 class="card-text">{{cardShort.description}}</h4>
+        <p class="card-text">{{cardShort.description}}</p>
         <div class="card-botons d-grid d-md-flex justify-content-md-end">
           <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#modalRun"
             (click)="currentCardToRun(cardShort.id)" title="Run"><i class="fa fa-play"></i></button>

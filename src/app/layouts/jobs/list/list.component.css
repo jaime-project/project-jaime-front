@@ -2,6 +2,10 @@
     margin-right: 2px;
 }
 
+.menu-btn {
+    margin-right: 8px;
+}
+
 .SUCCESS {
     color: green;
 }
