@@ -1,23 +1,24 @@
 <app-title title="Repositories List"></app-title>
 
 <app-card>
-  <div class="row">
-    <div class="col-2">
-      <button class="btn btn-success" routerLink="/repos/new" style="margin-left: 0%">New Repository</button>
+  <nav class="navbar">
+    <div class="container-fluid justify-content-start">
+      <form class="d-flex" role="search">
+
+        <div ngbDropdown class="d-inline-block me-2">
+          <button class="btn btn-success" ngbDropdownToggle><i class="fa fa-solid fa-plus"></i></button>
+          <div ngbDropdownMenu>
+            <button ngbDropdownItem routerLink="/repos/new">Repository</button>
+          </div>
+        </div>
+
+        <input class="form-control me-2" type="search" placeholder="Filter" aria-label="Filter" [(ngModel)]="filterBy"
+          [ngModelOptions]="{standalone: true}" data-toggle="tooltip" title="Filter" (change)="filterFunction()">
+      </form>
     </div>
-  </div>
+  </nav>
 </app-card>
 
-<app-card>
-  <div class="row">
-    <div class="col-3">
-      <div>
-        <label><b>Filter:</b></label>
-        <input type="text" class="form-control" [(ngModel)]="filterBy" (change)="filterFunction()">
-      </div>
-    </div>
-  </div>
-</app-card>
 
 <app-card>
   <ul ngbNav #nav="ngbNav" class="nav-tabs">

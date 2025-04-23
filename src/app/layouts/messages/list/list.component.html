@@ -1,32 +1,29 @@
 <app-title title="Message List"></app-title>
 
-<app-card>
-  <div ngbDropdown class="d-inline-block">
-    <button class="btn btn-danger" ngbDropdownToggle style="margin-right: 2%;" i18n>Delete by Status</button>
-    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-      <button ngbDropdownItem (click)="deleteByStatus(s)" *ngFor="let s of messageStatus">{{s}}</button>
-    </div>
-  </div>
-</app-card>
 
 <app-card>
-  <form class="row g-3">
-    <div class="col-md-1">
-      <label class="form-label"><b>Page:</b></label>
-      <input type="text" class="form-control" type="number" [(ngModel)]="page" min="1"
-        [ngModelOptions]="{standalone: true}">
+  <nav class="navbar">
+    <div class="container-fluid justify-content-start">
+      <form class="d-flex" role="search">
+
+        <div ngbDropdown class="d-inline-block me-2">
+          <button class="btn btn-danger" ngbDropdownToggle><i class="fa fa-trash"></i></button>
+          <div ngbDropdownMenu>
+            <button ngbDropdownItem (click)="deleteByStatus(s)" *ngFor="let s of messageStatus">{{s}}</button>
+          </div>
+        </div>
+
+        <input class="form-control me-2" type="number" placeholder="Page" aria-label="Page" [(ngModel)]="page" min="1"
+          [ngModelOptions]="{standalone: true}" data-toggle="tooltip" title="Page">
+        <input class="form-control me-2" type="number" placeholder="Size" aria-label="Size" [(ngModel)]="size" min="1"
+          [ngModelOptions]="{standalone: true}" data-toggle="tooltip" title="Size">
+        <input class="form-control me-2" type="search" placeholder="Filter" aria-label="Filter" [(ngModel)]="filterBy"
+          [ngModelOptions]="{standalone: true}" data-toggle="tooltip" title="Filter">
+      </form>
     </div>
-    <div class=" col-md-1">
-      <label class="form-label"><b>Size:</b></label>
-      <input type="text" class="form-control" type="number" [(ngModel)]="size" min="1"
-        [ngModelOptions]="{standalone: true}">
-    </div>
-    <div class="col-md-3">
-      <label class="form-label"><b>Filter:</b></label>
-      <input type="text" class="form-control" type="text" [(ngModel)]="filterBy" [ngModelOptions]="{standalone: true}">
-    </div>
-  </form>
+  </nav>
 </app-card>
+
 
 <app-card>
   <table class="table table-bordered">

@@ -1,26 +1,26 @@
 <app-title title="Cluster List"></app-title>
 
 <app-card>
-  <button class="btn btn-success" routerLink="/libraries/new" i18n>New Library</button>
-</app-card>
+  <nav class="navbar">
+    <div class="container-fluid justify-content-start">
+      <form class="d-flex" role="search">
 
-<app-card>
-  <form class="row g-3">
-    <div class="col-md-1">
-      <label class="form-label"><b>Page:</b></label>
-      <input type="text" class="form-control" type="number" [(ngModel)]="page" min="1"
-        [ngModelOptions]="{standalone: true}">
+        <div ngbDropdown class="d-inline-block me-2">
+          <button class="btn btn-success" ngbDropdownToggle><i class="fa fa-solid fa-plus"></i></button>
+          <div ngbDropdownMenu>
+            <button ngbDropdownItem routerLink="/libraries/new">Library</button>
+          </div>
+        </div>
+
+        <input class="form-control me-2" type="number" placeholder="Page" aria-label="Page" [(ngModel)]="page" min="1"
+          [ngModelOptions]="{standalone: true}" data-toggle="tooltip" title="Page">
+        <input class="form-control me-2" type="number" placeholder="Size" aria-label="Size" [(ngModel)]="size" min="1"
+          [ngModelOptions]="{standalone: true}" data-toggle="tooltip" title="Size">
+        <input class="form-control me-2" type="search" placeholder="Filter" aria-label="Filter" [(ngModel)]="filterBy"
+          [ngModelOptions]="{standalone: true}" data-toggle="tooltip" title="Filter">
+      </form>
     </div>
-    <div class=" col-md-1">
-      <label class="form-label"><b>Size:</b></label>
-      <input type="text" class="form-control" type="number" [(ngModel)]="size" min="1"
-        [ngModelOptions]="{standalone: true}">
-    </div>
-    <div class="col-md-3">
-      <label class="form-label"><b>Filter:</b></label>
-      <input type="text" class="form-control" type="text" [(ngModel)]="filterBy" [ngModelOptions]="{standalone: true}">
-    </div>
-  </form>
+  </nav>
 </app-card>
 
 <app-card>
@@ -36,7 +36,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let libraryShort of librariesShort">
-        <td><button type="button" class="btn"><i class="fa fa-github fa-3x"></i></button> </td>
+        <td><i class="fa fa-github"></i></td>
         <td>{{libraryShort.name}}</td>
         <td>{{libraryShort.description}}</td>
         <td>{{libraryShort.repo}}</td>

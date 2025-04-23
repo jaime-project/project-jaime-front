@@ -1,27 +1,26 @@
 <app-title title="{{repo}}"></app-title>
 
 <app-card>
-  <div class="row">
-    <div class="col-2">
-      <button class="btn btn-success" routerLink="/repos/{{repo}}/modules/new" i18n>New Module</button>
+  <nav class="navbar">
+    <div class="container-fluid justify-content-start">
+      <form class="d-flex" role="search">
+
+        <div ngbDropdown class="d-inline-block me-2">
+          <button class="btn btn-success" ngbDropdownToggle><i class="fa fa-solid fa-plus"></i></button>
+          <div ngbDropdownMenu>
+            <button ngbDropdownItem routerLink="/repos/{{repo}}/modules/new">Module</button>
+            <button ngbDropdownItem routerLink="/repos/{{repo}}/docs/new">Doc</button>
+            <button ngbDropdownItem routerLink="/repos/{{repo}}/markdowns/new">Markdown</button>
+          </div>
+        </div>
+
+        <input class="form-control me-2" type="search" placeholder="Filter" aria-label="Filter" [(ngModel)]="filterBy"
+          [ngModelOptions]="{standalone: true}" data-toggle="tooltip" title="Filter">
+      </form>
     </div>
-    <div class="col-2">
-      <button class="btn btn-info" routerLink="/repos/{{repo}}/docs/new" i18n>New Doc</button>
-    </div>
-    <div class="col-2">
-      <button class="btn btn-warning" routerLink="/repos/{{repo}}/markdowns/new" i18n>New Markdown</button>
-    </div>
-  </div>
+  </nav>
 </app-card>
 
-<app-card>
-  <div class="col-3">
-    <div>
-      <label i18n><b>Filter:</b></label>
-      <input type="text" class="form-control" [(ngModel)]="filterBy">
-    </div>
-  </div>
-</app-card>
 
 <app-card>
 

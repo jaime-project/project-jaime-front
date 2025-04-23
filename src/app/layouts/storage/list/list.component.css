@@ -1,44 +1,20 @@
 .btn {
-    margin-top: 0%;
-    margin-bottom: 0%;
-    margin-left: 0%;
-    margin-right: 2px;
+    margin-right: 5px;
 }
 
-.mdi-folder {
-    font-size: 250%;
-    color: gold;
-}
-
-a {
-    text-decoration: none;
-}
-
-a:link {
-    text-decoration: none;
-    color: black;
-}
-
-a:visited {
-    text-decoration: none;
-}
-
-
-a:hover {
-    text-decoration: none;
-}
-
-
-a:active {
-    text-decoration: none;
-}
 
 .fa-folder {
     color: goldenrod;
+    font-size: 150%;
 }
 
 .fa-file {
     color: lightpink;
+    font-size: 150%;
+}
+
+.menu-icon {
+    font-size: 100%;
 }
 
 .btn-options {
@@ -52,7 +28,6 @@ a:active {
 }
 
 table {
-    width: 80%;
     align-items: center;
 }
 
