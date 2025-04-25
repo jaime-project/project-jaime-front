@@ -3199,7 +3199,7 @@
       "responses": [
         {
           "uuid": "6e58ceaa-83a6-441d-b8d4-ca097a764537",
-          "body": "{\n  \"dirs\": [\n    \"folder1\",\n    \"folder2\",\n    \"folder3\",\n    \"folder4\",\n    \"folder5\",\n    \"folder6\",\n    \"folder7\"\n  ],\n  \"files\": [\n    \"archi1.txt\",\n    \"archi2.json\",\n    \"archi3.yaml\",\n    \"archi4.xml\",\n    \"asd.xml\",\n    \"qwe.xml\",\n    \"wefwef.xml\",\n    \"hola.xml\"\n  ]\n}",
+          "body": "{\n  \"dirs\": [\n    \"folder6\",\n    \"folder7\",\n    \"folder1\",\n    \"folder2\",\n    \"folder3\",\n    \"folder4\",\n    \"folder5\"\n  ],\n  \"files\": [\n    \"hola.xml\",\n    \"asd.xml\",\n    \"qwe.xml\",\n    \"archi1.txt\",\n    \"archi2.json\",\n    \"wefwef.xml\",\n    \"archi3.yaml\",\n    \"archi4.xml\"\n  ]\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",

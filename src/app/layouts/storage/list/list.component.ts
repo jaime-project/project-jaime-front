@@ -15,7 +15,7 @@ import Swal from 'sweetalert2';
 export class ListStorageComponent implements OnInit {
 
   fileList: FileList = { dirs: [], files: [] } as FileList
-  currentPath: string = "/"
+  currentPath: string = ""
   pageLoading: boolean = true
   filterBy: string = ''
   makeDirButonClicked: boolean = false
