@@ -3,7 +3,7 @@
 }
 
 .READY {
-    color: coral;
+    color: goldenrod;
 }
 
 .ERROR {
@@ -16,4 +16,8 @@
 
 .CANCEL {
     color: gray;
+}
+
+.UNFINISHED {
+    color: coral;
 }
