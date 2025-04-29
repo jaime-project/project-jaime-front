@@ -29,7 +29,6 @@ export class DetailJobComponent implements OnInit {
     running_date: null,
     start_date: null,
     status: "",
-    // status_date: null,
     terminated_date: null
   }
 
@@ -41,9 +40,12 @@ export class DetailJobComponent implements OnInit {
     this.jobService.getJob(id).subscribe(data => {
       this.job = data
 
-      let doc = new Document()
-      doc.contents = data.params
-      this.paramsYaml = doc.toString()
+      if (data.params) {
+        let doc = new Document()
+        doc.contents = data.params
+        this.paramsYaml = doc.toString()
+      }
+
     })
   }
 

@@ -47,7 +47,11 @@
       <form>
         <div class="mb-3">
           <label class="form-label"><b i18n>Params</b></label>
-          <p class="card-text" style="white-space: pre-wrap;">{{paramsYaml}}</p>
+          @if (paramsYaml) {
+          <p class="card-text params">{{paramsYaml}}</p>
+          } @else {
+          <p class="card-text no-params">Without params</p>
+          }
         </div>
       </form>
     </app-card>

@@ -1,0 +1,8 @@
+.no-params {
+    color: gray;
+    font-style: italic;
+}
+
+.params {
+    white-space: pre-wrap;
+}
